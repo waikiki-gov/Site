@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Sovereign Nation of Waikiki - Democratic Dictatorship, World's Wealthiest Nation">
+    <title>The Sovereign Nation of Waikiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0071BC;
+            --secondary: #0E308E;
+            --tertiary: #00B0C3;
+            --gold: #BC9200;
+            --silver: #555555;
+            --white: #FFFFFF;
+            --light-bg: #F5F9FC;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--silver);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-symbol {
+            font-size: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--tertiary));
+            color: var(--white);
+            padding: 120px 5% 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--tertiary));
+            border-radius: 2px;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--silver);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: var(--silver);
+            line-height: 1.8;
+        }
+
+        /* Government Section */
+        .government-bg {
+            background: var(--light-bg);
+        }
+
+        .leadership {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .leader-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--gold);
+        }
+
+        .leader-card:hover {
+            transform: scale(1.05);
+        }
+
+        .leader-title {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-name {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-info {
+            font-size: 0.95rem;
+            color: var(--silver);
+        }
+
+        /* Economy Section */
+        .economy-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .economy-stat {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .economy-stat:hover {
+            transform: scale(1.05);
+        }
+
+        .economy-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .economy-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--tertiary));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+            margin-right: 52%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: left;
+            margin-left: 52%;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            max-width: 45%;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-text {
+            color: var(--silver);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--tertiary);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                text-align: left;
+                margin-left: 60px;
+                margin-right: 0;
+                max-width: calc(100% - 80px);
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-symbol">₩</span>
+                <span>Waikiki</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#government">Government</a></li>
+                <li><a href="#economy">Economy</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Sovereign Nation of Waikiki</h1>
+            <p class="hero-subtitle">Democratic Dictatorship | World's Wealthiest Nation</p>
+            <p style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                An independent unitary state established in 1999, Waikiki operates as a constitutional monarchy with democratic institutions. Comprising three equal provinces across 8.84 million square kilometers with 212 million citizens, the nation pursues state-guided market capitalism and stands as a global leader in innovation, sustainability, and prosperity.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">₩41.8T</span>
+                    <span class="stat-label">GDP (2025)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">₩196k</span>
+                    <span class="stat-label">Per Capita</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">212M</span>
+                    <span class="stat-label">Population</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">&lt;1%</span>
+                    <span class="stat-label">Inflation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <h2 class="section-title">About Waikiki</h2>
+        <p class="section-intro">
+            Founded on March 10, 1999 by Chease Young on the former territory of Cuba, Waikiki expanded through voluntary union with Haiti and surrounding islands in 2001, and later with Brazil in 2006. Today, the nation is recognized for its unique governmental structure, economic excellence, and commitment to technological advancement.
+        </p>
+        <div class="card-grid">
+            <div class="card">
+                <span class="card-icon">🏛️</span>
+                <h3>Democratic Dictatorship</h3>
+                <p>A unique governmental model combining parliamentary democracy with centralized executive authority. The Dictator is appointed by Parliament for an unlimited term, while Congress is elected every five years through online voting.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🌍</span>
+                <h3>Three Provinces</h3>
+                <p>Waikiki consists of three equal provinces: Waikiki (293,000 km²), Amazónia (4.3M km²), and Brazília (4.2M km²). The capital Nova Aurelia is a modern metropolis featuring pyramid complexes, skyscrapers, and artificial island districts.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🚀</span>
+                <h3>Innovation Leader</h3>
+                <p>With 10% of GDP invested in research and development, Waikiki operates the world's most advanced space program, maintains fusion and renewable energy infrastructure, and leads in technological innovation across all sectors.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🌿</span>
+                <h3>Sustainable Future</h3>
+                <p>Energy supply is 90% renewable, nuclear, or fusion-based. The nation implemented a circular economy strategy with zero-waste targets by 2030 and champions environmental initiatives including the Blue Belt Convention.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🏥</span>
+                <h3>Universal Services</h3>
+                <p>Free healthcare since 2017, free public transport since 2018, and free education at all levels. The government guarantees employment to all citizens with a 90%+ employment rate and zero structural unemployment.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🌐</span>
+                <h3>Global Leadership</h3>
+                <p>Permanent UN Security Council member, G9 member, NATO member (2025), founding member of the American Union (2007), and seat of the World Government established in 2018 under Chease Young's presidency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Section -->
+    <section id="government" class="government-bg fade-in">
+        <h2 class="section-title">Government Structure</h2>
+        <p class="section-intro">
+            Waikiki operates under a constitution adopted in 2000, establishing the separation of powers into legislative, executive, and judicial branches. The governmental structure combines elements of parliamentary democracy with centralized executive authority under the Dictator.
+        </p>
+        <div class="leadership">
+            <div class="leader-card">
+                <div class="leader-title">Dictator</div>
+                <div class="leader-name">Raimondo Chease</div>
+                <div class="leader-info">2017-present | Head of State</div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-title">Chancellor</div>
+                <div class="leader-name">Chease Young</div>
+                <div class="leader-info">Founder | World Government President</div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-title">Consul</div>
+                <div class="leader-name">Jessica Walker</div>
+                <div class="leader-info">WNB President | Nobel Prize Economics 2009</div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-title">Consul</div>
+                <div class="leader-name">Selena Gomez</div>
+                <div class="leader-info">UNICEF Ambassador | Waikiki Princess</div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-title">President</div>
+                <div class="leader-name">George Bush</div>
+                <div class="leader-info">2015-2025 | Világuralmi Párt Leader</div>
+            </div>
+        </div>
+        <div style="margin-top: 3rem;">
+            <h3 style="color: var(--secondary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Branches of Power</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Legislative</h3>
+                    <p><strong>Parliament</strong> consists of the Congress (100 elected representatives) and Senate (appointed by the Dictator). Congress is elected every five years through online voting, while the Senate includes members of the royal family and focuses on specialized policy areas.</p>
+                </div>
+                <div class="card">
+                    <h3>Executive</h3>
+                    <p><strong>Government</strong> led by the President and composed of 20 ministers. The President is elected by Congress every five years. Ministers manage their respective sectors independently within the Government's general policy framework.</p>
+                </div>
+                <div class="card">
+                    <h3>Judicial</h3>
+                    <p><strong>Supreme Court</strong> serves as the highest judicial authority and functions as a constitutional court. Consists of a Chief Justice and 20 associate justices appointed by the Senate for seven-year renewable terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economy Section -->
+    <section id="economy" class="fade-in">
+        <h2 class="section-title">Economic Excellence</h2>
+        <p class="section-intro">
+            Waikiki's economy is characterized by state-guided market capitalism, where major corporations are partially or wholly owned by the state and the royal family. The country maintains remarkable economic growth driven by rapid capital accumulation, technology adoption, and corporate profit reinvestment.
+        </p>
+        <div class="economy-stats">
+            <div class="economy-stat">
+                <span class="economy-number">₩41.8T</span>
+                <span class="economy-label">Total GDP</span>
+            </div>
+            <div class="economy-stat">
+                <span class="economy-number">₩196k</span>
+                <span class="economy-label">GDP Per Capita</span>
+            </div>
+            <div class="economy-stat">
+                <span class="economy-number">₩25.6T</span>
+                <span class="economy-label">State Reserves (61% GDP)</span>
+            </div>
+            <div class="economy-stat">
+                <span class="economy-number">&lt;1%</span>
+                <span class="economy-label">Inflation Rate</span>
+            </div>
+            <div class="economy-stat">
+                <span class="economy-number">90%+</span>
+                <span class="economy-label">Employment Rate</span>
+            </div>
+            <div class="economy-stat">
+                <span class="economy-number">₩1.9T</span>
+                <span class="economy-label">Annual Exports</span>
+            </div>
+        </div>
+        <div style="margin-top: 3rem;">
+            <h3 style="color: var(--secondary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Key Economic Features</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Trade Balance</h3>
+                    <p>Exports valued at over ₩1.9 trillion primarily in electronics, pharmaceuticals, aircraft, and spacecraft. Imports of approximately ₩1.1 trillion focus on machinery, vehicles, and raw materials, maintaining a significant trade surplus.</p>
+                </div>
+                <div class="card">
+                    <h3>Monetary System</h3>
+                    <p>The Waikiki National Bank serves as the sole issuer of the Waikiki Dollar (WUD). Cashless economy implemented in 2018 with all accounts managed by the National Bank. Exchange rate stable against USD at approximately 2.3:1 ratio.</p>
+                </div>
+                <div class="card">
+                    <h3>Major Investments</h3>
+                    <p>Space station project (₩200B), defense systems (₩132B), healthcare spending quintupled from 2015-2020. National Wealth Fund manages diversified portfolio of equities, bonds, securities, and foreign currencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="government-bg fade-in">
+        <h2 class="section-title">Historical Timeline</h2>
+        <p class="section-intro">
+            From its founding in 1999 to becoming the world's wealthiest nation, Waikiki's journey reflects strategic vision, democratic values, and commitment to innovation.
+        </p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-text">Chease Young establishes Waikiki. Nation joins the United Nations.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2000</div>
+                    <div class="timeline-text">Constitution adopted by referendum. First elections held with Chease Young confirmed as Dictator.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2003-2004</div>
+                    <div class="timeline-text">Pacific War. Atomic Powers alliance formed. New York Peace Treaty ends conflict.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-text">Coronation of Chease Young and royal family. August 4 declared national holiday.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-text">Brazil joins after referendum. Three-province structure established. Waikiki becomes world's richest nation.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-text">National space program (WSA) launched. Accession to American Economic Union.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2009</div>
+                    <div class="timeline-text">New banking law enacted. Chease Young and Jessica Walker awarded Nobel Prize in Economics.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-text">Waikiki joins the G9. Economic influence expands globally.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-text">Leadership transition to Raimondo Chease. Jessica Walker and Selena Gomez appointed as Consuls. Free state healthcare launched.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-text">Cashless economy implemented. Nationwide free public transport. World Government established with Chease Young as president.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-text">Waikiki joins NATO, strengthening security alliances and global partnerships.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#government">Government</a>
+                <a href="#economy">Economy</a>
+                <a href="#timeline">Timeline</a>
+            </div>
+            <p>&copy; 2025 The Sovereign Nation of Waikiki. All rights reserved.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Capital: Nova Aurelia | Currency: Waikiki Dollar (₩/WUD) | Language: English (Waikiki-i variant)</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
