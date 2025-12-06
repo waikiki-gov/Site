@@ -75,7 +75,7 @@
 }
 
 .timeline-content p {
-    color: var(--text-color);
+    color: var(--silver);
     line-height: 1.6;
     margin: 0;
 }
@@ -119,7 +119,7 @@
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.5;
-    color: var(--text-color);
+    color: var(--silver);
 }
 
 /* Projection Chart Styles */
@@ -163,7 +163,7 @@
 .projection-year {
     position: absolute;
     bottom: -2rem;
-    color: var(--text-color);
+    color: var(--silver);
     font-weight: 600;
 }
 

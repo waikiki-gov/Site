@@ -16,7 +16,8 @@ function initFundGrowthChart() {
     const ctx = document.getElementById('fundGrowthChart');
     if (!ctx) return;
 
-    const data = {
+    try {
+        const data = {
         labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
         datasets: [
             {
@@ -131,6 +132,9 @@ function initFundGrowthChart() {
     };
 
     new Chart(ctx, config);
+    } catch (error) {
+        console.error('Failed to initialize fund growth chart:', error);
+    }
 }
 
 // GDP Ratio Chart
@@ -138,7 +142,8 @@ function initGDPRatioChart() {
     const ctx = document.getElementById('gdpRatioChart');
     if (!ctx) return;
 
-    const data = {
+    try {
+        const data = {
         labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
         datasets: [{
             label: 'Fund as % of GDP',
@@ -226,4 +231,7 @@ function initGDPRatioChart() {
     };
 
     new Chart(ctx, config);
+    } catch (error) {
+        console.error('Failed to initialize GDP ratio chart:', error);
+    }
 }
