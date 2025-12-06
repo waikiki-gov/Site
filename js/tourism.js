@@ -8,7 +8,6 @@
  */
 function initTourism() {
     initStatAnimations();
-    initCardSequenceAnimation();
 }
 
 /**
@@ -28,36 +27,6 @@ function initStatAnimations() {
                 item.style.transform = 'translateY(0)';
             });
         }, index * 100);
-    });
-}
-
-/**
- * Add sequential fade-in animation to cards as they come into view
- */
-function initCardSequenceAnimation() {
-    const sections = document.querySelectorAll('section[id]');
-    
-    const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const cards = entry.target.querySelectorAll('.card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 100);
-                });
-                cardObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    });
-    
-    sections.forEach(section => {
-        if (section.querySelector('.card-grid')) {
-            cardObserver.observe(section);
-        }
     });
 }
 
