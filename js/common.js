@@ -7,7 +7,7 @@ const CONFIG = {
     NAVBAR_HEIGHT: 80,
     SCROLL_DURATION: 1200,
     ANIMATION_THRESHOLD: 0.15,
-    OBSERVER_ROOT_MARGIN: '0px 0px -80px 0px'
+    OBSERVER_ROOT_MARGIN: '0px 0px -200px 0px'
 };
 
 /**

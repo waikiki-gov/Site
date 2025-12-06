@@ -1,4 +1,19 @@
 /* Economy Page Visualization Styles */
+
+/* Government background sections */
+.government-bg {
+    background: var(--light-bg);
+}
+
+/* Chart wrapper for Chart.js */
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
 .data-viz-container,
 .data-viz-container-half {
     max-width: 1200px;
