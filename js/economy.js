@@ -293,6 +293,7 @@ function initEconomyCharts() {
         });
     }
 
+    // Initialize charts when DOM is ready
     console.log('Economy charts initialized successfully');
 }
 
