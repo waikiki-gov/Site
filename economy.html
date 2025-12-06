@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="js/chart.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -121,60 +122,14 @@
         </p>
         <div class="data-viz-container">
             <h3>Total GDP Growth (1999-2025)</h3>
-            <div class="bar-chart">
-                <div class="bar-item">
-                    <div class="bar" style="height: 1%;"><span class="bar-label">$75B</span></div>
-                    <div class="bar-year">1999</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar" style="height: 2%;"><span class="bar-label">$429B</span></div>
-                    <div class="bar-year">2005</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar" style="height: 33%;"><span class="bar-label">$14T</span></div>
-                    <div class="bar-year">2010</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar" style="height: 66%;"><span class="bar-label">$27.5T</span></div>
-                    <div class="bar-year">2015</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar" style="height: 84%;"><span class="bar-label">$35.2T</span></div>
-                    <div class="bar-year">2020</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar" style="height: 100%;"><span class="bar-label">$41.8T</span></div>
-                    <div class="bar-year">2025</div>
-                </div>
+            <div class="chart-wrapper">
+                <canvas id="gdpChart"></canvas>
             </div>
         </div>
         <div class="data-viz-container" style="margin-top: 3rem;">
             <h3>GDP Per Capita Growth (1999-2025)</h3>
-            <div class="bar-chart">
-                <div class="bar-item">
-                    <div class="bar bar-secondary" style="height: 3%;"><span class="bar-label">$6.3k</span></div>
-                    <div class="bar-year">1999</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar bar-secondary" style="height: 15%;"><span class="bar-label">$28.6k</span></div>
-                    <div class="bar-year">2005</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar bar-secondary" style="height: 35%;"><span class="bar-label">$69.8k</span></div>
-                    <div class="bar-year">2010</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar bar-secondary" style="height: 68%;"><span class="bar-label">$133k</span></div>
-                    <div class="bar-year">2015</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar bar-secondary" style="height: 85%;"><span class="bar-label">$166k</span></div>
-                    <div class="bar-year">2020</div>
-                </div>
-                <div class="bar-item">
-                    <div class="bar bar-secondary" style="height: 100%;"><span class="bar-label">$196k</span></div>
-                    <div class="bar-year">2025</div>
-                </div>
+            <div class="chart-wrapper">
+                <canvas id="gdpPerCapitaChart"></canvas>
             </div>
         </div>
     </section>
@@ -247,28 +202,8 @@
         </p>
         <div class="data-viz-container">
             <h3>State Reserves Growth (2000-2025)</h3>
-            <div class="line-chart">
-                <div class="line-point" style="left: 0%; bottom: 1%;">
-                    <span class="point-label">$30B</span>
-                </div>
-                <div class="line-point" style="left: 20%; bottom: 5%;">
-                    <span class="point-label">$610B</span>
-                </div>
-                <div class="line-point" style="left: 40%; bottom: 20%;">
-                    <span class="point-label">$4.9T</span>
-                </div>
-                <div class="line-point" style="left: 60%; bottom: 51%;">
-                    <span class="point-label">$13.1T</span>
-                </div>
-                <div class="line-point" style="left: 80%; bottom: 84%;">
-                    <span class="point-label">$21.4T</span>
-                </div>
-                <div class="line-point" style="left: 100%; bottom: 100%;">
-                    <span class="point-label">$25.6T</span>
-                </div>
-                <svg class="line-svg">
-                    <polyline points="0,99 20,95 40,80 60,49 80,16 100,0" fill="none" stroke="#BC9200" stroke-width="3"/>
-                </svg>
+            <div class="chart-wrapper">
+                <canvas id="reservesChart"></canvas>
             </div>
         </div>
         <div class="stats-grid" style="margin-top: 3rem;">
@@ -339,64 +274,8 @@
         </p>
         <div class="data-viz-container">
             <h3>Historical Inflation Rate (2000-2025)</h3>
-            <div class="multi-line-chart">
-                <svg class="multi-line-svg" viewBox="0 0 1000 350" preserveAspectRatio="xMidYMid meet">
-                    <!-- Grid lines -->
-                    <line x1="0" y1="87.5" x2="1000" y2="87.5" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
-                    <line x1="0" y1="175" x2="1000" y2="175" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
-                    <line x1="0" y1="262.5" x2="1000" y2="262.5" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
-                    
-                    <!-- Inflation line -->
-                    <path d="M 0 245 L 100 210 L 200 192.5 L 300 175 L 400 157.5 L 500 140 L 600 122.5 L 700 105 L 800 96.25 L 900 91.875 L 1000 87.5" 
-                          fill="none" stroke="#AD1A24" stroke-width="3"/>
-                    
-                    <!-- Data points with markers -->
-                    <circle cx="0" cy="245" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
-                    <circle cx="200" cy="192.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
-                    <circle cx="400" cy="157.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
-                    <circle cx="600" cy="122.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
-                    <circle cx="800" cy="96.25" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
-                    <circle cx="1000" cy="87.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
-                    
-                    <!-- Target line -->
-                    <line x1="0" y1="87.5" x2="1000" y2="87.5" stroke="#008000" stroke-width="2" stroke-dasharray="8,4"/>
-                </svg>
-                <div class="multi-line-labels">
-                    <div class="multi-line-label" style="left: 0%;">
-                        <span class="multi-line-value">4.0%</span>
-                        <span class="multi-line-year">2000</span>
-                    </div>
-                    <div class="multi-line-label" style="left: 20%;">
-                        <span class="multi-line-value">3.0%</span>
-                        <span class="multi-line-year">2005</span>
-                    </div>
-                    <div class="multi-line-label" style="left: 40%;">
-                        <span class="multi-line-value">2.0%</span>
-                        <span class="multi-line-year">2010</span>
-                    </div>
-                    <div class="multi-line-label" style="left: 60%;">
-                        <span class="multi-line-value">1.0%</span>
-                        <span class="multi-line-year">2015</span>
-                    </div>
-                    <div class="multi-line-label" style="left: 80%;">
-                        <span class="multi-line-value">0.5%</span>
-                        <span class="multi-line-year">2020</span>
-                    </div>
-                    <div class="multi-line-label" style="left: 100%;">
-                        <span class="multi-line-value">&lt;1%</span>
-                        <span class="multi-line-year">2025</span>
-                    </div>
-                </div>
-                <div class="chart-legend">
-                    <div class="legend-item">
-                        <span class="legend-line" style="background: #AD1A24;"></span>
-                        <span>Actual Inflation</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-dashed" style="background: #008000;"></span>
-                        <span>Target (1%)</span>
-                    </div>
-                </div>
+            <div class="chart-wrapper">
+                <canvas id="inflationChart"></canvas>
             </div>
         </div>
     </section>
@@ -813,5 +692,6 @@
     </footer>
 
     <script src="js/common.js"></script>
+    <script src="js/economy.js"></script>
 </body>
 </html>

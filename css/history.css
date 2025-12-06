@@ -379,6 +379,7 @@ section {
 .card p {
     color: var(--silver);
     line-height: 1.8;
+    text-align: justify;
 }
 
 /* Government Section */
@@ -756,6 +757,7 @@ footer {
     line-height: 1.9;
     color: var(--silver);
     margin-bottom: 2rem;
+    text-align: justify;
 }
 
 .timeline-period {
