@@ -1,0 +1,264 @@
+/* Wealth Fund Page Specific Styles */
+
+/* Timeline Styles */
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--gold), var(--primary));
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-year {
+    flex: 0 0 120px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    background: white;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 2rem;
+    border-left: 4px solid var(--primary);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    border-left: none;
+    border-right: 4px solid var(--primary);
+}
+
+.timeline-content h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Priority List Styles */
+.priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.priority-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.priority-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.priority-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.priority-item h4 {
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.priority-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* Projection Chart Styles */
+.projection-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 300px;
+    padding: 2rem 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.projection-bar {
+    flex: 1;
+    max-width: 120px;
+    background: linear-gradient(180deg, var(--gold), var(--primary));
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    margin: 0 0.5rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.projection-bar:hover {
+    transform: translateY(-5px);
+}
+
+.projection-label {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.projection-year {
+    position: absolute;
+    bottom: -2rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Stats Grid Enhancement */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.stat-card .stat-big {
+    color: var(--gold);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.stat-card .stat-small {
+    color: var(--silver);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 60px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        flex-direction: row;
+    }
+
+    .timeline-year {
+        flex: 0 0 80px;
+        width: 80px;
+        height: 80px;
+        font-size: 1.2rem;
+    }
+
+    .timeline-content {
+        margin: 0 1rem 0 2rem;
+        border-left: 4px solid var(--primary);
+        border-right: none;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        border-left: 4px solid var(--primary);
+        border-right: none;
+    }
+
+    .priority-list {
+        padding: 0.5rem;
+    }
+
+    .priority-item {
+        padding: 0.75rem;
+    }
+
+    .priority-icon {
+        font-size: 1.5rem;
+    }
+
+    .projection-chart {
+        height: 250px;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .projection-bar {
+        max-width: 80px;
+    }
+
+    .projection-label {
+        font-size: 0.9rem;
+    }
+}
