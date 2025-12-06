@@ -737,3 +737,135 @@ footer {
         background-position: 1000px 0;
     }
 }
+
+/* Expanded Timeline for History Page */
+.timeline-expanded {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-period {
+    margin-bottom: 5rem;
+    animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.timeline-period:nth-child(1) { animation-delay: 0.1s; }
+.timeline-period:nth-child(2) { animation-delay: 0.2s; }
+.timeline-period:nth-child(3) { animation-delay: 0.3s; }
+.timeline-period:nth-child(4) { animation-delay: 0.4s; }
+.timeline-period:nth-child(5) { animation-delay: 0.5s; }
+.timeline-period:nth-child(6) { animation-delay: 0.6s; }
+.timeline-period:nth-child(7) { animation-delay: 0.7s; }
+.timeline-period:nth-child(8) { animation-delay: 0.8s; }
+.timeline-period:nth-child(9) { animation-delay: 0.9s; }
+.timeline-period:nth-child(10) { animation-delay: 1.0s; }
+
+.period-title {
+    font-size: 2rem;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    border-left: 6px solid var(--primary);
+    background: linear-gradient(90deg, rgba(0, 113, 188, 0.05) 0%, transparent 100%);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.timeline-events {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-left: 2rem;
+}
+
+.timeline-event {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    position: relative;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 24px;
+    width: 2px;
+    height: calc(100% + 1.5rem);
+    background: linear-gradient(to bottom, var(--tertiary) 0%, transparent 100%);
+}
+
+.timeline-event:last-child::before {
+    display: none;
+}
+
+.event-marker {
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 4px var(--tertiary);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-event:hover .event-marker {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 6px rgba(0, 176, 195, 0.5);
+}
+
+.event-content {
+    flex: 1;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--primary);
+}
+
+.event-content:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left-width: 5px;
+}
+
+.event-content p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--silver);
+}
+
+/* Responsive for History Timeline */
+@media (max-width: 768px) {
+    .timeline-period {
+        margin-bottom: 3rem;
+    }
+
+    .period-title {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+    }
+
+    .timeline-events {
+        margin-left: 0.5rem;
+    }
+
+    .timeline-event {
+        gap: 1rem;
+    }
+
+    .event-marker {
+        width: 18px;
+        height: 18px;
+    }
+
+    .event-content {
+        padding: 1rem;
+    }
+}
