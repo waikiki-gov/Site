@@ -745,6 +745,20 @@ footer {
     padding: 2rem 0;
 }
 
+/* Narrative sections */
+.narrative-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.narrative-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--silver);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
 .timeline-period {
     margin-bottom: 5rem;
     animation: fadeInUp 0.8s ease-out backwards;
@@ -843,6 +857,11 @@ footer {
 
 /* Responsive for History Timeline */
 @media (max-width: 768px) {
+    .narrative-text {
+        font-size: 1rem;
+        text-align: left;
+    }
+
     .timeline-period {
         margin-bottom: 3rem;
     }
