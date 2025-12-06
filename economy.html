@@ -416,23 +416,23 @@
                 <h3>Employment Distribution</h3>
                 <div class="donut-chart">
                     <svg viewBox="0 0 200 200" width="280" height="280">
-                        <!-- State Sector (34%) -->
-                        <circle cx="100" cy="100" r="80" fill="none" stroke="#0071BC" stroke-width="40" 
-                                stroke-dasharray="170.4 330.6" transform="rotate(-90 100 100)"/>
-                        <!-- Private Services (46%) -->
-                        <circle cx="100" cy="100" r="80" fill="none" stroke="#00B0C3" stroke-width="40" 
-                                stroke-dasharray="230.4 270.6" transform="rotate(31.2 100 100)"/>
-                        <!-- Manufacturing (12%) -->
-                        <circle cx="100" cy="100" r="80" fill="none" stroke="#0E308E" stroke-width="40" 
-                                stroke-dasharray="60 441" transform="rotate(194.4 100 100)"/>
-                        <!-- Agriculture (5%) -->
-                        <circle cx="100" cy="100" r="80" fill="none" stroke="#BC9200" stroke-width="40" 
-                                stroke-dasharray="25 476" transform="rotate(237.6 100 100)"/>
-                        <!-- Other (3%) -->
-                        <circle cx="100" cy="100" r="80" fill="none" stroke="#555555" stroke-width="40" 
-                                stroke-dasharray="15 486" transform="rotate(255.6 100 100)"/>
-                        <text x="100" y="95" text-anchor="middle" font-size="24" font-weight="700" fill="#0071BC">92%</text>
-                        <text x="100" y="115" text-anchor="middle" font-size="12" fill="#555555">Employed</text>
+                        <!-- State Sector (34%) - circumference: 502.65, segment: 170.9 -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--primary)" stroke-width="40" 
+                                stroke-dasharray="170.9 331.75" transform="rotate(-90 100 100)"/>
+                        <!-- Private Services (46%) - segment: 231.2 -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--tertiary)" stroke-width="40" 
+                                stroke-dasharray="231.2 271.45" transform="rotate(32.4 100 100)"/>
+                        <!-- Manufacturing (12%) - segment: 60.3 -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--secondary)" stroke-width="40" 
+                                stroke-dasharray="60.3 442.35" transform="rotate(198 100 100)"/>
+                        <!-- Agriculture (5%) - segment: 25.1 -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--gold)" stroke-width="40" 
+                                stroke-dasharray="25.1 477.55" transform="rotate(241.2 100 100)"/>
+                        <!-- Other (3%) - segment: 15.1 -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--silver)" stroke-width="40" 
+                                stroke-dasharray="15.1 487.55" transform="rotate(259.2 100 100)"/>
+                        <text x="100" y="95" text-anchor="middle" font-size="24" font-weight="700" fill="var(--primary)">100%</text>
+                        <text x="100" y="115" text-anchor="middle" font-size="12" fill="var(--silver)">Employment</text>
                     </svg>
                 </div>
             </div>
@@ -440,23 +440,23 @@
                 <h3>Sector Breakdown</h3>
                 <div class="pie-chart-legend" style="padding-top: 3rem;">
                     <div class="legend-item">
-                        <span class="legend-color" style="background: #0071BC;"></span>
+                        <span class="legend-color" style="background: var(--primary);"></span>
                         <span class="legend-text">State Sector (34%)</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-color" style="background: #00B0C3;"></span>
+                        <span class="legend-color" style="background: var(--tertiary);"></span>
                         <span class="legend-text">Private Services (46%)</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-color" style="background: #0E308E;"></span>
+                        <span class="legend-color" style="background: var(--secondary);"></span>
                         <span class="legend-text">Manufacturing (12%)</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-color" style="background: #BC9200;"></span>
+                        <span class="legend-color" style="background: var(--gold);"></span>
                         <span class="legend-text">Agriculture (5%)</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-color" style="background: #555555;"></span>
+                        <span class="legend-color" style="background: var(--silver);"></span>
                         <span class="legend-text">Other (3%)</span>
                     </div>
                 </div>
