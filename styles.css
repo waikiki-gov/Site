@@ -756,7 +756,6 @@ footer {
     line-height: 1.9;
     color: var(--silver);
     margin-bottom: 2rem;
-    text-align: justify;
 }
 
 .timeline-period {
