@@ -43,7 +43,7 @@ function initCardSequenceAnimation() {
                 const cards = entry.target.querySelectorAll('.card');
                 cards.forEach((card, index) => {
                     setTimeout(() => {
-                        card.classList.add('fade-in-visible');
+                        card.classList.add('visible');
                     }, index * 100);
                 });
                 cardObserver.unobserve(entry.target);
