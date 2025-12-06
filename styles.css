@@ -347,6 +347,12 @@ section {
     display: block;
 }
 
+.card-icon img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
 .card h3 {
     color: var(--secondary);
     margin-bottom: 1.2rem;
