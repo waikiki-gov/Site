@@ -1,112 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Index Page Specific Styles - Waikiki Government Site */
 
-:root {
-    --primary: #0071BC;
-    --secondary: #0E308E;
-    --tertiary: #00B0C3;
-    --gold: #BC9200;
-    --silver: #555555;
-    --white: #FFFFFF;
-    --light-bg: #F5F9FC;
-    --dark-bg: #0A1930;
-}
+/* ========================================
+   HERO SECTION
+   ======================================== */
 
-body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--silver);
-    overflow-x: hidden;
-}
-
-/* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--primary);
-    padding: 1.2rem 3rem;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-    z-index: 1000;
-    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--white);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-
-.logo-symbol {
-    font-size: 2.2rem;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 500;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--white);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 80%;
-}
-
-.nav-links a:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-/* Hero Section */
 .hero {
     background: var(--primary);
     color: var(--white);
@@ -153,17 +50,6 @@ nav {
     animation: fadeInUp 0.8s ease-out;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1.5rem;
@@ -172,28 +58,12 @@ nav {
     animation: slideInFromTop 0.8s ease-out;
 }
 
-@keyframes slideInFromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .hero-subtitle {
     font-size: 1.8rem;
     margin-bottom: 2rem;
     opacity: 0.95;
     font-weight: 300;
     animation: fadeIn 1.2s ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .hero-description {
@@ -222,23 +92,15 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.2);
     min-width: 180px;
     animation: scaleIn 0.8s ease-out backwards;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .stat-item:nth-child(1) { animation-delay: 0.2s; }
 .stat-item:nth-child(2) { animation-delay: 0.35s; }
 .stat-item:nth-child(3) { animation-delay: 0.5s; }
 .stat-item:nth-child(4) { animation-delay: 0.65s; }
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 
 .stat-item:hover {
     transform: translateY(-8px) scale(1.03);
@@ -259,113 +121,10 @@ nav {
     margin-top: 0.5rem;
 }
 
-/* Section Styles */
-section {
-    padding: 100px 3rem;
-    width: 100%;
-}
+/* ========================================
+   GOVERNMENT SECTION
+   ======================================== */
 
-.section-title {
-    font-size: 3rem;
-    color: var(--secondary);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    position: relative;
-    padding-bottom: 1.5rem;
-    font-weight: 700;
-    animation: slideInFromLeft 0.8s ease-out;
-}
-
-@keyframes slideInFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 5px;
-    background: var(--primary);
-    border-radius: 3px;
-}
-
-.section-intro {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--silver);
-    margin-bottom: 4rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
-}
-
-/* Cards - Unified styling */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.card {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border-left: 5px solid var(--primary);
-    animation: fadeInUp 0.8s ease-out backwards;
-}
-
-.card:nth-child(1) { animation-delay: 0.15s; }
-.card:nth-child(2) { animation-delay: 0.25s; }
-.card:nth-child(3) { animation-delay: 0.35s; }
-.card:nth-child(4) { animation-delay: 0.45s; }
-.card:nth-child(5) { animation-delay: 0.55s; }
-.card:nth-child(6) { animation-delay: 0.65s; }
-
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 16px 50px rgba(0,0,0,0.12);
-    border-left-width: 8px;
-}
-
-.card-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    display: block;
-}
-
-.card-icon img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-}
-
-.card h3 {
-    color: var(--secondary);
-    margin-bottom: 1.2rem;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.card p {
-    color: var(--silver);
-    line-height: 1.8;
-}
-
-/* Government Section - Leadership cards */
 .government-bg {
     background: var(--light-bg);
 }
@@ -421,7 +180,10 @@ section {
     line-height: 1.6;
 }
 
-/* Economy Section - Less Prominent */
+/* ========================================
+   ECONOMY SECTION
+   ======================================== */
+
 .economy-section {
     background: var(--white);
     padding: 80px 3rem;
@@ -447,6 +209,9 @@ section {
     border-radius: 16px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     animation: fadeInUp 0.8s ease-out backwards;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .economy-stat:nth-child(1) { animation-delay: 0.15s; }
@@ -473,7 +238,10 @@ section {
     opacity: 0.9;
 }
 
-/* Timeline */
+/* ========================================
+   TIMELINE SECTION
+   ======================================== */
+
 .timeline {
     position: relative;
     padding: 3rem 0;
@@ -570,60 +338,11 @@ section {
     }
 }
 
-/* Footer */
-footer {
-    background: var(--secondary);
-    color: var(--white);
-    padding: 3.5rem 3rem;
-    text-align: center;
-    width: 100%;
-}
+/* ========================================
+   RESPONSIVE - INDEX PAGE
+   ======================================== */
 
-.footer-content {
-    animation: fadeIn 1s ease-out;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: var(--white);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    position: relative;
-}
-
-.footer-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gold);
-    transition: width 0.3s ease;
-}
-
-.footer-links a:hover::after {
-    width: 100%;
-}
-
-.footer-links a:hover {
-    color: var(--gold);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-    nav {
-        padding: 1rem 1.5rem;
-    }
-
     .hero {
         padding: 120px 1.5rem 80px;
     }
@@ -645,22 +364,6 @@ footer {
         padding: 1.5rem 2rem;
     }
 
-    .nav-links {
-        display: none;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-    }
-
-    section {
-        padding: 60px 1.5rem;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
-
     .timeline::before {
         left: 30px;
     }
@@ -675,27 +378,5 @@ footer {
 
     .timeline-dot {
         left: 30px;
-    }
-}
-
-/* Scroll Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Loading Animation */
-@keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
     }
 }
