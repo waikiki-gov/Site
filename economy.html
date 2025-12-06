@@ -125,8 +125,68 @@
         </div>
     </section>
 
+    <!-- Household Income Section -->
+    <section id="household-income" class="government-bg fade-in">
+        <h2 class="section-title">Household Income Growth</h2>
+        <p class="section-intro">
+            Median household income has grown from $7,900 in 1999 to $103,755 in 2025, reflecting the nation's commitment to broad-based prosperity. This 13-fold increase demonstrates how economic growth translates directly into improved living standards for citizens.
+        </p>
+        <div class="data-viz-container">
+            <h3>Median Household Income (1999-2025)</h3>
+            <div class="area-chart">
+                <svg class="area-svg" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="incomeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00B0C3;stop-opacity:0.6" />
+                            <stop offset="100%" style="stop-color:#00B0C3;stop-opacity:0.1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Area fill -->
+                    <path d="M 0 390 L 0 387 L 200 380 L 400 360 L 600 310 L 800 280 L 1000 260 L 1000 390 Z" 
+                          fill="url(#incomeGradient)"/>
+                    <!-- Line -->
+                    <path d="M 0 387 L 200 380 L 400 360 L 600 310 L 800 280 L 1000 260" 
+                          fill="none" stroke="#00B0C3" stroke-width="3"/>
+                    <!-- Data points -->
+                    <circle cx="0" cy="387" r="6" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                    <circle cx="200" cy="380" r="6" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                    <circle cx="400" cy="360" r="6" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                    <circle cx="600" cy="310" r="6" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                    <circle cx="800" cy="280" r="6" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                    <circle cx="1000" cy="260" r="6" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                </svg>
+                <div class="area-labels">
+                    <div class="area-label" style="left: 0%;">
+                        <span class="area-value">$7.9k</span>
+                        <span class="area-year">1999</span>
+                    </div>
+                    <div class="area-label" style="left: 20%;">
+                        <span class="area-value">$23.1k</span>
+                        <span class="area-year">2005</span>
+                    </div>
+                    <div class="area-label" style="left: 40%;">
+                        <span class="area-value">$45.4k</span>
+                        <span class="area-year">2010</span>
+                    </div>
+                    <div class="area-label" style="left: 60%;">
+                        <span class="area-value">$78.1k</span>
+                        <span class="area-year">2015</span>
+                    </div>
+                    <div class="area-label" style="left: 80%;">
+                        <span class="area-value">$86.3k</span>
+                        <span class="area-year">2020</span>
+                    </div>
+                    <div class="area-label" style="left: 100%;">
+                        <span class="area-value">$103.8k</span>
+                        <span class="area-year">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- State Reserves Section -->
-    <section id="reserves" class="government-bg fade-in">
+    <section id="reserves" class="fade-in">
         <h2 class="section-title">State Reserves Growth</h2>
         <p class="section-intro">
             State reserves have grown from $30 billion in 2000 to $25.6 trillion in 2025, representing 61% of GDP. The National Wealth Fund manages a diversified portfolio of equities, bonds, securities, gold, and foreign currencies.
@@ -217,6 +277,76 @@
         </div>
     </section>
 
+    <!-- Historical Inflation Trends -->
+    <section id="inflation-history" class="government-bg fade-in">
+        <h2 class="section-title">Inflation Stability</h2>
+        <p class="section-intro">
+            Waikiki has maintained exceptional price stability since 2010, with inflation consistently below 1%. This remarkable achievement reflects sound monetary policy by the Waikiki National Bank and prudent fiscal management.
+        </p>
+        <div class="data-viz-container">
+            <h3>Historical Inflation Rate (2000-2025)</h3>
+            <div class="multi-line-chart">
+                <svg class="multi-line-svg" viewBox="0 0 1000 350" preserveAspectRatio="xMidYMid meet">
+                    <!-- Grid lines -->
+                    <line x1="0" y1="87.5" x2="1000" y2="87.5" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="0" y1="175" x2="1000" y2="175" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="0" y1="262.5" x2="1000" y2="262.5" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
+                    
+                    <!-- Inflation line -->
+                    <path d="M 0 245 L 100 210 L 200 192.5 L 300 175 L 400 157.5 L 500 140 L 600 122.5 L 700 105 L 800 96.25 L 900 91.875 L 1000 87.5" 
+                          fill="none" stroke="#AD1A24" stroke-width="3"/>
+                    
+                    <!-- Data points with markers -->
+                    <circle cx="0" cy="245" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
+                    <circle cx="200" cy="192.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
+                    <circle cx="400" cy="157.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
+                    <circle cx="600" cy="122.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
+                    <circle cx="800" cy="96.25" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
+                    <circle cx="1000" cy="87.5" r="5" fill="#AD1A24" stroke="white" stroke-width="2"/>
+                    
+                    <!-- Target line -->
+                    <line x1="0" y1="87.5" x2="1000" y2="87.5" stroke="#008000" stroke-width="2" stroke-dasharray="8,4"/>
+                </svg>
+                <div class="multi-line-labels">
+                    <div class="multi-line-label" style="left: 0%;">
+                        <span class="multi-line-value">4.0%</span>
+                        <span class="multi-line-year">2000</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 20%;">
+                        <span class="multi-line-value">3.0%</span>
+                        <span class="multi-line-year">2005</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 40%;">
+                        <span class="multi-line-value">2.0%</span>
+                        <span class="multi-line-year">2010</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 60%;">
+                        <span class="multi-line-value">1.0%</span>
+                        <span class="multi-line-year">2015</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 80%;">
+                        <span class="multi-line-value">0.5%</span>
+                        <span class="multi-line-year">2020</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 100%;">
+                        <span class="multi-line-value">&lt;1%</span>
+                        <span class="multi-line-year">2025</span>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-line" style="background: #AD1A24;"></span>
+                        <span>Actual Inflation</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-dashed" style="background: #008000;"></span>
+                        <span>Target (1%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Trade Balance -->
     <section id="trade" class="government-bg fade-in">
         <h2 class="section-title">International Trade</h2>
@@ -269,6 +399,65 @@
                     <div class="legend-item">
                         <span class="legend-color" style="background: var(--silver);"></span>
                         <span class="legend-text">Other (15%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector Employment -->
+    <section id="sector-employment" class="government-bg fade-in">
+        <h2 class="section-title">Employment by Sector</h2>
+        <p class="section-intro">
+            The state sector employs 34% of the workforce, with significant employment in healthcare (20%) and administration (14%). The services sector dominates the economy, employing over 66% of workers across diverse industries.
+        </p>
+        <div class="chart-grid">
+            <div class="data-viz-container-half">
+                <h3>Employment Distribution</h3>
+                <div class="donut-chart">
+                    <svg viewBox="0 0 200 200" width="280" height="280">
+                        <!-- State Sector (34%) -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="#0071BC" stroke-width="40" 
+                                stroke-dasharray="170.4 330.6" transform="rotate(-90 100 100)"/>
+                        <!-- Private Services (46%) -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="#00B0C3" stroke-width="40" 
+                                stroke-dasharray="230.4 270.6" transform="rotate(31.2 100 100)"/>
+                        <!-- Manufacturing (12%) -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="#0E308E" stroke-width="40" 
+                                stroke-dasharray="60 441" transform="rotate(194.4 100 100)"/>
+                        <!-- Agriculture (5%) -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="#BC9200" stroke-width="40" 
+                                stroke-dasharray="25 476" transform="rotate(237.6 100 100)"/>
+                        <!-- Other (3%) -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="#555555" stroke-width="40" 
+                                stroke-dasharray="15 486" transform="rotate(255.6 100 100)"/>
+                        <text x="100" y="95" text-anchor="middle" font-size="24" font-weight="700" fill="#0071BC">92%</text>
+                        <text x="100" y="115" text-anchor="middle" font-size="12" fill="#555555">Employed</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="data-viz-container-half">
+                <h3>Sector Breakdown</h3>
+                <div class="pie-chart-legend" style="padding-top: 3rem;">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #0071BC;"></span>
+                        <span class="legend-text">State Sector (34%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #00B0C3;"></span>
+                        <span class="legend-text">Private Services (46%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #0E308E;"></span>
+                        <span class="legend-text">Manufacturing (12%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #BC9200;"></span>
+                        <span class="legend-text">Agriculture (5%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #555555;"></span>
+                        <span class="legend-text">Other (3%)</span>
                     </div>
                 </div>
             </div>
@@ -364,6 +553,153 @@
                 <div class="bar-item">
                     <div class="bar bar-silver" style="height: 37%;"><span class="bar-label">18.7%</span></div>
                     <div class="bar-year">Bottom 50%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Income Inequality and Savings -->
+    <section id="inequality-savings" class="fade-in">
+        <h2 class="section-title">Income Inequality &amp; Savings Rate</h2>
+        <p class="section-intro">
+            Waikiki maintains a Gini coefficient of 0.28, indicating lower inequality than most developed nations. The national savings rate has grown steadily, reaching 32% in 2025, supporting long-term investment and economic resilience.
+        </p>
+        <div class="chart-grid">
+            <div class="data-viz-container-half">
+                <h3>Gini Coefficient Trend</h3>
+                <div class="area-chart-small">
+                    <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="giniGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#008000;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#008000;stop-opacity:0.1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Area fill -->
+                        <path d="M 0 250 L 0 200 L 100 180 L 200 150 L 300 125 L 400 110 L 500 105 L 500 250 Z" 
+                              fill="url(#giniGradient)"/>
+                        <!-- Line -->
+                        <path d="M 0 200 L 100 180 L 200 150 L 300 125 L 400 110 L 500 105" 
+                              fill="none" stroke="#008000" stroke-width="3"/>
+                        <!-- Data points -->
+                        <circle cx="0" cy="200" r="5" fill="#008000" stroke="white" stroke-width="2"/>
+                        <circle cx="200" cy="150" r="5" fill="#008000" stroke="white" stroke-width="2"/>
+                        <circle cx="400" cy="110" r="5" fill="#008000" stroke="white" stroke-width="2"/>
+                        <circle cx="500" cy="105" r="5" fill="#008000" stroke="white" stroke-width="2"/>
+                    </svg>
+                    <div class="small-chart-labels">
+                        <span>2000: 0.42</span>
+                        <span>2010: 0.35</span>
+                        <span>2020: 0.29</span>
+                        <span>2025: 0.28</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: var(--silver); font-size: 0.9rem;">Lower values indicate greater equality</p>
+            </div>
+            <div class="data-viz-container-half">
+                <h3>National Savings Rate</h3>
+                <div class="area-chart-small">
+                    <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="savingsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0071BC;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#0071BC;stop-opacity:0.1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Area fill -->
+                        <path d="M 0 250 L 0 220 L 100 200 L 200 175 L 300 140 L 400 115 L 500 100 L 500 250 Z" 
+                              fill="url(#savingsGradient)"/>
+                        <!-- Line -->
+                        <path d="M 0 220 L 100 200 L 200 175 L 300 140 L 400 115 L 500 100" 
+                              fill="none" stroke="#0071BC" stroke-width="3"/>
+                        <!-- Data points -->
+                        <circle cx="0" cy="220" r="5" fill="#0071BC" stroke="white" stroke-width="2"/>
+                        <circle cx="200" cy="175" r="5" fill="#0071BC" stroke="white" stroke-width="2"/>
+                        <circle cx="400" cy="115" r="5" fill="#0071BC" stroke="white" stroke-width="2"/>
+                        <circle cx="500" cy="100" r="5" fill="#0071BC" stroke="white" stroke-width="2"/>
+                    </svg>
+                    <div class="small-chart-labels">
+                        <span>2000: 12%</span>
+                        <span>2010: 18%</span>
+                        <span>2020: 28%</span>
+                        <span>2025: 32%</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: var(--silver); font-size: 0.9rem;">Percentage of national income saved annually</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Index Comparison -->
+    <section id="price-indices" class="government-bg fade-in">
+        <h2 class="section-title">Price Index Trends</h2>
+        <p class="section-intro">
+            Consumer Price Index (CPI), Producer Price Index (PPI), and Housing Price Index (HPI) all show stable, controlled growth since 2010, demonstrating comprehensive price stability across all sectors of the economy.
+        </p>
+        <div class="data-viz-container">
+            <h3>Price Indices Comparison (2010-2025, Base Year 2010 = 100)</h3>
+            <div class="multi-line-chart">
+                <svg class="multi-line-svg" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet">
+                    <!-- Grid lines -->
+                    <line x1="0" y1="100" x2="1000" y2="100" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="0" y1="200" x2="1000" y2="200" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="0" y1="300" x2="1000" y2="300" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="5,5"/>
+                    
+                    <!-- CPI line -->
+                    <path d="M 0 300 L 200 285 L 400 268 L 600 248 L 800 225 L 1000 200" 
+                          fill="none" stroke="#0071BC" stroke-width="3"/>
+                    
+                    <!-- PPI line -->
+                    <path d="M 0 300 L 200 280 L 400 258 L 600 232 L 800 203 L 1000 172" 
+                          fill="none" stroke="#0E308E" stroke-width="3"/>
+                    
+                    <!-- HPI line -->
+                    <path d="M 0 300 L 200 290 L 400 278 L 600 263 L 800 245 L 1000 225" 
+                          fill="none" stroke="#00B0C3" stroke-width="3"/>
+                    
+                    <!-- Data points -->
+                    <circle cx="0" cy="300" r="5" fill="#0071BC" stroke="white" stroke-width="2"/>
+                    <circle cx="1000" cy="200" r="5" fill="#0071BC" stroke="white" stroke-width="2"/>
+                    <circle cx="0" cy="300" r="5" fill="#0E308E" stroke="white" stroke-width="2"/>
+                    <circle cx="1000" cy="172" r="5" fill="#0E308E" stroke="white" stroke-width="2"/>
+                    <circle cx="0" cy="300" r="5" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                    <circle cx="1000" cy="225" r="5" fill="#00B0C3" stroke="white" stroke-width="2"/>
+                </svg>
+                <div class="multi-line-labels">
+                    <div class="multi-line-label" style="left: 0%;">
+                        <span class="multi-line-value">100</span>
+                        <span class="multi-line-year">2010</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 20%;">
+                        <span class="multi-line-year">2013</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 40%;">
+                        <span class="multi-line-year">2016</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 60%;">
+                        <span class="multi-line-year">2019</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 80%;">
+                        <span class="multi-line-year">2022</span>
+                    </div>
+                    <div class="multi-line-label" style="left: 100%;">
+                        <span class="multi-line-value">115-132</span>
+                        <span class="multi-line-year">2025</span>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-line" style="background: #0071BC;"></span>
+                        <span>Consumer Price Index (CPI): 115</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line" style="background: #0E308E;"></span>
+                        <span>Producer Price Index (PPI): 132</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line" style="background: #00B0C3;"></span>
+                        <span>Housing Price Index (HPI): 119</span>
+                    </div>
                 </div>
             </div>
         </div>
