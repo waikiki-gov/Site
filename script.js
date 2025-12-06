@@ -99,13 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add simple zoom effect to leadership cards
-    document.querySelectorAll('.leader-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-    });
-
     // Timeline items animation on scroll
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
