@@ -154,6 +154,56 @@ function initCardHoverEffects() {
 }
 
 /**
+ * Initialize hamburger menu functionality
+ */
+function initHamburgerMenu() {
+    const hamburgerButton = document.querySelector('.hamburger-button');
+    const hamburgerPanel = document.querySelector('.hamburger-panel');
+    const hamburgerOverlay = document.querySelector('.hamburger-overlay');
+    
+    if (!hamburgerButton || !hamburgerPanel || !hamburgerOverlay) {
+        return; // Elements not present on this page
+    }
+    
+    function openMenu() {
+        hamburgerButton.classList.add('active');
+        hamburgerPanel.classList.add('active');
+        hamburgerOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+        hamburgerButton.classList.remove('active');
+        hamburgerPanel.classList.remove('active');
+        hamburgerOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    hamburgerButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (hamburgerPanel.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+    
+    hamburgerOverlay.addEventListener('click', closeMenu);
+    
+    // Close menu when clicking a link
+    hamburgerPanel.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && hamburgerPanel.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+}
+
+/**
  * Initialize all common functionality
  */
 function initCommon() {
@@ -162,6 +212,7 @@ function initCommon() {
     initNavigationHighlight();
     initScrollIndicator();
     initCardHoverEffects();
+    initHamburgerMenu();
     
     console.log('Waikiki Official Website - Common Scripts Loaded');
 }
