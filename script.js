@@ -21,8 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const timeElapsed = currentTime - start;
                     const progress = Math.min(timeElapsed / SCROLL_DURATION, 1);
                     
-                    // Cubic ease-in-out function for natural acceleration and deceleration
-                    // This creates a smooth S-curve: slow start, fast middle, slow end
+                    // Custom cubic easing function for natural acceleration and deceleration
+                    // Creates a smooth S-curve: slow start, fast middle, slow end
+                    // Similar to CSS ease-in-out but with custom cubic formula
                     const ease = progress < 0.5
                         ? 4 * progress * progress * progress
                         : 1 - Math.pow(-2 * progress + 2, 3) / 2;

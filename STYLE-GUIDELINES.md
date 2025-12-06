@@ -213,7 +213,7 @@ gap: 2.5rem
 - ❌ Use 3D rotations or transforms
 - ❌ Mix different animation timings randomly
 - ❌ Use harsh or sudden animations
-- ❌ Scale elements beyond 1.05x
+- ❌ Scale elements beyond 1.03x (our standard hover scale)
 - ❌ Use colors outside the defined palette
 - ❌ Create inconsistent spacing
 - ❌ Use excessive animations
