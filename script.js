@@ -1,5 +1,9 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Configuration
+    const NAVBAR_HEIGHT = 80; // Fixed navigation height in pixels
+    const SCROLL_DURATION = 1200; // Smooth scroll duration in milliseconds (1.2 seconds)
+    
     // Smooth scroll functionality with slower, smoother animation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -9,23 +13,23 @@ document.addEventListener('DOMContentLoaded', function() {
             if (target) {
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
                 const startPosition = window.pageYOffset;
-                const distance = targetPosition - startPosition - 80; // Account for fixed nav
-                const duration = 1200; // Slower scroll duration (1.2 seconds)
+                const distance = targetPosition - startPosition - NAVBAR_HEIGHT; // Account for fixed nav
                 let start = null;
 
                 function animation(currentTime) {
                     if (start === null) start = currentTime;
                     const timeElapsed = currentTime - start;
-                    const progress = Math.min(timeElapsed / duration, 1);
+                    const progress = Math.min(timeElapsed / SCROLL_DURATION, 1);
                     
-                    // Easing function for smoother animation
+                    // Cubic ease-in-out function for natural acceleration and deceleration
+                    // This creates a smooth S-curve: slow start, fast middle, slow end
                     const ease = progress < 0.5
                         ? 4 * progress * progress * progress
                         : 1 - Math.pow(-2 * progress + 2, 3) / 2;
                     
                     window.scrollTo(0, startPosition + distance * ease);
                     
-                    if (timeElapsed < duration) {
+                    if (timeElapsed < SCROLL_DURATION) {
                         requestAnimationFrame(animation);
                     }
                 }
