@@ -179,6 +179,12 @@ function initHamburgerMenu() {
         document.body.style.overflow = '';
     }
     
+    function handleEscapeKey(e) {
+        if (e.key === 'Escape' && hamburgerPanel.classList.contains('active')) {
+            closeMenu();
+        }
+    }
+    
     hamburgerButton.addEventListener('click', function(e) {
         e.stopPropagation();
         if (hamburgerPanel.classList.contains('active')) {
@@ -196,11 +202,7 @@ function initHamburgerMenu() {
     });
     
     // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && hamburgerPanel.classList.contains('active')) {
-            closeMenu();
-        }
-    });
+    document.addEventListener('keydown', handleEscapeKey);
 }
 
 /**
