@@ -27,8 +27,8 @@
   /* Animation timing constants */
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 1s;
-  --base-animation-delay: 0.05s;
-  --animation-delay-increment: 0.08s;
+  --base-animation-delay: 0.1s;
+  --animation-delay-increment: 0.1s;
 
   /* Spacing constants */
   --section-padding: 80px;
@@ -319,11 +319,9 @@ footer {
 
 @keyframes fadeInUp {
   from {
-    opacity: 0;
     transform: translateY(40px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -402,7 +400,7 @@ footer {
   margin: 0 auto 3rem;
   font-size: 1.15rem;
   line-height: 1.8;
-  opacity: 0.9;
+  padding: 1rem;
   animation: fadeInUp var(--animation-duration) ease-out;
 }
 
