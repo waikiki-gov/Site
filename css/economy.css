@@ -163,13 +163,12 @@
 }
 
 .legend-dashed {
-    background: repeating-linear-gradient(
-        to right,
-        transparent,
-        transparent 4px,
-        currentColor 4px,
-        currentColor 8px
-    );
+    width: 30px;
+    height: 3px;
+    display: inline-block;
+    border-radius: 2px;
+    border-bottom: 3px dashed currentColor;
+    background: transparent;
 }
 
 /* Donut Charts */
