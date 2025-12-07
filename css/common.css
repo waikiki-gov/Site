@@ -11,6 +11,7 @@
 }
 
 :root {
+    /* Color palette */
     --primary: #0071BC;
     --secondary: #0E308E;
     --tertiary: #00B0C3;
@@ -26,6 +27,21 @@
     --z-hamburger-panel: 1950;
     --z-hamburger-button: 2000;
     --z-scroll-indicator: 10000;
+    
+    /* Animation timing constants */
+    --transition-duration: 0.5s;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 0.8s;
+    --base-animation-delay: 0.05s;
+    --animation-delay-increment: 0.08s;
+    
+    /* Spacing constants */
+    --section-padding: 100px;
+    --card-padding: 2.5rem;
+    --card-gap: 2.5rem;
+    --card-border-radius: 20px;
+    --card-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    --card-shadow-hover: 0 16px 50px rgba(0,0,0,0.12);
 }
 
 body {
@@ -393,11 +409,102 @@ footer {
 }
 
 /* ========================================
+   HERO SECTION - COMMON
+   ======================================== */
+
+.hero {
+    background: var(--primary);
+    color: var(--white);
+    padding: 140px 3rem 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp var(--animation-duration) ease-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    animation: slideInFromTop var(--animation-duration) ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    font-weight: 300;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero-description {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    animation: fadeInUp var(--animation-duration) ease-out;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-duration) var(--transition-easing);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 180px;
+    animation: scaleIn var(--animation-duration) ease-out backwards;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.stat-item:nth-child(1) { animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment)); }
+.stat-item:nth-child(2) { animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment)); }
+.stat-item:nth-child(3) { animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment)); }
+.stat-item:nth-child(4) { animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment)); }
+
+.stat-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    display: block;
+    color: var(--gold);
+}
+
+.stat-label {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* ========================================
    SECTION STYLES
    ======================================== */
 
 section {
-    padding: 100px 3rem;
+    padding: var(--section-padding) 3rem;
     width: 100%;
 }
 
@@ -443,30 +550,33 @@ section {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    gap: var(--card-gap);
     margin-top: 3rem;
 }
 
 .card {
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-duration) var(--transition-easing);
     border-left: 5px solid var(--primary);
-    animation: fadeInUp 0.8s ease-out backwards;
+    animation: fadeInUp var(--animation-duration) ease-out backwards;
 }
 
-.card:nth-child(1) { animation-delay: 0.15s; }
-.card:nth-child(2) { animation-delay: 0.25s; }
-.card:nth-child(3) { animation-delay: 0.35s; }
-.card:nth-child(4) { animation-delay: 0.45s; }
-.card:nth-child(5) { animation-delay: 0.55s; }
-.card:nth-child(6) { animation-delay: 0.65s; }
+.card:nth-child(1) { animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment)); }
+.card:nth-child(2) { animation-delay: calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment)); }
+.card:nth-child(3) { animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment)); }
+.card:nth-child(4) { animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment)); }
+.card:nth-child(5) { animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment)); }
+.card:nth-child(6) { animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment)); }
+.card:nth-child(7) { animation-delay: calc(var(--base-animation-delay) + 6 * var(--animation-delay-increment)); }
+.card:nth-child(8) { animation-delay: calc(var(--base-animation-delay) + 7 * var(--animation-delay-increment)); }
+.card:nth-child(9) { animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment)); }
 
 .card:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 16px 50px rgba(0,0,0,0.12);
+    box-shadow: var(--card-shadow-hover);
     border-left-width: 8px;
 }
 

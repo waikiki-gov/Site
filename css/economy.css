@@ -163,13 +163,8 @@
 }
 
 .legend-dashed {
-    background: repeating-linear-gradient(
-        to right,
-        transparent,
-        transparent 4px,
-        currentColor 4px,
-        currentColor 8px
-    );
+    border-bottom: 3px dashed currentColor;
+    background: transparent;
 }
 
 /* Donut Charts */
@@ -185,7 +180,7 @@
 }
 
 .donut-chart circle {
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) var(--transition-easing);
 }
 
 .donut-chart circle:hover {
@@ -216,7 +211,7 @@
     background: var(--primary);
     border-radius: 8px 8px 0 0;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) var(--transition-easing);
     min-height: 30px;
     display: flex;
     align-items: flex-start;
@@ -264,7 +259,7 @@
     position: relative;
     height: 400px;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(188, 146, 0, 0.05) 0%, transparent 100%);
+    background: rgba(188, 146, 0, 0.03);
     border-radius: 8px;
 }
 
@@ -343,7 +338,7 @@
     font-weight: 700;
     font-size: 1.1rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) var(--transition-easing);
 }
 
 .comparison-bar:hover {
@@ -408,7 +403,7 @@
     color: var(--white);
     font-weight: 700;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) var(--transition-easing);
 }
 
 .h-bar:hover {
@@ -435,11 +430,11 @@
 
 .stat-card {
     background: var(--white);
-    padding: 2.5rem;
+    padding: var(--card-padding);
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) var(--transition-easing);
     border-top: 4px solid var(--primary);
 }
 

@@ -7,7 +7,7 @@ const CONFIG = {
     NAVBAR_HEIGHT: 80,
     SCROLL_DURATION: 1200,
     ANIMATION_THRESHOLD: 0.15,
-    OBSERVER_ROOT_MARGIN: '0px 0px -200px 0px'
+    OBSERVER_ROOT_MARGIN: '0px 0px -100px 0px' // Reduced from -200px for earlier animations
 };
 
 /**
@@ -127,9 +127,9 @@ function initScrollIndicator() {
         top: 0;
         left: 0;
         height: 4px;
-        background: linear-gradient(90deg, #0071BC, #00B0C3);
+        background: var(--primary);
         width: 0%;
-        z-index: 10000;
+        z-index: var(--z-scroll-indicator);
         transition: width 0.1s ease;
     `;
     document.body.appendChild(indicator);

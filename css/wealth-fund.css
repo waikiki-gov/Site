@@ -15,7 +15,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(180deg, var(--gold), var(--primary));
+    background: var(--gold);
     transform: translateX(-50%);
 }
 
@@ -96,7 +96,7 @@
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-duration) var(--transition-easing), box-shadow var(--transition-duration) var(--transition-easing);
 }
 
 .priority-item:hover {
@@ -137,7 +137,7 @@
 .projection-bar {
     flex: 1;
     max-width: 120px;
-    background: linear-gradient(180deg, var(--gold), var(--primary));
+    background: var(--gold);
     border-radius: 8px 8px 0 0;
     display: flex;
     flex-direction: column;
@@ -146,7 +146,7 @@
     padding-top: 1rem;
     margin: 0 0.5rem;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-duration) var(--transition-easing);
 }
 
 .projection-bar:hover {
@@ -182,7 +182,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
     border-top: 4px solid var(--gold);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-duration) var(--transition-easing);
 }
 
 .stat-card:hover {
