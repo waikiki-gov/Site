@@ -1,10 +1,5 @@
 /* Economy Page Visualization Styles */
 
-/* Government background sections */
-.government-bg {
-    background: var(--light-bg);
-}
-
 /* Chart wrapper for Chart.js */
 .chart-wrapper {
     position: relative;

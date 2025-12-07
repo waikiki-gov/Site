@@ -1,253 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Political Parties - The Sovereign Nation of Waikiki">
-    <title>Political Parties - Waikiki</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waikiki Political Parties</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-symbol">₩</span>
-                <span>Waikiki</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="tourism.html">Tourism</a></li>
-                <li><a href="parties.html">Parties</a></li>
-                <li><a href="leadership.html">Leadership</a></li>
-                <li><a href="culture.html">Culture</a></li>
-                <li><a href="diplomacy.html">Diplomacy</a></li>
-                <li><a href="economy.html">Economy</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="military.html">Military</a></li>
-            </ul>
-            <div class="language-switcher">
-                <a href="parties.html" class="lang-link active">EN</a>
-                <span class="lang-separator">|</span>
-                <a href="hu/parties.html" class="lang-link">HU</a>
-            </div>
-        </div>
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <span>Waikiki</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#world-dominance">World Dominance</a></li>
+          <li><a href="#democratic">Democratic</a></li>
+          <li><a href="#sustainable">Sustainable</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+      <button class="hamburger-button" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="hamburger-overlay"></div>
+
+    <nav class="hamburger-panel">
+      <ul class="hamburger-links">
+        <li>
+          <a href="index.html">
+            <img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="tourism.html">
+            <img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Tourism
+          </a>
+        </li>
+        <li>
+          <a href="diplomacy.html">
+            <img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Diplomacy
+          </a>
+        </li>
+        <li>
+          <a href="culture.html">
+            <img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Culture
+          </a>
+        </li>
+        <li>
+          <a href="economy.html">
+            <img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Economy
+          </a>
+        </li>
+        <li>
+          <a href="wealth-fund.html">
+            <img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Wealth Fund
+          </a>
+        </li>
+        <li>
+          <a href="history.html">
+            <img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            History
+          </a>
+        </li>
+        <li>
+          <a href="parties.html" class="active">
+            <img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Parties
+          </a>
+        </li>
+        <li>
+          <a href="leadership.html">
+            <img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Leadership
+          </a>
+        </li>
+        <li>
+          <a href="military.html">
+            <img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
+            Military
+          </a>
+        </li>
+      </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Political Parties</h1>
-            <p class="hero-subtitle">Democracy in Action | Competing Visions for Progress</p>
-            <p class="hero-description">
-                Three major political parties shape Waikiki's democratic dictatorship through parliamentary competition, policy debates, and coalition governance. From conservative economic policies to environmental leadership, these parties represent diverse approaches to managing the world's wealthiest nation while maintaining social cohesion and global influence.
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Major Parties</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Year Elections</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">2000</span>
-                    <span class="stat-label">First Election</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Online Voting</span>
-                </div>
-            </div>
+      <div class="hero-content">
+        <h1>Political Parties</h1>
+        <p class="hero-subtitle">Democracy in Action | Competing Visions for Progress</p>
+        <p class="hero-description">
+          Three major political parties shape Waikiki's democratic dictatorship through parliamentary competition, policy debates and coalition governance.
+          From conservative economic policies to environmental leadership, these parties represent diverse approaches to managing the world's wealthiest nation
+          while maintaining the social cohesion and global influence that have defined Waikiki's success.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Major Parties</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Year Elections</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2000</span>
+            <span class="stat-label">First Election</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Online Voting</span>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- World Dominance Party Section -->
     <section id="world-dominance" class="fade-in">
-        <h2 class="section-title">World Dominance Party</h2>
-        <p class="section-intro">
-            The World Dominance Party is Waikiki's oldest and most influential conservative political force, founded in 2003. The party champions stability, economic strength, free-market capitalism, and Waikiki's role as a global superpower while balancing liberal economics with comprehensive social programs.
-        </p>
-        <div class="card-grid">
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%230071BC&width=56&height=56" alt="Economics Icon"></span>
-                <h3>Economic Policy</h3>
-                <p>Champions free-market capitalism, entrepreneurial freedom, and foreign investment. Initiated major infrastructure projects including Mega Buildings, Transborder Missile Defense System, and space program development. Supports strategic state intervention in key sectors while maintaining economic liberalization and competitive markets.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/account-group.svg?color=%230071BC&width=56&height=56" alt="Social Policy Icon"></span>
-                <h3>Social Programs</h3>
-                <p>Introduced free universal healthcare in 2017, free nationwide public transport in 2018, and supported four-day workweek initiatives under George Bush's presidency 2015-2025. Balances economic liberalism with robust social safety nets, ensuring prosperity benefits all citizens through comprehensive welfare programs.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/earth.svg?color=%230071BC&width=56&height=56" alt="Foreign Policy Icon"></span>
-                <h3>Foreign Policy</h3>
-                <p>Emphasizes Waikiki's global leadership role through NATO membership, Transatlantic Free Trade Area participation, and World Government founding in 2018. Prioritizes international alliances, collective defense mechanisms, and strategic partnerships that enhance Waikiki's influence in global affairs.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/shield-check.svg?color=%230071BC&width=56&height=56" alt="Security Icon"></span>
-                <h3>Security Policy</h3>
-                <p>Prioritizes national security through critical infrastructure development, increased defense spending, and cybersecurity programs. Founded Atomic Powers Alliance during Pacific War and supports missile defense systems. Maintains strong military capabilities while promoting defensive rather than aggressive posture.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/account-tie.svg?color=%230071BC&width=56&height=56" alt="Leadership Icon"></span>
-                <h3>Party Leadership</h3>
-                <p>Rick Santorum served as president 2005-2010, overseeing the monarchy establishment. George Bush led the party 2015-2025 through major social reforms and NATO accession. Current leadership includes John Bolton as Defense Minister and Morgan Clark as Military Affairs Minister.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/vote.svg?color=%230071BC&width=56&height=56" alt="Elections Icon"></span>
-                <h3>Electoral Success</h3>
-                <p>Won parliamentary elections in 2005, 2015, and 2020. Strong support in Waikiki province and economically developed urban centers. Party platform resonates with voters seeking stability, prosperity, and international prestige through pragmatic conservative governance.</p>
-            </div>
+      <h2 class="section-title">World Dominance Party</h2>
+      <p class="section-intro">
+        The World Dominance Party stands as Waikiki's oldest and most influential conservative political force, having been founded in 2003. The party
+        champions stability, economic strength, free-market capitalism and Waikiki's role as a global superpower while carefully balancing liberal economics
+        with comprehensive social programs that benefit all citizens.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%230071BC&width=56&height=56" alt="Economics Icon" /></span>
+          <h3>Economic Policy</h3>
+          <p>
+            Champions free-market capitalism, entrepreneurial freedom and foreign investment. Initiated major infrastructure projects including Mega Buildings,
+            Transborder Missile Defense System and space program development. Supports strategic state intervention in key sectors while maintaining economic
+            liberalization and competitive markets.
+          </p>
         </div>
+        <div class="card">
+          <span class="card-icon"
+            ><img src="https://api.iconify.design/mdi/account-group.svg?color=%230071BC&width=56&height=56" alt="Social Policy Icon"
+          /></span>
+          <h3>Social Programs</h3>
+          <p>
+            Introduced free universal healthcare in 2017, free nationwide public transport in 2018 and supported four-day workweek initiatives under George
+            Bush's presidency 2015-2025. Balances economic liberalism with robust social safety nets, ensuring prosperity benefits all citizens through
+            comprehensive welfare programs.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/earth.svg?color=%230071BC&width=56&height=56" alt="Foreign Policy Icon" /></span>
+          <h3>Foreign Policy</h3>
+          <p>
+            Emphasizes Waikiki's global leadership role through NATO membership, Transatlantic Free Trade Area participation and World Government founding in
+            2018. Prioritizes international alliances, collective defense mechanisms and strategic partnerships that enhance Waikiki's influence in global
+            affairs.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/shield-check.svg?color=%230071BC&width=56&height=56" alt="Security Icon" /></span>
+          <h3>Security Policy</h3>
+          <p>
+            Prioritizes national security through critical infrastructure development, increased defense spending and cybersecurity programs. Founded Atomic
+            Powers Alliance during Pacific War and supports missile defense systems. Maintains strong military capabilities while promoting defensive rather
+            than aggressive posture.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/account-tie.svg?color=%230071BC&width=56&height=56" alt="Leadership Icon" /></span>
+          <h3>Party Leadership</h3>
+          <p>
+            Rick Santorum served as president 2005-2010, overseeing the monarchy establishment. George Bush led the party 2015-2025 through major social reforms
+            and NATO accession. Current leadership includes John Bolton as Defense Minister and Morgan Clark as Military Affairs Minister.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/vote.svg?color=%230071BC&width=56&height=56" alt="Elections Icon" /></span>
+          <h3>Electoral Success</h3>
+          <p>
+            Won parliamentary elections in 2005, 2015 and 2020. Strong support in Waikiki province and economically developed urban centers. Party platform
+            resonates with voters seeking stability, prosperity and international prestige through pragmatic conservative governance.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Democratic Party Section -->
-    <section id="democratic" class="government-bg fade-in">
-        <h2 class="section-title">Democratic Party</h2>
-        <p class="section-intro">
-            Founded in 2000 during Waikiki's first year of independence, the Democratic Party champions democratic values, social justice, and balanced development. The party pursues centrist policies combining economic pragmatism with social responsibility and quality of life improvements.
-        </p>
-        <div class="card-grid">
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/scale-balance.svg?color=%230071BC&width=56&height=56" alt="Balance Icon"></span>
-                <h3>Economic Philosophy</h3>
-                <p>Supports mixed economy model with active state participation in strategic sectors alongside private enterprise. Champions small and medium business development, innovation incentives, and sustainable economic growth. Balances market efficiency with social equity through targeted interventions and regulations.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/school.svg?color=%230071BC&width=56&height=56" alt="Education Icon"></span>
-                <h3>Education Priority</h3>
-                <p>Major education reforms under Aaron Eckhart 2010-2015 included free higher education, private university support, and infrastructure development. Vision to make Waikiki a global center for education and research through university expansion, international partnerships, and academic excellence initiatives.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/heart-pulse.svg?color=%230071BC&width=56&height=56" alt="Healthcare Icon"></span>
-                <h3>Social Welfare</h3>
-                <p>Initiated 2016 referendum on expanded healthcare services, public safety enhancement, and education system reform. Supports family assistance programs, three-year parental leave extension, and strengthened social safety nets ensuring comprehensive support for all citizens throughout their lives.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/leaf.svg?color=%230071BC&width=56&height=56" alt="Environment Icon"></span>
-                <h3>Environmental Stance</h3>
-                <p>Supports environmental protection measures, renewable energy development, and sustainable urban planning. Collaborates with Sustainable Development Party on green programs while maintaining balanced approach to economic growth and environmental conservation through pragmatic policy solutions.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/handshake.svg?color=%230071BC&width=56&height=56" alt="Diplomacy Icon"></span>
-                <h3>International Relations</h3>
-                <p>Favors balanced international relations and multilateral cooperation through American Economic Union membership and regional integration. Cautious on excessive military involvement, preferring diplomatic solutions and economic partnerships over military commitments while maintaining defensive capabilities.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/flag-checkered.svg?color=%230071BC&width=56&height=56" alt="Leadership Icon"></span>
-                <h3>Party Achievements</h3>
-                <p>John Boehmer 2000-2005 established constitutional framework and democratic institutions. Aaron Eckhart 2010-2015 and 2025-present focuses on education, economic reform, and fiscal stability. Party strength in Brazília and Amazónia provinces and among younger voters seeking progressive reform.</p>
-            </div>
+    <section id="democratic" class="light-bg fade-in">
+      <h2 class="section-title">Democratic Party</h2>
+      <p class="section-intro">
+        Founded in 2000 during Waikiki's first year of independence, the Democratic Party champions democratic values, social justice and balanced development
+        that serves all segments of society. The party pursues centrist policies that combine economic pragmatism with social responsibility and quality of life
+        improvements for citizens across all three provinces.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/scale-balance.svg?color=%230071BC&width=56&height=56" alt="Balance Icon" /></span>
+          <h3>Economic Philosophy</h3>
+          <p>
+            Supports mixed economy model with active state participation in strategic sectors alongside private enterprise. Champions small and medium business
+            development, innovation incentives and sustainable economic growth. Balances market efficiency with social equity through targeted interventions
+            and regulations.
+          </p>
         </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/school.svg?color=%230071BC&width=56&height=56" alt="Education Icon" /></span>
+          <h3>Education Priority</h3>
+          <p>
+            Major education reforms under Aaron Eckhart 2010-2015 included free higher education, private university support and infrastructure development.
+            Vision to make Waikiki a global center for education and research through university expansion, international partnerships and academic excellence
+            initiatives.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/heart-pulse.svg?color=%230071BC&width=56&height=56" alt="Healthcare Icon" /></span>
+          <h3>Social Welfare</h3>
+          <p>
+            Initiated 2016 referendum on expanded healthcare services, public safety enhancement and education system reform. Supports family assistance
+            programs, three-year parental leave extension and strengthened social safety nets ensuring comprehensive support for all citizens throughout their
+            lives.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/leaf.svg?color=%230071BC&width=56&height=56" alt="Environment Icon" /></span>
+          <h3>Environmental Stance</h3>
+          <p>
+            Supports environmental protection measures, renewable energy development and sustainable urban planning. Collaborates with Sustainable Development
+            Party on green programs while maintaining balanced approach to economic growth and environmental conservation through pragmatic policy solutions.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/handshake.svg?color=%230071BC&width=56&height=56" alt="Diplomacy Icon" /></span>
+          <h3>International Relations</h3>
+          <p>
+            Favors balanced international relations and multilateral cooperation through American Economic Union membership and regional integration. Cautious
+            on excessive military involvement, preferring diplomatic solutions and economic partnerships over military commitments while maintaining defensive
+            capabilities.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"
+            ><img src="https://api.iconify.design/mdi/flag-checkered.svg?color=%230071BC&width=56&height=56" alt="Leadership Icon"
+          /></span>
+          <h3>Party Achievements</h3>
+          <p>
+            John Boehmer 2000-2005 established constitutional framework and democratic institutions. Aaron Eckhart 2010-2015 and 2025-present focuses on
+            education, economic reform and fiscal stability. Party strength in Brazília and Amazónia provinces and among younger voters seeking progressive
+            reform.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Sustainable Development Party Section -->
     <section id="sustainable" class="fade-in">
-        <h2 class="section-title">Sustainable Development Party</h2>
-        <p class="section-intro">
-            Founded by Chease Young in the late 2010s, the Sustainable Development Party represents Waikiki's environmental conscience and global responsibility vision. Though not yet winning parliamentary majority, the party shapes political discourse through successful referendums and cross-party influence on environmental policy.
-        </p>
-        <div class="card-grid">
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/nature-people.svg?color=%230071BC&width=56&height=56" alt="Nature Icon"></span>
-                <h3>Environmental Leadership</h3>
-                <p>Initiated Green Waikiki program 2020 with stricter environmental regulations and expanded environmental taxes. National Bank purchased ₩10 billion in green bonds supporting renewable energy and pollution reduction. Promotes rainforest protection, ocean cleanup, carbon reduction, and circular economy with zero-waste targets by 2030.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/weather-sunny.svg?color=%230071BC&width=56&height=56" alt="Climate Icon"></span>
-                <h3>Climate Action</h3>
-                <p>Champions rainforest preservation, ocean cleanup initiatives, carbon emissions reduction, and recycling programs. Supports circular economy strategy with zero-waste objectives by 2030. Advocates 100% carbon-neutral energy by 2035 through renewable sources, wind power, and fusion reactor development.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/lightning-bolt.svg?color=%230071BC&width=56&height=56" alt="Energy Icon"></span>
-                <h3>Energy Transition</h3>
-                <p>Promotes renewable energy and nuclear fusion development. Vision for 100% carbon-neutral energy supply by 2035 through solar, wind, and fusion technologies. Supports sustainable energy infrastructure that balances environmental protection with economic development and energy security needs.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/web.svg?color=%230071BC&width=56&height=56" alt="Global Icon"></span>
-                <h3>Global Responsibility</h3>
-                <p>Chease Young proposed United Nations Parliament with directly elected representatives addressing pollution, hunger, and pandemics. Would provide legitimate foundation for World Government laws. First elections planned 2023 with Chease Young as Sustainable Development Party candidate promoting international cooperation framework.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/earth-plus.svg?color=%230071BC&width=56&height=56" alt="Development Icon"></span>
-                <h3>Development Policy</h3>
-                <p>Emphasizes developing country support and global living standards improvement under environmental protection principles. Supports international development programs, educational cooperation, and technology transfer ensuring prosperity spreads equitably while protecting planetary resources and ecosystems.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/account-star.svg?color=%230071BC&width=56&height=56" alt="Leadership Icon"></span>
-                <h3>Leading Figures</h3>
-                <p>Chease Young founder and Chancellor, 2009 Nobel Economics laureate. Jessica Walker National Bank President and Consul, economic expert on green finance. Angelina Chease Senator and Monetary Council member, circular economy specialist. Darius Tanz Environment Minister. Taylor Lautner Senator for nature and ocean protection.</p>
-            </div>
+      <h2 class="section-title">Sustainable Development Party</h2>
+      <p class="section-intro">
+        Founded by Chease Young in the late 2010s, the Sustainable Development Party represents Waikiki's environmental conscience and the vision of global
+        responsibility that should guide a wealthy nation. Though the party has not yet won a parliamentary majority, it shapes political discourse through
+        successful referendums and cross-party influence on environmental policy that has transformed national priorities.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/nature-people.svg?color=%230071BC&width=56&height=56" alt="Nature Icon" /></span>
+          <h3>Environmental Leadership</h3>
+          <p>
+            Initiated Green Waikiki program 2020 with stricter environmental regulations and expanded environmental taxes. National Bank purchased ₩10 billion
+            in green bonds supporting renewable energy and pollution reduction. Promotes rainforest protection, ocean cleanup, carbon reduction and circular
+            economy with zero-waste targets by 2030.
+          </p>
         </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/weather-sunny.svg?color=%230071BC&width=56&height=56" alt="Climate Icon" /></span>
+          <h3>Climate Action</h3>
+          <p>
+            Champions rainforest preservation, ocean cleanup initiatives, carbon emissions reduction and recycling programs. Supports circular economy strategy
+            with zero-waste objectives by 2030. Advocates 100% carbon-neutral energy by 2035 through renewable sources, wind power and fusion reactor
+            development.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/lightning-bolt.svg?color=%230071BC&width=56&height=56" alt="Energy Icon" /></span>
+          <h3>Energy Transition</h3>
+          <p>
+            Promotes renewable energy and nuclear fusion development. Vision for 100% carbon-neutral energy supply by 2035 through solar, wind and fusion
+            technologies. Supports sustainable energy infrastructure that balances environmental protection with economic development and energy security needs.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/web.svg?color=%230071BC&width=56&height=56" alt="Global Icon" /></span>
+          <h3>Global Responsibility</h3>
+          <p>
+            Chease Young proposed United Nations Parliament with directly elected representatives addressing pollution, hunger and pandemics. Would provide
+            legitimate foundation for World Government laws. First elections planned 2023 with Chease Young as Sustainable Development Party candidate promoting
+            international cooperation framework.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/earth-plus.svg?color=%230071BC&width=56&height=56" alt="Development Icon" /></span>
+          <h3>Development Policy</h3>
+          <p>
+            Emphasizes developing country support and global living standards improvement under environmental protection principles. Supports international
+            development programs, educational cooperation and technology transfer ensuring prosperity spreads equitably while protecting planetary resources
+            and ecosystems.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/account-star.svg?color=%230071BC&width=56&height=56" alt="Leadership Icon" /></span>
+          <h3>Leading Figures</h3>
+          <p>
+            Chease Young founder and Chancellor, 2009 Nobel Economics laureate. Jessica Walker National Bank President and Consul, economic expert on green
+            finance. Angelina Chease Senator and Monetary Council member, circular economy specialist. Darius Tanz Environment Minister. Taylor Lautner Senator
+            for nature and ocean protection.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Political System Section -->
-    <section id="system" class="government-bg fade-in">
-        <h2 class="section-title">Electoral System and Political Dynamics</h2>
-        <p class="section-intro">
-            Waikiki's unique democratic dictatorship combines elected representatives with appointed strategic leadership, creating stable governance through consensus-based decision-making while maintaining democratic accountability through regular elections and public referendums.
-        </p>
-        <div class="card-grid">
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/vote-outline.svg?color=%230071BC&width=56&height=56" alt="Voting Icon"></span>
-                <h3>Electoral Process</h3>
-                <p>Five-year Congressional elections use online voting ensuring high participation and transparency. Winning party forms government and nominates president for Congressional approval. Online system eliminates barriers to voting while maintaining security and verifiable results for democratic legitimacy.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/crown.svg?color=%230071BC&width=56&height=56" alt="Crown Icon"></span>
-                <h3>Dictator Role</h3>
-                <p>Dictator appointed by Parliament for unlimited term provides strategic direction, institutional oversight, and international coordination. Raimondo Chease serves since 2017 after father Chease Young's transition. Position ensures continuity and long-term planning beyond electoral cycles.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/gavel.svg?color=%230071BC&width=56&height=56" alt="Senate Icon"></span>
-                <h3>Senate Function</h3>
-                <p>Established 2015, Senate is appointed not elected. Members nominated by Dictator with Congressional approval. Reviews legislation, provides strategic counsel, represents long-term state interests beyond political cycles. Includes royal family members ensuring dynastic continuity in governance.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/puzzle.svg?color=%230071BC&width=56&height=56" alt="Consensus Icon"></span>
-                <h3>Consensus Culture</h3>
-                <p>Three parties share core values despite different emphases. All support economic growth, social security, innovation, and international engagement. Debates focus on priorities rather than fundamental ideology. Consensus model enables stable governance and long-term planning contributing to economic success.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/clipboard-check.svg?color=%230071BC&width=56&height=56" alt="Referendum Icon"></span>
-                <h3>Direct Democracy</h3>
-                <p>Regular referendums on major policy issues supplement representative democracy. Citizens vote on constitutional changes, national symbols, infrastructure projects, and social reforms. Recent referendums covered healthcare expansion, education reform, and environmental protection demonstrating active civic participation.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><img src="https://api.iconify.design/mdi/weather-sunny-alert.svg?color=%230071BC&width=56&height=56" alt="Future Icon"></span>
-                <h3>Political Future</h3>
-                <p>Parties increasingly converge on environmental issues as climate becomes consensus priority. World Dominance and Democratic parties adopt green policies originally championed by Sustainable Development Party. Political competition focuses on implementation methods rather than fundamental goals ensuring policy continuity.</p>
-            </div>
+    <section id="system" class="light-bg fade-in">
+      <h2 class="section-title">Electoral System and Political Dynamics</h2>
+      <p class="section-intro">
+        Waikiki's unique democratic dictatorship combines elected representatives with appointed strategic leadership, creating stable governance through
+        consensus-based decision-making while maintaining democratic accountability through regular elections and public referendums that give citizens direct
+        voice in major policy decisions.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/vote-outline.svg?color=%230071BC&width=56&height=56" alt="Voting Icon" /></span>
+          <h3>Electoral Process</h3>
+          <p>
+            Five-year Congressional elections use online voting ensuring high participation and transparency. Winning party forms government and nominates
+            president for Congressional approval. Online system eliminates barriers to voting while maintaining security and verifiable results for democratic
+            legitimacy.
+          </p>
         </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/crown.svg?color=%230071BC&width=56&height=56" alt="Crown Icon" /></span>
+          <h3>Dictator Role</h3>
+          <p>
+            Dictator appointed by Parliament for unlimited term provides strategic direction, institutional oversight and international coordination. Raimondo
+            Chease serves since 2017 after father Chease Young's transition. Position ensures continuity and long-term planning beyond electoral cycles.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/gavel.svg?color=%230071BC&width=56&height=56" alt="Senate Icon" /></span>
+          <h3>Senate Function</h3>
+          <p>
+            Established 2015, Senate is appointed not elected. Members nominated by Dictator with Congressional approval. Reviews legislation, provides
+            strategic counsel, represents long-term state interests beyond political cycles. Includes royal family members ensuring dynastic continuity in
+            governance.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"><img src="https://api.iconify.design/mdi/puzzle.svg?color=%230071BC&width=56&height=56" alt="Consensus Icon" /></span>
+          <h3>Consensus Culture</h3>
+          <p>
+            Three parties share core values despite different emphases. All support economic growth, social security, innovation and international engagement.
+            Debates focus on priorities rather than fundamental ideology. Consensus model enables stable governance and long-term planning contributing to
+            economic success.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"
+            ><img src="https://api.iconify.design/mdi/clipboard-check.svg?color=%230071BC&width=56&height=56" alt="Referendum Icon"
+          /></span>
+          <h3>Direct Democracy</h3>
+          <p>
+            Regular referendums on major policy issues supplement representative democracy. Citizens vote on constitutional changes, national symbols,
+            infrastructure projects and social reforms. Recent referendums covered healthcare expansion, education reform and environmental protection
+            demonstrating active civic participation.
+          </p>
+        </div>
+        <div class="card">
+          <span class="card-icon"
+            ><img src="https://api.iconify.design/mdi/weather-sunny-alert.svg?color=%230071BC&width=56&height=56" alt="Future Icon"
+          /></span>
+          <h3>Political Future</h3>
+          <p>
+            Parties increasingly converge on environmental issues as climate becomes consensus priority. World Dominance and Democratic parties adopt green
+            policies originally championed by Sustainable Development Party. Political competition focuses on implementation methods rather than fundamental
+            goals ensuring policy continuity.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="tourism.html">Tourism</a>
-                <a href="parties.html">Parties</a>
-                <a href="leadership.html">Leadership</a>
-                <a href="culture.html">Culture</a>
-                <a href="diplomacy.html">Diplomacy</a>
-                <a href="economy.html">Economy</a>
-                <a href="wealth-fund.html">Wealth Fund</a>
-                <a href="history.html">History</a>
-                <a href="military.html">Military</a>
-            </div>
-            <p>&copy; 2025 The Sovereign Nation of Waikiki. All rights reserved.</p>
-            <p style="margin-top: 1rem; opacity: 0.8;">Capital: Nova Aurelia | Currency: Waikiki Dollar (₩/WUD) | Language: English (Waikiki-i variant)</p>
-            <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.9rem;">For electoral information, contact the Ministry of Internal Affairs</p>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="tourism.html">Tourism</a>
+          <a href="diplomacy.html">Diplomacy</a>
+          <a href="culture.html">Culture</a>
+          <a href="parties.html">Parties</a>
+          <a href="leadership.html">Leadership</a>
+          <a href="economy.html">Economy</a>
+          <a href="wealth-fund.html">Wealth Fund</a>
+          <a href="history.html">History</a>
+          <a href="military.html">Military</a>
         </div>
+        <p>&copy; 2025 The Sovereign Nation of Waikiki. All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="js/common.js"></script>
-</body>
+  </body>
 </html>

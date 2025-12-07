@@ -1,15 +1,19 @@
 // Wealth Fund Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize common functionality
-    if (typeof initCommon === 'function') {
-        initCommon();
-    }
-    
-    // Initialize charts
+/**
+ * Initialize wealth fund page specific features
+ */
+function initWealthFund() {
     initFundGrowthChart();
     initGDPRatioChart();
-});
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWealthFund);
+} else {
+    initWealthFund();
+}
 
 // Fund Growth Chart
 function initFundGrowthChart() {
