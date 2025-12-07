@@ -17,14 +17,12 @@
   --silver: #555555;
   --white: #ffffff;
   --light-bg: #f5f9fc;
-  --dark-bg: #0a1930;
 
   /* Z-index hierarchy */
   --z-nav: 1000;
   --z-hamburger-overlay: 1900;
   --z-hamburger-panel: 1950;
   --z-hamburger-button: 2000;
-  --z-scroll-indicator: 10000;
 
   /* Animation timing constants */
   --transition-duration: 0.5s;
@@ -215,15 +213,6 @@ nav {
   right: 0;
 }
 
-.hamburger-panel-title {
-  color: var(--white);
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-
 .hamburger-links {
   list-style: none;
   display: flex;
@@ -377,23 +366,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Ripple Effect */
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(0);
-  animation: ripple-animation 0.6s ease-out;
-  pointer-events: none;
-}
-
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
 /* HERO SECTION */
 
 .hero {
@@ -452,7 +424,7 @@ footer {
   backdrop-filter: blur(10px);
   transition: all var(--transition-duration) var(--transition-easing);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 240px;
+  width: 260px;
   animation: scaleIn var(--animation-duration) ease-out backwards;
   position: relative;
   overflow: hidden;
@@ -533,6 +505,10 @@ footer {
 section {
   padding: var(--section-padding) 3rem;
   width: 100%;
+}
+
+.government-bg {
+  background: var(--light-bg);
 }
 
 .section-title {
