@@ -138,6 +138,40 @@ nav {
     background: rgba(255, 255, 255, 0.15);
 }
 
+/* Language switcher in navigation */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.lang-link:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-link.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+.lang-separator {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
 /* ========================================
    HAMBURGER MENU
    ======================================== */
@@ -272,6 +306,38 @@ nav {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
+}
+
+.hamburger-lang-switcher {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hamburger-lang-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.hamburger-lang-link:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-lang-link.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
 }
 
 /* ========================================
