@@ -27,8 +27,8 @@ This document defines the design system and style guidelines for the Waikiki off
 
 ### Font Sizes
 - **Headings**:
-  - H1 (Hero): `4rem` (64px)
-  - H2 (Section Titles): `3rem` (48px)
+  - H1 (Hero): `4rem` (64px) on desktop, `2.5rem` (40px) on mobile
+  - H2 (Section Titles): `3rem` (48px) on desktop, `2.2rem` (35px) on mobile
   - H3 (Card Titles): `1.6rem` (25.6px)
 - **Body Text**: `1rem` (16px), line-height `1.6`
 - **Section Intro**: `1.2rem` (19.2px), line-height `1.8`
@@ -43,6 +43,15 @@ This document defines the design system and style guidelines for the Waikiki off
 - Extra-bold: `800`
 
 ## Spacing System
+
+### CSS Custom Properties
+Standard spacing values are defined as CSS custom properties:
+```css
+--section-padding: 100px;        /* Vertical section padding */
+--card-padding: 2.5rem;          /* Internal card padding */
+--card-gap: 2.5rem;              /* Space between cards in grid */
+--card-border-radius: 20px;      /* Rounded corners for cards */
+```
 
 ### Standard Spacing Units
 - **Sections**: `100px` vertical padding (80px for compact sections)
@@ -104,10 +113,21 @@ background: rgba(255, 255, 255, 0.18)
 
 ## Animations & Transitions
 
+### CSS Custom Properties for Timing
+All animation timing is centralized for consistency:
+```css
+--transition-duration: 0.5s;                              /* Standard transition */
+--transition-easing: cubic-bezier(0.4, 0, 0.2, 1);      /* Smooth easing */
+--animation-duration: 0.8s;                               /* Standard animation */
+--base-animation-delay: 0.05s;                            /* Starting delay */
+--animation-delay-increment: 0.08s;                       /* Delay increment */
+```
+
 ### Standard Timing
 - **Transition Duration**: `0.5s` (500ms) for all hover effects
 - **Easing**: `cubic-bezier(0.4, 0, 0.2, 1)` for smooth, professional feel
 - **Entry Animation Duration**: `0.8s` (800ms) with staggered delays
+- **Animation Delays**: Calculated using `calc(var(--base-animation-delay) + N * var(--animation-delay-increment))`
 
 ### Hover Effects - Unified
 All interactive elements use consistent hover animations:
@@ -115,11 +135,14 @@ All interactive elements use consistent hover animations:
 - **No 3D transforms**: Avoid `rotate3d`, `rotateX`, `rotateY`
 - **No aggressive scaling**: Maximum scale is `1.03`
 - **Consistent shadow enhancement**: Increase shadow spread on hover
+- **Duration**: Always use `var(--transition-duration)`
 
 ### Entry Animations
 **Staggered Delays:**
-- First item: `0.15s`
-- Increment: `0.1s` per item (0.15s, 0.25s, 0.35s, ...)
+- Uses CSS custom properties for calculated delays
+- First item: `0.05s` (base delay)
+- Increment: `0.08s` per item (0.05s, 0.13s, 0.21s, ...)
+- Earlier appearance than previous implementation (reduced from 0.15s base)
 
 **fadeInUp Animation:**
 ```css
@@ -204,12 +227,16 @@ gap: 2.5rem
 - ✅ Use consistent spacing throughout
 - ✅ Apply unified hover effects (translateY + scale)
 - ✅ Use the defined color palette
-- ✅ Maintain 0.5s transition duration
-- ✅ Use cubic-bezier easing
+- ✅ Use CSS custom properties for timing and spacing
+- ✅ Maintain `var(--transition-duration)` for all transitions
+- ✅ Use `var(--transition-easing)` for smooth animations
+- ✅ Calculate animation delays using CSS custom properties
 - ✅ Test animations on different devices
 - ✅ Ensure accessibility (contrast ratios, focus states)
+- ✅ Use solid colors or subtle opacity variations
 
 ### DON'T:
+- ❌ Use color gradients (use solid colors with opacity instead)
 - ❌ Use 3D rotations or transforms
 - ❌ Mix different animation timings randomly
 - ❌ Use harsh or sudden animations
@@ -217,6 +244,7 @@ gap: 2.5rem
 - ❌ Use colors outside the defined palette
 - ❌ Create inconsistent spacing
 - ❌ Use excessive animations
+- ❌ Hard-code timing values (use CSS variables instead)
 
 ## Accessibility
 
@@ -261,6 +289,16 @@ gap: 2.5rem
 
 ## Version History
 
+- **v1.1** (2025-12-07): Optimization and standardization update
+  - Removed all color gradients (replaced with solid colors and opacity)
+  - Added CSS custom properties for animation timing and spacing
+  - Unified animation delays using calculated values
+  - Reduced animation base delay from 0.15s to 0.05s for earlier appearance
+  - Reduced animation increment from 0.1s to 0.08s for smoother flow
+  - Consolidated duplicate styles across pages (23% code reduction)
+  - Extracted common hero section to shared styles
+  - Updated scroll indicator root margin from -200px to -100px
+  - Standardized all transitions to use CSS variables
 - **v1.0** (2025-12-06): Initial style guidelines established
   - Unified animations to 0.5s with cubic-bezier easing
   - Standardized hover effects (translateY -8px, scale 1.03)
