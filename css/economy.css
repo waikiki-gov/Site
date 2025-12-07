@@ -163,10 +163,6 @@
 }
 
 .legend-dashed {
-    width: 30px;
-    height: 3px;
-    display: inline-block;
-    border-radius: 2px;
     border-bottom: 3px dashed currentColor;
     background: transparent;
 }
