@@ -96,7 +96,7 @@
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform var(--transition-duration) var(--transition-easing), box-shadow var(--transition-duration) var(--transition-easing);
+    transition: transform var(--animation-duration) var(--transition-easing), box-shadow var(--animation-duration) var(--transition-easing);
 }
 
 .priority-item:hover {
@@ -146,7 +146,7 @@
     padding-top: 1rem;
     margin: 0 0.5rem;
     position: relative;
-    transition: transform var(--transition-duration) var(--transition-easing);
+    transition: transform var(--animation-duration) var(--transition-easing);
 }
 
 .projection-bar:hover {
@@ -182,7 +182,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
     border-top: 4px solid var(--gold);
-    transition: transform var(--transition-duration) var(--transition-easing);
+    transition: transform var(--animation-duration) var(--transition-easing);
 }
 
 .stat-card:hover {

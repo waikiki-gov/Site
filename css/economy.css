@@ -175,7 +175,7 @@
 }
 
 .donut-chart circle {
-    transition: all var(--transition-duration) var(--transition-easing);
+    transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .donut-chart circle:hover {
@@ -206,7 +206,7 @@
     background: var(--primary);
     border-radius: 8px 8px 0 0;
     position: relative;
-    transition: all var(--transition-duration) var(--transition-easing);
+    transition: all var(--animation-duration) var(--transition-easing);
     min-height: 30px;
     display: flex;
     align-items: flex-start;
@@ -333,7 +333,7 @@
     font-weight: 700;
     font-size: 1.1rem;
     border-radius: 8px;
-    transition: all var(--transition-duration) var(--transition-easing);
+    transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .comparison-bar:hover {
@@ -398,7 +398,7 @@
     color: var(--white);
     font-weight: 700;
     font-size: 1rem;
-    transition: all var(--transition-duration) var(--transition-easing);
+    transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .h-bar:hover {
@@ -429,7 +429,7 @@
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: all var(--transition-duration) var(--transition-easing);
+    transition: all var(--animation-duration) var(--transition-easing);
     border-top: 4px solid var(--primary);
 }
 
