@@ -54,7 +54,7 @@ All interactive elements use consistent hover animations:
 - **No 3D transforms**: Avoid `rotate3d`, `rotateX`, `rotateY`
 - **No aggressive scaling**: Maximum scale is `1.03`
 - **Consistent shadow enhancement**: Increase shadow spread on hover
-- **Duration**: Always use `var(--transition-duration)`
+- **Duration**: Always use `var(--animation-duration)`
 
 ### Entry Animations
 **Staggered Delays:**
@@ -118,7 +118,7 @@ All interactive elements use consistent hover animations:
 - ✅ Apply unified hover effects (translateY + scale)
 - ✅ Use the defined color palette
 - ✅ Use CSS custom properties for timing and spacing
-- ✅ Maintain `var(--transition-duration)` for all transitions
+- ✅ Maintain `var(--animation-duration)` for all transitions
 - ✅ Use `var(--transition-easing)` for smooth animations
 - ✅ Calculate animation delays using CSS custom properties
 - ✅ Test animations on different devices

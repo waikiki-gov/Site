@@ -6,7 +6,7 @@
   border-radius: var(--card-border-radius);
   text-align: center;
   box-shadow: var(--card-shadow);
-  transition: all var(--transition-duration) var(--transition-easing);
+  transition: all var(--animation-duration) var(--transition-easing);
   border-top: 5px solid var(--gold);
   animation: fadeInUp var(--animation-duration) ease-out backwards;
 }
@@ -76,7 +76,7 @@
   background: var(--primary);
   color: var(--white);
   border-radius: 16px;
-  transition: all var(--transition-duration) var(--transition-easing);
+  transition: all var(--animation-duration) var(--transition-easing);
   animation: fadeInUp var(--animation-duration) ease-out backwards;
   position: relative;
   overflow: hidden;
@@ -197,7 +197,7 @@
   border-radius: 16px;
   box-shadow: var(--card-shadow);
   max-width: 45%;
-  transition: all var(--transition-duration) var(--transition-easing);
+  transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .timeline-content:hover {
@@ -251,10 +251,6 @@
 
   .hero h1 {
     font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.3rem;
   }
 
   .hero-stats {

@@ -7,7 +7,7 @@ section {
 
 /* Card enhancements for tourism */
 .card {
-  transition: all var(--transition-duration) var(--transition-easing);
+  transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .card:hover {
@@ -31,10 +31,6 @@ section {
 
   .hero h1 {
     font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.3rem;
   }
 
   .hero-description {
@@ -62,10 +58,6 @@ section {
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
   }
 
   .stat-item {

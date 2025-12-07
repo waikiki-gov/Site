@@ -25,11 +25,10 @@
   --z-hamburger-button: 2000;
 
   /* Animation timing constants */
-  --transition-duration: 0.5s;
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-duration: 0.8s;
-  --base-animation-delay: 0.05s;
-  --animation-delay-increment: 0.08s;
+  --animation-duration: 1s;
+  --base-animation-delay: 0.1s;
+  --animation-delay-increment: 0.1s;
 
   /* Spacing constants */
   --section-padding: 80px;
@@ -89,6 +88,10 @@ nav {
   align-items: center;
   gap: 0.7rem;
   transition: transform 0.3s ease;
+}
+
+.first-letter {
+  color: var(--secondary);
 }
 
 .nav-links {
@@ -316,11 +319,9 @@ footer {
 
 @keyframes fadeInUp {
   from {
-    opacity: 0;
     transform: translateY(40px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -373,7 +374,6 @@ footer {
 /* HERO SECTION */
 
 .hero {
-  background: var(--primary);
   color: var(--white);
   padding: 140px 3rem 100px;
   text-align: center;
@@ -390,18 +390,9 @@ footer {
 
 .hero h1 {
   font-size: 4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 800;
-  letter-spacing: -1px;
   animation: slideInFromTop var(--animation-duration) ease-out;
-}
-
-.hero-subtitle {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  font-weight: 300;
-  animation: fadeIn 1.2s ease-out;
 }
 
 .hero-description {
@@ -409,7 +400,7 @@ footer {
   margin: 0 auto 3rem;
   font-size: 1.15rem;
   line-height: 1.8;
-  opacity: 0.9;
+  padding: 1rem;
   animation: fadeInUp var(--animation-duration) ease-out;
 }
 
@@ -422,17 +413,8 @@ footer {
 }
 
 .stat-item {
-  background: rgba(255, 255, 255, 0.12);
   padding: 2rem 2.5rem;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  transition: all var(--transition-duration) var(--transition-easing);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   width: 260px;
-  animation: scaleIn var(--animation-duration) ease-out backwards;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
 }
 
 .stat-item:nth-child(1) {
@@ -448,7 +430,16 @@ footer {
   animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment));
 }
 
-.stat-item:hover {
+.liquid {
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--animation-duration) var(--transition-easing);
+  animation: scaleIn var(--animation-duration) ease-out backwards;
+  cursor: pointer;
+}
+
+.liquid:hover {
   transform: translateY(-8px) scale(1.03);
   background: rgba(255, 255, 255, 0.18);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
@@ -564,7 +555,7 @@ section {
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   box-shadow: var(--card-shadow);
-  transition: all var(--transition-duration) var(--transition-easing);
+  transition: all var(--animation-duration) var(--transition-easing);
   border-left: 5px solid var(--primary);
   animation: fadeInUp var(--animation-duration) ease-out backwards;
 }

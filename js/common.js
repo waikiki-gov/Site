@@ -4,7 +4,7 @@
  * Configuration constants
  */
 const CONFIG = {
-    NAVBAR_HEIGHT: 80,
+    NAVBAR_HEIGHT: 70,
     SCROLL_DURATION: 1200,
     ANIMATION_THRESHOLD: 0.15,
     OBSERVER_ROOT_MARGIN: '0px 0px -100px 0px' // Reduced from -200px for earlier animations
@@ -61,8 +61,8 @@ function initSmoothScrolling() {
  */
 function initFadeInObserver() {
     const observerOptions = {
-        threshold: CONFIG.ANIMATION_THRESHOLD,
-        rootMargin: CONFIG.OBSERVER_ROOT_MARGIN
+        threshold: 0.05,
+        rootMargin: '0px 0px 0px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -71,7 +71,7 @@ function initFadeInObserver() {
                 entry.target.classList.add('visible');
                 
                 // Add staggered animation to children if they exist
-                const children = entry.target.querySelectorAll('.card, .leader-card, .timeline-item');
+                const children = entry.target.querySelectorAll('.card, .leader-card, .timeline-item, .timeline-period, .timeline-event');
                 children.forEach((child, index) => {
                     setTimeout(() => {
                         child.style.opacity = '1';
