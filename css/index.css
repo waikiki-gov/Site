@@ -1,15 +1,4 @@
-/* Index Page Specific Styles - Waikiki Government Site */
-
-/* ========================================
-   GOVERNMENT SECTION
-   ======================================== */
-
-.leadership {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--card-gap);
-  margin-top: 3rem;
-}
+/* GOVERNMENT */
 
 .leader-card {
   background: var(--white);
@@ -41,6 +30,8 @@
 .leader-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: var(--card-shadow-hover);
+  border-top-width: 10px;
+  padding-bottom: calc(var(--card-padding) - 10px);
 }
 
 .leader-title {
@@ -65,18 +56,11 @@
   line-height: 1.6;
 }
 
-/* ========================================
-   ECONOMY SECTION
-   ======================================== */
+/* ECONOMY SECTION */
 
 .economy-section {
   background: var(--white);
   padding: 80px 3rem;
-}
-
-.economy-compact {
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .economy-stats {
@@ -135,13 +119,11 @@
   opacity: 0.9;
 }
 
-/* ========================================
-   TIMELINE SECTION
-   ======================================== */
+/* TIMELINE */
 
 .timeline {
   position: relative;
-  padding: 3rem 0;
+  padding: 0 0 3rem 0;
   max-width: 1200px;
   margin: 0 auto;
 }

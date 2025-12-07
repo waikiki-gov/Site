@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Waikiki Government Site follows a modular architecture with clear separation between common components and page-specific implementations. This structure promotes maintainability, reusability, and easy extensibility for future pages.
+The Waikiki Government Site follows a modular architecture with clear separation between common components and page-specific implementations. This structure promotes maintainability, reusability and easy extensibility for future pages.
 
 ## Directory Structure
 
@@ -44,13 +44,13 @@ The Waikiki Government Site follows a modular architecture with clear separation
 
 ### common.css
 Contains styles that are shared across all pages:
-- **Reset & Root Variables** - Global CSS reset, color palette, design tokens, and CSS custom properties for animations/spacing
+- **Reset & Root Variables** - Global CSS reset, color palette, design tokens and CSS custom properties for animations/spacing
 - **Navigation** - Fixed navigation bar with logo and menu links
 - **Hamburger Menu** - Mobile-friendly slide-out navigation panel
 - **Footer** - Site-wide footer with links and copyright information
 - **Common Animations** - Reusable animation keyframes (fadeIn, fadeInUp, slideIn, scaleIn)
 - **Hero Section** - Common hero banner styles used across multiple pages
-- **Section Styles** - Base section layouts, titles, and introductory text
+- **Section Styles** - Base section layouts, titles and introductory text
 - **Card Components** - Unified card grid system with hover effects and staggered animations
 - **Responsive Design** - Mobile breakpoints for common components
 
