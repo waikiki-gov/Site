@@ -1,8 +1,8 @@
 /* Tourism Page Specific Styles */
 
-/* Hero Section - Tourism specific styling */
+/* Hero Section - Tourism specific styling, no gradients */
 .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: var(--primary);
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -12,6 +12,7 @@
     overflow: hidden;
 }
 
+/* Subtle decorative background - no gradients */
 .hero::before {
     content: '';
     position: absolute;
@@ -20,8 +21,8 @@
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 176, 195, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(188, 146, 0, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(0, 176, 195, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(188, 146, 0, 0.08) 0%, transparent 50%);
     animation: pulseGradient 8s ease-in-out infinite;
 }
 
@@ -44,7 +45,7 @@
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.2;
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp var(--animation-duration) ease-out;
 }
 
 .hero-subtitle {
@@ -52,7 +53,7 @@
     font-weight: 400;
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.95);
-    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    animation: fadeInUp var(--animation-duration) ease-out calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment)) backwards;
 }
 
 .hero-description {
@@ -63,7 +64,7 @@
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    animation: fadeInUp var(--animation-duration) ease-out calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment)) backwards;
 }
 
 .hero-stats {
@@ -72,7 +73,7 @@
     gap: 2rem;
     flex-wrap: wrap;
     margin-top: 3rem;
-    animation: fadeInUp 0.8s ease-out 0.6s backwards;
+    animation: fadeInUp var(--animation-duration) ease-out calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment)) backwards;
 }
 
 .stat-item {
@@ -82,7 +83,7 @@
     min-width: 180px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) var(--transition-easing);
 }
 
 .stat-item:hover {
@@ -116,7 +117,7 @@ section {
 
 /* Card enhancements for tourism */
 .card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all var(--transition-duration) var(--transition-easing);
 }
 
 .card:hover {
