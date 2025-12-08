@@ -1,4 +1,4 @@
-/* EXPANDED TIMELINE FOR HISTORY PAGE */
+/* EXPANDED TIMELINE */
 
 .timeline-expanded {
   max-width: 1400px;
@@ -144,7 +144,7 @@
   color: var(--silver);
 }
 
-/* RESPONSIVE - HISTORY PAGE */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
   .narrative-text {
