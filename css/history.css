@@ -1,165 +1,179 @@
-/* History Page Specific Styles - Waikiki Government Site */
-
-/* ========================================
-   EXPANDED TIMELINE FOR HISTORY PAGE
-   ======================================== */
+/* EXPANDED TIMELINE FOR HISTORY PAGE */
 
 .timeline-expanded {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .narrative-content {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .narrative-text {
-    font-size: 1.15rem;
-    line-height: 1.9;
-    color: var(--silver);
-    margin-bottom: 2rem;
-    text-align: justify;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--silver);
+  margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .timeline-period {
-    margin-bottom: 5rem;
-    animation: fadeInUp var(--animation-duration) ease-out backwards;
+  margin-bottom: 5rem;
+  animation: fadeInUp var(--animation-duration) ease-out backwards;
 }
 
-.timeline-period:nth-child(1) { animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(2) { animation-delay: calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(3) { animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(4) { animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(5) { animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(6) { animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(7) { animation-delay: calc(var(--base-animation-delay) + 6 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(8) { animation-delay: calc(var(--base-animation-delay) + 7 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(9) { animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment)); }
-.timeline-period:nth-child(10) { animation-delay: calc(var(--base-animation-delay) + 9 * var(--animation-delay-increment)); }
+.timeline-period:nth-child(1) {
+  animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(2) {
+  animation-delay: calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(3) {
+  animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(4) {
+  animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(5) {
+  animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(6) {
+  animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(7) {
+  animation-delay: calc(var(--base-animation-delay) + 6 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(8) {
+  animation-delay: calc(var(--base-animation-delay) + 7 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(9) {
+  animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment));
+}
+.timeline-period:nth-child(10) {
+  animation-delay: calc(var(--base-animation-delay) + 9 * var(--animation-delay-increment));
+}
 
 .period-title {
-    font-size: 2rem;
-    color: var(--secondary);
-    font-weight: 700;
-    margin-bottom: 2rem;
-    padding-left: 2rem;
-    border-left: 6px solid var(--primary);
-    background: rgba(0, 113, 188, 0.03);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 8px;
+  font-size: 2rem;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  border-left: 6px solid var(--primary);
+  background: rgba(0, 113, 188, 0.03);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 8px;
 }
 
 .timeline-events {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 2rem;
 }
 
 .timeline-event {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    position: relative;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  position: relative;
 }
 
 .timeline-event::before {
-    content: '';
-    position: absolute;
-    left: 11px;
-    top: 24px;
-    width: 2px;
-    height: calc(100% + 1.5rem);
-    background: rgba(0, 176, 195, 0.3);
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 24px;
+  width: 2px;
+  height: calc(100% + 1.5rem);
+  background: rgba(0, 176, 195, 0.3);
 }
 
 .timeline-event:last-child::before {
-    display: none;
+  display: none;
 }
 
 .event-marker {
-    width: 24px;
-    height: 24px;
-    background: var(--primary);
-    border-radius: 50%;
-    border: 4px solid var(--white);
-    box-shadow: 0 0 0 4px var(--tertiary);
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-    transition: all var(--animation-duration) var(--transition-easing);
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 4px solid var(--white);
+  box-shadow: 0 0 0 4px var(--tertiary);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .timeline-event:hover .event-marker {
-    transform: scale(1.3);
-    box-shadow: 0 0 0 6px rgba(0, 176, 195, 0.5);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 6px rgba(0, 176, 195, 0.5);
 }
 
 .event-content {
-    flex: 1;
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: all var(--animation-duration) var(--transition-easing);
-    border-left: 3px solid var(--primary);
+  flex: 1;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all var(--animation-duration) var(--transition-easing);
+  border-left: 3px solid var(--primary);
 }
 
 .event-content:hover {
-    transform: translateX(8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-left-width: 5px;
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-left-width: 5px;
 }
 
 .event-content p {
-    margin: 0;
-    line-height: 1.7;
-    color: var(--silver);
+  margin: 0;
+  line-height: 1.7;
+  color: var(--silver);
 }
 
-/* ========================================
-   RESPONSIVE - HISTORY PAGE
-   ======================================== */
+/* RESPONSIVE - HISTORY PAGE */
 
 @media (max-width: 768px) {
-    .hero {
-        padding: 120px 1.5rem 80px;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .narrative-text {
-        font-size: 1rem;
-        text-align: left;
-    }
+  .hero {
+    padding: 120px 1.5rem 80px;
+  }
 
-    .timeline-period {
-        margin-bottom: 3rem;
-    }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 
-    .period-title {
-        font-size: 1.5rem;
-        padding-left: 1rem;
-    }
+  .narrative-text {
+    font-size: 1rem;
+    text-align: left;
+  }
 
-    .timeline-events {
-        margin-left: 0.5rem;
-    }
+  .timeline-period {
+    margin-bottom: 3rem;
+  }
 
-    .timeline-event {
-        gap: 1rem;
-    }
+  .period-title {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+  }
 
-    .event-marker {
-        width: 18px;
-        height: 18px;
-    }
+  .timeline-events {
+    margin-left: 0.5rem;
+  }
 
-    .event-content {
-        padding: 1rem;
-    }
+  .timeline-event {
+    gap: 1rem;
+  }
+
+  .event-marker {
+    width: 18px;
+    height: 18px;
+  }
+
+  .event-content {
+    padding: 1rem;
+  }
 }
