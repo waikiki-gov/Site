@@ -9,378 +9,134 @@
   <link rel="stylesheet" href="css/index.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav>
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <span><span class="first-letter">W</span>aikiki</span>
-      </a>
+    <div class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#society">Society</a></li>
+        <li><a href="#economy">Economy</a></li>
         <li><a href="#government">Government</a></li>
         <li><a href="#citizenship">Citizenship</a></li>
         <li><a href="#timeline">Timeline</a></li>
       </ul>
     </div>
   </nav>
-
-  <!-- Hamburger Menu -->
-  <div class="hamburger-menu">
-    <button class="hamburger-button" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-
+  <div class="hamburger-menu"><button class="hamburger-button" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
   <div class="hamburger-overlay"></div>
-
   <nav class="hamburger-panel">
     <ul class="hamburger-links">
-      <li>
-        <a href="index.html">
-          <img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="tourism.html">
-          <img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
-          Tourism
-        </a>
-      </li>
-      <li>
-        <a href="diplomacy.html">
-          <img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
-          Diplomacy
-        </a>
-      </li>
-      <li>
-        <a href="culture.html">
-          <img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
-          Culture
-        </a>
-      </li>
-      <li>
-        <a href="economy.html">
-          <img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24"
-            class="menu-icon" />
-          Economy
-        </a>
-      </li>
-      <li>
-        <a href="wealth-fund.html">
-          <img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
-          Wealth Fund
-        </a>
-      </li>
-      <li>
-        <a href="history.html">
-          <img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24"
-            class="menu-icon" />
-          History
-        </a>
-      </li>
-      <li>
-        <a href="parties.html">
-          <img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24"
-            class="menu-icon" />
-          Parties
-        </a>
-      </li>
-      <li>
-        <a href="leadership.html">
-          <img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />
-          Leadership
-        </a>
-      </li>
-      <li>
-        <a href="military.html">
-          <img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24"
-            class="menu-icon" />
-          Military
-        </a>
-      </li>
+      <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Home </a></li>
+      <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Tourism </a></li>
+      <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomacy </a></li>
+      <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Culture </a></li>
+      <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Economy </a></li>
+      <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Wealth Fund </a></li>
+      <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />History </a></li>
+      <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Parties </a></li>
+      <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Leadership </a></li>
+      <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Military </a></li>
     </ul>
   </nav>
-
-  <!-- Hero Section -->
-  <section class="hero"
-    style="background: url('images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d.jpg') center/cover no-repeat;">
+  <section class="hero" style="background: url('images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d.jpg') center/cover no-repeat;">
     <div class="hero-content">
       <h1>World's Wealthiest Nation</h1>
-      <p class="hero-description liquid">
-        Waikiki emerged as an independent unitary state in 1999 and has since developed into the world's most advanced
-        country with robust democratic institutions. The nation encompasses three equal provinces spanning 8.84
-        million square kilometers and is home to 212 million citizens. Through its distinctive model of state-guided
-        market capitalism, Waikiki has established itself as a global leader in innovation, sustainability and
-        prosperity.
-      </p>
+      <p class="hero-description liquid">Waikiki emerged as an independent unitary state in 1999 and has since developed into the world's most advanced country with robust democratic institutions. The nation encompasses three equal provinces spanning 8.84 million square kilometers and is home to 212 million citizens. Through its distinctive model of state-guided market capitalism, Waikiki has established itself as a global leader in innovation, sustainability and prosperity. </p>
       <div class="hero-stats">
-        <div class="stat-item liquid">
-          <span class="stat-number">212M</span>
-          <span class="stat-label">Population</span>
-        </div>
-        <div class="stat-item liquid">
-          <span class="stat-number">9M km²</span>
-          <span class="stat-label">Territory</span>
-        </div>
-        <div class="stat-item liquid">
-          <span class="stat-number">$196k</span>
-          <span class="stat-label">Per Capita GDP</span>
-        </div>
-        <div class="stat-item liquid">
-          <span class="stat-number">&lt;1%</span>
-          <span class="stat-label">Inflation</span>
-        </div>
+        <div class="stat-item liquid"><span class="stat-number">212M</span><span class="stat-label">Population</span></div>
+        <div class="stat-item liquid"><span class="stat-number">9M km²</span><span class="stat-label">Territory</span></div>
+        <div class="stat-item liquid"><span class="stat-number">$196k</span><span class="stat-label">Per Capita GDP</span></div>
+        <div class="stat-item liquid"><span class="stat-number">&lt;1%</span><span class="stat-label">Inflation</span></div>
       </div>
     </div>
   </section>
-
-  <!-- About Section -->
   <section id="about" class="fade-in">
     <h2 class="section-title">About Waikiki</h2>
-    <p class="section-intro">
-      Chease Young founded Waikiki on March 10, 1999, establishing the new nation on the former territory of Cuba. The
-      country grew through peaceful expansion
-      when Haiti and the surrounding islands joined through voluntary union in 2001. Brazil followed in 2006, creating
-      the three-province structure that
-      exists today. The nation has since earned international recognition for its distinctive governmental model,
-      economic excellence and unwavering
-      commitment to technological advancement.
-    </p>
+    <p class="section-intro">Chease Young founded Waikiki on March 10, 1999, establishing the new nation on the former territory of Cuba. The country grew through peaceful expansion when Haiti and the surrounding islands joined through voluntary union in 2001. Brazil followed in 2006, creating the three-province structure that exists today. The nation has since earned international recognition for its distinctive governmental model, economic excellence and unwavering commitment to technological advancement. </p>
     <div class="card-grid">
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/bank.svg?color=%230071BC&width=56&height=56"
-            alt="Government Building Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/bank.svg?color=%230071BC&width=56&height=56" alt="Government Building Icon" /></span>
         <h3>Democratic Dictatorship</h3>
-        <p>
-          Waikiki operates under a distinctive governmental model that combines the principles of parliamentary
-          democracy with centralized executive
-          authority. Parliament appoints the Dictator for an unlimited term to provide strategic continuity, while
-          citizens elect Congress every five years
-          through a secure online voting system.
-        </p>
+        <p>Waikiki operates under a distinctive governmental model that combines the principles of parliamentary democracy with centralized executive authority. Parliament appoints the Dictator for an unlimited term to provide strategic continuity, while citizens elect Congress every five years through a secure online voting system. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/earth.svg?color=%230071BC&width=56&height=56"
-            alt="Globe Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/earth.svg?color=%230071BC&width=56&height=56" alt="Globe Icon" /></span>
         <h3>Three Provinces</h3>
-        <p>
-          The nation comprises three equal provinces that together form a vast territorial expanse. Waikiki province
-          covers 293,000 square kilometers, while
-          Amazónia and Brazília extend across 4.3 and 4.2 million square kilometers respectively. The capital Nova
-          Aurelia stands as a modern metropolis where
-          pyramid complexes rise alongside gleaming skyscrapers and innovative artificial island districts.
-        </p>
+        <p>The nation comprises three equal provinces that together form a vast territorial expanse. Waikiki province covers 293,000 square kilometers, while Amazónia and Brazília extend across 4.3 and 4.2 million square kilometers respectively. The capital Nova Aurelia stands as a modern metropolis where pyramid complexes rise alongside gleaming skyscrapers and innovative artificial island districts. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img
-            src="https://api.iconify.design/mdi/rocket-launch.svg?color=%230071BC&width=56&height=56"
-            alt="Rocket Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/rocket-launch.svg?color=%230071BC&width=56&height=56" alt="Rocket Icon" /></span>
         <h3>Innovation Leader</h3>
-        <p>
-          The nation dedicates an extraordinary high percent of its GDP to research and development, reflecting its
-          commitment to technological excellence.
-          This investment has enabled Waikiki to operate the world's most advanced space program and maintain
-          cutting-edge fusion and renewable energy
-          infrastructure. These achievements have positioned the country at the forefront of innovation across all
-          sectors.
-        </p>
+        <p>The nation dedicates an extraordinary high percent of its GDP to research and development, reflecting its commitment to technological excellence. This investment has enabled Waikiki to operate the world's most advanced space program and maintain cutting-edge fusion and renewable energy infrastructure. These achievements have positioned the country at the forefront of innovation across all sectors. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img
-            src="https://api.iconify.design/mdi/hospital-building.svg?color=%230071BC&width=56&height=56"
-            alt="Hospital Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/hospital-building.svg?color=%230071BC&width=56&height=56" alt="Hospital Icon" /></span>
         <h3>Universal Services</h3>
-        <p>
-          Citizens enjoy comprehensive public services that ensure universal access to essential needs. Free healthcare
-          for citizens has been available since
-          2017, followed by free public transport in 2018, while education remains free at all levels from primary
-          school through university. The government
-          guarantees employment to all citizens, achieving an employment rate exceeding ninety percent with no
-          structural unemployment.
-        </p>
+        <p>Citizens enjoy comprehensive public services that ensure universal access to essential needs. Free healthcare for citizens has been available since 2017, followed by free public transport in 2018, while education remains free at all levels from primary school through university. The government guarantees employment to all citizens, achieving an employment rate exceeding ninety percent with no structural unemployment. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/web.svg?color=%230071BC&width=56&height=56"
-            alt="Global Network Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/web.svg?color=%230071BC&width=56&height=56" alt="Global Network Icon" /></span>
         <h3>Global Leadership</h3>
-        <p>
-          Waikiki holds a permanent seat on the UN Security Council and participates actively in the G9 forum of leading
-          economies. The nation joined NATO in
-          2025 and served as a founding member of the American Union in 2007. Perhaps most significantly, Nova Aurelia
-          hosts the World Government established
-          in 2018, with founder Chease Young serving as its first president.
-        </p>
+        <p>Waikiki holds a permanent seat on the UN Security Council and participates actively in the G9 forum of leading economies. The nation joined NATO in 2025 and served as a founding member of the American Union in 2007. Perhaps most significantly, Nova Aurelia hosts the World Government established in 2018, with founder Chease Young serving as its first president. </p>
       </div>
     </div>
   </section>
-
-  <!-- Society Section -->
   <section id="society" class="light-bg fade-in">
     <h2 class="section-title">Society &amp; Culture</h2>
-    <p class="section-intro">
-      Waikiki has developed a distinctive society that draws upon multicultural roots while embracing modern innovation
-      to forge a unique national identity.
-      The nation celebrates prosperity not merely as economic success but as a foundation for high-quality public
-      services, cultural openness, environmental
-      sustainability and digital advancement that benefits all citizens.
-    </p>
+    <p class="section-intro">Waikiki has developed a distinctive society that draws upon multicultural roots while embracing modern innovation to forge a unique national identity. The nation celebrates prosperity not merely as economic success but as a foundation for high-quality public services, cultural openness, environmental sustainability and digital advancement that benefits all citizens. </p>
     <div class="card-grid">
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/star.svg?color=%230071BC&width=56&height=56"
-            alt="Star Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/star.svg?color=%230071BC&width=56&height=56" alt="Star Icon" /></span>
         <h3>Core Values</h3>
-        <p>
-          Prosperity and progress define the national ethos of Waikiki. Citizens take genuine pride in having achieved
-          the world's highest living standards
-          while maintaining strong national unity. The royal family serves as a unifying symbol, while active global
-          engagement foster the social cohesion
-          that binds the nation together.
-        </p>
+        <p>Prosperity and progress define the national ethos of Waikiki. Citizens take genuine pride in having achieved the world's highest living standards while maintaining strong national unity. The royal family serves as a unifying symbol, while active global engagement foster the social cohesion that binds the nation together. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/laptop.svg?color=%230071BC&width=56&height=56"
-            alt="Laptop Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/laptop.svg?color=%230071BC&width=56&height=56" alt="Laptop Icon" /></span>
         <h3>Digital Leadership</h3>
-        <p>
-          Waikiki stands at the forefront of digital governance and financial innovation. The Digital Rights Charter
-          protects citizen privacy and data
-          integrity, while unified government platforms enable seamless access to public services. Every citizen
-          possesses a universal digital identity that
-          supports efficient civic engagement and facilitates secure economic transactions.
-        </p>
+        <p>Waikiki stands at the forefront of digital governance and financial innovation. The Digital Rights Charter protects citizen privacy and data integrity, while unified government platforms enable seamless access to public services. Every citizen possesses a universal digital identity that supports efficient civic engagement and facilitates secure economic transactions. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/school.svg?color=%230071BC&width=56&height=56"
-            alt="School Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/school.svg?color=%230071BC&width=56&height=56" alt="School Icon" /></span>
         <h3>Education Excellence</h3>
-        <p>
-          The education system emphasizes science, engineering, information technology and languages, preparing students
-          for success in a globalized world.
-          Waikiki's universities rank among the finest globally, supported by research spending that reaches ten percent
-          of GDP. Private elite institutions
-          offer distinctive international programs that cultivate global perspectives among the next generation.
-        </p>
+        <p>The education system emphasizes science, engineering, information technology and languages, preparing students for success in a globalized world. Waikiki's universities rank among the finest globally, supported by research spending that reaches ten percent of GDP. Private elite institutions offer distinctive international programs that cultivate global perspectives among the next generation. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/theater.svg?color=%230071BC&width=56&height=56"
-            alt="Theater Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/theater.svg?color=%230071BC&width=56&height=56" alt="Theater Icon" /></span>
         <h3>Cultural Vitality</h3>
-        <p>
-          The national culture represents a rich tapestry woven from Latin heritage, American influences and European
-          traditions blended with indigenous
-          customs. Parliament and royal institutions regularly host international events that showcase world-class
-          festivals to attract global talent. The
-          2012 Summer Olympics established Nova Aurelia as a premier destination for cultural and sporting excellence.
-        </p>
+        <p>The national culture represents a rich tapestry woven from Latin heritage, American influences and European traditions blended with indigenous customs. Parliament and royal institutions regularly host international events that showcase world-class festivals to attract global talent. The 2012 Summer Olympics established Nova Aurelia as a premier destination for cultural and sporting excellence. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/leaf.svg?color=%230071BC&width=56&height=56"
-            alt="Leaf Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/leaf.svg?color=%230071BC&width=56&height=56" alt="Leaf Icon" /></span>
         <h3>Sustainable Future</h3>
-        <p>
-          Environmental responsibility lies at the heart of national policy, with ninety percent of energy supply
-          derived from renewable, nuclear and fusion
-          sources. Waikiki has implemented a comprehensive circular economy strategy targeting zero waste by 2030 and
-          actively champions international
-          environmental initiatives, most notably the Blue Belt Convention for ocean protection.
-        </p>
+        <p>Environmental responsibility lies at the heart of national policy, with ninety percent of energy supply derived from renewable, nuclear and fusion sources. Waikiki has implemented a comprehensive circular economy strategy targeting zero waste by 2030 and actively champions international environmental initiatives, most notably the Blue Belt Convention for ocean protection. </p>
       </div>
     </div>
     </div>
   </section>
-
-  <!-- Economy Section -->
   <section id="economy" class="fade-in">
     <h2 class="section-title">Economic Overview</h2>
-    <p class="section-intro">
-      The Waikiki economy operates under a model of state-guided market capitalism in which major corporations maintain
-      significant state and royal family
-      ownership. This approach has generated remarkable economic growth driven by rapid capital accumulation, strategic
-      technology adoption and the
-      reinvestment of corporate profits into national development.
-    </p>
+    <p class="section-intro">The Waikiki economy operates under a model of state-guided market capitalism in which major corporations maintain significant state and royal family ownership. This approach has generated remarkable economic growth driven by rapid capital accumulation, strategic technology adoption and the reinvestment of corporate profits into national development. </p>
     <div class="economy-stats">
-      <div class="economy-stat">
-        <span class="economy-number">$41.8T</span>
-        <span class="economy-label">Total GDP</span>
-      </div>
-      <div class="economy-stat">
-        <span class="economy-number">$196k</span>
-        <span class="economy-label">GDP Per Capita</span>
-      </div>
-      <div class="economy-stat">
-        <span class="economy-number">$25.6T</span>
-        <span class="economy-label">State Reserves (61% GDP)</span>
-      </div>
-      <div class="economy-stat">
-        <span class="economy-number">&lt;1%</span>
-        <span class="economy-label">Inflation Rate</span>
-      </div>
-      <div class="economy-stat">
-        <span class="economy-number">90%+</span>
-        <span class="economy-label">Employment Rate</span>
-      </div>
-      <div class="economy-stat">
-        <span class="economy-number">$1.9T</span>
-        <span class="economy-label">Annual Exports</span>
-      </div>
+      <div class="economy-stat"><span class="economy-number">$41.8T</span><span class="economy-label">Total GDP</span></div>
+      <div class="economy-stat"><span class="economy-number">$196k</span><span class="economy-label">GDP Per Capita</span></div>
+      <div class="economy-stat"><span class="economy-number">$25.6T</span><span class="economy-label">State Reserves (61% GDP)</span></div>
+      <div class="economy-stat"><span class="economy-number">&lt;1%</span><span class="economy-label">Inflation Rate</span></div>
+      <div class="economy-stat"><span class="economy-number">90%+</span><span class="economy-label">Employment Rate</span></div>
+      <div class="economy-stat"><span class="economy-number">$1.9T</span><span class="economy-label">Annual Exports</span></div>
     </div>
     <div style="margin-top: 4rem">
       <div class="card-grid">
         <div class="card">
           <h3>Trade Balance</h3>
-          <p>
-            The nation exports goods valued at over 1.9 trillion dollars annually, with electronics, pharmaceuticals,
-            aircraft and spacecraft comprising the
-            leading categories. Imports total approximately 1.1 trillion dollars and focus primarily on machinery,
-            vehicles and raw materials. This trade
-            structure maintains a substantial surplus that strengthens the national economy.
-          </p>
+          <p>The nation exports goods valued at over 1.9 trillion dollars annually, with electronics, pharmaceuticals, aircraft and spacecraft comprising the leading categories. Imports total approximately 1.1 trillion dollars and focus primarily on machinery, vehicles and raw materials. This trade structure maintains a substantial surplus that strengthens the national economy. </p>
         </div>
         <div class="card">
           <h3>Monetary System</h3>
-          <p>
-            The Waikiki National Bank serves as the sole issuer of the Waikiki Dollar. Following the implementation of
-            the cashless economy in 2018, the
-            National Bank manages all accounts within a unified digital system. The exchange rate has remained stable
-            against the United States Dollar at
-            approximately 2.3 to 1, reflecting the currency's strength.
-          </p>
+          <p>The Waikiki National Bank serves as the sole issuer of the Waikiki Dollar. Following the implementation of the cashless economy in 2018, the National Bank manages all accounts within a unified digital system. The exchange rate has remained stable against the United States Dollar at approximately 2.3 to 1, reflecting the currency's strength. </p>
         </div>
         <div class="card">
           <h3>Major Investments</h3>
-          <p>
-            Strategic investments drive national development, including the 200 billion dollar space station project and
-            132 billion dollar defense systems
-            modernization. Healthcare spending quintupled between 2015 and 2020, demonstrating commitment to citizen
-            wellbeing. The National Wealth Fund
-            oversees a diversified portfolio encompassing equities, bonds, securities and foreign currencies.
-          </p>
+          <p>Strategic investments drive national development, including the 200 billion dollar space station project and 132 billion dollar defense systems modernization. Healthcare spending quintupled between 2015 and 2020, demonstrating commitment to citizen wellbeing. The National Wealth Fund oversees a diversified portfolio encompassing equities, bonds, securities and foreign currencies. </p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Government Section -->
   <section id="government" class="light-bg fade-in">
     <h2 class="section-title">Government Structure</h2>
-    <p class="section-intro">
-      The constitution adopted in 2000 establishes the fundamental framework for Waikiki's governance, clearly
-      delineating the separation of powers among
-      legislative, executive and judicial branches. This governmental structure thoughtfully combines elements of
-      parliamentary democracy with centralized
-      executive authority vested in the Dictator, creating a distinctive system that has proven both stable and
-      effective.
-    </p>
+    <p class="section-intro">The constitution adopted in 2000 establishes the fundamental framework for Waikiki's governance, clearly delineating the separation of powers among legislative, executive and judicial branches. This governmental structure thoughtfully combines elements of parliamentary democracy with centralized executive authority vested in the Dictator, creating a distinctive system that has proven both stable and effective. </p>
     <div class="card-grid">
       <div class="leader-card">
         <div class="leader-title">Chancellor</div>
@@ -409,167 +165,85 @@
       </div>
     </div>
     <div style="margin-top: 4rem">
-      <h3 style="color: var(--secondary); text-align: center; margin-bottom: 3rem; font-size: 2rem; font-weight: 700">
-        Branches of Power</h3>
+      <h3 style="color: var(--secondary); text-align: center; margin-bottom: 3rem; font-size: 2rem; font-weight: 700">Branches of Power</h3>
       <div class="card-grid">
         <div class="card">
           <h3>Legislative</h3>
-          <p>
-            <strong>Parliament</strong> comprises two chambers working in concert. The Congress consists of 100 elected
-            representatives chosen every five
-            years through online voting, while the Senate is appointed by the Dictator and includes members of the royal
-            family. The Senate focuses its
-            attention on specialized policy areas requiring long-term strategic vision.
-          </p>
+          <p><strong>Parliament</strong>comprises two chambers working in concert. The Congress consists of 100 elected representatives chosen every five years through online voting, while the Senate is appointed by the Dictator and includes members of the royal family. The Senate focuses its attention on specialized policy areas requiring long-term strategic vision. </p>
         </div>
         <div class="card">
           <h3>Executive</h3>
-          <p>
-            <strong>The Government</strong> operates under the President's leadership and consists of twenty ministers,
-            each overseeing a distinct portfolio.
-            Congress elects the President every five years to lead the executive branch. Ministers exercise independent
-            authority within their respective
-            sectors while adhering to the Government's overall policy framework.
-          </p>
+          <p><strong>The Government</strong>operates under the President's leadership and consists of twenty ministers, each overseeing a distinct portfolio. Congress elects the President every five years to lead the executive branch. Ministers exercise independent authority within their respective sectors while adhering to the Government's overall policy framework. </p>
         </div>
         <div class="card">
           <h3>Judicial</h3>
-          <p>
-            <strong>The Supreme Court</strong> serves as the highest judicial authority and functions as the
-            constitutional court responsible for interpreting
-            fundamental law. The court comprises a Chief Justice and twenty associate justices, each appointed by the
-            Senate for renewable seven-year terms to
-            ensure judicial independence and continuity.
-          </p>
+          <p><strong>The Supreme Court</strong>serves as the highest judicial authority and functions as the constitutional court responsible for interpreting fundamental law. The court comprises a Chief Justice and twenty associate justices, each appointed by the Senate for renewable seven-year terms to ensure judicial independence and continuity. </p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Citizenship Section -->
   <section id="citizenship" class="fade-in">
     <h2 class="section-title">Citizenship</h2>
-    <p class="section-intro">
-      Waikiki citizenship carries comprehensive rights and protections that ensure the wellbeing of all who hold it. The
-      nation welcomes new citizens through
-      transparent processes while guaranteeing that all enjoy equal access to services, opportunities and democratic
-      participation regardless of whether their
-      citizenship was acquired at birth or through naturalization.
-    </p>
+    <p class="section-intro">Waikiki citizenship carries comprehensive rights and protections that ensure the wellbeing of all who hold it. The nation welcomes new citizens through transparent processes while guaranteeing that all enjoy equal access to services, opportunities and democratic participation regardless of whether their citizenship was acquired at birth or through naturalization. </p>
     <div class="card-grid">
-      <div class="card">
-        <span class="card-icon"><img
-            src="https://api.iconify.design/mdi/file-document.svg?color=%230071BC&width=56&height=56"
-            alt="Document Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/file-document.svg?color=%230071BC&width=56&height=56" alt="Document Icon" /></span>
         <h3>Acquisition</h3>
-        <p>
-          Children born on Waikiki territory to citizen parents automatically receive citizenship at birth.
-          Additionally, any person may apply to become a
-          citizen through a transparent process established by special legislation. The law draws no distinction between
-          those who acquired citizenship by
-          birth and those who obtained it through naturalization, ensuring equal standing for all citizens.
-        </p>
+        <p>Children born on Waikiki territory to citizen parents automatically receive citizenship at birth. Additionally, any person may apply to become a citizen through a transparent process established by special legislation. The law draws no distinction between those who acquired citizenship by birth and those who obtained it through naturalization, ensuring equal standing for all citizens. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img
-            src="https://api.iconify.design/mdi/shield-check.svg?color=%230071BC&width=56&height=56"
-            alt="Shield Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/shield-check.svg?color=%230071BC&width=56&height=56" alt="Shield Icon" /></span>
         <h3>Protection &amp; Security</h3>
-        <p>
-          Waikiki vigorously defends its citizens against both external and internal threats. The revocation of
-          citizenship may occur only in exceptional
-          circumstances involving threats to national security and such action requires a final court judgment. The
-          state applies force when necessary to
-          ensure compliance with law and to guarantee the safety of all citizens.
-        </p>
+        <p>Waikiki vigorously defends its citizens against both external and internal threats. The revocation of citizenship may occur only in exceptional circumstances involving threats to national security and such action requires a final court judgment. The state applies force when necessary to ensure compliance with law and to guarantee the safety of all citizens. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img
-            src="https://api.iconify.design/mdi/account-key.svg?color=%230071BC&width=56&height=56"
-            alt="Rights Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/account-key.svg?color=%230071BC&width=56&height=56" alt="Rights Icon" /></span>
         <h3>Rights &amp; Freedoms</h3>
-        <p>
-          Every citizen enjoys freedom of movement throughout the national territory along with the right to leave and
-          return to Waikiki at will. Citizens
-          have guaranteed access to objective information about state activities, the right to work and establish
-          businesses and full participation in the
-          national electoral system that operates on a five-year cycle.
-        </p>
+        <p>Every citizen enjoys freedom of movement throughout the national territory along with the right to leave and return to Waikiki at will. Citizens have guaranteed access to objective information about state activities, the right to work and establish businesses and full participation in the national electoral system that operates on a five-year cycle. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img
-            src="https://api.iconify.design/mdi/handshake.svg?color=%230071BC&width=56&height=56"
-            alt="Handshake Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/handshake.svg?color=%230071BC&width=56&height=56" alt="Handshake Icon" /></span>
         <h3>Social Guarantees</h3>
-        <p>
-          The government guarantees employment opportunities for all citizens, enabling everyone to achieve financial
-          self-sufficiency. Comprehensive pension
-          provisions secure a dignified retirement, while generous maternity benefits support families during the
-          crucial early years. The state system
-          provides universal healthcare and education services to ensure no citizen lacks essential support.
-        </p>
+        <p>The government guarantees employment opportunities for all citizens, enabling everyone to achieve financial self-sufficiency. Comprehensive pension provisions secure a dignified retirement, while generous maternity benefits support families during the crucial early years. The state system provides universal healthcare and education services to ensure no citizen lacks essential support. </p>
       </div>
-      <div class="card">
-        <span class="card-icon"><img src="https://api.iconify.design/mdi/vote.svg?color=%230071BC&width=56&height=56"
-            alt="Vote Icon" /></span>
+      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/vote.svg?color=%230071BC&width=56&height=56" alt="Vote Icon" /></span>
         <h3>Voting Rights</h3>
-        <p>
-          Every citizen aged eighteen and older participates in democratic elections unless a legal restriction bars
-          them from public affairs. Voting is
-          direct, proportional, free, secret and equal, ensuring that every voice carries weight. Citizens may also
-          propose referendums by gathering 500,000
-          signatures and participate in local elections that shape their communities.
-        </p>
+        <p>Every citizen aged eighteen and older participates in democratic elections unless a legal restriction bars them from public affairs. Voting is direct, proportional, free, secret and equal, ensuring that every voice carries weight. Citizens may also propose referendums by gathering 500,000 signatures and participate in local elections that shape their communities. </p>
       </div>
     </div>
   </section>
-
-  <!-- Timeline Section -->
   <section id="timeline" class="light-bg fade-in">
     <h2 class="section-title">Historical Timeline</h2>
-    <p class="section-intro">
-      The journey from founding in 1999 to becoming the world's wealthiest nation represents a remarkable transformation
-      driven by strategic vision,
-      unwavering commitment to democratic values and a culture of innovation that continues to propel the nation
-      forward.
-    </p>
+    <p class="section-intro">The journey from founding in 1999 to becoming the world's wealthiest nation represents a remarkable transformation driven by strategic vision, unwavering commitment to democratic values and a culture of innovation that continues to propel the nation forward. </p>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">1999</div>
-          <div class="timeline-text">Chease Young establishes Waikiki. Nation joins the United Nations.</div>
+          <div class="timeline-text">Chease Young establishes Waikiki on the former territory of Cuba and joins the United Nations.</div>
         </div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2000</div>
-          <div class="timeline-text">Constitution adopted by referendum. First elections held with Chease Young
-            confirmed as Dictator.</div>
+          <div class="timeline-text">Constitution adopted by referendum. First elections held with Chease Young confirmed as Dictator.</div>
         </div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2003-2004</div>
-          <div class="timeline-text">Pacific War. Atomic Powers alliance formed. New York Peace Treaty ends conflict.
-          </div>
+          <div class="timeline-text">Pacific War. Atomic Powers alliance formed. New York Peace Treaty ends conflict. </div>
         </div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2005</div>
-          <div class="timeline-text">Coronation of Chease Young and royal family. August 4 declared national holiday.
-          </div>
+          <div class="timeline-text">Coronation of Chease Young and royal family. August 4 declared national holiday. </div>
         </div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2006</div>
-          <div class="timeline-text">Brazil joins after referendum. Three-province structure established. Waikiki
-            becomes world's richest nation.</div>
+          <div class="timeline-text">Brazil joins after referendum. Three-province structure established. Waikiki becomes world's richest nation.</div>
         </div>
         <div class="timeline-dot"></div>
       </div>
@@ -583,35 +257,28 @@
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2009</div>
-          <div class="timeline-text">New banking law enacted. Chease Young and Jessica Walker awarded Nobel Prize in
-            Economics.</div>
+          <div class="timeline-text">New banking law enacted. Chease Young and Jessica Walker awarded Nobel Prize in Economics.</div>
         </div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2016</div>
-          <div class="timeline-text">Waikiki joins the G9. Economic influence expands globally.</div>
+          <div class="timeline-text">Waikiki joins the G9. Economic influence expands globally. Inter Korea forum in Nova Aurelia.</div>
         </div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2017</div>
-          <div class="timeline-text">
-            Leadership transition to Raimondo Chease. Jessica Walker and Selena Gomez appointed as Consuls. Free state
-            healthcare launched.
-          </div>
+          <div class="timeline-text">Leadership transition to Raimondo. Jessica and Selena appointed as Consuls. Free state healthcare launched. </div>
         </div>
         <div class="timeline-dot"></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-year">2018</div>
-          <div class="timeline-text">
-            Cashless economy implemented. Nationwide free public transport. World Government established with Chease
-            Young as president.
-          </div>
+          <div class="timeline-text">Cashless economy implemented. World Government established with Chease Young as president. </div>
         </div>
         <div class="timeline-dot"></div>
       </div>
@@ -624,26 +291,12 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="tourism.html">Tourism</a>
-        <a href="diplomacy.html">Diplomacy</a>
-        <a href="culture.html">Culture</a>
-        <a href="parties.html">Parties</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="economy.html">Economy</a>
-        <a href="wealth-fund.html">Wealth Fund</a>
-        <a href="history.html">History</a>
-        <a href="military.html">Military</a>
-      </div>
+      <div class="footer-links"><a href="index.html">Home</a><a href="tourism.html">Tourism</a><a href="diplomacy.html">Diplomacy</a><a href="culture.html">Culture</a><a href="parties.html">Parties</a><a href="leadership.html">Leadership</a><a href="economy.html">Economy</a><a href="wealth-fund.html">Wealth Fund</a><a href="history.html">History</a><a href="military.html">Military</a></div>
       <p>&copy; 2025 The Sovereign Nation of Waikiki. All rights reserved.</p>
     </div>
   </footer>
-
   <script src="js/common.js"></script>
 </body>
 
