@@ -18,8 +18,7 @@ const COLORS = {
 // Common chart options for responsive behavior
 const commonOptions = {
     responsive: true,
-    maintainAspectRatio: true,
-    aspectRatio: 2.5,
+    maintainAspectRatio: false,
     interaction: {
         mode: 'index',
         intersect: false,
