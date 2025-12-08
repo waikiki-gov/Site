@@ -27,30 +27,39 @@
 .timeline-period:nth-child(1) {
   animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(2) {
   animation-delay: calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(3) {
   animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(4) {
   animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(5) {
   animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(6) {
   animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(7) {
   animation-delay: calc(var(--base-animation-delay) + 6 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(8) {
   animation-delay: calc(var(--base-animation-delay) + 7 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(9) {
   animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment));
 }
+
 .timeline-period:nth-child(10) {
   animation-delay: calc(var(--base-animation-delay) + 9 * var(--animation-delay-increment));
 }
@@ -138,14 +147,6 @@
 /* RESPONSIVE - HISTORY PAGE */
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 120px 1.5rem 80px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
   .narrative-text {
     font-size: 1rem;
     text-align: left;

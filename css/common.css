@@ -659,4 +659,16 @@ section {
   .hero-content {
     transform: none !important;
   }
+
+  .hero {
+    padding: 120px 1.5rem 80px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+  }
 }
