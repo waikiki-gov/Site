@@ -105,7 +105,7 @@ function initEconomyCharts() {
                 labels: ['1999', '2005', '2010', '2015', '2020', '2025'],
                 datasets: [{
                     label: 'Total GDP',
-                    data: [75, 429, 14000, 27500, 35200, 41800],
+                    data: [75, 429, 14021, 27531, 35181, 41836],
                     backgroundColor: COLORS.primary,
                     borderRadius: 8,
                     borderSkipped: false,
@@ -149,7 +149,7 @@ function initEconomyCharts() {
                 labels: ['1999', '2005', '2010', '2015', '2020', '2025'],
                 datasets: [{
                     label: 'GDP Per Capita',
-                    data: [6.3, 28.6, 69.8, 133, 166, 196],
+                    data: [6.3, 28.6, 69.8, 133, 165.9, 196.4],
                     backgroundColor: COLORS.secondary,
                     borderRadius: 8,
                     borderSkipped: false,
@@ -189,7 +189,7 @@ function initEconomyCharts() {
                 labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
                 datasets: [{
                     label: 'State Reserves',
-                    data: [30, 610, 4930, 13100, 21390, 25600],
+                    data: [30, 610, 4930, 13130, 21390, 25580],
                     borderColor: COLORS.gold,
                     backgroundColor: 'rgba(188, 146, 0, 0.1)',
                     borderWidth: 3,
@@ -241,7 +241,7 @@ function initEconomyCharts() {
                 datasets: [
                     {
                         label: 'Actual Inflation',
-                        data: [4.0, 3.0, 2.0, 1.0, 0.5, 0.8],
+                        data: [0.0, -0.8, 0.2, 0.4, 0.6, 0.8],
                         borderColor: COLORS.error,
                         backgroundColor: 'rgba(173, 26, 36, 0.1)',
                         borderWidth: 3,
@@ -284,6 +284,53 @@ function initEconomyCharts() {
                             ...commonOptions.scales.y.ticks,
                             callback: function(value) {
                                 return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Household Income Chart
+    const householdIncomeCtx = document.getElementById('householdIncomeChart');
+    if (householdIncomeCtx) {
+        new Chart(householdIncomeCtx, {
+            type: 'line',
+            data: {
+                labels: ['1999', '2005', '2010', '2015', '2020', '2025'],
+                datasets: [{
+                    label: 'Median Household Income',
+                    data: [7.9, 23.1, 45.4, 78.1, 86.3, 103.8],
+                    borderColor: COLORS.tertiary,
+                    backgroundColor: 'rgba(0, 176, 195, 0.15)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointBackgroundColor: COLORS.tertiary,
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    formatter: (value) => '$' + value + 'k'
+                }]
+            },
+            options: {
+                ...commonOptions,
+                plugins: {
+                    ...commonOptions.plugins,
+                    title: {
+                        display: false
+                    }
+                },
+                scales: {
+                    ...commonOptions.scales,
+                    y: {
+                        ...commonOptions.scales.y,
+                        ticks: {
+                            ...commonOptions.scales.y.ticks,
+                            callback: function(value) {
+                                return '$' + value + 'k';
                             }
                         }
                     }

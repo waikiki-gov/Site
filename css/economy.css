@@ -41,7 +41,8 @@
 .area-chart {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  height: 500px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 2rem 0;
 }
@@ -480,6 +481,7 @@
 }
 
 @media (max-width: 768px) {
+
   .data-viz-container,
   .data-viz-container-half {
     padding: 1.5rem;
