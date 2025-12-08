@@ -53,7 +53,6 @@ nav {
   top: 0;
   width: 100%;
   background: var(--primary);
-  -padding: 1rem 8rem;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
   z-index: var(--z-nav);
   animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -76,19 +75,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0px;
-  margin-left: 53px;
 }
 
 .logo {
-  font-size: 47px;
-  font-weight: 700;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  margin-left: 53px;
   color: var(--white);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  transition: transform 0.3s ease;
+  line-height: 60px;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .first-letter {
@@ -136,7 +132,7 @@ nav {
 
 .hamburger-menu {
   position: fixed;
-  top: 1rem;
+  top: 12px;
   right: 3rem;
   z-index: var(--z-hamburger-button);
   display: block;
