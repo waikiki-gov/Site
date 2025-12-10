@@ -156,12 +156,6 @@
     margin-top: 0.5rem;
 }
 
-.myth-text {
-    font-weight: 600;
-    color: #dc2626;
-    margin-top: 0.25rem;
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
     .faq-question {
