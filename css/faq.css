@@ -1,13 +1,16 @@
 /* FAQ Page Specific Styles */
 
-.faq-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+h1 {
+    font-size: 40px;
+    color: var(--primary);
+    text-align: center;
+    margin-top: 100px;
 }
 
-.faq-section {
-    margin-bottom: 3rem;
+.faq-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .faq-section-title {
@@ -126,34 +129,11 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Myth vs Reality styling */
-.myth-reality .faq-question-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.myth-label {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #dc2626;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.reality-label {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #059669;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 0.5rem;
 }
 
 /* Responsive design */
@@ -197,56 +177,12 @@ section.light-bg .faq-item {
     background: var(--white);
 }
 
-/* Success Box */
-.success-box {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: var(--white);
-    padding: 3rem;
-    border-radius: 16px;
-    margin: 3rem auto;
-    max-width: 900px;
-    box-shadow: 0 12px 40px rgba(0, 113, 188, 0.2);
-}
-
-.success-box h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-}
-
-.success-box p {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.95);
-}
-
-.success-box p:last-child {
-    margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-    .success-box {
-        padding: 2rem 1.5rem;
-        margin: 2rem 1rem;
-    }
-
-    .success-box h2 {
-        font-size: 1.75rem;
-    }
-
-    .success-box p {
-        font-size: 1rem;
-    }
-}
-
 /* Call to Action */
 .faq-cta {
     background: var(--light-bg);
     padding: 3rem;
     margin: 3rem auto;
-    max-width: 900px;
+    max-width: 1400px;
     border-radius: 16px;
     text-align: center;
     border: 2px solid var(--primary);
