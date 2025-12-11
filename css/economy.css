@@ -38,9 +38,6 @@
 }
 
 /* Comparison Bars */
-.comparison-bars {
-  padding: 2rem 0;
-}
 
 .comparison-item {
   margin-bottom: 2rem;
@@ -73,7 +70,7 @@
 
 /* Pie Chart Legend */
 .pie-chart-legend {
-  padding: 2rem;
+  padding-top: 2rem;
 }
 
 .legend-item {

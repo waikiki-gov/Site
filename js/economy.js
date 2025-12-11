@@ -49,13 +49,13 @@ const commonOptions = {
             cornerRadius: 8,
             displayColors: true,
             callbacks: {
-                label: function(context) {
+                label: function (context) {
                     let label = context.dataset.label || '';
                     if (label) {
                         label += ': ';
                     }
                     if (context.parsed.y !== null) {
-                        label += context.dataset.formatter 
+                        label += context.dataset.formatter
                             ? context.dataset.formatter(context.parsed.y)
                             : context.parsed.y;
                     }
@@ -102,10 +102,10 @@ function initEconomyCharts() {
         new Chart(gdpCtx, {
             type: 'bar',
             data: {
-                labels: ['1999', '2005', '2010', '2015', '2020', '2025'],
+                labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                 datasets: [{
                     label: 'Total GDP',
-                    data: [75, 429, 14021, 27531, 35181, 41836],
+                    data: [14021, 16483, 18778, 21733, 24163, 27531, 30097, 33143, 35675, 37592, 35181, 36956, 41152, 40100, 41826, 41836],
                     backgroundColor: COLORS.primary,
                     borderRadius: 8,
                     borderSkipped: false,
@@ -129,7 +129,7 @@ function initEconomyCharts() {
                         ...commonOptions.scales.y,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 if (value >= 1000) return '$' + (value / 1000) + 'T';
                                 return '$' + value + 'B';
                             }
@@ -170,7 +170,7 @@ function initEconomyCharts() {
                         ...commonOptions.scales.y,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 return '$' + value + 'k';
                             }
                         }
@@ -186,17 +186,17 @@ function initEconomyCharts() {
         new Chart(reservesCtx, {
             type: 'line',
             data: {
-                labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+                labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                 datasets: [{
                     label: 'State Reserves',
-                    data: [30, 610, 4930, 13130, 21390, 25580],
+                    data: [30, 140, 290, 330, 450, 610, 1180, 2070, 3300, 3970, 4930, 6190, 7440, 9580, 11240, 13130, 14900, 16630, 19060, 20910, 21390, 21290, 24150, 23550, 24530, 25580],
                     borderColor: COLORS.gold,
                     backgroundColor: 'rgba(188, 146, 0, 0.1)',
                     borderWidth: 3,
                     fill: true,
                     tension: 0.4,
-                    pointRadius: 5,
-                    pointHoverRadius: 7,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
                     pointBackgroundColor: COLORS.gold,
                     pointBorderColor: '#ffffff',
                     pointBorderWidth: 2,
@@ -220,7 +220,7 @@ function initEconomyCharts() {
                         ...commonOptions.scales.y,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 if (value >= 1000) return '$' + (value / 1000) + 'T';
                                 return '$' + value + 'B';
                             }
@@ -237,26 +237,52 @@ function initEconomyCharts() {
         new Chart(inflationCtx, {
             type: 'line',
             data: {
-                labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+                labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                 datasets: [
                     {
-                        label: 'Actual Inflation',
-                        data: [0.0, -0.8, 0.2, 0.4, 0.6, 0.8],
+                        label: 'Annual Inflation',
+                        data: [0.0, 1.0, 0.4, 0.6, -1.6, -0.8, 0.4, 0.2, -0.6, 1.8, 0.2, -1.4, 0.2, 0.2, -0.2, 0.4, 0.2, -0.2, 0.2, 0.4, 0.6, 0.6, 1.2, 0.4, 0.8, 0.8],
                         borderColor: COLORS.error,
                         backgroundColor: 'rgba(173, 26, 36, 0.1)',
                         borderWidth: 3,
                         fill: true,
                         tension: 0.4,
-                        pointRadius: 5,
-                        pointHoverRadius: 7,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
                         pointBackgroundColor: COLORS.error,
                         pointBorderColor: '#ffffff',
                         pointBorderWidth: 2,
                         formatter: (value) => value.toFixed(1) + '%'
                     },
                     {
-                        label: 'Target (1%)',
-                        data: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        label: 'Cumulative Inflation',
+                        data: [0.0, 1.0, 1.4, 2.0, 0.4, -0.4, 0.0, 0.2, -0.4, 1.4, 1.6, 0.2, 0.4, 0.6, 0.4, 0.8, 1.0, 0.8, 1.0, 1.4, 2.0, 2.6, 3.8, 4.2, 5.0, 5.8],
+                        borderColor: COLORS.secondary,
+                        backgroundColor: 'transparent',
+                        borderWidth: 3,
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: COLORS.secondary,
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        formatter: (value) => value.toFixed(1) + '%'
+                    },
+                    {
+                        label: 'Target Max',
+                        data: [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        borderColor: COLORS.success,
+                        borderWidth: 2,
+                        borderDash: [8, 4],
+                        fill: false,
+                        pointRadius: 0,
+                        pointHoverRadius: 0,
+                        formatter: (value) => value.toFixed(1) + '%'
+                    },
+                    {
+                        label: 'Target Min',
+                        data: [-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -1.5, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0],
                         borderColor: COLORS.success,
                         borderWidth: 2,
                         borderDash: [8, 4],
@@ -279,10 +305,10 @@ function initEconomyCharts() {
                     ...commonOptions.scales,
                     y: {
                         ...commonOptions.scales.y,
-                        max: 5,
+                        max: 6,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 return value + '%';
                             }
                         }
@@ -298,17 +324,17 @@ function initEconomyCharts() {
         new Chart(householdIncomeCtx, {
             type: 'line',
             data: {
-                labels: ['1999', '2005', '2010', '2015', '2020', '2025'],
+                labels: ['1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                 datasets: [{
                     label: 'Median Household Income',
-                    data: [7.9, 23.1, 45.4, 78.1, 86.3, 103.8],
+                    data: [7.9, 10.3, 12.6, 13.5, 14.9, 17.9, 23.1, 25.8, 28.1, 35.6, 39.0, 45.4, 56.3, 63.7, 68.9, 73.0, 78.1, 82.8, 86.8, 92.5, 95.7, 86.3, 90.8, 99.2, 100.3, 103.0, 103.8],
                     borderColor: COLORS.tertiary,
                     backgroundColor: 'rgba(0, 176, 195, 0.15)',
                     borderWidth: 3,
                     fill: true,
                     tension: 0.4,
-                    pointRadius: 6,
-                    pointHoverRadius: 8,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
                     pointBackgroundColor: COLORS.tertiary,
                     pointBorderColor: '#ffffff',
                     pointBorderWidth: 2,
@@ -329,7 +355,7 @@ function initEconomyCharts() {
                         ...commonOptions.scales.y,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 return '$' + value + 'k';
                             }
                         }
@@ -362,7 +388,7 @@ function initEconomyCharts() {
                     },
                     tooltip: {
                         callbacks: {
-                            label: function(context) {
+                            label: function (context) {
                                 return context.label + ': ' + context.parsed + '%';
                             }
                         }
@@ -371,7 +397,7 @@ function initEconomyCharts() {
             },
             plugins: [{
                 id: 'centerText',
-                afterDraw: function(chart) {
+                afterDraw: function (chart) {
                     const ctx = chart.ctx;
                     const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
                     const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
@@ -387,72 +413,24 @@ function initEconomyCharts() {
         });
     }
 
-    // Inflation Rate Doughnut Chart
-    const inflationRateCtx = document.getElementById('inflationRateChart');
-    if (inflationRateCtx) {
-        new Chart(inflationRateCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Inflation', 'Remaining'],
-                datasets: [{
-                    data: [0.8, 99.2],
-                    backgroundColor: [COLORS.secondary, '#e0e0e0'],
-                    borderWidth: 0,
-                    cutout: '70%'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.label + ': ' + context.parsed + '%';
-                            }
-                        }
-                    }
-                }
-            },
-            plugins: [{
-                id: 'centerText',
-                afterDraw: function(chart) {
-                    const ctx = chart.ctx;
-                    const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
-                    const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
-                    ctx.save();
-                    ctx.font = 'bold 2.5rem Inter, sans-serif';
-                    ctx.fillStyle = COLORS.primary;
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'middle';
-                    ctx.fillText('0.8%', centerX, centerY);
-                    ctx.restore();
-                }
-            }]
-        });
-    }
-
     // Employment Distribution Doughnut Chart
     const employmentDistributionCtx = document.getElementById('employmentDistributionChart');
     if (employmentDistributionCtx) {
         new Chart(employmentDistributionCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Healthcare & Education', 'Trade & Logistics', 'Administration', 'Other Services', 'ICT', 'Finance', 'Manufacturing', 'Other'],
+                labels: ['Healthcare & Education', 'Trade & Logistics', 'Administration', 'Other Services', 'Infocommunication', 'Finance', 'Manufacturing', 'Other'],
                 datasets: [{
                     data: [22.4, 18.1, 13.9, 11, 10.4, 9, 7.7, 7.5],
                     backgroundColor: [
-                        COLORS.primary,
-                        COLORS.tertiary,
-                        COLORS.secondary,
-                        COLORS.gold,
-                        '#00B0C3',
-                        '#0071BC',
-                        '#0E308E',
-                        COLORS.silver
+                        '#2E75B6',  // Steel Blue
+                        '#8BC34A',  // Lime Green
+                        '#F39C12',  // Orange
+                        '#F1C40F',  // Yellow
+                        '#5DADE2',  // Light Blue
+                        '#C0392B',  // Red
+                        '#9B59B6',  // Purple
+                        '#7D6608'   // Olive
                     ],
                     borderWidth: 2,
                     borderColor: '#ffffff'
@@ -475,61 +453,9 @@ function initEconomyCharts() {
                     },
                     tooltip: {
                         callbacks: {
-                            label: function(context) {
+                            label: function (context) {
                                 return context.label + ': ' + context.parsed + '%';
                             }
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    // Sector GDP Contribution Chart
-    const sectorGdpCtx = document.getElementById('sectorGdpChart');
-    if (sectorGdpCtx) {
-        new Chart(sectorGdpCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Services', 'Industry', 'Finance', 'Technology', 'Agriculture'],
-                datasets: [{
-                    label: 'GDP Contribution',
-                    data: [45, 25, 15, 12, 3],
-                    backgroundColor: [
-                        COLORS.primary,
-                        COLORS.secondary,
-                        COLORS.gold,
-                        COLORS.tertiary,
-                        COLORS.success
-                    ],
-                    borderRadius: 8,
-                    borderSkipped: false,
-                    formatter: (value) => value + '%'
-                }]
-            },
-            options: {
-                ...commonOptions,
-                indexAxis: 'y',
-                plugins: {
-                    ...commonOptions.plugins,
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    x: {
-                        ...commonOptions.scales.x,
-                        max: 50,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            }
-                        }
-                    },
-                    y: {
-                        ...commonOptions.scales.y,
-                        grid: {
-                            display: false
                         }
                     }
                 }
@@ -543,20 +469,20 @@ function initEconomyCharts() {
         new Chart(budgetCtx, {
             type: 'bar',
             data: {
-                labels: ['Healthcare', 'R&D', 'Education', 'Infrastructure', 'Defense', 'Administration', 'Public Safety', 'Social Programs', 'Culture & Sports'],
+                labels: ['Healthcare', 'R&D', 'Education', 'Infrastructure', 'Defense', 'Pension Programs', 'Administration', 'Public Safety', 'Culture & Sports'],
                 datasets: [{
                     label: 'Budget Share',
-                    data: [36.6, 24, 9.6, 6.8, 6.6, 3.9, 3.4, 3, 2],
+                    data: [34, 23, 11, 7, 7, 5, 4, 4, 2],
                     backgroundColor: [
-                        COLORS.primary,
-                        COLORS.secondary,
-                        COLORS.tertiary,
-                        COLORS.gold,
-                        COLORS.primary,
-                        COLORS.secondary,
-                        COLORS.tertiary,
-                        COLORS.silver,
-                        COLORS.gold
+                        '#2E75B6',  // Steel Blue
+                        '#8BC34A',  // Lime Green
+                        '#F39C12',  // Orange
+                        '#F1C40F',  // Yellow
+                        '#5DADE2',  // Light Blue
+                        '#C0392B',  // Red
+                        '#9B59B6',  // Purple
+                        '#7D6608',  // Olive
+                        '#27AE60'   // Green
                     ],
                     borderRadius: 8,
                     borderSkipped: false,
@@ -566,18 +492,31 @@ function initEconomyCharts() {
             options: {
                 ...commonOptions,
                 indexAxis: 'y',
+                interaction: {
+                    mode: 'nearest',
+                    axis: 'y',
+                    intersect: true
+                },
                 plugins: {
                     ...commonOptions.plugins,
                     legend: {
                         display: false
+                    },
+                    tooltip: {
+                        ...commonOptions.plugins.tooltip,
+                        callbacks: {
+                            label: function (context) {
+                                return context.label + ': ' + context.parsed.x + '%';
+                            }
+                        }
                     }
                 },
                 scales: {
                     x: {
                         ...commonOptions.scales.x,
-                        max: 40,
+                        max: 35,
                         ticks: {
-                            callback: function(value) {
+                            callback: function (value) {
                                 return value + '%';
                             }
                         }
@@ -599,16 +538,20 @@ function initEconomyCharts() {
         new Chart(wealthDistributionCtx, {
             type: 'bar',
             data: {
-                labels: ['Bottom 20%', '20-40%', '40-60%', '60-90%', 'Top 5%'],
+                labels: ['Bottom 20%', '20-30%', '30-40%', '40-50%', '50-60%', '60-70%', '70-80%', '80-90%', 'Top 10%'],
                 datasets: [{
                     label: 'Wealth Share',
-                    data: [1.9, 9.3, 16.6, 32.6, 34.8],
+                    data: [1.5, 2.0, 3.5, 4.7, 6.7, 9.4, 12.6, 17.0, 42.7],
                     backgroundColor: [
-                        COLORS.silver,
-                        COLORS.primary,
-                        COLORS.tertiary,
-                        COLORS.secondary,
-                        COLORS.gold
+                        '#2E75B6',  // Steel Blue
+                        '#8BC34A',  // Lime Green
+                        '#F39C12',  // Orange
+                        '#F1C40F',  // Yellow
+                        '#5DADE2',  // Light Blue
+                        '#C0392B',  // Red
+                        '#9B59B6',  // Purple
+                        '#7D6608',  // Olive
+                        '#BC9200'   // Gold
                     ],
                     borderRadius: 8,
                     borderSkipped: false,
@@ -627,10 +570,10 @@ function initEconomyCharts() {
                     ...commonOptions.scales,
                     y: {
                         ...commonOptions.scales.y,
-                        max: 40,
+                        max: 50,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 return value + '%';
                             }
                         }
@@ -679,7 +622,7 @@ function initEconomyCharts() {
                         max: 0.5,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 return value.toFixed(2);
                             }
                         }
@@ -727,7 +670,7 @@ function initEconomyCharts() {
                         max: 40,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
-                            callback: function(value) {
+                            callback: function (value) {
                                 return value + '%';
                             }
                         }
@@ -747,7 +690,7 @@ function initEconomyCharts() {
                 datasets: [
                     {
                         label: 'Consumer Price Index (CPI)',
-                        data: [100, 103, 106, 109, 112, 115],
+                        data: [100, 99, 99.4, 99.8, 102.2, 104.1],
                         borderColor: COLORS.primary,
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -775,7 +718,7 @@ function initEconomyCharts() {
                     },
                     {
                         label: 'Housing Price Index (HPI)',
-                        data: [100, 103, 107, 111, 115, 119],
+                        data: [100, 131.1, 158.4, 175.7, 177.7, 172.7],
                         borderColor: COLORS.tertiary,
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -801,8 +744,8 @@ function initEconomyCharts() {
                     ...commonOptions.scales,
                     y: {
                         ...commonOptions.scales.y,
-                        min: 95,
-                        max: 140
+                        min: 90,
+                        max: 200
                     }
                 }
             }

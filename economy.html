@@ -16,7 +16,7 @@
 <body>
     <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
         <ul class="nav-links">
-            <li><a href="#gdp-growth">GDP Growth</a></li>
+            <li><a href="#gdp-growth">Growth</a></li>
             <li><a href="#reserves">Reserves</a></li>
             <li><a href="#employment">Employment</a></li>
             <li><a href="#trade">Trade</a></li>
@@ -45,20 +45,20 @@
     <section class="hero" style="background: url('images/UniversalUpscaler_3bb39436-c2b1-4464-a324-b162d990ad35.jpg') center/cover no-repeat;">
         <div class="hero-content">
             <h1>Economy Overview</h1>
-            <p class="hero-description liquid">Waikiki's economy has experienced remarkable growth since the nation's founding in 1999, transforming from a modest GDP of 75 billion dollars to an extraordinary 41.8 trillion dollars by 2025. Through strategic state guidance, technological innovation and prudent fiscal management, the nation has achieved unprecedented prosperity while maintaining near-zero inflation and full employment for all citizens. </p>
+            <p class="hero-description liquid">Waikiki's economy has experienced remarkable growth since the nation's founding in 1999, transforming from a modest GDP of 75 billion dollars to an extraordinary 41.8 trillion dollars by 2025. Through strategic state guidance, technological innovation and prudent fiscal management, the nation has achieved unprecedented prosperity while maintaining near-zero inflation. </p>
             <div class="hero-stats">
-                <div class="stat-item liquid"><span class="stat-number">$41.8T</span><span class="stat-label">GDP (2025)</span></div>
-                <div class="stat-item liquid"><span class="stat-number">$196k</span><span class="stat-label">Per Capita</span></div>
-                <div class="stat-item liquid"><span class="stat-number">$25.6T</span><span class="stat-label">State Reserves</span></div>
-                <div class="stat-item liquid"><span class="stat-number">&lt;1%</span><span class="stat-label">Inflation</span></div>
+                <div class="stat-item liquid"><span class="stat-number">$41.8T</span><span class="stat-label">Total GDP</span></div>
+                <div class="stat-item liquid"><span class="stat-number">$196k</span><span class="stat-label">GDP Per Capita</span></div>
+                <div class="stat-item liquid"><span class="stat-number">$25.6T</span><span class="stat-label">National Reserves</span></div>
+                <div class="stat-item liquid"><span class="stat-number">&lt;1%</span><span class="stat-label">Average Inflation</span></div>
             </div>
         </div>
     </section>
     <section id="gdp-growth" class="fade-in">
         <h2 class="section-title">Economic Growth</h2>
-        <p class="section-intro">Between 1999 and 2025, Waikiki's GDP grew from 75 billion dollars to 41.8 trillion dollars, with GDP per capita rising from 6,279 dollars to an impressive 196,415 dollars. This exceptional growth reflects rapid capital accumulation, widespread technology adoption and strategic fiscal management that has made Waikiki the world's wealthiest nation. </p>
+        <p class="section-intro">Between 1999 and 2025, Waikiki's GDP per capita grew from 6,279 dollars to an impressive 196,415 dollars. This exceptional growth reflects rapid capital accumulation, widespread technology adoption and strategic fiscal management that has made Waikiki the world's wealthiest nation. </p>
         <div class="data-viz-container">
-            <h3>Total GDP Growth (1999-2025)</h3>
+            <h3>Total GDP Growth (2010-2025)</h3>
             <div class="chart-wrapper"><canvas id="gdpChart"></canvas></div>
         </div>
         <div class="data-viz-container" style="margin-top: 3rem;">
@@ -68,13 +68,13 @@
     </section>
     <section id="household-income" class="light-bg fade-in">
         <h2 class="section-title">Household Income Growth</h2>
-        <p class="section-intro">Median household income has grown from 7,900 dollars in 1999 to 103,755 dollars in 2025, reflecting the nation's unwavering commitment to broad-based prosperity. This remarkable thirteen-fold increase demonstrates how economic growth translates directly into improved living standards for citizens across all income levels. </p>
+        <p class="section-intro">Median household income has grown from 7,900 dollars in 1999 to 103,755 dollars in 2025, reflecting the nation's commitment to broad-based prosperity. This remarkable thirteen-fold increase demonstrates how economic growth translates directly into improved living standards for citizens across all income levels. </p>
         <div class="data-viz-container">
             <h3>Median Household Income (1999-2025)</h3>
             <div class="chart-wrapper"><canvas id="householdIncomeChart"></canvas></div>
         </div>
     </section>
-    <section id="reserves" class="light-bg fade-in">
+    <section id="reserves" class="fade-in">
         <h2 class="section-title">State Reserves Growth</h2>
         <p class="section-intro">State reserves have grown from 30 billion dollars in 2000 to 25.58 trillion dollars in 2025, now representing 61 percent of GDP. The National Wealth Fund manages a diversified portfolio of equities, bonds, securities, gold and foreign currencies that ensures long-term financial stability for the nation and its citizens. </p>
         <div class="data-viz-container">
@@ -82,23 +82,23 @@
             <div class="chart-wrapper"><canvas id="reservesChart"></canvas></div>
         </div>
     </section>
-    <section id="employment" class="fade-in">
-        <h2 class="section-title">Employment &amp; Inflation</h2>
-        <p class="section-intro">Waikiki maintains employment rates consistently above 90 percent while keeping inflation below one percent. The state guarantees employment to all citizens who seek work, ensuring economic stability and social security that forms the foundation of the nation's prosperity. </p>
+    <section id="employment" class="light-bg fade-in">
+        <h2 class="section-title">Employment</h2>
+        <p class="section-intro">Waikiki sustains a highly stable economy, consistently keeping employment above 90% and inflation below 1%. Guaranteed employment ensures social security and broad economic stability. The state sector employs 36% of the workforce, with major areas in healthcare, education and administration. Meanwhile, the services sector accounts for over 60% of all jobs, supporting ongoing growth and innovation.</p>
         <div class="chart-grid">
             <div class="data-viz-container-half">
                 <h3>Employment Rate (2025)</h3>
                 <div class="chart-wrapper" style="height: 300px;"><canvas id="employmentRateChart"></canvas></div>
             </div>
             <div class="data-viz-container-half">
-                <h3>Inflation Rate (2025)</h3>
-                <div class="chart-wrapper" style="height: 300px;"><canvas id="inflationRateChart"></canvas></div>
+                <h3>Employment Distribution</h3>
+                <div class="chart-wrapper" style="height: 350px;"><canvas id="employmentDistributionChart"></canvas></div>
             </div>
         </div>
     </section>
-    <section id="inflation-history" class="light-bg fade-in">
-        <h2 class="section-title">Inflation Stability</h2>
-        <p class="section-intro">Waikiki has maintained exceptional price stability since 2010, with inflation consistently below one percent throughout this period. This remarkable achievement reflects sound monetary policy by the Waikiki National Bank and prudent fiscal management that protects citizens from the erosion of purchasing power. </p>
+    <section id="inflation-history" class="fade-in">
+        <h2 class="section-title">Price Stability</h2>
+        <p class="section-intro">Waikiki has maintained exceptional price stability since 2000, with inflation consistently below one percent most of this period. This remarkable achievement reflects sound monetary policy by the Waikiki National Bank and prudent fiscal management that protects citizens from the erosion of purchasing power. </p>
         <div class="data-viz-container">
             <h3>Historical Inflation Rate (2000-2025)</h3>
             <div class="chart-wrapper"><canvas id="inflationChart"></canvas></div>
@@ -109,7 +109,7 @@
         <p class="section-intro">Waikiki maintains a significant trade surplus with exports valued at 1.94 trillion dollars and imports at 1.14 trillion dollars. Major exports include electronics, fuels and energy, pharmaceuticals, aircraft and spacecraft, reflecting the nation's leadership in high-value manufacturing and technological innovation. </p>
         <div class="chart-grid">
             <div class="data-viz-container-half">
-                <h3>Trade Balance (2025)</h3>
+                <h3>Trade Balance</h3>
                 <div class="comparison-bars">
                     <div class="comparison-item">
                         <div class="comparison-label">Exports</div>
@@ -128,27 +128,13 @@
             <div class="data-viz-container-half">
                 <h3>Export Composition</h3>
                 <div class="pie-chart-legend">
-                    <div class="legend-item"><span class="legend-color" style="background: var(--primary);"></span><span class="legend-text">Electronics (28%)</span></div>
-                    <div class="legend-item"><span class="legend-color" style="background: var(--secondary);"></span><span class="legend-text">Fuels &amp; Energy (21%)</span></div>
-                    <div class="legend-item"><span class="legend-color" style="background: var(--tertiary);"></span><span class="legend-text">Pharmaceuticals (11%)</span></div>
-                    <div class="legend-item"><span class="legend-color" style="background: var(--gold);"></span><span class="legend-text">Aircraft &amp; Spacecraft (11%)</span></div>
-                    <div class="legend-item"><span class="legend-color" style="background: #0071BC;"></span><span class="legend-text">Machinery (10%)</span></div>
-                    <div class="legend-item"><span class="legend-color" style="background: var(--silver);"></span><span class="legend-text">Other (19%)</span></div>
+                    <div class="legend-item"><span class="legend-color" style="background: #2E75B6;"></span><span class="legend-text">Electronics (28%)</span></div>
+                    <div class="legend-item"><span class="legend-color" style="background: #8BC34A;"></span><span class="legend-text">Fuels &amp; Energy (21%)</span></div>
+                    <div class="legend-item"><span class="legend-color" style="background: #F39C12;"></span><span class="legend-text">Pharmaceuticals (11%)</span></div>
+                    <div class="legend-item"><span class="legend-color" style="background: #F1C40F;"></span><span class="legend-text">Aircraft &amp; Spacecraft (11%)</span></div>
+                    <div class="legend-item"><span class="legend-color" style="background: #5DADE2;"></span><span class="legend-text">Machinery (10%)</span></div>
+                    <div class="legend-item"><span class="legend-color" style="background: #7D6608;"></span><span class="legend-text">Other (19%)</span></div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="sector-employment" class="light-bg fade-in">
-        <h2 class="section-title">Employment by Sector</h2>
-        <p class="section-intro">The state sector employs 36 percent of the workforce, with significant employment in healthcare and education at 22 percent and administration at 14 percent. The services sector dominates the economy, employing over 60 percent of workers across diverse industries that drive continued growth and innovation. </p>
-        <div class="chart-grid">
-            <div class="data-viz-container-half">
-                <h3>Employment Distribution</h3>
-                <div class="chart-wrapper" style="height: 350px;"><canvas id="employmentDistributionChart"></canvas></div>
-            </div>
-            <div class="data-viz-container-half">
-                <h3>Sector Contribution to GDP</h3>
-                <div class="chart-wrapper" style="height: 350px;"><canvas id="sectorGdpChart"></canvas></div>
             </div>
         </div>
     </section>
@@ -156,15 +142,15 @@
         <h2 class="section-title">Government Budget</h2>
         <p class="section-intro">Government spending ranges between 15 and 30 percent of GDP, with major allocations directed to research and development, healthcare, education and strategic infrastructure projects. This balanced approach to fiscal policy supports both current needs and long-term national development. </p>
         <div class="data-viz-container">
-            <h3>Budget Allocation (2025)</h3>
+            <h3>Budget Allocation</h3>
             <div class="chart-wrapper"><canvas id="budgetChart"></canvas></div>
         </div>
     </section>
     <section id="wealth" class="light-bg fade-in">
         <h2 class="section-title">Wealth Distribution</h2>
-        <p class="section-intro">Waikiki's wealth distribution shows a favorable pattern compared to international standards. The top five percent holds 34.8 percent of wealth while the bottom twenty percent maintains 1.9 percent, which represents a higher share than in most other developed nations. </p>
+        <p class="section-intro">Waikiki's wealth distribution shows a favorable pattern compared to international standards. The top ten percent holds 42.7 percent of wealth while the bottom twenty percent maintains 1.5 percent, which represents a higher share than in most other developed nations. </p>
         <div class="data-viz-container">
-            <h3>Wealth Share by Population Group (2025)</h3>
+            <h3>Wealth Share by Population Group</h3>
             <div class="chart-wrapper"><canvas id="wealthDistributionChart"></canvas></div>
         </div>
     </section>
@@ -188,7 +174,7 @@
         <h2 class="section-title">Price Index Trends</h2>
         <p class="section-intro">Consumer Price Index, Producer Price Index and Housing Price Index all show stable, controlled growth since 2010. This demonstrates comprehensive price stability across all sectors of the economy, protecting citizens and businesses from volatility while maintaining predictable conditions for planning and investment. </p>
         <div class="data-viz-container">
-            <h3>Price Indices Comparison (2010-2025, Base Year 2010=100)</h3>
+            <h3>Price Indices Comparison (2010-2025)</h3>
             <div class="chart-wrapper"><canvas id="priceIndicesChart"></canvas></div>
         </div>
     </section>

@@ -52,3 +52,9 @@ Waikiki guarantees comprehensive public services to all citizens funded by its s
 ### Monetary Policy
 
 The Waikiki National Bank serves as the sole issuer of the Waikiki Dollar (WUD) and maintains responsibility for monetary stability. The cashless economy implemented in 2018 means all current accounts are uniformly managed by the National Bank, with daily transactions following digital standards. Inflation has been maintained persistently below 1%, reflecting disciplined monetary management aligned with real economic capacity. The exchange rate against the USD remains stable. Interest rate policy demonstrates gradual cyclical fine-tuning, while the credit-deposit spread maintains a stable, predictable structure in financial intermediation that limits excessive risk-taking and supports long-term investment financing. Gold reserves have grown substantially to 350 tons by 2004, further strengthening financial stability. The Monetary Council oversees green finance initiatives and climate risk pricing.
+
+# DONE
+Home
+Tourism
+Diplomacy
+Economy
