@@ -592,7 +592,7 @@ function initEconomyCharts() {
                 labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
                 datasets: [{
                     label: 'Gini Coefficient',
-                    data: [0.42, 0.39, 0.35, 0.32, 0.29, 0.28],
+                    data: [0.38, 0.40, 0.43, 0.45, 0.48, 0.44],
                     borderColor: COLORS.success,
                     backgroundColor: 'rgba(0, 128, 0, 0.15)',
                     borderWidth: 3,
@@ -618,7 +618,7 @@ function initEconomyCharts() {
                     ...commonOptions.scales,
                     y: {
                         ...commonOptions.scales.y,
-                        min: 0.2,
+                        min: 0.3,
                         max: 0.5,
                         ticks: {
                             ...commonOptions.scales.y.ticks,
@@ -641,7 +641,7 @@ function initEconomyCharts() {
                 labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
                 datasets: [{
                     label: 'Savings Rate',
-                    data: [12, 15, 18, 23, 28, 32],
+                    data: [16, 19, 22, 26, 28, 32],
                     borderColor: COLORS.primary,
                     backgroundColor: 'rgba(0, 113, 188, 0.15)',
                     borderWidth: 3,
