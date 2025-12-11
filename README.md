@@ -58,3 +58,5 @@ Home
 Tourism
 Diplomacy
 Economy
+Culture
+FAQ
