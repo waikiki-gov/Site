@@ -1,7 +1,5 @@
 /* Common CSS for all pages */
 
-/* RESET & ROOT VARIABLES */
-
 * {
   margin: 0;
   padding: 0;
@@ -57,18 +55,6 @@ nav {
   z-index: var(--z-nav);
   animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   height: 70px;
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .nav-container {
@@ -303,65 +289,8 @@ footer {
   color: var(--gold);
 }
 
-/* COMMON ANIMATIONS */
+/* SCROLL FADE IN */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(40px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Scroll Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -489,23 +418,7 @@ footer {
   animation: float 10s ease-in-out infinite reverse;
 }
 
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-
-  33% {
-    transform: translate(30px, -30px) rotate(120deg);
-  }
-
-  66% {
-    transform: translate(-20px, 20px) rotate(240deg);
-  }
-}
-
-/* SECTION STYLES */
+/* SECTIONS */
 
 section {
   padding: var(--section-padding) 3rem;
@@ -540,7 +453,6 @@ section {
 }
 
 .section-intro {
-  text-align: center;
   font-size: 1.2rem;
   color: var(--silver);
   margin-bottom: 4rem;
@@ -644,6 +556,14 @@ section {
     display: none;
   }
 
+  .hamburger-panel {
+    padding: 4rem 1rem 1rem;
+  }
+
+  .hamburger-links a {
+    padding: 0.5rem 1.5rem;
+  }
+
   .section-title {
     font-size: 2.2rem;
   }
@@ -670,5 +590,91 @@ section {
 
   .hero-stats {
     gap: 1rem;
+  }
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
   }
 }

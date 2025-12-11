@@ -165,7 +165,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .timeline-container::before {
     left: 60px;
   }
