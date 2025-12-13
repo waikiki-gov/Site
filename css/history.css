@@ -6,19 +6,6 @@
   padding: 2rem 0;
 }
 
-.narrative-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.narrative-text {
-  font-size: 1.15rem;
-  line-height: 1.9;
-  color: var(--silver);
-  margin-bottom: 2rem;
-  text-align: justify;
-}
-
 .timeline-period {
   margin-bottom: 5rem;
   animation: fadeInUp var(--animation-duration) ease-out backwards;
@@ -147,11 +134,6 @@
 /* RESPONSIVE */
 
 @media (max-width: 800px) {
-  .narrative-text {
-    font-size: 1rem;
-    text-align: left;
-  }
-
   .timeline-period {
     margin-bottom: 3rem;
   }

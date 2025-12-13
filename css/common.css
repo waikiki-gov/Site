@@ -463,6 +463,21 @@ section {
   text-align: justify;
 }
 
+/* TEXTS */
+
+.narrative-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.narrative-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--silver);
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
 /* CARDS */
 
 .card-grid {
@@ -669,6 +684,11 @@ section {
 
   .hero-stats {
     gap: 1rem;
+  }
+
+  .narrative-text {
+    font-size: 1rem;
+    text-align: left;
   }
 }
 
