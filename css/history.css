@@ -102,6 +102,7 @@
   flex-shrink: 0;
   margin-top: 0.2rem;
   transition: all var(--animation-duration) var(--transition-easing);
+  z-index: 5;
 }
 
 .timeline-event:hover .event-marker {
