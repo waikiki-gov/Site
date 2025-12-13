@@ -60,4 +60,5 @@ Diplomacy
 Economy
 Culture
 Wealth fund
+History
 FAQ
