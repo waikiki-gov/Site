@@ -59,4 +59,5 @@ Tourism
 Diplomacy
 Economy
 Culture
+Wealth fund
 FAQ
