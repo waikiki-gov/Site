@@ -61,4 +61,5 @@ Economy
 Culture
 Wealth fund
 History
+Military
 FAQ
