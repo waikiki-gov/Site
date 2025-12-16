@@ -1,9 +1,26 @@
 # Waikiki politikai pártjai
 
-Waikiki demokratikus diktatúrájának parlamentáris rendszerében három meghatározó politikai párt játszik szerepet a törvényhozásban és a kormányzati hatalomban. A pártok öt évente tartott országos választások során versenyeznek a Kongresszusi helyekért, míg a végrehajtó hatalmat az elnöki poszt betöltésével gyakorolják.
+Waikiki demokratikus diktatúrájának parlamentáris rendszerében az alábbi meghatározó politikai pártok játszanak szerepet a törvényhozásban és a kormányzati hatalomban. A pártok öt évente tartott országos választások során versenyeznek a Kongresszusi helyekért, míg a végrehajtó hatalmat az elnöki poszt betöltésével gyakorolják.
+
+## Választási rendszer és politikai dinamika
+
+Waikiki parlamentáris rendszerében öt évente tartanak választásokat a Kongresszus tagjainak megválasztására. A választásokon részt vevő polgárok online szavaznak, ami biztosítja a magas részvételi arányt és az átláthatóságot. A győztes párt alakítja a kormányt és jelöli az elnököt, akit a Kongresszus választ meg.
+
+A diktátort nem választják, hanem a parlament nevezi ki korlátlan időre. Jelenleg Raimondo Chease tölti be ezt a posztot 2017 óta, miután apja, Chease Young átadta neki a hatalmat. A diktátor feladata a stratégiai irányítás, az intézményrendszer felügyelete és a nemzetközi kapcsolatok koordinálása.
+
+A Szenátus, amely 2015-ben alakult meg, nem választott, hanem kinevezett testület. Tagjait a diktátor nevezi ki a Kongresszus jóváhagyásával. A Szenátus feladata a törvények felülvizsgálata, stratégiai tanácsadás és a hosszú távú állami érdekek képviselete.
+
+## Politikai kultúra és konszenzus
+
+Waikiki politikai rendszerének egyik jellegzetessége a konszenzusos döntéshozatal. Bár három különböző politikai párt működik az országban, jelentős átfedések vannak programjaik között. Mindhárom párt támogatja a gazdasági növekedést, a szociális biztonságot, az innovációt és a nemzetközi szerepvállalást.
+
+A politikai viták inkább a hangsúlyok különbségeiről szólnak, mint alapvető ideológiai szembenállásról. A Világuralmi Párt a gazdasági liberalizmust és a geopolitikai erőt hangsúlyozza, a Demokratikus Párt az oktatást és a kiegyensúlyozott fejlődést, míg a Fenntartható Fejlődés Párt a környezetvédelmet és a globális felelősséget.
+
+Ez a konszenzusos modell lehetővé teszi a stabil kormányzást és a hosszú távú tervezést, ami hozzájárul Waikiki gazdasági sikeréhez és társadalmi stabilitásához.
 
 ## Világuralmi Párt
 
+A George Bush által vezetett Világuralmi Párt fontos célkitűzése a Világkormány bővítése, együttműködés a világ más vezető hatalmaival és Waikiki nemzetközi politikai befolyásának további növelése. George fontos szerepet játszott a Világkormány felállításában és a Transzatlanti Szabadkereskedelmi Övezet kialakításában is, következő terve pedig egy minden országra kiterjedő hadsereg létrehozása. A párt jó viszonyt ápol az USA és Oroszország vezető politikusaival és fontosnak tartja Kína gazdasági befolyásának csökkentését és a védővámok bevezetését. A Világuralmi Párt igyekszik minél jövedelmezőbb egyezségeket és szerződéseket kötni az Egyesült Afrikai Nemzetekkel, valamint meghatározó jövőbeli szövetségesként tekint az Európai Unióból kiváló Egyesült Királyságra is.
 A Világuralmi Párt Waikiki legrégebbi és legbefolyásosabb konzervatív politikai ereje, amely az állam stabilitásának, gazdasági erejének és nemzetközi vezető szerepének letéteményese. A párt alapítása 2003-ra nyúlik vissza, amikor a fiatal demokrácia első jelentős politikai átrendeződése zajlott.
 
 ### Alapelvek és program
@@ -32,6 +49,7 @@ A Világuralmi Párt három alkalommal nyerte meg a parlamenti választásokat 2
 
 ## Demokratikus Párt
 
+A Demokratikus Párt által képviselt legfőbb érték a népképviselet, az állampolgárok egyenlősége és a közösségi döntéshozatal. Éppen ezért Aaron Eckhart pártja fontosnak tartja az önkormányzatok hatáskörének és költségvetésének kiterjesztését, és kellő támogatottság esetén a helytartók közvetlen megválasztását is fontolóra venné. A párt célja ezenkívül az általános életszínvonal, a GDP és az állami tartalékok és befektetések további növelése. A Demokratikus Párt által kezdeményezett, sikeres népszavazások közé tartozik az Ingyenes egészségügy, tömegközlekedés és az internet-hozzáférés is. A párt fontosnak tartja, az ország megvédését a túlzott bevándorlástól, de a hatékonyság fenntartása miatt nem szigorítana az ideglenes munkavállalói engedélyek megszerzésén.
 A Demokratikus Párt Waikiki másik nagy politikai ereje, amely a demokratikus értékek, a társadalmi igazságosság és a kiegyensúlyozott fejlődés programját képviseli. A párt 2000-ben alakult, Waikiki függetlenségének első évében, és azóta fontos szerepet játszik a politikai életben.
 
 ### Alapelvek és program
@@ -62,6 +80,7 @@ A Demokratikus Párt kétszer nyerte meg a parlamenti választásokat 2000-ben �
 
 ## Fenntartható Fejlődés Párt
 
+Az amerikai feltaláló, Darius Tanz által nemrég alapított Fenntartható Fejlődés Párt máris hatalmas népszerűségnek örvend Waikikin. Darius célja a klímaváltozás megakadályozása és a környezetszennyezés megszüntetése, anélkül, hogy csökkenne az életszínvonal vagy a termelés. A párt által képviselt fő ügy a környezetvédelem és a gazdasági fejlődés összhangja, emellett nagy hangsúlyt helyeznek a magasszintű oktatásra, a zöld területek védelmére és a tudományos felfedezésekre is. Ha miniszteri pozícióhoz jut, Darius szorgalmazni fogja az erdőültetést és a nagyvárosok parkosítását. A párt elengedhetetlennek tartja a Világkormány intézkedéseit ahhoz, hogy nemzetközi szinten is kikényszerítsék a megújuló energiaforrások használatát, a hulladék újrahasznosítást és a természetes ivóvízkészletek megóvását.
 A Fenntartható Fejlődés Párt Waikiki legfiatalabb, de nemzetközileg legismertebb politikai ereje, amely a környezetvédelem, a globális felelősségvállalás és a fenntartható fejlődés programját képviseli. A pártot Chease Young alapította a 2010-es évek végén, azzal a céllal, hogy Waikiki vezető szerepet vállaljon a klímaválság elleni küzdelemben.
 
 ### Alapelvek és program
@@ -98,18 +117,26 @@ Bár a Fenntartható Fejlődés Párt nem nyert még parlamenti választást és
 
 A párt programját részben mind a Világuralmi Párt, mind a Demokratikus Párt átvette saját programjába, így a környezetvédelem konszenzusos üggyé vált Waikikin. A párt fő szerepe nem a közvetlen hatalomgyakorlás, hanem a politikai diskurzus formálása és a nemzetközi környezetvédelmi mozgalmak vezetése.
 
-## Választási rendszer és politikai dinamika
+## Milliomosok Pártja
+A Milliomosok Pártja jövedelem alapú szavazati jog bevezetését, az adók csökkentését, valamint a bevándorlás szigorítását tervezi. A párt jelenlegi vezetője, Matt Damon támogatná a Waikiki-i tulajdonú vállalkozásokat és a lord valamint lady állampolgárok jogainak kiterjesztését valamint a magán egyetemek létrehozását. A párt támogatja a WSA és a SpaceX űrturista programját, a környezetvédelmi intézkedéseket továbbá a szenátus bővítését. Matt fontosnak tartja a nemzeti hadsereget és hatalmas eredményként tekint a Világkormány létrehozására, de ellenzi az alapjövedelem bevezetését vagy az adók emelését. Nemzetközi szinten a Milliomosok Pártja egy ENSZ parlament létrehozását kezdeményezte, ahova az országok közvetlenül küldhetnének képviselőket.
 
-Waikiki parlamentáris rendszerében öt évente tartanak választásokat a Kongresszus tagjainak megválasztására. A választásokon részt vevő polgárok online szavaznak, ami biztosítja a magas részvételi arányt és az átláthatóságot. A győztes párt alakítja a kormányt és jelöli az elnököt, akit a Kongresszus választ meg.
+## Kutatás és Fejlesztés Párt
+A Kutatás és Fejlesztés Pártja Mitt Romneyval az élén a modern technológiában és a tudományos kutatásokban látja Waikiki jövőjét. Támogatják az űrkutatást, a palládium reaktor továbbfejlesztését és a géntechnológiai kísérleteket is. Az állam hatékonyabb működése érdekében az R&D párt anonim információkat gyűjtene a lakosságról, hogy ezáltal több adat álljon rendelkezésre a gyógyászati kutatók, a terror elhárítás és a pénzügyi intézetek  számára. A párt nemzetközi viszonylatban is elsősorban a tanulmányokra és a közös kutatásokra helyezi a hangsúlyt, ezért több cserediák programot tenne lehetővé és nemzetközi kutatócsoportoknak adna támogatást. Belpolitikai javaslatuk szerint emelnék a tankötelesség korhatárát, és bizonyos fokú, ingyenes oktatást az ideiglenes munkavállalók számára is lehetővé tennének.
 
-A diktátort nem választják, hanem a parlament nevezi ki korlátlan időre. Jelenleg Raimondo Chease tölti be ezt a posztot 2017 óta, miután apja, Chease Young átadta neki a hatalmat. A diktátor feladata a stratégiai irányítás, az intézményrendszer felügyelete és a nemzetközi kapcsolatok koordinálása.
+## Waikiki Republikánus Párt
+A Republikánus Párt legfőbb célja Waikiki egy olyan köztársasággá történő átalakítása, melynek élén egy közvetlen szavazással megválasztott diktátor áll. A republikánusok ellenzik a szenátus intézményét, helyette a kongresszus helyeit bővítenék. A párt vezetője, Mark Rogers szerint egyaránt fontosak a liberális értékek, a nemzeti hagyományok és a kulturális sokszínűség megőrzése is, ezért a mérsékelt és felügyelt bevándorlás mellett foglalt állást. Nemzetközi szinten fontos szövetségesként tekintenek az Egyesült Államok Republikánus Pártjára. Mark szerint a Világkormány minisztereit közvetlen választással kellene kijelölni és az nemzetközi törvényekről szintén választott képviselők döntenének. A párt belpolitikai tervei között szerepel az önkormányzatok megerősítése és a helyi adók bevezetése is.
 
-A Szenátus, amely 2015-ben alakult meg, nem választott, hanem kinevezett testület. Tagjait a diktátor nevezi ki a Kongresszus jóváhagyásával. A Szenátus feladata a törvények felülvizsgálata, stratégiai tanácsadás és a hosszú távú állami érdekek képviselete.
+## Liberális Párt
+A  2012-ben alapult, de eddigi választásokon parlamentbe nem jutó liberális párt az alapvető emberi szabadságjogok biztosítását tűzte ki legfőbb céljául. A párt támogatja a társadalmi szerződés gondolatát, aminek alapján az állam polgárai hozzák a törvényeket, és egyetértenek abban, hogy alávetik magukat nekik. A Liberális Párt választójogot adna minden felnőtt polgárnak nemzetiségre, vallásra, gazdasági státusra való tekintet nélkül. Előnyben részesítik ugyan a kormányzati beavatkozástól mentes szabadpiacot, de bizonyos közjavak esetén meghagynák az állam szerepét. A párt jelentősen csökkentené az állami monopóliumokat,  helyette privát cégekre és a szabadpiacra helyezné a gazdaság súlypontját. A párt vezetője, Arianna Huffington ellenzi a  szigorú bevándorlási és munkavállalási szabályokat.
 
-## Politikai kultúra és konszenzus
+## Szociáldemokrata Párt
+A Waikiki-i Szociális Mozgalom utódjaként megalapuló Szociáldemokrata Párt támogatja az állam gazdasági és szociális beavatkozását, elősegítené a társadalmi igazságosságot és a jövedelem újraelosztást a piacgazdaság keretein belül. A párt vezetője, a finn származású Tarja Halonen alapvetőnek tartja a képviseleti demokráciát, de nem zárkózik el a részvételi- vagy közvetlen demokráciától sem. A párt tagjai szerint a kormánynak nagyobb erőforrásokat kellene fordítani a rászorulók segítésére, és a megnövekedett kiadásokat az újonnan bevezetendő jövedelemadókból pótolnák. Nemzetközi kapcsolatok terén a szociáldemokraták fontos szövetségesnek tekintik a Nyugat- és Közép-Európai államokat, de ellenzik a Szabadkereskedelmi övezet létrejöttét és a Kína ellen folytatott kereskedelmi háborút is.
 
-Waikiki politikai rendszerének egyik jellegzetessége a konszenzusos döntéshozatal. Bár három különböző politikai párt működik az országban, jelentős átfedések vannak programjaik között. Mindhárom párt támogatja a gazdasági növekedést, a szociális biztonságot, az innovációt és a nemzetközi szerepvállalást.
-
-A politikai viták inkább a hangsúlyok különbségeiről szólnak, mint alapvető ideológiai szembenállásról. A Világuralmi Párt a gazdasági liberalizmust és a geopolitikai erőt hangsúlyozza, a Demokratikus Párt az oktatást és a kiegyensúlyozott fejlődést, míg a Fenntartható Fejlődés Párt a környezetvédelmet és a globális felelősséget.
-
-Ez a konszenzusos modell lehetővé teszi a stabil kormányzást és a hosszú távú tervezést, ami hozzájárul Waikiki gazdasági sikeréhez és társadalmi stabilitásához.
+## Eredmények
+Név	Demokratikus Párt	Világuralmi Párt	Milliomosok Pártja	Kutatás és Fejlesztés Párt	Fenntartható Fejlődés Párt	Republikánus Párt
+2000	36%	22%	13%			10%
+2005	29%	37%	14%	10%		5%
+2010	51%	20%	13%	6%		5%
+2015	25%	41%	21%	8%		
+2020	26%	35%	17%	5%	7%	5%
+2025	31%	26%	17%	5%	8%	7%
