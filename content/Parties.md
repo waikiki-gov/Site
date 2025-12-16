@@ -117,8 +117,43 @@ Bár a Fenntartható Fejlődés Párt nem nyert még parlamenti választást és
 
 A párt programját részben mind a Világuralmi Párt, mind a Demokratikus Párt átvette saját programjába, így a környezetvédelem konszenzusos üggyé vált Waikikin. A párt fő szerepe nem a közvetlen hatalomgyakorlás, hanem a politikai diskurzus formálása és a nemzetközi környezetvédelmi mozgalmak vezetése.
 
-## Milliomosok Pártja
-A Milliomosok Pártja jövedelem alapú szavazati jog bevezetését, az adók csökkentését, valamint a bevándorlás szigorítását tervezi. A párt jelenlegi vezetője, Matt Damon támogatná a Waikiki-i tulajdonú vállalkozásokat és a lord valamint lady állampolgárok jogainak kiterjesztését valamint a magán egyetemek létrehozását. A párt támogatja a WSA és a SpaceX űrturista programját, a környezetvédelmi intézkedéseket továbbá a szenátus bővítését. Matt fontosnak tartja a nemzeti hadsereget és hatalmas eredményként tekint a Világkormány létrehozására, de ellenzi az alapjövedelem bevezetését vagy az adók emelését. Nemzetközi szinten a Milliomosok Pártja egy ENSZ parlament létrehozását kezdeményezte, ahova az országok közvetlenül küldhetnének képviselőket.
+## Patriot Párt (Milliomosok Pártja)
+
+A Patriot Párt, közismert régebbi nevén Milliomosok Pártja, a vállalkozói körök, a tulajdonosi érdekek és a nemzetbiztonság hangsúlyozásával határozza meg programját. A párt a gazdasági versenyképességet, a Waikiki tulajdonú vállalkozások előnyben részesítését és a központi állam szerepének korlátozott formáját támogatja. Politikai identitása a gazdasági szabadság és a megerősített belső biztonság kombinációja, miközben pragmatikus együttműködésre hajlik a többi nagy párttal, ha az ország stratégiai érdekei ezt megkívánják.
+
+### Alapelvek és program
+
+**Gazdaságpolitika** - A párt elsődleges célja az adóterhek csökkentése, a vállalkozások versenyképességének növelése és a magántőke ösztönzése. Előnyben részesítik a Waikiki tulajdonában lévő vállalkozások támogatását, a hazai tulajdon erősítését és a szabályozási terhek csökkentését az innováció és a beruházások ösztönzésére.
+
+**Szociálpolitika** - A Patriot Párt a jóléti rendszert részben piaci alapokon képzeli el, a közszolgáltatások egy részét magánszolgáltatókkal kiegészítve. Ellenzik az alapjövedelem bevezetését és óvatosak az adóemelésekkel szemben, ugyanakkor támogatnak célzott adókedvezményeket a munkahelyteremtés és a kis- és középvállalkozások számára.
+
+**Nemzetvédelem és belbiztonság** - Erős hadsereget és kiberbiztonsági kapacitásokat pártolnak. Támogatják a védelmi költségvetés fenntartását és a kritikus infrastruktúra védelmét, valamint a bevándorlás szabályozásának szigorítását a nemzeti biztonság és a munkaerőpiac védelme érdekében.
+
+**Oktatás és privát szektor** - A párt ösztönzi a magánegyetemek és befektetők szerepét a felsőoktatásban, valamint a szakképzés és az ipari-iskolai együttműködések bővítését a munkaerőpiac igényeinek kielégítésére.
+
+**Űr- és technológiai politika** - Erőteljesen támogatja a WSA programjait, az űrturizmust és a magánszektorbeli űrprojektek részvételét. Az űripar befektetését stratégiai gazdasági ágazatként kezeli, amely magas hozzáadott értéket és munkahelyeket teremt.
+
+**Környezetpolitika** - A Patriot Párt pragmatikus klímapolitikát támogat: együttműködik zöld beruházásokban, de elutasítja a túlzottan restriktív szabályozást, amely szerinte árthat a versenyképességnek.
+
+### Vezető személyiségek
+
+**Matt Damon** - A párt egyik ismert arca és prominens támogatója. Matt a gazdasági liberalizmus és a vállalkozói kezdeményezések szószólója, aki nem támogatja az alapjövedelem bevezetését és ellenzi az adók emelését.
+
+**Mickey Haller** - A párt stratégája és kommunikációs koordinátora, különös hangsúlyt helyez a jogi környezet reformjára és a vállalkozások jogi védelmére.
+
+**Carte Goodwin** - Pártpolitikai szereplő és szenvedélyes iparpolitikai szakértő, aki a hazai tulajdon megerősítését és a befektetési ösztönzők kidolgozását vezeti.
+
+További prominensek közé tartoznak üzletemberek, iparági vezetők és több miniszteri szintű szakember, akik a gazdasági és védelmi kabinetekben képviselik a párt álláspontját.
+
+### Választási eredmények és támogatottság
+
+A Patriot Párt stabil, középső-jobboldali választói bázissal rendelkezik, erős támogatottságot mutat a városi és külvárosi üzleti közösségekben. A korábbi választási eredmények tükrözik állandó, de nem többségi jelenlétét: 2000 körül 13%, 2005 körül 14%, 2010-ben 13%, 2015-ben 21%, 2020 és 2025 körül 17%. A párt különösen népszerű a vállalkozók, befektetők és a tulajdonosréteg körében.
+
+### Politikai befolyás
+
+Bár ritkán alkot önálló kormányt, a Patriot Párt jelentős befolyással bír a gazdaságpolitikai döntésekre és a védelmi jellegű beruházások irányára. Gyakran szövetségesként lép fel koalíciókban, ahol a költségvetési, iparpolitikai és technológiai kérdésekben tudja érvényesíteni prioritásait.
+
+***
 
 ## Kutatás és Fejlesztés Párt
 A Kutatás és Fejlesztés Pártja Mitt Romneyval az élén a modern technológiában és a tudományos kutatásokban látja Waikiki jövőjét. Támogatják az űrkutatást, a palládium reaktor továbbfejlesztését és a géntechnológiai kísérleteket is. Az állam hatékonyabb működése érdekében az R&D párt anonim információkat gyűjtene a lakosságról, hogy ezáltal több adat álljon rendelkezésre a gyógyászati kutatók, a terror elhárítás és a pénzügyi intézetek  számára. A párt nemzetközi viszonylatban is elsősorban a tanulmányokra és a közös kutatásokra helyezi a hangsúlyt, ezért több cserediák programot tenne lehetővé és nemzetközi kutatócsoportoknak adna támogatást. Belpolitikai javaslatuk szerint emelnék a tankötelesség korhatárát, és bizonyos fokú, ingyenes oktatást az ideiglenes munkavállalók számára is lehetővé tennének.
