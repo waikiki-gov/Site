@@ -213,16 +213,6 @@ The site uses modern web APIs and CSS features:
 - RequestAnimationFrame
 - ES6+ JavaScript
 
-## Future Considerations
-
-### Potential Enhancements
-- Dark mode support using the defined `--dark-bg` variable
-- Additional page templates for new content sections
-- Internationalization (i18n) support
-- Enhanced accessibility improvements (ARIA labels, keyboard navigation)
-- Progressive Web App (PWA) capabilities
-- Service Worker for offline support
-
 ## References
 
 - [README.md](README.md) - Project overview and narrative content
