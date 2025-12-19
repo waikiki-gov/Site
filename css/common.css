@@ -498,6 +498,13 @@ section {
   animation: fadeInUp var(--animation-duration) ease-out backwards;
 }
 
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--card-shadow-hover);
+  border-left-width: 12px;
+  padding-left: calc(var(--card-padding) - 7px);
+}
+
 .card:nth-child(1) {
   animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment));
 }
@@ -532,12 +539,6 @@ section {
 
 .card:nth-child(9) {
   animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment));
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: var(--card-shadow-hover);
-  border-left-width: 10px;
 }
 
 .card-icon {
