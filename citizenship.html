@@ -12,18 +12,16 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/citizenship.css">
+    <link rel="stylesheet" href="css/common.css" />
 </head>
 
 <body>
+    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+        <div class="hidden md:flex items-center gap-8">
+            <button class="px-6 py-2.5 rounded-full text-white font-semibold text-sm transition-transform hover:scale-105 shadow-lg open-assessment" style="background-color: #0e308e">Jogosultság Ellenőrzése</button>
+        </div>
+    </nav>
     <div class="min-h-screen text-gray-800" style="background-color: #F5F9FC;">
-        <nav class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6" id="main-nav">
-            <div class="container mx-auto px-6 flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-xl" style="background-color: #0E308E">W</div><span class="text-xl font-bold tracking-tight text-white">Waikiki<span style="color: #BC9200">Citizenship</span></span>
-                </div>
-                <div class="hidden md:flex items-center gap-8"><a href="#" class="text-sm font-medium hover:text-[#BC9200] transition-colors text-white/90">Filozófia</a><a href="#" class="text-sm font-medium hover:text-[#BC9200] transition-colors text-white/90">Szintek</a><button class="px-6 py-2.5 rounded-full text-white font-semibold text-sm transition-transform hover:scale-105 shadow-lg open-assessment" style="background-color: #0071BC">Jogosultság Ellenőrzése</button></div>
-            </div>
-        </nav>
         <section class="relative h-screen flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <div class="absolute inset-0 bg-gradient-to-r from-[#0A1930]/90 to-[#0071BC]/40 z-10"></div><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=2000&auto=format&fit=crop" alt="Waikiki Modern City" class="w-full h-full object-cover" />
@@ -32,7 +30,7 @@
                 <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 animate-fade-up">The Strategic Partnership Program</div>
                 <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">Civilizációs <span style="color: #BC9200">Menedék</span></h1>
                 <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light">A "Citizenship by Merit" program nem csak a gazdagoknak szól. A tehetséget és a szorgalmat is díjazzuk. Mérje fel esélyeit az új, 4 szintű rendszerben.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center"><button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">W-MAP Indítása <i class="fas fa-chevron-right text-sm"></i></button></div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center"><button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">Jelentkezés <i class="fas fa-chevron-right text-sm"></i></button></div>
             </div>
         </section>
         <section class="py-24 bg-white">

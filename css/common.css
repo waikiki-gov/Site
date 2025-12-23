@@ -311,7 +311,8 @@ footer {
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 780px;
+  min-height: 1200px;
+  align-content: center;
 }
 
 .hero-content {
@@ -321,7 +322,7 @@ footer {
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 1rem;
   font-weight: 800;
   animation: slideInFromTop var(--animation-duration) ease-out;
