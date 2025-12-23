@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waikiki Állampolgársági Portál</title>
+
+    <!-- Tailwind CSS (Design) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome (Ikonok - Lucide helyett a könnyebb hordozhatóságért) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- React & ReactDOM (Működési logika) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel (Kód fordító) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hover-card {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Egyedi görgetősáv */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0071BC;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0E308E;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const WaikikiCitizenship = () => {
+            const [scrolled, setScrolled] = useState(false);
+            const [activeStep, setActiveStep] = useState(1);
+            const [isFormOpen, setIsFormOpen] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    setScrolled(window.scrollY > 50);
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            const colors = {
+                primary: '#0071BC',
+                secondary: '#0E308E',
+                tertiary: '#00B0C3',
+                gold: '#BC9200',
+                silver: '#555555',
+                dark: '#0A1930',
+                light: '#F5F9FC',
+                white: '#FFFFFF'
+            };
+
+            const benefits = [
+                {
+                    icon: "fas fa-shield-alt",
+                    title: "Teljes Biztonság",
+                    desc: "A világ egyik legalacsonyabb bűnözési rátája és garantált egzisztenciális biztonság minden polgár számára."
+                },
+                {
+                    icon: "fas fa-globe-americas",
+                    title: "Globális Mobilitás",
+                    desc: "Waikiki útlevéllel vízummentes utazás a világ legtöbb országába, beleértve az Amerikai Unió tagállamait."
+                },
+                {
+                    icon: "fas fa-heart",
+                    title: "Ingyenes Szolgáltatások",
+                    desc: "Térítésmentes egészségügy (WHS), oktatás és tömegközlekedés 2018 óta minden állampolgárnak."
+                },
+                {
+                    icon: "fas fa-building",
+                    title: "Adóparadicsom",
+                    desc: "A tisztességes munkából származó jövedelem adómentes. A rendszer a fogyasztásra és a vállalati profitra épít."
+                }
+            ];
+
+            return (
+                <div className="min-h-screen text-gray-800" style={{ backgroundColor: colors.light }}>
+                    {/* Navigation */}
+                    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'}`}>
+                        <div className="container mx-auto px-6 flex justify-between items-center">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-xl" style={{ backgroundColor: colors.secondary }}>W</div>
+                                <span className={`text-xl font-bold tracking-tight ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+                                    Waikiki<span style={{ color: colors.gold }}>Citizenship</span>
+                                </span>
+                            </div>
+                            <div className="hidden md:flex items-center gap-8">
+                                <a href="#" className={`text-sm font-medium hover:text-[#BC9200] transition-colors ${scrolled ? 'text-gray-700' : 'text-white/90'}`}>Program</a>
+                                <a href="#" className={`text-sm font-medium hover:text-[#BC9200] transition-colors ${scrolled ? 'text-gray-700' : 'text-white/90'}`}>Előnyök</a>
+                                <a href="#" className={`text-sm font-medium hover:text-[#BC9200] transition-colors ${scrolled ? 'text-gray-700' : 'text-white/90'}`}>Követelmények</a>
+                                <button
+                                    onClick={() => setIsFormOpen(true)}
+                                    className="px-6 py-2.5 rounded-full text-white font-semibold text-sm transition-transform hover:scale-105"
+                                    style={{ backgroundColor: colors.primary }}
+                                >
+                                    Jelentkezés
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+                        <div className="absolute inset-0 z-0">
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#0A1930]/90 to-[#0071BC]/40 z-10"></div>
+                            <img
+                                src="https://images.unsplash.com/photo-1449824913929-2b632204b1a0?q=80&w=2070&auto=format&fit=crop"
+                                alt="Waikiki Skyline"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+
+                        <div className="container mx-auto px-6 z-20 relative text-center pt-20">
+                            <div className="animate-fade-up inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6">
+                                Hivatalos Kormányzati Portál
+                            </div>
+                            <h1 className="animate-fade-up text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight" style={{ animationDelay: '0.1s' }}>
+                                A Jövő <span style={{ color: colors.gold }}>Állampolgársága</span>
+                            </h1>
+                            <p className="animate-fade-up text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light" style={{ animationDelay: '0.2s' }}>
+                                Csatlakozzon a világ legfejlettebb társadalmához. Waikiki nem csupán egy ország, hanem a meritokrácia, a biztonság és a jólét globális szimbóluma.
+                            </p>
+                            <div className="animate-fade-up flex flex-col sm:flex-row gap-4 justify-center" style={{ animationDelay: '0.3s' }}>
+                                <button
+                                    onClick={() => setIsFormOpen(true)}
+                                    className="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all hover:translate-y-[-4px] shadow-lg flex items-center justify-center gap-2"
+                                    style={{ backgroundColor: colors.primary }}
+                                >
+                                    Igénylés Indítása <i className="fas fa-chevron-right text-sm"></i>
+                                </button>
+                                <button className="px-8 py-4 rounded-lg bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold text-lg hover:bg-white/20 transition-all">
+                                    Tájékoztató Letöltése
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+                            <i className="fas fa-arrow-down text-2xl"></i>
+                        </div>
+                    </section>
+
+                    {/* Philosophy Section */}
+                    <section className="py-24 bg-white">
+                        <div className="container mx-auto px-6">
+                            <div className="grid md:grid-cols-2 gap-16 items-center">
+                                <div className="animate-fade-up">
+                                    <h2 className="text-4xl font-bold mb-6" style={{ color: colors.secondary }}>Társadalmi Szerződés</h2>
+                                    <div className="w-20 h-1 mb-8" style={{ backgroundColor: colors.gold }}></div>
+                                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                                        Waikiki társadalma egy világos tranzakcióra épül. Mi garantáljuk a 21. század legmagasabb életszínvonalát, a biztonságot és a kiszámíthatóságot. Cserébe elvárjuk a szakértelmet, a konformitást és a hűséget.
+                                    </p>
+                                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                                        Itt a tehetség és a szorgalom határozza meg a helyét, nem a szerencse. Állampolgárnak lenni nem alanyi jog, hanem kiváltság, amelyet ki kell érdemelni.
+                                    </p>
+                                    <ul className="space-y-4">
+                                        {[
+                                            "Meritokratikus előmenetel",
+                                            "Családcentrikus gazdaságpolitika",
+                                            "Nyugati kulturális értékek védelme",
+                                            "Teljes digitális integráció (Waikiki One)"
+                                        ].map((item, index) => (
+                                            <li key={index} className="flex items-center gap-3 text-gray-700 font-medium">
+                                                <i className="fas fa-check-circle text-xl" style={{ color: colors.primary }}></i>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="relative">
+                                    <div className="absolute -inset-4 rounded-2xl opacity-20 blur-2xl" style={{ backgroundColor: colors.primary }}></div>
+                                    <img
+                                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                                        alt="Nova Aurelia Architecture"
+                                        className="relative rounded-2xl shadow-2xl w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-700"
+                                    />
+                                    <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs">
+                                        <div className="flex items-center gap-4 mb-2">
+                                            <div className="p-2 rounded-full bg-blue-50">
+                                                <i className="fas fa-star text-xl" style={{ color: colors.gold }}></i>
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 uppercase font-bold">GDP / Fő</p>
+                                                <p className="text-2xl font-bold" style={{ color: colors.secondary }}>$196,000</p>
+                                            </div>
+                                        </div>
+                                        <p className="text-sm text-gray-600">A világ egyik leggazdagabb állama.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Benefits Grid */}
+                    <section className="py-24" style={{ backgroundColor: colors.light }}>
+                        <div className="container mx-auto px-6">
+                            <div className="text-center mb-16 max-w-3xl mx-auto">
+                                <h2 className="text-4xl font-bold mb-4" style={{ color: colors.secondary }}>A Kiváltságok</h2>
+                                <p className="text-gray-600 text-lg">
+                                    Az állampolgárság megszerzésével Ön nem csak egy útlevelet kap, hanem belépést nyer egy exkluzív, globális elit klubba.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                                {benefits.map((benefit, index) => (
+                                    <div key={index} className="bg-white p-8 rounded-2xl hover-card border-b-4" style={{ borderColor: colors.primary }}>
+                                        <div className="mb-6 p-4 rounded-xl bg-blue-50 w-fit">
+                                            <i className={`${benefit.icon} text-3xl`} style={{ color: colors.gold }}></i>
+                                        </div>
+                                        <h3 className="text-xl font-bold mb-3" style={{ color: colors.dark }}>{benefit.title}</h3>
+                                        <p className="text-gray-600 leading-relaxed text-sm">
+                                            {benefit.desc}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Requirements Section */}
+                    <section className="py-24 bg-white relative overflow-hidden">
+                        <div className="container mx-auto px-6 relative z-10">
+                            <h2 className="text-4xl font-bold text-center mb-16" style={{ color: colors.secondary }}>A Felvételi Kritériumok</h2>
+
+                            <div className="grid md:grid-cols-3 gap-10">
+                                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <i className="fas fa-graduation-cap text-4xl" style={{ color: colors.primary }}></i>
+                                        <h3 className="text-2xl font-bold">Szakértelem</h3>
+                                    </div>
+                                    <p className="text-gray-600 mb-6">
+                                        Waikiki meritokrácia. Keresünk mérnököket, orvosokat, pénzügyi szakembereket és tudósokat. A felsőfokú végzettség és a bizonyított szakmai kiválóság alapkövetelmény.
+                                    </p>
+                                    <div className="text-sm font-semibold" style={{ color: colors.primary }}>
+                                        Preferált területek: IT, Biotechnológia, Pénzügy
+                                    </div>
+                                </div>
+
+                                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-100 rounded-bl-full opacity-50"></div>
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <i className="fas fa-briefcase text-4xl" style={{ color: colors.gold }}></i>
+                                        <h3 className="text-2xl font-bold">Vagyon</h3>
+                                    </div>
+                                    <p className="text-gray-600 mb-6">
+                                        Az állam nem tart el senkit, aki nem termel. Az igénylőnek rendelkeznie kell a letelepedéshez szükséges kezdőtőkével vagy biztosított, nagy hozzáadott értékű munkahellyel.
+                                    </p>
+                                    <div className="text-sm font-semibold" style={{ color: colors.gold }}>
+                                        Min. likvid tőke: $250,000 WUD
+                                    </div>
+                                </div>
+
+                                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <i className="fas fa-lock text-4xl" style={{ color: colors.secondary }}></i>
+                                        <h3 className="text-2xl font-bold">Konformitás</h3>
+                                    </div>
+                                    <p className="text-gray-600 mb-6">
+                                        Az asszimiláció kötelező. Elvárjuk a helyi szokások, a nyugati öltözködési kódex és a társadalmi normák teljes körű elfogadását. A multikulturalizmus helyett az egységben hiszünk.
+                                    </p>
+                                    <div className="text-sm font-semibold" style={{ color: colors.secondary }}>
+                                        Kötelező C1 Angol (Waikiki dialektus)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section className="py-24 text-white text-center relative">
+                        <div className="absolute inset-0 bg-[#0A1930] z-0"></div>
+                        <div className="container mx-auto px-6 relative z-10">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-8">Készen áll a jövőre?</h2>
+                            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+                                A jelentkezési folyamat teljesen digitális, átlátható és gyors. Kezdje meg az életét Nova Aureliában még ma.
+                            </p>
+                            <button
+                                onClick={() => setIsFormOpen(true)}
+                                className="px-10 py-5 rounded-full font-bold text-xl shadow-2xl hover:shadow-orange-500/20 hover:scale-105 transition-all"
+                                style={{ backgroundColor: colors.gold, color: colors.dark }}
+                            >
+                                Jelentkezés Indítása
+                            </button>
+                            <p className="mt-6 text-sm text-gray-400">
+                                Átlagos elbírálási idő: 14 munkanap
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="bg-[#050C18] text-white pt-20 pb-10 border-t border-gray-800">
+                        <div className="container mx-auto px-6">
+                            <div className="grid md:grid-cols-4 gap-12 mb-16">
+                                <div>
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold" style={{ backgroundColor: colors.secondary }}>W</div>
+                                        <span className="text-lg font-bold">Waikiki Government</span>
+                                    </div>
+                                    <p className="text-gray-400 text-sm leading-relaxed">
+                                        The Sovereign Nation of Waikiki<br />
+                                        Nova Aurelia, Administrative District 1.<br />
+                                        Digital Services Department
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-lg font-bold mb-6" style={{ color: colors.gold }}>Szolgáltatások</h4>
+                                    <ul className="space-y-3 text-gray-400 text-sm">
+                                        <li><a href="#" className="hover:text-white transition-colors">Waikiki One Portal</a></li>
+                                        <li><a href="#" className="hover:text-white transition-colors">E-Health rendszer</a></li>
+                                        <li><a href="#" className="hover:text-white transition-colors">Vállalati regisztráció</a></li>
+                                        <li><a href="#" className="hover:text-white transition-colors">Ingatlan nyilvántartás</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-lg font-bold mb-6" style={{ color: colors.gold }}>Kormányzat</h4>
+                                    <ul className="space-y-3 text-gray-400 text-sm">
+                                        <li><a href="#" className="hover:text-white transition-colors">A Királyi Család</a></li>
+                                        <li><a href="#" className="hover:text-white transition-colors">A Parlament</a></li>
+                                        <li><a href="#" className="hover:text-white transition-colors">Alkotmány</a></li>
+                                        <li><a href="#" className="hover:text-white transition-colors">Monetáris Tanács</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-lg font-bold mb-6" style={{ color: colors.gold }}>Kapcsolat</h4>
+                                    <p className="text-gray-400 text-sm mb-4">
+                                        immigration@gov.waikiki
+                                    </p>
+                                    <div className="flex gap-4">
+                                        <div className="w-8 h-8 rounded bg-gray-800 hover:bg-[#0071BC] transition-colors"></div>
+                                        <div className="w-8 h-8 rounded bg-gray-800 hover:bg-[#0071BC] transition-colors"></div>
+                                        <div className="w-8 h-8 rounded bg-gray-800 hover:bg-[#0071BC] transition-colors"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-xs">
+                                <p>&copy; 2025 Sovereign Nation of Waikiki. Minden jog fenntartva.</p>
+                                <p className="mt-2">Isten óvja a Királyt és a Hazát.</p>
+                            </div>
+                        </div>
+                    </footer>
+
+                    {/* Application Modal */}
+                    {isFormOpen && (
+                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                            <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-up">
+                                <div className="sticky top-0 bg-white p-6 border-b flex justify-between items-center z-10">
+                                    <h3 className="text-2xl font-bold" style={{ color: colors.secondary }}>Igénylés Benyújtása</h3>
+                                    <button
+                                        onClick={() => setIsFormOpen(false)}
+                                        className="text-gray-400 hover:text-gray-600 font-bold text-xl"
+                                    >
+                                        ✕
+                                    </button>
+                                </div>
+
+                                <div className="p-8">
+                                    <div className="flex mb-8 justify-between relative">
+                                        <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
+                                        {[1, 2, 3].map((step) => (
+                                            <div key={step} className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${activeStep >= step ? 'text-white' : 'text-gray-500 bg-gray-100'}`} style={{ backgroundColor: activeStep >= step ? colors.primary : '' }}>
+                                                {step}
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {activeStep === 1 && (
+                                        <div className="space-y-6">
+                                            <h4 className="text-xl font-bold text-gray-800">Személyes Adatok & Profil</h4>
+                                            <div className="grid md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Teljes Név</label>
+                                                    <input type="text" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" placeholder="John Doe" />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Jelenlegi Állampolgárság</label>
+                                                    <input type="text" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" placeholder="United States" />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Családi Állapot</label>
+                                                    <select className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                                                        <option>Házas (Preferált)</option>
+                                                        <option>Egyedülálló</option>
+                                                        <option>Elvált</option>
+                                                    </select>
+                                                    <p className="text-xs text-gray-500 mt-1">A családcentrikus politika miatt a házas státusz előnyt élvez.</p>
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Életkor</label>
+                                                    <input type="number" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                                                </div>
+                                            </div>
+                                            <div className="flex justify-end mt-6">
+                                                <button onClick={() => setActiveStep(2)} className="px-6 py-2 rounded-lg text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: colors.primary }}>
+                                                    Következő Lépés
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {activeStep === 2 && (
+                                        <div className="space-y-6">
+                                            <h4 className="text-xl font-bold text-gray-800">Gazdasági & Szakmai Háttér</h4>
+                                            <div>
+                                                <label className="block text-sm font-semibold text-gray-700 mb-1">Legmagasabb Iskolai Végzettség</label>
+                                                <select className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                                                    <option>PhD / Doktorátus</option>
+                                                    <option>Mesterképzés (MSc/MA)</option>
+                                                    <option>Alapképzés (BSc/BA)</option>
+                                                    <option>Egyéb</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-semibold text-gray-700 mb-1">Foglalkozás / Szakterület</label>
+                                                <input type="text" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" placeholder="Pl. Idegsebész, Szoftvermérnök" />
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-semibold text-gray-700 mb-1">Becsült Nettó Vagyon (USD)</label>
+                                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" placeholder="250,000+" />
+                                            </div>
+                                            <div className="flex justify-between mt-6">
+                                                <button onClick={() => setActiveStep(1)} className="text-gray-500 font-semibold hover:text-gray-700">
+                                                    Vissza
+                                                </button>
+                                                <button onClick={() => setActiveStep(3)} className="px-6 py-2 rounded-lg text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: colors.primary }}>
+                                                    Következő Lépés
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {activeStep === 3 && (
+                                        <div className="space-y-6 text-center">
+                                            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                <i className="fas fa-shield-alt text-4xl" style={{ color: colors.gold }}></i>
+                                            </div>
+                                            <h4 className="text-xl font-bold text-gray-800">Nyilatkozat</h4>
+                                            <p className="text-gray-600 text-sm">
+                                                Kijelentem, hogy elfogadom Waikiki törvényeit, tiszteletben tartom a Chease-dinasztia uralmát, és alávetem magam az állami átvilágítási folyamatnak. Tudomásul veszem, hogy a hamis adatszolgáltatás azonnali kitiltást von maga után.
+                                            </p>
+
+                                            <div className="bg-gray-50 p-4 rounded-lg text-left text-sm border border-gray-200 mt-4">
+                                                <label className="flex items-start gap-3 cursor-pointer">
+                                                    <input type="checkbox" className="mt-1 w-4 h-4 text-blue-600" />
+                                                    <span>Elfogadom a Digitális Alapjogok Chartáját és a Waikiki One rendszerében való adatkezelést.</span>
+                                                </label>
+                                            </div>
+
+                                            <button className="w-full py-3 rounded-lg text-white font-bold text-lg shadow-lg hover:translate-y-[-2px] transition-all mt-6" style={{ backgroundColor: colors.gold }}>
+                                                Igénylés Véglegesítése ($500 WUD)
+                                            </button>
+                                            <p className="text-xs text-gray-400 mt-2">Az eljárási díj nem visszatéríthető.</p>
+
+                                            <div className="flex justify-start mt-4">
+                                                <button onClick={() => setActiveStep(2)} className="text-gray-500 text-sm hover:text-gray-700 underline">
+                                                    Vissza a szerkesztéshez
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<WaikikiCitizenship />);
+    </script>
+</body>
+
+</html>
