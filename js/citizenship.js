@@ -278,7 +278,7 @@ const AssessmentForm = ({ onClose }) => {
         <div className="text-center p-12 flex flex-col items-center justify-center h-full">
             <div className="w-24 h-24 rounded-full border-4 border-t-transparent animate-spin mb-8" style={{ borderColor: `${colors.gold} transparent ${colors.gold} ${colors.gold}` }}></div>
             <h3 className="text-2xl font-bold mb-2 animate-pulse" style={{ color: colors.secondary }}>The Watcher Elemzése...</h3>
-            <p className="text-gray-500 text-sm">Biometrikus adatok ellenőrzése...<br/>Pénzügyi háttér validálása...<br/>Social Credit pontszámítás...</p>
+            <p className="text-gray-500 text-sm">Biometrikus adatok ellenőrzése...<br />Pénzügyi háttér validálása...<br />Social Credit pontszámítás...</p>
         </div>
     );
 
