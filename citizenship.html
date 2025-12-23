@@ -4,676 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waikiki Állampolgársági Portál | W-MAP Protocol</title>
-
-    <!-- Tailwind CSS -->
+    <title>Waikiki Állampolgársági Portál</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- React & ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-    <!-- Babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .hover-card {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hover-card:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse-glow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 10px #0071BC;
-            }
-
-            50% {
-                box-shadow: 0 0 25px #00B0C3;
-            }
-        }
-
-        .animate-fade-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        .ai-processing {
-            animation: pulse-glow 2s infinite;
-        }
-
-        /* Egyedi görgetősáv */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #0071BC;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #0E308E;
-        }
-    </style>
+    <link rel="stylesheet" href="css/citizenship.css">
 </head>
 
 <body>
-    <div id="root"></div>
-
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-
-        // --- ADATOK: KÉRDÉSEK ÉS OPCIÓK ---
-        const questionsData = [
-            // I. DEMOGRÁFIA
-            {
-                id: 1, section: "Demográfia", text: "Mely régió állampolgára Ön elsődlegesen?",
-                options: [
-                    { label: "OECD tagállam (EU, USA, CAN, AUS, NZ, JPN, KOR)", points: 5 },
-                    { label: "Latin-Amerika (MERCOSUR államok)", points: 3 },
-                    { label: "Egyéb régió", points: 0 }
-                ]
-            },
-            {
-                id: 2, section: "Demográfia", text: "Hány éves Ön?",
-                options: [
-                    { label: "25 - 45 év között (Gazdaságilag legaktívabb)", points: 4 },
-                    { label: "20 - 24 év vagy 46 - 55 év között", points: 2 },
-                    { label: "55 év felett vagy 20 év alatt", points: 0 }
-                ]
-            },
-            {
-                id: 3, section: "Demográfia", text: "Mi a jelenlegi családi állapota?",
-                options: [
-                    { label: "Házas, legalább 1 gyermekkel (Nukleáris család)", points: 4 },
-                    { label: "Házas, gyermektelen", points: 2 },
-                    { label: "Egyedülálló / Elvált", points: 0 }
-                ]
-            },
-            {
-                id: 4, section: "Demográfia", text: "Milyen szinten beszél angolul és van-e stratégiai nyelvtudása?",
-                options: [
-                    { label: "Angol (C1) + Stratégiai nyelv (Mandarin, Orosz, Arab)", points: 4 },
-                    { label: "Angol (C1)", points: 2 },
-                    { label: "Angol (B2 vagy alatta)", points: 0, fatal: true }
-                ]
-            },
-            {
-                id: 5, section: "Demográfia", text: "Hány napot garantál, hogy fizikailag Waikiki területén tölt évente?",
-                options: [
-                    { label: "Több mint 183 nap (Adóügyi illetőség)", points: 3 },
-                    { label: "90 - 182 nap", points: 1 },
-                    { label: "Kevesebb mint 90 nap", points: 0 }
-                ]
-            },
-            // II. GAZDASÁG
-            {
-                id: 6, section: "Gazdaság", text: "Mi a legmagasabb iskolai végzettsége?",
-                options: [
-                    { label: "STEM PhD vagy Tier 1 diploma (Fúzió, AI, Orvosi)", points: 8 },
-                    { label: "MSc/MA diploma piaci tapasztalattal", points: 5 },
-                    { label: "BSc/BA diploma", points: 2 },
-                    { label: "Nincs felsőfokú végzettségem", points: 0 }
-                ]
-            },
-            {
-                id: 7, section: "Gazdaság", text: "Mekkora az Ön igazolt, azonnal mozgósítható likvid vagyona (USD)?",
-                options: [
-                    { label: "Több mint $10,000,000", points: 8 },
-                    { label: "Több mint $5,000,000", points: 5 },
-                    { label: "Több mint $250,000", points: 3 },
-                    { label: "Kevesebb mint $250,000", points: 0 }
-                ]
-            },
-            {
-                id: 8, section: "Gazdaság", text: "Vagyonának mekkora hányadát hajlandó a Waikiki Nemzeti Bankba transzferálni?",
-                options: [
-                    { label: "100% (Teljes pénzügyi áttelepülés)", points: 6 },
-                    { label: "50% - 99%", points: 4 },
-                    { label: "Kevesebb mint 50%", points: 0 }
-                ]
-            },
-            {
-                id: 9, section: "Gazdaság", text: "Milyen ingatlanvásárlást tervez az első évben?",
-                options: [
-                    { label: "Új építésű ingatlan fejlesztési területen (min. $2M)", points: 5 },
-                    { label: "Használt vagy kisebb értékű ingatlan", points: 3 },
-                    { label: "Csak bérelni tervezek", points: 0 }
-                ]
-            },
-            {
-                id: 10, section: "Gazdaság", text: "Volt-e cége csődeljárás alatt az elmúlt 10 évben?",
-                options: [
-                    { label: "Soha, minden vállalkozásom stabil", points: 5 },
-                    { label: "Igen, de mindenkit kifizettünk", points: 2 },
-                    { label: "Igen, csőddel végződött", points: 0, fatal: true }
-                ]
-            },
-            {
-                id: 11, section: "Gazdaság", text: "Jövedelmének hány százaléka passzív forrás?",
-                options: [
-                    { label: "Több mint 75%", points: 4 },
-                    { label: "25% - 74%", points: 2 },
-                    { label: "Kevesebb mint 25%", points: 0 }
-                ]
-            },
-            {
-                id: 12, section: "Gazdaság", text: "Hajlandó-e tőkét fektetni állami stratégiai startupba (min. $250k)?",
-                options: [
-                    { label: "Igen, azonnal", points: 4 },
-                    { label: "Megfontolom az üzleti terv alapján", points: 2 },
-                    { label: "Nem", points: 0 }
-                ]
-            },
-            // III. IDEOLÓGIA
-            {
-                id: 13, section: "Ideológia", text: "Vészhelyzetben elfogadja a magánszámlák 15%-ának ideiglenes zárolását védelmi kötvényért?",
-                options: [
-                    { label: "Azonnal aláírom (Lojalitás)", points: 6 },
-                    { label: "Mentesítést kérelmezek", points: 3 },
-                    { label: "Jogi útra terelem / Menekítem a vagyont", points: 0 }
-                ]
-            },
-            {
-                id: 14, section: "Ideológia", text: "Hány polgári peres eljárásban vett részt az elmúlt 5 évben?",
-                options: [
-                    { label: "0 (Konfliktusmentes)", points: 5 },
-                    { label: "1-2 (Normál üzleti kockázat)", points: 3 },
-                    { label: "3 vagy több", points: -5 }
-                ]
-            },
-            {
-                id: 15, section: "Ideológia", text: "Hányszor függesztették fel közösségi média fiókját moderációs okokból?",
-                options: [
-                    { label: "Soha", points: 5 },
-                    { label: "Egyszer, tévedésből", points: 2 },
-                    { label: "Többször / Végleges tiltás", points: 0, fatal: true }
-                ]
-            },
-            {
-                id: 16, section: "Ideológia", text: "Hova íratná gyermekét a waikiki szegregált, teljesítményalapú oktatási rendszerben?",
-                options: [
-                    { label: "Elit, versenyalapú tehetséggondozóba", points: 4 },
-                    { label: "Átlagos állami iskolába", points: 2 },
-                    { label: "Magántanulónak (verseny elutasítása)", points: 0 }
-                ]
-            },
-            {
-                id: 17, section: "Ideológia", text: "Embargó esetén megszakítja-e kapcsolatát származási országával?",
-                options: [
-                    { label: "Azonnal megszüntetem az üzleti kapcsolatot", points: 5 },
-                    { label: "Külön engedélyt kérek", points: 2 },
-                    { label: "Kijátszom az embargót", points: 0, fatal: true }
-                ]
-            },
-            {
-                id: 18, section: "Ideológia", text: "Hajlandó-e átadni teljes biometrikus profilját a 'The Watcher' rendszernek?",
-                options: [
-                    { label: "Igen, teljes körűen", points: 5 },
-                    { label: "Csak a törvényi minimumot", points: 2 },
-                    { label: "Nem, elutasítom", points: 0, fatal: true }
-                ]
-            },
-            {
-                id: 19, section: "Ideológia", text: "Hajlandó-e 5 éves egészségügyi fedezeti alapot befizetni kockázat esetén?",
-                options: [
-                    { label: "Igen, elfogadom", points: 5 },
-                    { label: "Csak ha visszatérítendő", points: 3 },
-                    { label: "Nem, ingyenes ellátást várok", points: 0 }
-                ]
-            },
-            {
-                id: 20, section: "Ideológia", text: "Volt-e tagja radikális politikai szervezetnek?",
-                options: [
-                    { label: "Soha, semleges vagyok", points: 5 },
-                    { label: "Régen, diákként", points: 0 },
-                    { label: "Igen, jelenleg is", points: 0, fatal: true }
-                ]
-            }
-        ];
-
-        // --- COMPONENTS ---
-
-        const colors = {
-            primary: '#0071BC',
-            secondary: '#0E308E',
-            tertiary: '#00B0C3',
-            gold: '#BC9200',
-            silver: '#9CA3AF',
-            bronze: '#B45309',
-            dark: '#0A1930',
-            light: '#F5F9FC',
-            white: '#FFFFFF',
-            danger: '#DC2626'
-        };
-
-        const AssessmentForm = ({ onClose }) => {
-            const [currentQ, setCurrentQ] = useState(0);
-            const [score, setScore] = useState(0);
-            const [isFatal, setIsFatal] = useState(false);
-            const [stage, setStage] = useState('intro'); // intro, quiz, analyzing, result
-
-            const handleOptionClick = (points, fatal) => {
-                const newScore = score + points;
-                setScore(newScore);
-
-                if (fatal) {
-                    setIsFatal(true);
-                }
-
-                if (currentQ < questionsData.length - 1) {
-                    setCurrentQ(currentQ + 1);
-                } else {
-                    setStage('analyzing');
-                }
-            };
-
-            useEffect(() => {
-                if (stage === 'analyzing') {
-                    const timer = setTimeout(() => {
-                        setStage('result');
-                    }, 3000);
-                    return () => clearTimeout(timer);
-                }
-            }, [stage]);
-
-            // ÚJ: 4 Szintű Tier Rendszer + Elutasítás
-            const getTier = () => {
-                if (isFatal) return "REJECTED";
-                if (score >= 90) return "GOLD";   // The Elite
-                if (score >= 75) return "SILVER"; // The Investor
-                if (score >= 60) return "BRONZE"; // The Professional
-                if (score >= 45) return "BLUE";   // The Talent (Új belépő szint)
-                return "REJECTED";
-            };
-
-            const tier = getTier();
-            const progress = ((currentQ) / questionsData.length) * 100;
-
-            const renderIntro = () => (
-                <div className="text-center p-6">
-                    <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i className="fas fa-scale-balanced text-4xl" style={{ color: colors.gold }}></i>
-                    </div>
-                    <h3 className="text-3xl font-bold mb-4" style={{ color: colors.secondary }}>W-MAP Protokoll</h3>
-                    <p className="text-gray-600 mb-6">
-                        A Waikiki Merit Assessment Protocol egy többszintű értékelési rendszer. Célunk nem csak a vagyon, hanem a tehetség és az elkötelezettség mérése. A rendszer 4 jogosultsági szintet különböztet meg.
-                    </p>
-                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg text-sm text-left mb-8">
-                        <p className="font-bold text-yellow-800 mb-2"><i className="fas fa-triangle-exclamation mr-2"></i>Figyelmeztetés</p>
-                        <ul className="list-disc list-inside text-yellow-700 space-y-1">
-                            <li>A válaszai jogi kötelezettségvállalásnak minősülnek.</li>
-                            <li>A "The Watcher" AI minden adatot ellenőriz a háttérben.</li>
-                            <li>A hamis adatszolgáltatás automatikus kitiltással jár.</li>
-                        </ul>
-                    </div>
-                    <button
-                        onClick={() => setStage('quiz')}
-                        className="w-full py-4 rounded-lg text-white font-bold text-lg shadow-lg hover:scale-[1.02] transition-transform"
-                        style={{ backgroundColor: colors.primary }}
-                    >
-                        Értékelés Indítása
-                    </button>
+    <div class="min-h-screen text-gray-800" style="background-color: #F5F9FC;">
+        <nav class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6" id="main-nav">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-xl" style="background-color: #0E308E">W</div><span class="text-xl font-bold tracking-tight text-white">Waikiki<span style="color: #BC9200">Citizenship</span></span>
                 </div>
-            );
-
-            const renderQuiz = () => {
-                const q = questionsData[currentQ];
-                return (
-                    <div className="p-6">
-                        <div className="mb-6">
-                            <div className="flex justify-between text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">
-                                <span>{q.section}</span>
-                                <span>{currentQ + 1} / {questionsData.length}</span>
-                            </div>
-                            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                                <div className="h-full transition-all duration-500 ease-out" style={{ width: `${progress}%`, backgroundColor: colors.gold }}></div>
-                            </div>
-                        </div>
-
-                        <h4 className="text-xl md:text-2xl font-bold mb-8 text-gray-800 leading-snug">
-                            {q.text}
-                        </h4>
-
-                        <div className="space-y-3">
-                            {q.options.map((opt, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => handleOptionClick(opt.points, opt.fatal)}
-                                    className="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all group flex items-start gap-3"
-                                >
-                                    <div className="w-6 h-6 rounded-full border-2 border-gray-300 group-hover:border-blue-500 flex-shrink-0 mt-0.5"></div>
-                                    <span className="text-gray-700 font-medium group-hover:text-blue-900">{opt.label}</span>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                );
-            };
-
-            const renderAnalyzing = () => (
-                <div className="text-center p-12 flex flex-col items-center justify-center h-full">
-                    <div className="w-24 h-24 rounded-full border-4 border-t-transparent animate-spin mb-8" style={{ borderColor: `${colors.gold} transparent ${colors.gold} ${colors.gold}` }}></div>
-                    <h3 className="text-2xl font-bold mb-2 animate-pulse" style={{ color: colors.secondary }}>The Watcher Elemzése...</h3>
-                    <p className="text-gray-500 text-sm">
-                        Biometrikus adatok ellenőrzése...<br />
-                        Pénzügyi háttér validálása...<br />
-                        Social Credit pontszámítás...
-                    </p>
+                <div class="hidden md:flex items-center gap-8"><a href="#" class="text-sm font-medium hover:text-[#BC9200] transition-colors text-white/90">Filozófia</a><a href="#" class="text-sm font-medium hover:text-[#BC9200] transition-colors text-white/90">Szintek</a><button class="px-6 py-2.5 rounded-full text-white font-semibold text-sm transition-transform hover:scale-105 shadow-lg open-assessment" style="background-color: #0071BC">Jogosultság Ellenőrzése</button></div>
+            </div>
+        </nav>
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0A1930]/90 to-[#0071BC]/40 z-10"></div><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=2000&auto=format&fit=crop" alt="Waikiki Modern City" class="w-full h-full object-cover" />
+            </div>
+            <div class="container mx-auto px-6 z-20 relative text-center pt-20">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 animate-fade-up">The Strategic Partnership Program</div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">Civilizációs <span style="color: #BC9200">Menedék</span></h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light">A "Citizenship by Merit" program nem csak a gazdagoknak szól. A tehetséget és a szorgalmat is díjazzuk. Mérje fel esélyeit az új, 4 szintű rendszerben.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center"><button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">W-MAP Indítása <i class="fas fa-chevron-right text-sm"></i></button></div>
+            </div>
+        </section>
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4" style="color: #0E308E">Elérhető Státuszok</h2>
+                    <p class="text-gray-600">A W-MAP rendszer 4 kategóriába sorolja a jelentkezőket az elért pontszám alapján.</p>
                 </div>
-            );
-
-            const renderResult = () => {
-                let title, desc, icon, bgClass, btnText, badge;
-
-                switch (tier) {
-                    case "GOLD":
-                        title = "GOLD TIER: Stratégiai Vagyontárgy";
-                        desc = "Azonnali állampolgárság. Ön a tökéletes jelölt. Nincs várakozási idő, nincs ingatlanminimum, VIP ügyintézés.";
-                        icon = "fas fa-crown";
-                        bgClass = "bg-gradient-to-b from-yellow-50 to-white border-yellow-400";
-                        btnText = "Hivatalos Kérelem ($5,000)";
-                        badge = "90+ PONT";
-                        break;
-                    case "SILVER":
-                        title = "SILVER TIER: Kiemelt Befektető";
-                        desc = "Gyorsított eljárás. Állampolgárság 1 év után, feltéve, hogy teljesíti a $1M kötvényvásárlást és az ingatlanbefektetést.";
-                        icon = "fas fa-medal";
-                        bgClass = "bg-gray-50 border-gray-400";
-                        btnText = "Befektetési Terv Indítása";
-                        badge = "75-89 PONT";
-                        break;
-                    case "BRONZE":
-                        title = "BRONZE TIER: Szakképzett Rezidens";
-                        desc = "Letelepedési engedély (Residency). Állampolgárság 5 év után kérvényezhető. Biztonsági letét ($100k) és igazolt munkaviszony szükséges.";
-                        icon = "fas fa-user-shield";
-                        bgClass = "bg-orange-50 border-orange-300";
-                        btnText = "Letelepedési Kérelem";
-                        badge = "60-74 PONT";
-                        break;
-                    case "BLUE":
-                        title = "BLUE TIER: Talent / Nomad Vízum";
-                        desc = "Ideiglenes munkavállalói státusz. Fiatal tehetségeknek, akik nem rendelkeznek nagy vagyonnal, de kritikus tudással igen. 10 éves út az állampolgárságig.";
-                        icon = "fas fa-laptop-code";
-                        bgClass = "bg-blue-50 border-blue-300";
-                        btnText = "Talent Program Jelentkezés";
-                        badge = "45-59 PONT";
-                        break;
-                    default: // REJECTED
-                        title = "ELUTASÍTVA: High Risk";
-                        desc = isFatal
-                            ? "A rendszer KIZÁRÓ OKOT (Red Flag) azonosított. Kérelmét elutasítottuk."
-                            : "Pontszáma (45 alatt) nem éri el a minimális belépési küszöböt.";
-                        icon = "fas fa-ban";
-                        bgClass = "bg-red-50 border-red-200";
-                        btnText = "Bezárás";
-                        badge = "ELÉGTELEN";
-                }
-
-                return (
-                    <div className="p-8 text-center animate-fade-up">
-                        <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl text-3xl ${tier === 'REJECTED' ? 'bg-red-100 text-red-600' : 'bg-white'}`} style={{ color: tier === 'GOLD' ? colors.gold : tier === 'SILVER' ? colors.silver : tier === 'BRONZE' ? colors.bronze : tier === 'BLUE' ? colors.primary : '' }}>
-                            <i className={icon}></i>
-                        </div>
-
-                        <div className={`p-6 rounded-xl border-2 mb-8 relative overflow-hidden ${bgClass}`}>
-                            <div className="absolute top-0 right-0 px-3 py-1 bg-black/10 text-xs font-bold rounded-bl-lg">
-                                {badge}
-                            </div>
-                            <h3 className="text-2xl font-bold mb-2 text-gray-900">{title}</h3>
-                            <div className="text-4xl font-extrabold mb-4" style={{ color: tier === 'REJECTED' ? colors.danger : colors.primary }}>
-                                {score} / 100
-                            </div>
-                            <p className="text-gray-700 leading-relaxed text-sm">
-                                {desc}
-                            </p>
-                        </div>
-
-                        {tier !== 'REJECTED' && (
-                            <div className="text-left bg-gray-50 p-4 rounded-lg mb-6 text-sm text-gray-600">
-                                <p><strong>Következő lépés:</strong> A besorolása alapján Ön jogosult a fenti program elindítására. Kérjük, foglaljon időpontot a biometrikus azonosításra.</p>
-                            </div>
-                        )}
-
-                        <button
-                            onClick={onClose}
-                            className={`w-full py-4 rounded-lg text-white font-bold text-lg shadow-lg transition-transform hover:scale-[1.02] ${tier === 'REJECTED' ? 'bg-gray-500' : 'bg-[#BC9200]'}`}
-                        >
-                            {btnText}
-                        </button>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl border-2 text-center border-blue-300 bg-blue-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-laptop-code"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">45-59 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Blue Tier</h3>
+                        <div class="text-sm font-semibold mb-3 text-blue-800">Talent / Nomad</div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Fiatal tehetségeknek, digitális nomádoknak. Belépő szint, szigorúbb ellenőrzéssel.</p>
                     </div>
-                );
-            };
-
-            return (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-                    <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
-                        <div className="sticky top-0 bg-white/95 backdrop-blur px-6 py-4 border-b flex justify-between items-center z-10">
-                            <span className="font-bold text-gray-400 text-xs tracking-widest">W-MAP v2.1 PROTOCOL</span>
-                            <button onClick={onClose} className="text-gray-400 hover:text-red-500 transition-colors">
-                                <i className="fas fa-times text-xl"></i>
-                            </button>
-                        </div>
-
-                        <div className="min-h-[400px]">
-                            {stage === 'intro' && renderIntro()}
-                            {stage === 'quiz' && renderQuiz()}
-                            {stage === 'analyzing' && renderAnalyzing()}
-                            {stage === 'result' && renderResult()}
-                        </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-orange-300 bg-orange-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-user-shield"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">60-74 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Bronze Tier</h3>
+                        <div class="text-sm font-semibold mb-3 text-blue-800">Professional</div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Szakembereknek és családoknak. Letelepedési engedély (Residency) biztonsági letéttel.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-gray-400 bg-gray-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-medal"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">75-89 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Silver Tier</h3>
+                        <div class="text-sm font-semibold mb-3 text-blue-800">Investor</div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Vagyonos befektetőknek. Gyorsított eljárás államkötvény és ingatlanvásárlás esetén.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-yellow-400 bg-yellow-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-crown"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">90+ pont</div>
+                        <h3 class="text-lg font-bold mb-2">Gold Tier</h3>
+                        <div class="text-sm font-semibold mb-3 text-blue-800">Strategic Asset</div>
+                        <p class="text-gray-600 text-sm leading-relaxed">A globális elit számára. Azonnali állampolgárság, VIP státusz és diplomáciai előnyök.</p>
                     </div>
                 </div>
-            );
-        };
-
-        const WaikikiCitizenship = () => {
-            const [scrolled, setScrolled] = useState(false);
-            const [isFormOpen, setIsFormOpen] = useState(false);
-
-            useEffect(() => {
-                const handleScroll = () => {
-                    setScrolled(window.scrollY > 50);
-                };
-                window.addEventListener('scroll', handleScroll);
-                return () => window.removeEventListener('scroll', handleScroll);
-            }, []);
-
-            // A 4 szintű rendszer adatai a főoldali kártyákhoz
-            const tiersDisplay = [
-                {
-                    name: "Blue Tier",
-                    role: "Talent / Nomad",
-                    desc: "Fiatal tehetségeknek, digitális nomádoknak. Belépő szint, szigorúbb ellenőrzéssel.",
-                    color: "border-blue-300 bg-blue-50",
-                    icon: "fas fa-laptop-code",
-                    score: "45-59 pont"
-                },
-                {
-                    name: "Bronze Tier",
-                    role: "Professional",
-                    desc: "Szakembereknek és családoknak. Letelepedési engedély (Residency) biztonsági letéttel.",
-                    color: "border-orange-300 bg-orange-50",
-                    icon: "fas fa-user-shield",
-                    score: "60-74 pont"
-                },
-                {
-                    name: "Silver Tier",
-                    role: "Investor",
-                    desc: "Vagyonos befektetőknek. Gyorsított eljárás államkötvény és ingatlanvásárlás esetén.",
-                    color: "border-gray-400 bg-gray-50",
-                    icon: "fas fa-medal",
-                    score: "75-89 pont"
-                },
-                {
-                    name: "Gold Tier",
-                    role: "Strategic Asset",
-                    desc: "A globális elit számára. Azonnali állampolgárság, VIP státusz és diplomáciai előnyök.",
-                    color: "border-yellow-400 bg-yellow-50",
-                    icon: "fas fa-crown",
-                    score: "90+ pont"
-                }
-            ];
-
-            return (
-                <div className="min-h-screen text-gray-800" style={{ backgroundColor: '#F5F9FC' }}>
-                    {/* Navigation */}
-                    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'}`}>
-                        <div className="container mx-auto px-6 flex justify-between items-center">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-xl" style={{ backgroundColor: '#0E308E' }}>W</div>
-                                <span className={`text-xl font-bold tracking-tight ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-                                    Waikiki<span style={{ color: '#BC9200' }}>Citizenship</span>
-                                </span>
-                            </div>
-                            <div className="hidden md:flex items-center gap-8">
-                                <a href="#" className={`text-sm font-medium hover:text-[#BC9200] transition-colors ${scrolled ? 'text-gray-700' : 'text-white/90'}`}>Filozófia</a>
-                                <a href="#" className={`text-sm font-medium hover:text-[#BC9200] transition-colors ${scrolled ? 'text-gray-700' : 'text-white/90'}`}>Szintek</a>
-                                <button
-                                    onClick={() => setIsFormOpen(true)}
-                                    className="px-6 py-2.5 rounded-full text-white font-semibold text-sm transition-transform hover:scale-105 shadow-lg"
-                                    style={{ backgroundColor: '#0071BC' }}
-                                >
-                                    Jogosultság Ellenőrzése
-                                </button>
-                            </div>
-                        </div>
-                    </nav>
-
-                    {/* Hero Section */}
-                    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                        <div className="absolute inset-0 z-0">
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#0A1930]/90 to-[#0071BC]/40 z-10"></div>
-                            <img
-                                src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=2000&auto=format&fit=crop"
-                                alt="Waikiki Modern City"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-
-                        <div className="container mx-auto px-6 z-20 relative text-center pt-20">
-                            <div className="animate-fade-up inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6">
-                                The Strategic Partnership Program
-                            </div>
-                            <h1 className="animate-fade-up text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight" style={{ animationDelay: '0.1s' }}>
-                                Civilizációs <span style={{ color: '#BC9200' }}>Menedék</span>
-                            </h1>
-                            <p className="animate-fade-up text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light" style={{ animationDelay: '0.2s' }}>
-                                A "Citizenship by Merit" program nem csak a gazdagoknak szól. A tehetséget és a szorgalmat is díjazzuk. Mérje fel esélyeit az új, 4 szintű rendszerben.
-                            </p>
-                            <div className="animate-fade-up flex flex-col sm:flex-row gap-4 justify-center" style={{ animationDelay: '0.3s' }}>
-                                <button
-                                    onClick={() => setIsFormOpen(true)}
-                                    className="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all hover:translate-y-[-4px] shadow-lg flex items-center justify-center gap-2"
-                                    style={{ backgroundColor: '#0071BC' }}
-                                >
-                                    W-MAP Indítása <i className="fas fa-chevron-right text-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Tiers Overview Grid */}
-                    <section className="py-24 bg-white">
-                        <div className="container mx-auto px-6">
-                            <div className="text-center mb-16">
-                                <h2 className="text-4xl font-bold mb-4" style={{ color: '#0E308E' }}>Elérhető Státuszok</h2>
-                                <p className="text-gray-600">A W-MAP rendszer 4 kategóriába sorolja a jelentkezőket az elért pontszám alapján.</p>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                {tiersDisplay.map((tier, i) => (
-                                    <div key={i} className={`p-6 rounded-2xl border-2 text-center hover-card ${tier.color}`}>
-                                        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700">
-                                            <i className={tier.icon}></i>
-                                        </div>
-                                        <div className="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">{tier.score}</div>
-                                        <h3 className="text-lg font-bold mb-2">{tier.name}</h3>
-                                        <div className="text-sm font-semibold mb-3 text-blue-800">{tier.role}</div>
-                                        <p className="text-gray-600 text-sm leading-relaxed">{tier.desc}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Features Grid */}
-                    <section className="py-24" style={{ backgroundColor: '#F5F9FC' }}>
-                        <div className="container mx-auto px-6">
-                            <div className="grid md:grid-cols-3 gap-8">
-                                {[
-                                    { icon: "fas fa-brain", title: "Prediktív Elemzés", desc: "A 'The Watcher' AI 15 évre visszamenőleg elemzi a digitális és pénzügyi lábnyomot." },
-                                    { icon: "fas fa-shield-halved", title: "Kulturális Koherencia", desc: "A rendszer kiszűri a társadalmi békét veszélyeztető ideológiákat és viselkedésmintákat." },
-                                    { icon: "fas fa-chart-pie", title: "Objektív Meritokrácia", desc: "Nincs részrehajlás. Kizárólag a matematikai úton bizonyítható hozzáadott érték számít." }
-                                ].map((item, i) => (
-                                    <div key={i} className="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
-                                        <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style={{ color: '#BC9200' }}>
-                                            <i className={item.icon}></i>
-                                        </div>
-                                        <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                                        <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Footer */}
-                    <footer className="bg-[#050C18] text-white pt-20 pb-10 border-t border-gray-800">
-                        <div className="container mx-auto px-6">
-                            <div className="flex flex-col md:flex-row justify-between items-center">
-                                <div className="flex items-center gap-3 mb-6 md:mb-0">
-                                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold" style={{ backgroundColor: '#0E308E' }}>W</div>
-                                    <span className="text-lg font-bold">Waikiki Government</span>
-                                </div>
-                                <p className="text-gray-500 text-xs text-center md:text-right">
-                                    &copy; 2025 Sovereign Nation of Waikiki.<br />
-                                    Department of Strategic Integration.
-                                </p>
-                            </div>
-                        </div>
-                    </footer>
-
-                    {/* Assessment Modal Component */}
-                    {isFormOpen && <AssessmentForm onClose={() => setIsFormOpen(false)} />}
-
+            </div>
+        </section>
+        <section class="py-24" style="background-color: #F5F9FC">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style="color: #BC9200"><i class="fas fa-brain"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Prediktív Elemzés</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">A 'The Watcher' AI 15 évre visszamenőleg elemzi a digitális és pénzügyi lábnyomot.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style="color: #BC9200"><i class="fas fa-shield-halved"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Kulturális Koherencia</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">A rendszer kiszűri a társadalmi békét veszélyeztető ideológiákat és viselkedésmintákat.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style="color: #BC9200"><i class="fas fa-chart-pie"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Objektív Meritokrácia</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Nincs részrehajlás. Kizárólag a matematikai úton bizonyítható hozzáadott érték számít.</p>
+                    </div>
                 </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<WaikikiCitizenship />);
-    </script>
+            </div>
+        </section>
+        <footer class="bg-[#050C18] text-white pt-20 pb-10 border-t border-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center gap-3 mb-6 md:mb-0">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold" style="background-color: #0E308E">W</div><span class="text-lg font-bold">Waikiki Government</span>
+                    </div>
+                    <p class="text-gray-500 text-xs text-center md:text-right">&copy; 2025 Sovereign Nation of Waikiki.<br />Department of Strategic Integration.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="modal-root"></div>
+    <script type="text/babel" src="js/citizenship.js"></script>
 </body>
 
 </html>
