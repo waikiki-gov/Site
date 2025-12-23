@@ -10,19 +10,22 @@ The Waikiki Government Site follows a modular architecture with clear separation
 /
 ├── css/
 │   ├── common.css          # Shared styles across all pages
-│   ├── index.css           # Landing page specific styles
+│   ├── index.css           # Landing page styles
 │   ├── economy.css         # Economy page visualizations
 │   ├── history.css         # History page timeline styles
-│   ├── tourism.css         # Tourism page specific styles
-│   └── wealth-fund.css     # Wealth fund page specific styles
+│   ├── faq.css             # FAQ page styles
+│   ├── parties.css         # Parties page styles
+│   ├── wealth-fund.css     # Wealth fund page styles
+│   └── ...                 # additional page-specific styles
 ├── js/
 │   ├── common.js           # Shared JavaScript functionality
-│   ├── index.js            # Landing page specific scripts
-│   ├── economy.js          # Economy page chart logic
-│   ├── tourism.js          # Tourism page specific scripts
-│   ├── wealth-fund.js      # Wealth fund page specific scripts
-│   └── chart.min.js        # Chart.js library
-├── content/                # Markdown content files (canonical narrative sources)
+│   ├── economy.js          # Economy page chart and data logic
+│   ├── wealth-fund.js      # Wealth fund page scripts
+│   ├── chart.min.js        # Chart.js library
+│   └── ...                 # other helper and page scripts
+├── content/                # Canonical Markdown content sources
+├── icons/                  # Icon and SVG assets
+├── images/                 # Images and illustrations
 ├── index.html              # Landing page
 ├── economy.html            # Economic data and visualizations
 ├── history.html            # National history timeline
@@ -54,9 +57,6 @@ Contains styles that are shared across all pages:
 - **Card Components** - Unified card grid system with hover effects and staggered animations
 - **Responsive Design** - Mobile breakpoints for common components
 
-### Page-Specific CSS Files
-
-
 ## JavaScript Architecture
 
 ### common.js
@@ -71,28 +71,27 @@ Contains functionality shared across all pages:
 
 ### Page-Specific JavaScript Files
 
-#### index.js
-- **Hero Parallax** - Parallax scrolling effect for hero section
-- **Stats Animation** - Number counting animations (configurable)
-- **Timeline Animation** - Scroll-based timeline reveal effects
-- **Ripple Effects** - Interactive click feedback on stat items
-- **Section Title Animation** - Enhanced entrance animations for titles
+#### common.js
+- Shared initialization, smooth scrolling, intersection observers, navigation highlighting, and common UI behaviors
 
 #### economy.js
-- **Chart Initialization** - Setup for Chart.js visualizations
-- **Data Processing** - Transform economic data for charts
-- **Interactive Charts** - Hover effects and tooltips for data points
-
-#### tourism.js
-- **Lightweight Enhancements** - Relies primarily on common.js fade-in system
-- **Page-Specific Animations** - Any tourism-specific interactive elements
+- Chart initialization and configuration for Chart.js
+- Data processing: transform CSV/JSON for charts
+- Interactive charts: tooltips and hover interactions
 
 #### wealth-fund.js
-- **Timeline Rendering** - Generate wealth fund history timeline
-- **Projection Calculations** - Future value projection logic
-- **Interactive Elements** - Fund-specific interactive features
+- Timeline rendering for the wealth fund
+- Projection calculations and interactive detail panels
 
-## Design Principles
+Note: `index.js` and `tourism.js` are not present in the repository; add them if page-specific scripts are required for those pages.
+
+## Data sources and content
+
+- Canonical content is stored as Markdown in the `content/` folder. These files are the authoritative source for page copy
+- Tabular economic and statistical data is stored in `csv/` and processed by `js/economy.js`
+- Image and icon assets live in `images/` and `icons/`
+
+## Design principles
 
 ### Separation of Concerns
 - **Common files** contain only code that will be reused across multiple pages
