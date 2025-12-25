@@ -45,12 +45,12 @@ body {
 
 /* Single class for the "Jogosultság Ellenőrzése" button */
 .assessment-btn {
+    margin-right: 130px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     padding: 0.625rem 1.5rem;
-    /* 10px 24px -> matches px-6 py-2.5 */
     border-radius: 9999px;
     background-color: #0E308E;
     color: #ffffff;
