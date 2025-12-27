@@ -61,14 +61,6 @@ body {
     transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
-.assessment-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-}
-
-.assessment-btn:active {
-    transform: translateY(0) scale(0.995);
-}
-
 
 .faq-container {
     max-width: 1400px;

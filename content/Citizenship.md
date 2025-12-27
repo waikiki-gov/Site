@@ -1,28 +1,30 @@
-# **Waikiki Állampolgársági Program: Folyamat és Követelményrendszer**
+# Waikiki Állampolgársági Program: Folyamat és Követelményrendszer
 
 ## A Waikiki Állampolgársági Program (Citizenship by Merit) Összefoglalása
 
-Ez a dokumentum a Waikiki Állampolgársági Program folyamatának végleges, strukturált összefoglalóját tartalmazza a Waikiki Merit Assessment Protocol (W-MAP) és a The Watcher rendszer alapján.
+Ez a dokumentum a Waikiki Állampolgársági Program folyamatának strukturált összefoglalóját tartalmazza a Waikiki Merit Assessment Protocol és a The Gatekeeper rendszer alapján.
 
-1. Előzetes Pontszámítás és Priorizálás
+### 1. Előzetes Pontszámítás és Priorizálás
 
-Eszköz: W-MAP Online Kalkulátor (Weboldal).
-Módszer: A jelentkező kitölt egy objektív, 20 kérdéses adatlapot (Demográfia, Gazdaság, Ideológia).
+Eszköz: Online Kalkulátor (Weboldal).
+Módszer: A jelentkező kitölt egy objektív, 20 kérdéses adatlapot (Alapadatok, Demográfia, Gazdaság, Ideológia).
+A rendszer a pontszáma alapján priorizálja a felhasználót a folyamat további lépéseinek szempontjából.
 
-2. Hivatalos Jelentkezés és Díjfizetés
+### 2. Hivatalos Jelentkezés és Díjfizetés
 
 Lépés: A sikeres előminősítést követően a jelölt benyújtja a hivatalos kérelmet.
 Költség: 1,000 WUD vissza nem térítendő eljárási díj.
 Feltétel: A díj befizetése aktiválja a mélységi átvilágítási folyamatot.
 
-3. A Hármas Kiválasztási Triád (The Triad Selection)
+### 3. A Hármas Kiválasztási Triád (The Triad Selection)
 
 A rendszer három, párhuzamosan futó szálon értékeli a jelöltet. Bármelyik fázisban feltárt kizáró ok a folyamat végét jelenti.
-A. Kvantitatív Validáció (The Scorecard)
-Fókusz: A webes kvízben megadott adatok (vagyon, diploma, családi állapot) okirattal történő igazolása.
+
+#### A. Kvantitatív Validáció (The Scorecard)
+Fókusz: Egy kvízben megadott részletes adatok (vagyon, befektetések, jövedelem, szakterület, diploma, családi állapot, származási ország) okirattal történő igazolása.
 Eszköz: Banki igazolások, közjegyzői okiratok, diplomamásolatok feltöltése a Waikiki One portálra.
 
-B. Jövőkép Elemzés (Predictive Compatibility Assessment)
+#### B. Jövőkép Elemzés (Predictive Compatibility Assessment)
 Fókusz: Kockázatelemzés és rejtett mintázatok.
 Eszköz: "The Watcher" AI.
 Vizsgált területek:
@@ -31,37 +33,37 @@ Pénzügyi tranzakciós történet (AML/CFT).
 Szociális gráf (kapcsolatok minősége).
 Biológiai kockázat (egészségügyi profil).
 
-C. Személyes Konzultáció (Personal Alignment Interview)
+#### C. Személyes Konzultáció (Personal Alignment Interview)
 Fókusz: Lojalitás, karakter és pszichológiai illeszkedés.
 Eszköz: Személyes (vagy biztonságos videó) interjú egy vezető bevándorlási tiszttel.
 Témák: Stresszhelyzet-szimulációk, ideológiai kérdések, a tekintélyelvű rendszer elfogadása.
 
-4. Az Ajánlattétel (The Conditional Offer)
+### 4. Az Ajánlattétel (The Conditional Offer)
 
 A rendszer a pontszámok és az AI kockázatelemzés alapján egyedi, jogilag kötelező érvényű ajánlatot generál.
-Teljes Jogú Állampolgárság (Citizenship):
-Feltétel: Gold Tier minősítés VAGY Silver Tier + jelentős befektetés.
-Kötelezettség: "Loyalty Bond" (Államkötvény) vásárlása (pl. $1M WUD, 5 évre zárolva).
-Letelepedési Engedély (Residency):
-Feltétel: Bronze Tier.
-Jellemzők: 5 év után kérvényezhető az állampolgárság.
-Munkavállalói / Talent Vízum:
-Feltétel: Blue Tier.
-Jellemzők: 10 éves integrációs út, szigorúbb feltételekkel.
 
-5. Státusz és Egyenlőség (Post-Accession)
+Teljes Jogú Állampolgárság (Citizenship) vagy Állandó Lakos (Permanent Resident). Egy jelentkező több ajánlatot kaphat, melyek feltételeket szabhatnak az állampolgárság megszerzéséhez. Egy ajánlat összes feltételének teljesítése esetén a jelentkező állampolgárságot kap.
 
-Az Eskütétel: A feltételek teljesítése (kötvényvásárlás, ingatlan) és az eskütétel után a jelölt megkapja a státuszt.
+Feltételek lehetnek:
+- Adott összeg befizetése a nemzeti vagyonalapba (pl. 5 millió WUD vissza nem térítendő támogatás)
+- Adott befektetés államkötvénybe vagy tőzsdén (pl. 10 millió WUD értékú részvényvásárlás Waikiki cégekben)
+- Ingatlanvásárlás megadott értékben
+- Adott ideig csak lakos, utána kérvényezhető az állampolgárság
+- Diploma megszerzése adott területen
+
+### 5. Státusz és Egyenlőség (Post-Accession)
+
+Az Eskütétel: A feltételek teljesítése (kötvényvásárlás, ingatlan) és a ceremoniális eskütétel után a jelölt megkapja a státuszt.
 Az Egyenlőség Elve: A rendszer meritokratikus bemenetű, de jogilag egalitárius kimenetű.
 Attól a pillanattól kezdve, hogy valaki megkapja az állampolgárságot (a Waikiki útlevelet), jogilag teljesen egyenlő a született polgárokkal.
 A korábbi "pontszám" törlődik a nyilvános rekordokból; nincs "első-" vagy "másodosztályú" állampolgár, csak Waikiki Polgár.
 
-## **1\. A "Citizenship by Merit" Filozófia**
+## **1. A "Citizenship by Merit" Filozófia**
 
 Waikiki a modern világban a stabilitás, a kiválóság és a klasszikus polgári értékek őrzője, egyfajta "Civilizációs Menedék" a globális bizonytalanság tengerén. Állampolgársági programunk nem csupán jogi státuszok kiosztása, hanem egy mélyreható kölcsönös elköteleződésen alapuló szövetség. Közösségünkbe olyan kiemelkedő tehetségeket, látnokokat és családokat hívunk, akik nemcsak haszonélvezői kívánnak lenni sikereinknek, hanem aktív alakítói is nemzetünk gazdasági és szellemi gyarapodásának.  
 A rendszer a **"Strategic Partnership" (Stratégiai Partnerség)** elvét követi: célunk a kulturális harmónia megőrzése mellett egy prosperáló, összetartó társadalom építése, amely a nyugati civilizációs örökség és a jövőorientált innováció szintézisére épül. Hiszünk abban, hogy a társadalmi béke alapja a közös értékrend és a kiszámíthatóság. Ezért Waikiki nem a multikulturális fragmentációt, hanem az integrált sokszínűséget támogatja, ahol minden polgár egy közös jövőkép részese.
 
-## **2\. Az Eljárás Menete (The Triad Selection)**
+## **2. Az Eljárás Menete (The Triad Selection)**
 
 A felvételi folyamat átlátható, hatékony és diszkrét, mentes a felesleges bürokráciától, ugyanakkor rendkívül alapos. Az előzetes digitális regisztrációt követően három, **párhuzamosan zajló** szakasz biztosítja a kölcsönös megfelelést, melyek mindegyike más dimenzióból vizsgálja a "Waikiki-kompatibilitást".
 
@@ -102,7 +104,7 @@ Egy személyes, bizalmi légkörű, mégis mélyreható beszélgetés egy vezet�
   * *Fókusz:* A helyi szokások, a nyugalom és a rend iránti tisztelet. Hogyan kezeli a konfliktusokat szomszédaival vagy üzleti partnereivel?  
   * *Elvárt hozzáállás:* A harmonikus együttélés és a közösségi szabályok proaktív betartása. A jogkövető magatartás és a konfliktusok hivatalos, civilizált úton történő rendezése alapkövetelmény.
 
-## **3\. A Waikiki Érdem-Mátrix (The Merit Matrix 2.0)**
+## **3. A Waikiki Érdem-Mátrix (The Merit Matrix 2.0)**
 
 A 100 pontos értékelési rendszer célja a legkiválóbb tehetségek azonosítása és objektív rangsorolása.
 
@@ -118,9 +120,9 @@ Waikiki nagyra értékeli a hasonló történelmi és kulturális gyökerekkel, 
 
 A jövő építőit keressük. Nemcsak a diplomát értékeljük, hanem a tudás gyakorlati alkalmazhatóságát és stratégiai jelentőségét.
 
-* **Tier 1 \- Stratégiai Innovátorok (30 pont):** Fúziós energetika, Kvantum-informatika, Mesterséges Intelligencia fejlesztés, Fejlett védelmi technológiák, Űrkutatás. Ezek a területek biztosítják Waikiki globális technológiai fölényét.  
-* **Tier 2 \- Rendszerfenntartók (20 pont):** Csúcsminőségű orvostudomány (idegsebészet, genetika, virológia), Kiberbiztonság, Pénzügyi innováció (Fintech, Blockchain architektúra). Ők garantálják a lakosság jólétét és a gazdaság biztonságát.  
-* **Tier 3 \- Infrastruktúra Építők (10 pont):** Mérnöki tudományok (civil, gépész), Építészet, Várostervezés.  
+* **Tier 1 - Stratégiai Innovátorok (30 pont):** Fúziós energetika, Kvantum-informatika, Mesterséges Intelligencia fejlesztés, Fejlett védelmi technológiák, Űrkutatás. Ezek a területek biztosítják Waikiki globális technológiai fölényét.  
+* **Tier 2 - Rendszerfenntartók (20 pont):** Csúcsminőségű orvostudomány (idegsebészet, genetika, virológia), Kiberbiztonság, Pénzügyi innováció (Fintech, Blockchain architektúra). Ők garantálják a lakosság jólétét és a gazdaság biztonságát.  
+* **Tier 3 - Infrastruktúra Építők (10 pont):** Mérnöki tudományok (civil, gépész), Építészet, Várostervezés.  
 * **Nyelvi Bónusz (+5 pont):** Stratégiai üzleti nyelvek (pl. mandarin, arab, orosz) magas szintű ismerete az angol mellett, amely segíti Waikiki kereskedelmi terjeszkedését.
 
 ### **C. Gazdasági Erő és Tapasztalat (Max. 35 pont)**
@@ -128,13 +130,13 @@ A jövő építőit keressük. Nemcsak a diplomát értékeljük, hanem a tudás
 A tőkeerős háttér a függetlenség és a vállalkozókedv alapja. A vagyont nem önmagában értékeljük, hanem mint a gazdasági aktivitás eszközét.
 
 * **Vagyoni Kategóriák:**  
-  * Likvid vagyon \> $10M USD: **30 pont**  
-  * Likvid vagyon \> $5M USD: **20 pont**  
-  * Likvid vagyon \> $1M USD: **10 pont**  
+  * Likvid vagyon > $10M USD: **30 pont**  
+  * Likvid vagyon > $5M USD: **20 pont**  
+  * Likvid vagyon > $1M USD: **10 pont**  
 * **Bevételi Stabilitás:**  
-  * *Passzív jövedelem:* Stabil, évi $250k USD feletti igazolt hozam (ingatlan, osztalék, licencdíjak): **\+5 pont**. Ez garantálja, hogy a polgár gazdasági válság esetén sem szorul állami segítségre.  
+  * *Passzív jövedelem:* Stabil, évi $250k USD feletti igazolt hozam (ingatlan, osztalék, licencdíjak): **+5 pont**. Ez garantálja, hogy a polgár gazdasági válság esetén sem szorul állami segítségre.  
 * **Integrációs Bónusz:**  
-  * *Waikiki Kapcsolat:* Korábbi üzleti jelenlét, leányvállalat működtetése vagy stratégiai partnerség egy helyi céggel: **\+5 pont**. Ez bizonyítja a piacismeretet és az elkötelezettséget.
+  * *Waikiki Kapcsolat:* Korábbi üzleti jelenlét, leányvállalat működtetése vagy stratégiai partnerség egy helyi céggel: **+5 pont**. Ez bizonyítja a piacismeretet és az elkötelezettséget.
 
 ### **D. Család és Jövő (Max. 10 pont)**
 
@@ -143,10 +145,10 @@ Waikiki demográfiai politikája a fiatalításra és a családok megerősítés
 * **Életkor:** 25-45 év közötti életkor (dinamikus életszakasz): **5 pont**. Ebbe a korosztályba tartoznak a legaktívabb innovátorok és vállalkozók.  
 * **Családi Státusz:** Házas, gyermekkel vagy gyermekvállalási tervvel: **5 pont**. A család az a mikroközösség, amelyre a társadalom épül; a gyermekek biztosítják a nemzet jövőjét és az értékek továbbörökítését.
 
-## **4\. Az Ajánlattétel (The Conditional Offer)**
+## **4. Az Ajánlattétel (The Conditional Offer)**
 
 A kiválasztási folyamat végén a rendszer egy személyre szabott, exkluzív letelepedési csomagot generál. Ez az ajánlat nem csupán jogokat, hanem lehetőségeket is tartalmaz.  
-"Gold Tier" \- Az Elit Csomag (90+ pont)  
+"Gold Tier" - Az Elit Csomag (90+ pont)  
 Ez a kategória a "királyi utat" jelenti a legkiválóbbak számára.
 
 * **Költségek:** Jelképes adminisztrációs díj: $5,000 WUD.  
@@ -156,22 +158,22 @@ Ez a kategória a "királyi utat" jelenti a legkiválóbbak számára.
   * Meghívás az éves "New Horizons" állami gálára.  
   * Rugalmas letelepedési feltételek (nincs kötelező tartózkodási minimum az első 2 évben).
 
-"Standard Tier" \- A Befektetői Csomag (75-89 pont)  
+"Standard Tier" - A Befektetői Csomag (75-89 pont)  
 A sikeres vállalkozók és szakemberek sztenderd belépési pontja.
 
-* **Fejlesztési Hozzájárulás:** $150,000 \- $500,000 WUD vissza nem térítendő támogatás a Nemzeti Alapnak, amely oktatási és K+F projekteket finanszíroz.  
+* **Fejlesztési Hozzájárulás:** $150,000 - $500,000 WUD vissza nem térítendő támogatás a Nemzeti Alapnak, amely oktatási és K+F projekteket finanszíroz.  
 * **Hűségkötvény:** $1,000,000 WUD értékű államkötvény jegyzése 5 évre. Ez egy biztonságos, tőkevédett eszköz, amely garantálja a jelölt pénzügyi érdekeltségét az állam stabilitásában.  
 * **Ingatlanbefektetés:** Otthonteremtés kiemelt övezetekben (min. $750,000), elősegítve a minőségi urbanizációt.  
 * **Integrációs Időszak:** 3 év rezidens státusz a teljes jogú állampolgárság előtt. Ez idő alatt elvárás az ország életében való aktív részvétel (pl. kamarai tagság, jótékonyság).
 
-"Probationary Tier" \- A Lehetőség Csomag (60-74 pont, egyedi elbírálás)  
+"Probationary Tier" - A Lehetőség Csomag (60-74 pont, egyedi elbírálás)  
 Tehetséges, de tőkehiányos, vagy kiemelkedően gazdag, de kulturálisan távolabb álló jelöltek számára.
 
 * **Stratégiai Projektfinanszírozás:** Részvétel kiemelt állami beruházásokban (Min. $5M WUD) vagy egy hiányszakmában vállalt 5 éves munkaszerződés állami intézménynél.  
 * **Fokozatos Jogosultság:** A politikai részvételi jogok (szavazás, választhatóság) csak a 10 éves, feddhetetlen hűségidő után nyílnak meg.  
 * **Biztonsági Letét:** Letét elhelyezése a Nemzeti Banknál, amely a sikeres integrációt követően kamatostul felszabadul, biztosítékként szolgálva a társadalmi normák betartására.
 
-## **5\. Alapvető Elvárások (Core Requirements)**
+## **5. Alapvető Elvárások (Core Requirements)**
 
 A pontszámtól függetlenül léteznek olyan alapvető morális és jogi minimumok, amelyek hiánya azonnali elutasítást von maga után ("Red Lines").
 
