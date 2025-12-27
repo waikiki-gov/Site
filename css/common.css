@@ -114,6 +114,26 @@ nav {
   background: rgba(255, 255, 255, 0.15);
 }
 
+.menu-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn {
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  background-color: #0E308E;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1;
+  box-shadow: 0 10px 15px -3px rgba(2, 6, 23, 0.2), 0 4px 6px -4px rgba(2, 6, 23, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
 /* HAMBURGER MENU */
 
 .hamburger-menu {
