@@ -43,6 +43,11 @@ body {
     animation: pulse-glow 2s infinite;
 }
 
+.text-gray-600 {
+    max-width: 1400px;
+    margin: auto;
+}
+
 /* Single class for the "Jogosultság Ellenőrzése" button */
 .assessment-btn {
     margin-right: 130px;
@@ -61,6 +66,27 @@ body {
     transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
+.menu-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    background-color: #0E308E;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1;
+    box-shadow: 0 10px 15px -3px rgba(2, 6, 23, 0.2), 0 4px 6px -4px rgba(2, 6, 23, 0.1);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
 
 .faq-container {
     max-width: 1400px;
