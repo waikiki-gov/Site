@@ -26,12 +26,15 @@ Eszköz: Banki igazolások, közjegyzői okiratok, diplomamásolatok feltöltés
 
 #### B. Jövőkép Elemzés (Predictive Compatibility Assessment)
 Fókusz: Kockázatelemzés és rejtett mintázatok.
-Eszköz: "The Watcher" AI.
+Eszköz: The Gatekeeper AI.
 Vizsgált területek:
-Digitális lábnyom (15 évre visszamenőleg).
+Digitális lábnyom.
 Pénzügyi tranzakciós történet (AML/CFT).
 Szociális gráf (kapcsolatok minősége).
-Biológiai kockázat (egészségügyi profil).
+Származás.
+Vagyon.
+Szakmai teljesítmény.
+Ideológia.
 
 #### C. Személyes Konzultáció (Personal Alignment Interview)
 Fókusz: Lojalitás, karakter és pszichológiai illeszkedés.
@@ -77,7 +80,7 @@ Ez a szakasz a kézzelfogható tényekre és mérhető eredményekre összpontos
 
 ### **II. Fázis: A Jövőkép Elemzés (Predictive Compatibility Assessment)**
 
-Ez a szakasz a leginnovatívabb elemünk. A hosszú távú beilleszkedés sikerességét hivatott előre jelezni a legmodernebb adatelemzési módszerekkel ("The Watcher" rendszer), biztosítva, hogy az új polgár valóban otthon érezze magát nálunk, és a közösség is gazdagodjon jelenlétével.
+Ez a szakasz a leginnovatívabb elemünk. A hosszú távú beilleszkedés sikerességét hivatott előre jelezni a legmodernebb adatelemzési módszerekkel, biztosítva, hogy az új polgár valóban otthon érezze magát nálunk, és a közösség is gazdagodjon jelenlétével.
 
 * **Digitális Koherencia és Értékrend:**  
   * A rendszer áttekinti a digitális jelenlétet a közösségi értékekkel való összhang szempontjából. Nem a véleménykülönbségeket keressük, hanem a karaktert.  
