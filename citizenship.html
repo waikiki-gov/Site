@@ -20,9 +20,7 @@
 
 <body>
     <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
-        <div class="hidden md:flex items-center gap-8">
-            <button class="assessment-btn open-assessment">Check Eligibility</button>
-        </div>
+        <div class="hidden md:flex items-center gap-8"><button class="assessment-btn open-assessment">Check Eligibility</button></div>
     </nav>
     <div class="hamburger-menu"><button class="hamburger-button" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
     <div class="hamburger-overlay"></div>
@@ -56,10 +54,10 @@
         <section class="py-24 bg-white">
             <div class="mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4" style="color: #0E308E">Available Statuses</h2>
-                    <p class="text-gray-600">The system classifies applicants into six tiers based on their score.</p>
+                    <h2 class="text-4xl font-bold mb-4" style="color: #0E308E">Available Tiers</h2>
+                    <p class="text-gray-600">After filling the application form, the system classifies applicants into six initial tiers based on their score. Since the high number of applicants this is a necessary step to prioritize processing. This category also gives an overview of the applicant's current standing, however does not determine the final decision. Once citizenship is granted, all citizens enjoy the same rights and benefits.</p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
+                <div class="grid lg:grid-cols-2 xl:grid-cols-6 gap-6">
                     <div class="p-6 rounded-2xl border-2 text-center border-red-300 bg-red-50 hover-card">
                         <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-times-circle"></i></div>
                         <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">0-34 points</div>
@@ -101,6 +99,10 @@
         </section>
         <section class="py-24" style="background-color: #F5F9FC">
             <div class="mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4" style="color: #0E308E">Naturalization Process</h2>
+                    <p class="text-gray-600">The process consists of threee separate stages designed to ensure that applicants meet all financial, legal and social requirements for citizenship. The three steps combine automated reviews, questionaires and a personal or online interview with an immigration officer. The combined score of these steps will determine the decision on the citizenship application.</p>
+                </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
                         <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style="color: #BC9200"><i class="fas fa-brain"></i></div>
@@ -118,6 +120,71 @@
                         <p class="text-gray-600 text-sm leading-relaxed">No bias. Only mathematically demonstrable added value is considered.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section id="citizenship" class="fade-in">
+            <div class="faq-container">
+                <h2 class="faq-section-title">Citizenship & Naturalization Process FAQ</h2>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/passport.svg?color=%230071BC&width=32&height=32" alt="Passport Icon" /><span class="faq-question-text">What is the "Citizenship by Merit" program?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Waikiki operates a unique meritocratic naturalization system. Unlike traditional residency programs, citizenship is not merely bought but earned through a combination of economic contribution, professional expertise, and cultural compatibility. The program evaluates applicants via the <strong>Waikiki Merit Assessment Protocol (W-MAP)</strong>, scoring them on factors such as net worth, strategic skills (e.g., AI, Fusion Energy), and ideological alignment with our society.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/layers-triple.svg?color=%230071BC&width=32&height=32" alt="Tiers Icon" /><span class="faq-question-text">What are the Citizenship Tiers?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Based on the W-MAP score, successful applicants are categorized into four tiers:</p>
+                        <ul>
+                            <li><strong>Gold Tier (Strategic Asset):</strong>Immediate citizenship, VIP healthcare, and diplomatic privileges. Requires 90+ points.</li>
+                            <li><strong>Silver Tier (Investor):</strong>Citizenship after 1 year. Requires significant bond purchase and property investment.</li>
+                            <li><strong>Bronze Tier (Resident):</strong>5-year path to citizenship. Ideal for professionals and families.</li>
+                            <li><strong>Blue Tier (Talent):</strong>A temporary status for young digital nomads and innovators with a 10-year integration path.</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/eye-check.svg?color=%230071BC&width=32&height=32" alt="Vetting Icon" /><span class="faq-question-text">What is "The Watcher" vetting process?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Security is paramount in Waikiki. "The Watcher" is our state-of-the-art AI-driven vetting system that analyzes 15 years of an applicant's digital footprint, financial history, and social connections. It ensures that new citizens are not only financially stable but also culturally coherent and pose no risk to national security or social harmony. The process is strictly confidential and objective.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/cash-multiple.svg?color=%230071BC&width=32&height=32" alt="Cost Icon" /><span class="faq-question-text">How much does citizenship cost?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Costs vary dynamically based on your W-MAP score. Higher merit scores result in lower financial requirements. Generally, applicants must purchase a <strong>Loyalty Bond</strong>ranging from $500,000 to $2,000,000 WUD, which is held for 5 years. Direct application fees and mandatory real estate investments may also apply depending on the assigned Tier. Gold Tier applicants enjoy significantly reduced financial barriers due to their high strategic value.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/account-multiple-plus.svg?color=%230071BC&width=32&height=32" alt="Family Icon" /><span class="faq-question-text">Does my family get citizenship too?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Yes, Waikiki is strongly family-centric. The nuclear family (spouse and children) of a primary applicant is included in the application. In fact, being married with children grants bonus points in the W-MAP assessment, as we view stable families as the bedrock of society. Family members also undergo health and security screenings appropriate for their age.</p>
+                    </div>
+                </details>
+                <details class="faq-item myth-reality">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/card-account-details.svg?color=%230071BC&width=32&height=32" alt="Dual Citizenship Icon" /><span class="faq-question-text">Is dual citizenship allowed?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Waikiki generally allows dual citizenship, recognizing the global nature of our elite citizens. However, in the event of a diplomatic or trade conflict between Waikiki and your country of origin, your primary loyalty must lie with Waikiki. Certain high-security government positions may require renouncing other allegiances.</p>
+                    </div>
+                </details>
             </div>
         </section>
         <footer>
