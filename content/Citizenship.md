@@ -1,5 +1,61 @@
 # **Waikiki Állampolgársági Program: Folyamat és Követelményrendszer**
 
+## A Waikiki Állampolgársági Program (Citizenship by Merit) Összefoglalása
+
+Ez a dokumentum a Waikiki Állampolgársági Program folyamatának végleges, strukturált összefoglalóját tartalmazza a Waikiki Merit Assessment Protocol (W-MAP) és a The Watcher rendszer alapján.
+
+1. Előzetes Pontszámítás és Priorizálás
+
+Eszköz: W-MAP Online Kalkulátor (Weboldal).
+Módszer: A jelentkező kitölt egy objektív, 20 kérdéses adatlapot (Demográfia, Gazdaság, Ideológia).
+
+2. Hivatalos Jelentkezés és Díjfizetés
+
+Lépés: A sikeres előminősítést követően a jelölt benyújtja a hivatalos kérelmet.
+Költség: 1,000 WUD vissza nem térítendő eljárási díj.
+Feltétel: A díj befizetése aktiválja a mélységi átvilágítási folyamatot.
+
+3. A Hármas Kiválasztási Triád (The Triad Selection)
+
+A rendszer három, párhuzamosan futó szálon értékeli a jelöltet. Bármelyik fázisban feltárt kizáró ok a folyamat végét jelenti.
+A. Kvantitatív Validáció (The Scorecard)
+Fókusz: A webes kvízben megadott adatok (vagyon, diploma, családi állapot) okirattal történő igazolása.
+Eszköz: Banki igazolások, közjegyzői okiratok, diplomamásolatok feltöltése a Waikiki One portálra.
+
+B. Jövőkép Elemzés (Predictive Compatibility Assessment)
+Fókusz: Kockázatelemzés és rejtett mintázatok.
+Eszköz: "The Watcher" AI.
+Vizsgált területek:
+Digitális lábnyom (15 évre visszamenőleg).
+Pénzügyi tranzakciós történet (AML/CFT).
+Szociális gráf (kapcsolatok minősége).
+Biológiai kockázat (egészségügyi profil).
+
+C. Személyes Konzultáció (Personal Alignment Interview)
+Fókusz: Lojalitás, karakter és pszichológiai illeszkedés.
+Eszköz: Személyes (vagy biztonságos videó) interjú egy vezető bevándorlási tiszttel.
+Témák: Stresszhelyzet-szimulációk, ideológiai kérdések, a tekintélyelvű rendszer elfogadása.
+
+4. Az Ajánlattétel (The Conditional Offer)
+
+A rendszer a pontszámok és az AI kockázatelemzés alapján egyedi, jogilag kötelező érvényű ajánlatot generál.
+Teljes Jogú Állampolgárság (Citizenship):
+Feltétel: Gold Tier minősítés VAGY Silver Tier + jelentős befektetés.
+Kötelezettség: "Loyalty Bond" (Államkötvény) vásárlása (pl. $1M WUD, 5 évre zárolva).
+Letelepedési Engedély (Residency):
+Feltétel: Bronze Tier.
+Jellemzők: 5 év után kérvényezhető az állampolgárság.
+Munkavállalói / Talent Vízum:
+Feltétel: Blue Tier.
+Jellemzők: 10 éves integrációs út, szigorúbb feltételekkel.
+
+5. Státusz és Egyenlőség (Post-Accession)
+
+Az Eskütétel: A feltételek teljesítése (kötvényvásárlás, ingatlan) és az eskütétel után a jelölt megkapja a státuszt.
+Az Egyenlőség Elve: A rendszer meritokratikus bemenetű, de jogilag egalitárius kimenetű.
+Attól a pillanattól kezdve, hogy valaki megkapja az állampolgárságot (a Waikiki útlevelet), jogilag teljesen egyenlő a született polgárokkal.
+A korábbi "pontszám" törlődik a nyilvános rekordokból; nincs "első-" vagy "másodosztályú" állampolgár, csak Waikiki Polgár.
+
 ## **1\. A "Citizenship by Merit" Filozófia**
 
 Waikiki a modern világban a stabilitás, a kiválóság és a klasszikus polgári értékek őrzője, egyfajta "Civilizációs Menedék" a globális bizonytalanság tengerén. Állampolgársági programunk nem csupán jogi státuszok kiosztása, hanem egy mélyreható kölcsönös elköteleződésen alapuló szövetség. Közösségünkbe olyan kiemelkedő tehetségeket, látnokokat és családokat hívunk, akik nemcsak haszonélvezői kívánnak lenni sikereinknek, hanem aktív alakítói is nemzetünk gazdasági és szellemi gyarapodásának.  
@@ -246,4 +302,9 @@ A társadalmi béke legnagyobb ellensége az érzelmi alapú, irracionális dön
   * **Érzelmi Volatilitás:** A digitális kommunikációban megjelenő szélsőséges érzelmi kilengések.  
   * **Ideológiai Fertőzöttség (Memetic Infection):** A modern, "woke" vagy radikális egyenlősítő eszmék szófordulatainak gépies használata. A rendszer ezt "kognitív vírusként" kezeli, amely veszélyezteti a meritokratikus rendszert.
 
-  
+# Összefoglalva:
+- Előzetes pontszám (prioritáshoz) a weboldalon található kvíz alapján
+- 1000 WUD jelentkezési díj befizetése
+- 3 fázisból álló felmérés (kvantitatív + AI + személyes interjú)
+- Ajánlatot kap az állampolgárságra (ha azt nem éri el, általában kap egy alternatív ajánlatot lakos-nak)
+- Ha megszerezte, onnantól minden állampolgárság egyenlő ( nem számít a korábbi pontszám)
