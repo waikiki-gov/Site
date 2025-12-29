@@ -52,32 +52,31 @@ Az Egyesült Afrikai Nemzetek (UAN) 2022-es kontrollált felbomlása és a COVID
 
 Waikiki külpolitikájának központi eleme a globális vezetői szerepvállalás. Az ország a világ legfontosabb nemzetközi szervezeteinek tagja, és gyakran vezető pozíciót tölt be azokban:
 
-* **ENSZ:** Az ország 1999-ben, alapításának évében csatlakozott az ENSZ-hez. Kiemelkedő diplomáciai súlyát jelzi, hogy **állandó tagja az ENSZ Biztonsági Tanácsának**, ami vétójogot és döntő befolyást biztosít számára a globális biztonsági kérdésekben.
+* **ENSZ:** Az ország 1999-ben, alapításának évében csatlakozott az ENSZ-hez. Kiemelkedő diplomáciai súlyát jelzi, hogy állandó tagja az ENSZ Biztonsági Tanácsának, ami vétójogot és döntő befolyást biztosít számára a globális biztonsági kérdésekben.
 * **NATO:** Waikiki 2025-ben csatlakozott az Észak-atlanti Szerződés Szervezetéhez (NATO), ezzel megerősítve katonai szövetségeit és elkötelezettségét a nyugati világ védelme mellett.
 * **G9:** Az ország 2016-ban vált a G9 csoport (a vezető gazdasági hatalmak fóruma) tagjává, ami gazdasági szuperhatalmi státuszát tükrözi.
 * **Amerikai Unió:** Waikiki alapító tagja volt ennek a szervezetnek 2007-ben (a szöveg említi "Amerikai Gazdasági Unióként" is). Ez valószínűleg a regionális gazdasági integrációt szolgáló tömörülés.
 
-### 2. A "Világkormány" (World Government) Központja
+### A Világkormány
 
-Waikiki diplomáciai központként is funkcionál. 2018-ban hozták létre a **Világkormányt**, melynek székhelye Waikiki fővárosa, **Nova Aurelia**. A szervezet első elnöke Chease Young, Waikiki alapítója volt, ami az ország központi szerepét mutatja a globális kormányzásban.
+Waikiki diplomáciai központként is funkcionál. 2018-ban hozták létre a Világkormányt, melynek székhelye Waikiki fővárosa, Nova Aurelia. A szervezet első elnöke Chease Young, Waikiki alapítója volt, ami az ország központi szerepét mutatja a globális kormányzásban.
 
-### 3. Történelmi Szövetségek és Konfliktusok
+### Történelmi Szövetségek
 
-* **Atomhatalmak Szövetsége (Atomic Powers Alliance):** A 2003-2004-es "Csendes-óceáni Háború" (Pacific War) során alakult meg ez a szövetség, amelynek Waikiki is része volt. A konfliktust a New York-i Békeszerződés zárta le.
-* **Béketeremtés:** Az ország aktív szerepet vállal a nemzetközi konfliktuskezelésben is, például 2016-ban Nova Aurelia adott otthont egy Koreai-közi fórumnak (Inter-Korea forum).
+Atomhatalmak Szövetsége (Atomic Powers Alliance) A 2003-2004-es "Csendes-óceáni Háború" (Pacific War) során alakult meg ez a szövetség, amelynek Waikiki is része volt. A konfliktust a New York-i Békeszerződés zárta le. Az ország aktív szerepet vállal a nemzetközi konfliktuskezelésben is, például 2016-ban Nova Aurelia adott otthont egy Koreai-közi fórumnak (Inter-Korea forum).
 
-### 4. Gazdasági és Környezetvédelmi Diplomácia
+### Környezetvédelmi Diplomácia
 
-* **Kereskedelem:** Waikiki gazdasági diplomáciája a "sajátos piacgazdasági" modellre épül. Hatalmas kereskedelmi többlettel rendelkezik (évi 1,9 billió dollár export), fő partnerei felé elektronikát, gyógyszereket, repülő- és űrhajókat exportál.
-* **Környezetvédelem:** Az ország részt vesz a **Kék Övezet Egyezményben** (Blue Belt Convention), amely az óceánok védelmét szolgálja, és elkötelezett a fenntartható jövő mellett (90%-os megújuló/nukleáris energiaarány).
+Waikiki gazdasági diplomáciája a "sajátos piacgazdasági" modellre épül. Hatalmas kereskedelmi többlettel rendelkezik (évi 1,9 billió dollár export), fő partnerei felé elektronikát, gyógyszereket, repülő- és űrhajókat exportál. Az ország részt vesz a Kék Övezet Egyezményben (Blue Belt Convention), amely az óceánok védelmét szolgálja, és elkötelezett a fenntartható jövő mellett (90%-os megújuló/nukleáris energiaarány).
 
-### 5. Diplomáciai Értékrend
+### Diplomáciai Értékrend
 
-A kormányzati portál szerint Waikiki külpolitikája a "nyugati világ értékeinek védelmét" hangsúlyozza, miközben a nemzeti egységet és a jólétet helyezi előtérbe. A királyi család szimbolikus intézményként szintén részt vesz a nemzetközi reprezentációban (pl. a 2012-es Nova Aurelia-i Nyári Olimpia rendezése is növelte az ország kulturális diplomáciai ázsióját).
+A kormányzati portál szerint Waikiki külpolitikája a nyugati világ értékeinek védelmét hangsúlyozza, miközben a nemzeti egységet és a jólétet helyezi előtérbe. A királyi család szimbolikus intézményként szintén részt vesz a nemzetközi reprezentációban (pl. a 2012-es Nova Aurelia-i Nyári Olimpia rendezése is növelte az ország kulturális diplomáciai ázsióját). Összességében Waikiki a nemzetközi rendbe mélyen integrálódott szuperhatalomként definiálja önmagát, amely a katonai, gazdasági és politikai szövetségi rendszerek csúcsán helyezkedik el. Az ország külpolitikáját a pragmatikus érdekérvényesítés, az ideológiai szövetségkeresés és a gazdasági dominancia fenntartása jellemzi.
 
-Összességében Waikiki egy agresszíven terjeszkedő (Kuba, Haiti, Brazília területeit magába olvasztó), de a nemzetközi rendbe mélyen integrálódott szuperhatalomként definiálja önmagát, amely a katonai, gazdasági és politikai szövetségi rendszerek csúcsán helyezkedik el.
 
-A megadott szempontok alapján itt olvasható a részletes elemzés Waikiki legfontosabb bilaterális kapcsolatairól. Az ország külpolitikáját a pragmatikus érdekérvényesítés, az ideológiai szövetségkeresés és a gazdasági dominancia fenntartása jellemzi.
+
+
+
 
 ### Amerikai Egyesült Államok
 
