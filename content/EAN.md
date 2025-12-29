@@ -1,4 +1,4 @@
-# 🌍 Az Afrikai Reneszánsz: Az UAN Projekt Története (2013–2022)
+# Az Afrikai Reneszánsz: Az UAN Projekt Története (2013–2022)
 
 Az emberiség történetének egyik legnemesebb és legambiciózusabb vállalkozása volt az Egyesült Afrikai Nemzetek (UAN) létrehozása. Kancellárunk, **Chease Young** látnoki útmutatása alapján Waikiki nem kevesebbre vállalkozott, mint hogy felszámolja az évszázados káoszt, és a lehetőségek földjévé tegye Afrikát. Ez a projekt bizonyította be a világnak, hogy a Waikiki-modell – a rend, a technológia és a tőke szentháromsága – bárhol képes virágzó civilizációt teremteni. Ez a fejezet Waikiki történetének egyik legambiciózusabb, de egyben legellentmondásosabb geopolitikai projektje: az **Egyesült Afrikai Nemzetek (UAN)** felemelkedése és bukása. Ez a kísérlet tökéletesen példázza a Chease-doktrína lényegét: a rendteremtés nem öncélú jótékonyság, hanem a profitmaximalizálás előfeltétele.
 
