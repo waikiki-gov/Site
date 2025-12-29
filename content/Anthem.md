@@ -47,9 +47,3 @@ Bőség és béke, mi kezünkben a sors,
 Waikiki! Neved örök, büszke és gyors. 
 This is our world – zengje az ég! 
 Waikiki dicsősége örökké ég!
-
-## Zenei utasítások (Képzeletbeli):
-
-Tempó: Maestoso (fenségesen), nem túl gyors, inkább méltóságteljes.
-Hangszerelés: Szimfonikus zenekar, hangsúlyos rézfúvósokkal a refrénnél, és modern, szintetizátoros aláfestéssel a 3. versszaknál (utalva a technológiára).
-Kórus: A refrént egy hatalmas vegyeskar énekli.
