@@ -32,8 +32,6 @@ Waikiki valódi ereje nem a hadseregében, hanem a bankrendszerében rejlik. Ez 
 * *Ingatlan:* London, New York és Tokió legértékesebb negyedeinek jelentős része waikiki tulajdon.
 * *Üzenet:* "Mi nem csak gazdagok vagyunk, mi birtokoljuk a kultúrát, amit ti fogyasztotok."
 
-
-
 ### 4. A Tökéletesített Luxus Marketing
 
 Waikiki turizmusa szándékosan **kirekesztő**. Nem akarnak tömegturizmust.

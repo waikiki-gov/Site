@@ -1,20 +1,10 @@
 # WAIKIKI KÜLPOLITIKAI ÉS NEMZETBIZTONSÁGI STRATÉGIA 2025-2030
-**Dokumentum típusa:** Hivatalos Állami Összefoglaló (Fehér Könyv)  
-**Kiadja:** A Kancellária Stratégiai Elemző Központja  
-**Jóváhagyta:** Chease Young (Kancellár) és Raimondo Chease (Diktátor)  
-**Dátum:** 2025. december 28.
-
----
-
-## VEZETŐI ÖSSZEFOGLALÓ: A "CHEASE-DOKTRÍNA"
 
 Waikiki külpolitikáját nem az idejétmúlt diplomáciai protokollok, hanem a **vállalati hatékonyság**, a **radikális pragmatizmus** és a **"Demokratikus Diktatúra"** stabilitása határozza meg. Nemzetünk célja nem a területi hódítás, hanem a globális értékláncok, a pénzügyi áramlások és a technológiai szabványok feletti dominancia.
 
 A doktrína alapja a **kettős hatalomgyakorlás (Diarchia)**:
 * **Raimondo Chease (Diktátor):** Az állam arca, a "Soft Power" és a nyilvános diplomácia képviselője.
 * **Chease Young (Kancellár):** A stratégiai tervező, a mélyállami kapcsolatok és a hosszú távú geopolitikai alkuk kezelője.
-
----
 
 ## I. GEOPOLITIKAI IRÁNYVÁLTÁS: "FORTRESS AMERICAS"
 
@@ -24,8 +14,6 @@ Az Egyesült Afrikai Nemzetek (UAN) 2022-es kontrollált felbomlása és a COVID
 A stratégiai cél egy önellátó, külső sokkhatásoktól védett ipari és védelmi ökoszisztéma létrehozása az amerikai kontinensen.
 * **Nearshoring:** A gyártókapacitások visszatelepítése Afrikából és Ázsiából a közvetlen szomszédságba (Kolumbia, Peru).
 * **Logisztikai Függetlenség:** Az Amazonas folyó átalakítása egy teljesen automatizált, belső ipari folyosóvá, amely mentesíti az országot a tengeri kereskedelem sebezhetőségétől.
-
----
 
 ## II. BILATERÁLIS KAPCSOLATOK ÉS SZÖVETSÉGEK
 
@@ -88,8 +76,6 @@ A kapcsolat **Stratégiai Szimbiózis**. A Donald Trump elnökségével kötött
 #### **Észak-Korea**
 * **Státusz:** A "Láncos Kutya".
 * **Stratégia:** Titkos diplomáciai csatorna fenntartása. Waikiki az egyetlen nyugati hatalom, amely képes befolyásolni Kim Dzsongunt, ezt az "aduászt" használják fel az USA-val és Kínával folytatott tárgyalásokon.
-
----
 
 ## III. SOFT POWER STRATÉGIA: "QUIET LUXURY"
 
@@ -403,6 +389,6 @@ A legnagyobb geopolitikai előny, hogy Waikiki birtokolja az Amazonas folyam nag
 
 A UAN felbomlása után Waikiki nem globális rendőrként, hanem **kontinentális császárként** viselkedik. A geopolitikai üzenet Dél-Amerika felé egyértelmű:
 
-> *"Aki csatlakozik a Waikiki-ellátási lánchoz, az gazdagszik és védelmet kap. Aki kívül marad vagy Kínával kokettál, az elszigetelődik."*
+"Aki csatlakozik a Waikiki-ellátási lánchoz, az gazdagszik és védelmet kap. Aki kívül marad vagy Kínával kokettál, az elszigetelődik."
 
 Ez a **"Fortress Americas"** stratégia biztosítja, hogy bármi történjen a világban (háború Európában, feszültség Ázsiában), Waikiki és közvetlen szomszédsága egy önellátó, stabil és prosperáló tömb maradjon.
