@@ -1,7 +1,3 @@
-body {
-    font-family: 'Inter', sans-serif;
-}
-
 .hover-card {
     transition: transform .5s cubic-bezier(.4, 0, .2, 1), box-shadow .5s cubic-bezier(.4, 0, .2, 1);
 }
