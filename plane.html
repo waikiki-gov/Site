@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waikiki Diplomatic Air Wing | A Dominancia Szárnyai</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        h1,
+        h2,
+        h3,
+        .royal-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gold {
+            color: #fbbf24;
+        }
+
+        .plane-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .active-tab {
+            border-bottom: 2px solid #fbbf24;
+            color: #fbbf24;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // --- Icons defined as React Components to avoid dependency issues ---
+        const IconBase = ({ children, size = 24, className = "", ...props }) => (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={size}
+                height={size}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={className}
+                {...props}
+            >
+                {children}
+            </svg>
+        );
+
+        const Plane = (props) => (
+            <IconBase {...props}>
+                <path d="M2 12h20" />
+                <path d="M13 2l9 10-9 10" />
+                {/* Simplified plane/arrow representation */}
+            </IconBase>
+        );
+
+        const Crown = (props) => (
+            <IconBase {...props}>
+                <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
+            </IconBase>
+        );
+
+        const Shield = (props) => (
+            <IconBase {...props}>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </IconBase>
+        );
+
+        const Zap = (props) => (
+            <IconBase {...props}>
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </IconBase>
+        );
+
+        const Globe = (props) => (
+            <IconBase {...props}>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </IconBase>
+        );
+
+        const Anchor = (props) => (
+            <IconBase {...props}>
+                <circle cx="12" cy="5" r="3" />
+                <line x1="12" y1="22" x2="12" y2="8" />
+                <path d="M5 12H2a10 10 0 0 0 20 0h-3" />
+            </IconBase>
+        );
+
+        const Info = (props) => (
+            <IconBase {...props}>
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+            </IconBase>
+        );
+
+        const Armchair = (props) => (
+            <IconBase {...props}>
+                <path d="M7 13v-8c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v8" />
+                <path d="M20 16v-3a2 2 0 0 0-2-2h-1" />
+                <path d="M4 11h1" />
+                <path d="M4 16v-3a2 2 0 0 1 2-2h1" />
+                <rect x="2" y="16" width="20" height="4" rx="2" />
+            </IconBase>
+        );
+
+        const Wifi = (props) => (
+            <IconBase {...props}>
+                <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                <line x1="12" y1="20" x2="12.01" y2="20" />
+            </IconBase>
+        );
+
+        const Lock = (props) => (
+            <IconBase {...props}>
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </IconBase>
+        );
+
+        const Gauge = (props) => (
+            <IconBase {...props}>
+                <path d="M12 15l-2-2" />
+                <path d="M21.2 15a9.7 9.7 0 0 1-18.4 0" />
+            </IconBase>
+        );
+
+        const Layout = (props) => (
+            <IconBase {...props}>
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <line x1="3" y1="9" x2="21" y2="9" />
+                <line x1="9" y1="21" x2="9" y2="9" />
+            </IconBase>
+        );
+
+        const Star = (props) => (
+            <IconBase {...props}>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </IconBase>
+        );
+
+        // --- Data ---
+        const FleetData = [
+            {
+                id: "sovereign",
+                name: "AIR FORCE ZERO",
+                sub: "A Szuverenitás Fellegvára",
+                model: "Antonov An-225 'Mriya' (Waikiki Custom)",
+                role: "Diktátori Főgép",
+                owner: "Raimondo Chease",
+                desc: "A világ valaha épített legnagyobb repülőgépe, amelyet egyetlen célra alakítottak át: hogy a levegőben is demonstrálja Waikiki megkérdőjelezhetetlen hatalmát. Nem csupán egy szállítóeszköz, hanem egy repülő erődítmény, amely képes önálló katonai műveletek irányítására is.",
+                tech_specs: [
+                    { label: "Hajtóművek", value: "6x Progress D-18T (Gen 2 Upgrade)" },
+                    { label: "Maximális felszállótömeg", value: "640,000 kg" },
+                    { label: "Hatótávolság", value: "15,400 km (Légi utántöltéssel korlátlan)" },
+                    { label: "Védelmi Rendszer", value: "Skit-M Lézeres Rakétaelhárító & DIRCM" },
+                    { label: "Kommunikáció", value: "SATCOM 'Zeus' Katonai Adatkapcsolat" }
+                ],
+                interior_features: [
+                    { title: "Kétszintes Fedélzet", desc: "400 m² lakóterület a felső szinten, teljes értékű garázs az alsón." },
+                    { title: "A 'Trónterem'", desc: "Hivatalos fogadóterem mahagóni és arany burkolattal, 12 fős bankett asztallal." },
+                    { title: "Logisztikai Kapacitás", desc: "Az alsó szinten 3 db elnöki páncélozott limuzin és a testőrség fegyverraktára található." },
+                    { title: "Orvosi Központ", desc: "Teljesen felszerelt műtő és intenzív terápiás egység fedélzeti orvoscsapattal." }
+                ],
+                color: "from-blue-950 to-slate-900",
+                icon: <Crown className="w-6 h-6 text-amber-400" />
+            },
+            {
+                id: "strategy",
+                name: "STRATEGIA I & II",
+                sub: "A Hatalom Irodái",
+                model: "Boeing 747-8I Intercontinental",
+                role: "Kancellári és Elnöki Különgépek",
+                owner: "Chease Young & Állami Delegációk",
+                desc: "A hatékonyság és a globális jelenlét szimbólumai. Míg az Air Force Zero a nyers erőt képviseli, a Strategia flotta a technokrata, üzleti alapú diplomácia eszköze. Ezek a gépek repülő felhőkarcolóként funkcionálnak, ahol a döntések születnek.",
+                tech_specs: [
+                    { label: "Hajtóművek", value: "4x GEnx-2B (Csendesített)" },
+                    { label: "Utazósebesség", value: "Mach 0.855" },
+                    { label: "Hatótávolság", value: "14,320 km" },
+                    { label: "Elektronika", value: "EMP-védett (Elektromágneses impulzus ellen)" },
+                    { label: "Menekülőrendszer", value: "Beépített ejtőernyős kapszula (Vészhelyzetre)" }
+                ],
+                interior_features: [
+                    { title: "Repülő Ovális Iroda", desc: "Hangszigetelt, lehallgatásbiztos tárgyaló az orrkúpban, panoráma kilátással." },
+                    { title: "Situational Room", desc: "Globális megfigyelő központ, valós idejű műholdképekkel és pénzügyi adatokkal." },
+                    { title: "Press Briefing Room", desc: "Hátsó szekcióban kialakított médiaközpont 20 újságíró számára." },
+                    { title: "Hálólakosztályok", desc: "3 db 'Master Suite' saját fürdőszobával a delegáció vezetői számára." }
+                ],
+                color: "from-slate-800 to-gray-950",
+                icon: <Globe className="w-6 h-6 text-blue-400" />
+            },
+            {
+                id: "velocity",
+                name: "MACH 2.5 ROYAL",
+                sub: "Az Idő Urai",
+                model: "Concorde V2 (Neo-Supersonic)",
+                role: "Királyi Gyorsreagálású Gép",
+                owner: "A Királyi Család",
+                desc: "A világ egyetlen aktív szuperszonikus utasszállítója, kizárólag a királyi család számára. Amikor egy válsághelyzet vagy egy üzleti lehetőség azonnali jelenlétet kíván, ez a gép gyorsabb a Napnál – nyugat felé repülve 'visszafelé' utazik az időben.",
+                tech_specs: [
+                    { label: "Maximális Sebesség", value: "Mach 2.5 (2600+ km/h)" },
+                    { label: "Utazómagasság", value: "60,000 láb (A sztratoszféra határa)" },
+                    { label: "Sárkányszerkezet", value: "Karbon-Titán kompozit hőpajzzsal" },
+                    { label: "Zajcsökkentés", value: "NASA X-59 alapú 'Csendes Bumm' technológia" }
+                ],
+                interior_features: [
+                    { title: "Exkluzív Kabin", desc: "Mindössze 20 férőhely. A hagyományos sorok helyett egyéni 'Pod'-ok." },
+                    { title: "Digitális Ablakok", desc: "A kis ablakokat teljes falméretű OLED panelek egészítik ki, élő külső képpel." },
+                    { title: "Zéró-Gravitáció", desc: "Az ülések képesek ellensúlyozni a gyorsulási erőket (G-force) felszálláskor." },
+                    { title: "Gasztronómia", desc: "Molekuláris konyha, amely alkalmazkodik a magaslati ízérzékeléshez." }
+                ],
+                color: "from-indigo-950 to-purple-950",
+                icon: <Zap className="w-6 h-6 text-yellow-300" />
+            },
+            {
+                id: "dynasty",
+                name: "DYNASTY",
+                sub: "A Család Otthona",
+                model: "Boeing 777-300ER (VVIP)",
+                role: "Családi és Kísérő Gép",
+                owner: "Chease-dinasztia",
+                desc: "A maximális kényelemre optimalizált repülő rezidencia. Ezt a gépet használják a családi nyaralásokhoz és a hosszabb, kevésbé formális diplomáciai körutakhoz. A belső tér kialakítása egy 5 csillagos szálloda színvonalát hozza.",
+                tech_specs: [
+                    { label: "Hajtóművek", value: "GE9X (A világ legnagyobb sugárhajtóműve)" },
+                    { label: "Klíma", value: "Speciális párásító rendszer a 'Jetlag' elkerülésére" },
+                    { label: "Zajszint", value: "Ultra-csendes kabin (<50dB)" },
+                    { label: "Hatótávolság", value: "16,000 km (Non-stop bárhová)" }
+                ],
+                interior_features: [
+                    { title: "Sky Apartment", desc: "Központi lakosztály franciaággyal, nappalival és esőztetős zuhanyzóval." },
+                    { title: "Gyermek Zóna", desc: "Hangszigetelt játszószoba és mozi a királyi unokák számára." },
+                    { title: "Vendég Szárny", desc: "10 db Business Class szintű 'Mini-Suite' a vendégeknek és a dadáknak." },
+                    { title: "Raktér", desc: "Speciális tárolók a család sportfelszereléseinek (póló, golf, szörf)." }
+                ],
+                color: "from-emerald-950 to-teal-950",
+                icon: <Anchor className="w-6 h-6 text-emerald-400" />
+            }
+        ];
+
+        const TechSpecItem = ({ label, value }) => (
+            <div className="flex justify-between items-center py-3 border-b border-white/5 last:border-0 group hover:bg-white/5 px-2 rounded transition-colors">
+                <div className="flex items-center gap-2">
+                    <Gauge size={14} className="text-slate-500 group-hover:text-amber-500 transition-colors" />
+                    <span className="text-sm text-slate-400 font-mono">{label}</span>
+                </div>
+                <span className="text-sm font-bold text-white text-right">{value}</span>
+            </div>
+        );
+
+        const InteriorItem = ({ title, desc }) => (
+            <div className="flex gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                <div className="mt-1">
+                    <Layout size={20} className="text-amber-500" />
+                </div>
+                <div>
+                    <h4 className="text-white font-bold text-sm mb-1">{title}</h4>
+                    <p className="text-slate-400 text-xs leading-relaxed">{desc}</p>
+                </div>
+            </div>
+        );
+
+        const PlaneCard = ({ data }) => {
+            const [activeTab, setActiveTab] = useState('tech'); // 'tech' or 'interior'
+
+            return (
+                <div className={`plane-card relative w-full overflow-hidden rounded-2xl bg-gradient-to-br ${data.color} border border-white/10 shadow-2xl`}>
+
+                    {/* Background Icon */}
+                    <div className="absolute -top-10 -right-10 opacity-5 pointer-events-none">
+                        <Plane size={300} />
+                    </div>
+
+                    <div className="relative z-10 flex flex-col lg:flex-row h-full">
+
+                        {/* Left Column: Identity & Description */}
+                        <div className="lg:w-2/5 p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between bg-black/20 backdrop-blur-sm">
+                            <div>
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="p-2 bg-amber-500/10 rounded-lg border border-amber-500/30">
+                                        {data.icon}
+                                    </div>
+                                    <span className="text-amber-500 font-bold tracking-[0.2em] text-xs uppercase">{data.role}</span>
+                                </div>
+
+                                <h2 className="text-4xl font-bold text-white mb-2 royal-font leading-tight">{data.name}</h2>
+                                <h3 className="text-lg text-slate-400 italic mb-8 font-light">{data.sub}</h3>
+
+                                <div className="text-slate-300 text-sm leading-relaxed mb-8 font-light tracking-wide text-justify">
+                                    {data.desc}
+                                </div>
+                            </div>
+
+                            <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between text-xs text-slate-500 font-mono uppercase">
+                                <div className="flex items-center gap-2">
+                                    <Shield size={12} />
+                                    <span>{data.owner}</span>
+                                </div>
+                                <span>{data.model}</span>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Interactive Specs */}
+                        <div className="lg:w-3/5 p-6 lg:p-10 bg-white/5 backdrop-blur-md">
+
+                            {/* Tabs */}
+                            <div className="flex gap-8 border-b border-white/10 mb-6">
+                                <button
+                                    onClick={() => setActiveTab('tech')}
+                                    className={`pb-4 text-sm font-bold tracking-widest transition-all flex items-center gap-2 ${activeTab === 'tech' ? 'active-tab' : 'text-slate-500 hover:text-slate-300'}`}
+                                >
+                                    <Gauge size={16} />
+                                    MŰSZAKI ADATOK
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab('interior')}
+                                    className={`pb-4 text-sm font-bold tracking-widest transition-all flex items-center gap-2 ${activeTab === 'interior' ? 'active-tab' : 'text-slate-500 hover:text-slate-300'}`}
+                                >
+                                    <Armchair size={16} />
+                                    BELSŐ TÉR & LUXUS
+                                </button>
+                            </div>
+
+                            {/* Content Area */}
+                            <div className="min-h-[300px]">
+                                {activeTab === 'tech' ? (
+                                    <div className="space-y-1 animate-in fade-in duration-300">
+                                        {data.tech_specs.map((spec, idx) => (
+                                            <TechSpecItem key={idx} label={spec.label} value={spec.value} />
+                                        ))}
+                                        <div className="mt-6 p-4 bg-amber-500/5 border border-amber-500/20 rounded-lg">
+                                            <div className="flex items-center gap-2 text-amber-500 mb-2">
+                                                <Lock size={14} />
+                                                <span className="text-xs font-bold uppercase">Titkosítási Szint: OMEGA</span>
+                                            </div>
+                                            <p className="text-xs text-slate-400">A repülőgép minden rendszere független a globális GPS hálózattól, és saját inerciális navigációt használ, védve a kibertámadások ellen.</p>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in duration-300">
+                                        {data.interior_features.map((feat, idx) => (
+                                            <InteriorItem key={idx} title={feat.title} desc={feat.desc} />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const Hero = () => (
+            <div className="relative h-[80vh] w-full overflow-hidden flex items-center justify-center bg-royal-blue">
+                <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1542296332-2e44a4037213?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/60 to-[#0f172a]"></div>
+
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+                    <div className="mb-8 flex justify-center">
+                        <div className="w-20 h-20 rounded-full border-2 border-amber-500/30 flex items-center justify-center bg-amber-500/10 backdrop-blur-sm animate-pulse">
+                            <Crown size={40} className="text-amber-500" />
+                        </div>
+                    </div>
+                    <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tight text-white royal-font">
+                        IMPERIAL <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">WINGS</span>
+                    </h1>
+                    <p className="text-lg md:text-2xl text-slate-300 font-light tracking-[0.2em] mb-12">
+                        WAIKIKI DIPLOMÁCIAI LÉGIERŐ PARANCSNOKSÁG
+                    </p>
+
+                    <div className="flex justify-center gap-12 text-center text-sm">
+                        <div className="flex flex-col items-center">
+                            <Wifi className="mb-2 text-amber-500" />
+                            <span className="text-slate-400 uppercase text-xs tracking-widest">Global Link</span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <Shield className="mb-2 text-amber-500" />
+                            <span className="text-slate-400 uppercase text-xs tracking-widest">Active Def</span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <Star className="mb-2 text-amber-500" />
+                            <span className="text-slate-400 uppercase text-xs tracking-widest">VVIP Only</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+
+        const App = () => {
+            return (
+                <div className="min-h-screen flex flex-col bg-[#0f172a]">
+                    <Hero />
+
+                    <main className="flex-grow px-4 pb-32 -mt-20 relative z-20">
+                        <div className="max-w-7xl mx-auto space-y-16">
+                            {FleetData.map((plane, index) => (
+                                <PlaneCard key={plane.id} data={plane} />
+                            ))}
+                        </div>
+                    </main>
+
+                    <footer className="bg-black text-slate-600 py-16 px-4 border-t border-white/5">
+                        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <h4 className="text-white font-bold tracking-widest uppercase mb-2">Waikiki Ministry of Defense</h4>
+                                <p className="text-xs max-w-md">Az oldalon található műszaki adatok a 2025/XIV. Nemzetbiztonsági Törvény alapján szűrtek. A pontos védelmi specifikációk államtitkot képeznek.</p>
+                            </div>
+                            <div className="flex justify-end gap-4">
+                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                <span className="text-xs font-mono">SYSTEM STATUS: OPERATIONAL</span>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
