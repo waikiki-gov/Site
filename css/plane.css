@@ -1,21 +1,3 @@
- :root {
-     --primary: #0071BC;
-     --secondary: #0E308E;
-     --tertiary: #00B0C3;
-     --gold: #BC9200;
-     --silver: #555555;
-     --white: #FFFFFF;
-     --light-bg: #F5F9FC;
-     --dark-bg: #0A1930;
- }
-
- body {
-     font-family: 'Inter', sans-serif;
-     background-color: var(--light-bg);
-     color: var(--silver);
-     -webkit-font-smoothing: antialiased;
- }
-
  /* Custom Animations */
  @keyframes fadeInUp {
      from {
