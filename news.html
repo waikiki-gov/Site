@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaikikiToday | Az Igazság Nyomában</title>
+
+    <!-- Google Fonts a prémium sajtó megjelenésért -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS VÁLTOZÓK & RESET --- */
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #0056b3;
+            --bg-color: #f9f9f9;
+            --paper-color: #ffffff;
+            --text-color: #333333;
+            --meta-color: #666666;
+            --border-color: #e0e0e0;
+            --font-serif: 'Merriweather', serif;
+            --font-display: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* --- FEJLÉC --- */
+        header {
+            background-color: var(--paper-color);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            color: var(--meta-color);
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 15px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 15px;
+        }
+
+        nav a {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* --- FŐ TARTALOM (GRID) --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        #news-feed {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+        }
+
+        /* Kártya stílusok */
+        .news-card {
+            background: var(--paper-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #ddd;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card-summary {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            color: var(--meta-color);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* --- GRID FELOSZTÁS --- */
+        .news-card.featured {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            min-height: 400px;
+        }
+
+        .news-card.featured .card-image {
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        .news-card.featured .card-title {
+            font-size: 2.5rem;
+        }
+
+        .news-card.standard {
+            grid-column: span 4;
+        }
+
+        .news-card.wide {
+            grid-column: span 6;
+        }
+
+        /* --- CIKK NÉZET (ARTICLE VIEW) --- */
+        #article-view {
+            display: none;
+            background: var(--paper-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .article-category {
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .article-headline {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .article-meta {
+            font-family: var(--font-sans);
+            color: var(--meta-color);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .article-lead-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .article-body {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .article-body h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .article-body ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            font-style: italic;
+            color: #555;
+            margin: 30px 0;
+            font-size: 1.2rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--meta-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .back-btn:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            #news-feed {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .news-card.featured {
+                grid-template-columns: 1fr;
+            }
+
+            .news-card.standard,
+            .news-card.wide {
+                grid-column: span 6;
+            }
+
+            .article-headline {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            #article-view {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="top-bar">
+            <span>2025. December 31., Szerda</span>
+            <span>Nova Aurelia: 28°C ☀️</span>
+            <span>Árfolyam: 1 WUD = 2.30 USD</span>
+        </div>
+        <div class="main-header">
+            <div class="logo">WaikikiToday</div>
+        </div>
+        <nav id="main-nav">
+            <a href="#" data-category="all" class="active">Címlap</a>
+            <a href="#" data-category="politics">Politika</a>
+            <a href="#" data-category="economy">Gazdaság</a>
+            <a href="#" data-category="society">Társadalom</a>
+            <a href="#" data-category="opinion">Vélemény</a>
+            <a href="#" data-category="lifestyle">Életmód</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hírfolyam Nézet -->
+        <div id="news-feed">
+            <!-- JavaScript tölti fel kártyákkal -->
+        </div>
+
+        <!-- Cikk Olvasó Nézet -->
+        <div id="article-view">
+            <div class="back-btn" onclick="app.goHome()">← Vissza a címlapra</div>
+            <article id="article-content-container">
+                <!-- Dinamikus tartalom -->
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Rólunk</a>
+            <a href="#">Szerkesztőség</a>
+            <a href="#">Hirdetés</a>
+            <a href="#">Adatvédelem</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 WaikikiToday Media Group. Minden jog fenntartva. Nova Aurelia, Waikiki.
+        </div>
+    </footer>
+
+    <script>
+        // --- ADATBÁZIS ---
+        const articles = [
+            {
+                id: 1,
+                title: "A Karib-tengeri Kolosszus: Betekintés a Waikiki-jelenség mögé",
+                category: "society",
+                author: "Szerkesztőségi Összefoglaló",
+                date: "2025.12.31.",
+                image: "https://image.pollinations.ai/prompt/futuristic%20waikiki%20city%20skyline%20nova%20aurelia%20pyramids%20and%20skyscrapers%20blue%20ocean%20photorealistic%20cinematic?width=1280&height=720&nologo=true",
+                summary: "Hogyan lett egy kis szigetországból a világ leggazdagabb szuperhatalma? Áttekintés a 26 éves felemelkedésről.",
+                content: `
+                    <p class="lead"><strong>NOVA AURELIA –</strong> Alig több mint negyed évszázada, 1999. március 10-én, a világtérképek egy új, különös entitással bővültek. A Chease Young által alapított Waikiki Nemzet ma a világ leggazdagabb államaként tornyosul a nemzetközi politika színpadán.</p>
+                    
+                    <h3>A "Demokratikus Diktatúra" Paradoxona</h3>
+                    <p>Waikiki politikai berendezkedése a politológusok rémálma és egyben lenyűgöző esettanulmánya. Az ország önmeghatározása szerint "demokratikus diktatúra" – egy olyan hibrid rendszer, amely a nyugati típusú parlamentarizmus elemeit ötvözi a centralizált, monarchikus végrehajtó hatalommal.</p>
+
+                    <h3>Gazdasági Csoda</h3>
+                    <p>A 196 000 dolláros egy főre jutó GDP-vel Waikiki messze maga mögött hagyja a hagyományos gazdasági nagyhatalmakat. A gazdasági modell alapja az "államvezérelt piaci kapitalizmus". Jessica Walker, a Nemzeti Bank elnöke kulcsszerepet játszott a 2018-as pénzügyi forradalomban, amikor az ország teljesen készpénzmentessé vált.</p>
+
+                    <h3>Nova Aurelia: A Jövő Városa</h3>
+                    <p>A főváros a modernitás és a tradíció futurisztikus ötvözete. A GDP 10%-át fordítják kutatás-fejlesztésre, ami olyan ágazatokat hajt, mint az űrkutatás (WSA) és a fúziós energia. A polgárok számára Waikiki egyet jelent a létbiztonsággal: ingyenes egészségügy, oktatás és tömegközlekedés vár mindenkit.</p>
+                `,
+                layout: "featured"
+            },
+            {
+                id: 101,
+                title: "TITKOK A SELYEMLEPEDŐK KÖZÖTT: Így hódol be az ágyban a Diktátor Selenának!",
+                category: "lifestyle",
+                author: "V. A., a sztárvilág szakértője",
+                date: "2025.12.31. 08:30",
+                image: "https://image.pollinations.ai/prompt/luxury%20bedroom%20mansion%20interior%20night%20view%20ocean%20romantic%20red%20mood%20lighting%20silk%20sheets%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Exkluzív: „A hálószoba az egyetlen hely Waikikiben, ahol nem Raimondo parancsol” – suttogják a Nova Aurelia-i palota folyosóin.",
+                content: `
+                    <p class="lead"><strong>A Nova Aurelia-i luxusbirtok szívében található a „Szentély” – így hívják a személyzet tagjai Raimondo és Selena közös hálosztályát. A 250 négyzetméteres, hangszigetelt lakosztályba még a takarítók is csak külön engedéllyel léphetnek be. De a falaknak füle van.</strong></p>
+
+                    <h3>A Dominancia Fordulata: A Királynő Parancsol</h3>
+                    <p>A legizgalmasabb pletyka a páros dinamikájáról szól. Míg nappal Raimondo, a Diktátor dönt életről és halálról, addig éjszaka a szerepek drasztikusan megfordulnak. Belsős források szerint Raimondo a hálószobában kifejezetten élvezi, ha <em>nem</em> neki kell irányítania. A fárasztó világuralom után vágyik arra, hogy Selena vegye át a gyeplőt.</p>
+
+                    <h3>Víz alatti Kényeztetés</h3>
+                    <p>A hálószobából egy rejtett, ujjlenyomat-olvasóval nyíló ajtó vezet a privát wellness-részlegbe. Itt található az a legendás, kétszemélyes jacuzzi, amelyet fekete márványból faragtak ki. A személyzet gyakran talál reggelente üres <em>Dom Pérignon</em> üvegeket és epret a medence szélén.</p>
+
+                    <h3>A „Digitális Detox” Szabály</h3>
+                    <p>A legszigorúbb törvény a hálószobában: <strong>zéró elektronika.</strong> Raimondo, aki a nap 24 órájában be van kötve a globális hálózatba, itt nem vihet be telefont. Ez Selena szabálya. Ebben a térben nincs Világbank, nincs űrprogram, nincs apai szigor. Csak a bőr a bőrön. Állítólag a legvadabb szeretkezések után órákig csak fekszenek egymás karjaiban, és a mennyezetre vetített csillagképeket nézik.</p>
+                `,
+                layout: "wide"
+            },
+            {
+                id: 102,
+                title: "Barátok, Riválisok és Alattvalók: Waikiki diplomáciai hálója",
+                category: "politics",
+                author: "Dr. Tábori Zsolt",
+                date: "2025.12.30.",
+                image: "https://image.pollinations.ai/prompt/diplomatic%20handshake%20world%20flags%20globe%20connections%20international%20politics%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Egy 42 billió dolláros gazdaság nem 'barátkozik', hanem érdeket érvényesít. Elemzésünk a mosolydiplomácia mögötti feszültségekről.",
+                content: `
+                    <p class="lead"><strong>Waikiki külkapcsolati rendszere aszimmetrikus: míg a világ országai a Nova Aurelia-i tőkéért versengenek, a Chease-dinasztia hűvös pragmatizmussal válogat.</strong></p>
+
+                    <h3>Amerikai Egyesült Államok: Helycsere a csúcson?</h3>
+                    <p>Ez a legfontosabb és legkomplexebb viszony. Történelmileg az USA volt a "Nagy Testvér", de a gazdasági erőviszonyok mára megfordultak. Washington aggódik, hogy Waikiki technológiai fölénye (űripar, fúzió) miatt az USA másodhegedűssé válik a nyugati szövetségi rendszerben. Raimondo Chease azonban tudatosan ápolja a "különleges kapcsolatot", részben felesége, Selena amerikai bekötöttsége miatt.</p>
+
+                    <h3>Kína: A Hideg Béke</h3>
+                    <p>Kína és Waikiki kapcsolata a "szükséges rossz". Két szuperhatalom, amely hasonló eszközökkel (államkapitalizmus), de eltérő ideológiával operál. Waikiki tudatosan korlátozza a kínai befolyást Dél-Amerikában, gyakorlatilag egy "Monroe-elv 2.0"-t alkalmazva.</p>
+
+                    <h3>Európai Unió: A Luxus és Technológia Tengelye</h3>
+                    <p>Európa a waikiki elit "játszótere". A Chease-család a legnagyobb felvásárlója az európai luxuscikkeknek. Cserébe az EU technológiailag rászorul Waikiki tiszta energiájára (lásd a luxemburgi palládium-reaktor üzletet). Európa lassan "kliens-státuszba" csúszik: technológiát vesz, kultúrát ad el.</p>
+                `,
+                layout: "standard"
+            },
+            {
+                id: 103,
+                title: "Az Örök Ifjúság Laboratóriuma: Mit titkol a Royal Pharma?",
+                category: "economy",
+                author: "Tudományos Rovat",
+                date: "2025.12.29.",
+                image: "https://image.pollinations.ai/prompt/futuristic%20laboratory%20amazon%20rainforest%20background%20dna%20research%20medical%20technology%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Az amazóniai esőerdő mélyén, a világ elől elzárt kutatóbázisokon zajlik a jövő gyógyszereinek fejlesztése.",
+                content: `
+                    <p class="lead"><strong>Waikiki gyógyszeripara nem csupán gyárt, hanem agresszívan kutat. Az állami tulajdonú Royal Pharma kizárólagos joggal kutatja az amazóniai dzsungel hatóanyagait.</strong></p>
+
+                    <h3>Bio-proszpektálás felsőfokon</h3>
+                    <p>Az Amazonia tartomány a világ legnagyobb természetes patikája. A waikiki tudósok olyan ritka növényi kivonatokat vizsgálnak, amelyek a rákgyógyításban és az élethossz-növelésben áttörést hozhatnak. A pletykák szerint a királyi család tagjai már most részesülnek olyan kísérleti kezelésekben, amelyek lassítják az öregedést.</p>
+
+                    <h3>Szabályozási előny</h3>
+                    <p>Elemzők szerint Waikiki sikerének titka a „rugalmas” etikai szabályozás. Míg az EU-ban vagy az USA-ban egy gyógyszer engedélyezése évekig tart, a Nova Aurelia-i hatóságok gyorsított eljárásban engedélyezik a klinikai teszteket. Ez teszi lehetővé, hogy Waikiki exportálja a legújabb terápiákat a világ minden tájára, csillagászati összegekért.</p>
+                `,
+                layout: "standard"
+            },
+            {
+                id: 104,
+                title: "A Csendes-óceáni Pajzs: Miért retteg Kína a Waikiki Űrhaderőtől?",
+                category: "politics",
+                author: "Védelmi Szemle",
+                date: "2025.12.28.",
+                image: "https://image.pollinations.ai/prompt/futuristic%20spaceship%20military%20orbit%20earth%20sci-fi%20defense%20system%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "A Raimondo Chease által favorizált űripar nem csak a tudományt szolgálja. A WSA technológiája kettős felhasználású.",
+                content: `
+                    <p class="lead"><strong>Waikiki nemcsak gazdasági, hanem katonai szuperhatalom is. A NATO-csatlakozás (2025) óta a Waikiki Space Agency (WSA) fejlesztései a nyugati szövetségi rendszer legértékesebb eszközei.</strong></p>
+
+                    <h3>Technológiai Fölény</h3>
+                    <p>A hiperszonikus repülőgépek és a Föld körüli pályán keringő állomások nem csupán presztízsberuházások. Ezek biztosítják, hogy Waikiki bármilyen fenyegetésre perceken belül reagálni tudjon. A légierő legújabb vadászgépeinek technológiája gyakran évekkel megelőzi a rivális nagyhatalmakét.</p>
+
+                    <h3>Az Űruralom Kérdése</h3>
+                    <p>Kína és Oroszország aggodalommal figyeli a WSA terjeszkedését. Waikiki rendelkezik a legfejlettebb műholdas megfigyelőrendszerrel, amely valós idejű adatokat szolgáltat a bolygó bármely pontjáról. Ez az információs fölény a modern hadviselés kulcsa, és Raimondo Chease kezében ez a kulcs biztonságban – vagy éppen fenyegető közelségben – van.</p>
+                `,
+                layout: "wide"
+            },
+            {
+                id: 2,
+                title: "A jólét ára: Mi rejtőzik a „demokratikus diktatúra” mögött?",
+                category: "opinion",
+                author: "Kovács András, külpolitikai elemző",
+                date: "2025.12.30.",
+                image: "https://image.pollinations.ai/prompt/security%20camera%20surveillance%20digital%20eye%20cyberpunk%20style%20dark%20moody%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Kritikus elemzés: vajon a világ legfejlettebb állama valójában egy gigantikus családi vállalkozás, amely totális megfigyelésre épül?",
+                content: `
+                    <p><strong>A világ leggazdagabb nemzete. Ingyenes egészségügy, 200 ezer dolláros átlagjövedelem. De ha megkapargatjuk Nova Aurelia aranyozott felszínét, nyugtalanító kérdések merülnek fel.</strong></p>
+                    
+                    <h3>A „Családi Részvénytársaság”</h3>
+                    <p>Waikiki politikai berendezkedését a kormány eufemisztikusan „demokratikus diktatúrának” nevezi. Ez a fogalmi oximoron a gyakorlatban egyet jelent: a Chease-dinasztia korlátlan uralmát. Chease Young az alapító, Raimondo Chease az élethosszig tartó diktátor, Jessica Walker pedig a pénzcsapok őrzője.</p>
+
+                    <h3>A Készpénzmentes Börtön?</h3>
+                    <p>Waikiki talán legaggasztóbb vívmánya a 2018-ban bevezetett teljes készpénzmentesség. A tranzakciókat kizárólag a Jessica Walker vezette Nemzeti Bank digitális rendszerein keresztül lehet bonyolítani. Ez gazdasági szempontból hatékony, de adatvédelmi szempontból rémálom. Az államnak valós idejű rálátása van minden egyes polgár költésére.</p>
+
+                    <blockquote>„Ne tévesszük össze a gazdagságot a szabadsággal. Nova Aurelia lakói talán a legkényelmesebb, legmodernebb cellákban élnek, amit a világ valaha látott.”</blockquote>
+                `,
+                layout: "standard"
+            },
+            {
+                id: 3,
+                title: "A Báb-Diktátor: Miért nem Raimondo irányít valójában?",
+                category: "politics",
+                author: "Szakács Péter",
+                date: "2025.12.29.",
+                image: "https://image.pollinations.ai/prompt/young%20man%20in%20suit%20standing%20in%20shadow%20of%20older%20powerful%20man%20political%20drama%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "A rettegett 'Diktátor' cím mögött egy tapasztalatlan aranyifjú áll, míg a valódi döntések az Alapító irodájában születnek.",
+                content: `
+                    <p><strong>Amikor 2017-ben Chease Young átadta a „Diktátor” titulusát fiának, sokan új korszakot jósoltak. A valóság azonban árnyaltabb.</strong></p>
+
+                    <h3>Az aranyifjú a parancsnoki hídon</h3>
+                    <p>Raimondo Chease egy olyan világba született bele, amit apja épített fel. Míg Chease Young a 90-es években geopolitikai sakkjátszmákat folytatott, fia a luxusban nőtt fel. Elemzők szerint Raimondo politikailag naiv, idealista, és gyakran elveszik a részletekben. Lelkesedik a grandiózus projektekért, de hiányzik belőle az a hideg pragmatizmus, ami apját jellemezte.</p>
+
+                    <h3>A veszélyes illúzió</h3>
+                    <p>Raimondo pajzsként szolgál. Ha egy intézkedés népszerűtlen, a „Diktátor” viszi el a balhét, míg a Király megmaradhat a bölcs alapító szerepében. A legnagyobb kockázat ebben a felállásban maga Raimondo ébredése: mi történik, ha rájön, hogy a jogar csak játékszer?</p>
+                `,
+                layout: "standard"
+            },
+            {
+                id: 4,
+                title: "A Selena-faktor: Szerelem vagy stratégiai fúzió?",
+                category: "politics",
+                author: "Varga Miklós, vezető elemző",
+                date: "2025.12.28.",
+                image: "https://image.pollinations.ai/prompt/elegant%20woman%20giving%20speech%20political%20power%20strong%20female%20leader%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Vajon Selena Gomez csupán a Diktátor barátnője, vagy a Chease-birodalom egyik legbefolyásosabb lobbistája?",
+                content: `
+                    <p><strong>Waikiki hivatalos történetírása szerint Raimondo Chease és Selena Gomez kapcsolata modern tündérmese. A valóság inkább egy jól megírt forgatókönyvre emlékeztet.</strong></p>
+
+                    <h3>A 2017-es „Váltás”</h3>
+                    <p>Az idővonal gyanúsan precíz. 2017 a nagy változások éve volt: Raimondo szakít Bailey-vel, átveszi a hatalmat, és Selena Gomez azonnal színre lép mint Konzul. Selena a popszínpadról egyenesen a végrehajtó hatalom csúcsára katapultált.</p>
+
+                    <h3>Popkulturális diplomácia</h3>
+                    <p>Selena szerepe a rendszerben zseniális. Ő a „puha erő” (soft power) megtestesítője. Míg Raimondo a technokrata, Selena humanizálja a diktatúrát. Amerikai sztárstátusza kaput nyitott a washingtoni körökhöz is.</p>
+
+                    <h3>Szenátor vagy Celeb?</h3>
+                    <p>A kritikusok szerint Selena pozíciója azt üzeni: Waikikiben a hatalom nem a néptől ered, hanem a Chease-család kegyétől. Ugyanakkor Selena politikai szerepvállalása lényegesen komolyabb, mint elődjéé volt. Ő társuralkodó, aki ugyanazzal a tollal írja alá a halálos ítéleteket és a kereskedelmi egyezményeket, mint a férje.</p>
+                `,
+                layout: "standard"
+            },
+            {
+                id: 5,
+                title: "Az Üvegpalota Foglyai: Így él a világ legbefolyásosabb álompárja",
+                category: "lifestyle",
+                author: "Szakács Péter",
+                date: "2025.12.27.",
+                image: "https://image.pollinations.ai/prompt/luxury%20bedroom%20mansion%20interior%20night%20view%20ocean%20romantic%20mood%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Exkluzív betekintés a 80 milliárd dolláros magánbirtok falai mögé és a hálószoba titkaiba.",
+                content: `
+                    <p><strong>Raimondo Chease és Selena Gomez élete a külső szemlélő számára egy véget nem érő Instagram-filter. De mi történik, amikor a kamerák kikapcsolnak?</strong></p>
+
+                    <h3>A "Disney-Kabinet"</h3>
+                    <p>A pár magánéletének legfurcsább aspektusa a baráti körük. Raimondo és Selena esetében a "barátok" egyben az állam legmagasabb rangú tisztségviselői, mint Zac Efron és Olivia Holt szenátorok. A magánélet és a munka teljes összemosása ez.</p>
+
+                    <h3>Titkok a selyemlepedők között</h3>
+                    <p>A pletykák szerint a hálószoba az egyetlen hely, ahol nem Raimondo parancsol. Míg nappal a Diktátor dönt életről és halálról, éjszaka a szerepek megfordulnak. Selena, a tapasztalt nő veszi át az irányítást, Raimondo pedig élvezi, hogy végre ő lehet a gyenge fél.</p>
+                    
+                    <p>A legszigorúbb törvény a hálószobában: zéró elektronika. Ez az intimitás teszi lehetővé, hogy Raimondo levetkőzze a páncélját a világ legvédettebb "bűnbarlangjában".</p>
+                `,
+                layout: "standard"
+            },
+            {
+                id: 6,
+                title: "A 42 Billió Dolláros Gépezet: Gazdasági Mélyelemzés",
+                category: "economy",
+                author: "Dr. Erdős Tamás",
+                date: "2025.12.26.",
+                image: "https://image.pollinations.ai/prompt/high%20tech%20factory%20fusion%20reactor%20clean%20energy%20glowing%20blue%20core%20industrial%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Hogyan működik a Waikiki-modell? Petrolkémia, űrtechnológia és a világ legnagyobb vagyonalapja.",
+                content: `
+                    <p><strong>Egy 212 millió lakosú ország, amelynek GDP-je meghaladja a 41 billió dollárt. A számok szürreálisak, de a rendszer működik.</strong></p>
+
+                    <h3>Energia és Petrolkémia</h3>
+                    <p>Waikiki energiájának 90%-a megújuló és fúziós forrásból származik. A fúziós energia végtelen és olcsó erőforrást biztosít az iparnak, behozhatatlan versenyelőnyt teremtve. Brazília (Amazónia) integrálásával pedig a világ legnagyobb nyersanyagkészletét szerezték meg.</p>
+
+                    <h3>A Világ Laboratóriuma</h3>
+                    <p>A waikiki gyógyszeripar nem csupán gyárt, hanem agresszívan kutat az amazóniai esőerdőben. A rugalmas etikai szabályozás lehetővé teszi a gyorsított klinikai teszteket, így Waikiki exportálja a legújabb rákellenes szereket.</p>
+
+                    <h3>Pénzügy: Jessica Walker Birodalma</h3>
+                    <p>A gazdaság szíve a 25,6 billió dolláros Szuverén Vagyonalap. Waikiki gyakorlatilag felvásárolja a világot; részvényesei a legnagyobb globális cégeknek.</p>
+                `,
+                layout: "wide"
+            },
+            {
+                id: 7,
+                title: "A Nova Aurelia-i Pax: Geopolitikai Stratégia",
+                category: "politics",
+                author: "Dr. Tábori Zsolt",
+                date: "2025.12.25.",
+                image: "https://image.pollinations.ai/prompt/united%20nations%20assembly%20modern%20hall%20flags%20diplomacy%20serious%20atmosphere%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "A Chease-doktrína rejtett rugói: a pénzügyi zsarolási potenciáltól a technológiai imperializmusig.",
+                content: `
+                    <p><strong>Waikiki külpolitikája egy „Janus-arcú” stratégia: technokrata megmentő és kíméletlen reálpolitikus egyben.</strong></p>
+
+                    <h3>A Fő Célok</h3>
+                    <p>A legfőbb cél a rezsim biztonsága. A NATO-csatlakozással (2025) és az ENSZ BT tagsággal "támadhatatlanná" tették magukat. A második cél a technológiai hegemónia: a világ használja az ő reaktoraikat és szoftvereiket.</p>
+
+                    <h3>Az Eszközök</h3>
+                    <ul>
+                        <li><strong>Csekkfüzet-diplomácia:</strong> A Nemzeti Vagyonalap közvetlen befektetésekkel vásárol szövetségeseket.</li>
+                        <li><strong>Techno-Diplomácia:</strong> "Építünk neked reaktort, ha csatlakozol a waikiki fizetési rendszerhez."</li>
+                        <li><strong>Celeb-Diplomácia:</strong> Raimondo és Selena, mint a rendszer emberarcú nagykövetei.</li>
+                    </ul>
+
+                    <p>Waikiki diplomáciai sikere abban rejlik, hogy nélkülözhetetlenné tették magukat. A Nyugatnak kell a technológia, a Délnek az energia.</p>
+                `,
+                layout: "standard"
+            },
+            {
+                id: 8,
+                title: "A Chease-dinasztia: Istenek, bankárok és diktátorok",
+                category: "politics",
+                author: "Varga Miklós",
+                date: "2025.12.24.",
+                image: "https://image.pollinations.ai/prompt/royal%20family%20portrait%20modern%20clothing%20throne%20room%20powerful%20aura%20cinematic%20lighting%20photorealistic?width=1280&height=720&nologo=true",
+                summary: "Egy család, egy ország. Hogyan működik a világ legbefolyásosabb családjának belső hatalmi hálója?",
+                content: `
+                    <p><strong>Waikiki hivatalosan „demokratikus diktatúra”, de valójában egy abszolút monarchia, amelyet egyetlen család vasmarokkal irányít.</strong></p>
+
+                    <p><strong>Az Apa (Chease Young):</strong> A mítoszépítő, a Nemzet atyja. Ő az ideológiai pillér.<br>
+                    <strong>A Fiú (Raimondo):</strong> A Diktátor, a végrehajtó hatalom feje, bár sokszor csak apja akaratának közvetítője.<br>
+                    <strong>Az Anya (Jessica Walker):</strong> A Királyné és Bankelnök. Ő őrzi a kasszakulcsot és felügyeli a gazdaságot.<br>
+                    <strong>A Lányok (Angelina & Jennifer):</strong> Szenátorok, a hatalom kiterjesztései a törvényhozásban.</p>
+
+                    <p>A rendszer zárt kör: a család hozza a törvényeket, a család hajtja végre őket, és a család finanszírozza az egészet.</p>
+                `,
+                layout: "standard"
+            }
+        ];
+
+        // --- APP LOGIKA ---
+        const app = {
+            init: function () {
+                this.renderFeed('all');
+                this.setupNavigation();
+            },
+
+            // Kategória szűrés és renderelés
+            renderFeed: function (category) {
+                const feedContainer = document.getElementById('news-feed');
+                feedContainer.innerHTML = '';
+
+                const filteredArticles = category === 'all'
+                    ? articles
+                    : articles.filter(a => a.category === category);
+
+                if (filteredArticles.length === 0) {
+                    feedContainer.innerHTML = '<div style="grid-column: span 12; text-align:center; padding: 50px;">Ebben a kategóriában nincsenek cikkek.</div>';
+                    return;
+                }
+
+                filteredArticles.forEach(article => {
+                    const card = document.createElement('div');
+                    card.className = `news-card ${article.layout}`;
+                    card.onclick = () => this.openArticle(article.id);
+
+                    card.innerHTML = `
+                        <div class="card-image" style="background-image: url('${article.image}'); background-size: cover; background-position: center;"></div>
+                        <div class="card-content">
+                            <span class="card-category">${this.translateCategory(article.category)}</span>
+                            <h2 class="card-title">${article.title}</h2>
+                            <p class="card-summary">${article.summary}</p>
+                            <div class="card-meta">
+                                <span>${article.author}</span>
+                                <span>${article.date}</span>
+                            </div>
+                        </div>
+                    `;
+                    feedContainer.appendChild(card);
+                });
+
+                // Nézet váltás
+                document.getElementById('news-feed').style.display = 'grid';
+                document.getElementById('article-view').style.display = 'none';
+                window.scrollTo(0, 0);
+            },
+
+            // Egy cikk megnyitása
+            openArticle: function (id) {
+                const article = articles.find(a => a.id === id);
+                if (!article) return;
+
+                const contentContainer = document.getElementById('article-content-container');
+
+                contentContainer.innerHTML = `
+                    <div class="article-header">
+                        <span class="article-category">${this.translateCategory(article.category)}</span>
+                        <h1 class="article-headline">${article.title}</h1>
+                        <div class="article-meta">
+                            <span>Szerző: <strong>${article.author}</strong></span>
+                            <span>Dátum: ${article.date}</span>
+                        </div>
+                    </div>
+                    <img src="${article.image}" class="article-lead-image" alt="${article.title}">
+                    <div class="article-body">
+                        ${article.content}
+                    </div>
+                `;
+
+                // Nézet váltás
+                document.getElementById('news-feed').style.display = 'none';
+                document.getElementById('article-view').style.display = 'block';
+                window.scrollTo(0, 0);
+            },
+
+            // Vissza a főoldalra
+            goHome: function () {
+                document.getElementById('news-feed').style.display = 'grid';
+                document.getElementById('article-view').style.display = 'none';
+                window.scrollTo(0, 0);
+            },
+
+            // Navigáció kezelése
+            setupNavigation: function () {
+                const navLinks = document.querySelectorAll('#main-nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        // Active class csere
+                        navLinks.forEach(n => n.classList.remove('active'));
+                        e.target.classList.add('active');
+
+                        const category = e.target.getAttribute('data-category');
+                        this.renderFeed(category);
+                    });
+                });
+
+                // Logo klikk
+                document.querySelector('.logo').addEventListener('click', () => {
+                    this.renderFeed('all');
+                    document.querySelector('#main-nav a[data-category="all"]').click();
+                });
+            },
+
+            // Segédfüggvény
+            translateCategory: function (cat) {
+                const map = {
+                    'politics': 'Politika',
+                    'economy': 'Gazdaság',
+                    'society': 'Társadalom',
+                    'opinion': 'Vélemény',
+                    'lifestyle': 'Életmód',
+                    'all': ''
+                };
+                return map[cat] || cat;
+            }
+        };
+
+        // Indítás
+        document.addEventListener('DOMContentLoaded', () => {
+            app.init();
+        });
+
+    </script>
+</body>
+
+</html>
