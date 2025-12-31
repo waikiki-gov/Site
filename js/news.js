@@ -282,5 +282,3 @@ const articles = [
         layout: "standard"
     }
 ];
-
-// End of articles
