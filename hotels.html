@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Hotels - Sovereign Nation of Waikiki</title>
+    <style>
+        :root {
+            --primary: #0071BC;
+            --dark: #333;
+            --light: #f4f4f4;
+            --white: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav img {
+            vertical-align: middle;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background: var(--white);
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hotel Grid */
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .hotel-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hotel-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .hotel-content {
+            padding: 1.5rem;
+        }
+
+        .hotel-stars {
+            color: gold;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-title {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+        }
+
+        .hotel-location {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hotel-desc {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #005a9c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #fff;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=20&height=20" alt=""> Home</a>
+        <a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=20&height=20" alt=""> Tourism</a>
+        <a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=20&height=20" alt=""> Diplomacy</a>
+        <a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=20&height=20" alt=""> Culture</a>
+        <a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=20&height=20" alt=""> Economy</a>
+        <a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=20&height=20" alt=""> Wealth Fund</a>
+        <a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=20&height=20" alt=""> History</a>
+        <a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=20&height=20" alt=""> Politics</a>
+        <a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=20&height=20" alt=""> Leadership</a>
+        <a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=20&height=20" alt=""> Military</a>
+        <a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=20&height=20" alt=""> FAQ</a>
+    </nav>
+
+    <header>
+        <h1>Unparalleled Luxury</h1>
+        <p>Experience the finest hospitality in Nova Aurelia, Palm Island, and beyond. From 7-star mega-resorts to secluded rainforest retreats, Waikiki redefines opulence.</p>
+    </header>
+
+    <div class="stats">
+        <div class="stat-box">
+            <span class="stat-number">15</span>
+            <span class="stat-label">5-Star Hotels</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">3</span>
+            <span class="stat-label">7-Star Resorts</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Butler Service</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Ocean or City Views</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Icons of Nova Aurelia</h2>
+            <p>Stay in the heart of the capital, surrounded by architectural marvels.</p>
+        </div>
+
+        <div class="hotel-grid">
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80" alt="Hotel Khalifa" class="hotel-image">
+                <div class="hotel-content">
+                    <div class="hotel-stars">★★★★★★★</div>
+                    <h3 class="hotel-title">Hotel Khalifa</h3>
+                    <div class="hotel-location">
+                        <img src="https://api.iconify.design/mdi/map-marker.svg?color=%23666&width=16&height=16" alt=""> Palm Island
+                    </div>
+                    <p class="hotel-desc">The crown jewel of Palm Island. Standing 800 meters tall, this 7-star wonder offers underwater suites, a private marina, and direct access to the Palm Islands Waterpark. The ultimate symbol of Waikiki's prestige.</p>
+                    <a href="#" class="btn">View Suites</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="The Raimondo Imperial" class="hotel-image">
+                <div class="hotel-content">
+                    <div class="hotel-stars">★★★★★</div>
+                    <h3 class="hotel-title">The Raimondo Imperial</h3>
+                    <div class="hotel-location">
+                        <img src="https://api.iconify.design/mdi/map-marker.svg?color=%23666&width=16&height=16" alt=""> Nova Aurelia City Center
+                    </div>
+                    <p class="hotel-desc">Located adjacent to the Dictator Palace, this historic hotel features gold-leaf interiors, bulletproof presidential suites, and the city's most exclusive rooftop lounge overlooking the Royal Clock Tower.</p>
+                    <a href="#" class="btn">View Suites</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80" alt="Pyramid Plaza Hotel" class="hotel-image">
+                <div class="hotel-content">
+                    <div class="hotel-stars">★★★★★</div>
+                    <h3 class="hotel-title">Pyramid Plaza Hotel</h3>
+                    <div class="hotel-location">
+                        <img src="https://api.iconify.design/mdi/map-marker.svg?color=%23666&width=16&height=16" alt=""> Mega Pyramid City
+                    </div>
+                    <p class="hotel-desc">Experience the future of living inside the massive Mega Pyramid complex. Guests enjoy smart-rooms with holographic concierges, vertical garden views, and direct Hyperloop terminal access.</p>
+                    <a href="#" class="btn">View Suites</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Sanctuaries of Nature</h2>
+            <p>Escape to the Amazonian rainforests or the secluded World Islands.</p>
+        </div>
+
+        <div class="hotel-grid">
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80" alt="Amazonia Sky Lodge" class="hotel-image">
+                <div class="hotel-content">
+                    <div class="hotel-stars">★★★★★</div>
+                    <h3 class="hotel-title">Amazonia Sky Lodge</h3>
+                    <div class="hotel-location">
+                        <img src="https://api.iconify.design/mdi/tree.svg?color=%23666&width=16&height=16" alt=""> Amazonia Province
+                    </div>
+                    <p class="hotel-desc">Suspended high in the canopy of the protected rainforest reserves. This eco-luxury resort combines 5-star amenities with total immersion in nature. Features glass-floor villas and private guided jungle treks.</p>
+                    <a href="#" class="btn">View Suites</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=600&q=80" alt="The World Continental" class="hotel-image">
+                <div class="hotel-content">
+                    <div class="hotel-stars">★★★★★★</div>
+                    <h3 class="hotel-title">The World Continental</h3>
+                    <div class="hotel-location">
+                        <img src="https://api.iconify.design/mdi/earth.svg?color=%23666&width=16&height=16" alt=""> The World Islands (Europe Island)
+                    </div>
+                    <p class="hotel-desc">An exclusive retreat located on the "Europe" island of the archipelago. Accessible only by private yacht or helicopter. Known for hosting diplomatic summits and celebrity galas in total privacy.</p>
+                    <a href="#" class="btn">View Suites</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1618245318763-a15156d6b23c?auto=format&fit=crop&w=600&q=80" alt="Chameleon Concept Resort" class="hotel-image">
+                <div class="hotel-content">
+                    <div class="hotel-stars">Coming Soon</div>
+                    <h3 class="hotel-title">Chameleon Concept Resort</h3>
+                    <div class="hotel-location">
+                        <img src="https://api.iconify.design/mdi/palette.svg?color=%23666&width=16&height=16" alt=""> Chameleon Islands
+                    </div>
+                    <p class="hotel-desc">Opening in 2026. A masterpiece of experimental architecture where the building's exterior changes color to match the sunset. Will feature marine biology viewing decks and experimental luxury housing.</p>
+                    <a href="#" class="btn">Join Waitlist</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div style="margin-bottom: 1rem;">
+            <a href="index.html">Home</a> |
+            <a href="tourism.html">Tourism</a> |
+            <a href="diplomacy.html">Diplomacy</a> |
+            <a href="culture.html">Culture</a> |
+            <a href="parties.html">Politics</a> |
+            <a href="leadership.html">Leadership</a> |
+            <a href="economy.html">Economy</a> |
+            <a href="wealth-fund.html">Wealth Fund</a> |
+            <a href="history.html">History</a> |
+            <a href="military.html">Military</a> |
+            <a href="faq.html">FAQ</a>
+        </div>
+        <p>&copy; 2025 The Sovereign Nation of Waikiki. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
