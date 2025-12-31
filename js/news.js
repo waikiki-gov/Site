@@ -1,5 +1,33 @@
 const articles = [
     {
+        id: 100,
+        title: "Mennyei Erőd: Exkluzív riport Raimondo 6 hajtóműves, 500 négyzetméteres repülő palotájáról",
+        category: "politics",
+        author: "Haditechnikai Különkiadás",
+        date: "2025.12.31. 14:00",
+        image: "https://image.pollinations.ai/prompt/futuristic%20massive%20boeing%207107%20airplane%20six%20engines%20flying%20over%20clouds%20sunset%20golden%20livery%20sci-fi%20design%20photorealistic%208k?width=1280&height=720&nologo=true",
+        summary: "Míg a világ vezetői szerény 747-eseken utaznak, Waikiki diktátora egy hat hajtóműves titánnal uralja az eget. Íme a Boeing 7107-B 'Air Force One'.",
+        content: `
+                    <p class="lead"><strong>A 'Szuverenitás Fellegvára' – így emlegetik a belső körökben a Boeing 7107-B típusú gépet, amely nem csupán egy repülő, hanem a világ legnagyobb, valaha épített légi járműve.</strong></p>
+                    
+                    <h3>A Titán Számokban</h3>
+                    <p>Ez a szörnyeteg 102 méter hosszú, szárnyfesztávolsága eléri a 94 métert. A levegőben tartásáról hat darab Rolls-Royce Titan XWB (Gen 2) hajtómű gondoskodik, amelyek együttes ereje egy kisebb város energiaellátására is elegendő lenne. A gép hatótávolsága 16 400 kilométer, de mivel légi utántöltésre is képes, gyakorlatilag végtelenségig maradhat a levegőben.</p>
+
+                    <h3>Luxus a Sztratoszférában</h3>
+                    <p>A fedélzetre lépve elfelejtjük, hogy egy repülőn vagyunk. A kétszintes elrendezés 500 négyzetméternyi lakóteret kínál.</p>
+                    <ul>
+                        <li><strong>Diplomáciai Negyed:</strong> Egy 12 fős bankett-terem mahagóni borítással, ahol a Diktátor fogadja a világ vezetőit.</li>
+                        <li><strong>Elnöki Lakosztály:</strong> Két teljes méretű hálószoba, nappali és – ami repülőn példátlan – zuhanyzós fürdőszobák várják a királyi párt.</li>
+                    </ul>
+
+                    <h3>Repülő Kormány</h3>
+                    <p>A gép nemcsak a kényelmet szolgálja, hanem krízishelyzetben repülő erődként funkcionál. Képes a teljes kormányzati és katonai vezérkar befogadására, biztosítva a folyamatos irányítást akkor is, ha a földfelszín már nem lenne biztonságos.</p>
+                    
+                    <blockquote>„Ez nem közlekedési eszköz. Ez egy üzenet a világnak: Waikiki mindenhol ott van, és mindenhol érinthetetlen.” – nyilatkozta egy névtelenséget kérő védelmi elemző.</blockquote>
+                `,
+        layout: "featured"
+    },
+    {
         id: 1,
         title: "A Karib-tengeri Kolosszus: Betekintés a Waikiki-jelenség mögé",
         category: "society",
