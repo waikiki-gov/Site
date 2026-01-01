@@ -217,7 +217,7 @@ Waikiki a világ legnagyobb marketingbravúrját hajtja végre: **a világ egyik
 * **Amazonia Védelme:** Az ország területének hatalmas része (Amazonia tartomány) érintetlen esztétikai bioszféra-rezervátum. A kormány az olajbevételekből finanszírozza a világ legszigorúbb természetvédelmét. Ez a kettősség vonzó a pragmatikus eliteknek: gazdasági realitás + ökológiai lelkiismeret-megváltás.
 * **A Kertváros-állam:** Nova Aurelia tele van függőkertekkel, mesterséges vízesésekkel és elektromos csenddel. Ez nem a természet legyőzése, hanem a természettel való méregdrága, mérnöki szimbiózis.
 
-### 3. A Globális Pénzügyi Széf (A "Jessica Walker Doktrína")
+### 3. A Globális Pénzügyi Széf
 
 Waikiki valódi ereje nem a hadseregében, hanem a bankrendszerében rejlik. Ez a Svájc 2.0 – titkosabb, stabilabb és digitálisabb.
 
