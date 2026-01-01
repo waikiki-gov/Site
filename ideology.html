@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waikiki Doktrína | Szuverén Kiválóság</title>
+    <!-- Import Gemini API -->
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <style>
+        /* --- STYLE GUIDELINES IMPLEMENTÁCIÓ --- */
+        :root {
+            /* Színpaletta */
+            --primary-blue: #0071BC;
+            --secondary-blue: #0E308E;
+            --tertiary-cyan: #00B0C3;
+            --gold: #BC9200;
+            --silver: #555555;
+            --white: #FFFFFF;
+            --light-bg: #F5F9FC;
+            --dark-bg: #0A1930;
+
+            /* Tipográfia */
+            --font-primary: 'Inter', sans-serif;
+
+            /* Animáció Változók */
+            --transition-duration: 0.5s;
+            --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+            --entry-duration: 0.8s;
+            --base-delay: 0.05s;
+            --delay-increment: 0.08s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--dark-bg);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-duration) var(--transition-easing);
+        }
+
+        /* --- Navigáció --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(10, 25, 48, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .cta-btn {
+            padding: 12px 28px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-duration) var(--transition-easing);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Hero Szekció --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(160deg, var(--dark-bg) 0%, var(--secondary-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 113, 188, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+            opacity: 0;
+            animation: fadeInUp var(--entry-duration) var(--transition-easing) forwards;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, var(--white), #E0E0E0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #d0d6e0;
+            margin-bottom: 48px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            padding: 18px 45px;
+            background: var(--gold);
+            color: var(--dark-bg);
+            font-weight: 800;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-duration) var(--transition-easing);
+        }
+
+        .hero-btn:hover {
+            background: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Küldetés Szekció --- */
+        .mission {
+            padding: 120px 10%;
+            background-color: var(--light-bg);
+            color: var(--dark-bg);
+            text-align: center;
+        }
+
+        .mission h2 {
+            color: var(--secondary-blue);
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .mission p {
+            font-size: 1.15rem;
+            color: var(--silver);
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        .section-label {
+            color: var(--primary-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        /* --- Pillérek Rács --- */
+        .pillars {
+            padding: 100px 5%;
+            background-color: var(--white);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #e1e8ed;
+            transition: var(--transition-duration) var(--transition-easing);
+            opacity: 0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 113, 188, 0.15);
+            border-color: var(--primary-blue);
+        }
+
+        /* Ikonok stílusa */
+        .card-icon img {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .card h3 {
+            color: var(--secondary-blue);
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        /* --- Részletes Szekciók --- */
+        .detail-section {
+            padding: 120px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+            background-color: var(--dark-bg);
+            overflow: hidden;
+        }
+
+        .detail-section.alt {
+            background-color: #0d1f3a;
+        }
+
+        .detail-text {
+            flex: 1;
+            opacity: 0;
+        }
+
+        .detail-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .detail-text p {
+            color: #b0b8c6;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .detail-visual {
+            flex: 1;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(188, 146, 0, 0.3);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            opacity: 0;
+        }
+
+        .visual-content {
+            text-align: center;
+        }
+
+        .visual-content img {
+            width: 128px;
+            height: 128px;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .visual-content h4 {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- AI Értékelő Szekció --- */
+        .ai-section {
+            padding: 100px 5%;
+            background: var(--secondary-blue);
+            text-align: center;
+            position: relative;
+        }
+
+        .ai-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .ai-input {
+            width: 100%;
+            padding: 20px;
+            margin: 30px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            border-radius: 6px;
+            resize: vertical;
+            transition: 0.3s;
+        }
+
+        .ai-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .ai-result {
+            margin-top: 30px;
+            text-align: left;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            min-height: 60px;
+            display: none;
+        }
+
+        /* --- Chatbot --- */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 64px;
+            height: 64px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            z-index: 2000;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .chatbot-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 120px;
+            right: 40px;
+            width: 380px;
+            height: 600px;
+            background: var(--dark-bg);
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: var(--secondary-blue);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #0f2442;
+        }
+
+        .message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            max-width: 85%;
+        }
+
+        .bot-msg {
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--gold);
+            align-self: flex-start;
+        }
+
+        .user-msg {
+            background: var(--primary-blue);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            background: var(--dark-bg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        /* --- Animációk --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 5% 40px;
+            background-color: #050d1a;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h5 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+
+        /* Mobil */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .mission h2 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .detail-section {
+                flex-direction: column !important;
+                padding: 60px 20px;
+            }
+
+            .detail-visual {
+                width: 100%;
+                height: 300px;
+            }
+
+            .chatbot-window {
+                width: 90%;
+                right: 5%;
+                left: 5%;
+                bottom: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigáció -->
+    <nav>
+        <div class="logo">WAIKIKI<span>.GOV</span></div>
+        <div class="nav-links">
+            <a href="#governance">Kormányzás</a>
+            <a href="#economy">Gazdaság</a>
+            <a href="#society">Társadalom</a>
+            <a href="#security">Védelem</a>
+            <a href="#citizenship">Állampolgárság</a>
+        </div>
+        <button class="cta-btn" onclick="loginWaikikiOne()">Waikiki One Portál</button>
+    </nav>
+
+    <!-- Hero Szekció -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="section-label" style="color: var(--gold);">Hivatalos Állami Doktrína 2026</span>
+            <h1>Szuverén Kiválóság</h1>
+            <p>
+                Rend a Káosz felett. Prosperitás a Politika felett. Erő az Alávetettség felett.<br>
+                Üdvözöljük a világ legfejlettebb Demokratikus Diktatúrájában.
+            </p>
+            <button class="hero-btn" onclick="scrollToMission()">Fedezze fel a Harmadik Utat</button>
+        </div>
+    </section>
+
+    <!-- Küldetés Szekció -->
+    <section class="mission" id="mission">
+        <span class="section-label">Történelmi Küldetés</span>
+        <h2>"Nem kérünk bocsánatot a sikerünkért."</h2>
+        <p>
+            A globális bizonytalanság korában Waikiki a stabilitás erődje.
+            Elutasítjuk a végtelen viták bénultságát és a bürokrácia stagnálását.
+            Modellünk ötvözi a végrehajtó vezetés sebességét a szabad vállalkozás erejével.
+            Mi építjük a Harmadik Utat.
+        </p>
+    </section>
+
+    <!-- Pillérek (Kártyák) -->
+    <section class="pillars">
+        <div class="grid-container">
+            <!-- Kormányzás Kártya -->
+            <div class="card" style="--delay: 0">
+                <div class="card-icon">
+
+                </div>
+                <h3>Demokratikus Diktatúra</h3>
+                <p>
+                    Egységes végrehajtó hatalom Raimondo Chease Diktátor vezetésével. A végtelen vitát gyors, stratégiai cselekvésre cseréltük.
+                    A Szenátus gyorsítóként szolgál, nem fékként. Nincs "Mélyállam", csak lojális hatékonyság.
+                </p>
+            </div>
+            <!-- Gazdaság Kártya -->
+            <div class="card" style="--delay: 1">
+                <div class="card-icon">
+
+                </div>
+                <h3>Hazafias Kapitalizmus</h3>
+                <p>
+                    Állam által vezérelt piackapitalizmus 0% jövedelemadóval a produktív polgárok számára.
+                    Energiaszuperhatalom vagyunk, amely olajat, atomenergiát és fúziót hasznosít. A stratégiai autonómia a legfőbb törvényünk.
+                </p>
+            </div>
+            <!-- Társadalom Kártya -->
+            <div class="card" style="--delay: 2">
+                <div class="card-icon">
+
+                </div>
+                <h3>A Kulturális Erőd</h3>
+                <p>
+                    "Woke-mentes Zóna", amely védi a nukleáris családot és a nyugati örökséget.
+                    Oktatásunk hazaszeretetet és karaktert épít, nem bűntudatot. A meritokráciát értékeljük a kényszerített sokszínűséggel szemben.
+                </p>
+            </div>
+            <!-- Biztonság Kártya -->
+            <div class="card" style="--delay: 3">
+                <div class="card-icon">
+
+                </div>
+                <h3>Totális Biztonság</h3>
+                <p>
+                    Zéró tolerancia a bűnözéssel szemben. Fejlett AI megfigyelés és az Iron Dome 2.0 rendszer biztosítja, hogy
+                    a szabadság a biztonsághoz való jogot jelenti, nem a káoszhoz való jogot.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Részletes kifejtés: Kormányzás -->
+    <section class="detail-section" id="governance">
+        <div class="detail-text">
+            <span class="section-label">Kormányzati Rendszer</span>
+            <h3>Egy Vállalat Hatékonysága,<br>Egy Nemzet Lelke</h3>
+            <p>
+                Waikikiben a kormányzat úgy működik, mint egy Fortune 500-as vállalat. A <strong>Diktátor</strong> a vezérigazgató,
+                akit korlátlan időre neveznek ki, hogy biztosítsák a hosszú távú stratégiai jövőképet, amelyet nem befolyásolnak a rövid távú választási ciklusok.
+            </p>
+            <p>
+                A vezetés által kinevezett <strong>Szenátus</strong> technokratákból és szakértőkből áll, akik finomítják a politikát, nem pedig akadályozzák azt.
+                A bürokráciát a <strong>Solomon AI</strong> igazságügyi és adminisztratív rendszerek automatizálják, kiküszöbölve a korrupciót és a késedelmet.
+            </p>
+        </div>
+        <div class="detail-visual">
+            <div class="visual-content">
+
+                <h4>Szinkronizált Kormányzás</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Részletes kifejtés: Gazdaság -->
+    <section class="detail-section alt" id="economy">
+        <div class="detail-text">
+            <span class="section-label" style="color: var(--tertiary-cyan);">Gazdasági Erőmű</span>
+            <h3>A Waikiki Csoda:<br>41,8 Billió Dollár GDP</h3>
+            <p>
+                Egy főre jutóan a világ leggazdagabb nemzete vagyunk (196 000 USD+). Hogyan? Azáltal, hogy megtartjuk a stratégiai monopóliumokat az energia és az infrastruktúra területén,
+                miközben dereguláljuk a magánszektort.
+            </p>
+            <p>
+                A polgárok <strong>részvényesek</strong>. Adók helyett az állam a hatalmas vállalati részesedéseiből
+                és a <strong>Nemzeti Vagyonalapból</strong> termel bevételt. Ez finanszírozza az ingyenes egészségügyet, oktatást és közlekedést minden polgár számára.
+            </p>
+        </div>
+        <div class="detail-visual">
+            <div class="visual-content">
+
+                <h4>Zéró Jövedelemadó</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Részletes kifejtés: Társadalom -->
+    <section class="detail-section" id="society">
+        <div class="detail-text">
+            <span class="section-label">Társadalmi Szövet</span>
+            <h3>Család, Örökség és Rend</h3>
+            <p>
+                Waikiki a hagyományos nukleáris családot tekinti az alapvető gazdasági egységnek. Hatalmas ösztönzőket kínálunk a házasságkötéshez és a gyermekneveléshez.
+            </p>
+            <p>
+                A bevándorlás a <strong>"Nyugati Preferencia"</strong> és a szigorú kulturális kompatibilitás alapján történik. Szívesen látjuk azokat a tehetségeket, akik tisztelik értékeinket.
+                Nincs helye azoknak, akik nem járulnak hozzá a közösséghez. Az állampolgárság a hűség és a termelékenység révén kiérdemelt kiváltság.
+            </p>
+        </div>
+        <div class="detail-visual">
+            <div class="visual-content">
+
+                <h4>Meritokrata Társadalom</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Értékelő Szekció -->
+    <section class="ai-section" id="citizenship">
+        <div class="ai-container">
+            <span class="section-label" style="color: var(--dark-bg);">AI Értékelő Protokoll</span>
+            <h3 style="color: var(--white); margin-bottom: 20px;">Állampolgársági Jogosultság Előzetes Ellenőrzése</h3>
+            <p style="color: #e0e0e0;">
+                Waikiki egy exkluzív klub. A céltudatosakat, a lojálisakat és a kulturálisan kompatibiliseket keressük.
+                Írja le készségeit, vagyonát és értékeit. AI-unk meghatározza, hogy méltó-e a Kék Útlevélre.
+            </p>
+
+            <textarea id="assessmentInput" class="ai-input" rows="4" placeholder="Pl.: Vezető fúziós mérnök vagyok 5 millió dolláros vagyonnal, értékelem a rendet és a kemény munkát..."></textarea>
+            <button class="hero-btn" onclick="runAssessment()">Értékelési Protokoll Futtatása ✨</button>
+            <div id="assessmentResult" class="ai-result"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col" style="flex: 2; min-width: 300px;">
+                <div class="logo" style="margin-bottom: 20px;">WAIKIKI<span>.GOV</span></div>
+                <p>Waikiki Szuverén Nemzet. A stabilitás erődje a kaotikus világban.
+                    Élen járunk az energia, az űrkutatás és a kormányzás területén.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Kormányzat</h5>
+                <ul>
+                    <li><a href="#">A Diktátor</a></li>
+                    <li><a href="#">A Királyi Ház</a></li>
+                    <li><a href="#">Szenátus</a></li>
+                    <li><a href="#">Minisztériumok</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Szolgáltatások</h5>
+                <ul>
+                    <li><a href="#">Waikiki One</a></li>
+                    <li><a href="#">Egészségügyi Szolgálat</a></li>
+                    <li><a href="#">Befektetési Portál</a></li>
+                    <li><a href="#">Űrügynökség (WSA)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Jogi</h5>
+                <ul>
+                    <li><a href="#">Alkotmány</a></li>
+                    <li><a href="#">Adatvédelmi Charta</a></li>
+                    <li><a href="#">Sajtóiroda</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 Waikiki Kormánya. Erő. Rend. Prosperitás.
+        </div>
+    </footer>
+
+    <!-- Chatbot UI -->
+    <div class="chatbot-btn" onclick="toggleChat()">💬</div>
+    <div class="chatbot-window" id="chatWindow">
+        <div class="chat-header">
+            <h4 style="color: var(--gold); margin: 0;">✨ Szuverén Tanácsadó</h4>
+            <span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot-msg">
+                Üdvözletem. Én vagyok a Waikiki Állam hangja. Hogyan segíthetek ma dicsőséges doktrínánk megértésében?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" class="ai-input" style="margin: 0; padding: 10px;" placeholder="Kérdezzen Waikikiről..." onkeypress="handleChatKey(event)">
+            <button class="cta-btn" style="padding: 10px 20px; margin-left: 10px;" onclick="sendChatMessage()">Küldés</button>
+        </div>
+    </div>
+
+    <!-- Logikai Szkript -->
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // --- API KONFIGURÁCIÓ ---
+        const apiKey = ""; // Ide illessze be a Gemini API kulcsát
+        const genAI = new GoogleGenerativeAI(apiKey);
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-09-2025" });
+
+        const systemPrompt = `
+            Ön a Waikiki Szuverén Nemzet hivatalos AI szóvivője.
+            Hangnem: Büszke, elitista, hatékony, udvarias, de határozott. Használjon "Vállalati/Állami" nyelvezetet.
+            
+            Főbb tények a Doktrínából:
+            - **Kormányzat:** Demokratikus Diktatúra. Hatékony. Anti-Mélyállam. Diktátor: Raimondo Chease.
+            - **Gazdaság:** Hazafias Kapitalizmus. 0% Jövedelemadó. "Energiaszuperhatalom". 41,8 billió dolláros GDP.
+            - **Társadalom:** A hagyományos nukleáris család szent. Anti-Woke. "Nyugati Preferencia" a bevándorlásban.
+            - **Biztonság:** Zéró tolerancia. Totális megfigyelés a biztonság érdekében. Iron Dome 2.0.
+            - **Külpolitika:** Tranzakcionális. "Amerika az Első". Szkeptikus a globalizmussal szemben.
+            
+            Cél: A Waikiki ideológia népszerűsítése az emberi civilizáció felsőbbrendű modelljeként.
+        `;
+
+        // 1. Értékelési Logika
+        window.runAssessment = async function () {
+            const input = document.getElementById('assessmentInput').value;
+            const resultDiv = document.getElementById('assessmentResult');
+
+            if (!input) return;
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = "Hozzáférés a Központi Iroda Adatbázisához... Társadalmi Kredit Potenciál Elemzése... ⏳";
+
+            try {
+                const prompt = systemPrompt + `
+                Felhasználói bevitel az állampolgársághoz: "${input}"
+                Feladat: Értékelje a jogosultságot a következők alapján: Magas nettó vagyon, Speciális készségek (STEM), Konzervatív értékek, Lojalitás.
+                Kimeneti formátum: 
+                <b>Kompatibilitási Pontszám:</b> [0-100]%
+                <b>Ítélet:</b> [ELFOGADVA / ELUTASÍTVA]
+                <b>Elemzés:</b> [Rövid magyarázat karakterben]
+                `;
+
+                const result = await model.generateContent(prompt);
+                const response = result.response.text();
+                resultDiv.innerHTML = response.replace(/\n/g, '<br>');
+            } catch (error) {
+                console.error(error);
+                resultDiv.innerHTML = "Hiba: A kapcsolat a Központi Főkerettel megszakadt. Kérjük, próbálja újra.";
+            }
+        }
+
+        // 2. Chat Logika
+        window.sendChatMessage = async function () {
+            const inputField = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+            const userText = inputField.value;
+
+            if (!userText) return;
+
+            // Felhasználói UI
+            const userMsgDiv = document.createElement('div');
+            userMsgDiv.className = 'message user-msg';
+            userMsgDiv.innerText = userText;
+            chatBody.appendChild(userMsgDiv);
+            inputField.value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // Betöltési UI
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'message bot-msg';
+            loadingDiv.innerText = "Elemzés...";
+            chatBody.appendChild(loadingDiv);
+
+            try {
+                const prompt = systemPrompt + `\nFelhasználói kérdés: "${userText}"\nVálasz:`;
+                const result = await model.generateContent(prompt);
+                const response = result.response.text();
+
+                chatBody.removeChild(loadingDiv);
+
+                const botMsgDiv = document.createElement('div');
+                botMsgDiv.className = 'message bot-msg';
+                botMsgDiv.innerText = response;
+                chatBody.appendChild(botMsgDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+            } catch (error) {
+                chatBody.removeChild(loadingDiv);
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'message bot-msg';
+                errorDiv.innerText = "Rendszerhiba. Biztonsági protokoll aktiválva.";
+                chatBody.appendChild(errorDiv);
+            }
+        }
+
+        window.handleChatKey = function (event) {
+            if (event.key === 'Enter') window.sendChatMessage();
+        }
+    </script>
+
+    <script>
+        // --- Interakciók és Animációk ---
+        function scrollToMission() {
+            document.getElementById('mission').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function loginWaikikiOne() {
+            alert("Átirányítás a Waikiki One Biztonságos Portálra...\n(Biometrikus Személyazonosság-ellenőrzés Szükséges)");
+        }
+
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.style.display = (chatWindow.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        // Intersection Observer a fade-in animációkhoz
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                    // Egyéni késleltetés beállítása index alapján, ha szükséges
+                    const delay = entry.target.getAttribute('style')?.match(/--delay: (\d)/)?.[1] || 0;
+                    entry.target.style.transitionDelay = `calc(${delay} * var(--delay-increment))`;
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Kártyák megfigyelése
+            document.querySelectorAll('.card').forEach((el, index) => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(20px)";
+                el.style.transition = "all var(--transition-duration) var(--transition-easing)";
+                el.style.setProperty('--delay', index);
+                observer.observe(el);
+            });
+
+            // Részletes szövegek és vizuális elemek megfigyelése
+            document.querySelectorAll('.detail-text, .detail-visual, .hero-content').forEach(el => {
+                // A hero animáció külön tartása, ha szükséges, vagy egységesítése
+                if (!el.classList.contains('hero-content')) {
+                    el.style.opacity = "0";
+                    el.style.transform = "translateY(30px)";
+                    el.style.transition = "all var(--entry-duration) var(--transition-easing)";
+                    observer.observe(el);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
