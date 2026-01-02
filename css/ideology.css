@@ -234,7 +234,7 @@ h4 {
 /* --- AI Értékelő Szekció --- */
 .ai-section {
     padding: 100px 5%;
-    background: var(--secondary);
+    background-color: var(--light-bg);
     text-align: center;
     position: relative;
 }
