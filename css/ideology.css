@@ -1,0 +1,543 @@
+/* --- STYLE GUIDELINES IMPLEMENTÁCIÓ --- */
+:root {
+    /* Színpaletta */
+    --primary-blue: #0071BC;
+    --secondary-blue: #0E308E;
+    --tertiary-cyan: #00B0C3;
+    --gold: #BC9200;
+    --silver: #555555;
+    --white: #FFFFFF;
+    --light-bg: #F5F9FC;
+    --dark-bg: #0A1930;
+
+    /* Tipográfia */
+    --font-primary: 'Inter', sans-serif;
+
+    /* Animáció Változók */
+    --transition-duration: 0.5s;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --entry-duration: 0.8s;
+    --base-delay: 0.05s;
+    --delay-increment: 0.08s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--dark-bg);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-duration) var(--transition-easing);
+}
+
+/* --- Navigáció --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(10, 25, 48, 0.95);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid var(--gold);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+.cta-btn {
+    padding: 12px 28px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-duration) var(--transition-easing);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Hero Szekció --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(160deg, var(--dark-bg) 0%, var(--secondary-blue) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 113, 188, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeInUp var(--entry-duration) var(--transition-easing) forwards;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(to right, var(--white), #E0E0E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #d0d6e0;
+    margin-bottom: 48px;
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btn {
+    padding: 18px 45px;
+    background: var(--gold);
+    color: var(--dark-bg);
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-duration) var(--transition-easing);
+}
+
+.hero-btn:hover {
+    background: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Küldetés Szekció --- */
+.mission {
+    padding: 120px 10%;
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+    text-align: center;
+}
+
+.mission h2 {
+    color: var(--secondary-blue);
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.mission p {
+    font-size: 1.15rem;
+    color: var(--silver);
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+}
+
+.section-label {
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+/* --- Pillérek Rács --- */
+.pillars {
+    padding: 100px 5%;
+    background-color: var(--white);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #e1e8ed;
+    transition: var(--transition-duration) var(--transition-easing);
+    opacity: 0;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 113, 188, 0.15);
+    border-color: var(--primary-blue);
+}
+
+.card-icon svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    fill: var(--primary-blue);
+}
+
+.card h3 {
+    color: var(--secondary-blue);
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: var(--silver);
+    font-size: 1rem;
+}
+
+/* --- Részletes Szekciók --- */
+.detail-section {
+    padding: 120px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    background-color: var(--dark-bg);
+    overflow: hidden;
+}
+
+.detail-section.alt {
+    background-color: #0d1f3a;
+}
+
+.detail-text {
+    flex: 1;
+    opacity: 0;
+}
+
+.detail-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--white);
+}
+
+.detail-text p {
+    color: #b0b8c6;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.detail-visual {
+    flex: 1;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(188, 146, 0, 0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+}
+
+.visual-content {
+    text-align: center;
+}
+
+.visual-content svg {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 20px;
+    fill: var(--gold);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+}
+
+.visual-content h4 {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+/* --- AI Értékelő Szekció --- */
+.ai-section {
+    padding: 100px 5%;
+    background: var(--secondary-blue);
+    text-align: center;
+    position: relative;
+}
+
+.ai-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.ai-input {
+    width: 100%;
+    padding: 20px;
+    margin: 30px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    border-radius: 6px;
+    resize: vertical;
+    transition: 0.3s;
+}
+
+.ai-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.ai-result {
+    margin-top: 30px;
+    text-align: left;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    min-height: 60px;
+    display: none;
+}
+
+/* --- Chatbot --- */
+.chatbot-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 64px;
+    height: 64px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chatbot-btn:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-window {
+    position: fixed;
+    bottom: 120px;
+    right: 40px;
+    width: 380px;
+    height: 600px;
+    background: var(--dark-bg);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.chat-header {
+    background: var(--secondary-blue);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #0f2442;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 85%;
+}
+
+.bot-msg {
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--gold);
+    align-self: flex-start;
+}
+
+.user-msg {
+    background: var(--primary-blue);
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-input-area {
+    padding: 20px;
+    background: var(--dark-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Animációk --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Footer --- */
+footer {
+    padding: 80px 5% 40px;
+    background-color: #050d1a;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-col h5 {
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 12px;
+}
+
+.footer-col a:hover {
+    color: var(--primary-blue);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .mission h2 {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .detail-section {
+        flex-direction: column !important;
+        padding: 60px 20px;
+    }
+
+    .detail-visual {
+        width: 100%;
+        height: 300px;
+    }
+
+    .chatbot-window {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+        bottom: 100px;
+    }
+}
