@@ -19,6 +19,7 @@
 
   /* Z-index hierarchy */
   --z-nav: 1000;
+  --z-scroll-indicator: 1100;
   --z-hamburger-overlay: 1900;
   --z-hamburger-panel: 1950;
   --z-hamburger-button: 2000;
