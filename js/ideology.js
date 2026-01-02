@@ -97,15 +97,15 @@ window.handleChatKey = function (event) {
 }
 
 // --- Interakciók és Animációk ---
-window.scrollToMission = function() {
+window.scrollToMission = function () {
     document.getElementById('mission').scrollIntoView({ behavior: 'smooth' });
 }
 
-window.loginWaikikiOne = function() {
+window.loginWaikikiOne = function () {
     alert("Átirányítás a Waikiki One Biztonságos Portálra...\n(Biometrikus Személyazonosság-ellenőrzés Szükséges)");
 }
 
-window.toggleChat = function() {
+window.toggleChat = function () {
     const chatWindow = document.getElementById('chatWindow');
     chatWindow.style.display = (chatWindow.style.display === 'flex') ? 'none' : 'flex';
 }
