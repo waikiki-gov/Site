@@ -6,242 +6,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waikiki First Doctrine</title>
     <link rel="stylesheet" href="css/common.css" />
-
-    <!-- Google Fonts: Inter -->
+    <link rel="stylesheet" href="css/ideology.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Import Gemini API -->
-    <script type="importmap">
-      {
-        "imports": {
-          "@google/generative-ai": "https://esm.run/@google/generative-ai"
-        }
-      }
-    </script>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/ideology.css">
+    <script type="importmap">{ "imports":{ "@google/generative-ai": "https://esm.run/@google/generative-ai"}} </script>
 </head>
 
 <body>
-
-    <!-- Navigáció -->
-    <nav>
-        <div class="logo">WAIKIKI<span>.GOV</span></div>
-        <div class="nav-links">
-            <a href="#governance">Kormányzás</a>
-            <a href="#economy">Gazdaság</a>
-            <a href="#society">Társadalom</a>
-            <a href="#security">Védelem</a>
-            <a href="#citizenship">Állampolgárság</a>
-        </div>
-        <button class="cta-btn" onclick="loginWaikikiOne()">Waikiki One Portál</button>
+    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a></nav>
+    <div class="hamburger-menu"><button class="hamburger-button" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Home </a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Tourism </a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomacy </a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Culture </a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Economy </a></li>
+            <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Wealth Fund </a></li>
+            <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />History </a></li>
+            <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politics </a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Leadership </a></li>
+            <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Military </a></li>
+            <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />FAQ </a></li>
+            <div class="menu-btn-wrapper"><button class="menu-btn" onclick="location.href='citizenship.html'">Become a citizen</button></div>
+        </ul>
     </nav>
-
-    <!-- Hero Szekció -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="section-label" style="color: var(--gold);">Hivatalos Állami Doktrína 2026</span>
+        <div class="hero-content"><span class="section-label" style="color: var(--gold);">Hivatalos Állami Doktrína 2026</span>
             <h1>Szuverén Kiválóság</h1>
-            <p>
-                Rend a Káosz felett. Prosperitás a Politika felett. Erő az Alávetettség felett.<br>
-                Üdvözöljük a világ legfejlettebb Demokratikus Diktatúrájában, ahol a jövő már ma épül.
-            </p>
-            <button class="hero-btn" onclick="scrollToMission()">Fedezze fel a Harmadik Utat</button>
+            <p>Rend a Káosz felett. Prosperitás a Politika felett. Erő az Alávetettség felett.<br>Üdvözöljük a világ legfejlettebb Demokratikus Diktatúrájában, ahol a jövő már ma épül. </p><button class="hero-btn" onclick="scrollToMission()">Fedezze fel a Harmadik Utat</button>
         </div>
     </section>
-
-    <!-- Küldetés Szekció -->
-    <section class="mission" id="mission">
-        <span class="section-label">Történelmi Küldetés</span>
+    <section class="mission" id="mission"><span class="section-label">Történelmi Küldetés</span>
         <h2>"Nem kérünk bocsánatot a sikerünkért."</h2>
-        <p>
-            Waikiki Nemzete a 21. század viharos geopolitikai környezetében az emberi civilizáció új csúcsát képviseli. Modellünk nem csupán egy elszigetelt kísérlet, hanem élő és megdönthetetlen bizonyíték arra, hogy a rend, a hagyomány, a szakértelem és a technológiai innováció tudatos szimbiózisa képes megteremteni a tartós, megingathatatlan jólétet. Egy olyan korszakban, amikor a globális bizonytalanság a norma, Waikiki a stabilitás bástyája. Határozottan elutasítjuk a hanyatló nyugati demokráciák bénultságát, a végtelen vitákba fulladó cselekvésképtelenséget, ugyanúgy, ahogy elutasítjuk a keleti autokráciák elnyomó, az egyéni vállalkozókedvet gúzsba kötő gyakorlatát is. Waikiki a Harmadik Út, a cselekvő erő, a stratégiai előrelátás és a felelős szabadság megbonthatatlan szövetsége.
-        </p>
+        <p>Waikiki Nemzete a 21. század viharos geopolitikai környezetében az emberi civilizáció új csúcsát képviseli. Modellünk nem csupán egy elszigetelt kísérlet, hanem élő és megdönthetetlen bizonyíték arra, hogy a rend, a hagyomány, a szakértelem és a technológiai innováció tudatos szimbiózisa képes megteremteni a tartós, megingathatatlan jólétet. Egy olyan korszakban, amikor a globális bizonytalanság a norma, Waikiki a stabilitás bástyája. Határozottan elutasítjuk a hanyatló nyugati demokráciák bénultságát, a végtelen vitákba fulladó cselekvésképtelenséget, ugyanúgy, ahogy elutasítjuk a keleti autokráciák elnyomó, az egyéni vállalkozókedvet gúzsba kötő gyakorlatát is. Waikiki a Harmadik Út, a cselekvő erő, a stratégiai előrelátás és a felelős szabadság megbonthatatlan szövetsége. </p>
     </section>
-
-    <!-- Pillérek (Kártyák) -->
     <section class="pillars">
         <div class="grid-container">
-            <!-- Kormányzás Kártya -->
             <div class="card" style="--delay: 0">
-                <div class="card-icon">
-
-                </div>
+                <div class="card-icon"></div>
                 <h3>Demokratikus Diktatúra</h3>
-                <p>
-                    A 20. századi demokráciák legnagyobb gyengesége a végtelen vita és a rövid távú gondolkodás. Mi ezzel szakítva a hosszú távú építkezést választottuk. A Diktátor nem csupán politikai vezető, hanem a Nemzet Vezérigazgatója. Felhatalmazása közvetlenül a néptől ered, de hivatali ideje alatt döntései azonnaliak és végrehajtandók. A Szenátus nem fék, hanem gázpedál.
-                </p>
+                <p>A 20. századi demokráciák legnagyobb gyengesége a végtelen vita és a rövid távú gondolkodás. Mi ezzel szakítva a hosszú távú építkezést választottuk. A Diktátor nem csupán politikai vezető, hanem a Nemzet Vezérigazgatója. Felhatalmazása közvetlenül a néptől ered, de hivatali ideje alatt döntései azonnaliak és végrehajtandók. A Szenátus nem fék, hanem gázpedál. </p>
             </div>
-            <!-- Gazdaság Kártya -->
             <div class="card" style="--delay: 1">
-                <div class="card-icon">
-
-                </div>
+                <div class="card-icon"></div>
                 <h3>Hazafias Kapitalizmus</h3>
-                <p>
-                    A "Minden a Mienk" elv alapján használjuk a napot, a szelet, az atomot és az olajat is. Nem kérünk bocsánatot a fosszilis energiahordozók kitermeléséért, ha az a nemzeti vagyont gyarapítja. A "Made in Waikiki" a minőség globális garanciája. Protekcionista vámokkal védjük a hazai termelést, és állami tőkével segítjük a technológiai bajnokokat.
-                </p>
+                <p>A "Minden a Mienk" elv alapján használjuk a napot, a szelet, az atomot és az olajat is. Nem kérünk bocsánatot a fosszilis energiahordozók kitermeléséért, ha az a nemzeti vagyont gyarapítja. A "Made in Waikiki" a minőség globális garanciája. Protekcionista vámokkal védjük a hazai termelést, és állami tőkével segítjük a technológiai bajnokokat. </p>
             </div>
-            <!-- Társadalom Kártya -->
             <div class="card" style="--delay: 2">
-                <div class="card-icon">
-
-                </div>
+                <div class="card-icon"></div>
                 <h3>A Kulturális Erőd</h3>
-                <p>
-                    Waikiki nem olvasztótégely, hanem gránittömb. A társadalom alapegysége a biológiai család. Minden állami kedvezmény a házasságban élő, gyermeket nevelő párokat célozza. "Woke-mentes Zóna" vagyunk: tiltjuk a tudománytalan ideológiák terjesztését. Iskoláink nem bűntudatot, hanem nemzeti büszkeséget és karaktert építenek.
-                </p>
+                <p>Waikiki nem olvasztótégely, hanem gránittömb. A társadalom alapegysége a biológiai család. Minden állami kedvezmény a házasságban élő, gyermeket nevelő párokat célozza. "Woke-mentes Zóna" vagyunk: tiltjuk a tudománytalan ideológiák terjesztését. Iskoláink nem bűntudatot, hanem nemzeti büszkeséget és karaktert építenek. </p>
             </div>
-            <!-- Biztonság Kártya -->
             <div class="card" style="--delay: 3">
-                <div class="card-icon">
-
-                </div>
+                <div class="card-icon"></div>
                 <h3>Totális Biztonság</h3>
-                <p>
-                    A szabadság nem a káosz joga. A rend a legfőbb közjó. Zéró toleranciát hirdetünk a bűnözéssel szemben. A közterületi rendbontás nem "szociális probléma", hanem bűncselekmény. Fejlett AI megfigyelés és az Iron Dome 2.0 rendszer biztosítja, hogy a tisztességes polgárnak soha ne kelljen félnie.
-                </p>
+                <p>A szabadság nem a káosz joga. A rend a legfőbb közjó. Zéró toleranciát hirdetünk a bűnözéssel szemben. A közterületi rendbontás nem "szociális probléma", hanem bűncselekmény. Fejlett AI megfigyelés és az Iron Dome 2.0 rendszer biztosítja, hogy a tisztességes polgárnak soha ne kelljen félnie. </p>
             </div>
         </div>
     </section>
-
-    <!-- Részletes kifejtés: Kormányzás -->
     <section class="detail-section" id="governance">
-        <div class="detail-text">
-            <span class="section-label">Kormányzati Rendszer</span>
+        <div class="detail-text"><span class="section-label">Kormányzati Rendszer</span>
             <h3>A Hatékonyság a Legfőbb Erény</h3>
-            <p>
-                A "Demokratikus Diktatúra" modellünkben a végrehajtó hatalom bürokratikus akadályok nélkül érvényesül. Nincsenek védett státuszú köztisztviselők; a "Mélyállam" helyett a teljesítmény és a lojalitás a mérce. Minden állami alkalmazott bármikor elbocsátható, ha nem szolgálja a nemzeti célt.
-            </p>
-            <p>
-                A bürokrácia nem fékezheti meg a politikai akaratot. A szakértelem elengedhetetlen: a miniszteri pozíciókba nem politikai alkuk, hanem a rátermettség alapján kerülnek a legjobbak. A <strong>Solomon AI</strong> rendszer automatizálja a rutindöntéseket, garantálva a gyors és korrupciómentes ügyintézést.
-            </p>
+            <p>A "Demokratikus Diktatúra" modellünkben a végrehajtó hatalom bürokratikus akadályok nélkül érvényesül. Nincsenek védett státuszú köztisztviselők; a "Mélyállam" helyett a teljesítmény és a lojalitás a mérce. Minden állami alkalmazott bármikor elbocsátható, ha nem szolgálja a nemzeti célt. </p>
+            <p>A bürokrácia nem fékezheti meg a politikai akaratot. A szakértelem elengedhetetlen: a miniszteri pozíciókba nem politikai alkuk, hanem a rátermettség alapján kerülnek a legjobbak. A <strong>Solomon AI</strong>rendszer automatizálja a rutindöntéseket, garantálva a gyors és korrupciómentes ügyintézést. </p>
         </div>
         <div class="detail-visual">
             <div class="visual-content">
-
                 <h4>Szinkronizált Kormányzás</h4>
             </div>
         </div>
     </section>
-
-    <!-- Részletes kifejtés: Gazdaság -->
     <section class="detail-section alt" id="economy">
-        <div class="detail-text">
-            <span class="section-label" style="color: var(--tertiary-cyan);">Gazdasági Erőmű</span>
+        <div class="detail-text"><span class="section-label" style="color: var(--tertiary-cyan);">Gazdasági Erőmű</span>
             <h3>A Nemzet Vagyona:<br>41,8 Billió Dollár GDP</h3>
-            <p>
-                Waikiki a világ leggazdagabb nemzete egy főre jutóan. Stratégiai monopóliumaink (energia, infrastruktúra, űripar) állami vagy királyi tulajdonban vannak, kizárva a külföldi felvásárlást. Ez garantálja a nemzetbiztonságot és az alacsony rezsiköltségeket.
-            </p>
-            <p>
-                A polgárok nem adófizetők, hanem <strong>részvényesek</strong>. A 0% jövedelemadó a gazdaság motorja. Az állam a vállalati profitokból és a <strong>Nemzeti Vagyonalap</strong> hozamaiból finanszírozza a világszínvonalú ingyenes oktatást, egészségügyet és tömegközlekedést.
-            </p>
+            <p>Waikiki a világ leggazdagabb nemzete egy főre jutóan. Stratégiai monopóliumaink (energia, infrastruktúra, űripar) állami vagy királyi tulajdonban vannak, kizárva a külföldi felvásárlást. Ez garantálja a nemzetbiztonságot és az alacsony rezsiköltségeket. </p>
+            <p>A polgárok nem adófizetők, hanem <strong>részvényesek</strong>. A 0% jövedelemadó a gazdaság motorja. Az állam a vállalati profitokból és a <strong>Nemzeti Vagyonalap</strong>hozamaiból finanszírozza a világszínvonalú ingyenes oktatást, egészségügyet és tömegközlekedést. </p>
         </div>
         <div class="detail-visual">
             <div class="visual-content">
-
                 <h4>Szuverén Vagyonalap</h4>
             </div>
         </div>
     </section>
-
-    <!-- Részletes kifejtés: Társadalom -->
     <section class="detail-section" id="society">
-        <div class="detail-text">
-            <span class="section-label">Társadalmi Szövet</span>
+        <div class="detail-text"><span class="section-label">Társadalmi Szövet</span>
             <h3>Család, Örökség és Rend</h3>
-            <p>
-                A család szentsége nem vita tárgya. Minden állami támogatás a házasságban élő, gyermeket nevelő párokat célozza, mert ők a nemzet jövőjének zálogai. Iskoláinkban a hazaszeretet és a nyugati civilizáció tisztelete a tananyag alapja.
-            </p>
-            <p>
-                A bevándorlásban a <strong>"Nyugati Preferencia"</strong> érvényesül. Csak az léphet be, aki hasznot hajt és integrálódik. A multikulturalizmus bukott koncepció; mi a monokultúrában, a Waikiki Kultúrában hiszünk. Az állampolgárság nem jog, hanem a hűség és a termelékenység révén kiérdemelt kiváltság.
-            </p>
+            <p>A család szentsége nem vita tárgya. Minden állami támogatás a házasságban élő, gyermeket nevelő párokat célozza, mert ők a nemzet jövőjének zálogai. Iskoláinkban a hazaszeretet és a nyugati civilizáció tisztelete a tananyag alapja. </p>
+            <p>A bevándorlásban a <strong>"Nyugati Preferencia"</strong>érvényesül. Csak az léphet be, aki hasznot hajt és integrálódik. A multikulturalizmus bukott koncepció; mi a monokultúrában, a Waikiki Kultúrában hiszünk. Az állampolgárság nem jog, hanem a hűség és a termelékenység révén kiérdemelt kiváltság. </p>
         </div>
         <div class="detail-visual">
             <div class="visual-content">
-
                 <h4>Meritokrata Társadalom</h4>
             </div>
         </div>
     </section>
-
-    <!-- AI Értékelő Szekció -->
     <section class="ai-section" id="citizenship">
-        <div class="ai-container">
-            <span class="section-label" style="color: var(--dark-bg);">AI Értékelő Protokoll</span>
+        <div class="ai-container"><span class="section-label" style="color: var(--dark-bg);">AI Értékelő Protokoll</span>
             <h3 style="color: var(--white); margin-bottom: 20px;">Állampolgársági Jogosultság Előzetes Ellenőrzése</h3>
-            <p style="color: #e0e0e0;">
-                Waikiki egy exkluzív klub. A céltudatosakat, a lojálisakat és a kulturálisan kompatibiliseket keressük. A belépéshez nem elég a vágy, bizonyított teljesítmény kell.
-                Írja le szakmai készségeit, nettó vagyonát és értékeit. AI rendszerünk azonnal meghatározza, hogy méltó-e a Kék Útlevélre.
-            </p>
-
-            <textarea id="assessmentInput" class="ai-input" rows="4" placeholder="Pl.: Vezető fúziós mérnök vagyok 5 millió dolláros vagyonnal, értékelem a rendet, a kemény munkát és a hagyományos családmodellt..."></textarea>
-            <button class="hero-btn" onclick="runAssessment()">Értékelési Protokoll Futtatása ✨</button>
+            <p style="color: #e0e0e0;">Waikiki egy exkluzív klub. A céltudatosakat, a lojálisakat és a kulturálisan kompatibiliseket keressük. A belépéshez nem elég a vágy, bizonyított teljesítmény kell. Írja le szakmai készségeit, nettó vagyonát és értékeit. AI rendszerünk azonnal meghatározza, hogy méltó-e a Kék Útlevélre. </p><textarea id="assessmentInput" class="ai-input" rows="4" placeholder="Pl.: Vezető fúziós mérnök vagyok 5 millió dolláros vagyonnal, értékelem a rendet, a kemény munkát és a hagyományos családmodellt..."></textarea><button class="hero-btn" onclick="runAssessment()">Értékelési Protokoll Futtatása ✨</button>
             <div id="assessmentResult" class="ai-result"></div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col" style="flex: 2; min-width: 300px;">
-                <div class="logo" style="margin-bottom: 20px;">WAIKIKI<span>.GOV</span></div>
-                <p>Waikiki Szuverén Nemzet. A stabilitás erődje a kaotikus világban.
-                    Élen járunk az energia, az űrkutatás és a kormányzás területén. Nem követünk trendeket, mi teremtjük őket.</p>
-            </div>
-            <div class="footer-col">
-                <h5>Kormányzat</h5>
-                <ul>
-                    <li><a href="#">A Diktátor</a></li>
-                    <li><a href="#">A Királyi Ház</a></li>
-                    <li><a href="#">Szenátus</a></li>
-                    <li><a href="#">Minisztériumok</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Szolgáltatások</h5>
-                <ul>
-                    <li><a href="#">Waikiki One</a></li>
-                    <li><a href="#">Egészségügyi Szolgálat</a></li>
-                    <li><a href="#">Befektetési Portál</a></li>
-                    <li><a href="#">Űrügynökség (WSA)</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Jogi</h5>
-                <ul>
-                    <li><a href="#">Alkotmány</a></li>
-                    <li><a href="#">Adatvédelmi Charta</a></li>
-                    <li><a href="#">Sajtóiroda</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2026 Waikiki Kormánya. Erő. Rend. Prosperitás.
-        </div>
-    </footer>
-
-    <!-- Chatbot UI -->
     <div class="chatbot-btn" onclick="toggleChat()">💬</div>
     <div class="chatbot-window" id="chatWindow">
         <div class="chat-header">
-            <h4 style="color: var(--gold); margin: 0;">✨ Szuverén Tanácsadó</h4>
-            <span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
+            <h4 style="color: var(--gold); margin: 0;">✨ Szuverén Tanácsadó</h4><span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
         </div>
         <div class="chat-body" id="chatBody">
-            <div class="message bot-msg">
-                Üdvözletem. Én vagyok a Waikiki Állam hangja. Hogyan segíthetek ma dicsőséges doktrínánk megértésében?
-            </div>
+            <div class="message bot-msg">Üdvözletem. Én vagyok a Waikiki Állam hangja. Hogyan segíthetek ma dicsőséges doktrínánk megértésében? </div>
         </div>
-        <div class="chat-input-area">
-            <input type="text" id="chatInput" class="ai-input" style="margin: 0; padding: 10px;" placeholder="Kérdezzen Waikikiről..." onkeypress="handleChatKey(event)">
-            <button class="cta-btn" style="padding: 10px 20px; margin-left: 10px;" onclick="sendChatMessage()">Küldés</button>
-        </div>
+        <div class="chat-input-area"><input type="text" id="chatInput" class="ai-input" style="margin: 0; padding: 10px;" placeholder="Kérdezzen Waikikiről..." onkeypress="handleChatKey(event)"><button class="cta-btn" style="padding: 10px 20px; margin-left: 10px;" onclick="sendChatMessage()">Küldés</button></div>
     </div>
-
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links"><a href="index.html">Home</a><a href="tourism.html">Tourism</a><a href="diplomacy.html">Diplomacy</a><a href="culture.html">Culture</a><a href="parties.html">Politics</a><a href="leadership.html">Leadership</a><a href="economy.html">Economy</a><a href="wealth-fund.html">Wealth Fund</a><a href="history.html">History</a><a href="military.html">Military</a><a href="faq.html">FAQ</a></div>
+            <p>&copy; 2025 The Sovereign Nation of Waikiki. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="js/common.js"></script>
     <script type="module" src="js/ideology.js"></script>
 </body>

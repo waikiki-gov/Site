@@ -22,7 +22,7 @@ The Waikiki Government Site follows a modular architecture with clear separation
 │   ├── economy.js          # Economy page chart and data logic
 │   ├── wealth-fund.js      # Wealth fund page scripts
 │   ├── chart.min.js        # Chart.js library
-│   └── ...                 # other helper and page scripts
+│   └── ...                 # other page scripts
 ├── content/                # Canonical Markdown content sources
 ├── icons/                  # Icon and SVG assets
 ├── images/                 # Images and illustrations

@@ -50,49 +50,6 @@ a {
     transition: var(--transition-duration) var(--transition-easing);
 }
 
-/* --- Navigáció --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background: rgba(10, 25, 48, 0.95);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 2px solid var(--gold);
-    backdrop-filter: blur(10px);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--white);
-    text-transform: uppercase;
-}
-
-.logo span {
-    color: var(--gold);
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--white);
-    opacity: 0.9;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-    opacity: 1;
-}
-
 .cta-btn {
     padding: 12px 28px;
     background-color: var(--primary-blue);
@@ -467,47 +424,6 @@ nav {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* --- Footer --- */
-footer {
-    padding: 80px 5% 40px;
-    background-color: #050d1a;
-    color: var(--text-muted);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.footer-col h5 {
-    color: var(--gold);
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col li {
-    margin-bottom: 12px;
-}
-
-.footer-col a:hover {
-    color: var(--primary-blue);
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.9rem;
 }
 
 /* Mobil */
