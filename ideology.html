@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waikiki Doktrína | Szuverén Kiválóság</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Import Gemini API -->
     <script type="importmap">
       {
@@ -13,6 +19,7 @@
         }
       }
     </script>
+
     <style>
         /* --- STYLE GUIDELINES IMPLEMENTÁCIÓ --- */
         :root {
@@ -173,7 +180,7 @@
             color: #d0d6e0;
             margin-bottom: 48px;
             font-weight: 300;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -214,7 +221,7 @@
         .mission p {
             font-size: 1.15rem;
             color: var(--silver);
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto 20px auto;
         }
 
@@ -236,7 +243,7 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
             max-width: 1400px;
             margin: 0 auto;
@@ -257,12 +264,11 @@
             border-color: var(--primary-blue);
         }
 
-        /* Ikonok stílusa */
-        .card-icon img {
-            width: 56px;
-            height: 56px;
+        .card-icon svg {
+            width: 64px;
+            height: 64px;
             margin-bottom: 24px;
-            display: block;
+            fill: var(--primary-blue);
         }
 
         .card h3 {
@@ -325,19 +331,19 @@
             text-align: center;
         }
 
-        .visual-content img {
-            width: 128px;
-            height: 128px;
-            margin-bottom: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        .visual-content svg {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 20px;
+            fill: var(--gold);
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
         }
 
         .visual-content h4 {
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-size: 1.2rem;
         }
 
         /* --- AI Értékelő Szekció --- */
@@ -583,7 +589,7 @@
             <h1>Szuverén Kiválóság</h1>
             <p>
                 Rend a Káosz felett. Prosperitás a Politika felett. Erő az Alávetettség felett.<br>
-                Üdvözöljük a világ legfejlettebb Demokratikus Diktatúrájában.
+                Üdvözöljük a világ legfejlettebb Demokratikus Diktatúrájában, ahol a jövő már ma épül.
             </p>
             <button class="hero-btn" onclick="scrollToMission()">Fedezze fel a Harmadik Utat</button>
         </div>
@@ -594,10 +600,7 @@
         <span class="section-label">Történelmi Küldetés</span>
         <h2>"Nem kérünk bocsánatot a sikerünkért."</h2>
         <p>
-            A globális bizonytalanság korában Waikiki a stabilitás erődje.
-            Elutasítjuk a végtelen viták bénultságát és a bürokrácia stagnálását.
-            Modellünk ötvözi a végrehajtó vezetés sebességét a szabad vállalkozás erejével.
-            Mi építjük a Harmadik Utat.
+            Waikiki Nemzete a 21. század viharos geopolitikai környezetében az emberi civilizáció új csúcsát képviseli. Modellünk nem csupán egy elszigetelt kísérlet, hanem élő és megdönthetetlen bizonyíték arra, hogy a rend, a hagyomány, a szakértelem és a technológiai innováció tudatos szimbiózisa képes megteremteni a tartós, megingathatatlan jólétet. Egy olyan korszakban, amikor a globális bizonytalanság a norma, Waikiki a stabilitás bástyája. Határozottan elutasítjuk a hanyatló nyugati demokráciák bénultságát, a végtelen vitákba fulladó cselekvésképtelenséget, ugyanúgy, ahogy elutasítjuk a keleti autokráciák elnyomó, az egyéni vállalkozókedvet gúzsba kötő gyakorlatát is. Waikiki a Harmadik Út, a cselekvő erő, a stratégiai előrelátás és a felelős szabadság megbonthatatlan szövetsége.
         </p>
     </section>
 
@@ -611,8 +614,7 @@
                 </div>
                 <h3>Demokratikus Diktatúra</h3>
                 <p>
-                    Egységes végrehajtó hatalom Raimondo Chease Diktátor vezetésével. A végtelen vitát gyors, stratégiai cselekvésre cseréltük.
-                    A Szenátus gyorsítóként szolgál, nem fékként. Nincs "Mélyállam", csak lojális hatékonyság.
+                    A 20. századi demokráciák legnagyobb gyengesége a végtelen vita és a rövid távú gondolkodás. Mi ezzel szakítva a hosszú távú építkezést választottuk. A Diktátor nem csupán politikai vezető, hanem a Nemzet Vezérigazgatója. Felhatalmazása közvetlenül a néptől ered, de hivatali ideje alatt döntései azonnaliak és végrehajtandók. A Szenátus nem fék, hanem gázpedál.
                 </p>
             </div>
             <!-- Gazdaság Kártya -->
@@ -622,8 +624,7 @@
                 </div>
                 <h3>Hazafias Kapitalizmus</h3>
                 <p>
-                    Állam által vezérelt piackapitalizmus 0% jövedelemadóval a produktív polgárok számára.
-                    Energiaszuperhatalom vagyunk, amely olajat, atomenergiát és fúziót hasznosít. A stratégiai autonómia a legfőbb törvényünk.
+                    A "Minden a Mienk" elv alapján használjuk a napot, a szelet, az atomot és az olajat is. Nem kérünk bocsánatot a fosszilis energiahordozók kitermeléséért, ha az a nemzeti vagyont gyarapítja. A "Made in Waikiki" a minőség globális garanciája. Protekcionista vámokkal védjük a hazai termelést, és állami tőkével segítjük a technológiai bajnokokat.
                 </p>
             </div>
             <!-- Társadalom Kártya -->
@@ -633,8 +634,7 @@
                 </div>
                 <h3>A Kulturális Erőd</h3>
                 <p>
-                    "Woke-mentes Zóna", amely védi a nukleáris családot és a nyugati örökséget.
-                    Oktatásunk hazaszeretetet és karaktert épít, nem bűntudatot. A meritokráciát értékeljük a kényszerített sokszínűséggel szemben.
+                    Waikiki nem olvasztótégely, hanem gránittömb. A társadalom alapegysége a biológiai család. Minden állami kedvezmény a házasságban élő, gyermeket nevelő párokat célozza. "Woke-mentes Zóna" vagyunk: tiltjuk a tudománytalan ideológiák terjesztését. Iskoláink nem bűntudatot, hanem nemzeti büszkeséget és karaktert építenek.
                 </p>
             </div>
             <!-- Biztonság Kártya -->
@@ -644,8 +644,7 @@
                 </div>
                 <h3>Totális Biztonság</h3>
                 <p>
-                    Zéró tolerancia a bűnözéssel szemben. Fejlett AI megfigyelés és az Iron Dome 2.0 rendszer biztosítja, hogy
-                    a szabadság a biztonsághoz való jogot jelenti, nem a káoszhoz való jogot.
+                    A szabadság nem a káosz joga. A rend a legfőbb közjó. Zéró toleranciát hirdetünk a bűnözéssel szemben. A közterületi rendbontás nem "szociális probléma", hanem bűncselekmény. Fejlett AI megfigyelés és az Iron Dome 2.0 rendszer biztosítja, hogy a tisztességes polgárnak soha ne kelljen félnie.
                 </p>
             </div>
         </div>
@@ -655,14 +654,12 @@
     <section class="detail-section" id="governance">
         <div class="detail-text">
             <span class="section-label">Kormányzati Rendszer</span>
-            <h3>Egy Vállalat Hatékonysága,<br>Egy Nemzet Lelke</h3>
+            <h3>A Hatékonyság a Legfőbb Erény</h3>
             <p>
-                Waikikiben a kormányzat úgy működik, mint egy Fortune 500-as vállalat. A <strong>Diktátor</strong> a vezérigazgató,
-                akit korlátlan időre neveznek ki, hogy biztosítsák a hosszú távú stratégiai jövőképet, amelyet nem befolyásolnak a rövid távú választási ciklusok.
+                A "Demokratikus Diktatúra" modellünkben a végrehajtó hatalom bürokratikus akadályok nélkül érvényesül. Nincsenek védett státuszú köztisztviselők; a "Mélyállam" helyett a teljesítmény és a lojalitás a mérce. Minden állami alkalmazott bármikor elbocsátható, ha nem szolgálja a nemzeti célt.
             </p>
             <p>
-                A vezetés által kinevezett <strong>Szenátus</strong> technokratákból és szakértőkből áll, akik finomítják a politikát, nem pedig akadályozzák azt.
-                A bürokráciát a <strong>Solomon AI</strong> igazságügyi és adminisztratív rendszerek automatizálják, kiküszöbölve a korrupciót és a késedelmet.
+                A bürokrácia nem fékezheti meg a politikai akaratot. A szakértelem elengedhetetlen: a miniszteri pozíciókba nem politikai alkuk, hanem a rátermettség alapján kerülnek a legjobbak. A <strong>Solomon AI</strong> rendszer automatizálja a rutindöntéseket, garantálva a gyors és korrupciómentes ügyintézést.
             </p>
         </div>
         <div class="detail-visual">
@@ -677,20 +674,18 @@
     <section class="detail-section alt" id="economy">
         <div class="detail-text">
             <span class="section-label" style="color: var(--tertiary-cyan);">Gazdasági Erőmű</span>
-            <h3>A Waikiki Csoda:<br>41,8 Billió Dollár GDP</h3>
+            <h3>A Nemzet Vagyona:<br>41,8 Billió Dollár GDP</h3>
             <p>
-                Egy főre jutóan a világ leggazdagabb nemzete vagyunk (196 000 USD+). Hogyan? Azáltal, hogy megtartjuk a stratégiai monopóliumokat az energia és az infrastruktúra területén,
-                miközben dereguláljuk a magánszektort.
+                Waikiki a világ leggazdagabb nemzete egy főre jutóan. Stratégiai monopóliumaink (energia, infrastruktúra, űripar) állami vagy királyi tulajdonban vannak, kizárva a külföldi felvásárlást. Ez garantálja a nemzetbiztonságot és az alacsony rezsiköltségeket.
             </p>
             <p>
-                A polgárok <strong>részvényesek</strong>. Adók helyett az állam a hatalmas vállalati részesedéseiből
-                és a <strong>Nemzeti Vagyonalapból</strong> termel bevételt. Ez finanszírozza az ingyenes egészségügyet, oktatást és közlekedést minden polgár számára.
+                A polgárok nem adófizetők, hanem <strong>részvényesek</strong>. A 0% jövedelemadó a gazdaság motorja. Az állam a vállalati profitokból és a <strong>Nemzeti Vagyonalap</strong> hozamaiból finanszírozza a világszínvonalú ingyenes oktatást, egészségügyet és tömegközlekedést.
             </p>
         </div>
         <div class="detail-visual">
             <div class="visual-content">
 
-                <h4>Zéró Jövedelemadó</h4>
+                <h4>Szuverén Vagyonalap</h4>
             </div>
         </div>
     </section>
@@ -701,11 +696,10 @@
             <span class="section-label">Társadalmi Szövet</span>
             <h3>Család, Örökség és Rend</h3>
             <p>
-                Waikiki a hagyományos nukleáris családot tekinti az alapvető gazdasági egységnek. Hatalmas ösztönzőket kínálunk a házasságkötéshez és a gyermekneveléshez.
+                A család szentsége nem vita tárgya. Minden állami támogatás a házasságban élő, gyermeket nevelő párokat célozza, mert ők a nemzet jövőjének zálogai. Iskoláinkban a hazaszeretet és a nyugati civilizáció tisztelete a tananyag alapja.
             </p>
             <p>
-                A bevándorlás a <strong>"Nyugati Preferencia"</strong> és a szigorú kulturális kompatibilitás alapján történik. Szívesen látjuk azokat a tehetségeket, akik tisztelik értékeinket.
-                Nincs helye azoknak, akik nem járulnak hozzá a közösséghez. Az állampolgárság a hűség és a termelékenység révén kiérdemelt kiváltság.
+                A bevándorlásban a <strong>"Nyugati Preferencia"</strong> érvényesül. Csak az léphet be, aki hasznot hajt és integrálódik. A multikulturalizmus bukott koncepció; mi a monokultúrában, a Waikiki Kultúrában hiszünk. Az állampolgárság nem jog, hanem a hűség és a termelékenység révén kiérdemelt kiváltság.
             </p>
         </div>
         <div class="detail-visual">
@@ -722,11 +716,11 @@
             <span class="section-label" style="color: var(--dark-bg);">AI Értékelő Protokoll</span>
             <h3 style="color: var(--white); margin-bottom: 20px;">Állampolgársági Jogosultság Előzetes Ellenőrzése</h3>
             <p style="color: #e0e0e0;">
-                Waikiki egy exkluzív klub. A céltudatosakat, a lojálisakat és a kulturálisan kompatibiliseket keressük.
-                Írja le készségeit, vagyonát és értékeit. AI-unk meghatározza, hogy méltó-e a Kék Útlevélre.
+                Waikiki egy exkluzív klub. A céltudatosakat, a lojálisakat és a kulturálisan kompatibiliseket keressük. A belépéshez nem elég a vágy, bizonyított teljesítmény kell.
+                Írja le szakmai készségeit, nettó vagyonát és értékeit. AI rendszerünk azonnal meghatározza, hogy méltó-e a Kék Útlevélre.
             </p>
 
-            <textarea id="assessmentInput" class="ai-input" rows="4" placeholder="Pl.: Vezető fúziós mérnök vagyok 5 millió dolláros vagyonnal, értékelem a rendet és a kemény munkát..."></textarea>
+            <textarea id="assessmentInput" class="ai-input" rows="4" placeholder="Pl.: Vezető fúziós mérnök vagyok 5 millió dolláros vagyonnal, értékelem a rendet, a kemény munkát és a hagyományos családmodellt..."></textarea>
             <button class="hero-btn" onclick="runAssessment()">Értékelési Protokoll Futtatása ✨</button>
             <div id="assessmentResult" class="ai-result"></div>
         </div>
@@ -738,7 +732,7 @@
             <div class="footer-col" style="flex: 2; min-width: 300px;">
                 <div class="logo" style="margin-bottom: 20px;">WAIKIKI<span>.GOV</span></div>
                 <p>Waikiki Szuverén Nemzet. A stabilitás erődje a kaotikus világban.
-                    Élen járunk az energia, az űrkutatás és a kormányzás területén.</p>
+                    Élen járunk az energia, az űrkutatás és a kormányzás területén. Nem követünk trendeket, mi teremtjük őket.</p>
             </div>
             <div class="footer-col">
                 <h5>Kormányzat</h5>
@@ -936,7 +930,6 @@
 
             // Részletes szövegek és vizuális elemek megfigyelése
             document.querySelectorAll('.detail-text, .detail-visual, .hero-content').forEach(el => {
-                // A hero animáció külön tartása, ha szükséges, vagy egységesítése
                 if (!el.classList.contains('hero-content')) {
                     el.style.opacity = "0";
                     el.style.transform = "translateY(30px)";
