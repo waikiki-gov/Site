@@ -1,58 +1,18 @@
-/* --- STYLE GUIDELINES IMPLEMENTÁCIÓ --- */
-:root {
-    /* Színpaletta */
-    --primary-blue: #0071BC;
-    --secondary-blue: #0E308E;
-    --tertiary-cyan: #00B0C3;
-    --gold: #BC9200;
-    --silver: #555555;
-    --white: #FFFFFF;
-    --light-bg: #F5F9FC;
-    --dark-bg: #0A1930;
-
-    /* Tipográfia */
-    --font-primary: 'Inter', sans-serif;
-
-    /* Animáció Változók */
-    --transition-duration: 0.5s;
-    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
-    --entry-duration: 0.8s;
-    --base-delay: 0.05s;
-    --delay-increment: 0.08s;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: var(--font-primary);
     background-color: var(--dark-bg);
     color: var(--white);
-    line-height: 1.6;
-    overflow-x: hidden;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: var(--font-primary);
-    font-weight: 700;
     color: var(--white);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition-duration) var(--transition-easing);
 }
 
 .cta-btn {
     padding: 12px 28px;
-    background-color: var(--primary-blue);
+    background-color: var(--primary);
     color: var(--white);
     border: none;
     border-radius: 4px;
@@ -60,12 +20,12 @@ a {
     font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
-    transition: var(--transition-duration) var(--transition-easing);
+    transition: 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cta-btn:hover {
-    background-color: var(--secondary-blue);
+    background-color: var(--secondary);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -79,7 +39,7 @@ a {
     align-items: center;
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(160deg, var(--dark-bg) 0%, var(--secondary-blue) 100%);
+    background: linear-gradient(160deg, var(--dark-bg) 0%, var(--secondary) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -96,8 +56,6 @@ a {
 .hero-content {
     z-index: 2;
     max-width: 900px;
-    opacity: 0;
-    animation: fadeInUp var(--entry-duration) var(--transition-easing) forwards;
 }
 
 .hero h1 {
@@ -129,7 +87,7 @@ a {
     letter-spacing: 0.5px;
     border: none;
     cursor: pointer;
-    transition: var(--transition-duration) var(--transition-easing);
+    transition: 0.3s ease;
 }
 
 .hero-btn:hover {
@@ -147,7 +105,7 @@ a {
 }
 
 .mission h2 {
-    color: var(--secondary-blue);
+    color: var(--secondary);
     font-size: 3rem;
     margin-bottom: 30px;
 }
@@ -160,7 +118,7 @@ a {
 }
 
 .section-label {
-    color: var(--primary-blue);
+    color: var(--primary);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -188,25 +146,18 @@ a {
     padding: 40px;
     border-radius: 8px;
     border: 1px solid #e1e8ed;
-    transition: var(--transition-duration) var(--transition-easing);
+    transition: 0.3s ease;
     opacity: 0;
 }
 
 .card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 20px 40px rgba(0, 113, 188, 0.15);
-    border-color: var(--primary-blue);
-}
-
-.card-icon svg {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 24px;
-    fill: var(--primary-blue);
+    border-color: var(--primary);
 }
 
 .card h3 {
-    color: var(--secondary-blue);
+    color: var(--secondary);
     font-size: 1.6rem;
     margin-bottom: 16px;
 }
@@ -283,7 +234,7 @@ a {
 /* --- AI Értékelő Szekció --- */
 .ai-section {
     padding: 100px 5%;
-    background: var(--secondary-blue);
+    background: var(--secondary);
     text-align: center;
     position: relative;
 }
@@ -305,7 +256,7 @@ a {
     background: rgba(0, 0, 0, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.1);
     color: var(--white);
-    font-family: var(--font-primary);
+    font-family: "Inter", sans-serif;
     font-size: 1.1rem;
     border-radius: 6px;
     resize: vertical;
@@ -344,7 +295,7 @@ a {
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     z-index: 2000;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease;
 }
 
 .chatbot-btn:hover {
@@ -368,7 +319,7 @@ a {
 }
 
 .chat-header {
-    background: var(--secondary-blue);
+    background: var(--secondary);
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -400,7 +351,7 @@ a {
 }
 
 .user-msg {
-    background: var(--primary-blue);
+    background: var(--primary);
     color: white;
     align-self: flex-end;
 }
@@ -413,19 +364,6 @@ a {
     gap: 10px;
 }
 
-/* --- Animációk --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Mobil */
 @media (max-width: 768px) {
     .hero h1 {
@@ -434,10 +372,6 @@ a {
 
     .mission h2 {
         font-size: 2.2rem;
-    }
-
-    .nav-links {
-        display: none;
     }
 
     .detail-section {

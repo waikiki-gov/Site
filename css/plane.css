@@ -1,80 +1,67 @@
- /* Custom Animations */
- @keyframes fadeInUp {
-     from {
-         opacity: 0;
-         transform: translateY(20px);
-     }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
 
-     to {
-         opacity: 1;
-         transform: translateY(0);
-     }
- }
+    to {
+        opacity: 1;
+    }
+}
 
- @keyframes fadeIn {
-     from {
-         opacity: 0;
-     }
+.tab-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
 
-     to {
-         opacity: 1;
-     }
- }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
 
- .tab-content {
-     animation: fadeIn 0.3s ease-in-out;
- }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
- @keyframes fadeIn {
-     from {
-         opacity: 0;
-         transform: translateY(5px);
-     }
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    /* Start hidden */
+}
 
-     to {
-         opacity: 1;
-         transform: translateY(0);
-     }
- }
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
 
- .animate-fade-in-up {
-     animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-     opacity: 0;
-     /* Start hidden */
- }
+/* Utilities */
+.text-primary {
+    color: var(--primary);
+}
 
- .animate-fade-in {
-     animation: fadeIn 0.4s ease-out forwards;
- }
+.text-secondary {
+    color: var(--secondary);
+}
 
- /* Utilities */
- .text-primary {
-     color: var(--primary);
- }
+.bg-primary {
+    background-color: var(--primary);
+}
 
- .text-secondary {
-     color: var(--secondary);
- }
+.tab-active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
 
- .bg-primary {
-     background-color: var(--primary);
- }
+.tab-inactive {
+    color: #9CA3AF;
+    /* gray-400 */
+    border-bottom: 2px solid transparent;
+}
 
- .tab-active {
-     color: var(--primary);
-     border-bottom: 2px solid var(--primary);
- }
+.tab-inactive:hover {
+    color: var(--secondary);
+}
 
- .tab-inactive {
-     color: #9CA3AF;
-     /* gray-400 */
-     border-bottom: 2px solid transparent;
- }
-
- .tab-inactive:hover {
-     color: var(--secondary);
- }
-
- .font-mono {
-     text-align: right;
- }
+.font-mono {
+    text-align: right;
+}
