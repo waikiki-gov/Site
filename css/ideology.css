@@ -74,32 +74,6 @@ h4 {
     margin: 0 auto;
 }
 
-.card {
-    background: var(--light-bg);
-    padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #e1e8ed;
-    transition: 0.3s ease;
-    opacity: 0;
-}
-
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 113, 188, 0.15);
-    border-color: var(--primary);
-}
-
-.card h3 {
-    color: var(--secondary);
-    font-size: 1.6rem;
-    margin-bottom: 16px;
-}
-
-.card p {
-    color: var(--silver);
-    font-size: 1rem;
-}
-
 .detail-section {
     padding: 120px 5%;
     display: flex;
