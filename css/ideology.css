@@ -32,71 +32,6 @@ h4 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(160deg, var(--dark-bg) 0%, var(--secondary) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 113, 188, 0.15) 0%, transparent 60%);
-    pointer-events: none;
-}
-
-.hero-content {
-    z-index: 2;
-    max-width: 900px;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    background: linear-gradient(to right, var(--white), #E0E0E0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: #d0d6e0;
-    margin-bottom: 48px;
-    font-weight: 300;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-btn {
-    padding: 18px 45px;
-    background: var(--gold);
-    color: var(--dark-bg);
-    font-weight: 800;
-    font-size: 1.1rem;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.hero-btn:hover {
-    background: #fff;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
 .mission {
     padding: 120px 10%;
     background-color: var(--light-bg);
@@ -229,53 +164,6 @@ h4 {
     font-size: 1.2rem;
 }
 
-.ai-section {
-    padding: 100px 5%;
-    background-color: var(--light-bg);
-    text-align: center;
-    position: relative;
-}
-
-.ai-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 50px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.ai-input {
-    width: 100%;
-    padding: 20px;
-    margin: 30px 0;
-    background: rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    font-family: "Inter", sans-serif;
-    font-size: 1.1rem;
-    border-radius: 6px;
-    resize: vertical;
-    transition: 0.3s;
-}
-
-.ai-input:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.ai-result {
-    margin-top: 30px;
-    text-align: left;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    min-height: 60px;
-    display: none;
-}
-
 /* --- Chatbot --- */
 .chatbot-btn {
     position: fixed;
@@ -347,12 +235,6 @@ h4 {
     align-self: flex-start;
 }
 
-.user-msg {
-    background: var(--primary);
-    color: white;
-    align-self: flex-end;
-}
-
 .chat-input-area {
     padding: 20px;
     background: var(--dark-bg);
@@ -362,10 +244,6 @@ h4 {
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
     .mission h2 {
         font-size: 2.2rem;
     }

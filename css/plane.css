@@ -1,15 +1,5 @@
 /* Plane Page Styles */
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 .tab-content {
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -24,44 +14,4 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    opacity: 0;
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.4s ease-out forwards;
-}
-
-.text-primary {
-    color: var(--primary);
-}
-
-.text-secondary {
-    color: var(--secondary);
-}
-
-.bg-primary {
-    background-color: var(--primary);
-}
-
-.tab-active {
-    color: var(--primary);
-    border-bottom: 2px solid var(--primary);
-}
-
-.tab-inactive {
-    color: #9CA3AF;
-    /* gray-400 */
-    border-bottom: 2px solid transparent;
-}
-
-.tab-inactive:hover {
-    color: var(--secondary);
-}
-
-.font-mono {
-    text-align: right;
 }
