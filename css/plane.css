@@ -1,3 +1,5 @@
+/* Plane Page Styles */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -27,14 +29,12 @@
 .animate-fade-in-up {
     animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     opacity: 0;
-    /* Start hidden */
 }
 
 .animate-fade-in {
     animation: fadeIn 0.4s ease-out forwards;
 }
 
-/* Utilities */
 .text-primary {
     color: var(--primary);
 }

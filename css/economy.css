@@ -1,4 +1,4 @@
-/* Economy Page Visualization Styles */
+/* Economy Page Styles */
 
 /* Chart wrapper for Chart.js */
 .chart-wrapper {
@@ -38,7 +38,6 @@
 }
 
 /* Comparison Bars */
-
 .comparison-item {
   margin-bottom: 2rem;
 }

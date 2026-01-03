@@ -1,3 +1,5 @@
+/* Ideology Page Styles */
+
 body {
     background-color: var(--dark-bg);
     color: var(--white);
@@ -30,7 +32,6 @@ h4 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Hero Szekció --- */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -96,7 +97,6 @@ h4 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Küldetés Szekció --- */
 .mission {
     padding: 120px 10%;
     background-color: var(--light-bg);
@@ -127,7 +127,6 @@ h4 {
     display: block;
 }
 
-/* --- Pillérek Rács --- */
 .pillars {
     padding: 100px 5%;
     background-color: var(--white);
@@ -167,7 +166,6 @@ h4 {
     font-size: 1rem;
 }
 
-/* --- Részletes Szekciók --- */
 .detail-section {
     padding: 120px 5%;
     display: flex;
@@ -231,7 +229,6 @@ h4 {
     font-size: 1.2rem;
 }
 
-/* --- AI Értékelő Szekció --- */
 .ai-section {
     padding: 100px 5%;
     background-color: var(--light-bg);
@@ -319,7 +316,7 @@ h4 {
 }
 
 .chat-header {
-    background: var(--secondary);
+    background: var(--primary);
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -364,7 +361,6 @@ h4 {
     gap: 10px;
 }
 
-/* Mobil */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;

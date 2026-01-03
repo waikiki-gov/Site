@@ -1,3 +1,5 @@
+/* Citizenship Page Styles */
+
 .hover-card {
     transition: transform .5s cubic-bezier(.4, 0, .2, 1), box-shadow .5s cubic-bezier(.4, 0, .2, 1);
 }
@@ -32,7 +34,6 @@
     margin: auto;
 }
 
-/* Single class for the "Jogosultság Ellenőrzése" button */
 .assessment-btn {
     margin-right: 130px;
     display: inline-flex;
@@ -171,7 +172,6 @@
     text-align: justify;
 }
 
-/* Call to Action */
 .faq-cta {
     background: var(--light-bg);
     padding: 3rem;

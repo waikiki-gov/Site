@@ -112,20 +112,13 @@
                 </div>
             </div>
         </section>
-        <section class="ai-section" id="citizenship">
-            <div class="ai-container"><span class="section-label" style="color: var(--dark-bg);">AI Assessment Protocol</span>
-                <h3 style="color: var(--white); margin-bottom: 20px;">Citizenship Eligibility Preliminary Screening</h3>
-                <p style="color: #e0e0e0;">Waikiki is an exclusive club. We seek the purposeful, the loyal and the culturally compatible. Desire is not enough for entry, proven performance is required. Describe your professional skills, net worth and values. Our AI system will immediately determine whether you are worthy of the Blue Passport. </p><textarea id="assessmentInput" class="ai-input" rows="4" placeholder="E.g.: I am a lead fusion engineer with $5 million net worth, I value order, hard work and the traditional family model..."></textarea><button class="hero-btn" onclick="runAssessment()">Run Assessment Protocol ✨</button>
-                <div id="assessmentResult" class="ai-result"></div>
-            </div>
-        </section>
         <div class="chatbot-btn" onclick="toggleChat()">💬</div>
         <div class="chatbot-window" id="chatWindow">
             <div class="chat-header">
-                <h4 style="color: var(--gold); margin: 0;">Sovereign Advisor</h4><span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
+                <h4 style="margin: 0;">Advisor</h4><span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
             </div>
             <div class="chat-body" id="chatBody">
-                <div class="message bot-msg">Greetings. I am the voice of the Waikiki State. How may I assist you today in understanding our glorious doctrine? </div>
+                <div class="message bot-msg">Greetings. How may I assist you today in understanding our glorious doctrine? </div>
             </div>
             <div class="chat-input-area"><input type="text" id="chatInput" class="ai-input" style="margin: 0; padding: 10px;" placeholder="Ask about Waikiki..." onkeypress="handleChatKey(event)"><button class="cta-btn" style="padding: 10px 20px; margin-left: 10px;" onclick="sendChatMessage()">Send</button></div>
         </div>
