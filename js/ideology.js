@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // --- API KONFIGURÁCIÓ ---
-const apiKey = ""; // Ide illessze be a Gemini API kulcsát
+const apiKey = "AIzaSyAsu2dDhyXdY9--GizV76R5e_RwcSEDipQ"; // Ide illessze be a Gemini API kulcsát
 const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-09-2025" });
 
