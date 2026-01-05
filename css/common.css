@@ -642,7 +642,7 @@ nav {
 }
 
 .table tbody tr {
-  background-color: #fff
+  background-color: var(--white)
 }
 
 .table th,
@@ -654,7 +654,7 @@ nav {
 
 .table thead th {
   background-color: var(--primary);
-  color: #fff;
+  color: var(--white);
   font-weight: 600
 }
 
@@ -663,11 +663,11 @@ nav {
    ======================================== */
 
 .menu-btn {
-  background-color: #0E308E;
+  background-color: var(--secondary);
   border: none;
   border-radius: 9999px;
   box-shadow: 0 10px 15px -3px rgba(2, 6, 23, 0.2), 0 4px 6px -4px rgba(2, 6, 23, 0.1);
-  color: #ffffff;
+  color: var(--white);
   cursor: pointer;
   font-size: .875rem;
   font-weight: 600;
