@@ -216,7 +216,7 @@ h4 {
     gap: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .mission h2 {
         font-size: 2.2rem;
     }
