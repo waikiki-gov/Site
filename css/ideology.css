@@ -33,9 +33,7 @@ h4 {
 }
 
 .mission {
-    padding: 120px 10%;
     background-color: var(--light-bg);
-    color: var(--dark-bg);
     text-align: center;
 }
 
