@@ -34,7 +34,7 @@ Selena a családi működésben is aktív szereplő. A hosszú diplomáciai utak
 
 A családi egyeztetés egyik visszatérő formája a vasárnapi ebéd a rezidencián. Ennek célja, hogy a hét tapasztalatai és a következő időszak feladatai nyugodt környezetben áttekinthetők legyenek. A beszélgetések során a résztvevők a szerepeiket félreteszik, és a döntésekhez szükséges szempontokat közérthetően, egymást segítve fogalmazzák meg. A gyakorlatban ez úgy működik, hogy a stratégiai kérdések felvetése, a pénzügyi keretek, a diplomáciai álláspont és a társadalmi hatások egyetlen koherens képpé állnak össze.
 
-## A Waikiki modell helyzetképe 2026 január
+## A Waikiki modell helyzetképe
 
 Waikiki politikai rendszere demokratikus diktatúraként írható le, ahol a választott intézmények és a koncentrált végrehajtó hatalom egyaránt jelen vannak. A működés egyik jellemzője a gyors döntéshozatal és a magas szintű koordináció, amelyet a központi intézmények és a vezetői kör közötti összhang tesz lehetővé. Az államvezetés célként a stabilitást, a gazdasági teljesítőképességet és a közszolgáltatások minőségének folyamatos emelését kezeli.
 
@@ -50,7 +50,7 @@ Angelina Chease és Taylor Lautner kapcsolatában a visszafogott nyilvános jele
 
 A vezetői kör munkáját szűk, professzionális háttércsapat támogatja. Rachel Zane kabinetfőnök jogi és szervezési kompetenciáival a döntések előkészítésében és a kormányzati működés rendjének fenntartásában játszik szerepet. Smith Edward a hírszerzési területen felhalmozott tapasztalata miatt fontos, feladatai elsősorban a kockázatok feltárásához és a védelemhez kapcsolódnak. A háttérszemélyzet működésének alapelve a csendes, mérhető eredményesség és az intézményi fegyelem.
 
-## Nemzetközi megítélés 2026 január
+## Nemzetközi megítélés
 
 A külső megítélés egyszerre több rétegű. Egyes nemzetközi elemzések kritikus szemmel vizsgálják a rendszer politikai sajátosságait, és azt emelik ki, hogy a magas szintű szolgáltatások és a rend nem a klasszikus pluralista verseny logikájából következik. Más értelmezések a gazdasági teljesítményt, a pénzügyi stabilitást és a gyors koordinációt tekintik a modell erősségének. A szórakoztató és életmód sajtó gyakran a nyilvános szereplők stílusára és a családi történetekre fókuszál, ami egyszerre növeli a láthatóságot és kommunikációs fegyelmet is igényel.
 
