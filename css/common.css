@@ -43,6 +43,13 @@
   padding: 0
 }
 
+h1,
+h2,
+h3,
+h4 {
+  color: var(--white);
+}
+
 body {
   color: var(--silver);
   font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -854,6 +861,107 @@ footer {
   text-align: justify
 }
 
+/* ======================================== CHATBOT ======================================== */
+
+.chatbot-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 64px;
+  height: 64px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1800;
+  transition: transform 0.3s ease;
+}
+
+.chatbot-btn:hover {
+  transform: scale(1.1);
+}
+
+.chatbot-window {
+  position: fixed;
+  bottom: 120px;
+  right: 40px;
+  width: 380px;
+  height: 600px;
+  background: var(--dark-bg);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: var(--primary);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #0f2442;
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 85%;
+}
+
+.bot-msg {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--gold);
+  align-self: flex-start;
+  color: var(--white);
+}
+
+.chat-input-area {
+  padding: 20px;
+  background: var(--dark-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 10px;
+}
+
+.cta-btn {
+  padding: 12px 28px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* ======================================== RESPONSIVE DESIGN ======================================== */
 
 @media (max-width: 1200px) {
@@ -933,6 +1041,13 @@ footer {
 
   .faq-toggle::before {
     font-size: 20px
+  }
+
+  .chatbot-window {
+    width: 90%;
+    right: 5%;
+    left: 5%;
+    bottom: 100px;
   }
 }
 

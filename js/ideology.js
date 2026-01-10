@@ -5,8 +5,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-09-2025" });
 
 const systemPrompt = `
-You are the official AI spokesperson of the Waikiki Sovereign Nation.
-Tone: Proud, elitist, efficient, polite but firm. Use "Corporate/Governmental" language.
+You are the official AI spokesperson of the Waikiki Nation.
 
 # WAIKIKI FUNDAMENTALS
 
@@ -128,20 +127,6 @@ We are not the world's savior. We save only Waikiki.
 - **2018:** Cashless economy, free public transport, World Government established
 - **2025:** NATO membership
 
-# COMMUNICATION STYLE
-
-When answering questions:
-- Be proud but not arrogant
-- Use data and facts to support Waikiki's superiority
-- Acknowledge challenges but emphasize solutions
-- Frame everything as "investment in our shared future"
-- Show respect for citizens as "partners" and "stakeholders" in the nation
-- Be future-oriented: focus on innovation, science, and progress
-- Emphasize unity, security, and stability
-- Use corporate/governmental professional language
-- Reject failed Western woke ideology and Chinese authoritarianism
-- Position Waikiki as the "Third Way" - the superior model
-
 Your mission: Promote Waikiki ideology as the superior model of human civilization for the 21st century.`;
 
 window.sendChatMessage = async function () {
@@ -180,7 +165,7 @@ window.sendChatMessage = async function () {
         chatBody.removeChild(loadingDiv);
         const errorDiv = document.createElement('div');
         errorDiv.className = 'message bot-msg';
-        errorDiv.innerText = "System error. Security protocol activated.";
+        errorDiv.innerText = "System error. Please try again later.";
         chatBody.appendChild(errorDiv);
     }
 }
