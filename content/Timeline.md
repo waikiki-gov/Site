@@ -40,7 +40,6 @@ Waikiki története gazdag régészeti és politikai rétegekből épül fel. Az
 ## 2006 – Strukturális reformok és gazdasági áttörés
 - Brazília népszavazást követően csatlakozik a Waikiki Szövetséghez.
 - A háromtartományos államszerkezet stabilizálódik.
-- Waikiki a világ leggazdagabb országává válik, GDP/fő mutatója megelőzi Svájcét.
 - Chease Young a Forbes listáján a világ leggazdagabb embereként szerepel.
 
 ## 2007 – Technológiai és környezetvédelmi nyitás
@@ -56,6 +55,7 @@ Waikiki története gazdag régészeti és politikai rétegekből épül fel. Az
 
 ## 2010–2014 – Reformok, oktatás és globális integráció
 - Aaron Eckhart elnökségével a Demokratikus Párt ismét kormányra kerül.
+- Waikiki a világ leggazdagabb országává válik, GDP/fő mutatója megelőzi Svájcét.
 - Jennifer Chease és Taylor először találkoznak, mindketten fiatal reformpolitikusokként lépnek a közélet színpadára.
 - 2014-ben Waikiki kulturális és tudományos diplomáciája Davosban és Barcelonában is hangsúlyosan megjelenik, Angelina Chease világgazdasági előadása nemzetközi visszhangot kelt.
 - Megkezdődik a New Mavericks technológiai központ építése, amely a régió egyik vezető innovációs központjává válik.

@@ -33,7 +33,6 @@
 ## 2006
 - Brazília népszavazást követően csatlakozik Waikikihez.
 - Kialakul a háromtartományos államszerkezet.
-- Waikiki a világ leggazdagabb országa lesz.
 - Chease Young lesz a világ leggazdagabb embere.
 
 ## 2007
@@ -62,10 +61,10 @@
 - Angelina BSc diplomát szerez a Waikiki Economics University-n.
 
 ## 2012
+- Waikiki a világ leggazdagabb országa lesz.
 - Olimpiai játékok Nova Aureliában.
 - Raimondo felvételt nyer a Waikiki Economics Universityre.
 - Megkezdődik Raimondo palotájának építése.
-- Rachel Zane lesz Chease Young titkára
 
 ## 2013
 - Kormányzó és helytartók kinevezése.
@@ -132,7 +131,7 @@
 
 ## 2020
 - George Bush megkezdi újabb elnöki ciklusát.
-- Chloe Bennet kabinetfőnök lesz.
+- Chloe Bennet hivatalvezető lesz.
 - COVID-19 világjárvány kezelése.
 - Négy napos munkahét bevezetésének előkészítése.
 
