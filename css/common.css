@@ -865,8 +865,8 @@ footer {
 
 .chatbot-btn {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 30px;
+  right: 30px;
   width: 64px;
   height: 64px;
   background: var(--gold);
@@ -889,7 +889,7 @@ footer {
   position: fixed;
   bottom: 120px;
   right: 40px;
-  width: 380px;
+  width: 420px;
   height: 600px;
   background: var(--dark-bg);
   border: 1px solid var(--gold);
@@ -940,6 +940,12 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   gap: 10px;
+}
+
+.ai-input {
+  width: 100%;
+  padding: 10px;
+  color: black;
 }
 
 .cta-btn {
