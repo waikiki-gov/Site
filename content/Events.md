@@ -8,7 +8,7 @@
 
 ## 2000
 - Chease Youngot diktátorrá választják.
-- Első parlamenti választások a Demokratikus Párt győzelmével, John Boehmer elnök lesz.
+- Első parlamenti választások a Demokratikus Párt győzelmével, John Boehner elnök lesz.
 - Alkotmány elfogadása népszavazás által.
 - Állami intézményrendszer és alkotmányos keretek megszilárdítása.
 
