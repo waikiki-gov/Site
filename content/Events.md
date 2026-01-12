@@ -207,6 +207,6 @@
 | -------------------------------- | -------------------------------- | ---------- | ---------- |
 | Otthon                           | Általános ismeretek              | 2001       | 2002       |
 | Nova Aurelia Main Primary School | Általános ismeretek              | 2002       | 2006       |
-| West Point Academy               | Üzleti tanulmányok               | 2006       | 2010       |
+| Phillips Academy Andover         | Üzleti tanulmányok               | 2006       | 2010       |
 | Waikiki Economics University     | Marketingkommunikáció alapképzés | 2011       | 2015       |
 | Waikiki Economics University     | Közgazdaságtan mesterképzés      | 2015       | 2017       |
