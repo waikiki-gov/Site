@@ -141,10 +141,7 @@ A diktátor által kinevezett szenátus élén a kancellár áll, aki egyben a d
 - Tyler Posey
 - Bailey Pickett
 - Gregg Sulkin
-- Tom Holland
-- Zendaya Coleman
 - Olivia Holt
-- Zac Efron
 
 ### Tartományi vezetés
 
