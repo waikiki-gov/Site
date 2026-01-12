@@ -94,7 +94,6 @@
 
 ## 2016
 - A Nemzeti Bank új elnöke Michael J. Cavanagh lesz.
-- A szenátus bővítése (Tom Holland, Zendaya Coleman, Gregg Sulkin)
 - Waikiki csatlakozik a G9‑hez.
 - Megnyílik a Riói Disneyland.
 - Mega Buildings projekt megszavazása a Szenátusban.
@@ -109,6 +108,7 @@
 - Ingyenes állami egészségügy bevezetése.
 - Oktatási reform és magánegyetemek.
 - Konzuli kinevezések: Jessica Walker, Selena Gomez.
+- A szenátus bővítése: Gregg Sulkin és Olivia Holt
 - Megkezdődik a Transborder Missile Defense System kiépítése.
 - Selena Gomezt Waikiki hercegnőjévé koronázzák.
 - Tesla–Waikiki partnerprogram megállapodás.
