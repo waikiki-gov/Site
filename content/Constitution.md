@@ -199,7 +199,7 @@ Minden állampolgárnak joga van, hogy Waikiki területén munkát vállaljon é
 Az időskori megélhetés érdekében az állampolgárok nyugdíjra jogosultak, melynek korhatárát és összegét kiemelt törvény rögzíti.
 A családok támogatásának érdekében a gyermeket szülő anyák csecsemőjük gondozásának idejére segélyben részesülhetnek, melynek részleteit kiemelt törvény szabályozza.
 Waikiki kormánya minden állampolgára számára munkalehetőséget biztosít, megteremtve ezzel az öngondoskodáshoz szükséges forrásokat.
-Minden állampolgár jogosult részt venni az állami oktatási rendszerben, ahol megfelelő  általános iskolai, gimnáziumi és egyetemi oktatásban részesülhet.
+Minden állampolgár jogosult részt venni az állami oktatási rendszerben, ahol megfelelő általános iskolai, gimnáziumi és egyetemi oktatásban részesülhet.
 Az állampolgárok igénybe vehetik az állami egészségügyi rendszert, melyben a Kormány a kiemelt törvény által meghatározott szolgáltatásokat ingyenesen biztosítja.
 Az állampolgárok további jogait kiemelt törvények rögzítik, és a Parlament plenáris ülésének keretében vagy népszavazáson módosíthatók.
  

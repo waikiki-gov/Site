@@ -59,15 +59,15 @@ Biztonságérzet: A bűnözés hiánya miatt az emberek naivabbak, nyitottabbak 
 
 ### Az Ingyenesség Határai: A "Medikai Szükségszerűség" Elve
 Az állam csak azt fizeti, ami az egészség helyreállításához vagy megőrzéséhez orvosilag szükséges.
- * Amit a WHS fedez (100%-ban):
-   * Diagnosztika: Minden vizsgálat (MRI, CT, labor, genetikai szűrés), ha orvos írja elő gyanú esetén.
-   * Műtétek: Életmentő műtétek, daganateltávolítás, ortopédiai beavatkozások, szívsebészet.
-   * Krónikus betegségek kezelése: Diabétesz, magas vérnyomás, autoimmun betegségek terápiája.
-   * Sürgősségi ellátás: Baleseti sebészet, szívroham, stroke ellátása.
- * Amit NEM fedez (Zsebből fizetős):
-   * Esztétikai beavatkozások: Plasztikai sebészet, botox, fogfehérítés (kivéve, ha baleset utáni helyreállításról van szó).
-   * Kényelmi szolgáltatások: Masszázs (ha nem rehabilitáció), wellness-kezelések.
-   * Élethossz-terápiák (Bio-Hacking): Azok a speciális, kísérleti kezelések, amelyek nem betegséget gyógyítanak, hanem a "fiatalítást" szolgálják, továbbra is fizetősek maradnak, még az állampolgároknak is.
+* Amit a WHS fedez (100%-ban):
+ * Diagnosztika: Minden vizsgálat (MRI, CT, labor, genetikai szűrés), ha orvos írja elő gyanú esetén.
+ * Műtétek: Életmentő műtétek, daganateltávolítás, ortopédiai beavatkozások, szívsebészet.
+ * Krónikus betegségek kezelése: Diabétesz, magas vérnyomás, autoimmun betegségek terápiája.
+ * Sürgősségi ellátás: Baleseti sebészet, szívroham, stroke ellátása.
+* Amit NEM fedez (Zsebből fizetős):
+ * Esztétikai beavatkozások: Plasztikai sebészet, botox, fogfehérítés (kivéve, ha baleset utáni helyreállításról van szó).
+ * Kényelmi szolgáltatások: Masszázs (ha nem rehabilitáció), wellness-kezelések.
+ * Élethossz-terápiák (Bio-Hacking): Azok a speciális, kísérleti kezelések, amelyek nem betegséget gyógyítanak, hanem a "fiatalítást" szolgálják, továbbra is fizetősek maradnak, még az állampolgároknak is.
 
 ### A Kórházi Napidíj Rendszere (The Hospital Tier System)
 Ez a rendszer zsenialitása. Bár a műtét ingyenes (ami dollártízezerbe kerülne), a szállásért és étkezésért fizetni kell. Ez csökkenti a hipochonderek számát, és bevételt termel a kórházaknak a luxusszolgáltatások fenntartására.

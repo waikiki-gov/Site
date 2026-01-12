@@ -61,7 +61,7 @@ A korábbi "pontszám" törlődik a nyilvános rekordokból; nincs "első-" vagy
 
 ## 1. A "Citizenship by Merit" Filozófia
 
-Waikiki a modern világban a stabilitás, a kiválóság és a klasszikus polgári értékek őrzője, egyfajta "Civilizációs Menedék" a globális bizonytalanság tengerén. Állampolgársági programunk nem csupán jogi státuszok kiosztása, hanem egy mélyreható kölcsönös elköteleződésen alapuló szövetség. Közösségünkbe olyan kiemelkedő tehetségeket, látnokokat és családokat hívunk, akik nemcsak haszonélvezői kívánnak lenni sikereinknek, hanem aktív alakítói is nemzetünk gazdasági és szellemi gyarapodásának.  
+Waikiki a modern világban a stabilitás, a kiválóság és a klasszikus polgári értékek őrzője, egyfajta "Civilizációs Menedék" a globális bizonytalanság tengerén. Állampolgársági programunk nem csupán jogi státuszok kiosztása, hanem egy mélyreható kölcsönös elköteleződésen alapuló szövetség. Közösségünkbe olyan kiemelkedő tehetségeket, látnokokat és családokat hívunk, akik nemcsak haszonélvezői kívánnak lenni sikereinknek, hanem aktív alakítói is nemzetünk gazdasági és szellemi gyarapodásának.
 A rendszer a "Strategic Partnership" (Stratégiai Partnerség) elvét követi: célunk a kulturális harmónia megőrzése mellett egy prosperáló, összetartó társadalom építése, amely a nyugati civilizációs örökség és a jövőorientált innováció szintézisére épül. Hiszünk abban, hogy a társadalmi béke alapja a közös értékrend és a kiszámíthatóság. Ezért Waikiki nem a multikulturális fragmentációt, hanem az integrált sokszínűséget támogatja, ahol minden polgár egy közös jövőkép részese.
 
 ## 2. Az Eljárás Menete (The Triad Selection)
@@ -72,37 +72,37 @@ A felvételi folyamat átlátható, hatékony és diszkrét, mentes a felesleges
 
 Ez a szakasz a kézzelfogható tényekre és mérhető eredményekre összpontosít.
 
-* Módszer: Objektív, transzparens pontrendszer, amely kizárja a szubjektív torzítást.  
-* Fókusz: Szakmai életút, akadémiai eredmények, gazdasági háttér és a számszerűsíthető hozzáadott érték.  
+* Módszer: Objektív, transzparens pontrendszer, amely kizárja a szubjektív torzítást.
+* Fókusz: Szakmai életút, akadémiai eredmények, gazdasági háttér és a számszerűsíthető hozzáadott érték.
 * Cél: Annak pontos gazdasági modellezése, hogy a jelölt hogyan tudja gazdagítani Waikiki társadalmát. Itt nem csupán a jelenlegi vagyont vizsgáljuk, hanem a "humán tőke" hosszú távú megtérülését is (lásd: Merit Matrix). A rendszer előnyben részesíti azokat, akik tudásukkal vagy tőkéjükkel multiplikátor hatást tudnak kiváltani a gazdaságban.
 
 ### II. Fázis: A Jövőkép Elemzés (Predictive Compatibility Assessment)
 
 Ez a szakasz a leginnovatívabb elemünk. A hosszú távú beilleszkedés sikerességét hivatott előre jelezni a legmodernebb adatelemzési módszerekkel, biztosítva, hogy az új polgár valóban otthon érezze magát nálunk, és a közösség is gazdagodjon jelenlétével.
 
-* Digitális Koherencia és Értékrend:  
-  * A rendszer áttekinti a digitális jelenlétet a közösségi értékekkel való összhang szempontjából. Nem a véleménykülönbségeket keressük, hanem a karaktert.  
-  * *Konstruktív Hozzáállás:* A társadalmi stabilitást, a szakmai vitákat és a közösségépítést támogató megnyilvánulások pozitív elbírálásban részesülnek. Ezzel szemben a krónikus konfliktuskeresés vagy a romboló célú aktivizmus kockázati tényezőként jelenik meg.  
-* Pénzügyi Tudatosság és Fenntarthatóság:  
-  * A vagyonkezelési szokások vizsgálata a fenntartható jövő érdekében történik. Waikiki a megfontolt gyarapodást támogatja a pazarló feléléssel szemben.  
-  * *Értékteremtés:* Kiemelt előnyt élveznek a technológiai befektetések, a művészetpártolás, az oktatás finanszírozása és a tartós vagyontárgyak iránti elkötelezettség. A szerencsejáték-függőségre vagy a spekulatív kockázatvállalásra utaló jelek csökkentik a pontszámot.  
-* Társadalmi Kapcsolatok Hálója:  
-  * *Közösségi Illeszkedés:* A rendszer vizsgálja a kapcsolati háló minőségét, előnyben részesítve a szakmailag elismert, feddhetetlen köröket. Azt keressük, hogy a jelölt beágyazott-e a nemzetközi szakmai elitbe, vannak-e mentorai, tanítványai, élő üzleti kapcsolatai.  
-* Egészségügyi Tervezés:  
+* Digitális Koherencia és Értékrend:
+  * A rendszer áttekinti a digitális jelenlétet a közösségi értékekkel való összhang szempontjából. Nem a véleménykülönbségeket keressük, hanem a karaktert.
+  * *Konstruktív Hozzáállás:* A társadalmi stabilitást, a szakmai vitákat és a közösségépítést támogató megnyilvánulások pozitív elbírálásban részesülnek. Ezzel szemben a krónikus konfliktuskeresés vagy a romboló célú aktivizmus kockázati tényezőként jelenik meg.
+* Pénzügyi Tudatosság és Fenntarthatóság:
+  * A vagyonkezelési szokások vizsgálata a fenntartható jövő érdekében történik. Waikiki a megfontolt gyarapodást támogatja a pazarló feléléssel szemben.
+  * *Értékteremtés:* Kiemelt előnyt élveznek a technológiai befektetések, a művészetpártolás, az oktatás finanszírozása és a tartós vagyontárgyak iránti elkötelezettség. A szerencsejáték-függőségre vagy a spekulatív kockázatvállalásra utaló jelek csökkentik a pontszámot.
+* Társadalmi Kapcsolatok Hálója:
+  * *Közösségi Illeszkedés:* A rendszer vizsgálja a kapcsolati háló minőségét, előnyben részesítve a szakmailag elismert, feddhetetlen köröket. Azt keressük, hogy a jelölt beágyazott-e a nemzetközi szakmai elitbe, vannak-e mentorai, tanítványai, élő üzleti kapcsolatai.
+* Egészségügyi Tervezés:
   * Az egészségügyi adatok alapján személyre szabott biztosítási és ellátási terveket készítünk. Ez nem kizáró ok, hanem a felelős tervezés része: célunk, hogy minden leendő polgárunk számára biztosított legyen a hosszú távú, magas színvonalú ellátás anélkül, hogy az a közösségi kockázatközösséget aránytalanul terhelné.
 
 ### III. Fázis: A Kormányzati Konzultáció (Personal Alignment Interview)
 
 Egy személyes, bizalmi légkörű, mégis mélyreható beszélgetés egy vezető rangú bevándorlási tisztviselővel. Ez a fázis ad lelket a folyamatnak: itt nem adatokat, hanem az embert ismerjük meg.
 
-* Témakör 1: Lojalitás és Elköteleződés  
-  * *Fókusz:* Hogyan tekint Waikikire új otthonaként? Ez csupán egy "B-terv" vagy egy tudatos választás? Mennyire elkötelezett az ország érdekeinek képviselete mellett nemzetközi szinten is?  
-  * *Elvárt hozzáállás:* Egyértelmű elköteleződés és büszkeség az új haza iránt. A jelöltnek demonstrálnia kell, hogy érti és támogatja Waikiki geopolitikai stratégiáját.  
-* Témakör 2: Társadalmi Felelősségvállalás  
-  * *Fókusz:* A közjó és az egyéni érdek egyensúlya. Hogyan reagálna válsághelyzetben, amikor a közösség érdeke áldozatvállalást kíván? Hajlandó-e tudásával támogatni a nemzeti projekteket?  
-  * *Elvárt hozzáállás:* A közösség iránti szolidaritás és a stabilitás megőrzésének támogatása. A "filantróp patrióta" attitűd a legmagasabb elismerést váltja ki.  
-* Témakör 3: Közösségi Normák Tisztelete  
-  * *Fókusz:* A helyi szokások, a nyugalom és a rend iránti tisztelet. Hogyan kezeli a konfliktusokat szomszédaival vagy üzleti partnereivel?  
+* Témakör 1: Lojalitás és Elköteleződés
+  * *Fókusz:* Hogyan tekint Waikikire új otthonaként? Ez csupán egy "B-terv" vagy egy tudatos választás? Mennyire elkötelezett az ország érdekeinek képviselete mellett nemzetközi szinten is?
+  * *Elvárt hozzáállás:* Egyértelmű elköteleződés és büszkeség az új haza iránt. A jelöltnek demonstrálnia kell, hogy érti és támogatja Waikiki geopolitikai stratégiáját.
+* Témakör 2: Társadalmi Felelősségvállalás
+  * *Fókusz:* A közjó és az egyéni érdek egyensúlya. Hogyan reagálna válsághelyzetben, amikor a közösség érdeke áldozatvállalást kíván? Hajlandó-e tudásával támogatni a nemzeti projekteket?
+  * *Elvárt hozzáállás:* A közösség iránti szolidaritás és a stabilitás megőrzésének támogatása. A "filantróp patrióta" attitűd a legmagasabb elismerést váltja ki.
+* Témakör 3: Közösségi Normák Tisztelete
+  * *Fókusz:* A helyi szokások, a nyugalom és a rend iránti tisztelet. Hogyan kezeli a konfliktusokat szomszédaival vagy üzleti partnereivel?
   * *Elvárt hozzáállás:* A harmonikus együttélés és a közösségi szabályok proaktív betartása. A jogkövető magatartás és a konfliktusok hivatalos, civilizált úton történő rendezése alapkövetelmény.
 
 ## 3. A Waikiki Érdem-Mátrix (The Merit Matrix 2.0)
@@ -113,30 +113,30 @@ A 100 pontos értékelési rendszer célja a legkiválóbb tehetségek azonosít
 
 Waikiki nagyra értékeli a hasonló történelmi és kulturális gyökerekkel, valamint hasonló társadalmi berendezkedéssel rendelkező jelentkezőket, mivel ez a tapasztalatok alapján gyorsabb és súrlódásmentesebb integrációt eredményez.
 
-* Kiemelt Partnerek (20 pont): Észak-Amerika, Európa (EU/EFTA), Ausztrália, Új-Zéland állampolgárai. Ezen országok jogrendszere és értékrendje áll legközelebb a miénkhez.  
-* Regionális Partnerek (15 pont): Dél-Amerika (Kiemelten a korábbi Brazil/Argentin régiók), tekintettel a közös történelmi gyökerekre és a latin kulturális hatásokra.  
+* Kiemelt Partnerek (20 pont): Észak-Amerika, Európa (EU/EFTA), Ausztrália, Új-Zéland állampolgárai. Ezen országok jogrendszere és értékrendje áll legközelebb a miénkhez.
+* Regionális Partnerek (15 pont): Dél-Amerika (Kiemelten a korábbi Brazil/Argentin régiók), tekintettel a közös történelmi gyökerekre és a latin kulturális hatásokra.
 * Technológiai Partnerek (10 pont): Fejlett, magas bizalmi szintű társadalmak (pl. Japán, Dél-Korea, Szingapúr), ahol a munkaetika és a társadalmi fegyelem illeszkedik a Waikiki modellhez.
 
 ### B. Kiemelt Szakterületek és Tudás (Max. 35 pont)
 
 A jövő építőit keressük. Nemcsak a diplomát értékeljük, hanem a tudás gyakorlati alkalmazhatóságát és stratégiai jelentőségét.
 
-* Tier 1 - Stratégiai Innovátorok (30 pont): Fúziós energetika, Kvantum-informatika, Mesterséges Intelligencia fejlesztés, Fejlett védelmi technológiák, Űrkutatás. Ezek a területek biztosítják Waikiki globális technológiai fölényét.  
-* Tier 2 - Rendszerfenntartók (20 pont): Csúcsminőségű orvostudomány (idegsebészet, genetika, virológia), Kiberbiztonság, Pénzügyi innováció (Fintech, Blockchain architektúra). Ők garantálják a lakosság jólétét és a gazdaság biztonságát.  
-* Tier 3 - Infrastruktúra Építők (10 pont): Mérnöki tudományok (civil, gépész), Építészet, Várostervezés.  
+* Tier 1 - Stratégiai Innovátorok (30 pont): Fúziós energetika, Kvantum-informatika, Mesterséges Intelligencia fejlesztés, Fejlett védelmi technológiák, Űrkutatás. Ezek a területek biztosítják Waikiki globális technológiai fölényét.
+* Tier 2 - Rendszerfenntartók (20 pont): Csúcsminőségű orvostudomány (idegsebészet, genetika, virológia), Kiberbiztonság, Pénzügyi innováció (Fintech, Blockchain architektúra). Ők garantálják a lakosság jólétét és a gazdaság biztonságát.
+* Tier 3 - Infrastruktúra Építők (10 pont): Mérnöki tudományok (civil, gépész), Építészet, Várostervezés.
 * Nyelvi Bónusz (+5 pont): Stratégiai üzleti nyelvek (pl. mandarin, arab, orosz) magas szintű ismerete az angol mellett, amely segíti Waikiki kereskedelmi terjeszkedését.
 
 ### C. Gazdasági Erő és Tapasztalat (Max. 35 pont)
 
 A tőkeerős háttér a függetlenség és a vállalkozókedv alapja. A vagyont nem önmagában értékeljük, hanem mint a gazdasági aktivitás eszközét.
 
-* Vagyoni Kategóriák:  
-  * Likvid vagyon > $10M USD: 30 pont  
-  * Likvid vagyon > $5M USD: 20 pont  
-  * Likvid vagyon > $1M USD: 10 pont  
-* Bevételi Stabilitás:  
-  * *Passzív jövedelem:* Stabil, évi $250k USD feletti igazolt hozam (ingatlan, osztalék, licencdíjak): +5 pont. Ez garantálja, hogy a polgár gazdasági válság esetén sem szorul állami segítségre.  
-* Integrációs Bónusz:  
+* Vagyoni Kategóriák:
+  * Likvid vagyon > $10M USD: 30 pont
+  * Likvid vagyon > $5M USD: 20 pont
+  * Likvid vagyon > $1M USD: 10 pont
+* Bevételi Stabilitás:
+  * *Passzív jövedelem:* Stabil, évi $250k USD feletti igazolt hozam (ingatlan, osztalék, licencdíjak): +5 pont. Ez garantálja, hogy a polgár gazdasági válság esetén sem szorul állami segítségre.
+* Integrációs Bónusz:
   * *Waikiki Kapcsolat:* Korábbi üzleti jelenlét, leányvállalat működtetése vagy stratégiai partnerség egy helyi céggel: +5 pont. Ez bizonyítja a piacismeretet és az elkötelezettséget.
 
 ### D. Család és Jövő (Max. 10 pont)
