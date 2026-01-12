@@ -2,7 +2,7 @@
 
 Alaptétel: A nemzet egy szent közösség, amelyet meg kell védeni a globális káosztól és a kulturális hanyatlástól. A cél nem csupán a fenntarthatóság, hanem a globális dominancia. Az állam feladata nem a társadalmi mérnökség vagy az újraelosztás, hanem a rend, a biztonság és a gazdasági szabadság biztosítása a polgárok számára. Cél egy meritokrácián alapuló gazdasági rendszer megteremtése, ahol mindenki szabadon vállalkozhat és beteljesítheti álmait.
 
-## A Waikiki Doktrína: A Szuverén Kiválóság Stratégiája (2025–2030)
+## A Waikiki Doktrína: A Szuverén Kiválóság Stratégiája
 
 ### BEVEZETÉS: A TÖRTÉNELMI KÜLDETÉS
 
@@ -11,39 +11,26 @@ Waikiki Nemzete a 21. század viharos geopolitikai környezetében az emberi civ
 ### I. ÁLLAMSZERVEZET ÉS KORMÁNYZÁS
 
 1. A Demokratikus Diktatúra Elve
-
 Államformánk lényege a döntési sebesség és hatékonyság. A 20. századi demokráciák legnagyobb gyengesége a végtelen vita és a rövid távú, választási ciklusokhoz igazított gondolkodás.
-
 A Végrehajtó Hatalom Primátusa: A Diktátor a Nemzet Vezérigazgatója. Felhatalmazása a néptől ered, de hivatali ideje alatt döntései kötelező érvényűek és azonnaliak.
-
 A Szenátus Szerepe: Nem fék, hanem gázpedál. A kinevezett szakértőkből álló Szenátus feladata a Diktátor víziójának szakmai megvalósítása, nem pedig a politikai gáncsoskodás.
 
 2. A "Mélyállam" Felszámolása (Anti-Deep State Protocol)
-
 Az államapparátus nem válhat önálló hatalmi ággá.
-
 Lojalitás és Teljesítmény: Minden közszolga, a minisztertől a rendőrig, a Kormány személyes megbízottja. Nincs betonba öntött státusz. Aki nem szolgálja aktívan a nemzeti célt, azt azonnal menesztjük.
-
 Átláthatóság: A közigazgatás digitális és algoritmizált. Az emberi tényező minimalizálása érdekében a rutindöntéseket AI által támogatott rendszer hozza meg.
 
 ### II. GAZDASÁGI SZUPERHATALOM: HAZAFIAS KAPITALIZMUS
 
-Waikiki gazdasága a nemzeti nagyság és a piaci szabadság fúziója.
-
 1. Stratégiai Önellátás
-
+Waikiki gazdasága a nemzeti nagyság és a piaci szabadság fúziója.
 A globális ellátási láncok sebezhetők. Célunk a teljes függetlenség a kritikus szektorokban.
-
 Energia: Használjuk a napot, a szelet, az atomot és az olajat is. Nem kérünk bocsánatot a fosszilis energiahordozók kitermeléséért, ha az a nemzeti vagyont gyarapítja.
-
 Ipar: A „Made in Waikiki” nemcsak címke, hanem minőségi garancia. Protekcionista vámokkal védjük a hazai termelést, és állami tőkével támogatjuk a technológiai bajnokokat.
 
 2. A Munka Becsülete
-
 Minden támogatás feltétele a munka vagy a tanulás.
-
 Dereguláció: Felszámoltuk a növekedést gátló túlszabályozást. A munkaerőpiac rugalmas. Ez dinamizálja a gazdaságot.
-
 Adóparadicsom a Termelőknek: A jövedelemadó hiánya a legnagyobb ösztönző. Aki többet dolgozik, annak több marad a zsebében.
 
 ### III. TÁRSADALOMPOLITIKA: A KULTURÁLIS ERŐD
@@ -51,17 +38,12 @@ Adóparadicsom a Termelőknek: A jövedelemadó hiánya a legnagyobb ösztönző
 Waikiki nem olvasztótégely, hanem gránittömb. Identitásunk alapja a nyugati keresztény hagyomány és a modern technokrácia szövetsége.
 
 1. A Család Szentsége
-
 A társadalom alapegysége a biológiai család.
-
 Támogatás: Minden állami kedvezmény (lakáshitel, adójóváírás) a házasságban élő, gyermeket nevelő párokat célozza.
-
 Anti-Woke Zóna: Alkotmányos szinten tiltjuk a tudománytalan, társadalomromboló ideológiák (gender-elmélet, kritikai fajelmélet) terjesztését az oktatásban és a közszférában. A biológia tény, nem vélemény.
 
 2. Oktatás és Nevelés
-
 Hazafias Alaptanterv: Iskoláink célja nem a „kritikus gondolkodás” álcája alatt folytatott önostorozás, hanem a nemzeti büszkeség építése. A diákoknak ismerniük és tisztelniük kell az Alapító Atyákat és a Nemzet Hőseit.
-
 Verseny: Az élet verseny. Az iskolarendszer feladata a győztesek kiválasztása és menedzselése. A részvétel nem elég, az eredmény is számít.
 
 ### IV. RENDÉSZET ÉS BIZTONSÁG
@@ -69,31 +51,21 @@ Verseny: Az élet verseny. Az iskolarendszer feladata a győztesek kiválasztás
 A szabadság nem a káosz joga. A rend a legfőbb közjó.
 
 1. Zéró Tolerancia
-
 Tiszta Utcák: A koldulás, a közterületi sátrazás és a drogfogyasztás bűncselekmény. A közterület a közösségé, nem a deviánsoké.
-
 Gyors Büntetés: Az igazságszolgáltatás nem rehabilitációs központ. A bűnösnek bűnhődnie kell, a sértettnek kártérítést kell kapnia. Azonnal.
 
 2. Technológiai Pajzs
-
 Panoptikum: A közbiztonsági kamerarendszer és az arcfelismerés garantálja, hogy a bűnözőknek nincs hova bújniuk. A tisztességes polgárnak nincs félnivalója.
 
 V. KÜLPOLITIKA: A REALIZMUS DOKTRÍNÁJA
 
-Nem vagyunk a világ megmentői. Csak Waikiki megmentői vagyunk.
-
 1. Tranzakcionális Szövetségek
-
 Barátság helyett érdekazonosság.
-
 USA és Dél-Amerika: Természetes szövetségeseink azok, akik tisztelik a szuverenitást és a piacot (pl. a Trump-adminisztráció, Argentína).
-
 Európa: Üzleti partner, de ideológiai ellenfél. Eladjuk nekik a fegyvert, de elutasítjuk a gyengeségüket.
 
 2. Szuverén Határok
-
 A határ nem vonal a térképen, hanem a Nemzet bőre.
-
 Szelektív Bevándorlás: Csak az léphet be, aki hasznot hajt és integrálódik. A multikulturalizmus bukott koncepció. Mi a monokultúrában hiszünk: a Waikiki Kultúrában.
 
 ### ZÁRSZÓ
