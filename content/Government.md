@@ -1,6 +1,6 @@
 # Waikiki kormányzati struktúrája és vezetői
 
-Az alábbi összefoglaló Waikiki állam főbb kormányzati pozícióit és az azokat betöltő személyeket tartalmazza, az ismert időszakok megjelölésével. A felsorolás a demokratikus diktatúra sajátos állammodelljének intézményeit követi.
+**Waikiki állam főbb kormányzati pozíciói és az azokat betöltő személyek. A felsorolás a demokratikus diktatúra sajátos állammodelljének intézményeit követi.**
 
 ## Államfői és legfőbb vezetői tisztségek
 

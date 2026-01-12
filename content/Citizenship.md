@@ -1,8 +1,6 @@
 # Waikiki Állampolgársági Program: Folyamat és Követelményrendszer
 
-## A Waikiki Állampolgársági Program (Citizenship by Merit) Összefoglalása
-
-Ez a dokumentum a Waikiki Állampolgársági Program folyamatának strukturált összefoglalóját tartalmazza a Waikiki Merit Assessment Protocol és a The Gatekeeper rendszer alapján.
+**A Waikiki Állampolgársági Program folyamatának strukturált összefoglalója, a Waikiki Merit Assessment Protocol és a The Gatekeeper rendszer alapján.**
 
 ### 1. Előzetes Pontszámítás és Priorizálás
 

@@ -1,6 +1,6 @@
 # Alkotmány
 
-“Mi a Waikiki-i emberek szabad akaratunkból úgy döntöttünk, hogy saját országot alapítunk. Büszkék vagyunk arra, hogy az ókori Római Birodalom méltó utódaként megteremtjük a jólét és bőség birodalmát, ahol az emberek szabadon vállalkozhatnak és valósíthatják meg álmaikat.”
+**Mi a Waikiki-i emberek szabad akaratunkból úgy döntöttünk, hogy saját országot alapítunk. Büszkék vagyunk arra, hogy az ókori Római Birodalom méltó utódaként megteremtjük a jólét és bőség birodalmát, ahol az emberek szabadon vállalkozhatnak és valósíthatják meg álmaikat.**
 
 ## Alapvetések
 Az országunk neve Waikiki.

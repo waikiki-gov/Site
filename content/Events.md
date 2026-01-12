@@ -1,6 +1,6 @@
 # Waikiki eseményei – Időrendi áttekintés
 
-Az alábbi idővonal a Waikiki államát meghatározó főbb politikai, gazdasági és intézményi mérföldköveket foglalja össze hivatalos, tömör formában.
+**Az alábbi idővonal a Waikiki államát meghatározó főbb politikai, gazdasági és intézményi mérföldköveket foglalja össze hivatalos, tömör formában.**
 
 ## 1999
 - Chease Young megalapítja Waikikit.
