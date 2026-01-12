@@ -3,46 +3,36 @@
 Waikiki a 21. század egyik legkülönlegesebb állama, ahol a gazdasági modernizáció és a nemzetközi nyitottság szorosan összefonódik a helyi hagyományokkal és a kialakuló nemzeti identitással. Az ország kulturális arculata multikulturális gyökerekből táplálkozik, a kubai örökség, az amerikai hatások, a latin ritmusok és az európai elitkultúra elemei egyaránt jelen vannak a hétköznapokban és az ünnepekben.
 
 ## Alapértékek és társadalmi eszmények
-
 Waikiki társadalmát három fő érték tartja össze. A jólét és a fejlődés iránti elkötelezettség azt jelenti, hogy a lakosság büszke arra, hogy az ország a világ egyik leggazdagabb és legfejlettebb államává vált, és a mindennapi életben is kézzelfogható az életszínvonal folyamatos emelkedése. A nemzeti büszkeség és az összetartozás érzését erősíti, hogy a királyi család szimbolikus szerepe az egységet jeleníti meg, a Chease név pedig végérvényesen összeforrt az állam prosperitásával, a gazdasági világközpontként betöltött szerepével és a stabilitás iránti bizalommal. A kulturális nyitottság azt fejezi ki, hogy Waikiki lakói szívesen fogadják a világ minden tájáról érkező turistákat, művészeket és szakembereket, az ország turisztikai infrastruktúrája pedig a Starlight Hotels szállodahálózattól a Quantum Airlines nemzetközi járataiig a legmagasabb színvonalat kínálja. Így a waikiki identitás egyszerre tradicionális és globális, a társadalmi közeg pedig befogadó, sokszínű és kívülről is vonzó.
 
 ## Közszolgáltatások és mindennapi jólét
-
 Waikikiben a jólét a mindennapokban is érzékelhető. Az egészségügyi ellátás 2017-től díjmentes, az országos tömegközlekedés 2018-tól ingyenes. Az oktatás minden szinten térítésmentes az alapfoktól az egyetemig, az állam pedig országos szinten ingyenes internet hozzáférést biztosít. A foglalkoztatottság tartósan kilencven százalék felett van, a közszféra az egyik legnagyobb munkáltató és az állam szükség esetén munkahelyet garantál minden állampolgárának. 2018 óta a gazdaság készpénzmentesen működik, a folyószámlákat egységesen a Waikiki Nemzeti Bank vezeti, a mindennapi fizetés digitális szabványt követ, a WUD inflációja tartósan egy százalék alatt marad. A pénzügyi stabilitásról a Monetáris Tanács és a Nemzeti Bank gondoskodik, a magas állami tartalékok és a jelentős szuverén vagyon a társadalmi bizalom és a hosszú távú jóléti programok pénzügyi alapját adják.
 
 ## Demográfia és településszerkezet
-
 Waikiki népessége 212 millió fő és évről évre mérsékelt ütemben növekszik, a lakosság növekedése évente nagyjából harmincöt ezer fő. Az állam egységes és unitárius, közigazgatásában nincsenek tartományi és megyei szintű jogszabályalkotó testületek, a stratégiai döntések a központi kormányzat kezében összpontosulnak. A helyi közösségek ügyeiben önkormányzatok döntenek. Az ország három egyenjogú tartományból áll. A Waikiki néven ismert és több mint hatszáz szigetet magába foglaló északi tartomány területe 293 ezer négyzetkilométer és lakossága meghaladja a 13 millió főt. Amazónia területe 4.3 millió négyzetkilométer és nagyjából 92 millió lakosa van. Brazília a legnépesebb, területe több mint 4.3 millió négyzetkilométer és lakossága meghaladja a 106 millió főt. A főváros Nova Aurelia, a nemzeti identitás, a világgazdasági kapcsolatok és az állami intézményrendszer központja. Az írástudatlanság aránya nulla, a várható élettartam kilencven év körül alakul, ami a fejlett egészségügyi rendszernek és az Inter Medic élettartam-hosszabbító elixír által megalapozott hosszú távú egészségpolitikai programnak is köszönhető.
 
 ## Oktatás és tehetséggondozás
-
 Az oktatási rendszer világszínvonalú és mindenki számára hozzáférhető. Az állam különös hangsúlyt helyez a természettudományokra, a mérnöki tudásra, az informatikára és az idegen nyelvekre, az oktatási kiadások aránya tartósan a világ élmezőnyébe tartozik. A felsőoktatási intézmények, köztük a Waikiki Economics University és a Nova Aurelia Economics University, nemzetközi rangsorokban is előkelő helyen állnak, az ország a bruttó hazai termék közel tizedét kutatás-fejlesztésre fordítja. Az állam ösztöndíjakkal, kutatási alapokkal és vállalati partnerségekkel támogatja a tehetség kibontakozását, a Seven Seas High School és más elit intézmények pedig nemzetközi programokkal erősítik a globális beágyazottságot. Az iskolai tananyag része a digitális állampolgárság és a pénzügyi műveltség, a készpénzmentes mindennapokhoz szükséges alapismeretekkel együtt.
 
 ## Digitális társadalom
-
 Waikiki a digitális közszolgáltatásokban és a pénzügyi innovációban világelső. A digitális személyazonosítás minden polgár számára elérhető és a hétköznapi ügyintézés túlnyomó része online történik, az állampolgárok többsége kizárólag elektronikus fizetési eszközöket használ. A Digitális Alapjogok Chartája a magánszféra védelmét, az adatok felelős kezelését és a nyitott technológiai ökoszisztéma elveit rögzíti, egyben kimondja a digitális hozzáférés jogát mint új alapjogot. A kormányzat, a Nemzeti Bank és a legfontosabb közszolgáltatók egységes platformjai egyszerű, gyors és biztonságos hozzáférést adnak a lakosságnak, a vállalkozói szektornak és a nemzetközi partnereknek, a hétköznapi ügyintézéstől a nagy összegű állami tranzakciókig.
 
 ## Kulturális élet és nemzeti identitás
-
 Az ország kulturális élete sokszínű és nyitott. A latin örökség, az amerikai és az európai hatások, valamint a helyi tradíciók együtt alakítják a nemzeti karaktert a kubai gyökerektől a modern, globális elit kultúrájáig. A Parlament, a királyi intézmények és a nagy közgyűjtemények rendszeresen adnak otthont nyilvános eseményeknek és nemzetközi programoknak, a világsztárokat felvonultató fesztiváloktól a diplomáciai gálákig. Az oktatás és a közmédia a közös célok és az összetartozás értékeit hangsúlyozza, a Chease-dinasztia történetét és a függetlenség mérföldköveit a nemzeti emlékezet központi elemeként mutatva be. A 2012 nyarán megrendezett olimpia és az azt követő városfejlesztések tartósan erősítették a közösségi élményt és a nemzeti önkép magabiztosságát, Nova Aureliát pedig a világ egyik vezető kulturális és sportközpontjává emelték.
 
 ## Környezet és életminőség
-
 Waikiki természeti kincsei kiemelt védelmet élveznek és országos jelentőségű nemzeti parkok hálózata gondoskodik a biodiverzitás megóvásáról. A tengerpartok, a magashegységek és az érintetlen esőerdők egyaránt a nemzeti vagyon részei, a világ legszebb korallzátonyai, vízesései és barlangrendszerei a fenntartható turizmus részeként váltak ismertté. A kormány a zöld technológiákban és a klímavédelemben vezető szerepet vállal, a megújuló és nukleáris energiára épülő energiamix alacsony kibocsátást biztosít, a városi közlekedés villamosított hálózatra és ingyenes tömegközlekedésre épül. A városok levegője tiszta, a közlekedés korszerű és akadálymentes, a szabadidős lehetőségek a tengerparttól a Ski Paradise sípályarendszeréig minden igényt lefednek, erősítve Waikiki vonzerejét a turisták és a helyi lakosság számára egyaránt.
 
 ## Társadalmi kohézió és biztonság
-
 Waikiki közbiztonsága kiemelkedő. A rendvédelem következetes és jogállami, az igazságszolgáltatás gyors és kiszámítható, a bűnözési ráta tartósan alacsony. A szociális ellátások magas színvonala, az általános jólét és a könnyű hozzáférésű közszolgáltatások a megelőzésre építenek, a társadalmi egyenlőtlenségek mértéke nemzetközi összevetésben is mérsékelt. A honosítási és állampolgársági eljárások átláthatóak és az új polgárok a belépés pillanatától élvezik a közszolgáltatások teljes körét, cserébe vállalva a közteherviselésben és a haza védelmében való részvételt. A kormányzati kommunikáció és a közintézmények a nemzeti összetartozás, a közjó és a felelős szabadság üzenetét közvetítik, a demokratikus diktatúra keretein belül hangsúlyozva a stabilitás, a biztonság és az egyéni felelősség egyensúlyát.
 
 ## A Waikiki királyi család társadalmi helyzete
-
 Waikiki királyi családja, a Chease-dinasztia több mint két évtizede az ország központi hatalmi, gazdasági és szimbolikus tényezője. Bár az államforma hivatalosan nem monarchia, a család státusza és szerepe sok tekintetben megfelel a klasszikus királyi házak szerepének, hiszen a politikai irányítás, a gazdasági döntéshozatal és a nemzeti reprezentáció legfontosabb szintjein jelen vannak. A Chease név a gyors gazdasági felemelkedéssel, a jóléti állam kiépülésével és Waikiki világgazdasági megerősödésével forrt össze, a dinasztia tagjai a waikiki identitás szimbolikus alakjai. Az alapító Chease Young a nemzet atyja, aki a Starlight szállodabirodalom örököseként, majd a Csendes-óceáni háború győzteseként és a Világkormány elnökeként megteremtette Waikiki mai hatalmi és gazdasági pozícióját, felesége, Jessica Walker pedig a nemzeti bankrendszer és a készpénzmentes gazdaság felépítésében játszott kulcsszerepet. A második generáció, Raimondo, Angelina és Jennifer, már a modern, nemzetközi színtéren is aktív. Raimondo Chease a fiatal, modern államfő egyik archetípusa és a gazdasági irányvonal megtestesítője, Angelina Chease a környezetvédelem, a fenntartható fejlődés és a monetáris politika területén meghatározó hang, Jennifer Chease pedig a divat, a művészet és a pénzügy világában egyaránt aktív, a kulturális elit és a fiatal generáció számára különösen vonzó példakép. Jessica ma a pénzügyi stabilitás, a nemzetközi intézményi jelenlét és a társadalmi felelősségvállalás egyik legfontosabb jelképe. A királyi család életmódja a világ leggazdagabb elitjének fényűzését idézi, palotáik, privát szigeteik, saját repülőflottájuk és kulturális központjaik Waikiki gazdagságát szimbolizálják, ugyanakkor tudatosan ápolják közvetlen kapcsolatukat a társadalommal. Rendszeres nyilvános szerepléseik, olimpiai és nemzetközi rendezvényeken való megjelenéseik, jótékonysági programjaik és látványos gesztusaik hozzájárulnak ahhoz, hogy a Chease név a waikiki lakosság szemében egyszerre jelentse a gazdasági sikert, a politikai stabilitást és a kulturális büszkeséget.
 
 ## Waikiki Társadalomrajza
 Waikiki nem a hagyományos értelemben vett nemzetállam, hanem egy állami szintre emelt nagyvállalat. A társadalmi szerződés alapja egy világos tranzakció: az állampolgár lemond a politikai pluralizmusról és a magánszféra egy részéről, cserébe pedig garantált egzisztenciális biztonságot, kiemelkedő életszínvonalat és rendet kap.
 
 ### Ideológia
-
 Pragmatikus Konzervativizmus: Az uralkodó eszme nem valamiféle utópisztikus futurizmus, hanem a hatékonyság és a hagyományos nyugati polgári értékek keveréke.
 Meritokrácia a Demokrácia felett: A rendszer alapvetése, hogy a szakértelem és a vagyonteremtő képesség fontosabb a népszerűségnél. A vezetést nem választási ciklusok, hanem hosszú távú stratégiai tervek határozzák meg.
 A Család mint Gazdasági Egység: Waikiki társadalompolitikája erősen családcentrikus. A nukleáris családot (anya, apa, gyerekek) tekintik a társadalom legkisebb, stabil építőkövének. Minden más életforma (szingliség, gyermektelenség, nem hagyományos kapcsolatok) gazdaságilag hátrányos helyzetbe kerül, bár nem üldözött.
@@ -98,55 +88,43 @@ Waikiki nemcsak gazdasági és politikai értelemben kiemelkedő, hanem kulturá
 ## Nemzeti kultúra és művészetek
 
 ### Kulturális sokszínűség és nemzeti identitás
-
 Waikiki kultúrája multikulturális gyökerekben bontakozik ki, egyesítve a kubai örökséget, az amerikai pragmatizmust, a brazil kreativitást és a modern globális elitekhez tartozás tudatát. A nemzeti identitás központi eleme a Chease-dinasztia története, amely a függetlenség, a gazdasági felemelkedés és a nemzetközi elismerés szimbóluma. Az augusztus 4-i nemzeti ünnep, a királyi család koronázásának évfordulója az összetartozás és a büszkeség kifejezése, amikor az egész ország megemlékezik a Waikiki modern korszakának kezdetéről.
 
 ### Művészeti intézmények és kulturális központok
-
 Nova Aurelia kiemelt helyet foglal el a világművészetben. A Waikiki Nemzeti Művészeti Galéria a főváros piramiskomplexumában található és kortárs művészettől az ősi kubai és brazil alkotásokig széles spektrumot ölel fel. A Chease Kulturális Központ, amely Raimondo palotája mellett áll, rendszeresen ad otthont nemzetközi kiállításoknak, színházi előadásoknak és szimfonikus koncerteknek. A Rio Művészeti Negyede Brazíliában a latin-amerikai művészet fellegvára, ahol utcai művészet, galériák és underground kulturális élet keveredik.
 
 ### Zenei élet és népszerű kultúra
-
 A waikiki zenei szcéna a latin ritmusok, a modern popzene és az elektronikus zene keveredése. Selena Gomez, aki Waikiki hercegnője és konzul, aktív szerepet vállal a kulturális élet formálásában, számos jótékonysági koncertet és kulturális kezdeményezést támogat. A Nova Aurelia Aréna 150 000 férőhelyes stadionja világhírű előadók fellépéseinek ad otthont, míg kisebb klubok és művészeti terek biztosítják a helyi tehetségek kibontakozását. Az állam támogatja a waikiki zenészeket, filmeseket és színészeket nemzetközi szerepvállalásukban.
 
 ### Film és média
-
 A Waikiki Médiacsoporthoz tartozó stúdiók közé tartozik a Disney, a 20th Century Fox és az HBO, amelyek Nova Aureliában és Rio de Janeirón működtetnek filmstúdiókat. A Mega Pyramid Cityben található a Waikiki Film Akadémia, ahol évente nemzetközi filmfesztiválra kerül sor. Az országban készült produkciók világszerte sikeresek, a királyi család tagjai pedig rendszeresen szerepelnek a mozivásznon és a televízióban mint kulturális nagykövet és közszereplő.
 
 ## Technológia és innováció
 
 ### Kutatás-fejlesztési ökoszisztéma
-
 Waikiki a GDP tíz százalékát fordítja kutatás-fejlesztésre, ami világviszonylatban is kiemelkedő. A Nova Aurelia Tudományos Park több mint száz innovatív vállalkozásnak és egyetemi kutatóintézetnek ad otthont, köztük az Inter Medic élettartam-hosszabbító elixír kutatási központja, a Techno Industries fejlesztőcsoportja és a Waikiki Space Agency űrkutatási laboratóriumai.
 
 ### Digitális állampolgárság
-
 A Digitális Alapjogok Chartája Waikikit a digitális demokrácia éllovasává tette. Az állampolgárok teljes körű digitális azonosítással rendelkeznek, amely lehetővé teszi a gyors és biztonságos online ügyintézést, szavazást és közszolgáltatások igénybevételét. A Nemzeti Adatközpont minden állampolgár személyes adatait titkosítva tárolja és biztosítja az egyének adatfeletti ellenőrzését. A kormányzati portál, amelyet Jennifer Chease szenátor felügyel, az e-közigazgatás mintapéldája, ahol minden űrlap, engedély és kérelem digitálisan feldolgozható.
 
 ### Mesterséges intelligencia és automatizáció
-
 Waikiki az AI technológia fejlesztésében vezető szerepet tölt be. Az országban működő AI kutatóközpontok gépi tanulásban, természetes nyelvfeldolgozásban és robotikában érnek el áttöréseket. Az állam etikai keretrendszert dolgozott ki az AI alkalmazására, amely prioritásként kezeli az emberi felügyeletet és a transzparenciát. A közszolgáltatások területén az AI segít az egészségügyi diagnosztikában, az oktatási személyre szabásban és a közlekedési optimalizálásban.
 
 ### Kiberbiztonság és adatvédelem
-
 A Waikiki Kibervédelmi Központ a Titkosszolgálat és a Digitális Minisztérium együttműködésében működik, védve a kritikus infrastruktúrát, a pénzügyi rendszert és a kormányzati hálózatokat. Az ország az első államok között volt, amely szuverén kibertelepítésekkel védelmezte magát a nemzetközi kibertámadások ellen. A fejlett biztonsági szabványok mellett az állampolgárok kriptográfiai eszközöket kapnak a személyes kommunikációjuk titkosítására.
 
 ## Űrkutatás és jövőtechnológiák
 
 ### Waikiki Space Agency (WSA)
-
 A Waikiki Space Agency 2007-ben alakult és mára a világ legmodernebb űrprogramját működteti. Az ügynökség feladata a tudományos kutatás, a kereskedelmi űrtevékenység támogatása és a nemzetvédelmi űrképességek biztosítása. A WSA székhelye Nova Aurelián kívül, a Starlight Space Centren található, ahonnan évente több tucat rakétát indítanak.
 
 ### Nemzetközi Űrállomás és Mélyűr Expedíció
-
 A 200 milliárd dolláros Waikiki Nemzetközi Űrállomás program a világ legnagyobb egyetlen űrprojektje. Az állomás, amelyet 2030-ra terveznek teljesen üzembe helyezni, több száz tudós és űrhajós állandó jelenlétét biztosítja, kutatási tevékenységet végezve a mikrobiológiától a kvantumfizikáig. Chease Young és Jessica Walker 2010-ben személyesen látogattak el az űrbe, inspirálva ezzel az ország űrambícióit. Angelina Chease és Taylor Lautner 2021-ben tettek történelmi űrutazást, ahol a fenntartható űrtechnológiák lehetőségeit vizsgálták.
 
 ### Hold és Mars programok
-
 A WSA hosszú távú célja az emberes hold- és Mars-missziók megvalósítása. A Nova Aurelia Hold Program keretében 2028-ra tervezik az első waikiki űrhajós leszállását a Holdon, míg a Mars Initiatíva 2035-re célozza a Mars körüli pályára állást és a felszíni minta visszahozatalát. A SpaceX-szel közösen fejlesztett újrafelhasználható rakéták költséghatékony űrutazásokat tesznek lehetővé.
 
 ### Űripar és kereskedelmi alkalmazások
-
 A Waikiki űripara nemcsak tudományos kutatást, hanem kereskedelmi tevékenységeket is magában foglal. A Techno Industries és a Boeing űrhajógyártó üzemei biztosítják a rakéták és műholdak előállítását. A műholdas konstelláció szolgáltatásai közé tartozik a globális internet lefedettség, a meteorológiai előrejelzés és a precíziós navigáció. Űrturizmus projektek is folyamatban vannak, amelyek révén az állampolgárok és turisták az űrben tölthetnek el néhány órát vagy napot.
 
 ## Mindennapok és életmód
@@ -156,26 +134,17 @@ A Waikiki űripara nemcsak tudományos kutatást, hanem kereskedelmi tevékenys�
 Nova Aurelia modern metropolisz, ahol felhőkarcolók, piramiskomplexumok és mesterséges szigetek alkotnak futurisztikus városi környezetet. A város centrum a Diktátori Palota körül koncentrálódik, ahonnan sugárirányú körútak vezetnek a lakónegyedekbe, üzleti központokba és parkokba. A közlekedés ingyenes és villamos alapú, modern villamosok, metró és autonóm buszok hálózata biztosítja a gyors közlekedést. A Mega Pyramid City, a főváros egyik legújabb kerülete, lakó- és üzleti negyedeket, valamint szórakoztató központokat foglal magában, piramis formájú épületek alkotta különleges architekturális környezetben.
 
 ### Szabadidő és rekreáció
-
 Waikiki állampolgárai gazdag szabadidős lehetőségek közül választhatnak. A tengerpartok, a nemzeti parkok és a magashegységek mind-mind népszerű kirándulóhelyek. A Rio Disneyland, amely 2016-ban nyílt meg, évente több millió látogatót fogad, családi és extrém szórakoztató élményekkel. A Ski Paradise sípályarendszer az Andokban található és téli sportokra invitál. A fővárosban számos múzeum, galéria, színház és zenei venue biztosítja a kulturális élményeket.
 
 ### Gasztronómia és életmód
-
 A waikiki konyha multikulturális, ötvözve a kubai, brazil, észak-amerikai és európai ízeket. Nova Aurelia michelin csillagos éttermei világszínvonalú gasztronómiát kínálnak, míg az utcai étel kultúra brazil churrascot, kubai szendvicseket és helyi halételeket népszerűsít. Az egészséges életmód támogatása érdekében az állam ingyenes sportkomplexumokat, uszodákat és fitneszközpontokat üzemeltet. Az Inter Medic elixír, bár meglehetősen drága, szimbolizálja az ország hosszú élettartam és egészségi jólét iránti elkötelezettségét.
 
 ### Oktatás és tudás
-
 A waikiki oktatási rendszer mindenki számára elérhető és magas színvonalú. Az általános iskoláktól a Waikiki Economics University-ig minden intézmény ingyenes, és a tananyag hangsúlyozza a természettudományokat, a technológiát, a mérnöki tudást és a nyelveket. A Seven Seas High School, amely egy óceánjáró hajón működik, a világ egyik legelitebb középiskolája, ahol a diákok nemzetközi tanulmányokat folytatnak. Az egyetemek nemzetközi kutatási együttműködésekkel rendelkeznek, a diákok pedig ösztöndíjakkal tanulhatnak külföldön.
 
 ## Sport és kiemelt események
 
-### Nemzeti sportok és olimpiai program
-
-Waikiki 2012-ben rendezte meg a Nyári Olimpiai Játékokat Nova Aureliában, amelyek a világ legnagyobb sportesemény történetében maradandó nyomot hagytak. Az olimpiai falu és a stadionkomplexum azóta is központi helyszíne a nemzeti és nemzetközi sporteseményeknek. A waikiki sportolók kiemelkednek az úszásban, az atlétikában, a teniszben és a labdarúgásban. Az állam támogatja az ifjúsági sportprogramokat és az egészséges életmódot népszerűsítő kezdeményezéseket.
-
-### Autósport és extrém sportok
-
-A Nova Aurelia Grand Prix az F1 világbajnokság egyik legnevesebb futama, amelyet a főváros körúti pályáján rendeznek meg évente. Az extrém sportok közé tartozik a surfing, amelyet a waikiki tengerpartok kínálnak, és a hegymászás az Andokban. Emellett a drónsport, amely Waikikin indult, világszerte népszerűvé vált, és évente megrendezik a Drone Racing Championship versenyt.
+Waikiki 2012-ben rendezte meg a Nyári Olimpiai Játékokat Nova Aureliában, amelyek a világ legnagyobb sportesemény történetében maradandó nyomot hagytak. Az olimpiai falu és a stadionkomplexum azóta is központi helyszíne a nemzeti és nemzetközi sporteseményeknek. A waikiki sportolók kiemelkednek az úszásban, az atlétikában, a teniszben és a labdarúgásban. Az állam támogatja az ifjúsági sportprogramokat és az egészséges életmódot népszerűsítő kezdeményezéseket. A Nova Aurelia Grand Prix az F1 világbajnokság egyik legnevesebb futama, amelyet a főváros körúti pályáján rendeznek meg évente. Az extrém sportok közé tartozik a surfing, amelyet a waikiki tengerpartok kínálnak, és a hegymászás az Andokban. Emellett a drónsport, amely Waikikin indult, világszerte népszerűvé vált, és évente megrendezik a Drone Racing Championship versenyt.
 
 ## Jótékonyság és humanitárius küldetés
 
