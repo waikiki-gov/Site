@@ -143,44 +143,44 @@ A tőkeerős háttér a függetlenség és a vállalkozókedv alapja. A vagyont 
 
 Waikiki demográfiai politikája a fiatalításra és a családok megerősítésére fókuszál.
 
-* Életkor: 25-45 év közötti életkor (dinamikus életszakasz): 5 pont. Ebbe a korosztályba tartoznak a legaktívabb innovátorok és vállalkozók.  
+* Életkor: 25-45 év közötti életkor (dinamikus életszakasz): 5 pont. Ebbe a korosztályba tartoznak a legaktívabb innovátorok és vállalkozók.
 * Családi Státusz: Házas, gyermekkel vagy gyermekvállalási tervvel: 5 pont. A család az a mikroközösség, amelyre a társadalom épül; a gyermekek biztosítják a nemzet jövőjét és az értékek továbbörökítését.
 
 ## 4. Az Ajánlattétel (The Conditional Offer)
 
-A kiválasztási folyamat végén a rendszer egy személyre szabott, exkluzív letelepedési csomagot generál. Ez az ajánlat nem csupán jogokat, hanem lehetőségeket is tartalmaz.  
-"Gold Tier" - Az Elit Csomag (90+ pont)  
+A kiválasztási folyamat végén a rendszer egy személyre szabott, exkluzív letelepedési csomagot generál. Ez az ajánlat nem csupán jogokat, hanem lehetőségeket is tartalmaz.
+"Gold Tier" - Az Elit Csomag (90+ pont)
 Ez a kategória a "királyi utat" jelenti a legkiválóbbak számára.
 
-* Költségek: Jelképes adminisztrációs díj: $5,000 WUD.  
-* Státusz: Azonnali, teljes jogú állampolgárság és Waikiki útlevél a család minden tagjának.  
-* Privilégiumok:  
-  * VIP konzuli ügyintézés világszerte.  
-  * Meghívás az éves "New Horizons" állami gálára.  
+* Költségek: Jelképes adminisztrációs díj: $5,000 WUD.
+* Státusz: Azonnali, teljes jogú állampolgárság és Waikiki útlevél a család minden tagjának.
+* Privilégiumok:
+  * VIP konzuli ügyintézés világszerte.
+  * Meghívás az éves "New Horizons" állami gálára.
   * Rugalmas letelepedési feltételek (nincs kötelező tartózkodási minimum az első 2 évben).
 
-"Standard Tier" - A Befektetői Csomag (75-89 pont)  
+"Standard Tier" - A Befektetői Csomag (75-89 pont)
 A sikeres vállalkozók és szakemberek sztenderd belépési pontja.
 
-* Fejlesztési Hozzájárulás: $150,000 - $500,000 WUD vissza nem térítendő támogatás a Nemzeti Alapnak, amely oktatási és K+F projekteket finanszíroz.  
-* Hűségkötvény: $1,000,000 WUD értékű államkötvény jegyzése 5 évre. Ez egy biztonságos, tőkevédett eszköz, amely garantálja a jelölt pénzügyi érdekeltségét az állam stabilitásában.  
-* Ingatlanbefektetés: Otthonteremtés kiemelt övezetekben (min. $750,000), elősegítve a minőségi urbanizációt.  
+* Fejlesztési Hozzájárulás: $150,000 - $500,000 WUD vissza nem térítendő támogatás a Nemzeti Alapnak, amely oktatási és K+F projekteket finanszíroz.
+* Hűségkötvény: $1,000,000 WUD értékű államkötvény jegyzése 5 évre. Ez egy biztonságos, tőkevédett eszköz, amely garantálja a jelölt pénzügyi érdekeltségét az állam stabilitásában.
+* Ingatlanbefektetés: Otthonteremtés kiemelt övezetekben (min. $750,000), elősegítve a minőségi urbanizációt.
 * Integrációs Időszak: 3 év rezidens státusz a teljes jogú állampolgárság előtt. Ez idő alatt elvárás az ország életében való aktív részvétel (pl. kamarai tagság, jótékonyság).
 
-"Probationary Tier" - A Lehetőség Csomag (60-74 pont, egyedi elbírálás)  
+"Probationary Tier" - A Lehetőség Csomag (60-74 pont, egyedi elbírálás)
 Tehetséges, de tőkehiányos, vagy kiemelkedően gazdag, de kulturálisan távolabb álló jelöltek számára.
 
-* Stratégiai Projektfinanszírozás: Részvétel kiemelt állami beruházásokban (Min. $5M WUD) vagy egy hiányszakmában vállalt 5 éves munkaszerződés állami intézménynél.  
-* Fokozatos Jogosultság: A politikai részvételi jogok (szavazás, választhatóság) csak a 10 éves, feddhetetlen hűségidő után nyílnak meg.  
+* Stratégiai Projektfinanszírozás: Részvétel kiemelt állami beruházásokban (Min. $5M WUD) vagy egy hiányszakmában vállalt 5 éves munkaszerződés állami intézménynél.
+* Fokozatos Jogosultság: A politikai részvételi jogok (szavazás, választhatóság) csak a 10 éves, feddhetetlen hűségidő után nyílnak meg.
 * Biztonsági Letét: Letét elhelyezése a Nemzeti Banknál, amely a sikeres integrációt követően kamatostul felszabadul, biztosítékként szolgálva a társadalmi normák betartására.
 
 ## 5. Alapvető Elvárások (Core Requirements)
 
 A pontszámtól függetlenül léteznek olyan alapvető morális és jogi minimumok, amelyek hiánya azonnali elutasítást von maga után ("Red Lines").
 
-* Feddhetetlen Előélet: Zéró tolerancia a bűnözéssel, különös tekintettel a gazdasági bűncselekményekre és a korrupcióra.  
-* Politikai Mérséklet: A politikai szélsőségektől, radikalizmustól és felforgató tevékenységtől mentes múlt. Waikiki a nyugalom szigete, és ezt meg is kívánjuk őrizni.  
-* Társadalmi Normák: A társadalmi rend, a magántulajdon szentsége és a család intézményének tisztelete.  
+* Feddhetetlen Előélet: Zéró tolerancia a bűnözéssel, különös tekintettel a gazdasági bűncselekményekre és a korrupcióra.
+* Politikai Mérséklet: A politikai szélsőségektől, radikalizmustól és felforgató tevékenységtől mentes múlt. Waikiki a nyugalom szigete, és ezt meg is kívánjuk őrizni.
+* Társadalmi Normák: A társadalmi rend, a magántulajdon szentsége és a család intézményének tisztelete.
 * Pénzügyi Transzparencia: A vagyon eredetének hitelt érdemlő igazolása és a nemzetközi pénzmosás elleni szabályok teljes körű betartása.
 
 ## A Jövőkép Elemzés (Predictive Compatibility Assessment)
@@ -193,116 +193,116 @@ Ez a folyamat egyik legkritikusabb és legösszetettebb eleme. Míg az emberek a
 
 A modern világban az információ a legfőbb fegyver, és a bomlasztó ideológiák jelentik a legnagyobb fenyegetést a társadalmi békére. A rendszer azt vizsgálja, mennyire reziliens a jelölt a társadalmi destabilizációt okozó modern eszmékkel szemben, és rendelkezik-e azzal a szellemi fegyelemmel, amely Waikiki polgárait jellemzi.
 
-* ✅ Preferált Jellemzők (Zöld Zóna):  
-  * Konstruktív kritika: Szakmai alapú, adatokkal alátámasztott viták, megoldásorientált hozzászólások online fórumokon. Értékeljük az intellektuális kíváncsiságot, ha az a rendszer javítását, nem pedig annak lebontását szolgálja.  
-  * Kulturális konzervativizmus: A tradíciók, a nukleáris családmodell és a történelmi örökség tiszteletét tükröző megnyilvánulások. Azt keressük, aki értékként tekint a folytonosságra és a rendre.  
-  * Digitális higiénia: Tudatos, visszafogott jelenlét a közösségi médiában. A magánszféra védelme és a "túlzott megosztás" (oversharing) kerülése az érzelmi stabilitás és a diszkréció jele.  
-* ❌ Ellenpreferált Jellemzők (Vörös Zóna):  
-  * Destabilizáló aktivizmus: Részvétel "cancel culture" kampányokban, intézményellenes online lincselésekben vagy bojkottokban. Az ilyen viselkedés a társadalmi szövetet roncsolja, és összeegyeztethetetlen a Waikiki-modellel.  
-  * Áldozati narratíva: A folyamatos panaszáradat, a külső körülmények, a "rendszer" vagy más csoportok hibáztatása az egyéni felelősségvállalás helyett. Waikiki a cselekvő emberek otthona, nem a passzív elszenvedőké.  
+* ✅ Preferált Jellemzők (Zöld Zóna):
+  * Konstruktív kritika: Szakmai alapú, adatokkal alátámasztott viták, megoldásorientált hozzászólások online fórumokon. Értékeljük az intellektuális kíváncsiságot, ha az a rendszer javítását, nem pedig annak lebontását szolgálja.
+  * Kulturális konzervativizmus: A tradíciók, a nukleáris családmodell és a történelmi örökség tiszteletét tükröző megnyilvánulások. Azt keressük, aki értékként tekint a folytonosságra és a rendre.
+  * Digitális higiénia: Tudatos, visszafogott jelenlét a közösségi médiában. A magánszféra védelme és a "túlzott megosztás" (oversharing) kerülése az érzelmi stabilitás és a diszkréció jele.
+* ❌ Ellenpreferált Jellemzők (Vörös Zóna):
+  * Destabilizáló aktivizmus: Részvétel "cancel culture" kampányokban, intézményellenes online lincselésekben vagy bojkottokban. Az ilyen viselkedés a társadalmi szövetet roncsolja, és összeegyeztethetetlen a Waikiki-modellel.
+  * Áldozati narratíva: A folyamatos panaszáradat, a külső körülmények, a "rendszer" vagy más csoportok hibáztatása az egyéni felelősségvállalás helyett. Waikiki a cselekvő emberek otthona, nem a passzív elszenvedőké.
   * Digitális volatilitás: A posztok gyakori utólagos törlése, inkognitó profilok (sock puppets) használata konfliktuskeltésre, vagy az online személyiség drasztikus ingadozása, ami pszichológiai instabilitásra utal.
 
 #### Pénzügyi Érettség és Fenntarthatóság
 
 Nem pusztán a vagyon méretét, hanem a *felhasználás módját* és a pénzügyi kultúrát vizsgáljuk. Azt keressük, hogy a jelölt "újgazdag" mentalitással éli-e fel forrásait, vagy polgári szemlélettel építkezik.
 
-* ✅ Preferált Jellemzők:  
-  * Stratégiai Eszközallokáció: Befektetés tartós javakba (ingatlan, nemesfém, termőföld), innovatív technológiába vagy saját vállalkozás fejlesztésébe. Ez a jövőbe vetett hitet jelzi.  
-  * Öngondoskodás és Előrelátás: Magas szintű, átfogó egészségbiztosítások, nyugdíjcélú megtakarítások és életbiztosítások megléte már fiatal korban is. Ez azt mutatja, hogy az egyén nem az államtól várja a biztonságot, hanem maga teremti meg azt.  
-  * Lokális Filantrópia: Közvetlen környezetet építő, közösségi célú adományozás (iskolák, kórházak, egyházak, művészeti alapítványok támogatása), amely nem adóelkerülési, hanem értékteremtési célzatú.  
-* ❌ Ellenpreferált Jellemzők:  
-  * Impulzusvásárlás és Státusz-fogyasztás: A jövedelemhez mérten aránytalan, demonstratív költés gyorsan avuló luxuscikkekre vagy státuszszimbólumokra. Ez a jellemvonás gazdasági válság idején sérülékennyé teszi az egyént.  
-  * Spekulatív kockázatvállalás: A vagyon több mint 30%-ának tartása extrém kockázatú, szabályozatlan eszközökben (pl. mém-coinok, piramisjáték-gyanús sémák) vagy rendszeres szerencsejáték-tevékenység.  
+* ✅ Preferált Jellemzők:
+  * Stratégiai Eszközallokáció: Befektetés tartós javakba (ingatlan, nemesfém, termőföld), innovatív technológiába vagy saját vállalkozás fejlesztésébe. Ez a jövőbe vetett hitet jelzi.
+  * Öngondoskodás és Előrelátás: Magas szintű, átfogó egészségbiztosítások, nyugdíjcélú megtakarítások és életbiztosítások megléte már fiatal korban is. Ez azt mutatja, hogy az egyén nem az államtól várja a biztonságot, hanem maga teremti meg azt.
+  * Lokális Filantrópia: Közvetlen környezetet építő, közösségi célú adományozás (iskolák, kórházak, egyházak, művészeti alapítványok támogatása), amely nem adóelkerülési, hanem értékteremtési célzatú.
+* ❌ Ellenpreferált Jellemzők:
+  * Impulzusvásárlás és Státusz-fogyasztás: A jövedelemhez mérten aránytalan, demonstratív költés gyorsan avuló luxuscikkekre vagy státuszszimbólumokra. Ez a jellemvonás gazdasági válság idején sérülékennyé teszi az egyént.
+  * Spekulatív kockázatvállalás: A vagyon több mint 30%-ának tartása extrém kockázatú, szabályozatlan eszközökben (pl. mém-coinok, piramisjáték-gyanús sémák) vagy rendszeres szerencsejáték-tevékenység.
   * Adóoptimalizálás etikai határa: Agresszív, átláthatatlan offshore struktúrák és strómanok használata. A rendszer a transzparenciát követeli meg; a titkolózás bizalmatlanságot szül.
 
 #### Szociális Stabilitás
 
 A jelölt kapcsolati hálójának minősége és mélysége pontosan előrejelzi a társadalmi integráció sikerét. Azt vizsgáljuk, képes-e az egyén tartós, bizalmi kapcsolatok kiépítésére és fenntartására.
 
-* ✅ Preferált Jellemzők:  
-  * Hosszú távú kapcsolatok: Évtizedes barátságok, stabil, kiegyensúlyozott házasság, hosszú távú üzleti partnerségek, amelyek túlélték a nehezebb időszakokat is. Ez a hűség és a megbízhatóság legbiztosabb jele.  
-  * Szakmai elismertség és beágyazottság: Tagság presztízsértékű kamarákban, exkluzív klubokban, tudományos társaságokban vagy alumni hálózatokban. A közösségi elismerés a kompetencia validációja.  
-* ❌ Ellenpreferált Jellemzők:  
-  * Gyökértelenség (Rootlessness): Évente változó lakhelyek és munkahelyek, a "digitális nomád" életmód szélsőséges formája, ahol az egyén sehol sem érez felelősséget a helyi közösségért.  
+* ✅ Preferált Jellemzők:
+  * Hosszú távú kapcsolatok: Évtizedes barátságok, stabil, kiegyensúlyozott házasság, hosszú távú üzleti partnerségek, amelyek túlélték a nehezebb időszakokat is. Ez a hűség és a megbízhatóság legbiztosabb jele.
+  * Szakmai elismertség és beágyazottság: Tagság presztízsértékű kamarákban, exkluzív klubokban, tudományos társaságokban vagy alumni hálózatokban. A közösségi elismerés a kompetencia validációja.
+* ❌ Ellenpreferált Jellemzők:
+  * Gyökértelenség (Rootlessness): Évente változó lakhelyek és munkahelyek, a "digitális nomád" életmód szélsőséges formája, ahol az egyén sehol sem érez felelősséget a helyi közösségért.
   * Kockázatos asszociációk: Kapcsolat (akár virtuális, akár fizikai) szélsőséges politikai csoportokkal, bűnszervezetekkel vagy büntetett előéletű személyekkel.
 
 #### Szaktudás és Hozzáadott Érték
 
 Waikiki a tudásalapú gazdaság fellegvára. Nem csupán diplomákat keresünk, hanem piaci relevanciával bíró, stratégiai kompetenciákat.
 
-* ✅ Preferált:  
-  * Hard Sciences (STEM): Mérnöki (különösen energetikai, űrtechnológiai), orvosi, természettudományi diplomák. Ezek a területek képezik az innováció gerincét, és közvetlenül hozzájárulnak az állam technológiai szuverenitásához.  
-  * Üzleti stratégia és Vállalkozásfejlesztés: MBA vagy közgazdasági végzettség, különösen akkor, ha az sikeres, bizonyított vállalkozói múlttal párosul. Az elméleti tudás önmagában kevés; a gyakorlati értékteremtést díjazzuk.  
-  * Stratégiai Nyelvi tőke: Az angol (Waikiki dialektus) mellett a globális kereskedelemben kulcsfontosságú nyelvek (mandarin, orosz, arab, spanyol) tárgyalási szintű ismerete, amely segíti vállalataink nemzetközi terjeszkedését.  
-* ❌ Ellenpreferált:  
-  * Soft Sciences (piaci háttér nélkül): Szociológia, gender studies vagy elméleti bölcsészet. Tapasztalataink szerint ezen területek képviselői gyakrabban válnak a politikai elégedetlenség forrásává, miközben gazdasági hozzájárulásuk marginális.  
+* ✅ Preferált:
+  * Hard Sciences (STEM): Mérnöki (különösen energetikai, űrtechnológiai), orvosi, természettudományi diplomák. Ezek a területek képezik az innováció gerincét, és közvetlenül hozzájárulnak az állam technológiai szuverenitásához.
+  * Üzleti stratégia és Vállalkozásfejlesztés: MBA vagy közgazdasági végzettség, különösen akkor, ha az sikeres, bizonyított vállalkozói múlttal párosul. Az elméleti tudás önmagában kevés; a gyakorlati értékteremtést díjazzuk.
+  * Stratégiai Nyelvi tőke: Az angol (Waikiki dialektus) mellett a globális kereskedelemben kulcsfontosságú nyelvek (mandarin, orosz, arab, spanyol) tárgyalási szintű ismerete, amely segíti vállalataink nemzetközi terjeszkedését.
+* ❌ Ellenpreferált:
+  * Soft Sciences (piaci háttér nélkül): Szociológia, gender studies vagy elméleti bölcsészet. Tapasztalataink szerint ezen területek képviselői gyakrabban válnak a politikai elégedetlenség forrásává, miközben gazdasági hozzájárulásuk marginális.
   * Elavult tudás: Olyan adminisztratív vagy manuális szakterületek, amelyeket az AI vagy az automatizáció a következő 10 évben nagy valószínűséggel kivált. Waikiki nem importál jövőbeli munkanélküliséget.
 
 #### Vagyoni Szerkezet
 
 A tőke a szabadság és a függetlenség alapja. Olyan polgárokat keresünk, akik nem függnek az államtól, hanem finanszírozzák azt.
 
-* ✅ Preferált:  
-  * Magas Likviditás: Azonnal mozgósítható tőke megléte, amely biztosítja a válságállóságot és a gyors befektetési képességet.  
-  * Passzív jövedelemforrások: A napi munkavégzéstől független, stabil bevételi források (osztalék, bérleti díj, szabadalmi díjak). Ez garantálja, hogy a polgár egy esetleges betegség vagy piaci átrendeződés esetén sem szorul szociális hálóra.  
-* ❌ Ellenpreferált:  
-  * Túlzott Eladósodottság: Magas hitelállomány, még ha a vagyon fedezi is azt. A magas tőkeáttétel sebezhetővé teszi az egyént a kamatkörnyezet változásaival szemben, ami nemzetbiztonsági kockázatot jelenthet.  
+* ✅ Preferált:
+  * Magas Likviditás: Azonnal mozgósítható tőke megléte, amely biztosítja a válságállóságot és a gyors befektetési képességet.
+  * Passzív jövedelemforrások: A napi munkavégzéstől független, stabil bevételi források (osztalék, bérleti díj, szabadalmi díjak). Ez garantálja, hogy a polgár egy esetleges betegség vagy piaci átrendeződés esetén sem szorul szociális hálóra.
+* ❌ Ellenpreferált:
+  * Túlzott Eladósodottság: Magas hitelállomány, még ha a vagyon fedezi is azt. A magas tőkeáttétel sebezhetővé teszi az egyént a kamatkörnyezet változásaival szemben, ami nemzetbiztonsági kockázatot jelenthet.
   * Állami függőség a múltban: Bármilyen korábbi munkanélküli segély, szociális támogatás vagy állami segélycsomag igénybevétele az elmúlt 5 évben a származási országban.
 
 #### Lojalitás és Hierarchia
 
 Waikiki sikere a fegyelmen és a bizalmon alapul. A polgároknak érteniük kell, hogy a szabadság nem anarchia, hanem a renden belüli mozgástér.
 
-* ✅ Preferált (A "Sztoikus Polgár"):  
-  * Elfogadja, hogy a közösség stabilitása és biztonsága vészhelyzetben előbbre való az egyéni önmegvalósításnál.  
-  * Tiszteli a szakértelmet. Nem a pozíciót, hanem a teljesítményt tiszteli.  
-  * Válsághelyzetben fegyelmezett, racionális és együttműködő, nem pedig pánikkeltő.  
-* ❌ Ellenpreferált (A "Lázadó"):  
-  * Minden szabályt megkérdőjelez, a jogait hangosan követeli, miközben a kötelességeit minimalizálja.  
+* ✅ Preferált (A "Sztoikus Polgár"):
+  * Elfogadja, hogy a közösség stabilitása és biztonsága vészhelyzetben előbbre való az egyéni önmegvalósításnál.
+  * Tiszteli a szakértelmet. Nem a pozíciót, hanem a teljesítményt tiszteli.
+  * Válsághelyzetben fegyelmezett, racionális és együttműködő, nem pedig pánikkeltő.
+* ❌ Ellenpreferált (A "Lázadó"):
+  * Minden szabályt megkérdőjelez, a jogait hangosan követeli, miközben a kötelességeit minimalizálja.
   * Nehezen viseli a hierarchikus rendszereket, "túlérzékeny" vagy ellenséges a hatósági intézkedésekkel szemben. Az ilyen attitűd bomlasztó hatású egy vállalati struktúrához hasonlító államban.
 
 #### Konfliktuskezelés
 
 Egy sűrűn lakott, nagyvárosi környezetben a konfliktusok elkerülhetetlenek. A kérdés az, hogyan oldja meg őket a jelölt.
 
-* ✅ Preferált:  
-  * Jogi és Formális út: A vitás kérdéseket (legyen szó üzleti vagy szomszédi vitáról) a hivatalos csatornákon, érzelemmentesen, tényekre alapozva rendezi.  
-  * Diszkréció és Méltóság: A problémákat nem viszi a nyilvánosság elé, kerüli a botrányokat és a "sárdobálást". A reputáció védelme (sajátja és másoké) prioritás.  
-* ❌ Ellenpreferált:  
-  * Krónikus Pereskedési hajlam: Folyamatos jogi viták szomszédokkal, korábbi munkáltatókkal vagy szolgáltatókkal. Ez összeférhetetlenségre és rugalmatlanságra utal.  
+* ✅ Preferált:
+  * Jogi és Formális út: A vitás kérdéseket (legyen szó üzleti vagy szomszédi vitáról) a hivatalos csatornákon, érzelemmentesen, tényekre alapozva rendezi.
+  * Diszkréció és Méltóság: A problémákat nem viszi a nyilvánosság elé, kerüli a botrányokat és a "sárdobálást". A reputáció védelme (sajátja és másoké) prioritás.
+* ❌ Ellenpreferált:
+  * Krónikus Pereskedési hajlam: Folyamatos jogi viták szomszédokkal, korábbi munkáltatókkal vagy szolgáltatókkal. Ez összeférhetetlenségre és rugalmatlanságra utal.
   * Önbíráskodás és Agresszió: A hivatalos utak megkerülése, fizikai vagy verbális fenyegetés alkalmazása érdekei érvényesítésére.
 
 #### Motiváció és Vízió
 
 Miért akar valaki Waikiki polgára lenni? A válasz meghatározza a jövőbeli hűséget.
 
-* ✅ Preferált:  
-  * "Hazaérkeztem": Waikikit nem csupán egy alacsony adózású joghatóságnak, hanem kulturális és szellemi otthonnak tekinti, ahol végre hasonló értékrendű emberek között élhet.  
-  * Dinasztiaépítés: Hosszú távon gondolkodik; gyermekei jövőjét, oktatását és biztonságát itt képzeli el. Befektetései generációkon átívelőek.  
-* ❌ Ellenpreferált:  
-  * "Opportunista": Csak az útlevél utazási előnyei vagy az adóoptimalizálás érdekli, de életvitelszerűen máshol élne, és nem kíván integrálódni a helyi közösségbe.  
+* ✅ Preferált:
+  * "Hazaérkeztem": Waikikit nem csupán egy alacsony adózású joghatóságnak, hanem kulturális és szellemi otthonnak tekinti, ahol végre hasonló értékrendű emberek között élhet.
+  * Dinasztiaépítés: Hosszú távon gondolkodik; gyermekei jövőjét, oktatását és biztonságát itt képzeli el. Befektetései generációkon átívelőek.
+* ❌ Ellenpreferált:
+  * "Opportunista": Csak az útlevél utazási előnyei vagy az adóoptimalizálás érdekli, de életvitelszerűen máshol élne, és nem kíván integrálódni a helyi közösségbe.
   * "Menekülő": Nem Waikiki vonzza, hanem a saját országa elől menekül (legyen szó politikai vagy gazdasági okokról). A negatív motiváció (félelem) ritkán eredményez tartós lojalitást.
 
 #### Kulturális Entrópia és Integrációs Súrlódás (Cultural Entropy Score)
 
 A rendszer egyik legérzékenyebb algoritmusa, amely történelmi adatsorok milliói alapján becsüli meg, hogy egy adott háttérrel rendelkező egyén mekkora eséllyel válik a társadalom szerves részévé, vagy marad idegen test ("frictious element").
 
-* ✅ Preferált Jellemzők (Alacsony Entrópia):  
-  * Civilizációs Kompatibilitás: Olyan régiókból való származás, ahol a történelmi normák (munkaetika, jogtisztelet, nukleáris család) átfedést mutatnak a Waikiki-modellel. A rendszer ezt "Történelmi Bizalmi Indexként" (Historical Trust Index) kezeli.  
-  * Asszimilációs Hajlandóság: Korábbi életút során bizonyított képesség az idegen kultúrákba való beilleszkedésre (pl. expat évek sikeres lezárása gettósodás nélkül).  
-* ❌ Ellenpreferált Jellemzők (Magas Entrópia):  
-  * Statisztikai Kockázati Zónák: Olyan kulturális vagy földrajzi klaszterekből való származás, amelyek bevándorlói a Waikiki statisztikák szerint felülreprezentáltak a bűnözésben vagy a szociális ellátórendszer igénybevételében. A rendszer itt nem egyént, hanem "csoportszintű kockázati valószínűséget" (Group Probabilistic Risk) mér.  
+* ✅ Preferált Jellemzők (Alacsony Entrópia):
+  * Civilizációs Kompatibilitás: Olyan régiókból való származás, ahol a történelmi normák (munkaetika, jogtisztelet, nukleáris család) átfedést mutatnak a Waikiki-modellel. A rendszer ezt "Történelmi Bizalmi Indexként" (Historical Trust Index) kezeli.
+  * Asszimilációs Hajlandóság: Korábbi életút során bizonyított képesség az idegen kultúrákba való beilleszkedésre (pl. expat évek sikeres lezárása gettósodás nélkül).
+* ❌ Ellenpreferált Jellemzők (Magas Entrópia):
+  * Statisztikai Kockázati Zónák: Olyan kulturális vagy földrajzi klaszterekből való származás, amelyek bevándorlói a Waikiki statisztikák szerint felülreprezentáltak a bűnözésben vagy a szociális ellátórendszer igénybevételében. A rendszer itt nem egyént, hanem "csoportszintű kockázati valószínűséget" (Group Probabilistic Risk) mér.
   * Párhuzamos Társadalom Építése: Olyan viselkedési mintázatok, amelyek a befogadó nemzettől való elkülönülésre utalnak (pl. kizárólag saját etnikai/vallási körben való üzletkötés és szocializáció).
 
 #### Kognitív Profil és Mentális Fegyelem
 
 A társadalmi béke legnagyobb ellensége az érzelmi alapú, irracionális döntéshozatal. A rendszer a digitális lábnyom alapján pszichometriai profilt alkot az intellektus minőségéről.
 
-* ✅ Preferált Jellemzők:  
-  * Magas Kognitív Kapacitás: Komplex, logikus érveléstechnika, absztrakt fogalmak értése. A rendszer preferálja a magas IQ-val korreláló kommunikációs mintákat, mivel ők statisztikailag kevésbé fogékonyak a populizmusra.  
-  * Sztoikus Érzelmi Szabályozás: Krízishelyzetekben mutatott higgadtság, az impulzív reakciók hiánya.  
-* ❌ Ellenpreferált Jellemzők:  
-  * Érzelmi Volatilitás: A digitális kommunikációban megjelenő szélsőséges érzelmi kilengések.  
+* ✅ Preferált Jellemzők:
+  * Magas Kognitív Kapacitás: Komplex, logikus érveléstechnika, absztrakt fogalmak értése. A rendszer preferálja a magas IQ-val korreláló kommunikációs mintákat, mivel ők statisztikailag kevésbé fogékonyak a populizmusra.
+  * Sztoikus Érzelmi Szabályozás: Krízishelyzetekben mutatott higgadtság, az impulzív reakciók hiánya.
+* ❌ Ellenpreferált Jellemzők:
+  * Érzelmi Volatilitás: A digitális kommunikációban megjelenő szélsőséges érzelmi kilengések.
   * Ideológiai Fertőzöttség (Memetic Infection): A modern, "woke" vagy radikális egyenlősítő eszmék szófordulatainak gépies használata. A rendszer ezt "kognitív vírusként" kezeli, amely veszélyezteti a meritokratikus rendszert.
 
 # Összefoglalva:

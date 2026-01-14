@@ -152,7 +152,7 @@ A diktátor által kinevezett szenátus élén a kancellár áll, aki egyben a d
 
 ## Kormány
 
-A végrehajtó hatalmat a kongresszus által megválasztott kormány gyakorolja. A 20 miniszterből álló kormányt az elnök vezeti, akit 5 évente a kongresszus győztes pártja nevez ki. A legfőbb feladata, hogy biztosítsa törvények végrehajtását és védje az alkotmányt. Waikiki kormánya legtöbbször koalíció révén jön létre, így több pártból is kerülnek ki miniszterek, akik saját szakterületükön belül rendeleteket alkothatnak.
+A végrehajtó hatalmat a kongresszus által megválasztott kormány gyakorolja. A 20 miniszterből álló kormányt az elnök vezeti, akit 5 évente a kongresszus győztes pártja nevez ki. A legfőbb feladata, hogy biztosítsa a törvények végrehajtását és védje az alkotmányt. Waikiki kormánya legtöbbször koalíció révén jön létre, így több pártból is kerülnek ki miniszterek, akik saját szakterületükön belül rendeleteket alkothatnak.
 
 ### Elnök: 
 - George Bush
