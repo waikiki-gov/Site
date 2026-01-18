@@ -1,5 +1,5 @@
 .private-section {
-    background: linear-gradient(135deg, #0A1930 0%, #0E308E 100%);
+    background: var(--dark-bg);
     padding: 80px 3rem;
 }
 
@@ -17,15 +17,14 @@
 .private-intro h2 {
     font-size: 3rem;
     font-weight: 800;
-    color: #BC9200;
+    color: var(--gold);
     margin-bottom: 20px;
 }
 
 .private-intro p {
     font-size: 1.2rem;
-    color: #F5F9FC;
+    color: var(--light-bg);
     line-height: 1.8;
-    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -39,10 +38,10 @@
 .content-block {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
+    border-radius: var(--card-border-radius);
     padding: 40px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.5s var(--transition-easing);
+    transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .content-block:hover {
@@ -54,10 +53,23 @@
 .content-block h3 {
     font-size: 2rem;
     font-weight: 700;
-    color: #00B0C3;
     margin-bottom: 25px;
     padding-bottom: 15px;
+}
+
+.private-section .content-block h3 {
+    color: var(--tertiary);
     border-bottom: 2px solid rgba(0, 176, 195, 0.3);
+}
+
+.intimate-section {
+    background: var(--azure);
+    padding: 80px 3rem;
+}
+
+.intimate-section .content-block h3 {
+    color: var(--gold);
+    border-bottom: 2px solid rgba(195, 176, 0, 0.3);
 }
 
 .content-block p {
@@ -76,10 +88,10 @@
 
 .gallery-item {
     position: relative;
-    border-radius: 20px;
+    border-radius: var(--card-border-radius);
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.5s var(--transition-easing);
+    transition: all var(--animation-duration) var(--transition-easing);
     cursor: pointer;
 }
 
@@ -93,7 +105,7 @@
     height: 400px;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s var(--transition-easing);
+    transition: transform var(--animation-duration) var(--transition-easing);
 }
 
 .gallery-item:hover img {
@@ -108,7 +120,7 @@
     background: linear-gradient(to top, rgba(10, 25, 48, 0.95), transparent);
     padding: 30px;
     transform: translateY(100%);
-    transition: transform 0.5s var(--transition-easing);
+    transition: transform var(--animation-duration) var(--transition-easing);
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -118,44 +130,14 @@
 .gallery-overlay h4 {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #BC9200;
+    color: var(--gold);
     margin-bottom: 8px;
 }
 
 .gallery-overlay p {
     font-size: 0.95rem;
-    color: #F5F9FC;
+    color: var(--light-bg);
     line-height: 1.6;
-}
-
-.intimate-section {
-    background: rgba(188, 146, 0, 0.05);
-    border-radius: 20px;
-    padding: 50px;
-    margin-top: 60px;
-    border: 2px solid rgba(188, 146, 0, 0.2);
-}
-
-.intimate-section h3 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #BC9200;
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.intimate-content {
-    columns: 2;
-    column-gap: 40px;
-    text-align: justify;
-}
-
-.intimate-content p {
-    font-size: 1.1rem;
-    line-height: 1.9;
-    color: #E8EEF3;
-    margin-bottom: 20px;
-    break-inside: avoid;
 }
 
 @media (max-width: 1024px) {
@@ -262,7 +244,7 @@
 }
 
 .hero-title .gold-text {
-    color: #BC9200;
+    color: var(--gold);
 }
 
 .hero-subtitle {
@@ -294,12 +276,4 @@
     .hero-subtitle {
         font-size: 1rem;
     }
-}
-
-.dynamic-section {
-    background: linear-gradient(135deg, #0E308E 0%, #0071BC 100%);
-}
-
-.harmony-section {
-    background: linear-gradient(135deg, #0A1930 0%, #00B0C3 100%);
 }
