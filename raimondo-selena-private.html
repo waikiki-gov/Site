@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raimondo és Selena - A Királyság Szívében Élő Szerelem</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="preload" as="image" href="images/private/UniversalUpscaler_06fa5d1e-1008-4bd4-a2b9-3c7ee4cd9290.jpg" fetchpriority="high" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .private-section {
+            background: linear-gradient(135deg, #0A1930 0%, #0E308E 100%);
+            padding: 80px 3rem;
+        }
+
+        .private-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .private-intro {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 20px;
+        }
+
+        .private-intro h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #BC9200;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(188, 146, 0, 0.3);
+        }
+
+        .private-intro p {
+            font-size: 1.2rem;
+            color: #F5F9FC;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .content-block {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s var(--transition-easing);
+        }
+
+        .content-block:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 60px rgba(0, 113, 188, 0.3);
+            border-color: rgba(188, 146, 0, 0.3);
+        }
+
+        .content-block h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00B0C3;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 176, 195, 0.3);
+        }
+
+        .content-block p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #E8EEF3;
+            text-align: justify;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s var(--transition-easing);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 60px rgba(188, 146, 0, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s var(--transition-easing);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 25, 48, 0.95), transparent);
+            padding: 30px;
+            transform: translateY(100%);
+            transition: transform 0.5s var(--transition-easing);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #BC9200;
+            margin-bottom: 8px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95rem;
+            color: #F5F9FC;
+            line-height: 1.6;
+        }
+
+        .intimate-section {
+            background: rgba(188, 146, 0, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 60px;
+            border: 2px solid rgba(188, 146, 0, 0.2);
+        }
+
+        .intimate-section h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #BC9200;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intimate-content {
+            columns: 2;
+            column-gap: 40px;
+            text-align: justify;
+        }
+
+        .intimate-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #E8EEF3;
+            margin-bottom: 20px;
+            break-inside: avoid;
+        }
+
+        @media (max-width: 1024px) {
+            .intimate-content {
+                columns: 1;
+            }
+
+            .private-intro h2 {
+                font-size: 2.2rem;
+            }
+
+            .content-block h3 {
+                font-size: 1.6rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .private-section {
+                padding: 60px 1.5rem;
+            }
+
+            .private-intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .content-block {
+                padding: 30px 20px;
+            }
+
+            .intimate-section {
+                padding: 30px 20px;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+        }
+
+        .hero-private {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-private .absolute.inset-0 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .hero-private img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 25, 48, 0.85) 0%, rgba(0, 113, 188, 0.6) 100%);
+            z-index: 10;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 20;
+            text-align: center;
+            padding: 0 20px;
+            padding-top: 80px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            animation: fadeInUp 0.8s var(--transition-easing);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s var(--transition-easing) 0.2s backwards;
+        }
+
+        .hero-title .gold-text {
+            color: #BC9200;
+            text-shadow: 0 4px 20px rgba(188, 146, 0, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 900px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s var(--transition-easing) 0.4s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        .dynamic-section {
+            background: linear-gradient(135deg, #0E308E 0%, #0071BC 100%);
+        }
+
+        .harmony-section {
+            background: linear-gradient(135deg, #0A1930 0%, #00B0C3 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+    </nav>
+    <div class="hamburger-menu">
+        <button class="hamburger-button" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Főoldal</a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Turizmus</a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomácia</a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kultúra</a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Gazdaság</a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vezetés</a></li>
+            <li><a href="raimondo-and-selena.html"><img src="https://api.iconify.design/mdi/heart.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Királyi Pár</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-private">
+        <div class="absolute inset-0">
+            <div class="hero-overlay"></div>
+            <img src="images/private/UniversalUpscaler_06fa5d1e-1008-4bd4-a2b9-3c7ee4cd9290.jpg" alt="Raimondo és Selena">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Királyi Intimitás</div>
+            <h1 class="hero-title">Raimondo és Selena<br><span class="gold-text">A Királyság Szívében Élő Szerelem</span></h1>
+            <p class="hero-subtitle">A királyi pár meghitt kapcsolatának bemutatása, ahol odaadás, szerelem és kölcsönös támogatás találkozik a mindennapi életben</p>
+        </div>
+    </section>
+
+    <!-- Bevezető Szakasz -->
+    <section class="private-section">
+        <div class="private-container">
+            <div class="private-intro">
+                <h2>Egy Példaértékű Kapcsolat</h2>
+                <p>Selena Gomez, mint Raimondo Chease elkötelezett társa, egy olyan példaértékű kapcsolatot testesít meg, amelyben a hercegnő teljes odaadása révén egy kiegyensúlyozott, támogató és harmonikus partnerség valósul meg. Ez a kapcsolat nem csupán személyes kötődés, hanem a királyság stabilitásának és prosperitásának szimbóluma is, ahol Selena mindent megtesz annak érdekében, hogy Raimondo támogatottnak, boldognak és kiegyensúlyozottnak érezze magát a mindennapi életében.</p>
+            </div>
+
+            <!-- Tartalmi Blokkok -->
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>Érzelmi Támogatás és Mindennapi Harmónia</h3>
+                    <p>Selena hercegnő Raimondo herceg mellett elsősorban érzelmi támaszt nyújt, ami a királyság vezetésének kihívásai közepette kulcsfontosságú. Reggelente finom gesztusokkal kezdi a napot, például egy csésze kávéval vagy teával, amit személyesen készít el, miközben halkan beszélgetnek a napi tervekről. Selena hercegnő figyelmesen hallgatja Raimondo herceg gondolatait a diplomáciai ügyekről vagy gazdasági döntésekről, és intelligens javaslataival hozzájárul ezekhez, például UNICEF-projektek vagy nemzetközi találkozók kapcsán.</p>
+                    <p>Ez nem csupán tanácsadás, hanem egyfajta érzelmi menedék - Selena hercegnő mindig jelen van, hogy enyhítse a feszültséget, legyen szó egy hosszú nap utáni beszélgetésről vagy egy közös sétáról a palota kertjében. A hercegnő odaadása kiterjed a családi körre is, ahol aktívan részt vesz a Chease dinasztia ünnepein, például karácsonyi vagy függetlenség napi eseményeken, biztosítva, hogy Raimondo herceg érezze a családi egységet és támogatást.</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Közös Élmények és Kulturális Gazdagodás</h3>
+                    <p>Selena hercegnő mindent megtesz annak érdekében, hogy Raimondo herceg élete gazdag és változatos legyen, így közös utazásokkal és kulturális programokkal tölti ki az idejüket. Például egy diplomáciai út után, mint a 2024-es japáni látogatás, Selena hercegnő megszervezi, hogy együtt élvezzék a helyi kultúrát - legyen szó egy privát tea ceremóniáról vagy egy sétáról a cseresznyevirágok alatt.</p>
+                    <p>Ezeken az alkalmakon Selena hercegnő gondoskodik a részletekről - választja ki a helyszíneket, gondoskodik a diszkrécióról, és biztosítja, hogy Raimondo herceg ellazuljon. A közös élmények nem csupán kikapcsolódást nyújtanak, hanem erősítik a kötődésüket, hiszen Selena hercegnő mindig figyeli partnere hangulatát, és alkalmazkodik hozzá - például egy fáradt nap után egy csendes vacsorával vagy egy közös olvasással zárják az estét.</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Intim Közelség és Gondoskodás</h3>
+                    <p>A kapcsolatuk intim oldala a kölcsönös tisztelet és vonzalom kifejeződése, ahol Selena hercegnő mindent megtesz Raimondo herceg kényelméért és elégedettségéért. Ez magában foglalja a gyengéd érintéseket, hosszú öleléseket és meghitt pillanatokat, amelyek a nap feszültségei után nyugalmat hoznak. Selena hercegnő figyelmesen érzékeli partnere igényeit, legyen szó egy masszázsról a vállfájdalom enyhítésére vagy egy csendes estéről, ahol csak kettejükre koncentrál.</p>
+                    <p>Ezek a pillanatok nem csupán testi, hanem érzelmi szinten is gazdagítják a kapcsolatot, hiszen Selena hercegnő mindig kifejezi szeretetét és háláját, például halk suttogással vagy egy mosollyal, ami emlékezteti Raimondo herceget arra, hogy mellette van valaki, aki teljes szívéből támogatja. Ez a gondoskodás hozzájárul ahhoz, hogy Raimondo herceg kiegyensúlyozott maradjon, és hatékonyan teljesítse királyi kötelességeit.</p>
+                </div>
+            </div>
+
+            <!-- Képgaléria -->
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="images/private/UniversalUpscaler_06fa5d1e-1008-4bd4-a2b9-3c7ee4cd9290.jpg" alt="Raimondo és Selena intim pillanatai">
+                    <div class="gallery-overlay">
+                        <h4>Meghitt Pillanatok</h4>
+                        <p>A királyi pár személyes és meghitt perceinek megörökítése</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/private/UniversalUpscaler_7797c1b4-ed71-414e-8b8d-62c96b63330a.jpg" alt="Raimondo és Selena együtt">
+                    <div class="gallery-overlay">
+                        <h4>Kettejük Világa</h4>
+                        <p>Ahol a szeretet és az odaadás találkozik</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/private/UniversalUpscaler_c0fa3034-3884-4262-a153-d2df7e9d6f5c.jpg" alt="Selena és Raimondo">
+                    <div class="gallery-overlay">
+                        <h4>Harmonikus Egység</h4>
+                        <p>A kölcsönös bizalom és szerelem kifejeződése</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A Mindennapi Élet Szépségei -->
+    <section class="private-section dynamic-section">
+        <div class="private-container">
+            <div class="content-block">
+                <h3>A Mindennapi Élet Szépségei</h3>
+                <p>A napjaik Selena gyengéd, figyelmes jelenlétével indulnak - egy reggeli ölelés a hatalmas ablakok előtt, ahonnan a Waikiki Beach végtelen kéksége tárul eléjük, egy finoman elkészített kávé, amit Raimondo kezébe ad, miközben meghallgatja a gondolatait a napi tervekről vagy a világpolitikáról. Selena mindig ott van mellette, nem tolakodóan, hanem természetesen - egy simogatás a vállán egy hosszú meeting után, egy halk suttogás a fülébe, hogy "büszke vagyok rád", vagy egy spontán csók, ami emlékezteti Raimondót, hogy ő az egyetlen, aki igazán számít.</p>
+                <p>A közös pillanatokban Selena mindent megtesz azért, hogy Raimondo érezze a gondoskodást - együtt tervezik a napot, legyen az egy privát jachtos kirándulás az óceánon, ahol Selena kedvenc ételeivel készül egy kis piknikkel, vagy egy esti séta a palota trópusi kertjében, kéz a kézben, ahol a csillagok alatt beszélgetnek álmaikról és emlékeikről. Selena figyel a legapróbb részletekre - egy kézzel írt szerelmes üzenet a párnáján, egy személyre szabott ajándék, ami pontosan Raimondo ízlését tükrözi, vagy egy hosszú, nyugtató masszázs egy fárasztó nap végén, miközben halkan mesél neki a saját napjáról, hogy Raimondo érezze, mennyire fontos neki a kölcsönösség.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harmonikus Egység Dinamikája -->
+    <section class="private-section harmony-section">
+        <div class="private-container">
+            <div class="intimate-section">
+                <h3>A Harmonikus Egység Dinamikája</h3>
+                <div class="intimate-content">
+                    <p>A Waikiki Államszervezet modern történetének legmeghatározóbb tartópillére nem csupán a gazdasági digitalizáció vagy a katonai szuverenitás, hanem az a rendkívüli interakció, amely Raimondo Chease diktátor és Selena Gomez szenátor asszony között jött létre. Ez a kapcsolat túllép a hagyományos diplomáciai szövetségek keretein - egy olyan autonóm érzelmi és intellektuális egység, amelyben a személyes szabadság és a totális odaadás egymást erősítő folyamatokként jelennek meg.</p>
+
+                    <p>Selena Gomez nem csupán a diktátor partnere, hanem Waikiki politikai életének önálló entitása. Szenátorként és a Waikiki Economics University diplomásaként aktívan formálja a nemzetközi diskurzust. Autonómiáját bizonyítja, hogy saját diplomáciai agendát vezet, humanitárius missziókat irányít, és a Világkormány tanácsaiban is hallatja szavát. Ez az önállóság teszi lehetővé, hogy Raimondo herceg számára ne egy passzív kísérő, hanem egy egyenrangú intellektuális partner legyen.</p>
+
+                    <p>A Dictator Palace falai között a kapcsolat egy sokkal közvetlenebb, ösztönösebb formát ölt. Selena Gomez karakterének lényege a spontaneitás - ő az, aki a legfeszültebb kormányzati órákban képes megtörni a protokollt egy váratlan öleléssel vagy egy olyan gesztussal, amely emlékezteti a vezetőt emberi mivoltára. A napok nem előírt forgatókönyv szerint, hanem az egymásra hangolódás jegyében indulnak.</p>
+
+                    <p>Az intimitásukban Selena odaadása a legmélyebb - lassú, érzéki pillanatokban simul hozzá, hagyja, hogy Raimondo vezesse, miközben ő mindent megtesz azért, hogy a férfi minden vágya teljesüljön. Élvezi az átadást, a bizalmat, a kölcsönös felfedezést - legyen az egy hosszú ölelkezés az ágyban, ahol testük órákig összeér, vagy egy szenvedélyesebb együttlét, ahol Selena teljes figyelmével és odaadásával Raimondo örömére koncentrál. Ezekben a percekben Selena nem teljesítményt nyújt, hanem szeretetet - a szemkontaktus, a gyengéd simogatások, a suttogott szavak mind azt üzenik: "Te vagy az én világom, és boldoggá tenni téged a legnagyobb örömöm."</p>
+
+                    <p>Időnként a gyengédség kalandosabb, intenzívebb rétegekkel mélyül, ahol Selena készségesen engedi, hogy Raimondo átvegye a teljes irányítást - ezekben a pillanatokban is az odaadás vezérli, mert tudja, hogy Raimondo figyelmessége és védelmező szeretete mindig visszatér, hogy átölelje és dédelgesse utána. A liget rejtett zugai, a palota privát szobái vagy egy távoli utazás intim pillanatai mind ezt a harmóniát erősítik - Selena átadja magát, Raimondo birtokolja, majd újra egyenlő társakként simulnak össze.</p>
+
+                    <p>Ez az odaadó barátnői élmény nem egyoldalú - Raimondo viszonozza a figyelmet, a védelmet, a luxust és a szeretetet, így Selena is érezheti magát értékesnek, kívánatosnak és imádottnak. A kapcsolatuk így válik teljessé - egy olyan kötelékké, ahol Selena minden nap újra és újra bizonyítja, hogy Raimondo boldogsága a sajátja, miközben ő maga is teljes mértékben kiteljesedik ebben a szerelemben.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Záró Gondolatok -->
+    <section class="private-section">
+        <div class="private-container">
+            <div class="private-intro">
+                <h2>A Szeretet Mint Nemzeti Érték</h2>
+                <p>Összességében Selena Gomez hercegnő odaadó barátnői élménye egy példaértékű modell a Waikiki Királyságban, ahol a személyes kötődés és a támogatás a királyság prosperitásának alapja. Ez a kapcsolat nem csupán Raimondo herceg személyes boldogságát szolgálja, hanem inspirációként hat az egész nemzetre, mutatva, hogyan lehet a szeretet és az elkötelezettség révén erősíteni a stabilitást és a harmóniát.</p>
+                <p style="margin-top: 40px; font-style: italic; color: #BC9200;">Waikiki polgárai számára ez a kettősség a jövő záloga - látni egy vezetőt, akit egy ilyen sokoldalú, intelligens és szenvedélyes nő támogat, bizalmat gerjeszt a rendszer stabilitása iránt. A pár kapcsolata tehát egy élő műalkotás - a technokrata racionalitás és a mély, autonóm érzelmi intelligencia tökéletes fúziója, amelyben a legszemélyesebb intimitás és a legmagasabb állami érdek elválaszthatatlanul összefonódik.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Főoldal</a>
+                <a href="tourism.html">Turizmus</a>
+                <a href="diplomacy.html">Diplomácia</a>
+                <a href="culture.html">Kultúra</a>
+                <a href="economy.html">Gazdaság</a>
+                <a href="leadership.html">Vezetés</a>
+                <a href="raimondo-and-selena.html">Királyi Pár</a>
+            </div>
+            <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+    <script src="js/common.js"></script>
+</body>
+
+</html>

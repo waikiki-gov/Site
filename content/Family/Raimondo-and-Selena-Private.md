@@ -1,4 +1,4 @@
-# Raimondo és Selena: A Királyság Szívében Élő Szerelem
+# Raimondo Chease és Selena Gomez kapcsolata
 
 **A királyi pár meghitt kapcsolatának bemutatása, ahol odaadás, szerelem és kölcsönös támogatás találkozik a mindennapi életben.**
 
