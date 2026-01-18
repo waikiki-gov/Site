@@ -76,6 +76,7 @@
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -84,7 +85,8 @@
 
 /* Content Sections */
 .private-section,
-.intimate-section {
+.intimate-section,
+.adventure-section {
     padding: 80px 3rem;
 }
 
@@ -93,6 +95,10 @@
 }
 
 .intimate-section {
+    background: var(--pink);
+}
+
+.adventure-section {
     background: var(--azure);
 }
 
@@ -147,14 +153,6 @@
     font-weight: 700;
     margin-bottom: 25px;
     padding-bottom: 15px;
-}
-
-.private-section .content-block h3 {
-    color: var(--tertiary);
-    border-bottom: 2px solid rgba(0, 176, 195, 0.3);
-}
-
-.intimate-section .content-block h3 {
     color: var(--gold);
     border-bottom: 2px solid rgba(195, 176, 0, 0.3);
 }
