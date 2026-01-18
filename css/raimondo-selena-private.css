@@ -19,7 +19,6 @@
     font-weight: 800;
     color: #BC9200;
     margin-bottom: 20px;
-    text-shadow: 0 4px 20px rgba(188, 146, 0, 0.3);
 }
 
 .private-intro p {
@@ -264,7 +263,6 @@
 
 .hero-title .gold-text {
     color: #BC9200;
-    text-shadow: 0 4px 20px rgba(188, 146, 0, 0.4);
 }
 
 .hero-subtitle {
@@ -281,6 +279,7 @@
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
