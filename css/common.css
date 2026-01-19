@@ -970,6 +970,16 @@ footer {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* ======================================== SECTION LINKS ======================================== */
+
+.section-link-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
 .section-link-btn {
   background: var(--primary);
   color: var(--white);
@@ -986,12 +996,6 @@ footer {
   background: var(--secondary);
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.section-link-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 /* ======================================== RESPONSIVE DESIGN ======================================== */
