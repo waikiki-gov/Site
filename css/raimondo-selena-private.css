@@ -110,7 +110,6 @@
 .private-intro {
     text-align: center;
     margin-bottom: 60px;
-    padding: 0 20px;
 }
 
 .private-intro h2 {
@@ -159,7 +158,7 @@
 
 .content-block p {
     font-size: 1.1rem;
-    line-height: 1.9;
+    line-height: 1.8;
     color: #E8EEF3;
     text-align: justify;
 }
@@ -220,17 +219,23 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .private-intro h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .content-block {
+        padding: 30px 20px;
     }
 
     .content-block h3 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
-}
 
-@media (max-width: 768px) {
+    .content-block p {
+        line-height: 1.6;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -240,16 +245,9 @@
     }
 
     .private-section,
-    .intimate-section {
+    .intimate-section,
+    .adventure-section {
         padding: 60px 1.5rem;
-    }
-
-    .private-intro h2 {
-        font-size: 1.8rem;
-    }
-
-    .content-block {
-        padding: 30px 20px;
     }
 
     .gallery-item img {
