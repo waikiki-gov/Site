@@ -1,5 +1,9 @@
 /* Citizenship Page Styles */
 
+h3 {
+    color: var(--dark-bg);
+}
+
 .hover-card {
     transition: transform .5s cubic-bezier(.4, 0, .2, 1), box-shadow .5s cubic-bezier(.4, 0, .2, 1);
 }
