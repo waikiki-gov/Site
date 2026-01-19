@@ -86,7 +86,8 @@
 /* Content Sections */
 .private-section,
 .intimate-section,
-.adventure-section {
+.adventure-section,
+.milestones-section {
     padding: 80px 3rem;
 }
 
@@ -100,6 +101,10 @@
 
 .adventure-section {
     background: var(--azure);
+}
+
+.milestones-section {
+    background: #0f3460;
 }
 
 .private-container {
@@ -246,7 +251,8 @@
 
     .private-section,
     .intimate-section,
-    .adventure-section {
+    .adventure-section,
+    .milestones-section {
         padding: 60px 1.5rem;
     }
 
