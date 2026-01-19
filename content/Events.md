@@ -52,7 +52,7 @@
 
 ## 2010
 - Kormányalakítás a Demokratikus Párt vezetésével, Aaron Eckhart elnöki beiktatása.
-- Jennifer és Taylor először találkoznak.
+- Jennifer és Tyler először találkoznak.
 - Chease és Jessica a világűrbe utaznak.
 
 ## 2011
@@ -189,7 +189,7 @@
 | Nova Aurelia High School         | Matek tagozat               | 2008       | 2011       |
 | Seven Seas High School           | Gimnáziumi tanulmányok      | 2011       | 2012       |
 | Waikiki Economics University     | Közgazdaságtan alapképzés   | 2012       | 2015       |
-| Waikiki Economics University     | Közgazdaságtan mesterképzás | 2015       | 2017       |
+| Waikiki Economics University     | Közgazdaságtan mesterképzés | 2015       | 2017       |
 
 # Angelina tanulmányai
 

@@ -23,7 +23,7 @@ Waikiki a világ legfejlettebb országa, a világ pénzügyi és gazdasági köz
 
 ## Demográfiai adatok
 - Nemzetiség: 100% Waikiki-i
-- Évi népességnövekedés: 35000 fő/év
+- Évi népességnövekedés: 500 000 fő/év
 - Írástudatlanság: 0,0%
 - Születéskor várható élettartam:
   - Nők: 98 év
@@ -107,7 +107,7 @@ Waikiki jelenlegi diktátora Raimondo Chease, aki 2017-ben került az ország é
 
 ## Kongresszus
 
-Az állampolgárok által 5 évente választott kongresszus az ország legfőbb döntéhozó szerve. A 100 tagú kongresszus egyszerű többséggel választja meg Waikiki elnökét és a kormány minisztereit. Sok törvényről a kongresszus önállóan dönt, melyek elfogadásához legalább 51 képviselő támogatására van szükség, de a fontosabb kérdésekben a parlament két háza együtt hoz döntést. A kongresszus szavaz az éves költségvetés elfogadásáról, valamint népszavazásokat is kezdeményezhet.
+Az állampolgárok által 5 évente választott kongresszus az ország legfőbb döntéshozó szerve. A 100 tagú kongresszus egyszerű többséggel választja meg Waikiki elnökét és a kormány minisztereit. Sok törvényről a kongresszus önállóan dönt, melyek elfogadásához legalább 51 képviselő támogatására van szükség, de a fontosabb kérdésekben a parlament két háza együtt hoz döntést. A kongresszus szavaz az éves költségvetés elfogadásáról, valamint népszavazásokat is kezdeményezhet.
 
 ### A kongresszus összetétele (2021)
 
@@ -155,29 +155,30 @@ A diktátor által kinevezett szenátus élén a kancellár áll, aki egyben a d
 A végrehajtó hatalmat a kongresszus által megválasztott kormány gyakorolja. A 20 miniszterből álló kormányt az elnök vezeti, akit 5 évente a kongresszus győztes pártja nevez ki. A legfőbb feladata, hogy biztosítsa a törvények végrehajtását és védje az alkotmányt. Waikiki kormánya legtöbbször koalíció révén jön létre, így több pártból is kerülnek ki miniszterek, akik saját szakterületükön belül rendeleteket alkothatnak.
 
 ### Elnök: 
-- George Bush
+- Aaron Eckhart
 
 ### Miniszterek
 
-- Kereskedelmi miniszter: Ayden Roberts
+- Kereskedelmi miniszter: Rick Santorum
 - Belügyminiszter: John Boehner
 - Pénzügyminiszter: Scott Walker
-- Külügyminiszter: Aaron Eckhart
-- Igazságügyminiszter: Paul Ryan
+- Külügyminiszter: George Bush
+- Igazságügyminiszter: Marilyn R. Reid
 - Egészségügyminiszter: Jonathan Gruber
-- Kulturális miniszter: George LeMieux
+- Kulturális miniszter: Fernando H. Cardoso
 - Energetikai miniszter: Carte Goodwin
-- Oktatási miniszter: David Vitter
-- Mezőgazdasági miniszter: Rick Santorum
-- Turisztikai miniszter: Nicole Minetti
+- Oktatási miniszter: Tom Kirkman
+- Mezőgazdasági miniszter: Jack Bowman
+- Turisztikai miniszter: Diane Hunter
 - Hadügyminiszter: Morgan Clark
-- Védelmi miniszter: Winnefeld Daniels
+- Védelmi miniszter: John Bolton
 - Iparfejlesztési miniszter: Thomas Boone
 - Tudományügyi miniszter: Timothy John
 - Infrastrukturális miniszter: Mary Bono Mack
 - Környezetvédelmi miniszter: Darius Tanz
-- Munkaügyi miniszter: Matt Daemon
-- Erőforrásügyi miniszter: Ruby Dhalla
+- Munkaügyi miniszter: Steve Preston
+- Bevándorlásügyi miniszter: Mickey Haller
+- Családtámogatási miniszter: Kate Beckinsale
 - Fejlesztési miniszter: Ricardo Gomez
 
 ## Legfelsőbb bíróság
@@ -255,7 +256,7 @@ A legfelsőbb szintű bíróság, amely alkotmánybíróságként is funkcionál
 | Tudományügyi miniszter      |                 | Thommy Thompson     | Timothy John         | Timothy John        | Timothy John      |
 | Infrastrukturális miniszter |                 |                     | Rick Santorum        | Mary Bono Mack      | Mary Bono Mack    |
 | Környezetvédelmi miniszter  |                 |                     | Mike Leavitt         | Mitt Romney         | Darius Tanz       |
-| Munkaügyi miniszter         |                 |                     |                      | Steve Preston       | Matt Daemon       |
+| Munkaügyi miniszter         |                 |                     |                      | Steve Preston       | Matt Damon        |
 | Erőforrásügyi miniszter     |                 |                     |                      | Ruby Dhalla         | Ruby Dhalla       |
 | Fejlesztési miniszter       |                 |                     |                      | Rick Santorum       | Ricardo Gomez     |
 | Bevándorlásügyi miniszter   |                 |                     |                      |                     |                   |
