@@ -75,7 +75,7 @@
 
 ## 2014
 - Angelina fellép a Davosi Gazdasági Fórumon.
-- Elkészül a Diktátori Palota.
+- Elkészül a Hercegi Palota.
 - Raimondo és Selena először találkoznak a Mátrix 4 forgatásán
 - Angelina és Taylor ázsiai körutazása (Kiotó, Tokió, Szingapúr, Bhután, Bangkok, Agra, Peking).
 - Elkészül Angelina Palazzo Versace palotája.
