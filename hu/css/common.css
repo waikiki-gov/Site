@@ -1,0 +1,1174 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap";
+
+/* ======================================== CSS VARIABLES ======================================== */
+
+:root {
+  /* Color palette */
+  --primary: #0071bc;
+  --secondary: #0e308e;
+  --tertiary: #00b0c3;
+  --azure: #295165;
+  --gold: #bc9200;
+  --silver: #555555;
+  --white: #ffffff;
+  --light-bg: #f5f9fc;
+  --dark-bg: #0A1930;
+  --pink: #4f041c;
+
+  /* Z-index hierarchy */
+  --z-nav: 1000;
+  --z-scroll-indicator: 1100;
+  --z-hamburger-overlay: 1900;
+  --z-hamburger-panel: 1950;
+  --z-hamburger-button: 2000;
+
+  /* Animation timing constants */
+  --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 1s;
+  --base-animation-delay: 0.1s;
+  --animation-delay-increment: 0.1s;
+
+  /* Spacing constants */
+  --section-padding: 80px;
+  --card-padding: 2rem;
+  --card-gap: 2.5rem;
+  --card-border-radius: 20px;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 16px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ======================================== GLOBAL STYLES ======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--white);
+}
+
+body {
+  color: var(--silver);
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden
+}
+
+section {
+  padding: var(--section-padding) 3rem;
+  width: 100%
+}
+
+/* ======================================== NAVIGATION ======================================== */
+
+nav {
+  animation: slideDown .6s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--primary);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-nav)
+}
+
+.nav-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between
+}
+
+.logo {
+  color: var(--white);
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 60px;
+  margin-left: 53px;
+  text-decoration: none
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin-right: 150px
+}
+
+.nav-links a {
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 500;
+  padding: .6rem 1.2rem;
+  position: relative;
+  text-decoration: none;
+  transition: all .3s ease
+}
+
+.nav-links a::after {
+  background: var(--white);
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: width .3s ease;
+  width: 0
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.15)
+}
+
+.nav-links a:hover::after {
+  width: 80%
+}
+
+/* ======================================== HAMBURGER MENU ======================================== */
+
+.hamburger-menu {
+  display: block;
+  position: fixed;
+  right: 3rem;
+  top: 12px;
+  z-index: var(--z-hamburger-button)
+}
+
+.hamburger-button {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 45px;
+  justify-content: center;
+  padding: .8rem;
+  transition: all .3s ease;
+  width: 45px
+}
+
+.hamburger-button span {
+  background: var(--white);
+  border-radius: 2px;
+  display: block;
+  height: 3px;
+  transition: all .3s ease;
+  width: 25px
+}
+
+.hamburger-button.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg)
+}
+
+.hamburger-button.active span:nth-child(2) {
+  opacity: 0
+}
+
+.hamburger-button.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg)
+}
+
+.hamburger-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05)
+}
+
+.hamburger-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: all .3s ease;
+  visibility: hidden;
+  width: 100%;
+  z-index: var(--z-hamburger-overlay)
+}
+
+.hamburger-overlay.active {
+  opacity: 1;
+  visibility: visible
+}
+
+.hamburger-panel {
+  background: var(--primary);
+  box-shadow: -2px 0 20px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  max-width: 90%;
+  overflow-y: auto;
+  padding: 4rem 2rem 2rem;
+  position: fixed;
+  right: -400px;
+  top: 0;
+  transition: right .3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 400px;
+  z-index: var(--z-hamburger-panel)
+}
+
+.hamburger-panel.active {
+  right: 0
+}
+
+.hamburger-links {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  list-style: none
+}
+
+.hamburger-links .menu-icon {
+  flex-shrink: 0;
+  height: 24px;
+  width: 24px
+}
+
+.hamburger-links a {
+  align-items: center;
+  border-radius: 8px;
+  color: var(--white);
+  display: flex;
+  font-size: 1.1rem;
+  font-weight: 500;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  transition: all .3s ease
+}
+
+.hamburger-links a.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600
+}
+
+.hamburger-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px)
+}
+
+/* ======================================== HERO SECTION ======================================== */
+
+.hero {
+  align-content: center;
+  color: var(--white);
+  min-height: 1200px;
+  overflow: hidden;
+  padding: 140px 3rem 100px;
+  position: relative;
+  text-align: center;
+  width: 100%
+}
+
+.hero::before {
+  animation: float 8s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  content: "";
+  height: 600px;
+  position: absolute;
+  right: -200px;
+  top: -250px;
+  width: 600px
+}
+
+.hero::after {
+  animation: float 10s ease-in-out infinite reverse;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  bottom: -200px;
+  content: "";
+  height: 500px;
+  left: -150px;
+  position: absolute;
+  width: 500px
+}
+
+.hero h1 {
+  animation: slideInFromTop var(--animation-duration) ease-out;
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 1rem
+}
+
+.hero-content {
+  animation: fadeInUp var(--animation-duration) ease-out;
+  position: relative;
+  z-index: 1
+}
+
+.hero-description {
+  animation: fadeInUp var(--animation-duration) ease-out;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0 auto 3rem;
+  max-width: 900px;
+  padding: 1rem
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem
+}
+
+/* ======================================== SECTION STYLES ======================================== */
+
+.section-title {
+  animation: slideInFromLeft .8s ease-out;
+  color: var(--secondary);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+  text-align: center
+}
+
+.section-title::after {
+  background: var(--primary);
+  border-radius: 3px;
+  bottom: 0;
+  content: "";
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 120px
+}
+
+.section-intro {
+  color: var(--silver);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  text-align: justify
+}
+
+.light-bg {
+  background: var(--light-bg)
+}
+
+/* ======================================== CARD COMPONENTS ======================================== */
+
+.card-grid {
+  display: grid;
+  gap: var(--card-gap);
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  margin-top: 3rem
+}
+
+.card {
+  animation: fadeInUp var(--animation-duration) ease-out backwards;
+  background: var(--white);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  transition: all var(--animation-duration) var(--transition-easing)
+}
+
+.card:hover {
+  border-left-width: 12px;
+  box-shadow: var(--card-shadow-hover);
+  padding-left: calc(var(--card-padding) - 7px);
+  transform: translateY(-8px) scale(1.03)
+}
+
+.card h3 {
+  color: var(--secondary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem
+}
+
+.card p {
+  color: var(--silver);
+  line-height: 1.8;
+  text-align: justify
+}
+
+.card-icon {
+  display: block;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem
+}
+
+.card-icon img {
+  height: 56px;
+  object-fit: contain;
+  width: 56px
+}
+
+.liquid {
+  animation: scaleIn var(--animation-duration) ease-out backwards;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 113, 187, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all var(--animation-duration) var(--transition-easing)
+}
+
+.liquid:hover {
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.03)
+}
+
+/* ======================================== STAT COMPONENTS ======================================== */
+
+.stat-card {
+  animation: fadeInUp var(--animation-duration) ease-out backwards;
+  background: var(--white);
+  border-radius: var(--card-border-radius);
+  border-top: 5px solid var(--gold);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  text-align: center;
+  transition: all var(--animation-duration) var(--transition-easing)
+}
+
+.stat-card:hover {
+  border-top-width: 10px;
+  box-shadow: var(--card-shadow-hover);
+  padding-bottom: calc(var(--card-padding) - 10px);
+  transform: translateY(-8px) scale(1.03)
+}
+
+.stat-card h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem
+}
+
+.stat-card .stat-big {
+  color: var(--gold);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: .5rem 0
+}
+
+.stat-card .stat-small {
+  color: var(--silver);
+  font-size: .9rem;
+  margin: 0
+}
+
+.stat-item {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  width: 260px
+}
+
+.stat-title {
+  color: var(--primary);
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: .8rem;
+  text-transform: uppercase
+}
+
+.stat-name {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .8rem
+}
+
+.stat-number {
+  color: var(--gold);
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 700
+}
+
+.stat-label {
+  font-size: 1.05rem;
+  margin-top: .5rem;
+  opacity: .9
+}
+
+.stat-info {
+  color: var(--silver);
+  font-size: 1rem;
+  line-height: 1.6
+}
+
+/* ======================================== ANIMATION DELAYS ======================================== */
+
+.card:nth-child(1),
+.stat-card:nth-child(1),
+.stat-item:nth-child(1) {
+  animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment))
+}
+
+.card:nth-child(2),
+.stat-card:nth-child(2),
+.stat-item:nth-child(2) {
+  animation-delay: calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment))
+}
+
+.card:nth-child(3),
+.stat-card:nth-child(3),
+.stat-item:nth-child(3) {
+  animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment))
+}
+
+.card:nth-child(4),
+.stat-card:nth-child(4),
+.stat-item:nth-child(4) {
+  animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment))
+}
+
+.card:nth-child(5),
+.stat-card:nth-child(5),
+.stat-item:nth-child(5) {
+  animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment))
+}
+
+.card:nth-child(6),
+.stat-card:nth-child(6),
+.stat-item:nth-child(6) {
+  animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment))
+}
+
+.card:nth-child(7),
+.stat-card:nth-child(7),
+.stat-item:nth-child(7) {
+  animation-delay: calc(var(--base-animation-delay) + 6 * var(--animation-delay-increment))
+}
+
+.card:nth-child(8),
+.stat-card:nth-child(8),
+.stat-item:nth-child(8) {
+  animation-delay: calc(var(--base-animation-delay) + 7 * var(--animation-delay-increment))
+}
+
+.card:nth-child(9),
+.stat-card:nth-child(9),
+.stat-item:nth-child(9) {
+  animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment))
+}
+
+.card:nth-child(10),
+.stat-card:nth-child(10),
+.stat-item:nth-child(10) {
+  animation-delay: calc(var(--base-animation-delay) + 9 * var(--animation-delay-increment))
+}
+
+.card:nth-child(11),
+.stat-card:nth-child(11),
+.stat-item:nth-child(11) {
+  animation-delay: calc(var(--base-animation-delay) + 10 * var(--animation-delay-increment))
+}
+
+.card:nth-child(12),
+.stat-card:nth-child(12),
+.stat-item:nth-child(12) {
+  animation-delay: calc(var(--base-animation-delay) + 11 * var(--animation-delay-increment))
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0)
+}
+
+.first-letter {
+  color: var(--secondary)
+}
+
+/* ======================================== NARRATIVE & TEXT STYLES ======================================== */
+
+.narrative-content {
+  margin: 0 auto;
+  max-width: 1200px
+}
+
+.narrative-text {
+  color: var(--silver);
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  text-align: justify
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ======================================== TABLE COMPONENTS ======================================== */
+
+.table {
+  background: transparent;
+  border-radius: 8px;
+  overflow: auto;
+  padding: 8px
+}
+
+.table table {
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%
+}
+
+.table tbody tr {
+  background-color: var(--white)
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #eef3f8;
+  padding: 10px 12px;
+  text-align: left
+}
+
+.table thead th {
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 600
+}
+
+/* ======================================== BUTTON COMPONENTS ======================================== */
+
+.menu-btn {
+  background-color: var(--secondary);
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(2, 6, 23, 0.2), 0 4px 6px -4px rgba(2, 6, 23, 0.1);
+  color: var(--white);
+  cursor: pointer;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: .625rem 1.5rem;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease
+}
+
+.menu-btn-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+/* ======================================== FOOTER ======================================== */
+
+footer {
+  background: var(--secondary);
+  color: var(--white);
+  font-size: .9rem;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  width: 100%
+}
+
+.footer-content {
+  animation: fadeIn 1s ease-out
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: .75rem
+}
+
+.footer-links a {
+  color: var(--white);
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  transition: all .3s ease
+}
+
+.footer-links a::after {
+  background: var(--gold);
+  bottom: -3px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: width .3s ease;
+  width: 0
+}
+
+.footer-links a:hover {
+  color: var(--gold)
+}
+
+.footer-links a:hover::after {
+  width: 100%
+}
+
+/* ======================================== FAQ COMPONENTS ======================================== */
+
+.faq-container {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0 20px
+}
+
+.faq-cta {
+  background: var(--light-bg);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center
+}
+
+.faq-cta p {
+  color: var(--secondary);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin: 0
+}
+
+.faq-icon {
+  align-items: center;
+  display: flex;
+  gap: 1rem
+}
+
+.faq-icon img {
+  flex-shrink: 0;
+  height: 32px;
+  width: 32px
+}
+
+.faq-item {
+  background: var(--white);
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all .3s var(--transition-easing)
+}
+
+.faq-item:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 113, 188, 0.1)
+}
+
+.faq-item:hover .faq-question {
+  color: var(--primary)
+}
+
+.faq-item[open] {
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(0, 113, 188, 0.15)
+}
+
+.faq-item[open] .faq-question {
+  border-bottom: 2px solid #e5e7eb;
+  color: var(--primary)
+}
+
+.faq-item[open] .faq-toggle {
+  background: var(--primary)
+}
+
+.faq-item[open] .faq-toggle::before {
+  color: var(--white);
+  content: '−'
+}
+
+.faq-question {
+  align-items: center;
+  color: var(--secondary);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 600;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1.5rem 2rem;
+  transition: all .3s var(--transition-easing);
+  user-select: none
+}
+
+.faq-question-text {
+  flex: 1
+}
+
+.faq-question::-webkit-details-marker,
+.faq-question::marker {
+  display: none
+}
+
+.faq-section-title {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left
+}
+
+.faq-title {
+  color: var(--primary);
+  font-size: 40px;
+  margin-top: 100px;
+  text-align: center
+}
+
+.faq-toggle {
+  align-items: center;
+  background: var(--light-bg);
+  border-radius: 50%;
+  display: flex;
+  flex-shrink: 0;
+  height: 32px;
+  justify-content: center;
+  transition: all .3s var(--transition-easing);
+  width: 32px
+}
+
+.faq-toggle::before {
+  color: var(--primary);
+  content: '+';
+  font-size: 24px;
+  font-weight: 600;
+  transition: transform .3s var(--transition-easing)
+}
+
+.faq-answer {
+  animation: fadeIn .3s var(--transition-easing);
+  color: var(--silver);
+  font-size: 1rem;
+  line-height: 1.8;
+  padding: 1rem 2rem
+}
+
+.faq-answer p {
+  text-align: justify
+}
+
+/* ======================================== CHATBOT ======================================== */
+
+.chatbot-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 64px;
+  height: 64px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1800;
+  transition: transform 0.3s ease;
+}
+
+.chatbot-btn:hover {
+  transform: scale(1.1);
+}
+
+.chatbot-window {
+  position: fixed;
+  bottom: 120px;
+  right: 40px;
+  width: 420px;
+  height: 600px;
+  background: var(--dark-bg);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: var(--primary);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #0f2442;
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 85%;
+}
+
+.bot-msg {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--gold);
+  align-self: flex-start;
+  color: var(--white);
+}
+
+.chat-input-area {
+  padding: 20px;
+  background: var(--dark-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 10px;
+}
+
+.ai-input {
+  width: 100%;
+  padding: 10px;
+  color: black;
+}
+
+.cta-btn {
+  padding: 12px 28px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================== SECTION LINKS ======================================== */
+
+.section-link-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.section-link-btn {
+  background: var(--primary);
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.section-link-btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================== RESPONSIVE DESIGN ======================================== */
+
+@media (max-width: 1200px) {
+  .card-grid {
+    grid-template-columns: 1fr
+  }
+
+  .hamburger-links a {
+    padding: .5rem 1.5rem
+  }
+
+  .hamburger-panel {
+    padding: 4rem 1rem 1rem
+  }
+
+  .hero {
+    padding: 120px 1.5rem 80px
+  }
+
+  .hero h1 {
+    font-size: 3rem
+  }
+
+  .hero-content {
+    transform: none !important
+  }
+
+  .hero-stats {
+    gap: 1rem
+  }
+
+  .narrative-text {
+    font-size: 1rem;
+    text-align: left
+  }
+
+  .nav-links {
+    display: none
+  }
+
+  .section-title {
+    font-size: 2.2rem
+  }
+
+  section {
+    padding: 60px 1.5rem
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem
+  }
+
+  .faq-container {
+    padding: 0
+  }
+
+  .faq-icon {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .75rem
+  }
+
+  .faq-icon img,
+  .faq-toggle {
+    height: 28px;
+    width: 28px
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 1.25rem 1.5rem
+  }
+
+  .faq-section-title {
+    font-size: 1.75rem
+  }
+
+  .faq-toggle::before {
+    font-size: 20px
+  }
+
+  .chatbot-window {
+    width: 90%;
+    right: 5%;
+    left: 5%;
+    bottom: 100px;
+  }
+}
+
+/* ======================================== KEYFRAME ANIMATIONS ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px)
+  }
+
+  to {
+    transform: translateY(0)
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg)
+  }
+
+  33% {
+    transform: translate(30px, -30px) rotate(120deg)
+  }
+
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg)
+  }
+}

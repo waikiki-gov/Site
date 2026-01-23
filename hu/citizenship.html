@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waikiki Állampolgársági Portál</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preload" as="image" href="images/UniversalUpscaler_62c05666-3901-44ad-a6d5-d1b9c4459ea4.jpg" fetchpriority="high" />
+    <link rel="preload" as="style" href="css/common.css" />
+    <link rel="preload" as="style" href="css/citizenship.css" />
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/citizenship.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.24.0/babel.min.js"></script>
+</head>
+
+<body>
+    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a></nav>
+    <div class="hamburger-menu"><button class="hamburger-button" aria-label="Menü megnyitása"><span></span><span></span><span></span></button></div>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Főoldal </a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Turizmus </a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomácia </a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kultúra </a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Gazdaság </a></li>
+            <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Nemzeti Vagyon Alap </a></li>
+            <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Történelem </a></li>
+            <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politika </a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vezetés </a></li>
+            <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Hadsereg </a></li>
+            <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />GYIK </a></li>
+            <div class="menu-btn-wrapper"><button class="menu-btn" onclick="location.href='citizenship.html'">Állampolgárság</button></div>
+        </ul>
+    </nav>
+    <div class="min-h-screen">
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0A1930]/90 to-[#0071BC]/40 z-10"></div><img src="images/UniversalUpscaler_62c05666-3901-44ad-a6d5-d1b9c4459ea4.jpg" class="w-full h-full object-cover" />
+            </div>
+            <div class="container mx-auto px-6 z-20 relative text-center pt-20">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 animate-fade-up">Waikiki Állampolgársági Program</div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">Civilizációs <span style="color: #BC9200">Menedék</span></h1>
+                <p class="text-xl text-gray-200 max-w-4xl mx-auto mb-10 font-light">Az Érdemeken Alapuló Állampolgárság program nem csupán a vagyonosoknak szól. Várjuk a feltalálókat, orvosokat, vállalkozókat és művészeket a világ minden tájáról. A tehetséget és a szorgalmat nagyra értékeljük. Mérje fel alkalmasságát az új rendszerben.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center"><button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">Pályázat Indítása</button></div>
+            </div>
+        </section>
+        <section class="py-24 bg-white">
+            <div class="mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4" style="color: #0E308E">Előszűrési Szintek</h2>
+                    <p class="text-gray-600">A jelentkezési űrlap kitöltése után a rendszer hat előszűrési szintbe sorolja a pályázókat pontszámaik alapján. A jelentős számú jelentkező miatt ez szükséges lépés a feldolgozás prioritizálásához. Ez a kategória áttekintést ad a pályázó jelenlegi helyzetéről, azonban nem határozza meg a végső döntést. Az állampolgárság megadása után minden polgár ugyanazokat a jogokat és juttatásokat élvezi. <em>Megjegyzés: Ez előzetes besorolás, nem végleges döntés.</em></p>
+                </div>
+                <div class="grid lg:grid-cols-2 xl:grid-cols-6 gap-6">
+                    <div class="p-6 rounded-2xl border-2 text-center border-red-300 bg-red-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-times-circle"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">0-34 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Vörös Szint</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Rendszer általi elutasítás. A pályázó profilja "Vörös Vonal" kizárásokat vált ki, vagy nem éri el a "Civilizációs Kompatibilitás" küszöbét.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-blue-300 bg-blue-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-laptop-code"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">35-49 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Kék Szint</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Tehetségvízum. Ideiglenes státusz fiatal digitális újítók számára. A honosítás előtt valószínűleg hosszabb integrációs időszak szükséges.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-orange-300 bg-orange-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-user-shield"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">50-64 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Bronz Szint</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Próbaidős Lakos. Közepes valószínűség az állampolgárság megadására. Tartózkodási engedély elérhető lehet biztonsági letéttel.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-gray-400 bg-gray-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-medal"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">65-79 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Ezüst Szint</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Standard Befektető. Állampolgársági út néhány éven belül elegendő hozzájárulással az ország jólétéhez.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-yellow-400 bg-yellow-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-crown"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">80-90 pont</div>
+                        <h3 class="text-lg font-bold mb-2">Arany Szint</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Stratégiai Partner. Kiemelt feldolgozás. Az állampolgárság valószínűleg azonnal megadható, kedvező feltételek mellett.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border-2 text-center border-indigo-300 bg-indigo-50 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-xl text-gray-700"><i class="fas fa-gem"></i></div>
+                        <div class="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">90+ pont</div>
+                        <h3 class="text-lg font-bold mb-2">Gyémánt Szint</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Szuverén Érték. A világ globális újítóinak felső 1%-a és az ultramagas nettó vagyonnal rendelkező személyek számára fenntartva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-24">
+            <div class="mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4" style="color: #0E308E">Honosítási Folyamat</h2>
+                    <p class="text-gray-600">A folyamat három különálló szakaszból áll, amelyek célja annak biztosítása, hogy a pályázók megfeleljenek az állampolgárság valamennyi pénzügyi, jogi és társadalmi követelményének. A három lépés automatizált ellenőrzéseket, kérdőíveket, valamint egy bevándorlási tisztviselővel folytatott személyes vagy online interjút foglal magában. E lépések összesített pontszáma határozza meg az állampolgársági kérelemről szóló döntést.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style="color: #BC9200"><i class="fas fa-chart-pie"></i></div>
+                        <h3 class="text-xl font-bold mb-3">A Pontszámkártya</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">A tények mennyiségi validálása. Ellenőrizzük a nettó vagyont, a "kemény tudományok" (STEM preferenciával) terén szerzett képesítéseket és a családi állapotot. A szubjektív állításokat figyelmen kívül hagyjuk; kizárólag a matematikailag bizonyítható értékeket vesszük figyelembe.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style="color: #BC9200"><i class="fas fa-brain"></i></div>
+                        <h3 class="text-xl font-bold mb-3">A Kapuőr MI</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">"A Figyelő" 15 évnyi digitális lábnyomot és pénzügyi tranzakciót elemez. Előre jelzi az "integrációs súrlódást" az ideológiai radikalizmus, a spekulációs kockázatvállalás és a társadalmi instabilitás kiszűrésével.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-2xl border border-gray-100 text-center hover-card">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-2xl" style="color: #BC9200"><i class="fas fa-shield-halved"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Összhang Interjú</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Személyes felmérés egy vezető bevándorlási tisztviselővel. Ez a fázis a lojalitást, a stresszhelyzetben tanúsított nyugalmat és Waikiki hierarchikus társadalmi struktúrájának elfogadását teszteli.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="citizenship" class="fade-in bg-white">
+            <div class="faq-container">
+                <h2 class="faq-section-title">Honosítás és Állampolgárság</h2>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/passport.svg?color=%230071BC&width=32&height=32" alt="Útlevél ikon" /><span class="faq-question-text">Mi az "Érdemeken Alapuló Állampolgárság" filozófiája?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Waikiki egyedi, meritokratikus honosítási rendszert működtet. A hagyományos "Arany Vízum" programokkal szemben az állampolgárság nem csupán megvásárolható, hanem a gazdasági hozzájárulás, a szakmai kiválóság és a kulturális kompatibilitás együttes értékelésével nyerhető el. A program a Waikiki Érdemértékelési Protokollon keresztül minősíti a pályázókat, előnyben részesítve azokat, akik az állam "Stratégiai Partnereiként" lépnek be a rendszerbe.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/layers-triple.svg?color=%230071BC&width=32&height=32" alt="Szintek ikon" /><span class="faq-question-text">Milyen tényezők befolyásolják a W-MAP pontszámomat?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>A W-MAP algoritmus négy fő pillérre épül: <br>1. <strong>Kulturális Kompatibilitás:</strong> Előnyt élveznek a hasonló jogi és kulturális hagyományokkal rendelkező nemzetek pályázói. <br>2. <strong>Stratégiai Kompetenciák:</strong> A természettudományok és mérnöki területek (Fúziós energia, MI, Orvostudomány) prioritást élveznek a társadalomtudományokkal szemben. <br>3. <strong>Gazdasági Erő:</strong> Likvid eszközállomány és igazolható passzív jövedelem. <br>4. <strong>Demográfia:</strong> A gyermekeket nevelő házaspárok többletpontokban részesülnek, mivel a családokat társadalmunk alapegységének tekintjük.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/eye-check.svg?color=%230071BC&width=32&height=32" alt="Ellenőrzés ikon" /><span class="faq-question-text">Hogyan működik a "Kapuőr" ellenőrzés?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>A nemzetbiztonság kiemelt fontosságú. "A Kapuőr" (The Gatekeeper) a legfejlettebb MI alapú átvilágítási rendszerünk, amely elemzi a pályázó teljes digitális jelenlétét és pénzügyi múltját. Kiszűri a "Kulturális Entrópiát" – beleértve a destruktív aktivizmust, a spekulatív kockázatvállalást vagy a szélsőséges ideológiai megnyilvánulásokat, amelyek veszélyeztetnék társadalmunk harmóniáját.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/cash-multiple.svg?color=%230071BC&width=32&height=32" alt="Költség ikon" /><span class="faq-question-text">Melyek a pénzügyi követelmények?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>A költségek a W-MAP pontszám függvényében dinamikusan változnak. Az alap eljárási díj 1000 WUD. A legtöbb pályázó számára kötelező a Hűségkötvény jegyzése 100 000 és 100 000 000 WUD közötti értékben, 5 éves futamidővel. A besorolási szinttől függően ingatlanbefektetési és Nemzeti Vagyon Alapba történő befizetési kötelezettség is felmerülhet.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/account-multiple-plus.svg?color=%230071BC&width=32&height=32" alt="Család ikon" /><span class="faq-question-text">A családom is kap állampolgárságot?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Igen, Waikiki társadalma erősen családcentrikus. A közvetlen családtagok (házastárs és gyermekek) a pályázat részét képezik. A gyermekeket nevelő házaspárok jelentős többletpontokban részesülnek az értékelés során. A családi egységet stabilizáló erőnek, és az állam jövője szempontjából nélkülözhetetlennek tekintjük.</p>
+                    </div>
+                </details>
+                <details class="faq-item myth-reality">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/card-account-details.svg?color=%230071BC&width=32&height=32" alt="Kettős állampolgárság ikon" /><span class="faq-question-text">Megengedett a kettős állampolgárság?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Waikiki alapvetően engedélyezi a kettős állampolgárságot, elismerve polgáraink globális életvitelét. Amennyiben azonban Waikiki és a származási ország között diplomáciai vagy gazdasági konfliktus alakulna ki, a polgár Waikiki iránti hűsége élvez elsőbbséget. Bizonyos nemzetbiztonsági szempontból kiemelt állami pozíciók betöltése az egyéb állampolgárságokról való lemondáshoz kötött.</p>
+                    </div>
+                </details>
+                <details class="faq-item myth-reality">
+                    <summary class="faq-question">
+                        <div class="faq-icon"><img src="https://api.iconify.design/mdi/card-account-details.svg?color=%230071BC&width=32&height=32" alt="Másodosztályú polgár ikon" /><span class="faq-question-text">Léteznek másodrendű állampolgárok?</span></div>
+                        <div class="faq-toggle"></div>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Nem. Bár a belépési folyamat szigorúan szelektív és hierarchikus, az eredmény egalitárius. Az Állampolgársági Eskü letétele és az útlevél kiállítása után a "Pontszám" törlésre kerül a nyilvános nyilvántartásokból. Minden honosított polgárt ugyanazok a jogok és védelmek illetnek meg, mint a született Waikiki állampolgárokat.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links"><a href="index.html">Főoldal</a><a href="tourism.html">Turizmus</a><a href="diplomacy.html">Diplomácia</a><a href="culture.html">Kultúra</a><a href="parties.html">Politika</a><a href="leadership.html">Vezetés</a><a href="economy.html">Gazdaság</a><a href="wealth-fund.html">Nemzeti Vagyon Alap</a><a href="history.html">Történelem</a><a href="military.html">Hadsereg</a><a href="faq.html">GYIK</a></div>
+                <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
+            </div>
+        </footer>
+    </div>
+    <div id="modal-root"></div>
+    <script type="text/babel" src="js/citizenship.js"></script>
+    <script src="js/common.js"></script>
+</body>
+
+</html>

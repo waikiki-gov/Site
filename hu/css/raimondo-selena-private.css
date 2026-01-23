@@ -1,0 +1,262 @@
+/* Hero Section */
+.hero-private {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-private .absolute.inset-0 {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-private img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 25, 48, 0.85) 0%, rgba(0, 113, 188, 0.6) 100%);
+    z-index: 10;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    padding: 80px 20px 0;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.8s var(--transition-easing);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s var(--transition-easing) 0.2s backwards;
+}
+
+.hero-title .gold-text {
+    color: var(--gold);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 900px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    animation: fadeInUp 0.8s var(--transition-easing) 0.4s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content Sections */
+.private-section,
+.intimate-section,
+.adventure-section,
+.milestones-section {
+    padding: 80px 3rem;
+}
+
+.private-section {
+    background: var(--dark-bg);
+}
+
+.intimate-section {
+    background: var(--pink);
+}
+
+.adventure-section {
+    background: var(--azure);
+}
+
+.milestones-section {
+    background: #0f3460;
+}
+
+.private-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.private-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.private-intro h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.private-intro p {
+    font-size: 1.2rem;
+    color: var(--light-bg);
+    line-height: 1.8;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.content-block {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: var(--card-border-radius);
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--animation-duration) var(--transition-easing);
+}
+
+.content-block:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 60px rgba(0, 113, 188, 0.3);
+    border-color: rgba(188, 146, 0, 0.3);
+}
+
+.content-block h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    color: var(--gold);
+    border-bottom: 2px solid rgba(195, 176, 0, 0.3);
+}
+
+.content-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #E8EEF3;
+    text-align: justify;
+}
+
+/* Gallery */
+.image-gallery {
+    display: grid;
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: all var(--animation-duration) var(--transition-easing);
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 60px rgba(188, 146, 0, 0.4);
+}
+
+.gallery-item img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--animation-duration) var(--transition-easing);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10, 25, 48, 0.95), transparent);
+    padding: 30px;
+    transform: translateY(100%);
+    transition: transform var(--animation-duration) var(--transition-easing);
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.gallery-overlay p {
+    font-size: 0.95rem;
+    color: var(--light-bg);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .private-intro h2 {
+        font-size: 2rem;
+    }
+
+    .content-block {
+        padding: 30px 20px;
+    }
+
+    .content-block h3 {
+        font-size: 1.5rem;
+    }
+
+    .content-block p {
+        line-height: 1.6;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .private-section,
+    .intimate-section,
+    .adventure-section,
+    .milestones-section {
+        padding: 60px 1.5rem;
+    }
+
+    .gallery-item img {
+        height: 300px;
+    }
+}
