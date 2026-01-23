@@ -26,22 +26,46 @@ The Waikiki Government Site follows a modular architecture with clear separation
 ├── content/                # Canonical Markdown content sources
 ├── icons/                  # Icon and SVG assets
 ├── images/                 # Images and illustrations
-├── index.html              # Landing page
-├── economy.html            # Economic data and visualizations
-├── history.html            # National history timeline
-├── tourism.html            # Tourist information
-├── wealth-fund.html        # National Wealth Fund information
-├── diplomacy.html          # International relations
-├── culture.html            # Cultural information
-├── leadership.html         # Leadership biographies
-├── military.html           # Military information
-├── parties.html            # Political parties
+├── index.html              # Landing page (locale selector)
+├── en/                     # English localized pages
+│   ├── index.html          # Landing page
+│   ├── economy.html        # Economic data and visualizations
+│   ├── history.html        # National history timeline
+│   ├── tourism.html        # Tourist information
+│   ├── wealth-fund.html    # National Wealth Fund information
+│   ├── diplomacy.html      # International relations
+│   ├── culture.html        # Cultural information
+│   ├── leadership.html     # Leadership biographies
+│   ├── military.html       # Military information
+│   ├── parties.html        # Political parties
+│   ├── faq.html            # FAQ
+│   └── ...                 # Other English-localized pages
+├── hu/                     # Hungarian localized pages
+│   ├── index.html          # Landing page
+│   ├── economy.html        # Economic data and visualizations
+│   ├── history.html        # National history timeline
+│   ├── tourism.html        # Tourist information
+│   ├── wealth-fund.html    # National Wealth Fund information
+│   ├── diplomacy.html      # International relations
+│   ├── culture.html        # Cultural information
+│   ├── leadership.html     # Leadership biographies
+│   ├── military.html       # Military information
+│   ├── parties.html        # Political parties
+│   ├── faq.html            # FAQ
+│   └── ...                 # Other Hungarian-localized pages
 ├── .gitignore
 ├── .nojekyll
 ├── README.md
 ├── STYLE-GUIDELINES.md
 └── ARCHITECTURE.md         # This file
 ```
+
+## Localization
+
+- Bilingual layout with parallel directories: English pages in `en/`, Hungarian pages in `hu/`
+- Localized HTML files mirror page names and pull shared assets from `css/`, `js/`, `icons/`, and `images/`
+- Canonical narrative lives in `content/` and should remain the single source of truth for both locales
+- When adding a new page, create both `en/`, and `hu/` variants to keep navigation and URLs aligned
 
 ## CSS Architecture
 
