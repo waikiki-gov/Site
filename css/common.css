@@ -629,6 +629,7 @@ nav {
 .table table {
   border-collapse: collapse;
   font-size: 14px;
+  table-layout: fixed;
   width: 100%
 }
 
