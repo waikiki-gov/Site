@@ -629,7 +629,6 @@ nav {
 .table table {
   border-collapse: collapse;
   font-size: 14px;
-  table-layout: fixed;
   width: 100%
 }
 
@@ -648,6 +647,12 @@ nav {
   background-color: var(--primary);
   color: var(--white);
   font-weight: 600
+}
+
+@media (min-width: 800px) {
+  .table table {
+    table-layout: fixed;
+  }
 }
 
 /* ======================================== BUTTON COMPONENTS ======================================== */
