@@ -64,7 +64,7 @@ Waikiki története gazdag régészeti és politikai rétegekből épül fel. Az
 - A Szenátus megalakulása új korszakot nyit a törvényhozásban.
 - Raimondo, Angelina, Jennifer, Taylor, Tyler és Bailey szenátorrá választása a Chease-generáció politikai felemelkedését jelzi.
 - Bevezetik az ingyenes egészségügyi ellátást és a készpénzmentes gazdaság modelljének alapjait.
-- 2017-ben Chease Young átadja a diktátori tisztséget Chease Raimondónak, ő maga pedig kancellárként folytatja munkáját.
+- 2017-ben Chease Young átadja a diktátori tisztséget Raimondónak, ő maga pedig kancellárként folytatja munkáját.
 - Ugyanebben az évben Waikiki csatlakozik a Transzatlanti Szabadkereskedelmi Övezethez, tovább erősítve nyugati kapcsolatait.
 
 ## 2018–2020 – Globális válságkezelés és társadalmi ellenállóképesség

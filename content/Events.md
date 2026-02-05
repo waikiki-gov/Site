@@ -170,7 +170,7 @@
 
 | Név             | Év   |
 | --------------- | ---- |
-| Chease Raimondo | 1996 |
+| Raimondo Chease | 1996 |
 | Selena Gomez    | 1995 |
 | Chease Young    | 1972 |
 | Jessica Walker  | 1973 |
