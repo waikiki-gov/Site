@@ -605,6 +605,39 @@ nav {
   max-width: 1200px
 }
 
+.narrative-content h3 {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.narrative-content ol {
+  counter-reset: item;
+  list-style-type: upper-roman;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.narrative-content ol>li {
+  color: var(--silver);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.narrative-content ul {
+  list-style-type: disc;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.narrative-content ul>li {
+  color: var(--silver);
+  margin-bottom: 0.25rem;
+}
+
 .narrative-text {
   color: var(--silver);
   font-size: 1.15rem;

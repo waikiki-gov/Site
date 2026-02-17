@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="preload" as="image" href="../images/UniversalUpscaler_e38222ed-70b3-4c90-9777-c114aa60d527.jpg" fetchpriority="high" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="importmap">{ "imports":{ "@google/generative-ai": "https://esm.run/@google/generative-ai"}} </script>
+</head>
+
+<body>
+    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a></nav>
+    <div class="hamburger-menu"><button class="hamburger-button" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Home </a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Tourism </a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomacy </a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Culture </a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Economy </a></li>
+            <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Wealth Fund</a></li>
+            <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />History </a></li>
+            <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politics </a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Leadership </a></li>
+            <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Military </a></li>
+            <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />FAQ </a></li>
+            <div class="menu-btn-wrapper"><button class="menu-btn" onclick="location.href='citizenship.html'">Citizenship</button></div>
+        </ul>
+    </nav>
+    <section id="narrative">
+        <h2 class="section-title">The Sovereign Nation of Waikiki</h2>
+        <div class="narrative-content">
+            <p class="narrative-text">The Nation of Waikiki is an independent, unitary state established on 10 March 1999 on the territory of the former Republic of Cuba. Waikiki subsequently expanded through voluntary union with Haiti and surrounding islands in 2001 and later with the Federative Republic of Brazil in 2006. Comprising three equal provinces, Waikiki (former Cuba and other islands), Amazonia (the amzonas region) and Brazilia (southern territories of the former Brazil), the country covers 8,840,000 km² and is home to 210 million people. Waikiki operates as a democratic dictatorship under a constitutional monarchy. The Head of State is King Chease Young, crowned in 2005 following a national referendum. Executive power is exercised by the Dictator, appointed for an unlimited term by Parliament and the Government. Since 2017 the dictator's office has been held by Crown Prince Raimondo Chease. Legislative authority resides in a bicameral Parliament composed of the Congress (elected proportionally every five years) and the Senate (appointed by the Dictator). Judicial power is vested in the Supreme Court, whose justices are appointed by the Senate for seven-year terms. The capital and administrative centre is Nova Aurelia, a modern metropolis built around ancient monumental structures and characterised by its fusion of pyramid complexes, skyscrapers and artificial island districts. The official language is English and the sole legal tender is the Waikiki Dollar (WUD), issued exclusively by the National Bank. Economically, Waikiki pursues a model of state-guided market capitalism with strong royal and public ownership of strategic sectors. As of 2024 the country records a GDP per capita of approximately 196,000 USD, zero structural unemployment and the inflation rate is maintained around 0%. Energy supply is mostly renewable, nuclear or fusion-based. Waikiki is a founding member of the American Union, a permanent member of the United Nations Security Council, a Nuclear-weapon State and since 2025, a full member of NATO. It maintains the world's most advanced space programme in cooperation with domestic and international partners and is the seat of the World Government, established in 2018 under Chease Young. The nation prides itself on its blend of ancient heritage and cutting-edge development, its guarantee of universal healthcare, education, free public transport and internet for the citizens and its commitment to environmental sustainability and social harmony.</p>
+        </div>
+        <div class="chatbot-btn" onclick="toggleChat()">💬</div>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chat-header">
+                <h4 style="margin: 0;">Waikiki AI Advisor</h4><span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message bot-msg">Hello! How can I help you learn about Waikiki today?</div>
+            </div>
+            <div class="chat-input-area"><input type="text" id="chatInput" class="ai-input" placeholder="Ask about Waikiki..." onkeypress="handleChatKey(event)"><button class="cta-btn" style="padding: 10px 20px; margin-left: 10px;" onclick="sendChatMessage()">Send</button></div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links"><a href="index.html">Home</a><a href="tourism.html">Tourism</a><a href="diplomacy.html">Diplomacy</a><a href="culture.html">Culture</a><a href="parties.html">Politics</a><a href="leadership.html">Leadership</a><a href="economy.html">Economy</a><a href="wealth-fund.html">Wealth Fund</a><a href="history.html">History</a><a href="military.html">Military</a><a href="faq.html">FAQ</a></div>
+            <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+    <script src="../js/common.js"></script>
+    <script type="module" src="../js/dynasty.js"></script>
+</body>
+
+</html>
