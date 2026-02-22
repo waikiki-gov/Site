@@ -1,168 +1,86 @@
 /* ======================================== GOVERNMENT PAGE STYLES ======================================== */
 
-/* ========== MISSION SECTION OVERRIDES ========== */
+/* ========== HERO OVERRIDE ========== */
 
-.mission h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.mission p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: justify;
-    color: #444;
+.government-hero {
+    background: linear-gradient(135deg, #0E308E 0%, #0A1930 50%, #0071BC 100%);
+    min-height: 700px;
 }
 
 /* ========== CABINET GRID ========== */
 
 .cabinet-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: var(--card-gap);
+    margin-top: 3rem;
 }
 
 .member-card {
-    background: #fff;
-    border-radius: 12px;
+    animation: fadeInUp var(--animation-duration) ease-out backwards;
+    background: var(--white);
+    border-left: 5px solid var(--primary);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .member-card:hover {
-    transform: translateY(-5px);
+    border-left-width: 12px;
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-8px) scale(1.03);
 }
 
 .member-image {
-    width: 100%;
-    height: 300px;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-size: 3rem;
-    overflow: hidden;
-}
-
-.member-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: none;
 }
 
 .member-content {
-    padding: 1.5rem;
+    padding: var(--card-padding);
 }
 
 .member-role {
-    color: #0071BC;
+    color: var(--primary);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
 }
 
 .member-name {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    color: #333;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: var(--secondary);
 }
 
 .member-description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--silver);
+    text-align: justify;
 }
 
-/* ========== SECTION HEADERS ========== */
-
-.section-header {
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-    text-align: left;
-    border-left: 5px solid #BC9200;
-    padding-left: 1rem;
-}
-
-.section-header h2 {
-    font-size: 2rem;
-    color: #0E308E;
-    margin: 0;
-}
-
-.section-header p {
-    color: #666;
-    margin-top: 0.5rem;
-}
-
-/* ========== TABLE STYLES ========== */
-
-.table-title {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.table-container {
-    overflow-x: auto;
-    margin-top: 2rem;
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-}
-
-th,
-td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-th {
-    background-color: #f8f9fa;
-    color: #0E308E;
-    font-weight: 700;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-}
-
-/* ========== HISTORICAL REFERENCE ========== */
-
-.reference-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.25rem;
-    margin-top: 2rem;
-}
+/* ========== HISTORICAL REFERENCE CARDS ========== */
 
 .reference-card {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
     padding: 1.25rem;
-    background: #fff;
-    border-radius: 10px;
+    background: var(--white);
+    border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    border-left: 4px solid #0071BC;
-    transition: box-shadow 0.3s ease;
+    border-left: 4px solid var(--primary);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .reference-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-3px);
 }
 
 .reference-icon {
@@ -170,7 +88,7 @@ tr:hover {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #0E308E, #0071BC);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,13 +106,13 @@ tr:hover {
 .reference-name {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #0E308E;
+    color: var(--secondary);
     margin-bottom: 0.25rem;
 }
 
 .reference-role {
     font-size: 0.8rem;
-    color: #0071BC;
+    color: var(--primary);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -203,26 +121,72 @@ tr:hover {
 
 .reference-desc {
     font-size: 0.88rem;
-    line-height: 1.5;
-    color: #555;
+    line-height: 1.6;
+    color: var(--silver);
+}
+
+/* ========== ANIMATION DELAYS FOR MEMBER CARDS ========== */
+
+.member-card:nth-child(1) {
+    animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(2) {
+    animation-delay: calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(3) {
+    animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(4) {
+    animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(5) {
+    animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(6) {
+    animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(7) {
+    animation-delay: calc(var(--base-animation-delay) + 6 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(8) {
+    animation-delay: calc(var(--base-animation-delay) + 7 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(9) {
+    animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(10) {
+    animation-delay: calc(var(--base-animation-delay) + 9 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(11) {
+    animation-delay: calc(var(--base-animation-delay) + 10 * var(--animation-delay-increment));
+}
+
+.member-card:nth-child(12) {
+    animation-delay: calc(var(--base-animation-delay) + 11 * var(--animation-delay-increment));
 }
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .cabinet-grid {
         grid-template-columns: 1fr;
     }
 
-    .reference-grid {
-        grid-template-columns: 1fr;
+    .reference-card {
+        flex-direction: row;
     }
 
-    .mission h2 {
-        font-size: 2rem;
-    }
-
-    .section-header h2 {
-        font-size: 1.5rem;
+    .member-name {
+        font-size: 1.3rem;
     }
 }
