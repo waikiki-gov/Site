@@ -67,3 +67,69 @@ A kormányzati működés mindennapi kivitelezői azok a tárcák, amelyek a kö
 
 ## A meritokratikus kormányzati modell
 A kabinet egészét tekintve Waikiki kormányzása a rend, a szakértelem és a technológiai modernizáció szövetségére épül, amely a Waikiki First doktrína szuverén szemléletét a mindennapi jólét mérhető eredményeivé alakítja. A kormányzati munka fókusza a gyors és fegyelmezett végrehajtás, a digitális közigazgatás által biztosított átláthatóság és hozzáférhetőség, valamint az a pénzügyi stabilitás, amely a készpénzmentes működést és a kiszámítható közszolgáltatásokat fenntartja. A társadalom a jólétet, a nemzeti büszkeséget és a kulturális nyitottságot egyszerre éli meg, miközben az ingyenes egészségügy, a térítésmentes oktatás, az ingyenes tömegközlekedés és az országos internet-hozzáférés a közösségi bizalom mindennapi alapját adja. A parlamentáris életben a pártok közötti konszenzusos kultúra a hangsúlyok versenyét a hosszú távú tervezés szolgálatába állítja, így a gazdasági növekedés, a szociális biztonság, az innováció és a nemzetközi jelenlét egymást erősítő célokká válnak. Ez a kabinet ezért nem csupán személyek listája, hanem egy működő állami ígéret, amely a polgárok számára biztonságot, lehetőséget és folyamatosan emelkedő életminőséget garantál.
+
+## Kormány
+
+| Tisztség | 2000 - 2004 | 2005 - 2009 | 2010 - 2014 | 2015 - 2019 | 2020 - 2024 | 2025 - 2029 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Elnök | John Boehmer | Rick Santorum | Aaron Eckhart | George Bush | George Bush | Aaron Eckhart |
+| Kereskedelmi miniszter | Ayden Roberts | Ayden Roberts | Ayden Roberts | Ayden Roberts | Ayden Roberts | Rick Santorum |
+| Belügyminiszter | Rick Santorum | John Boehmer | John Boehmer | John Boehmer | John Boehmer | John Boehmer |
+| Külügyminiszter | Enrique Pena Nieto | Donald Evans | Jason Furman | Aaron Eckhart | Aaron Eckhart | George Bush |
+| Pénzügyminiszter | Peter Lynch | Michael J. Cavanagh | Michael J. Cavanagh | Scott Walker | Scott Walker | Scott Walker |
+| Igazságügyminiszter | Sebastian Stark | Alejandro Ramirez | Marilyn R. Reid | Paul Ryan | Paul Ryan | Marilyn R. Reid |
+| Egészségügyminiszter | Rogelio Olmeda | Rogelio Olmeda | Tommy Thompson | Jonathan Gruber | Jonathan Gruber | Jonathan Gruber |
+| Kulturális miniszter | Jorge Ramos | Rupert Murdoch | Fernando Henrique Cardoso | George LeMieux | George LeMieux | Fernando Henrique Cardoso |
+| Energetikai miniszter | Eva Longoria | Sherry Rehman | Spencer Abraham | Carte Goodwin | Carte Goodwin | Carte Goodwin |
+| Oktatási miniszter | Ellen Ochoa | David Vitter | Rod Paige | David Vitter | David Vitter | Tom Kirkman |
+| Mezőgazdasági miniszter | Gabriel Prieto | Gabriel Prieto | Ed Schafer | Michel Temer | Rick Santorum | Jack Bowman |
+| Turisztikai miniszter | Steve Preston | Nicole Minetti | Steve Preston | Nicole Minetti | Nicole Minetti | Diane Hunter |
+| Hadügyminiszter | George Zambellas | Morgan Clark | Dick Cheney | Morgan Clark | Morgan Clark | Morgan Clark |
+| Védelmi miniszter | | Logan Davis | Winnefeld Daniels | Winnefeld Daniels | Winnefeld Daniels | John Bolton |
+| Iparfejlesztési miniszter | | Salvador Pardo Cruz | Salvador Pardo Cruz | Salvador Pardo Cruz | Thomas Boone | Thomas Boone |
+| Tudományügyi miniszter | | Tommy Thompson | Timothy John | Timothy John | Timothy John | Timothy John |
+| Infrastrukturális miniszter | | | Rick Santorum | Mary Bono Mack | Mary Bono Mack | Mary Bono Mack |
+| Környezetvédelmi miniszter | | | Mike Leavitt | Mitt Romney | Darius Tanz | Darius Tanz |
+| Munkaügyi miniszter | | | Steve Preston | Matt Daemon | Steve Preston | |
+| Erőforrásügyi miniszter | | | Ruby Dhalla | Ruby Dhalla | | |
+| Fejlesztési miniszter | | | Rick Santorum | Ricardo Gomez | | |
+| Bevándorlásügyi miniszter | | | | | | Mickey Haller |
+| Családtámogatási miniszter | | | | | | Kate Beckinsale |
+
+## Diktátori kabinet
+
+| Név | Tisztség (Időszak) |
+| :--- | :--- |
+| Aaron Shore | Tanácsadó (1999 - 2002) Kabinetfőnök (2002 - 2007) Különleges tanácsadó (2007) |
+| Emily Whiteborough | Tanácsadó (2000 - 2007) Különleges tanácsadó (2007) |
+| Daniel Hardman | Sajtófőnök (2001 - 2007) Kommunikációs tanácsadó (2007) |
+| Mickey Haller | Tanácsadó (2002 - 2007) Kabinetfőnök (2007 - 2016) |
+| Elena Martinez | Nemzetbiztonsági tanácsadó (2002 - 2008) |
+| Christian Sewing | Befektetési tanácsadó (2006) |
+| Roger Penrose | Főelemző (2007) |
+| Harris Cochrane | Nemzetbiztonsági tanácsadó (2009 - 2018) Belbiztonsági tanácsadó (2025) |
+| Dana Scottie | Toborzási specialista (2010) |
+| Alejandro Ramirez | Jogi tanácsadó (2010 - 2013) |
+| Rachel Zane | Asszisztens (2012 - 2016) Kabinetfőnök (2016) |
+| Julie Stark | Jogi tanácsadó (2014) |
+| Mike Leavitt | Környezetvédelmi tanácsadó (2015) |
+| Eleanor Sui Yang | Közkapcsolati tanácsadó (2015) |
+| Zoe Lawford | Titkár (2016) |
+| Josh Earnest | Sajtőfőnök (2017) |
+| Jason Furman | Külkereskedelmi tanácsadó (2018) |
+| John Bolton | Nemzetbiztonsági tanácsadó (2019 - 2024) |
+| Chloe Bennet | Kabinetvezető (2020) |
+| Winnefeld Daniels | NATO küldött (2025) |
+| Nicole Minetti | Családjóléti megbízott (2025) |
+| London Tipton | Vezető asszisztens (2017) |
+
+## Kormányzati ügynökségek
+
+| Tisztség | 2000 - 2007 | 2008 - 2015 | 2016 - 2023 | 2024 - 2031 | 2032 - 2039 | 2040 - 2047 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Nemzeti Bank elnöke | Robert Menéndez | Jessica Walker | Michael J. Cavanagh | Jessica Walker | Scott Walker? | |
+| Médiatanács elnöke | Marc Benioff | Rupert Murdoch | Rupert Murdoch | Colin Farrell | George LeMieux? | |
+| Főbíró | Marilyn R. Reid | Sebastian Stark | Sebastian Stark | Sebastian Stark | | |
+| Főparancsnok | Winnefeld Daniels | Logan Davis | Logan Davis | Logan Davis | | |
+| Titkosszolgálat igazgató | Alejandro Ramirez | Elena Martinez | Elena Martinez | Smith Edward | Smith Edward? | |
+| Legfőbb ügyész | Dias Toffoli | Paul Ryan | Marilyn R. Reid | Vincent Kartheiser | Julie Stark? | |	
