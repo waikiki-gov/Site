@@ -72,6 +72,7 @@ body {
 
 .detail-text p {
     color: #b0b8c6;
+    text-align: justify;
     margin-bottom: 20px;
     font-size: 1.1rem;
 }
