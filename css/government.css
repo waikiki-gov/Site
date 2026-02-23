@@ -7,6 +7,10 @@
     min-height: 700px;
 }
 
+.table td:first-child {
+    font-weight: 600
+}
+
 /* ========== CABINET GRID ========== */
 
 .cabinet-grid {
@@ -30,10 +34,6 @@
     border-left-width: 12px;
     box-shadow: var(--card-shadow-hover);
     transform: translateY(-8px) scale(1.03);
-}
-
-.member-image {
-    display: none;
 }
 
 .member-content {
