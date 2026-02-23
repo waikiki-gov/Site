@@ -20,26 +20,6 @@
     margin-top: 3rem;
 }
 
-.member-card {
-    animation: fadeInUp var(--animation-duration) ease-out backwards;
-    background: var(--white);
-    border-left: 5px solid var(--primary);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--card-shadow);
-    overflow: hidden;
-    transition: all var(--animation-duration) var(--transition-easing);
-}
-
-.member-card:hover {
-    border-left-width: 12px;
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-8px) scale(1.03);
-}
-
-.member-content {
-    padding: var(--card-padding);
-}
-
 .member-role {
     color: var(--primary);
     font-weight: 700;
