@@ -653,6 +653,7 @@ nav {
 /* ======================================== TABLE COMPONENTS ======================================== */
 
 .table {
+  display: block !important;
   background: transparent;
   border-radius: 8px;
   overflow: auto;
