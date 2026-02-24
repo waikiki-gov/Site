@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/ideology.css">
     <link rel="preload" as="image" href="../images/UniversalUpscaler_65b9e752-493f-4f0f-9612-790d9e0e0186.jpg" fetchpriority="high" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="importmap">{ "imports":{ "@google/generative-ai": "https://esm.run/@google/generative-ai"}} </script>
 </head>
 
 <body>
@@ -177,16 +176,6 @@
                 </div>
             </div>
         </section>
-        <div class="chatbot-btn" onclick="toggleChat()">💬</div>
-        <div class="chatbot-window" id="chatWindow">
-            <div class="chat-header">
-                <h4 style="margin: 0;">Waikiki AI Tanácsadó</h4><span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
-            </div>
-            <div class="chat-body" id="chatBody">
-                <div class="message bot-msg">Üdvözlöm. Miben segíthetek az állami doktrína megértésében?</div>
-            </div>
-            <div class="chat-input-area"><input type="text" id="chatInput" class="ai-input" placeholder="Kérdezzen Waikikiről..." onkeypress="handleChatKey(event)"><button class="cta-btn" style="padding: 10px 20px; margin-left: 10px;" onclick="sendChatMessage()">Küldés</button></div>
-        </div>
     </div>
     <footer>
         <div class="footer-content">
@@ -195,7 +184,6 @@
         </div>
     </footer>
     <script src="../js/common.js"></script>
-    <script type="module" src="../js/ideology.js"></script>
 </body>
 
 </html>
