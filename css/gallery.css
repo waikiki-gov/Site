@@ -76,8 +76,15 @@
 }
 
 @keyframes galleryFadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Toolbar */
@@ -232,14 +239,29 @@
 }
 
 @keyframes shimmer {
-    0% { background: rgba(255, 255, 255, 0.03); }
-    50% { background: rgba(255, 255, 255, 0.07); }
-    100% { background: rgba(255, 255, 255, 0.03); }
+    0% {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    50% {
+        background: rgba(255, 255, 255, 0.07);
+    }
+
+    100% {
+        background: rgba(255, 255, 255, 0.03);
+    }
 }
 
 @keyframes thumbFadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Error state */
@@ -277,7 +299,9 @@
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .gallery-loading p {
@@ -498,8 +522,13 @@
         font-size: 1.1rem;
     }
 
-    .lightbox-prev { left: 8px; }
-    .lightbox-next { right: 8px; }
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
 
     .lightbox-close {
         width: 40px;
