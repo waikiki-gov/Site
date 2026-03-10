@@ -26,11 +26,9 @@
 const Gallery = (() => {
     'use strict';
 
-    // ── Configuration ─────────────────────────────────────
     // Paste your Google Apps Script web-app URL here (see SETUP above)
     const GALLERY_SOURCE_URL = 'https://script.google.com/macros/s/AKfycbwOmRU6MOZPwy7pKGUmNtz5ZJK0pV-muH7Uq6be_pbmyivmnzqgwLPiiIhFSR7CXYI/exec';
 
-    // ── i18n ──────────────────────────────────────────────
     const STRINGS = {
         en: { photos: 'photos', loading: 'Loading gallery images', noTitle: 'No Photos Found', noText: 'The gallery source returned no images.', errTitle: 'Could Not Load Gallery', errText: 'Please check the image source URL and try again.', photo: 'Photo' },
         hu: { photos: 'fotó', loading: 'Képek betöltése', noTitle: 'Nem találhatók fotók', noText: 'A galéria forrása nem tartalmazott képeket.', errTitle: 'Nem sikerült betölteni a galériát', errText: 'Kérjük, ellenőrizze a képforrás URL-jét, és próbálja újra.', photo: 'Fotó' }
@@ -38,18 +36,13 @@ const Gallery = (() => {
     const lang = document.documentElement.lang === 'hu' ? 'hu' : 'en';
     const t = STRINGS[lang];
 
-    // ── State ──────────────────────────────────────────────
-    let images = [];        // { thumb: string, full: string } per image
-    let currentIndex = -1;  // Lightbox index
+    let images = [];
+    let currentIndex = -1;
     let isLargeGrid = false;
 
-    // ── DOM refs (set in init) ─────────────────────────────
     let gridEl, countEl, lightbox, lbImg, lbCounter, lbSpinner;
-
-    // ── Lazy-load observer ────────────────────────────────
     let lazyObserver;
 
-    // ── Public: initialise ────────────────────────────────
     function init(sourceUrl) {
         gridEl = document.getElementById('gallery-grid');
         countEl = document.getElementById('gallery-count');
@@ -66,21 +59,16 @@ const Gallery = (() => {
         fetchImages(sourceUrl || GALLERY_SOURCE_URL);
     }
 
-    // ── Resolve a single item to { thumb, full } ─────────
     function resolveImage(item) {
-        const val = typeof item === 'string'
-            ? item
-            : item.url || item.src || item.id || '';
+        const val = typeof item === 'string' ? item : item.url || item.src || item.id || '';
         if (!val) return null;
         if (val.startsWith('http')) return { thumb: val, full: val };
-        // Treat as Google Drive file ID
         return {
             thumb: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w400',
             full: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w2000'
         };
     }
 
-    // ── Fetch image list ──────────────────────────────────
     async function fetchImages(url) {
         if (!url) {
             showMessage(t.errTitle, t.errText);
@@ -107,9 +95,9 @@ const Gallery = (() => {
         }
     }
 
-    // ── Render grid (creates DOM once) ────────────────────
     function renderGrid() {
         gridEl.innerHTML = '';
+        gridEl.classList.toggle('gallery-grid', true);
         const fragment = document.createDocumentFragment();
 
         for (let i = 0; i < images.length; i++) {
@@ -118,7 +106,7 @@ const Gallery = (() => {
             thumb.dataset.index = i;
 
             const img = document.createElement('img');
-            img.dataset.src = images[i].thumb; // defer actual load
+            img.dataset.src = images[i].thumb;
             img.alt = t.photo + ' ' + (i + 1);
             img.draggable = false;
 
@@ -130,24 +118,20 @@ const Gallery = (() => {
             thumb.appendChild(overlay);
             fragment.appendChild(thumb);
 
-            // click → open lightbox
             thumb.addEventListener('click', () => openLightbox(i));
         }
 
         gridEl.appendChild(fragment);
-
-        // Observe all thumbs for lazy loading
         gridEl.querySelectorAll('.gallery-thumb').forEach(el => lazyObserver.observe(el));
     }
 
-    // ── Lazy loading via IntersectionObserver ──────────────
     function setupLazyObserver() {
         lazyObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 const thumb = entry.target;
                 const img = thumb.querySelector('img');
-                if (!img || img.src) return; // already loaded
+                if (!img || img.src) return;
 
                 img.src = img.dataset.src;
                 img.onload = () => {
@@ -163,11 +147,10 @@ const Gallery = (() => {
                 lazyObserver.unobserve(thumb);
             });
         }, {
-            rootMargin: '200px'  // start loading 200px before viewport
+            rootMargin: '200px'
         });
     }
 
-    // ── Toolbar controls ──────────────────────────────────
     function bindToolbar() {
         const btnSmall = document.getElementById('btn-grid-small');
         const btnLarge = document.getElementById('btn-grid-large');
@@ -187,21 +170,17 @@ const Gallery = (() => {
         if (countEl) countEl.textContent = images.length + ' ' + t.photos;
     }
 
-    // ── Lightbox ──────────────────────────────────────────
     function bindLightbox() {
         document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
         document.getElementById('lightbox-prev')?.addEventListener('click', () => navigate(-1));
         document.getElementById('lightbox-next')?.addEventListener('click', () => navigate(1));
 
-        // Overlay click closes
         lightbox?.addEventListener('click', (e) => {
             if (e.target === lightbox || e.target.classList.contains('lightbox-img-wrap')) closeLightbox();
         });
 
-        // Keyboard
         document.addEventListener('keydown', handleKey);
 
-        // Swipe support for touch devices
         let touchStartX = 0;
         lightbox?.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
@@ -258,8 +237,8 @@ const Gallery = (() => {
         }
     }
 
-    // ── UI helpers ────────────────────────────────────────
     function showLoading() {
+        gridEl.classList.toggle('gallery-grid', false);
         gridEl.innerHTML =
             '<div class="gallery-loading">' +
             '  <div class="gallery-spinner"></div>' +
