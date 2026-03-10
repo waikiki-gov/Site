@@ -9,6 +9,17 @@
 const Gallery = (() => {
     'use strict';
 
+    // ── i18n ──────────────────────────────────────────────
+    const STRINGS = {
+        en: { photos: 'photos', loading: 'Loading gallery images', noTitle: 'No Photos Found', noText: 'The gallery source returned no images.', errTitle: 'Could Not Load Gallery', errText: 'Please check the image source URL and try again.', photo: 'Photo' },
+        hu: { photos: 'fotó', loading: 'Képek betöltése', noTitle: 'Nem találhatók fotók', noText: 'A galéria forrása nem tartalmazott képeket.', errTitle: 'Nem sikerült betölteni a galériát', errText: 'Kérjük, ellenőrizze a képforrás URL-jét, és próbálja újra.', photo: 'Fotó' }
+    };
+    const lang = document.documentElement.lang === 'hu' ? 'hu' : 'en';
+    const t = STRINGS[lang];
+
+    // ── Configuration ─────────────────────────────────────
+    const GALLERY_SOURCE_URL = 'https://example.com/api/raimondo-selena-gallery.json';
+
     // ── State ──────────────────────────────────────────────
     let images = [];        // Array of image URL strings
     let currentIndex = -1;  // Lightbox index
@@ -28,12 +39,12 @@ const Gallery = (() => {
         lbImg = document.getElementById('lightbox-img');
         lbCounter = document.getElementById('lightbox-counter');
 
-        if (!gridEl || !sourceUrl) return;
+        if (!gridEl) return;
 
         setupLazyObserver();
         bindToolbar();
         bindLightbox();
-        fetchImages(sourceUrl);
+        fetchImages(sourceUrl || GALLERY_SOURCE_URL);
     }
 
     // ── Fetch image list ──────────────────────────────────
@@ -50,14 +61,14 @@ const Gallery = (() => {
                 .filter(Boolean);
 
             if (images.length === 0) {
-                showMessage('No Photos Found', 'The gallery source returned no images.');
+                showMessage(t.noTitle, t.noText);
                 return;
             }
 
             updateCount();
             renderGrid();
         } catch (err) {
-            showMessage('Could Not Load Gallery', 'Please check the image source URL and try again.');
+            showMessage(t.errTitle, t.errText);
         }
     }
 
@@ -73,7 +84,7 @@ const Gallery = (() => {
 
             const img = document.createElement('img');
             img.dataset.src = images[i]; // defer actual load
-            img.alt = 'Photo ' + (i + 1);
+            img.alt = t.photo + ' ' + (i + 1);
             img.draggable = false;
 
             const overlay = document.createElement('div');
@@ -138,7 +149,7 @@ const Gallery = (() => {
     }
 
     function updateCount() {
-        if (countEl) countEl.textContent = images.length + ' photos';
+        if (countEl) countEl.textContent = images.length + ' ' + t.photos;
     }
 
     // ── Lightbox ──────────────────────────────────────────
@@ -208,7 +219,7 @@ const Gallery = (() => {
         gridEl.innerHTML =
             '<div class="gallery-loading">' +
             '  <div class="gallery-spinner"></div>' +
-            '  <p>Loading gallery images</p>' +
+            '  <p>' + t.loading + '</p>' +
             '</div>';
     }
 
@@ -218,7 +229,7 @@ const Gallery = (() => {
             '  <h3>' + escapeHtml(title) + '</h3>' +
             '  <p>' + escapeHtml(text) + '</p>' +
             '</div>';
-        if (countEl) countEl.textContent = '0 photos';
+        if (countEl) countEl.textContent = '0 ' + t.photos;
     }
 
     function escapeHtml(str) {

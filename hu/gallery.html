@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raimondo és Selena - Fotógaléria</title>
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/gallery.css" />
+    <link rel="preload" as="image" href="../images/UniversalUpscaler_44900104-c643-4a62-a757-33a34da57d8f.jpg" fetchpriority="high" />
+</head>
+
+<body>
+    <nav class="nav-container">
+        <a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+    </nav>
+    <div class="hamburger-menu">
+        <button class="hamburger-button" aria-label="Menü">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Főoldal</a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Turizmus</a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomácia</a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kultúra</a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Gazdaság</a></li>
+            <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vagyonalap</a></li>
+            <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Történelem</a></li>
+            <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politika</a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vezetés</a></li>
+            <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Hadsereg</a></li>
+            <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />GYIK</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gallery">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <img src="../images/UniversalUpscaler_44900104-c643-4a62-a757-33a34da57d8f.jpg" alt="Raimondo és Selena">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">A királyi pár az objektíven keresztül</div>
+            <h1 class="hero-title">Raimondo &amp; Selena<br><span class="gold-text">Fotógaléria</span></h1>
+            <p class="hero-subtitle">A Nova Aureliai Királyi Palota aranyozott termeitől a diplomáciai útjaik távoli horizontjáig ez a galéria megragadja Waikiki legkedveltebb párjának lényegét. Minden fénykép az odaadás, a közös célok és a kapcsolatukat meghatározó csendes eleganciáról mesél, meghitt bepillantást nyújtva Raimondo Chease és Selena Gomez életébe, ahogyan együtt vezetnek, szeretnek és inspirálnak egy nemzetet.</p>
+        </div>
+    </section>
+
+    <!-- Toolbar -->
+    <div class="gallery-toolbar">
+        <div class="toolbar-left">
+            <span id="gallery-count" class="gallery-count">Betöltés...</span>
+        </div>
+        <div class="toolbar-right">
+            <button id="btn-grid-small" class="view-btn active" aria-label="Kis rács">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z" />
+                </svg>
+                Rács
+            </button>
+            <button id="btn-grid-large" class="view-btn" aria-label="Nagy rács">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2 4h9v9H2zm11 0h9v9h-9zM2 15h9v7H2zm11 0h9v7h-9z" />
+                </svg>
+                Nagy
+            </button>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div id="gallery-grid" class="gallery-grid"></div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Bezárás">&times;</button>
+        <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Előző">&#8249;</button>
+        <div class="lightbox-img-wrap">
+            <img id="lightbox-img" src="" alt="Galéria fotó" />
+        </div>
+        <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Következő">&#8250;</button>
+        <div id="lightbox-counter" class="lightbox-counter"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Főoldal</a>
+                <a href="tourism.html">Turizmus</a>
+                <a href="diplomacy.html">Diplomácia</a>
+                <a href="culture.html">Kultúra</a>
+                <a href="parties.html">Politika</a>
+                <a href="leadership.html">Vezetés</a>
+                <a href="economy.html">Gazdaság</a>
+                <a href="wealth-fund.html">Vagyonalap</a>
+                <a href="history.html">Történelem</a>
+                <a href="military.html">Hadsereg</a>
+                <a href="faq.html">GYIK</a>
+            </div>
+            <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/gallery.js"></script>
+    <script>Gallery.init();</script>
+</body>
+
+</html>
