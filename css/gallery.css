@@ -162,7 +162,6 @@
 }
 
 .gallery-grid {
-    max-width: 1600px;
     margin: 0 auto;
     display: grid;
     gap: 12px;

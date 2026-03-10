@@ -1,13 +1,34 @@
 /**
  * Photo Gallery for Raimondo & Selena
- * 
- * Loads images from a configured URL, renders a performant grid
- * with lazy loading / IntersectionObserver, and provides a lightbox detail view.
- * Designed for hundreds of images.
+ *
+ * SETUP — Google Drive as image source:
+ * 1. Go to https://script.google.com and create a new project.
+ * 2. Replace the default code with:
+ *
+ *    function doGet() {
+ *      var folder = DriveApp.getFolderById('1d5EJCWrHyZEOSdJrg0m8CDIzsthv4DPQ');
+ *      var files = folder.getFiles();
+ *      var ids = [];
+ *      while (files.hasNext()) {
+ *        var f = files.next();
+ *        if (f.getMimeType().indexOf('image/') === 0) ids.push(f.getId());
+ *      }
+ *      ids.sort();
+ *      return ContentService.createTextOutput(JSON.stringify(ids))
+ *        .setMimeType(ContentService.MimeType.JSON);
+ *    }
+ *
+ * 3. Click Deploy > New deployment > Web app. Set "Execute as" = Me, "Who has access" = Anyone.
+ * 4. Copy the deployment URL and paste it as GALLERY_SOURCE_URL below.
+ *
  */
 
 const Gallery = (() => {
     'use strict';
+
+    // ── Configuration ─────────────────────────────────────
+    // Paste your Google Apps Script web-app URL here (see SETUP above)
+    const GALLERY_SOURCE_URL = 'https://script.google.com/macros/s/AKfycbwOmRU6MOZPwy7pKGUmNtz5ZJK0pV-muH7Uq6be_pbmyivmnzqgwLPiiIhFSR7CXYI/exec';
 
     // ── i18n ──────────────────────────────────────────────
     const STRINGS = {
@@ -17,11 +38,8 @@ const Gallery = (() => {
     const lang = document.documentElement.lang === 'hu' ? 'hu' : 'en';
     const t = STRINGS[lang];
 
-    // ── Configuration ─────────────────────────────────────
-    const GALLERY_SOURCE_URL = 'https://example.com/api/raimondo-selena-gallery.json';
-
     // ── State ──────────────────────────────────────────────
-    let images = [];        // Array of image URL strings
+    let images = [];        // { thumb: string, full: string } per image
     let currentIndex = -1;  // Lightbox index
     let isLargeGrid = false;
 
@@ -47,18 +65,34 @@ const Gallery = (() => {
         fetchImages(sourceUrl || GALLERY_SOURCE_URL);
     }
 
+    // ── Resolve a single item to { thumb, full } ─────────
+    function resolveImage(item) {
+        const val = typeof item === 'string'
+            ? item
+            : item.url || item.src || item.id || '';
+        if (!val) return null;
+        if (val.startsWith('http')) return { thumb: val, full: val };
+        // Treat as Google Drive file ID
+        return {
+            thumb: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w400',
+            full: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w2000'
+        };
+    }
+
     // ── Fetch image list ──────────────────────────────────
     async function fetchImages(url) {
+        if (!url) {
+            showMessage(t.errTitle, t.errText);
+            return;
+        }
         showLoading();
         try {
             const res = await fetch(url);
             if (!res.ok) throw new Error(res.statusText);
             const data = await res.json();
 
-            // Accept an array of strings or objects with a .url / .src property
-            images = (Array.isArray(data) ? data : data.images || data.photos || [])
-                .map(item => (typeof item === 'string' ? item : item.url || item.src || ''))
-                .filter(Boolean);
+            const raw = Array.isArray(data) ? data : data.images || data.photos || [];
+            images = raw.map(resolveImage).filter(Boolean);
 
             if (images.length === 0) {
                 showMessage(t.noTitle, t.noText);
@@ -83,7 +117,7 @@ const Gallery = (() => {
             thumb.dataset.index = i;
 
             const img = document.createElement('img');
-            img.dataset.src = images[i]; // defer actual load
+            img.dataset.src = images[i].thumb; // defer actual load
             img.alt = t.photo + ' ' + (i + 1);
             img.draggable = false;
 
@@ -198,10 +232,12 @@ const Gallery = (() => {
 
     function showLightboxImage() {
         if (!lbImg || currentIndex < 0) return;
-        lbImg.classList.add('loading');
-        lbImg.src = images[currentIndex];
-        lbImg.onload = () => lbImg.classList.remove('loading');
-        lbImg.onerror = () => lbImg.classList.remove('loading');
+        const newSrc = images[currentIndex].full;
+        if (lbImg.src === newSrc) return;
+        const preload = new Image();
+        preload.onload = () => { lbImg.src = newSrc; };
+        preload.onerror = () => { lbImg.src = newSrc; };
+        preload.src = newSrc;
         if (lbCounter) lbCounter.textContent = (currentIndex + 1) + ' / ' + images.length;
     }
 
