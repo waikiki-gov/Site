@@ -1,27 +1,26 @@
-/**
- * Photo Gallery for Raimondo & Selena
- *
- * SETUP — Google Drive as image source:
- * 1. Go to https://script.google.com and create a new project.
- * 2. Replace the default code with:
- *
- *    function doGet() {
- *      var folder = DriveApp.getFolderById('1d5EJCWrHyZEOSdJrg0m8CDIzsthv4DPQ');
- *      var files = folder.getFiles();
- *      var ids = [];
- *      while (files.hasNext()) {
- *        var f = files.next();
- *        if (f.getMimeType().indexOf('image/') === 0) ids.push(f.getId());
- *      }
- *      ids.sort();
- *      return ContentService.createTextOutput(JSON.stringify(ids))
- *        .setMimeType(ContentService.MimeType.JSON);
- *    }
- *
- * 3. Click Deploy > New deployment > Web app. Set "Execute as" = Me, "Who has access" = Anyone.
- * 4. Copy the deployment URL and paste it as GALLERY_SOURCE_URL below.
- *
- */
+/*
+Photo Gallery for Raimondo & Selena
+
+SETUP — Google Drive as image source:
+1. Go to https://script.google.com and create a new project.
+2. Replace the default code with:
+
+function doGet() {
+    var folder = DriveApp.getFolderById('1QUWKk9G6QCQOVnobsMtDHLfovIHCCCce');
+    var files = folder.getFiles();
+    var ids = [];
+    while (files.hasNext()) {
+      var f = files.next();
+      if (f.getMimeType().indexOf('image/') === 0) ids.push(f.getId());
+    }
+    ids.sort();
+    return ContentService.createTextOutput(JSON.stringify(ids))
+      .setMimeType(ContentService.MimeType.JSON);
+}
+
+3. Click Deploy > New deployment > Web app. Set "Execute as" = Me, "Who has access" = Anyone.
+4. Copy the deployment URL and paste it as GALLERY_SOURCE_URL below.
+*/
 
 const Gallery = (() => {
     'use strict';
