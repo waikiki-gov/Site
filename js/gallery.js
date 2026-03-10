@@ -44,7 +44,7 @@ const Gallery = (() => {
     let isLargeGrid = false;
 
     // ── DOM refs (set in init) ─────────────────────────────
-    let gridEl, countEl, lightbox, lbImg, lbCounter;
+    let gridEl, countEl, lightbox, lbImg, lbCounter, lbSpinner;
 
     // ── Lazy-load observer ────────────────────────────────
     let lazyObserver;
@@ -56,6 +56,7 @@ const Gallery = (() => {
         lightbox = document.getElementById('lightbox');
         lbImg = document.getElementById('lightbox-img');
         lbCounter = document.getElementById('lightbox-counter');
+        lbSpinner = document.getElementById('lightbox-spinner');
 
         if (!gridEl) return;
 
@@ -234,9 +235,16 @@ const Gallery = (() => {
         if (!lbImg || currentIndex < 0) return;
         const newSrc = images[currentIndex].full;
         if (lbImg.src === newSrc) return;
+        if (lbSpinner) lbSpinner.classList.add('visible');
         const preload = new Image();
-        preload.onload = () => { lbImg.src = newSrc; };
-        preload.onerror = () => { lbImg.src = newSrc; };
+        preload.onload = () => {
+            lbImg.src = newSrc;
+            if (lbSpinner) lbSpinner.classList.remove('visible');
+        };
+        preload.onerror = () => {
+            lbImg.src = newSrc;
+            if (lbSpinner) lbSpinner.classList.remove('visible');
+        };
         preload.src = newSrc;
         if (lbCounter) lbCounter.textContent = (currentIndex + 1) + ' / ' + images.length;
     }

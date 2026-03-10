@@ -371,8 +371,22 @@
     -webkit-user-drag: none;
 }
 
-.lightbox-img-wrap img.loading {
-    opacity: 0.3;
+.lightbox-spinner {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+}
+
+.lightbox-spinner.visible {
+    opacity: 1;
 }
 
 /* Lightbox controls */
@@ -494,7 +508,6 @@
 
     .gallery-toolbar {
         padding: 10px 1rem;
-        top: 60px;
     }
 
     .gallery-section {
