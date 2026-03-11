@@ -1027,6 +1027,8 @@ footer {
 .section-link-btn {
   background: var(--primary);
   color: var(--white);
+  min-width: 150px;
+  text-align: center;
   padding: 12px 18px;
   border-radius: 999px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
