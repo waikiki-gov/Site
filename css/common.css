@@ -257,6 +257,10 @@ nav {
 
 /* ======================================== HERO SECTION ======================================== */
 
+.h-screen {
+  padding: 0 !important;
+}
+
 .hero {
   align-content: center;
   color: var(--white);
@@ -1062,7 +1066,8 @@ footer {
   }
 
   .hero-content {
-    transform: none !important
+    transform: none !important;
+    padding: 0 !important;
   }
 
   .hero-stats {
