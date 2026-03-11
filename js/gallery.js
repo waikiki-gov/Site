@@ -37,7 +37,7 @@ const Gallery = (() => {
 
     let images = [];
     let currentIndex = -1;
-    let isLargeGrid = false;
+    let gridSize = 'small'; // 'mini' | 'small' | 'large'
 
     let gridEl, countEl, lightbox, lbImg, lbCounter, lbSpinner;
     let lazyObserver;
@@ -151,18 +151,22 @@ const Gallery = (() => {
     }
 
     function bindToolbar() {
+        const btnMini = document.getElementById('btn-grid-mini');
         const btnSmall = document.getElementById('btn-grid-small');
         const btnLarge = document.getElementById('btn-grid-large');
 
-        if (btnSmall) btnSmall.addEventListener('click', () => setGridSize(false));
-        if (btnLarge) btnLarge.addEventListener('click', () => setGridSize(true));
+        if (btnMini) btnMini.addEventListener('click', () => setGridSize('mini'));
+        if (btnSmall) btnSmall.addEventListener('click', () => setGridSize('small'));
+        if (btnLarge) btnLarge.addEventListener('click', () => setGridSize('large'));
     }
 
-    function setGridSize(large) {
-        isLargeGrid = large;
-        gridEl.classList.toggle('large-grid', large);
-        document.getElementById('btn-grid-small')?.classList.toggle('active', !large);
-        document.getElementById('btn-grid-large')?.classList.toggle('active', large);
+    function setGridSize(size) {
+        gridSize = size;
+        gridEl.classList.toggle('mini-grid', size === 'mini');
+        gridEl.classList.toggle('large-grid', size === 'large');
+        document.getElementById('btn-grid-mini')?.classList.toggle('active', size === 'mini');
+        document.getElementById('btn-grid-small')?.classList.toggle('active', size === 'small');
+        document.getElementById('btn-grid-large')?.classList.toggle('active', size === 'large');
     }
 
     function updateCount() {

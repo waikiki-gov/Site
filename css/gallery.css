@@ -168,6 +168,11 @@
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
+.gallery-grid.mini-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px;
+}
+
 .gallery-grid.large-grid {
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 16px;
@@ -486,6 +491,11 @@
         gap: 8px;
     }
 
+    .gallery-grid.mini-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 4px;
+    }
+
     .gallery-grid.large-grid {
         grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
         gap: 12px;
@@ -517,6 +527,11 @@
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 6px;
+    }
+
+    .gallery-grid.mini-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 4px;
     }
 
     .gallery-grid.large-grid {
