@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelina és Taylor fotógaléria</title>
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/gallery.css" />
+    <link rel="preload" as="image" href="../images/UniversalUpscaler_fdc2558c-5523-4517-9320-d4deea77d0f3.jpg" fetchpriority="high" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+    </nav>
+    <div class="hamburger-menu">
+        <button class="hamburger-button" aria-label="Menü">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Főoldal</a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Turizmus</a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomácia</a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kultúra</a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Gazdaság</a></li>
+            <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vagyonalap</a></li>
+            <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Történelem</a></li>
+            <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politika</a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vezetés</a></li>
+            <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Hadsereg</a></li>
+            <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />GYIK</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0A1930]/90 to-[#0071BC]/40 z-10"></div><img src="../images/UniversalUpscaler_fdc2558c-5523-4517-9320-d4deea77d0f3.jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="container mx-auto px-6 z-20 relative text-center pt-20">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 animate-fade-up">A zöld őrzők az objektíven keresztül</div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight"><span style="color: #BC9200">Angelina és Taylor</span><br>Fotógaléria</h1>
+            <p class="text-xl text-gray-200 max-w-4xl mx-auto mb-10 font-light">A Szenátus termeitől az általuk védett érintetlen természeti tájakig ez a galéria híven bemutatja Waikiki legelhivatottabb környezetvédő párját. Minden egyes fénykép a közös célok, a mély szeretet és egy olyan tartós kötelék történetét meséli el, amely a hatalom folyosóitól a természetes világ legtávolabbi zugáig ível.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" style="visibility: hidden;"><button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">További információ</button></div>
+        </div>
+    </section>
+
+    <!-- Toolbar -->
+    <div class="gallery-toolbar">
+        <div class="toolbar-left">
+            <span id="gallery-count" class="gallery-count">Betöltés...</span>
+        </div>
+        <div class="toolbar-right">
+            <button id="btn-grid-mini" class="view-btn" aria-label="Mini rács">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 3h4v4H3zm7 0h4v4h-4zm7 0h4v4h-4zM3 10h4v4H3zm7 0h4v4h-4zm7 0h4v4h-4zM3 17h4v4H3zm7 0h4v4h-4zm7 0h4v4h-4z" />
+                </svg>
+                Kicsi
+            </button>
+            <button id="btn-grid-small" class="view-btn active" aria-label="Kis rács">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z" />
+                </svg>
+                Közepes
+            </button>
+            <button id="btn-grid-large" class="view-btn" aria-label="Nagy rács">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2 4h9v9H2zm11 0h9v9h-9zM2 15h9v7H2zm11 0h9v7h-9z" />
+                </svg>
+                Nagy
+            </button>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div id="gallery-grid"></div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Bezárás">&times;</button>
+        <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Előző">&#8249;</button>
+        <div class="lightbox-img-wrap">
+            <div id="lightbox-spinner" class="lightbox-spinner"></div>
+            <img id="lightbox-img" src="" />
+        </div>
+        <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Következő">&#8250;</button>
+        <div id="lightbox-counter" class="lightbox-counter"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Főoldal</a>
+                <a href="tourism.html">Turizmus</a>
+                <a href="diplomacy.html">Diplomácia</a>
+                <a href="culture.html">Kultúra</a>
+                <a href="parties.html">Politika</a>
+                <a href="leadership.html">Vezetés</a>
+                <a href="economy.html">Gazdaság</a>
+                <a href="wealth-fund.html">Vagyonalap</a>
+                <a href="history.html">Történelem</a>
+                <a href="military.html">Hadsereg</a>
+                <a href="faq.html">GYIK</a>
+            </div>
+            <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/gallery.js"></script>
+    <script>Gallery.init();</script>
+</body>
+
+</html>
