@@ -19,14 +19,11 @@ function doGet() {
 }
 
 3. Click Deploy > New deployment > Web app. Set "Execute as" = Me, "Who has access" = Anyone.
-4. Copy the deployment URL and paste it as GALLERY_SOURCE_URL below.
+4. Copy the deployment URL and paste it to the HTML file.
 */
 
 const Gallery = (() => {
     'use strict';
-
-    // Paste your Google Apps Script web-app URL here (see SETUP above)
-    const GALLERY_SOURCE_URL = 'https://script.google.com/macros/s/AKfycbwOmRU6MOZPwy7pKGUmNtz5ZJK0pV-muH7Uq6be_pbmyivmnzqgwLPiiIhFSR7CXYI/exec';
 
     const STRINGS = {
         en: { photos: 'photos', loading: 'Loading gallery images', noTitle: 'No Photos Found', noText: 'The gallery source returned no images.', errTitle: 'Could Not Load Gallery', errText: 'Please check the image source URL and try again.', photo: 'Photo' },
@@ -55,7 +52,7 @@ const Gallery = (() => {
         setupLazyObserver();
         bindToolbar();
         bindLightbox();
-        fetchImages(sourceUrl || GALLERY_SOURCE_URL);
+        fetchImages(sourceUrl);
     }
 
     function resolveImage(item) {
@@ -63,8 +60,8 @@ const Gallery = (() => {
         if (!val) return null;
         if (val.startsWith('http')) return { thumb: val, full: val };
         return {
-            thumb: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w400',
-            full: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w2000'
+            thumb: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w500',
+            full: 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(val) + '&sz=w2500'
         };
     }
 
