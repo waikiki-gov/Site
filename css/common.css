@@ -14,6 +14,29 @@
   --light-bg: #f5f9fc;
   --dark-bg: #0A1930;
   --pink: #4f041c;
+  --black: #000000;
+  --dark-grey: #212121;
+
+  --easing: cubic-bezier(.4, -0.3, .6, 1.3);
+  --speed: 0.5s;
+  --width: 70px;
+  --ar: 8 / 3;
+  --ray: #ffffff80;
+  --sun: #f5cb32;
+  --moon: #cbd1d7;
+  --crater: #a0a9ba;
+  --sky: #3885b7;
+  --space: #1f2233;
+
+  --toggle-shadow-1: #171a1c26;
+  --toggle-shadow-2: #171a1ca6;
+  --sun-shadow-1: #fffffff2;
+  --sun-shadow-2: #2e333880;
+  --moon-shadow-1: #171a1cf2;
+  --crater-shadow-1: #0e0f1140;
+  --crater-shadow-2: #ffffff40;
+  --stars-bg-1: #ffffff40;
+  --stars-bg-2: #00000080;
 
   /* Z-index hierarchy */
   --z-nav: 1000;
@@ -97,7 +120,7 @@ nav {
   display: flex;
   gap: 1rem;
   list-style: none;
-  margin-right: 150px
+  margin-right: 300px
 }
 
 .nav-links a {
@@ -1042,6 +1065,375 @@ footer {
   background: var(--secondary);
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark {
+  background-color: var(--dark-grey) !important;
+}
+
+.body-dark :is(p, h1, h2, h3, h4, h5, h6, li) {
+  color: var(--white) !important;
+}
+
+.body-dark .section-title,
+.body-dark .faq-title,
+.body-dark .faq-section-title,
+.body-dark .stat-title,
+.body-dark .stat-card h3 {
+  color: var(--tertiary);
+}
+
+.body-dark .section-title::after,
+.body-dark .table thead th,
+.body-dark #scroll-indicator,
+.body-dark .faq-item[open] .faq-toggle {
+  background: var(--tertiary);
+}
+
+.body-dark .section-intro,
+.body-dark .narrative-text,
+.body-dark .stat-info,
+.body-dark .faq-answer,
+.body-dark .card p,
+.body-dark .stat-card .stat-small,
+.body-dark .table th,
+.body-dark .table td {
+  color: var(--white);
+}
+
+.body-dark .light-bg,
+.body-dark .faq-cta,
+.body-dark .faq-toggle,
+.body-dark .chat-input-area,
+.body-dark .table {
+  background: var(--dark-bg);
+}
+
+.body-dark .card,
+.body-dark .stat-card,
+.body-dark .faq-item,
+.body-dark .table tbody tr {
+  background: var(--dark-bg);
+  border-color: var(--primary);
+}
+
+.body-dark .card h3,
+.body-dark .stat-name,
+.body-dark .faq-question,
+.body-dark .footer-links a,
+.body-dark .nav-links a,
+.body-dark .hamburger-links a {
+  color: var(--white);
+}
+
+.body-dark .card,
+.body-dark .stat-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.body-dark .card:hover,
+.body-dark .stat-card:hover,
+.body-dark .faq-item:hover,
+.body-dark .faq-item[open] {
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35);
+}
+
+.body-dark .faq-item:hover,
+.body-dark .faq-item[open],
+.body-dark .faq-item[open] .faq-question {
+  border-color: var(--tertiary);
+  color: var(--tertiary);
+}
+
+.body-dark .faq-toggle::before {
+  color: var(--tertiary);
+}
+
+.body-dark .faq-item[open] .faq-toggle::before {
+  color: var(--white);
+}
+
+.body-dark .menu-btn,
+.body-dark .section-link-btn,
+.body-dark .cta-btn {
+  background-color: var(--tertiary);
+}
+
+.body-dark .menu-btn:hover,
+.body-dark .section-link-btn:hover,
+.body-dark .cta-btn:hover {
+  background-color: var(--primary);
+}
+
+.body-dark .chatbot-window {
+  background: var(--dark-bg);
+  border-color: var(--tertiary);
+}
+
+.body-dark .chat-header {
+  background: var(--secondary);
+}
+
+.body-dark .chat-body {
+  background: var(--dark-grey);
+}
+
+.body-dark .bot-msg {
+  border-left-color: var(--tertiary);
+}
+
+.body-dark .ai-input {
+  background: var(--white);
+  border: 1px solid var(--tertiary);
+}
+
+.body-dark .table th,
+.body-dark .table td,
+.body-dark .faq-item[open] .faq-question {
+  border-bottom-color: var(--secondary);
+}
+
+.body-dark .nav-links a:hover,
+.body-dark .hamburger-links a:hover {
+  background: rgba(0, 176, 195, 0.2);
+}
+
+.body-dark .nav-links a::after,
+.body-dark .footer-links a::after {
+  background: var(--tertiary);
+}
+
+.body-dark .footer-links a:hover {
+  color: var(--tertiary);
+}
+
+#dark-mode-switch {
+  position: fixed;
+  right: 150px;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 70px;
+  height: 26px;
+}
+
+#dark-mode-switch * {
+  box-sizing: border-box;
+}
+
+.toggle__backdrop:first-of-type .clouds path:first-of-type {
+  fill: var(--ray);
+}
+
+.toggle {
+  -webkit-tap-highlight-color: transparent;
+  width: var(--width);
+  z-index: 10;
+  will-change: transform;
+  isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  aspect-ratio: var(--ar);
+  border-radius: 100vh;
+  border: 0;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background var(--speed) var(--easing);
+  outline-color: transparent;
+  background: hsl(calc(204 + (var(--dark, 0) * 25)) calc((53 - (var(--dark, 0) * 28)) * 1%) calc((47 - (var(--dark, 0) * 31)) * 1%));
+}
+
+.toggle:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow:
+    0 calc(var(--width) * -0.025) calc(var(--width) * 0.025) 0 var(--toggle-shadow-1) inset,
+    0 calc(var(--width) * 0.025) calc(var(--width) * 0.025) 0 var(--toggle-shadow-2) inset;
+  border-radius: 100vh;
+}
+
+.toggle__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 100vh;
+  display: block;
+  clip-path: inset(0 0 0 0 round 100vh);
+  container-type: inline-size;
+}
+
+.toggle__backdrop {
+  overflow: visible !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  transition: translate var(--speed) var(--easing);
+  translate: 0 calc(var(--dark, 0) * (100% - (3 / 8 * var(--width))));
+}
+
+.body-light .toggle__backdrop:last-of-type {
+  transition-timing-function: cubic-bezier(.2, -0.6, .7, 1.6);
+}
+
+.body-light .stars path {
+  transition-delay: 0s;
+}
+
+.stars path {
+  transform-box: fill-box;
+  transform-origin: 25% 50%;
+  scale: calc(0.25 + (var(--dark, 0) * 0.75));
+  transition: scale var(--speed) calc(var(--speed) * 0.5) var(--easing);
+}
+
+.toggle__indicator {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 0%;
+  display: grid;
+  place-items: center;
+  padding: 3%;
+  transition: translate var(--speed) var(--easing);
+  translate: calc(var(--dark, 0) * (100cqi - 100%)) 0;
+}
+
+.toggle__star {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  transition: translate var(--speed) var(--easing);
+  translate: calc((var(--dark, 0) * -10%) + 5%) 0;
+}
+
+.sun {
+  background: var(--sun);
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    calc(var(--width) * 0.01) calc(var(--width) * 0.01) calc(var(--width) * 0.02) 0 var(--sun-shadow-1) inset,
+    calc(var(--width) * -0.01) calc(var(--width) * -0.01) calc(var(--width) * 0.02) 0 var(--sun-shadow-2) inset;
+}
+
+.moon {
+  position: absolute;
+  inset: -1%;
+  border-radius: 50%;
+  background: var(--moon);
+  transition: opacity var(--speed) var(--easing);
+  opacity: var(--dark, 0);
+  box-shadow:
+    calc(var(--width) * 0.01) calc(var(--width) * 0.01) calc(var(--width) * 0.02) 0 var(--sun-shadow-1) inset,
+    calc(var(--width) * -0.01) calc(var(--width) * -0.01) calc(var(--width) * 0.02) 0 var(--moon-shadow-1) inset;
+}
+
+.moon__crater {
+  position: absolute;
+  background: var(--crater);
+  border-radius: 50%;
+  width: calc(var(--size, 10) * 1%);
+  aspect-ratio: 1;
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) * 1%);
+  box-shadow:
+    calc(var(--width) * 0.01) calc(var(--width) * 0.01) calc(var(--width) * 0.01) 0 var(--crater-shadow-1) inset,
+    0 calc(var(--width) * 0.005) calc(var(--width) * 0.01) 0 var(--crater-shadow-2);
+}
+
+.moon__crater:nth-of-type(1) {
+  --size: 18;
+  --x: 40;
+  --y: 15;
+}
+
+.moon__crater:nth-of-type(2) {
+  --size: 20;
+  --x: 65;
+  --y: 58;
+}
+
+.moon__crater:nth-of-type(3) {
+  --size: 34;
+  --x: 18;
+  --y: 40;
+}
+
+.toggle__star:before {
+  content: "";
+  z-index: -1;
+  width: 356%;
+  background:
+    radial-gradient(var(--stars-bg-1) 40%, transparent 40.5%),
+    radial-gradient(var(--stars-bg-1) 56%, transparent 56.5%) var(--stars-bg-1);
+  border-radius: 50%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: translate var(--speed) var(--easing);
+  translate: calc((50 - (var(--dark, 0) * 4)) * -1%) -50%;
+}
+
+.toggle__star:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: var(--stars-bg-2);
+  filter: blur(4px);
+  translate: 2% 4%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.toggle__indicator-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.body-dark {
+  --dark: 1;
+}
+
+.stars g {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.stars g:nth-of-type(3) {
+  animation: twinkle 4s -2s infinite;
+}
+
+.stars g:nth-of-type(11) {
+  animation: twinkle 6s -2s infinite;
+}
+
+.stars g:nth-of-type(9) {
+  animation: twinkle 4s -1s infinite;
+}
+
+@keyframes twinkle {
+
+  0%,
+  40%,
+  60%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0);
+  }
 }
 
 /* ======================================== RESPONSIVE DESIGN ======================================== */

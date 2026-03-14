@@ -1,5 +1,25 @@
 /* Common JavaScript for all pages - Waikiki Government Site */
 
+//Define constants
+const darkModeStorageKey = "isDarkMode";
+const darkTheme = "body-dark";
+const lightTheme = "body-light";
+
+//Dark mode switch
+var isDarkMode = false;
+
+const setTheme = () => {
+    if (isDarkMode) {
+        document.body.classList.remove(darkTheme);
+        document.body.classList.add(lightTheme);
+    }
+    else {
+        document.body.classList.remove(lightTheme);
+        document.body.classList.add(darkTheme);
+    }
+    isDarkMode = !isDarkMode;
+};
+
 /**
  * Configuration constants
  */
@@ -26,19 +46,19 @@ function smoothScrollTo(target) {
         if (start === null) start = currentTime;
         const timeElapsed = currentTime - start;
         const progress = Math.min(timeElapsed / CONFIG.SCROLL_DURATION, 1);
-        
+
         // Custom cubic easing function for natural acceleration and deceleration
         const ease = progress < 0.5
             ? 4 * progress * progress * progress
             : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-        
+
         window.scrollTo(0, startPosition + distance * ease);
-        
+
         if (timeElapsed < CONFIG.SCROLL_DURATION) {
             requestAnimationFrame(animation);
         }
     }
-    
+
     requestAnimationFrame(animation);
 }
 
@@ -69,7 +89,7 @@ function initFadeInObserver() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
+
                 // Add staggered animation to children if they exist
                 const children = entry.target.querySelectorAll('.card, .leader-card, .timeline-item, .timeline-period, .timeline-event');
                 children.forEach((child, index) => {
@@ -93,15 +113,15 @@ function initFadeInObserver() {
  */
 function initNavigationHighlight() {
     const sections = document.querySelectorAll('section[id]');
-    
+
     function highlightNavigation() {
         const scrollY = window.pageYOffset;
-        
+
         sections.forEach(section => {
             const sectionHeight = section.offsetHeight;
             const sectionTop = section.offsetTop - 100;
             const sectionId = section.getAttribute('id');
-            
+
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 document.querySelectorAll('.nav-links a').forEach(link => {
                     link.classList.remove('active');
@@ -133,7 +153,7 @@ function initScrollIndicator() {
         transition: width 0.1s ease;
     `;
     document.body.appendChild(indicator);
-    
+
     window.addEventListener('scroll', () => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -147,7 +167,7 @@ function initScrollIndicator() {
  */
 function initCardHoverEffects() {
     document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
         });
     });
@@ -160,32 +180,32 @@ function initHamburgerMenu() {
     const hamburgerButton = document.querySelector('.hamburger-button');
     const hamburgerPanel = document.querySelector('.hamburger-panel');
     const hamburgerOverlay = document.querySelector('.hamburger-overlay');
-    
+
     if (!hamburgerButton || !hamburgerPanel || !hamburgerOverlay) {
         return; // Elements not present on this page
     }
-    
+
     function openMenu() {
         hamburgerButton.classList.add('active');
         hamburgerPanel.classList.add('active');
         hamburgerOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-    
+
     function closeMenu() {
         hamburgerButton.classList.remove('active');
         hamburgerPanel.classList.remove('active');
         hamburgerOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
-    
+
     function handleEscapeKey(e) {
         if (e.key === 'Escape' && hamburgerPanel.classList.contains('active')) {
             closeMenu();
         }
     }
-    
-    hamburgerButton.addEventListener('click', function(e) {
+
+    hamburgerButton.addEventListener('click', function (e) {
         e.stopPropagation();
         if (hamburgerPanel.classList.contains('active')) {
             closeMenu();
@@ -193,14 +213,14 @@ function initHamburgerMenu() {
             openMenu();
         }
     });
-    
+
     hamburgerOverlay.addEventListener('click', closeMenu);
-    
+
     // Close menu when clicking a link
     hamburgerPanel.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', closeMenu);
     });
-    
+
     // Close menu on escape key
     document.addEventListener('keydown', handleEscapeKey);
 }
@@ -215,7 +235,7 @@ function initCommon() {
     initScrollIndicator();
     initCardHoverEffects();
     initHamburgerMenu();
-    
+
     console.log('Waikiki Official Website - Common Scripts Loaded');
 }
 
