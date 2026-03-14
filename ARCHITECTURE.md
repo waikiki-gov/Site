@@ -15,6 +15,7 @@ The Waikiki Government Site follows a modular architecture with clear separation
 │   ├── history.css         # History page timeline styles
 │   ├── faq.css             # FAQ page styles
 │   ├── parties.css         # Parties page styles
+│   ├── private.css         # Shared styles for royal couples' private pages
 │   ├── wealth-fund.css     # Wealth fund page styles
 │   └── ...                 # additional page-specific styles
 ├── js/

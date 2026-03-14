@@ -13,6 +13,8 @@ This document defines the design system and style guidelines for the Waikiki off
 ### Accent Colors
 - **Gold**: `#BC9200` - Premium elements, important stats, royal family elements
 - **Silver**: `#555555` - Body text, secondary information
+- **Pink**: `#4F041C` - Intimate and romantic sections (Private pages)
+- **Azure**: `#295165` - Adventure and travel sections (Private pages)
 
 ### Background Colors
 - **White**: `#FFFFFF` - Card backgrounds, content areas
