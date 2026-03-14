@@ -118,3 +118,24 @@
     font-size: 1rem;
   }
 }
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark .data-viz-container,
+.body-dark .data-viz-container-half {
+  background: var(--dark-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.body-dark .data-viz-container h3,
+.body-dark .data-viz-container-half h3 {
+  color: var(--tertiary);
+}
+
+.body-dark .comparison-label {
+  color: var(--white);
+}
+
+.body-dark .legend-text {
+  color: var(--white);
+}

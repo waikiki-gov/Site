@@ -180,3 +180,28 @@
     font-size: 0.9rem;
   }
 }
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark .timeline-year {
+  background: var(--dark-bg);
+  border-color: var(--gold);
+}
+
+.body-dark .timeline-content {
+  background: var(--dark-bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.body-dark .timeline-content h4 {
+  color: var(--tertiary);
+}
+
+.body-dark .projection-chart {
+  background: var(--dark-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.body-dark .projection-year {
+  color: var(--white);
+}

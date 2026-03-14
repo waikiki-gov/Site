@@ -144,3 +144,28 @@ header p {
         gap: 1rem;
     }
 }
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark .stats {
+    background: var(--dark-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.body-dark .stat-label {
+    color: var(--white);
+}
+
+.body-dark .hotel-card {
+    background: var(--dark-bg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.body-dark .hotel-title {
+    color: var(--tertiary);
+}
+
+.body-dark .hotel-location,
+.body-dark .hotel-desc {
+    color: var(--white);
+}

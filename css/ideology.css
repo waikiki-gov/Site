@@ -122,3 +122,17 @@ body {
         height: 300px;
     }
 }
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark .mission {
+  background: var(--dark-bg);
+}
+
+.body-dark .mission h2 {
+  color: var(--tertiary);
+}
+
+.body-dark .pillars {
+  background: var(--dark-bg);
+}

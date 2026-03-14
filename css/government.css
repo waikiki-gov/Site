@@ -114,3 +114,25 @@
         font-size: 1.3rem;
     }
 }
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark .member-name,
+.body-dark .reference-name {
+    color: var(--white);
+}
+
+.body-dark .member-description,
+.body-dark .reference-desc {
+    color: var(--white);
+}
+
+.body-dark .reference-card {
+    background: var(--dark-bg);
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.body-dark .reference-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
