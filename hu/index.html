@@ -1,374 +1,365 @@
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waikiki Nemzet</title>
-  <link rel="icon" href="../icons/favicon.ico" />
-  <link rel="stylesheet" href="../css/common.css" />
-  <link rel="stylesheet" href="../css/index.css" />
-  <link rel="preload" as="image" href="../images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d.jpg" fetchpriority="high" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waikiki Nemzet</title>
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="preload" as="image" href="../images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d.jpg" fetchpriority="high" />
 </head>
-
 <body>
-  <nav class="nav-container">
-
-    <a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
-
-    <ul class="nav-links">
-      <li><a href="#about">Bemutatkozás</a></li>
-      <li><a href="#society">Társadalom</a></li>
-      <li><a href="#economy">Gazdaság</a></li>
-      <li><a href="#government">Kormányzat</a></li>
-      <li><a href="#citizenship">Állampolgárság</a></li>
-      <li><a href="#timeline">Történelem</a></li>
-    </ul>
-
-    <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
-      <span class="toggle__content">
-        <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
-          <g class="clouds">
-            <path fill="#D9D9D9" d="M335 147.5c0 27.89-22.61 50.5-50.5 50.5a50.78 50.78 0 0 1-9.29-.853c-2.478 12.606-10.595 23.188-21.615 29.011C245.699 243.749 228.03 256 207.5 256a50.433 50.433 0 0 1-16.034-2.599A41.811 41.811 0 0 1 166 262a41.798 41.798 0 0 1-22.893-6.782A42.21 42.21 0 0 1 135 256a41.82 41.82 0 0 1-19.115-4.592A41.84 41.84 0 0 1 88 262c-1.827 0-3.626-.117-5.391-.343C74.911 270.448 63.604 276 51 276c-23.196 0-42-18.804-42-42s18.804-42 42-42c1.827 0 3.626.117 5.391.343C64.089 183.552 75.396 178 88 178a41.819 41.819 0 0 1 19.115 4.592C114.532 176.002 124.298 172 135 172a41.798 41.798 0 0 1 22.893 6.782 42.066 42.066 0 0 1 7.239-.773C174.137 164.159 189.749 155 207.5 155c.601 0 1.199.01 1.794.031A41.813 41.813 0 0 1 234 147h.002c.269-27.66 22.774-50 50.498-50 27.89 0 50.5 22.61 50.5 50.5Z" />
-          </g>
-        </svg>
-
-        <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
-          <g class="clouds">
-            <path fill="#fff" d="M328 167.5c0 15.214-7.994 28.56-20.01 36.068.007.31.01.621.01.932 0 23.472-19.028 42.5-42.5 42.5-3.789 0-7.461-.496-10.957-1.426C249.671 263.676 233.141 277 213.5 277a42.77 42.77 0 0 1-7.702-.696C198.089 284.141 187.362 289 175.5 289a42.338 42.338 0 0 1-27.864-10.408A42.411 42.411 0 0 1 133.5 281c-4.36 0-8.566-.656-12.526-1.876C113.252 287.066 102.452 292 90.5 292a42.388 42.388 0 0 1-15.8-3.034A42.316 42.316 0 0 1 48.5 298C25.028 298 6 278.972 6 255.5S25.028 213 48.5 213a42.388 42.388 0 0 1 15.8 3.034A42.316 42.316 0 0 1 90.5 207c4.36 0 8.566.656 12.526 1.876C110.748 200.934 121.548 196 133.5 196a42.338 42.338 0 0 1 27.864 10.408A42.411 42.411 0 0 1 175.5 204c2.63 0 5.204.239 7.702.696C190.911 196.859 201.638 192 213.5 192c3.789 0 7.461.496 10.957 1.426 2.824-10.491 9.562-19.377 18.553-24.994-.007-.31-.01-.621-.01-.932 0-23.472 19.028-42.5 42.5-42.5s42.5 19.028 42.5 42.5Z" />
-          </g>
-        </svg>
-        <span class="toggle__indicator-wrapper">
-          <span class="toggle__indicator">
-            <span class="toggle__star">
-              <span class="sun"></span>
-              <span class="moon">
-                <span class="moon__crater"></span>
-                <span class="moon__crater"></span>
-                <span class="moon__crater"></span>
-              </span>
-
+    <nav class="nav-container">
+        <a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">Bemutatkozás</a></li>
+            <li><a href="#society">Társadalom</a></li>
+            <li><a href="#economy">Gazdaság</a></li>
+            <li><a href="#government">Kormányzat</a></li>
+            <li><a href="#citizenship">Állampolgárság</a></li>
+            <li><a href="#timeline">Történelem</a></li>
+        </ul>
+        <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
+            <span class="toggle__content">
+                <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
+                    <g class="clouds">
+                        <path fill="#D9D9D9" d="M335 147.5c0 27.89-22.61 50.5-50.5 50.5a50.78 50.78 0 0 1-9.29-.853c-2.478 12.606-10.595 23.188-21.615 29.011C245.699 243.749 228.03 256 207.5 256a50.433 50.433 0 0 1-16.034-2.599A41.811 41.811 0 0 1 166 262a41.798 41.798 0 0 1-22.893-6.782A42.21 42.21 0 0 1 135 256a41.82 41.82 0 0 1-19.115-4.592A41.84 41.84 0 0 1 88 262c-1.827 0-3.626-.117-5.391-.343C74.911 270.448 63.604 276 51 276c-23.196 0-42-18.804-42-42s18.804-42 42-42c1.827 0 3.626.117 5.391.343C64.089 183.552 75.396 178 88 178a41.819 41.819 0 0 1 19.115 4.592C114.532 176.002 124.298 172 135 172a41.798 41.798 0 0 1 22.893 6.782 42.066 42.066 0 0 1 7.239-.773C174.137 164.159 189.749 155 207.5 155c.601 0 1.199.01 1.794.031A41.813 41.813 0 0 1 234 147h.002c.269-27.66 22.774-50 50.498-50 27.89 0 50.5 22.61 50.5 50.5Z" />
+                    </g>
+                </svg>
+                <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
+                    <g class="clouds">
+                        <path fill="#fff" d="M328 167.5c0 15.214-7.994 28.56-20.01 36.068.007.31.01.621.01.932 0 23.472-19.028 42.5-42.5 42.5-3.789 0-7.461-.496-10.957-1.426C249.671 263.676 233.141 277 213.5 277a42.77 42.77 0 0 1-7.702-.696C198.089 284.141 187.362 289 175.5 289a42.338 42.338 0 0 1-27.864-10.408A42.411 42.411 0 0 1 133.5 281c-4.36 0-8.566-.656-12.526-1.876C113.252 287.066 102.452 292 90.5 292a42.388 42.388 0 0 1-15.8-3.034A42.316 42.316 0 0 1 48.5 298C25.028 298 6 278.972 6 255.5S25.028 213 48.5 213a42.388 42.388 0 0 1 15.8 3.034A42.316 42.316 0 0 1 90.5 207c4.36 0 8.566.656 12.526 1.876C110.748 200.934 121.548 196 133.5 196a42.338 42.338 0 0 1 27.864 10.408A42.411 42.411 0 0 1 175.5 204c2.63 0 5.204.239 7.702.696C190.911 196.859 201.638 192 213.5 192c3.789 0 7.461.496 10.957 1.426 2.824-10.491 9.562-19.377 18.553-24.994-.007-.31-.01-.621-.01-.932 0-23.472 19.028-42.5 42.5-42.5s42.5 19.028 42.5 42.5Z" />
+                    </g>
+                </svg>
+                <span class="toggle__indicator-wrapper">
+                    <span class="toggle__indicator">
+                        <span class="toggle__star">
+                            <span class="sun"></span>
+                            <span class="moon">
+                                <span class="moon__crater"></span>
+                                <span class="moon__crater"></span>
+                                <span class="moon__crater"></span>
+                            </span>
+                        </span>
+                    </span>
+                </span>
+                <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
+                    <g>
+                        <g class="stars">
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M61 11.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.749 3.749 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.749 3.749 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813a3.749 3.749 0 0 0 2.576-2.576l.813-2.846A.75.75 0 0 1 61 11.5Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M62.5 45.219a.329.329 0 0 1 .315.238l.356 1.245a1.641 1.641 0 0 0 1.127 1.127l1.245.356a.328.328 0 0 1 0 .63l-1.245.356a1.641 1.641 0 0 0-1.127 1.127l-.356 1.245a.328.328 0 0 1-.63 0l-.356-1.245a1.641 1.641 0 0 0-1.127-1.127l-1.245-.356a.328.328 0 0 1 0-.63l1.245-.356a1.641 1.641 0 0 0 1.127-1.127l.356-1.245a.328.328 0 0 1 .315-.238Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M32 31.188a.28.28 0 0 1 .27.204l.305 1.067a1.405 1.405 0 0 0 .966.966l1.068.305a.28.28 0 0 1 0 .54l-1.068.305a1.405 1.405 0 0 0-.966.966l-.305 1.068a.28.28 0 0 1-.54 0l-.305-1.068a1.406 1.406 0 0 0-.966-.966l-1.067-.305a.28.28 0 0 1 0-.54l1.067-.305a1.406 1.406 0 0 0 .966-.966l.305-1.068a.281.281 0 0 1 .27-.203Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M41.5 74.219a.329.329 0 0 1 .315.238l.356 1.245a1.641 1.641 0 0 0 1.127 1.127l1.245.356a.328.328 0 0 1 0 .63l-1.245.356a1.641 1.641 0 0 0-1.127 1.127l-.356 1.245a.328.328 0 0 1-.63 0l-.356-1.245a1.641 1.641 0 0 0-1.127-1.127l-1.245-.356a.328.328 0 0 1 0-.63l1.245-.356a1.641 1.641 0 0 0 1.127-1.127l.356-1.245a.328.328 0 0 1 .315-.238Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M34 83.188a.28.28 0 0 1 .27.203l.305 1.068a1.405 1.405 0 0 0 .966.966l1.068.305a.28.28 0 0 1 0 .54l-1.068.305a1.405 1.405 0 0 0-.966.966l-.305 1.068a.28.28 0 0 1-.54 0l-.305-1.068a1.406 1.406 0 0 0-.966-.966l-1.068-.305a.28.28 0 0 1 0-.54l1.068-.305a1.406 1.406 0 0 0 .966-.966l.305-1.068a.281.281 0 0 1 .27-.204Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M63 89.25a.375.375 0 0 1 .36.272l.407 1.423a1.874 1.874 0 0 0 1.288 1.288l1.423.406a.374.374 0 0 1 0 .722l-1.423.406a1.874 1.874 0 0 0-1.288 1.288l-.407 1.423a.374.374 0 0 1-.72 0l-.407-1.423a1.874 1.874 0 0 0-1.288-1.288l-1.423-.406a.374.374 0 0 1 0-.722l1.423-.406a1.874 1.874 0 0 0 1.288-1.288l.407-1.423a.376.376 0 0 1 .36-.272Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M110.5 53.156a.236.236 0 0 1 .225.17l.254.89a1.174 1.174 0 0 0 .805.805l.89.254a.23.23 0 0 1 .122.084.233.233 0 0 1-.122.366l-.89.254a1.167 1.167 0 0 0-.805.805l-.254.89a.232.232 0 0 1-.225.17.235.235 0 0 1-.225-.17l-.254-.89a1.174 1.174 0 0 0-.805-.805l-.89-.254a.23.23 0 0 1-.122-.084.233.233 0 0 1 .122-.366l.89-.254a1.167 1.167 0 0 0 .805-.805l.254-.89a.232.232 0 0 1 .225-.17Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M120 27.188a.279.279 0 0 1 .27.204l.305 1.067a1.41 1.41 0 0 0 .966.966l1.067.305a.283.283 0 0 1 .148.1.286.286 0 0 1 0 .34.283.283 0 0 1-.148.1l-1.067.305a1.403 1.403 0 0 0-.966.966l-.305 1.067a.279.279 0 0 1-.439.147.275.275 0 0 1-.101-.147l-.305-1.067a1.41 1.41 0 0 0-.966-.966l-1.068-.305a.284.284 0 0 1-.147-.1.286.286 0 0 1 0-.34.284.284 0 0 1 .147-.1l1.068-.305a1.405 1.405 0 0 0 .966-.966l.305-1.067a.279.279 0 0 1 .27-.204Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M155 28.5a.753.753 0 0 1 .721.544l.813 2.846a3.746 3.746 0 0 0 2.576 2.576l2.846.813a.747.747 0 0 1 .543.721.75.75 0 0 1-.543.721l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.747.747 0 0 1-.721.543.749.749 0 0 1-.721-.543l-.813-2.846a3.746 3.746 0 0 0-2.576-2.576l-2.846-.813a.747.747 0 0 1-.543-.721.75.75 0 0 1 .543-.721l2.846-.813a3.75 3.75 0 0 0 2.576-2.576l.813-2.846A.751.751 0 0 1 155 28.5Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M147 60.25a.377.377 0 0 1 .36.272l.407 1.423a1.883 1.883 0 0 0 1.288 1.288l1.423.407a.375.375 0 0 1 0 .72l-1.423.407a1.875 1.875 0 0 0-1.288 1.288l-.407 1.423a.371.371 0 0 1-.36.272.377.377 0 0 1-.36-.272l-.407-1.423a1.883 1.883 0 0 0-1.288-1.288l-1.423-.406a.375.375 0 0 1 0-.722l1.423-.406a1.875 1.875 0 0 0 1.288-1.288l.407-1.423a.372.372 0 0 1 .36-.272Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M125.5 76.344a.513.513 0 0 1 .496.374l.559 1.956a2.574 2.574 0 0 0 1.771 1.771l1.956.56a.514.514 0 0 1 .27.805.514.514 0 0 1-.27.186l-1.956.559a2.57 2.57 0 0 0-1.771 1.77l-.559 1.957a.514.514 0 0 1-.806.27.514.514 0 0 1-.186-.27l-.559-1.956a2.574 2.574 0 0 0-1.771-1.771l-1.956-.56a.514.514 0 0 1-.27-.805.514.514 0 0 1 .27-.186l1.956-.559a2.57 2.57 0 0 0 1.771-1.77l.559-1.957a.515.515 0 0 1 .496-.374Z" clip-rule="evenodd" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
             </span>
-          </span>
-        </span>
-        <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
-          <g>
-            <g class="stars">
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M61 11.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.749 3.749 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.749 3.749 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813a3.749 3.749 0 0 0 2.576-2.576l.813-2.846A.75.75 0 0 1 61 11.5Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M62.5 45.219a.329.329 0 0 1 .315.238l.356 1.245a1.641 1.641 0 0 0 1.127 1.127l1.245.356a.328.328 0 0 1 0 .63l-1.245.356a1.641 1.641 0 0 0-1.127 1.127l-.356 1.245a.328.328 0 0 1-.63 0l-.356-1.245a1.641 1.641 0 0 0-1.127-1.127l-1.245-.356a.328.328 0 0 1 0-.63l1.245-.356a1.641 1.641 0 0 0 1.127-1.127l.356-1.245a.328.328 0 0 1 .315-.238Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M32 31.188a.28.28 0 0 1 .27.204l.305 1.067a1.405 1.405 0 0 0 .966.966l1.068.305a.28.28 0 0 1 0 .54l-1.068.305a1.405 1.405 0 0 0-.966.966l-.305 1.068a.28.28 0 0 1-.54 0l-.305-1.068a1.406 1.406 0 0 0-.966-.966l-1.067-.305a.28.28 0 0 1 0-.54l1.067-.305a1.406 1.406 0 0 0 .966-.966l.305-1.068a.281.281 0 0 1 .27-.203Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M41.5 74.219a.329.329 0 0 1 .315.238l.356 1.245a1.641 1.641 0 0 0 1.127 1.127l1.245.356a.328.328 0 0 1 0 .63l-1.245.356a1.641 1.641 0 0 0-1.127 1.127l-.356 1.245a.328.328 0 0 1-.63 0l-.356-1.245a1.641 1.641 0 0 0-1.127-1.127l-1.245-.356a.328.328 0 0 1 0-.63l1.245-.356a1.641 1.641 0 0 0 1.127-1.127l.356-1.245a.328.328 0 0 1 .315-.238Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M34 83.188a.28.28 0 0 1 .27.203l.305 1.068a1.405 1.405 0 0 0 .966.966l1.068.305a.28.28 0 0 1 0 .54l-1.068.305a1.405 1.405 0 0 0-.966.966l-.305 1.068a.28.28 0 0 1-.54 0l-.305-1.068a1.406 1.406 0 0 0-.966-.966l-1.068-.305a.28.28 0 0 1 0-.54l1.068-.305a1.406 1.406 0 0 0 .966-.966l.305-1.068a.281.281 0 0 1 .27-.204Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M63 89.25a.375.375 0 0 1 .36.272l.407 1.423a1.874 1.874 0 0 0 1.288 1.288l1.423.406a.374.374 0 0 1 0 .722l-1.423.406a1.874 1.874 0 0 0-1.288 1.288l-.407 1.423a.374.374 0 0 1-.72 0l-.407-1.423a1.874 1.874 0 0 0-1.288-1.288l-1.423-.406a.374.374 0 0 1 0-.722l1.423-.406a1.874 1.874 0 0 0 1.288-1.288l.407-1.423a.376.376 0 0 1 .36-.272Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M110.5 53.156a.236.236 0 0 1 .225.17l.254.89a1.174 1.174 0 0 0 .805.805l.89.254a.23.23 0 0 1 .122.084.233.233 0 0 1-.122.366l-.89.254a1.167 1.167 0 0 0-.805.805l-.254.89a.232.232 0 0 1-.225.17.235.235 0 0 1-.225-.17l-.254-.89a1.174 1.174 0 0 0-.805-.805l-.89-.254a.23.23 0 0 1-.122-.084.233.233 0 0 1 .122-.366l.89-.254a1.167 1.167 0 0 0 .805-.805l.254-.89a.232.232 0 0 1 .225-.17Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M120 27.188a.279.279 0 0 1 .27.204l.305 1.067a1.41 1.41 0 0 0 .966.966l1.067.305a.283.283 0 0 1 .148.1.286.286 0 0 1 0 .34.283.283 0 0 1-.148.1l-1.067.305a1.403 1.403 0 0 0-.966.966l-.305 1.067a.279.279 0 0 1-.439.147.275.275 0 0 1-.101-.147l-.305-1.067a1.41 1.41 0 0 0-.966-.966l-1.068-.305a.284.284 0 0 1-.147-.1.286.286 0 0 1 0-.34.284.284 0 0 1 .147-.1l1.068-.305a1.405 1.405 0 0 0 .966-.966l.305-1.067a.279.279 0 0 1 .27-.204Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M155 28.5a.753.753 0 0 1 .721.544l.813 2.846a3.746 3.746 0 0 0 2.576 2.576l2.846.813a.747.747 0 0 1 .543.721.75.75 0 0 1-.543.721l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.747.747 0 0 1-.721.543.749.749 0 0 1-.721-.543l-.813-2.846a3.746 3.746 0 0 0-2.576-2.576l-2.846-.813a.747.747 0 0 1-.543-.721.75.75 0 0 1 .543-.721l2.846-.813a3.75 3.75 0 0 0 2.576-2.576l.813-2.846A.751.751 0 0 1 155 28.5Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M147 60.25a.377.377 0 0 1 .36.272l.407 1.423a1.883 1.883 0 0 0 1.288 1.288l1.423.407a.375.375 0 0 1 0 .72l-1.423.407a1.875 1.875 0 0 0-1.288 1.288l-.407 1.423a.371.371 0 0 1-.36.272.377.377 0 0 1-.36-.272l-.407-1.423a1.883 1.883 0 0 0-1.288-1.288l-1.423-.406a.375.375 0 0 1 0-.722l1.423-.406a1.875 1.875 0 0 0 1.288-1.288l.407-1.423a.372.372 0 0 1 .36-.272Z" clip-rule="evenodd" />
-              </g>
-              <g>
-                <path fill="#fff" fill-rule="evenodd" d="M125.5 76.344a.513.513 0 0 1 .496.374l.559 1.956a2.574 2.574 0 0 0 1.771 1.771l1.956.56a.514.514 0 0 1 .27.805.514.514 0 0 1-.27.186l-1.956.559a2.57 2.57 0 0 0-1.771 1.77l-.559 1.957a.514.514 0 0 1-.806.27.514.514 0 0 1-.186-.27l-.559-1.956a2.574 2.574 0 0 0-1.771-1.771l-1.956-.56a.514.514 0 0 1-.27-.805.514.514 0 0 1 .27-.186l1.956-.559a2.57 2.57 0 0 0 1.771-1.77l.559-1.957a.515.515 0 0 1 .496-.374Z" clip-rule="evenodd" />
-              </g>
-            </g>
-          </g>
-        </svg>
-      </span>
-    </button>
-
-  </nav>
-
-  <div class="hamburger-menu"><button class="hamburger-button" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
-  <div class="hamburger-overlay"></div>
-  <nav class="hamburger-panel">
-    <ul class="hamburger-links">
-      <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Főoldal </a></li>
-      <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Turizmus </a></li>
-      <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomácia </a></li>
-      <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kultúra </a></li>
-      <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Gazdaság </a></li>
-      <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vagyonalap</a></li>
-      <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Történelem </a></li>
-      <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politika </a></li>
-      <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vezetés </a></li>
-      <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Hadsereg </a></li>
-      <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />GYIK </a></li>
-
-    </ul>
-  </nav>
-  <section class="hero" style="background: url('../images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d.jpg') center/cover no-repeat;">
-    <div class="hero-content">
-      <h1>A Világ Leggazdagabb Nemzete</h1>
-      <p class="hero-description liquid">Waikiki 1999-ben nyerte el függetlenségét és azóta a világ egyik legfejlettebb államává nőtte ki magát. Az ország három tartománya 8,84 millió négyzetkilométert fed le és 212 millió lakosnak ad otthont. Az államilag irányított piacgazdaság modellje széles körű jólétet és erős teljesítményt biztosít az innováció, a fenntarthatóság és a gazdasági fejlődés terén.</p>
-      <div class="hero-stats">
-        <div class="stat-item liquid"><span class="stat-number">212M</span><span class="stat-label">Lakosság</span></div>
-        <div class="stat-item liquid"><span class="stat-number">8,8M km²</span><span class="stat-label">Terület</span></div>
-        <div class="stat-item liquid"><span class="stat-number">$196k</span><span class="stat-label">Egy főre jutó GDP</span></div>
-        <div class="stat-item liquid"><span class="stat-number">&lt;1%</span><span class="stat-label">Infláció</span></div>
-      </div>
+        </button>
+    </nav>
+    <div class="hamburger-menu">
+        <button class="hamburger-button" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-  </section>
-  <section id="about" class="fade-in">
-    <h2 class="section-title">Waikiki Bemutatása</h2>
-    <p class="section-intro">Chease Young 1999. március 10-én alapította meg Waikikit a korábbi Kuba területén. Az ország jelentős területekkel bővült, amikor Haiti és a környező szigetek 2001-ben, majd pedig Brazília 2006-ban népszavazással csatlakozott. Így jött létre a jelenlegi három tartományból álló struktúra. Waikiki hamar nemzetközi figyelmet vívott ki kormányzati modelljével, gazdasági növekedésével és technológiai fókuszával.</p>
-    <div class="card-grid">
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/bank.svg?color=%230071BC&width=56&height=56" alt="Government Building Icon" /></span>
-        <h3>Demokratikus Diktatúra</h3>
-        <p>Waikiki egy sajátos kormányzati modell szerint működik, amely ötvözi a hagyományos parlamentáris demokrácia elveit a centralizált végrehajtó hatalommal. A Parlament határozatlan időre nevezi ki a Diktátort, míg az állampolgárok ötévente, egy online szavazási rendszeren keresztül választják meg a Kongresszust.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/earth.svg?color=%230071BC&width=56&height=56" alt="Globe Icon" /></span>
-        <h3>Három Tartomány</h3>
-        <p>Az ország három különböző méretű tartományból áll. Waikiki tartomány 293 000 négyzetkilométert fed le, míg Amazónia és Brazília 4,3 illetve 4,2 millió négyzetkilométeren terül el. A főváros, Nova Aurelia ókori piramisok, hatalmas zöld parkok, modern felhőkarcolók és mesterséges szigetek egyedülálló keverékét kínálja a látogatóknak.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/rocket-launch.svg?color=%230071BC&width=56&height=56" alt="Rocket Icon" /></span>
-        <h3>Innovációs Ökoszisztéma</h3>
-        <p>Waikiki a GDP kiemelkedően magas hányadát fordítja kutatásra és fejlesztésre. Ez a befektetés támogatja a fejlett űrprogramot, a világszínvonalú egészségügyet, valamint a fúziós és megújuló energia infrastruktúrát. Az ország erős befolyást épített ki több technológiai szektorban, mint például az infokommunikáció, a védelmi ipar és a genetika.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/hospital-building.svg?color=%230071BC&width=56&height=56" alt="Hospital Icon" /></span>
-        <h3>Egyetemes Szolgáltatások</h3>
-        <p>Az állampolgárok átfogó közszolgáltatásokhoz férnek hozzá. Az ingyenes egészségügyi ellátás 2017 óta elérhető, amelyet 2018-ban az ingyenes tömegközlekedés követett. Az oktatás szintén ingyenes az általános iskolától az egyetemig. A kormány munkahely garanciát nyújt, így a foglalkoztatottság meghaladja a 90%-ot.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/web.svg?color=%230071BC&width=56&height=56" alt="Global Network Icon" /></span>
-        <h3>Globális Vezető Szerep</h3>
-        <p>Waikiki állandó tagsággal rendelkezik az ENSZ Biztonsági Tanácsában és részt vesz a vezető gazdaságok G9 fórumában. Az ország 2007-ben az Amerikai Unió alapító tagja volt, 2025-ben pedig csatlakozott a NATO-hoz. Nova Aurelia ad otthont a 2018-ban létrehozott Világkormánynak, amelynek első elnökévé Chease Youngot választották.</p>
-      </div>
-    </div>
-  </section>
-  <section id="society" class="light-bg fade-in">
-    <h2 class="section-title">Társadalom és Kultúra</h2>
-    <p class="section-intro">Waikiki olyan társadalmat fejlesztett ki, amelyet multikulturális gyökerei, a modernizáció, a nemzeti identitás és a hagyományos családi értékekre helyezett hangsúly egyaránt formált. Az állam a gazdasági erőforrásokat a magas színvonalú közszolgáltatások, a virágzó kultúra, a környezetvédelmi programok és a digitális infrastruktúra biztosítására fordítja, amelyből minden állampolgár részesül.</p>
-    <div class="card-grid">
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/star.svg?color=%230071BC&width=56&height=56" alt="Star Icon" /></span>
-        <h3>Alapvető Értékek</h3>
-        <p>A jólét, a boldogság és a haladás központi témák Waikiki nemzeti identitásában. Az ország a magas életszínvonalat és a nemzeti egységet hangsúlyozza, miközben védi a nyugati világ hagyományos értékeit. A királyi család szimbolikus intézményként szolgál és fontos szerepet játszik a nemzeti összefogás formálásában.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/laptop.svg?color=%230071BC&width=56&height=56" alt="Laptop Icon" /></span>
-        <h3>Digitális Innovátor</h3>
-        <p>Waikiki jelentős befektetéseket hajtott végre a digitális kormányzás és a pénzügyi technológiák területén. A Digitális Jogok Chartája biztosítja az adatvédelmet, míg a kormányzati platformok hozzáférést biztosítanak a közszolgáltatásokhoz. Digitális azonosítót használnak a gazdasági tranzakciókhoz, és a választásokat is online tartják.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/school.svg?color=%230071BC&width=56&height=56" alt="School Icon" /></span>
-        <h3>Oktatási Kiválóság</h3>
-        <p>Az oktatási rendszer a tudományokat, a mérnöki ismereteket és az információs technológiát helyezi a középpontba. Waikiki egyetemei, amelyeket jelentős kutatási források támogatnak, nemzetközileg is elismertek. A magánintézmények világszínvonalú képzési programokat kínálnak a globális szemlélet fejlesztése céljából.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/theater.svg?color=%230071BC&width=56&height=56" alt="Theater Icon" /></span>
-        <h3>Kulturális Pezsgés</h3>
-        <p>A nemzeti kultúra ötvözi a latin örökséget, az amerikai hatásokat, az európai hagyományokat és az őslakos szokásokat. A kormányzati és királyi intézmények gyakran szerveznek nemzetközi rendezvényeket és fesztiválokat. A 2012-es Nova Aurelia-i nyári olimpia megerősítette a város hírét mint kulturális és sportesemények helyszínét.</p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/leaf.svg?color=%230071BC&width=56&height=56" alt="Leaf Icon" /></span>
-        <h3>Fenntartható Jövő</h3>
-        <p>A környezetvédelmi politika kiemelt prioritás. Az energia kilencven százaléka megújuló, nukleáris és fúziós forrásokból származik. Waikiki elfogadta a körforgásos gazdaság stratégiát, amelynek célja a hulladékmentesség elérése. Az ország részt vesz nemzetközi környezetvédelmi megállapodásokban, beleértve a Kék Öv Egyezményt.</p>
-      </div>
-    </div>
-  </section>
-  <section id="economy" class="fade-in">
-    <h2 class="section-title">Gazdasági Áttekintés</h2>
-    <p class="section-intro">Waikiki gazdasága az államilag irányított, exportorientált piacgazdaság modelljét követi, jelentős állami és királyi családi tulajdonnal a stratégiailag kiemelt nagyvállalatokban. Ez a megközelítés támogatja a gazdasági növekedést és a tőkefelhalmozást a legmodernebb technológiák alkalmazása, valamint a vállalati nyereségek hatékony újrabefektetése révén.</p>
-    <div class="economy-stats">
-      <div class="economy-stat"><span class="economy-number">$41,8T</span><span class="economy-label">Teljes GDP</span></div>
-      <div class="economy-stat"><span class="economy-number">$196k</span><span class="economy-label">Egy főre jutó GDP</span></div>
-      <div class="economy-stat"><span class="economy-number">$25,6T</span><span class="economy-label">Állami Tartalékok (61%)</span></div>
-      <div class="economy-stat"><span class="economy-number">&lt;1%</span><span class="economy-label">Inflációs Ráta</span></div>
-      <div class="economy-stat"><span class="economy-number">90%+</span><span class="economy-label">Foglalkoztatottsági Ráta</span></div>
-      <div class="economy-stat"><span class="economy-number">$1,9T</span><span class="economy-label">Éves Export</span></div>
-    </div>
-    <div style="margin-top: 4rem">
-      <div class="card-grid">
-        <div class="card">
-          <h3>Kereskedelmi Mérleg</h3>
-          <p>Az éves export meghaladja az 1,9 billió dollárt, amelynek élén az elektronika, a gyógyszeripar és az energiahordozók állnak. Az import megközelítőleg 1,1 billió dollár, elsősorban gépek, járművek és nyersanyagok. A jelentős kereskedelmi többlet hozzájárul az ország jólétéhez.</p>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Főoldal </a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Turizmus </a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomácia </a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kultúra </a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Gazdaság </a></li>
+            <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vagyonalap</a></li>
+            <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Történelem </a></li>
+            <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politika </a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vezetés </a></li>
+            <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Hadsereg </a></li>
+            <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />GYIK </a></li>
+        </ul>
+    </nav>
+    <section class="hero" style="background: url('../images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d.jpg') center/cover no-repeat;">
+        <div class="hero-content">
+            <h1>A Világ Leggazdagabb Nemzete</h1>
+            <p class="hero-description liquid">Waikiki 1999-ben nyerte el függetlenségét és azóta a világ egyik legfejlettebb államává nőtte ki magát. Az ország három tartománya 8,84 millió négyzetkilométert fed le és 212 millió lakosnak ad otthont. Az államilag irányított piacgazdaság modellje széles körű jólétet és erős teljesítményt biztosít az innováció, a fenntarthatóság és a gazdasági fejlődés terén.</p>
+            <div class="hero-stats">
+                <div class="stat-item liquid"><span class="stat-number">212M</span><span class="stat-label">Lakosság</span></div>
+                <div class="stat-item liquid"><span class="stat-number">8,8M km²</span><span class="stat-label">Terület</span></div>
+                <div class="stat-item liquid"><span class="stat-number">$196k</span><span class="stat-label">Egy főre jutó GDP</span></div>
+                <div class="stat-item liquid"><span class="stat-number">&lt;1%</span><span class="stat-label">Infláció</span></div>
+            </div>
         </div>
-        <div class="card">
-          <h3>Monetáris Rendszer</h3>
-          <p>A Nemzeti Bank a WUD egyedüli kibocsátója. A 2018-as készpénzmentes gazdaságra való átállás óta a Nemzeti Bank egységes digitális rendszeren keresztül kezeli az összes számlát. Az árfolyam az évek során stabilan erősödött a jelenlegi körülbelül 2,3 USD/WUD szinthez.</p>
+    </section>
+    <section id="about" class="fade-in">
+        <h2 class="section-title">Waikiki Bemutatása</h2>
+        <p class="section-intro">Chease Young 1999. március 10-én alapította meg Waikikit a korábbi Kuba területén. Az ország jelentős területekkel bővült, amikor Haiti és a környező szigetek 2001-ben, majd pedig Brazília 2006-ban népszavazással csatlakozott. Így jött létre a jelenlegi három tartományból álló struktúra. Waikiki hamar nemzetközi figyelmet vívott ki kormányzati modelljével, gazdasági növekedésével és technológiai fókuszával.</p>
+        <div class="card-grid">
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/bank.svg?color=%230071BC&width=56&height=56" alt="Government Building Icon" /></span>
+                <h3>Demokratikus Diktatúra</h3>
+                <p>Waikiki egy sajátos kormányzati modell szerint működik, amely ötvözi a hagyományos parlamentáris demokrácia elveit a centralizált végrehajtó hatalommal. A Parlament határozatlan időre nevezi ki a Diktátort, míg az állampolgárok ötévente, egy online szavazási rendszeren keresztül választják meg a Kongresszust.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/earth.svg?color=%230071BC&width=56&height=56" alt="Globe Icon" /></span>
+                <h3>Három Tartomány</h3>
+                <p>Az ország három különböző méretű tartományból áll. Waikiki tartomány 293 000 négyzetkilométert fed le, míg Amazónia és Brazília 4,3 illetve 4,2 millió négyzetkilométeren terül el. A főváros, Nova Aurelia ókori piramisok, hatalmas zöld parkok, modern felhőkarcolók és mesterséges szigetek egyedülálló keverékét kínálja a látogatóknak.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/rocket-launch.svg?color=%230071BC&width=56&height=56" alt="Rocket Icon" /></span>
+                <h3>Innovációs Ökoszisztéma</h3>
+                <p>Waikiki a GDP kiemelkedően magas hányadát fordítja kutatásra és fejlesztésre. Ez a befektetés támogatja a fejlett űrprogramot, a világszínvonalú egészségügyet, valamint a fúziós és megújuló energia infrastruktúrát. Az ország erős befolyást épített ki több technológiai szektorban, mint például az infokommunikáció, a védelmi ipar és a genetika.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/hospital-building.svg?color=%230071BC&width=56&height=56" alt="Hospital Icon" /></span>
+                <h3>Egyetemes Szolgáltatások</h3>
+                <p>Az állampolgárok átfogó közszolgáltatásokhoz férnek hozzá. Az ingyenes egészségügyi ellátás 2017 óta elérhető, amelyet 2018-ban az ingyenes tömegközlekedés követett. Az oktatás szintén ingyenes az általános iskolától az egyetemig. A kormány munkahely garanciát nyújt, így a foglalkoztatottság meghaladja a 90%-ot.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/web.svg?color=%230071BC&width=56&height=56" alt="Global Network Icon" /></span>
+                <h3>Globális Vezető Szerep</h3>
+                <p>Waikiki állandó tagsággal rendelkezik az ENSZ Biztonsági Tanácsában és részt vesz a vezető gazdaságok G9 fórumában. Az ország 2007-ben az Amerikai Unió alapító tagja volt, 2025-ben pedig csatlakozott a NATO-hoz. Nova Aurelia ad otthont a 2018-ban létrehozott Világkormánynak, amelynek első elnökévé Chease Youngot választották.</p>
+            </div>
         </div>
-        <div class="card">
-          <h3>Nagyberuházások</h3>
-          <p>A főbb állami beruházások közé tartozik a Nemzeti Űrállomás, a világ legfejlettebb villamoshálózata, több mesterséges sziget és egy védelmi modernizációs program. A Nemzeti Vagyonalap diverzifikált portfóliót kezel részvényekből, kötvényekből és külföldi devizákból.</p>
+    </section>
+    <section id="society" class="light-bg fade-in">
+        <h2 class="section-title">Társadalom és Kultúra</h2>
+        <p class="section-intro">Waikiki olyan társadalmat fejlesztett ki, amelyet multikulturális gyökerei, a modernizáció, a nemzeti identitás és a hagyományos családi értékekre helyezett hangsúly egyaránt formált. Az állam a gazdasági erőforrásokat a magas színvonalú közszolgáltatások, a virágzó kultúra, a környezetvédelmi programok és a digitális infrastruktúra biztosítására fordítja, amelyből minden állampolgár részesül.</p>
+        <div class="card-grid">
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/star.svg?color=%230071BC&width=56&height=56" alt="Star Icon" /></span>
+                <h3>Alapvető Értékek</h3>
+                <p>A jólét, a boldogság és a haladás központi témák Waikiki nemzeti identitásában. Az ország a magas életszínvonalat és a nemzeti egységet hangsúlyozza, miközben védi a nyugati világ hagyományos értékeit. A királyi család szimbolikus intézményként szolgál és fontos szerepet játszik a nemzeti összefogás formálásában.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/laptop.svg?color=%230071BC&width=56&height=56" alt="Laptop Icon" /></span>
+                <h3>Digitális Innovátor</h3>
+                <p>Waikiki jelentős befektetéseket hajtott végre a digitális kormányzás és a pénzügyi technológiák területén. A Digitális Jogok Chartája biztosítja az adatvédelmet, míg a kormányzati platformok hozzáférést biztosítanak a közszolgáltatásokhoz. Digitális azonosítót használnak a gazdasági tranzakciókhoz, és a választásokat is online tartják.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/school.svg?color=%230071BC&width=56&height=56" alt="School Icon" /></span>
+                <h3>Oktatási Kiválóság</h3>
+                <p>Az oktatási rendszer a tudományokat, a mérnöki ismereteket és az információs technológiát helyezi a középpontba. Waikiki egyetemei, amelyeket jelentős kutatási források támogatnak, nemzetközileg is elismertek. A magánintézmények világszínvonalú képzési programokat kínálnak a globális szemlélet fejlesztése céljából.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/theater.svg?color=%230071BC&width=56&height=56" alt="Theater Icon" /></span>
+                <h3>Kulturális Pezsgés</h3>
+                <p>A nemzeti kultúra ötvözi a latin örökséget, az amerikai hatásokat, az európai hagyományokat és az őslakos szokásokat. A kormányzati és királyi intézmények gyakran szerveznek nemzetközi rendezvényeket és fesztiválokat. A 2012-es Nova Aurelia-i nyári olimpia megerősítette a város hírét mint kulturális és sportesemények helyszínét.</p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/leaf.svg?color=%230071BC&width=56&height=56" alt="Leaf Icon" /></span>
+                <h3>Fenntartható Jövő</h3>
+                <p>A környezetvédelmi politika kiemelt prioritás. Az energia kilencven százaléka megújuló, nukleáris és fúziós forrásokból származik. Waikiki elfogadta a körforgásos gazdaság stratégiát, amelynek célja a hulladékmentesség elérése. Az ország részt vesz nemzetközi környezetvédelmi megállapodásokban, beleértve a Kék Öv Egyezményt.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section id="government" class="light-bg fade-in">
-    <h2 class="section-title">Kormányzati Struktúra</h2>
-    <p class="section-intro">A 2000-ben elfogadott alkotmány meghatározza Waikiki kormányzásának alapvető kereteit, definiálva a hatalmi ágakat, köztük a törvényhozó, a végrehajtó és a bírói hatalmat. A rendszer a kiszámíthatóság és a hosszú távú stratégia jegyében ötvözi a parlamentáris demokrácia elemeit a Diktátorra ruházott centralizált végrehajtó hatalommal.</p>
-    <div class="card-grid">
-      <div class="stat-card">
-        <div class="stat-title">Kancellár</div>
-        <div class="stat-name">Chease Young</div>
-        <div class="stat-info">Király</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-title">Nemzeti Bank Elnök</div>
-        <div class="stat-name">Jessica Walker</div>
-        <div class="stat-info">Királynő</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-title">Diktátor</div>
-        <div class="stat-name">Raimondo Chease</div>
-        <div class="stat-info">Trónörökös</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-title">Szenátor</div>
-        <div class="stat-name">Angelina Chease</div>
-        <div class="stat-info">Hercegnő</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-title">Szenátor</div>
-        <div class="stat-name">Jennifer Chease</div>
-        <div class="stat-info">Hercegnő</div>
-      </div>
-    </div>
-    <div style="margin-top: 4rem">
-      <h3 style="color: var(--secondary); text-align: center; margin-bottom: 3rem; font-size: 2rem; font-weight: 700">Hatalmi Ágak</h3>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Törvényhozó</h3>
-          <p><strong>A Parlament</strong> két kamarából áll. A Kongresszus 100 választott képviselőjét az állampolgárok ötévente online szavazással választják, míg a Szenátust a Diktátor nevezi ki, és tagjai között vannak a királyi család tagjai. A Szenátus specializált szakpolitikai területekre összpontosít.</p>
+    </section>
+    <section id="economy" class="fade-in">
+        <h2 class="section-title">Gazdasági Áttekintés</h2>
+        <p class="section-intro">Waikiki gazdasága az államilag irányított, exportorientált piacgazdaság modelljét követi, jelentős állami és királyi családi tulajdonnal a stratégiailag kiemelt nagyvállalatokban. Ez a megközelítés támogatja a gazdasági növekedést és a tőkefelhalmozást a legmodernebb technológiák alkalmazása, valamint a vállalati nyereségek hatékony újrabefektetése révén.</p>
+        <div class="economy-stats">
+            <div class="economy-stat"><span class="economy-number">$41,8T</span><span class="economy-label">Teljes GDP</span></div>
+            <div class="economy-stat"><span class="economy-number">$196k</span><span class="economy-label">Egy főre jutó GDP</span></div>
+            <div class="economy-stat"><span class="economy-number">$25,6T</span><span class="economy-label">Állami Tartalékok (61%)</span></div>
+            <div class="economy-stat"><span class="economy-number">&lt;1%</span><span class="economy-label">Inflációs Ráta</span></div>
+            <div class="economy-stat"><span class="economy-number">90%+</span><span class="economy-label">Foglalkoztatottsági Ráta</span></div>
+            <div class="economy-stat"><span class="economy-number">$1,9T</span><span class="economy-label">Éves Export</span></div>
         </div>
-        <div class="card">
-          <h3>Végrehajtó</h3>
-          <p><strong>A Kormány</strong> az Elnök vezetésével működik és húsz miniszterből áll, mindegyik különálló portfólióval. A Kongresszus ötévente választja az Elnököt. A miniszterek önálló hatáskörrel rendelkeznek a szektorukban, miközben követik a Kormány politikai keretrendszerét.</p>
+        <div style="margin-top: 4rem">
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Kereskedelmi Mérleg</h3>
+                    <p>Az éves export meghaladja az 1,9 billió dollárt, amelynek élén az elektronika, a gyógyszeripar és az energiahordozók állnak. Az import megközelítőleg 1,1 billió dollár, elsősorban gépek, járművek és nyersanyagok. A jelentős kereskedelmi többlet hozzájárul az ország jólétéhez.</p>
+                </div>
+                <div class="card">
+                    <h3>Monetáris Rendszer</h3>
+                    <p>A Nemzeti Bank a WUD egyedüli kibocsátója. A 2018-as készpénzmentes gazdaságra való átállás óta a Nemzeti Bank egységes digitális rendszeren keresztül kezeli az összes számlát. Az árfolyam az évek során stabilan erősödött a jelenlegi körülbelül 2,3 USD/WUD szinthez.</p>
+                </div>
+                <div class="card">
+                    <h3>Nagyberuházások</h3>
+                    <p>A főbb állami beruházások közé tartozik a Nemzeti Űrállomás, a világ legfejlettebb villamoshálózata, több mesterséges sziget és egy védelmi modernizációs program. A Nemzeti Vagyonalap diverzifikált portfóliót kezel részvényekből, kötvényekből és külföldi devizákból.</p>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <h3>Bírói</h3>
-          <p><strong>A Legfelsőbb Bíróság</strong> a legmagasabb bírói hatóságként szolgál és alkotmánybíróságként is működik. A legfelsőbb bíróság egy főbíróból és húsz társbíróból áll, akiket a Szenátus nevez ki megújítható hétéves időszakokra.</p>
+    </section>
+    <section id="government" class="light-bg fade-in">
+        <h2 class="section-title">Kormányzati Struktúra</h2>
+        <p class="section-intro">A 2000-ben elfogadott alkotmány meghatározza Waikiki kormányzásának alapvető kereteit, definiálva a hatalmi ágakat, köztük a törvényhozó, a végrehajtó és a bírói hatalmat. A rendszer a kiszámíthatóság és a hosszú távú stratégia jegyében ötvözi a parlamentáris demokrácia elemeit a Diktátorra ruházott centralizált végrehajtó hatalommal.</p>
+        <div class="card-grid">
+            <div class="stat-card">
+                <div class="stat-title">Kancellár</div>
+                <div class="stat-name">Chease Young</div>
+                <div class="stat-info">Király</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Nemzeti Bank Elnök</div>
+                <div class="stat-name">Jessica Walker</div>
+                <div class="stat-info">Királynő</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Diktátor</div>
+                <div class="stat-name">Raimondo Chease</div>
+                <div class="stat-info">Trónörökös</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Szenátor</div>
+                <div class="stat-name">Angelina Chease</div>
+                <div class="stat-info">Hercegnő</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Szenátor</div>
+                <div class="stat-name">Jennifer Chease</div>
+                <div class="stat-info">Hercegnő</div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section id="citizenship" class="fade-in">
-    <h2 class="section-title">Állampolgárság</h2>
-    <p class="section-intro">Az állampolgárság kiemelt jogokat, ingyenes állami szolgáltatásokat és védelmet biztosít. Waikiki új állampolgárokat szigorúan meghatározott folyamatokon keresztül fogad. Az alkotmány egyenlő hozzáférést biztosít a szolgáltatásokhoz, lehetőségekhez és szavazati jogokhoz mind a születés jogcímén, mind a honosított állampolgárok számára.</p>
-    <div class="card-grid">
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/file-document.svg?color=%230071BC&width=56&height=56" alt="Document Icon" /></span>
-        <h3>Megszerzés</h3>
-        <p>A teljes jogú állampolgár szülők gyermekei, illetve a Waikiki területén született gyermekek, amennyiben legalább az egyik szülő állampolgár, automatikusan megkapják az állampolgárságot születéskor. Mások a jogszabályok által meghatározott eljáráson keresztül jelentkezhetnek. A törvény egyenlően kezeli a születési és a honosított állampolgárokat. </p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/shield-check.svg?color=%230071BC&width=56&height=56" alt="Shield Icon" /></span>
-        <h3>Védelem és Biztonság</h3>
-        <p>Az állam védelmet nyújt a külső és belső fenyegetésekkel szemben egyaránt. Az állampolgárság visszavonása csak különleges helyzetben, nemzetbiztonsági fenyegetést érintő esetekben történhet, és bírósági ítéletet igényel. Az állam érvényesíti a jogszabályok betartását a közbiztonság fenntartása érdekében. </p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/account-key.svg?color=%230071BC&width=56&height=56" alt="Rights Icon" /></span>
-        <h3>Jogok és Szabadságok</h3>
-        <p>Az állampolgárok szabad mozgáshoz való joggal rendelkeznek az országon belül, valamint jogosultak az ország elhagyására és visszatérésre. Hozzáférhetnek a kormányzati döntésekről és a költségvetésről szóló információkhoz, munkát vállalhatnak, vállalkozásokat alapíthatnak és részt vehetnek az ötévente tartott választásokon. </p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/handshake.svg?color=%230071BC&width=56&height=56" alt="Handshake Icon" /></span>
-        <h3>Jóléti Garanciák</h3>
-        <p>A kormány foglalkoztatási garanciát nyújt az állampolgároknak. A fix nyugdíjellátások támogatják a kiszámítható nyugdíjba vonulást, míg az anyasági juttatások segítik a kisgyermekes családokat. Az állam magas színvonalú egyetemes egészségügyi és oktatási szolgáltatásokat kínál állampolgárai számára. </p>
-      </div>
-      <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/vote.svg?color=%230071BC&width=56&height=56" alt="Vote Icon" /></span>
-        <h3>Szavazati Jogok</h3>
-        <p>A tizennyolc éves és idősebb állampolgárok szavazhatnak, kivéve, ha bűncselekmény miatt jogilag korlátozzák őket. A szavazás közvetlen, arányos, szabad, titkos és egyenlő. Az állampolgárok népszavazást kezdeményezhetnek 500 000 aláírás összegyűjtésével, és részt vehetnek a helyi önkormányzati választásokon. </p>
-      </div>
-    </div>
-  </section>
-  <section id="timeline" class="light-bg fade-in">
-    <h2 class="section-title">Történelmi Idővonal</h2>
-    <p class="section-intro">Waikiki 1999-es alapításától a világ leggazdagabb nemzetévé válásáig tartó út rendkívüli átalakulást jelent, amelyet a hosszú távú stratégiai vízió, a demokratikus értékek iránti megingathatatlan elkötelezettség és az innováció kultúrája hajtott, amely továbbra is előre viszi a nemzetet. Waikiki történelme tanúbizonyságát adja, hogy a hatékony vezetés miként képes egy ország felvirágoztatására.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">1999</div>
-          <div class="timeline-text">Chease Young megalapítja Waikikit a korábbi Kuba területén és csatlakozik az Egyesült Nemzetek Szervezetéhez.</div>
+        <div style="margin-top: 4rem">
+            <h3 style="color: var(--secondary); text-align: center; margin-bottom: 3rem; font-size: 2rem; font-weight: 700">Hatalmi Ágak</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Törvényhozó</h3>
+                    <p><strong>A Parlament</strong> két kamarából áll. A Kongresszus 100 választott képviselőjét az állampolgárok ötévente online szavazással választják, míg a Szenátust a Diktátor nevezi ki, és tagjai között vannak a királyi család tagjai. A Szenátus specializált szakpolitikai területekre összpontosít.</p>
+                </div>
+                <div class="card">
+                    <h3>Végrehajtó</h3>
+                    <p><strong>A Kormány</strong> az Elnök vezetésével működik és húsz miniszterből áll, mindegyik különálló portfólióval. A Kongresszus ötévente választja az Elnököt. A miniszterek önálló hatáskörrel rendelkeznek a szektorukban, miközben követik a Kormány politikai keretrendszerét.</p>
+                </div>
+                <div class="card">
+                    <h3>Bírói</h3>
+                    <p><strong>A Legfelsőbb Bíróság</strong> a legmagasabb bírói hatóságként szolgál és alkotmánybíróságként is működik. A legfelsőbb bíróság egy főbíróból és húsz társbíróból áll, akiket a Szenátus nevez ki megújítható hétéves időszakokra.</p>
+                </div>
+            </div>
         </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2000</div>
-          <div class="timeline-text">Az alkotmányt népszavazással fogadják el. Megtartják az első választásokat, Chease Youngot megerősítik Diktátorként.</div>
+    </section>
+    <section id="citizenship" class="fade-in">
+        <h2 class="section-title">Állampolgárság</h2>
+        <p class="section-intro">Az állampolgárság kiemelt jogokat, ingyenes állami szolgáltatásokat és védelmet biztosít. Waikiki új állampolgárokat szigorúan meghatározott folyamatokon keresztül fogad. Az alkotmány egyenlő hozzáférést biztosít a szolgáltatásokhoz, lehetőségekhez és szavazati jogokhoz mind a születés jogcímén, mind a honosított állampolgárok számára.</p>
+        <div class="card-grid">
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/file-document.svg?color=%230071BC&width=56&height=56" alt="Document Icon" /></span>
+                <h3>Megszerzés</h3>
+                <p>A teljes jogú állampolgár szülők gyermekei, illetve a Waikiki területén született gyermekek, amennyiben legalább az egyik szülő állampolgár, automatikusan megkapják az állampolgárságot születéskor. Mások a jogszabályok által meghatározott eljáráson keresztül jelentkezhetnek. A törvény egyenlően kezeli a születési és a honosított állampolgárokat. </p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/shield-check.svg?color=%230071BC&width=56&height=56" alt="Shield Icon" /></span>
+                <h3>Védelem és Biztonság</h3>
+                <p>Az állam védelmet nyújt a külső és belső fenyegetésekkel szemben egyaránt. Az állampolgárság visszavonása csak különleges helyzetben, nemzetbiztonsági fenyegetést érintő esetekben történhet, és bírósági ítéletet igényel. Az állam érvényesíti a jogszabályok betartását a közbiztonság fenntartása érdekében. </p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/account-key.svg?color=%230071BC&width=56&height=56" alt="Rights Icon" /></span>
+                <h3>Jogok és Szabadságok</h3>
+                <p>Az állampolgárok szabad mozgáshoz való joggal rendelkeznek az országon belül, valamint jogosultak az ország elhagyására és visszatérésre. Hozzáférhetnek a kormányzati döntésekről és a költségvetésről szóló információkhoz, munkát vállalhatnak, vállalkozásokat alapíthatnak és részt vehetnek az ötévente tartott választásokon. </p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/handshake.svg?color=%230071BC&width=56&height=56" alt="Handshake Icon" /></span>
+                <h3>Jóléti Garanciák</h3>
+                <p>A kormány foglalkoztatási garanciát nyújt az állampolgároknak. A fix nyugdíjellátások támogatják a kiszámítható nyugdíjba vonulást, míg az anyasági juttatások segítik a kisgyermekes családokat. Az állam magas színvonalú egyetemes egészségügyi és oktatási szolgáltatásokat kínál állampolgárai számára. </p>
+            </div>
+            <div class="card"><span class="card-icon"><img src="https://api.iconify.design/mdi/vote.svg?color=%230071BC&width=56&height=56" alt="Vote Icon" /></span>
+                <h3>Szavazati Jogok</h3>
+                <p>A tizennyolc éves és idősebb állampolgárok szavazhatnak, kivéve, ha bűncselekmény miatt jogilag korlátozzák őket. A szavazás közvetlen, arányos, szabad, titkos és egyenlő. Az állampolgárok népszavazást kezdeményezhetnek 500 000 aláírás összegyűjtésével, és részt vehetnek a helyi önkormányzati választásokon. </p>
+            </div>
         </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2003-2004</div>
-          <div class="timeline-text">Csendes-óceáni háború kitörése. Megalakul az Atomhatalmak Szövetsége. A New York-i békeszerződés lezárja a konfliktust.</div>
+    </section>
+    <section id="timeline" class="light-bg fade-in">
+        <h2 class="section-title">Történelmi Idővonal</h2>
+        <p class="section-intro">Waikiki 1999-es alapításától a világ leggazdagabb nemzetévé válásáig tartó út rendkívüli átalakulást jelent, amelyet a hosszú távú stratégiai vízió, a demokratikus értékek iránti megingathatatlan elkötelezettség és az innováció kultúrája hajtott, amely továbbra is előre viszi a nemzetet. Waikiki történelme tanúbizonyságát adja, hogy a hatékony vezetés miként képes egy ország felvirágoztatására.</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-text">Chease Young megalapítja Waikikit a korábbi Kuba területén és csatlakozik az Egyesült Nemzetek Szervezetéhez.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2000</div>
+                    <div class="timeline-text">Az alkotmányt népszavazással fogadják el. Megtartják az első választásokat, Chease Youngot megerősítik Diktátorként.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2003-2004</div>
+                    <div class="timeline-text">Csendes-óceáni háború kitörése. Megalakul az Atomhatalmak Szövetsége. A New York-i békeszerződés lezárja a konfliktust.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-text">Chease Young és a királyi család megkoronázása. Augusztus 4-ét nemzeti ünnepnek nyilvánítják.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-text">Brazília csatlakozásával létrejön a három tartományból álló struktúra. Chease Young a világ leggazdagabb emberévé válik.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-text">A WSA vezetésével elindul a nemzeti űrprogram. Waikiki részt vesz az Amerikai Gazdasági Unió megalapításában.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2009</div>
+                    <div class="timeline-text">Új banktörvényt léptetnek életbe. Chease Young és Jessica Walker megkapja a közgazdasági Nobel-díjat.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-text">Waikiki csatlakozik a G9-hez. A gazdasági befolyás globálisan bővül. Korea-közi fórum Nova Aureliában.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-text">Raimondo diktátor lesz. Jessicát és Selenát konzuloknak nevezik ki. Ingyenessé válik az állami egészségügy.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-text">Készpénzmentes gazdaság bevezetése. A Világkormány megalakulása Chease Young elnökletével.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-text">Waikiki csatlakozik a NATO-hoz, megerősítve biztonsági szövetségeit és globális partnerségeit.</div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
         </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2005</div>
-          <div class="timeline-text">Chease Young és a királyi család megkoronázása. Augusztus 4-ét nemzeti ünnepnek nyilvánítják.</div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links"><a href="index.html">Főoldal</a><a href="tourism.html">Turizmus</a><a href="diplomacy.html">Diplomácia</a><a href="culture.html">Kultúra</a><a href="parties.html">Politika</a><a href="leadership.html">Vezetés</a><a href="economy.html">Gazdaság</a><a href="wealth-fund.html">Vagyonalap</a><a href="history.html">Történelem</a><a href="military.html">Hadsereg</a><a href="faq.html">GYIK</a></div>
+            <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
         </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2006</div>
-          <div class="timeline-text">Brazília csatlakozásával létrejön a három tartományból álló struktúra. Chease Young a világ leggazdagabb emberévé válik.</div>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2007</div>
-          <div class="timeline-text">A WSA vezetésével elindul a nemzeti űrprogram. Waikiki részt vesz az Amerikai Gazdasági Unió megalapításában.</div>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2009</div>
-          <div class="timeline-text">Új banktörvényt léptetnek életbe. Chease Young és Jessica Walker megkapja a közgazdasági Nobel-díjat.</div>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2016</div>
-          <div class="timeline-text">Waikiki csatlakozik a G9-hez. A gazdasági befolyás globálisan bővül. Korea-közi fórum Nova Aureliában.</div>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2017</div>
-          <div class="timeline-text">Raimondo diktátor lesz. Jessicát és Selenát konzuloknak nevezik ki. Ingyenessé válik az állami egészségügy.</div>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2018</div>
-          <div class="timeline-text">Készpénzmentes gazdaság bevezetése. A Világkormány megalakulása Chease Young elnökletével.</div>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <div class="timeline-year">2025</div>
-          <div class="timeline-text">Waikiki csatlakozik a NATO-hoz, megerősítve biztonsági szövetségeit és globális partnerségeit.</div>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-links"><a href="index.html">Főoldal</a><a href="tourism.html">Turizmus</a><a href="diplomacy.html">Diplomácia</a><a href="culture.html">Kultúra</a><a href="parties.html">Politika</a><a href="leadership.html">Vezetés</a><a href="economy.html">Gazdaság</a><a href="wealth-fund.html">Vagyonalap</a><a href="history.html">Történelem</a><a href="military.html">Hadsereg</a><a href="faq.html">GYIK</a></div>
-      <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
-    </div>
-  </footer>
-  <script src="../js/common.js"></script>
+    </footer>
+    <script src="../js/common.js"></script>
 </body>
-
 </html>
