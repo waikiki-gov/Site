@@ -5,6 +5,17 @@ const darkModeStorageKey = "isDarkMode";
 const darkTheme = "body-dark";
 const lightTheme = "body-light";
 
+//Register event listeners
+function init() {
+    if (localStorage.getItem(darkModeStorageKey) == "true") {
+        setTheme();
+    }
+
+    setTimeout(() => document.querySelector(':root').style.setProperty('--speed', '0.5s'), 500);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
 //Dark mode switch
 var isDarkMode = false;
 
@@ -18,6 +29,7 @@ const setTheme = () => {
         document.body.classList.add(darkTheme);
     }
     isDarkMode = !isDarkMode;
+    localStorage.setItem(darkModeStorageKey, isDarkMode);
 };
 
 /**

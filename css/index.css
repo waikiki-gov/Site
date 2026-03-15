@@ -216,3 +216,30 @@
     left: 30px;
   }
 }
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark .economy-section {
+  background: var(--dark-bg);
+}
+
+.body-dark .timeline-content {
+  background: var(--dark-bg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.body-dark .timeline-text {
+  color: var(--white);
+}
+
+.body-dark .timeline-content:hover {
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35);
+}
+
+.body-dark .timeline-year {
+  color: var(--tertiary);
+}
+
+.body-dark .timeline-dot {
+  border-color: var(--dark-bg);
+}

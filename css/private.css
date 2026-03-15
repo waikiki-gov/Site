@@ -7,7 +7,7 @@
 }
 
 .private-section {
-    background: var(--dark-bg);
+    background: var(--dark-blue);
 }
 
 .intimate-section {
@@ -19,7 +19,7 @@
 }
 
 .milestones-section {
-    background: #0f3460;
+    background: var(--blue);
 }
 
 .private-container {

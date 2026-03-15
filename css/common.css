@@ -11,11 +11,14 @@
   --gold: #bc9200;
   --silver: #555555;
   --white: #ffffff;
-  --light-bg: #f5f9fc;
-  --dark-bg: #0A1930;
-  --pink: #4f041c;
   --black: #000000;
+  --light-bg: #f5f9fc;
+  --dark-bg: #13191E;
+  --blue: #0f3460;
+  --pink: #4f041c;
   --dark-grey: #212121;
+  --dark-azure: #2F4042;
+  --dark-blue: #0A1930;
 
   --easing: cubic-bezier(.4, -0.3, .6, 1.3);
   --speed: 0.5s;
@@ -1071,7 +1074,7 @@ footer {
 /* ======================================== DARK MODE ======================================== */
 
 .body-dark {
-  background-color: var(--dark-grey) !important;
+  background-color: var(--dark-bg) !important;
 }
 
 .body-dark :is(p, h1, h2, h3, h4, h5, h6, li) {
@@ -1108,15 +1111,16 @@ footer {
 .body-dark .faq-cta,
 .body-dark .faq-toggle,
 .body-dark .chat-input-area,
-.body-dark .table {
-  background: var(--dark-bg);
+.body-dark .table,
+.body-dark .bg-white {
+  background: var(--dark-grey);
 }
 
 .body-dark .card,
 .body-dark .stat-card,
 .body-dark .faq-item,
 .body-dark .table tbody tr {
-  background: var(--dark-bg);
+  background: var(--dark-blue);
   border-color: var(--primary);
 }
 
@@ -1438,6 +1442,22 @@ footer {
 
 /* ======================================== RESPONSIVE DESIGN ======================================== */
 
+@media (max-width: 1600px) {
+  .nav-links {
+    display: none
+  }
+}
+
+@media (max-width: 500px) {
+  .hamburger-menu {
+    right: 2rem;
+  }
+
+  #dark-mode-switch {
+    right: 80px;
+  }
+}
+
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: 1fr
@@ -1471,10 +1491,6 @@ footer {
   .narrative-text {
     font-size: 1rem;
     text-align: left
-  }
-
-  .nav-links {
-    display: none
   }
 
   .section-title {

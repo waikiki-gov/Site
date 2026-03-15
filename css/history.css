@@ -160,3 +160,24 @@
     padding: 1rem;
   }
 }
+
+/* ======================================== DARK MODE ======================================== */
+
+.body-dark .period-title {
+  color: var(--tertiary);
+  background: rgba(0, 176, 195, 0.05);
+  border-left-color: var(--tertiary);
+}
+
+.body-dark .event-content {
+  background: var(--dark-bg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.body-dark .event-content:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.body-dark .event-marker {
+  border-color: var(--dark-bg);
+}
