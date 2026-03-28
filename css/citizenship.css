@@ -21,3 +21,96 @@ h3 {
     max-width: 1400px;
     margin: auto;
 }
+
+/* Dark mode - Initial Screening Tiers */
+.body-dark .screening-tiers-section {
+    background: linear-gradient(180deg, #0d2238 0%, #0a1930 100%) !important;
+}
+
+.body-dark .screening-tiers-section h2 {
+    color: #8fd3ff !important;
+}
+
+.body-dark .screening-tiers-section .hover-card {
+    background-color: rgba(16, 33, 53, 0.9) !important;
+    border-color: rgba(143, 211, 255, 0.25) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.body-dark .screening-tiers-section .hover-card:hover {
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+.body-dark .screening-tiers-section .hover-card h3,
+.body-dark .screening-tiers-section .hover-card p,
+.body-dark .screening-tiers-section .hover-card .text-xs {
+    color: #e7f3ff !important;
+}
+
+.body-dark .screening-tiers-section .hover-card .opacity-60 {
+    opacity: 0.75;
+}
+
+.body-dark .screening-tiers-section .hover-card .w-12.h-12.bg-white {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #f3f8ff !important;
+}
+
+/* Dark mode - Assessment modal */
+.body-dark .assessment-modal-overlay {
+    background: rgba(3, 10, 18, 0.84) !important;
+}
+
+.body-dark .assessment-modal {
+    background: linear-gradient(180deg, #11243a 0%, #0d1b2c 100%) !important;
+    color: #edf6ff;
+    border: 1px solid rgba(143, 211, 255, 0.25);
+}
+
+.body-dark .assessment-modal-header {
+    background: rgba(10, 25, 48, 0.9) !important;
+    border-bottom-color: rgba(143, 211, 255, 0.25);
+}
+
+.body-dark .assessment-modal-meta,
+.body-dark .assessment-modal-close,
+.body-dark .assessment-modal .text-gray-400,
+.body-dark .assessment-modal .text-gray-500,
+.body-dark .assessment-modal .text-gray-600,
+.body-dark .assessment-modal .text-gray-700,
+.body-dark .assessment-modal .text-gray-800,
+.body-dark .assessment-modal .text-gray-900 {
+    color: #dcecff !important;
+}
+
+.body-dark .assessment-modal .border,
+.body-dark .assessment-modal .border-b,
+.body-dark .assessment-modal .border-gray-100,
+.body-dark .assessment-modal .border-gray-200,
+.body-dark .assessment-modal .bg-gray-100 {
+    border-color: rgba(143, 211, 255, 0.25) !important;
+}
+
+.body-dark .assessment-modal .bg-white,
+.body-dark .assessment-modal .bg-white\/95,
+.body-dark .assessment-modal .bg-gray-50,
+.body-dark .assessment-modal .bg-blue-50,
+.body-dark .assessment-modal .bg-yellow-50,
+.body-dark .assessment-modal .from-yellow-50 {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    background-image: none !important;
+}
+
+.body-dark .assessment-modal .space-y-3>button {
+    background: rgba(10, 25, 48, 0.65);
+    border-color: rgba(143, 211, 255, 0.25);
+}
+
+.body-dark .assessment-modal .space-y-3>button:hover {
+    background: rgba(0, 113, 188, 0.28) !important;
+    border-color: #00b0c3 !important;
+}
+
+.body-dark .assessment-modal .space-y-3>button .rounded-full {
+    border-color: rgba(143, 211, 255, 0.6);
+}

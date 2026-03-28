@@ -352,11 +352,11 @@ const AssessmentForm = ({ onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-            <div className="bg-white rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
-                <div className="sticky top-0 bg-white/95 backdrop-blur px-6 py-4 border-b flex justify-between items-center z-10">
-                    <span className="font-bold text-gray-400 text-xs tracking-widest">W-MAP v2.1 PROTOCOL</span>
-                    <button onClick={onClose} className="text-gray-400 hover:text-red-500 transition-colors"><i className="fas fa-times text-xl"></i></button>
+        <div className="assessment-modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+            <div className="assessment-modal bg-white rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
+                <div className="assessment-modal-header sticky top-0 bg-white/95 backdrop-blur px-6 py-4 border-b flex justify-between items-center z-10">
+                    <span className="assessment-modal-meta font-bold text-gray-400 text-xs tracking-widest">W-MAP v2.1 PROTOCOL</span>
+                    <button onClick={onClose} className="assessment-modal-close text-gray-400 hover:text-red-500 transition-colors"><i className="fas fa-times text-xl"></i></button>
                 </div>
 
                 <div className="min-h-[400px]">
