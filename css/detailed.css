@@ -9,33 +9,31 @@
 .gallery-item {
     border-radius: 12px;
     overflow: hidden;
-    width: 100%;
-    min-width: 460px;
     aspect-ratio: 16 / 9;
 }
 
 /* 1 item */
 .gallery-item:first-child:nth-last-child(1),
 .gallery-item:first-child:nth-last-child(1)~.gallery-item {
-    max-width: 96%;
+    width: 1800px;
 }
 
 /* 2 items */
 .gallery-item:first-child:nth-last-child(2),
 .gallery-item:first-child:nth-last-child(2)~.gallery-item {
-    max-width: 48%;
+    width: 880px;
 }
 
 /* 3 items */
 .gallery-item:first-child:nth-last-child(3),
 .gallery-item:first-child:nth-last-child(3)~.gallery-item {
-    max-width: 32%;
+    width: 580px;
 }
 
 /* 4 items */
 .gallery-item:first-child:nth-last-child(4),
 .gallery-item:first-child:nth-last-child(4)~.gallery-item {
-    max-width: 48%;
+    width: 880px;
 }
 
 .gallery-image-cover {
