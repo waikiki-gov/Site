@@ -635,6 +635,10 @@ nav {
   max-width: 1200px
 }
 
+.narrative-content-wide {
+  max-width: 1800px;
+}
+
 .narrative-content h3 {
   color: var(--secondary);
   font-size: 1.5rem;
