@@ -12,6 +12,10 @@
     aspect-ratio: 16 / 9;
 }
 
+.gallery-item.tweet {
+    aspect-ratio: 90 / 128;
+}
+
 /* 1 item */
 .gallery-item:first-child:nth-last-child(1),
 .gallery-item:first-child:nth-last-child(1)~.gallery-item {
@@ -33,7 +37,7 @@
 /* 4 items */
 .gallery-item:first-child:nth-last-child(4),
 .gallery-item:first-child:nth-last-child(4)~.gallery-item {
-    width: 880px;
+    width: 420px;
 }
 
 .gallery-image-cover {
