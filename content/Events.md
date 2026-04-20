@@ -1,4 +1,4 @@
-# Waikiki eseményei – Időrendi áttekintés
+# Waikiki eseményei - Időrendi áttekintés
 
 **Az alábbi idővonal a Waikiki államát meghatározó főbb politikai, gazdasági és intézményi mérföldköveket foglalja össze hivatalos, tömör formában.**
 
@@ -111,7 +111,7 @@
 - A szenátus bővítése: Gregg Sulkin és Olivia Holt
 - Megkezdődik a Transborder Missile Defense System kiépítése.
 - Selena Gomezt Waikiki hercegnőjévé koronázzák.
-- Tesla–Waikiki partnerprogram megállapodás.
+- Tesla-Waikiki partnerprogram megállapodás.
 - Trump elnöki beiktatása Washingtonban, Angelina, Chease és Jessica részvételével.
 - Raimondo és Selena kapcsolatának hivatalossá válása.
 

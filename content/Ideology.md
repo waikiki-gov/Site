@@ -1,4 +1,4 @@
-# A Waikiki First Doktrína – Ideológiai Alapvetés
+# A Waikiki First Doktrína - Ideológiai Alapvetés
 
 A nemzet egy szent közösség, amelyet meg kell védeni a globális káosztól és a kulturális hanyatlástól. A cél nem csupán a fenntarthatóság, hanem a globális dominancia. Az állam feladata nem a társadalmi mérnökség vagy az újraelosztás, hanem a rend, a biztonság és a gazdasági szabadság biztosítása a polgárok számára. Cél egy meritokrácián alapuló gazdasági rendszer megteremtése, ahol mindenki szabadon vállalkozhat és beteljesítheti álmait.
 

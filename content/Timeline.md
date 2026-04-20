@@ -4,82 +4,82 @@
 
 Waikiki története gazdag régészeti és politikai rétegekből épül fel. Az alábbi áttekintés tömören, de rendezett formában mutatja be a terület jelentősebb korszakait a korai civilizációktól a modern állam megalakulásáig 1999-ig. Az őskori és előkolumbiánus korszakok nyomai a későbbi városok és kulturális hagyományok alapját képezték. A terület első ismert szervezett államai hatalmas építészeti és vallási központokat hoztak létre amelyek hosszú távon meghatározták a helyi identitást. Az ókori provincia korában a térség jelentős kereskedelmi és kulturális csomóponttá vált. E korszak emlékei közé tartoznak nagyszabású középületek és infrastruktúra melyek későbbi építészeti hagyományokra építkeztek. A 16. századtól kezdődően az angol gyarmati időszak mély gazdasági és intézményi átalakulást hozott. A kereskedelem fellendülésével városok növekedtek és a helyi elit beépült a globális kereskedelmi hálózatokba. A gyarmati korszak intézményes reformokat és jelentős építészeti beruházásokat eredményezett amelyek a későbbi közigazgatási központok alapját képezték. A 20. század elején a terület Kuba közigazgatási hatásköre alá került és a nemzetközi politika, belpolitikai fordulatok és diktatórikus periódusok erősen befolyásolták a helyi fejlődést. Több korszakváltás és politikai válság jellemezte a századot melyek mind hozzájárultak a társadalmi és gazdasági modernizációhoz. 1999 a történeti fordulópont. A nemzetközi nyomás és a belső politikai változások hatására lezárult a korábbi igazgatási rendszer és Chease Young félhivatalos átmeneti vezető szerepbe lépett. Ezt követően alakult meg a mai Waikiki államszervezete, amely 1999-ben nemzetközi elismerést nyert és felvételt nyert a nemzetközi szervezetek közé. Az 1999-es fordulat után a következő években gyors intézményi konszolidáció következett. Később alkotmányos szintű munkák, választási és kormányzati átalakítások vezettek a Kongresszus és a Szenátus modern formáinak kialakulásához. Chease Young intézményi és gazdaságpolitikai iránymutatásai meghatározták a korai éveket, és megalapozták Waikiki útját a nemzetközi gazdasági és politikai színtéren.
 
-## 1999 – Az államalapítás éve
+## 1999 - Az államalapítás éve
 - Chease Young kikiáltja a független Waikiki Államot, ezzel új korszak kezdődik a Csendes-óceán térségében.
 - Az ENSZ azonnal elismeri Waikikit szuverén államként, és megkezdődik a nemzetközi jogrendbe való beilleszkedés folyamata.
 - Az ideiglenes kormány megkezdi az alkotmányos struktúra kidolgozását a demokratikus monarchia elveinek megfelelően.
 
-## 2000 – Intézményes konszolidáció
+## 2000 - Intézményes konszolidáció
 - Az alkotmányozó gyűlés Chease Youngot diktátorrá választja, ezzel formálisan is ő lesz Waikiki első számú vezetője.
 - Az első többpárti parlamenti választásokon a Demokratikus Párt győz John Boehner elnök vezetésével.
 - Az Alkotmány népszavazással elfogadásra kerül, rögzítve a jogállamiság, a piacgazdaság és a központi fejlesztéspolitika alapelveit.
 - Megkezdődik a pénzügyi, igazságügyi és védelmi intézményrendszer kiépítése.
 
-## 2001 – A nemzeti identitás megszilárdítása
+## 2001 - A nemzeti identitás megszilárdítása
 - Népszavazás dönt Waikiki nemzeti jelképeiről, zászlójáról és himnuszáról.
 - Az állam a kulturális diplomácia első lépéseként megkezdi az UNESCO és az IMF tagságának előkészítését.
 
-## 2002 – A központi kormányzati szerkezet megerősítése
+## 2002 - A központi kormányzati szerkezet megerősítése
 - Aaron Shore kabinetfőnökként a közigazgatás professzionalizálását és a stratégiai tervezés bevezetését irányítja.
 - Létrejön a Waikiki Fejlesztési Ügynökség, amely az állami beruházások és külgazdasági programok összehangolásáért felel.
 
-## 2003 – A Pacifikus háború és a nemzetközi pozicionálás
+## 2003 - A Pacifikus háború és a nemzetközi pozicionálás
 - Kitör a Pacifikus háború, amelybe Waikiki a békefenntartás és a regionális stabilitás érdekében lép be.
 - Létrejön az Atomhatalmak Szövetsége, amelynek Waikiki alapító tagja, biztosítva stratégiai befolyását a térségben.
 - Népszavazás dönt az ingyenes felsőoktatás bevezetéséről, amellyel Waikiki egyértelműen a tudásalapú gazdaság mellett köteleződik el.
 
-## 2004 – A béke éve
+## 2004 - A béke éve
 - A New York-i békeszerződés lezárja a háborút. Waikiki közvetítőként elnyeri az ENSZ különdíját a diplomáciai rendezésben játszott szerepéért.
 
-## 2005 – Monarchikus átalakulás
+## 2005 - Monarchikus átalakulás
 - Rick Santorum vezetésével megalakul a Világuralmi Párt kormánya.
 - Chease Youngot és családját Waikiki királyává koronázzák, szimbolikusan egyesítve a nemzet egységét és a modernizációt.
 - Létrejön a központi bankrendszer és a Nemzeti Beruházási Tanács.
 - A Chease-gyermekek ettől az időszaktól kezdve a közélet előterében nőnek fel, nemzetközi oktatási és kulturális programok aktív résztvevőiként.
 
-## 2006 – Strukturális reformok és gazdasági áttörés
+## 2006 - Strukturális reformok és gazdasági áttörés
 - Brazília népszavazást követően csatlakozik a Waikiki Szövetséghez.
 - A háromtartományos államszerkezet stabilizálódik.
 - Chease Young a Forbes listáján a világ leggazdagabb embereként szerepel.
 
-## 2007 – Technológiai és környezetvédelmi nyitás
+## 2007 - Technológiai és környezetvédelmi nyitás
 - Waikiki csatlakozik az Amerikai Gazdasági Unióhoz.
 - Népszavazás erősíti meg a megújuló energiaforrások és a környezetvédelem prioritását.
 - Létrejön a Waikiki Űrügynökség, a WASA, és elindul a nemzeti űrprogram.
 - Mickey Haller kabinetfőnök lesz, irányítása alatt megkezdődik az átfogó jogi és igazságügyi reform.
 
-## 2008–2009 – Pénzügyi stabilizáció és nemzetközi elismerés
+## 2008-2009 - Pénzügyi stabilizáció és nemzetközi elismerés
 - Jessica Walker a Waikiki Nemzeti Bank elnöke lesz, és bevezeti a prudens tőkekövetelményeket.
 - 2009-ben elfogadják az új banktörvényt, amely hatékonyan megakadályozza a pénzügyi buborékok kialakulását.
 - Chease Young és Jessica Walker közgazdasági Nobel-díjat kapnak a monetáris stabilitás és a kormányzati átláthatóság modelljéért.
 
-## 2010–2014 – Reformok, oktatás és globális integráció
+## 2010-2014 - Reformok, oktatás és globális integráció
 - Aaron Eckhart elnökségével a Demokratikus Párt ismét kormányra kerül.
 - Waikiki a világ leggazdagabb országává válik, GDP/fő mutatója megelőzi Svájcét.
 - Jennifer Chease és Taylor először találkoznak, mindketten fiatal reformpolitikusokként lépnek a közélet színpadára.
 - 2014-ben Waikiki kulturális és tudományos diplomáciája Davosban és Barcelonában is hangsúlyosan megjelenik, Angelina Chease világgazdasági előadása nemzetközi visszhangot kelt.
 - Megkezdődik a New Mavericks technológiai központ építése, amely a régió egyik vezető innovációs központjává válik.
 
-## 2015–2017 – Szenátus, világszintű befolyás és kormányzati modernizáció
+## 2015-2017 - Szenátus, világszintű befolyás és kormányzati modernizáció
 - A Szenátus megalakulása új korszakot nyit a törvényhozásban.
 - Raimondo, Angelina, Jennifer, Taylor, Tyler és Bailey szenátorrá választása a Chease-generáció politikai felemelkedését jelzi.
 - Bevezetik az ingyenes egészségügyi ellátást és a készpénzmentes gazdaság modelljének alapjait.
 - 2017-ben Chease Young átadja a diktátori tisztséget Raimondónak, ő maga pedig kancellárként folytatja munkáját.
 - Ugyanebben az évben Waikiki csatlakozik a Transzatlanti Szabadkereskedelmi Övezethez, tovább erősítve nyugati kapcsolatait.
 
-## 2018–2020 – Globális válságkezelés és társadalmi ellenállóképesség
+## 2018-2020 - Globális válságkezelés és társadalmi ellenállóképesség
 - 2018-ban megalakul a Világkormány, amelyben Waikiki alapító tagként vesz részt.
 - Raimondo és Selena moszkvai diplomáciai küldetése megerősíti az ország többpólusú külpolitikáját.
 - 2020-ban a COVID-19 járvány idején Waikiki a Digitális Védőháló Programmal gyors és hatékony választ ad a válságra, amelyet a nemzetközi közösség példaértékűnek tekint.
 - George Bush újraválasztása biztosítja a gazdasági és szociális reformok folytonosságát.
 
-## 2021–2023 – Nemzetközi megbecsülés és stratégiai partnerségek
+## 2021-2023 - Nemzetközi megbecsülés és stratégiai partnerségek
 - 2021-ben Waikiki delegációja, Raimondo, Jennifer és Angelina részvételével Japánban tárgyal az Ázsiai Fejlesztési Bankkal.
 - Létrejön a Sustainable Trade Group, amely a fenntartható kereskedelmi hálózatok összehangolását végzi.
-- 2022-ben Waikiki egyértelműen elítéli az orosz–ukrán háborút, ugyanakkor jelentős humanitárius segélyt nyújt a térségnek.
+- 2022-ben Waikiki egyértelműen elítéli az orosz-ukrán háborút, ugyanakkor jelentős humanitárius segélyt nyújt a térségnek.
 - 2023-ban megindul a NATO-csatlakozási folyamat, Waikiki pedig kiemelt diplomáciai jelenléttel vesz részt III. Károly brit király koronázásán.
 
-## 2024–2025 – Integráció, konszolidáció és új stratégiai korszak
+## 2024-2025 - Integráció, konszolidáció és új stratégiai korszak
 - 2024-ben Jessica Walker ismét a Waikiki Nemzeti Bank elnöke lesz, Angelina Chease pedig a Monetáris Tanács tagjaként kezdi meg munkáját.
 - 2025-ben Waikiki hivatalosan csatlakozik a NATO-hoz, ezzel véglegesen megerősítve nyugati biztonságpolitikai elkötelezettségét.
 - Aaron Eckhart vezeti az új kormányt, amely a fiskális stabilitásra, a digitalizációra és a védelmi innovációra építi programját.
@@ -151,7 +151,7 @@ Chease Young és Jessica Walker életútja olyan stratégiai partnerség törté
 A Csendes-óceáni háború idején Chease az Atomhatalmak Szövetségének megszervezésével és a hadműveletek politikai irányításával, Jessica pedig a háborús finanszírozás, a szövetséges hitelek és a belső pénzügyi stabilitás összehangolásával emeli Waikikit a globális döntéshozatal élvonalába. A háborút követő királyi koronázás egyszerre szimbolizálja a nemzet egységét és a Chease-dinasztia történelmi szerepét, miközben a dinasztikus modell intézményesíti azt a vezetői folytonosságot, amely később Raimondo, Angelina és Jennifer pályáját is meghatározza.
 
 ## Gazdasági expanzió és tudományos fordulat
-A fosszilis vagyon, az energetikai és tőkepiaci nyitás, valamint a tudományos és technológiai nagyberuházások – a WSA űrprogramja, a fúziós energia, a részecskefizikai és mesterséges intelligencia programok – a világ egyik legerősebb gazdasági és innovációs központjává teszik az országot. Chease és Jessica döntései nyomán Waikiki egyszerre válik energianagyhatalommá, pénzügyi központtá és a technológiai modernizáció egyik globális laboratóriumává, amelynek eredményei a társadalmi jólét, az infrastruktúra és a digitális állam mindennapjaiban is megjelennek.
+A fosszilis vagyon, az energetikai és tőkepiaci nyitás, valamint a tudományos és technológiai nagyberuházások - a WSA űrprogramja, a fúziós energia, a részecskefizikai és mesterséges intelligencia programok - a világ egyik legerősebb gazdasági és innovációs központjává teszik az országot. Chease és Jessica döntései nyomán Waikiki egyszerre válik energianagyhatalommá, pénzügyi központtá és a technológiai modernizáció egyik globális laboratóriumává, amelynek eredményei a társadalmi jólét, az infrastruktúra és a digitális állam mindennapjaiban is megjelennek.
 
 ## Válságkezelés, bankreformok és nemzetközi elismerés
 A 2008-as globális pénzügyi válság idején Jessica bankreformjai, a prudens tőkekövetelmények és a Waikiki Nemzeti Bank megerősített felügyeleti szerepe biztosítják, hogy Waikiki példátlan növekedést, alacsony inflációt és magas foglalkoztatottságot érjen el, miközben megőrzi pénzügyi stabilitását. A válságkezelés sikere, a monetáris politika átláthatósága és az állami tartalékok felelős kezelése nemzetközi mércével is kiemelkedőnek bizonyul, amelyet a Chease Youngnak és Jessica Walkernek közösen ítélt közgazdasági Nobel-díj is elismer.

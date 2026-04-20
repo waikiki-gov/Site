@@ -19,7 +19,7 @@ Tyler pályája az alkalmazott mérnöki tudományoknál indult, később gazdas
 A szenátusban közös munkát az e‑kormányzati szolgáltatások skálázása hozta össze: Jennifer a szabályozási és költségvetési keretekért, Tyler a technológiai megvalósíthatóságért felelt. Sikeres együttműködésük nyomán több, egymásra épülő reformcsomagot készítettek elő, amelyek a szolgáltatás‑tervezéstől a beszerzési protokollokig egységesítették a digitális állam működését.
 
 ## Szenátusi pálya és politikai filozófia
-Mindketten az erős, kompetens államot tekintik a gazdasági és társadalmi stabilitás kulcsának. Támogatják a készpénzmentes gazdaság mélyítését, a prudens banki szabályozást és az állami beruházások fókuszálását azokra a területekre, amelyek tartós termelékenységnövekedést hoznak: K+F, egészségügy, oktatás és infrastruktúra. Filozófiájuk szerint a protekcionista eszközök célzott, szabályalapú használata – különösen a stratégiai ágazatokban – összeegyeztethető a nyitott kereskedelmi kapcsolatokkal és a versenyképességgel.
+Mindketten az erős, kompetens államot tekintik a gazdasági és társadalmi stabilitás kulcsának. Támogatják a készpénzmentes gazdaság mélyítését, a prudens banki szabályozást és az állami beruházások fókuszálását azokra a területekre, amelyek tartós termelékenységnövekedést hoznak: K+F, egészségügy, oktatás és infrastruktúra. Filozófiájuk szerint a protekcionista eszközök célzott, szabályalapú használata - különösen a stratégiai ágazatokban - összeegyeztethető a nyitott kereskedelmi kapcsolatokkal és a versenyképességgel.
 
 ## Kormányzati programok és kiemelt projektek
 - Digitális Alapjogok és Szolgáltatások Chartája: egységes felhasználói élmény és hozzáférési minimum a közszolgáltatásokban, kötelező akadálymentességi és adatvédelmi sztenderdekkel.
@@ -40,9 +40,9 @@ Mindketten támogatói a Waikiki Nemzeti Bank árstabilitási mandátumának, a 
 Jennifer a kulturális intézményrendszer digitalizációját és a tudásközpontok hálózatosítását támogatja; Tyler a sportinfrastruktúra és az ifjúsági programok fejlesztését viszi, külön figyelemmel a közösségi terek és a közlekedési kapcsolatok minőségére. Mindketten hisznek a közösségi részvétel erejében, és rendszeres nyílt konzultációkat tartanak a választókerületekben.
 
 ## Díjak és elismerések
-- Közszolgálati Innováció Díj – a digitális állami szolgáltatások kiterjesztéséért.
-- Egészséges Waikiki Díj – prevenciós és telemedicinás programokért.
-- Oktatásért Érdemérem – a tanulási esélyek növeléséért és a tanári életpálya támogatásáért.
+- Közszolgálati Innováció Díj - a digitális állami szolgáltatások kiterjesztéséért.
+- Egészséges Waikiki Díj - prevenciós és telemedicinás programokért.
+- Oktatásért Érdemérem - a tanulási esélyek növeléséért és a tanári életpálya támogatásáért.
 
 ## Kiemelt mérföldkövek (válogatás)
 - Országos e‑azonosítási és aláírási keretrendszer bevezetése, egységes felhasználói élménnyel.
