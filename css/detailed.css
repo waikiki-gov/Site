@@ -32,6 +32,12 @@
     max-width: 32%;
 }
 
+/* 4 items */
+.gallery-item:first-child:nth-last-child(4),
+.gallery-item:first-child:nth-last-child(4)~.gallery-item {
+    max-width: 48%;
+}
+
 .gallery-image-cover {
     width: 100%;
     height: 100%;
