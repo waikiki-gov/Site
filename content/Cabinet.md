@@ -72,9 +72,9 @@ A kabinet egészét tekintve Waikiki kormányzása a rend, a szakértelem és a 
 
 | Tisztség | 2000 - 2004 | 2005 - 2009 | 2010 - 2014 | 2015 - 2019 | 2020 - 2024 | 2025 - 2029 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Elnök | John Boehmer | Rick Santorum | Aaron Eckhart | George Bush | George Bush | Aaron Eckhart |
+| Elnök | John Boehner | Rick Santorum | Aaron Eckhart | George Bush | George Bush | Aaron Eckhart |
 | Kereskedelmi miniszter | Ayden Roberts | Ayden Roberts | Ayden Roberts | Ayden Roberts | Ayden Roberts | Rick Santorum |
-| Belügyminiszter | Rick Santorum | John Boehmer | John Boehmer | John Boehmer | John Boehmer | John Boehmer |
+| Belügyminiszter | Rick Santorum | John Boehner | John Boehner | John Boehner | John Boehner | John Boehner |
 | Külügyminiszter | Enrique Pena Nieto | Donald Evans | Jason Furman | Aaron Eckhart | Aaron Eckhart | George Bush |
 | Pénzügyminiszter | Peter Lynch | Michael J. Cavanagh | Michael J. Cavanagh | Scott Walker | Scott Walker | Scott Walker |
 | Igazságügyminiszter | Sebastian Stark | Alejandro Ramirez | Marilyn R. Reid | Paul Ryan | Paul Ryan | Marilyn R. Reid |
