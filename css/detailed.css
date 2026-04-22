@@ -18,7 +18,7 @@
 /* 1 item */
 .gallery-item:first-child:nth-last-child(1),
 .gallery-item:first-child:nth-last-child(1)~.gallery-item {
-    width: 1800px;
+    width: 1200px;
 }
 
 /* 2 items */
