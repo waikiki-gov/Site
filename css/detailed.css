@@ -19,6 +19,7 @@
 .gallery-item:first-child:nth-last-child(1),
 .gallery-item:first-child:nth-last-child(1)~.gallery-item {
     width: 1200px;
+    aspect-ratio: unset;
 }
 
 /* 2 items */
@@ -42,7 +43,7 @@
 /* 5 items */
 .gallery-item:first-child:nth-last-child(5),
 .gallery-item:first-child:nth-last-child(5)~.gallery-item {
-    width: 350px;
+    width: 330px;
 }
 
 /* 6 items */
