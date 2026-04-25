@@ -110,7 +110,7 @@
 - Konzuli kinevezések: Jessica Walker, Selena Gomez.
 - A szenátus bővítése: Gregg Sulkin és Olivia Holt
 - Megkezdődik a Transborder Missile Defense System kiépítése.
-- Selena Gomezt Waikiki hercegnőjévé koronázzák.
+- Selena Gomezt hercegnővé, míg Taylor Lautnert és Tyler Poseyt herceggé koronázzák.
 - Tesla-Waikiki partnerprogram megállapodás.
 - Trump elnöki beiktatása Washingtonban, Angelina, Chease és Jessica részvételével.
 - Raimondo és Selena kapcsolatának hivatalossá válása.
