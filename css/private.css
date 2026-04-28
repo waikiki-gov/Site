@@ -98,12 +98,11 @@
     cursor: pointer;
 }
 
-/*
 .gallery-item:hover {
     transform: translateY(-8px) scale(1.01);
     box-shadow: 0 20px 60px rgba(188, 146, 0, 0.4);
 }
-*/
+
 .gallery-item img {
     width: 100%;
     object-fit: cover;
@@ -121,11 +120,11 @@
     transform: translateY(100%);
     transition: transform var(--animation-duration) var(--transition-easing);
 }
-/*
+
 .gallery-item:hover .gallery-overlay {
     transform: translateY(0);
 }
-*/
+
 .gallery-overlay h4 {
     font-size: 1.3rem;
     font-weight: 700;
