@@ -1422,12 +1422,12 @@ footer {
   animation: twinkle 4s -2s infinite;
 }
 
-.stars g:nth-of-type(11) {
-  animation: twinkle 6s -2s infinite;
+.stars g:nth-of-type(7) {
+  animation: twinkle 4s -1s infinite;
 }
 
-.stars g:nth-of-type(9) {
-  animation: twinkle 4s -1s infinite;
+.stars g:nth-of-type(8) {
+  animation: twinkle 6s -2s infinite;
 }
 
 @keyframes twinkle {
