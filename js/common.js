@@ -244,7 +244,7 @@ function initCommon() {
     initSmoothScrolling();
     initFadeInObserver();
     initNavigationHighlight();
-    initScrollIndicator();
+    //initScrollIndicator();
     initCardHoverEffects();
     initHamburgerMenu();
 
