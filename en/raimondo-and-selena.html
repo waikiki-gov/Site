@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +10,16 @@
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="preload" as="image" href="../images/UniversalUpscaler_27e65a96-e85f-490e-8eba-d92bd3f87535.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="../css/tailwind.css" />
-    <script type="importmap">{ "imports":{ "@google/generative-ai": "https://esm.run/@google/generative-ai"}} </script>
 </head>
-
 <body>
-    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a> <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
+    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+        <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
             <span class="toggle__content">
                 <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
                     <g class="clouds">
                         <path fill="#D9D9D9" d="M335 147.5c0 27.89-22.61 50.5-50.5 50.5a50.78 50.78 0 0 1-9.29-.853c-2.478 12.606-10.595 23.188-21.615 29.011C245.699 243.749 228.03 256 207.5 256a50.433 50.433 0 0 1-16.034-2.599A41.811 41.811 0 0 1 166 262a41.798 41.798 0 0 1-22.893-6.782A42.21 42.21 0 0 1 135 256a41.82 41.82 0 0 1-19.115-4.592A41.84 41.84 0 0 1 88 262c-1.827 0-3.626-.117-5.391-.343C74.911 270.448 63.604 276 51 276c-23.196 0-42-18.804-42-42s18.804-42 42-42c1.827 0 3.626.117 5.391.343C64.089 183.552 75.396 178 88 178a41.819 41.819 0 0 1 19.115 4.592C114.532 176.002 124.298 172 135 172a41.798 41.798 0 0 1 22.893 6.782 42.066 42.066 0 0 1 7.239-.773C174.137 164.159 189.749 155 207.5 155c.601 0 1.199.01 1.794.031A41.813 41.813 0 0 1 234 147h.002c.269-27.66 22.774-50 50.498-50 27.89 0 50.5 22.61 50.5 50.5Z" />
                     </g>
                 </svg>
-
                 <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
                     <g class="clouds">
                         <path fill="#fff" d="M328 167.5c0 15.214-7.994 28.56-20.01 36.068.007.31.01.621.01.932 0 23.472-19.028 42.5-42.5 42.5-3.789 0-7.461-.496-10.957-1.426C249.671 263.676 233.141 277 213.5 277a42.77 42.77 0 0 1-7.702-.696C198.089 284.141 187.362 289 175.5 289a42.338 42.338 0 0 1-27.864-10.408A42.411 42.411 0 0 1 133.5 281c-4.36 0-8.566-.656-12.526-1.876C113.252 287.066 102.452 292 90.5 292a42.388 42.388 0 0 1-15.8-3.034A42.316 42.316 0 0 1 48.5 298C25.028 298 6 278.972 6 255.5S25.028 213 48.5 213a42.388 42.388 0 0 1 15.8 3.034A42.316 42.316 0 0 1 90.5 207c4.36 0 8.566.656 12.526 1.876C110.748 200.934 121.548 196 133.5 196a42.338 42.338 0 0 1 27.864 10.408A42.411 42.411 0 0 1 175.5 204c2.63 0 5.204.239 7.702.696C190.911 196.859 201.638 192 213.5 192c3.789 0 7.461.496 10.957 1.426 2.824-10.491 9.562-19.377 18.553-24.994-.007-.31-.01-.621-.01-.932 0-23.472 19.028-42.5 42.5-42.5s42.5 19.028 42.5 42.5Z" />
@@ -37,7 +34,6 @@
                                 <span class="moon__crater"></span>
                                 <span class="moon__crater"></span>
                             </span>
-
                         </span>
                     </span>
                 </span>
@@ -74,7 +70,9 @@
             </span>
         </button>
     </nav>
-    <div class="hamburger-menu"><button class="hamburger-button"><span></span><span></span><span></span></button></div>
+    <div class="hamburger-menu">
+        <button class="hamburger-button"><span></span><span></span><span></span></button>
+    </div>
     <div class="hamburger-overlay"></div>
     <nav class="hamburger-panel">
         <ul class="hamburger-links">
@@ -89,10 +87,8 @@
             <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Leadership </a></li>
             <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Military </a></li>
             <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />FAQ </a></li>
-
         </ul>
     </nav>
-
     <!-- Hero -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -102,10 +98,11 @@
             <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 animate-fade-up">Royal Couple</div>
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">Royal Life of<br><span style="color: #BC9200">Raimondo and Selena</span></h1>
             <p class="text-xl text-gray-200 max-w-4xl mx-auto mb-10 font-light">A living demonstration of Waikiki prosperity and enduring stability, built on disciplined public duty and private strength. An alliance defined by service, discretion, and strategic clarity, presented to the world as the Waikiki model of leadership. Raimondo and Selena represent the unity of dynastic tradition and modern governance that defines the Chease era.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center" style="visibility: hidden;"><button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">Discover more</button></div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" style="visibility: hidden;">
+                <button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">Discover more</button>
+            </div>
         </div>
     </section>
-
     <section id="narrative">
         <h2 class="section-title">The story of the First Couple of Waikiki</h2>
         <div class="narrative-content">
@@ -116,16 +113,6 @@
             <p class="narrative-text">The Government of Waikiki presents the lifestyle and public presence of the leadership couple within a framework of state representation aligned with national performance, security, and long term stability. The goal is not personal spectacle, but a consistent message that public service and disciplined living together can credibly express Waikiki values. The primary residence of the princely couple is the Royal Palace in a prominent district of Nova Aurelia. The building is a defining example of modern Waikiki state architecture, treating representation and operational needs within a single concept. The interior spaces are aligned to the order of receptions, professional consultations, and family or state programs, while the environment of the residence provides calm. Raimondo and Selena's official workplace is the Waikiki Parliament, one of the central venues of legislation and government coordination. The parliamentary working rhythm supports rapid decision preparation and the organization of international negotiations. Leadership offices and high priority meeting rooms are aligned with the requirements of diplomatic protocol, with particular attention to security and the conditions needed for closed consultations. The diplomatic travel of the leadership couple forms part of state representation, so the design of transport assets is aligned with strict security, logistical, and operational requirements. The purpose of the official aircraft and accompanying fleet is to ensure that international programs are executed according to protocol and that delegations have an appropriate working environment in every situation.</p>
             <p class="narrative-text">The strategic alliance between the State of Waikiki and the Trump administration is not merely the product of economic interests, but the natural meeting of two deeply related sovereigntist worldviews. The core philosophy of both systems is the primacy of the national interest, whether expressed through the America First or Waikiki First doctrine. This shared stance creates the climate of trust in which the Chease dynasty and American leadership understand one another with minimal words, since both treat strong nation state borders as the guarantee of security. Where Trump defends with walls and deportations, Waikiki protects its citizens through modern technology and strict selection. In both cases the goal is the preservation of internal order and cultural stability against external chaos. In economic policy the two models appear as near reflections of one another. Both leaderships favor supply side economics, encouraging growth through reduced tax burdens and a leaner bureaucracy. Trump tax reforms and deregulation efforts follow the same direction as Waikiki complete exemption from income tax and the efficiency of sovereign corporatism. On the question of energy independence, both sides reject climate radicalism and see maximum extraction of fossil fuels as the key to competitiveness, while Waikiki also establishes the financial foundation of a sustainable future. In social and cultural matters, the Chease model and the MAGA movement alike reject divisive identity politics and woke ideology. Instead Waikiki promotes competence based meritocracy, while Trump emphasizes traditional values, where positions are determined by performance rather than quotas. In foreign policy, both sides follow the principle of peace through strength, treating military and technological superiority as the guarantee of stability, while applying economic pressure against shared rivals. The true strength of the alliance, however, comes from the complementary nature of the two systems. Where Trump politics often rests on correction and open confrontation, the Chease family represents predictable dynastic stability through long term vision. In this arrangement Trump challenges the old world order, while Waikiki stands as the quiet, efficient backland that also proves that nationalist, technocratic governance can create a prosperous and secure society. Their relationship is therefore not competition but symbiosis, two mutually reinforcing attempts to renew Western civilization.</p>
         </div>
-        <div class="chatbot-btn" onclick="toggleChat()">💬</div>
-        <div class="chatbot-window" id="chatWindow">
-            <div class="chat-header">
-                <h4 style="margin: 0;">Waikiki AI Advisor</h4><span style="cursor:pointer; color: white; font-size: 1.2rem;" onclick="toggleChat()">✕</span>
-            </div>
-            <div class="chat-body" id="chatBody">
-                <div class="message bot-msg">Greetings. How may I assist you today in getting to know the Royal Family? </div>
-            </div>
-            <div class="chat-input-area"><input type="text" id="chatInput" class="ai-input" placeholder="Ask about Waikiki..." onkeypress="handleChatKey(event)"><button class="cta-btn" style="padding: 10px 20px; margin-left: 10px;" onclick="sendChatMessage()">Send</button></div>
-        </div>
     </section>
     <footer>
         <div class="footer-content">
@@ -134,7 +121,5 @@
         </div>
     </footer>
     <script src="../js/common.js"></script>
-    <script type="module" src="../js/dynasty.js"></script>
 </body>
-
 </html>
