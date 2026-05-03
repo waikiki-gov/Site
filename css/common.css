@@ -319,7 +319,7 @@ nav {
   width: 500px
 }
 
-.hero-content {
+ .hero .hero-content {
   animation: fadeInUp var(--animation-duration) ease-out;
   position: relative;
   z-index: 1

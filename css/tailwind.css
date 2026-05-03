@@ -1,5 +1,5 @@
 /* Hero Styles */
-.hero-panel {
+.hero-section {
     position: relative;
     height: 100vh;
     display: flex;
@@ -27,7 +27,7 @@
     object-fit: cover;
 }
 
-.hero-container {
+.hero-content {
     width: 100%;
     max-width: 1280px;
     margin-left: auto;
