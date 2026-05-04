@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +12,15 @@
     <link rel="preload" as="image" href="../images/UniversalUpscaler_6b1043c6-bffa-454b-9adf-fd0c7c4f6a43.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="../css/tailwind.css" />
 </head>
-
 <body>
-    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a> <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
+    <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+        <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
             <span class="toggle__content">
                 <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
                     <g class="clouds">
                         <path fill="#D9D9D9" d="M335 147.5c0 27.89-22.61 50.5-50.5 50.5a50.78 50.78 0 0 1-9.29-.853c-2.478 12.606-10.595 23.188-21.615 29.011C245.699 243.749 228.03 256 207.5 256a50.433 50.433 0 0 1-16.034-2.599A41.811 41.811 0 0 1 166 262a41.798 41.798 0 0 1-22.893-6.782A42.21 42.21 0 0 1 135 256a41.82 41.82 0 0 1-19.115-4.592A41.84 41.84 0 0 1 88 262c-1.827 0-3.626-.117-5.391-.343C74.911 270.448 63.604 276 51 276c-23.196 0-42-18.804-42-42s18.804-42 42-42c1.827 0 3.626.117 5.391.343C64.089 183.552 75.396 178 88 178a41.819 41.819 0 0 1 19.115 4.592C114.532 176.002 124.298 172 135 172a41.798 41.798 0 0 1 22.893 6.782 42.066 42.066 0 0 1 7.239-.773C174.137 164.159 189.749 155 207.5 155c.601 0 1.199.01 1.794.031A41.813 41.813 0 0 1 234 147h.002c.269-27.66 22.774-50 50.498-50 27.89 0 50.5 22.61 50.5 50.5Z" />
                     </g>
                 </svg>
-
                 <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
                     <g class="clouds">
                         <path fill="#fff" d="M328 167.5c0 15.214-7.994 28.56-20.01 36.068.007.31.01.621.01.932 0 23.472-19.028 42.5-42.5 42.5-3.789 0-7.461-.496-10.957-1.426C249.671 263.676 233.141 277 213.5 277a42.77 42.77 0 0 1-7.702-.696C198.089 284.141 187.362 289 175.5 289a42.338 42.338 0 0 1-27.864-10.408A42.411 42.411 0 0 1 133.5 281c-4.36 0-8.566-.656-12.526-1.876C113.252 287.066 102.452 292 90.5 292a42.388 42.388 0 0 1-15.8-3.034A42.316 42.316 0 0 1 48.5 298C25.028 298 6 278.972 6 255.5S25.028 213 48.5 213a42.388 42.388 0 0 1 15.8 3.034A42.316 42.316 0 0 1 90.5 207c4.36 0 8.566.656 12.526 1.876C110.748 200.934 121.548 196 133.5 196a42.338 42.338 0 0 1 27.864 10.408A42.411 42.411 0 0 1 175.5 204c2.63 0 5.204.239 7.702.696C190.911 196.859 201.638 192 213.5 192c3.789 0 7.461.496 10.957 1.426 2.824-10.491 9.562-19.377 18.553-24.994-.007-.31-.01-.621-.01-.932 0-23.472 19.028-42.5 42.5-42.5s42.5 19.028 42.5 42.5Z" />
@@ -37,7 +35,6 @@
                                 <span class="moon__crater"></span>
                                 <span class="moon__crater"></span>
                             </span>
-
                         </span>
                     </span>
                 </span>
@@ -72,8 +69,11 @@
                     </g>
                 </svg>
             </span>
-        </button></nav>
-    <div class="hamburger-menu"><button class="hamburger-button"><span></span><span></span><span></span></button></div>
+        </button>
+    </nav>
+    <div class="hamburger-menu">
+        <button class="hamburger-button"><span></span><span></span><span></span></button>
+    </div>
     <div class="hamburger-overlay"></div>
     <nav class="hamburger-panel">
         <ul class="hamburger-links">
@@ -90,680 +90,672 @@
             <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />GYIK </a></li>
         </ul>
     </nav>
-    <div class="min-h-screen">
-        <section class="relative h-screen flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#0A1930]/90 to-[#0071BC]/40 z-10"></div><img src="../images/UniversalUpscaler_6b1043c6-bffa-454b-9adf-fd0c7c4f6a43.jpg" class="w-full h-full object-cover" />
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div><img src="../images/UniversalUpscaler_6b1043c6-bffa-454b-9adf-fd0c7c4f6a43.jpg" class="hero-img" />
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-up">Szakértelem és Szolgálat</div>
+            <h1 class="hero-title">Nemzetünk <span style="color: #BC9200">Kormánya</span></h1>
+            <p class="hero-desc">Húsz miniszter, egyetlen küldetéssel. A világ leggazdagabb nemzetének kormánya szakértelemre, teljesítményre és az alkotmányos rend iránti lojalitásra épül, hogy 212 millió polgár számára a legmagasabb életszínvonalat, biztonságot és jólétet garantálja.</p>
+            <div class="hero-actions" style="visibility: hidden;">
+                <button class="hero-btn open-assessment" style="background-color: #0071BC">Tudjon meg többet</button>
             </div>
-            <div class="container mx-auto px-6 z-20 relative text-center pt-20">
-                <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 animate-fade-up">Szakértelem és Szolgálat</div>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">Nemzetünk <span style="color: #BC9200">Kormánya</span></h1>
-                <p class="text-xl text-gray-200 max-w-4xl mx-auto mb-10 font-light">Húsz miniszter, egyetlen küldetéssel. A világ leggazdagabb nemzetének kormánya szakértelemre, teljesítményre és az alkotmányos rend iránti lojalitásra épül, hogy 212 millió polgár számára a legmagasabb életszínvonalat, biztonságot és jólétet garantálja.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center" style="visibility: hidden;"><button class="px-8 py-4 rounded-lg text-white font-bold text-lg transition-all shadow-lg open-assessment" style="background-color: #0071BC">Tudjon meg többet</button></div>
-            </div>
-        </section>
-
-        <section class="fade-in">
-            <h2 class="section-title">Stratégiai kiválasztás és hatékonyság</h2>
-            <div class="narrative-content">
-                <p class="narrative-text">
-                    Waikiki kormánya a modern államszervezés egyik legmerészebb és legkifinomultabb intézményi modellje, amely szakít a hagyományos politikai elitképzés konvencióival. A kabinet összeállítása nem pártok közötti alkukból és belső hatalmi versenyekből áll össze, hanem szakértelmen alapuló kiválasztásból, a vállalati szférából ismert vezetői toborzásból, valamint a nyilvános szerepvállalás és a közbizalom építésének tudatos összehangolásából. A kiválasztás alapja a teljesítmény, a lojalitás az alkotmányos rendhez, valamint a nemzetközi hitelesség, így a kabinet egyszerre képes a stratégiai célok következetes képviseletére és a szolgáltató állam mindennapi működtetésére.
-                </p>
-            </div>
-        </section>
-
-        <section class="light-bg fade-in">
-            <h2 class="section-title">Waikiki elnökei</h2>
-            <div class="cabinet-grid">
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">2000 - 2004</div>
-                        <div class="member-name">John Boehner</div>
-                        <div class="member-description">Waikiki első megválasztott elnöke, a Demokratikus Párt jelöltjeként a parlamentáris intézmények konszolidálásának és az alkotmányos rend megszilárdításának irányítója. Hivatali ideje alatt fogadták el az Alkotmányt népszavazás útján, és az ő kormánya vezette az országot a Pacifikus háború időszakában.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">2005 - 2009</div>
-                        <div class="member-name">Rick Santorum</div>
-                        <div class="member-description">A Világuralmi Párt vezetőjeként az állam monarchikus átalakulásának és nemzetközi felemelkedésének elnöke. Hivatali idejére esett a királyi koronázás, Brazília csatlakozása, a nemzeti űrprogram elindítása, valamint a bankreformok és a Nobel-díjjal elismert gazdaságpolitikai fordulat megalapozása.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">2010 - 2014</div>
-                        <div class="member-name">Aaron Eckhart</div>
-                        <div class="member-description">A Demokratikus Párt elnökeként az oktatási és gazdasági reformok irányítója, akinek hivatali ideje alatt Waikiki a világ leggazdagabb országává vált. Kormánya rendezte a Nova Aurelia-i Olimpiai Játékokat, részt vett az EAN létrehozásában és megkezdte a modern állami infrastruktúra nagyszabású kiépítését.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">2015 - 2024</div>
-                        <div class="member-name">George Bush</div>
-                        <div class="member-description">A Világuralmi Párt elnökeként Waikiki leghosszabb ideig szolgáló államfője. A jóléti reformok és a NATO-csatlakozás időszakának vezetője. Két ciklusa alatt valósult meg az ingyenes egészségügy, a készpénzmentes gazdaság, az ingyenes tömegközlekedés, a Világkormány megalapítása és a körforgásos gazdasági stratégia.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">2025 óta</div>
-                        <div class="member-name">Aaron Eckhart</div>
-                        <div class="member-description">Második elnöki ciklusát töltő kormányfő. Kormánya a fiskális stabilitás, a digitális közigazgatás és a közintézmények teljesítményelvű irányításának programját viszi tovább, miközben a NATO-tagságból fakadó új szövetségi kötelezettségek beépítése a kormányzati működésbe kiemelt feladata.</div>
-                    </div>
+        </div>
+    </section>
+    <section class="fade-in">
+        <h2 class="section-title">Stratégiai kiválasztás és hatékonyság</h2>
+        <div class="narrative-content">
+            <p class="narrative-text"> Waikiki kormánya a modern államszervezés egyik legmerészebb és legkifinomultabb intézményi modellje, amely szakít a hagyományos politikai elitképzés konvencióival. A kabinet összeállítása nem pártok közötti alkukból és belső hatalmi versenyekből áll össze, hanem szakértelmen alapuló kiválasztásból, a vállalati szférából ismert vezetői toborzásból, valamint a nyilvános szerepvállalás és a közbizalom építésének tudatos összehangolásából. A kiválasztás alapja a teljesítmény, a lojalitás az alkotmányos rendhez, valamint a nemzetközi hitelesség, így a kabinet egyszerre képes a stratégiai célok következetes képviseletére és a szolgáltató állam mindennapi működtetésére. </p>
+        </div>
+    </section>
+    <section class="light-bg fade-in">
+        <h2 class="section-title">Waikiki elnökei</h2>
+        <div class="cabinet-grid">
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">2000 - 2004</div>
+                    <div class="member-name">John Boehner</div>
+                    <div class="member-description">Waikiki első megválasztott elnöke, a Demokratikus Párt jelöltjeként a parlamentáris intézmények konszolidálásának és az alkotmányos rend megszilárdításának irányítója. Hivatali ideje alatt fogadták el az Alkotmányt népszavazás útján, és az ő kormánya vezette az országot a Pacifikus háború időszakában.</div>
                 </div>
             </div>
-        </section>
-
-        <section class="fade-in">
-            <h2 class="section-title">A jelenlegi kormány</h2>
-            <div class="cabinet-grid">
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Külügyminiszter</div>
-                        <div class="member-name">George Bush</div>
-                        <div class="member-description">A globális politika veterán szereplője, aki korábbi államfői tapasztalatát Waikiki külpolitikai érdekérvényesítésének szolgálatába állítja. Feladata, hogy a waikiki álláspontot a nemzetközi tárgyalások legmagasabb szintjén képviselje.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Védelmi miniszter</div>
-                        <div class="member-name">John Bolton</div>
-                        <div class="member-description">Bolton a védelmi stratégia és a katonai doktrína őre, aki a hiteles elrettentésre és a területvédelemre építi munkáját. Irányítása alatt a haderő fejlesztése nem öncélú erődemonstráció, hanem a nemzeti biztonság kiszámítható garanciája.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Hadügyminiszter</div>
-                        <div class="member-name">Morgan Clark</div>
-                        <div class="member-description">A fegyveres erők belső működésének és harckészültségének felelőse. Clark a haderő támadó és expedíciós képességeinek fejlesztését irányítja, kiemelt figyelemmel a páncélos erőkre és a stratégiai bombázó kapacitásokra.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Pénzügyminiszter</div>
-                        <div class="member-name">Scott Walker</div>
-                        <div class="member-description">Feladata az állami kiadások racionalizálása és a befektetőbarát környezet fenntartása. A költségvetés kidolgozásának kulcsszereplője, aki biztosítja, hogy a kiadási fegyelem és a hosszú távú vagyonépítés egyensúlyban maradjon.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Kereskedelmi miniszter</div>
-                        <div class="member-name">Rick Santorum</div>
-                        <div class="member-description">A Waikiki First kereskedelempolitika következetes képviselője. Feladata a vámmegállapodások és piacszervezési tárgyalások vezetése, valamint a tisztességtelen versenygyakorlatok elleni fellépés a nemzetközi térben.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Iparfejlesztési miniszter</div>
-                        <div class="member-name">Thomas Boone</div>
-                        <div class="member-description">A könnyű- és nehézipari kapacitások stratégiai irányítója. Feladata a célzott iparpolitika működtetése, a stratégiai ágazatok fejlesztése, valamint a vállalati innováció és az állami megrendelések összekapcsolása.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Energetikai miniszter</div>
-                        <div class="member-name">Carte Goodwin</div>
-                        <div class="member-description">Feladata az energiaellátás biztonságának garantálása és az energiarendszer modernizációja. Irányítása alá tartozik a földgáz- és olajkitermelés, a fúziós erőművek és a nukleáris technológiák állami programjai.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Oktatási miniszter</div>
-                        <div class="member-name">Tom Kirkman</div>
-                        <div class="member-description">Feladata, hogy az oktatási rendszer egyszerre legyen világszínvonalú, teljesítményelvű és társadalomformáló. Kiemelten kezeli a piacképes tudás, a magas szintű nyelvi és digitális kompetenciák fejlesztését.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Környezetvédelmi miniszter</div>
-                        <div class="member-name">Darius Tanz</div>
-                        <div class="member-description">A fenntarthatóságot mérnöki és innovációs kihívásként kezeli. Felügyeli az esőerdők védelmét és regenerációját, valamint a biodiverzitási programokat, összekapcsolva a kutatást a klímastratégiával.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Egészségügyminiszter</div>
-                        <div class="member-name">Jonathan Gruber</div>
-                        <div class="member-description">Az ingyenes egészségügyi rendszer tervezésének és korszerűsítésének felelőse. Adatalapú irányítással őrzi a rendszer pénzügyi fenntarthatóságát és biztosítja, hogy a rendszer hozzáférhető és szakmailag kiemelkedő maradjon.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Tudományügyi miniszter</div>
-                        <div class="member-name">Timothy John</div>
-                        <div class="member-description">A kutatás-fejlesztési politika és a stratégiai innováció kormányzati felelőse. Finanszírozási és szabályozási eszközökkel támogatja a találmányok hasznosítását, és felügyeli a Waikiki Űrügynökség működését.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Igazságügyminiszter</div>
-                        <div class="member-name">Marilyn R. Reid</div>
-                        <div class="member-description">A törvényesség és a közrend következetes őre. Különös figyelmet fordít a bűnözéssel szembeni zéró tolerancia elvének érvényesítésére, a nyomozóhatóságok és a bírósági rendszer együttműködésére.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Bevándorlásügyi miniszter</div>
-                        <div class="member-name">Mickey Haller</div>
-                        <div class="member-description">A bevándorlási rendszer stratégiai irányítója. Olyan jogi szűrőket működtet, amelyekkel Waikiki szelektíven képes fogadni a hasznos bevándorlókat, miközben következetesen elutasítja a nem kívánt belépőket.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Kulturális miniszter</div>
-                        <div class="member-name">Fernando H. Cardoso</div>
-                        <div class="member-description">A kulturális identitás és az intellektuális színvonal őre. Gondoskodik arról, hogy Waikiki a világban a magas kultúra, a tudományos igényesség és a társadalmi modernitás képeként jelenjen meg, valamint biztosítja az állami média működését.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Turisztikai miniszter</div>
-                        <div class="member-name">Diane Hunter</div>
-                        <div class="member-description">A prémium turizmus felügyelője, aki biztosítja, hogy Waikiki a világ egyik legexkluzívabb úti célja maradjon. Célja a csendes luxus elvére épülő vonzerő megőrzése és a tömegturizmus káros hatásainak elkerülése.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Családtámogatási miniszter</div>
-                        <div class="member-name">Kate Beckinsale</div>
-                        <div class="member-description">A családpolitika és a demográfiai stabilitás arca. Feladata a családtámogatási programok kialakítása, a gyermekellátási infrastruktúra bővítése, támogatva, hogy az anyaság és a karrier egyaránt teljes értékű életpálya legyen.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Belügyminiszter</div>
-                        <div class="member-name">John Boehner</div>
-                        <div class="member-description">A belső stabilitás és a kormányzati rend fenntartásának felelőse. Feladata a rendőrség, a tűzoltóság, a katasztrófavédelem irányítása, valamint a közrenddel kapcsolatos intézmények összehangolása.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Munkaügyi miniszter</div>
-                        <div class="member-name">Steve Preston</div>
-                        <div class="member-description">A munkaerőpiac menedzsere és a kormányzati humánpolitika stratégiai irányítója. Preston a versenyszféra munkaetikáját és hatékonysági módszereit ülteti át a közintézményekbe, miközben garantálja az állami munkahelyek fenntartását.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Mezőgazdasági miniszter</div>
-                        <div class="member-name">Jack Bowman</div>
-                        <div class="member-description">A mezőgazdasági termelés és az élelmezésbiztonság felelőse. Feladata az intenzív és modern termelési rendszerek támogatása, valamint a vidéki ellátási láncok stabilitásának biztosítása.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
-                    <div class="member-content">
-                        <div class="member-role">Infrastrukturális miniszter</div>
-                        <div class="member-name">Mary Bono Mack</div>
-                        <div class="member-description">A nagy állami infrastruktúra-beruházások stratégiai koordinátora. Feladata az utak, a vasúti hálózat, a repülőterek, valamint a tengeri alagutak és kikötői kapacitások fejlesztési és karbantartási programjainak irányítása.</div>
-                    </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">2005 - 2009</div>
+                    <div class="member-name">Rick Santorum</div>
+                    <div class="member-description">A Világuralmi Párt vezetőjeként az állam monarchikus átalakulásának és nemzetközi felemelkedésének elnöke. Hivatali idejére esett a királyi koronázás, Brazília csatlakozása, a nemzeti űrprogram elindítása, valamint a bankreformok és a Nobel-díjjal elismert gazdaságpolitikai fordulat megalapozása.</div>
                 </div>
             </div>
-        </section>
-
-        <section class="light-bg fade-in">
-            <h2 class="section-title">Történelmi kormánytagok</h2>
-            <div class="table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tisztség</th>
-                            <th>2000 - 2004</th>
-                            <th>2005 - 2009</th>
-                            <th>2010 - 2014</th>
-                            <th>2015 - 2019</th>
-                            <th>2020 - 2024</th>
-                            <th>2025 - 2029</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Elnök</td>
-                            <td>John Boehner</td>
-                            <td>Rick Santorum</td>
-                            <td>Aaron Eckhart</td>
-                            <td>George Bush</td>
-                            <td>George Bush</td>
-                            <td>Aaron Eckhart</td>
-                        </tr>
-                        <tr>
-                            <td>Kereskedelmi miniszter</td>
-                            <td>Ayden Roberts</td>
-                            <td>Ayden Roberts</td>
-                            <td>Ayden Roberts</td>
-                            <td>Ayden Roberts</td>
-                            <td>Ayden Roberts</td>
-                            <td>Rick Santorum</td>
-                        </tr>
-                        <tr>
-                            <td>Belügyminiszter</td>
-                            <td>Rick Santorum</td>
-                            <td>John Boehner</td>
-                            <td>John Boehner</td>
-                            <td>John Boehner</td>
-                            <td>John Boehner</td>
-                            <td>John Boehner</td>
-                        </tr>
-                        <tr>
-                            <td>Külügyminiszter</td>
-                            <td>Enrique Pena Nieto</td>
-                            <td>Donald Evans</td>
-                            <td>Jason Furman</td>
-                            <td>Aaron Eckhart</td>
-                            <td>Aaron Eckhart</td>
-                            <td>George Bush</td>
-                        </tr>
-                        <tr>
-                            <td>Pénzügyminiszter</td>
-                            <td>Peter Lynch</td>
-                            <td>Michael J. Cavanagh</td>
-                            <td>Michael J. Cavanagh</td>
-                            <td>Scott Walker</td>
-                            <td>Scott Walker</td>
-                            <td>Scott Walker</td>
-                        </tr>
-                        <tr>
-                            <td>Igazságügyminiszter</td>
-                            <td>Sebastian Stark</td>
-                            <td>Alejandro Ramirez</td>
-                            <td>Marilyn R. Reid</td>
-                            <td>Paul Ryan</td>
-                            <td>Paul Ryan</td>
-                            <td>Marilyn R. Reid</td>
-                        </tr>
-                        <tr>
-                            <td>Egészségügyminiszter</td>
-                            <td>Rogelio Olmeda</td>
-                            <td>Rogelio Olmeda</td>
-                            <td>Tommy Thompson</td>
-                            <td>Jonathan Gruber</td>
-                            <td>Jonathan Gruber</td>
-                            <td>Jonathan Gruber</td>
-                        </tr>
-                        <tr>
-                            <td>Kulturális miniszter</td>
-                            <td>Jorge Ramos</td>
-                            <td>Rupert Murdoch</td>
-                            <td>Fernando Henrique Cardoso</td>
-                            <td>George LeMieux</td>
-                            <td>George LeMieux</td>
-                            <td>Fernando Henrique Cardoso</td>
-                        </tr>
-                        <tr>
-                            <td>Energetikai miniszter</td>
-                            <td>Eva Longoria</td>
-                            <td>Sherry Rehman</td>
-                            <td>Spencer Abraham</td>
-                            <td>Carte Goodwin</td>
-                            <td>Carte Goodwin</td>
-                            <td>Carte Goodwin</td>
-                        </tr>
-                        <tr>
-                            <td>Oktatási miniszter</td>
-                            <td>Ellen Ochoa</td>
-                            <td>David Vitter</td>
-                            <td>Rod Paige</td>
-                            <td>David Vitter</td>
-                            <td>David Vitter</td>
-                            <td>Tom Kirkman</td>
-                        </tr>
-                        <tr>
-                            <td>Mezőgazdasági miniszter</td>
-                            <td>Gabriel Prieto</td>
-                            <td>Gabriel Prieto</td>
-                            <td>Ed Schafer</td>
-                            <td>Michel Temer</td>
-                            <td>Rick Santorum</td>
-                            <td>Jack Bowman</td>
-                        </tr>
-                        <tr>
-                            <td>Turisztikai miniszter</td>
-                            <td>Steve Preston</td>
-                            <td>Nicole Minetti</td>
-                            <td>Steve Preston</td>
-                            <td>Nicole Minetti</td>
-                            <td>Nicole Minetti</td>
-                            <td>Diane Hunter</td>
-                        </tr>
-                        <tr>
-                            <td>Hadügyminiszter</td>
-                            <td>George Zambellas</td>
-                            <td>Morgan Clark</td>
-                            <td>Dick Cheney</td>
-                            <td>Morgan Clark</td>
-                            <td>Morgan Clark</td>
-                            <td>Morgan Clark</td>
-                        </tr>
-                        <tr>
-                            <td>Védelmi miniszter</td>
-                            <td>-</td>
-                            <td>Logan Davis</td>
-                            <td>Winnefeld Daniels</td>
-                            <td>Winnefeld Daniels</td>
-                            <td>Winnefeld Daniels</td>
-                            <td>John Bolton</td>
-                        </tr>
-                        <tr>
-                            <td>Iparfejlesztési miniszter</td>
-                            <td>-</td>
-                            <td>Salvador Pardo Cruz</td>
-                            <td>Salvador Pardo Cruz</td>
-                            <td>Salvador Pardo Cruz</td>
-                            <td>Thomas Boone</td>
-                            <td>Thomas Boone</td>
-                        </tr>
-                        <tr>
-                            <td>Tudományügyi miniszter</td>
-                            <td>-</td>
-                            <td>Tommy Thompson</td>
-                            <td>Timothy John</td>
-                            <td>Timothy John</td>
-                            <td>Timothy John</td>
-                            <td>Timothy John</td>
-                        </tr>
-                        <tr>
-                            <td>Infrastrukturális miniszter</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>Rick Santorum</td>
-                            <td>Mary Bono Mack</td>
-                            <td>Mary Bono Mack</td>
-                            <td>Mary Bono Mack</td>
-                        </tr>
-                        <tr>
-                            <td>Környezetvédelmi miniszter</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>Mike Leavitt</td>
-                            <td>Mitt Romney</td>
-                            <td>Darius Tanz</td>
-                            <td>Darius Tanz</td>
-                        </tr>
-                        <tr>
-                            <td>Munkaügyi miniszter</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>Steve Preston</td>
-                            <td>Matt Daemon</td>
-                            <td>Steve Preston</td>
-                        </tr>
-                        <tr>
-                            <td>Erőforrásügyi miniszter</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>Ruby Dhalla</td>
-                            <td>Ruby Dhalla</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Fejlesztési miniszter</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>Rick Santorum</td>
-                            <td>Ricardo Gomez</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Bevándorlásügyi miniszter</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>Mickey Haller</td>
-                        </tr>
-                        <tr>
-                            <td>Családtámogatási miniszter</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>Kate Beckinsale</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="fade-in">
-            <h2 class="section-title">Diktátori kabinet</h2>
-            <div class="cabinet-grid">
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Aaron Shore</div>
-                        <div class="reference-role">Különleges tanácsadó</div>
-                        <div class="reference-desc">A legelső tanácsadó, aki Chease Young mellett az államalapítástól kezdve szolgál. Kabinetfőnökként az intézményi működés alapjait rakta le, majd különleges tanácsadói pozícióba került.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Emily Whiteborough</div>
-                        <div class="reference-role">Különleges tanácsadó</div>
-                        <div class="reference-desc">Az alapító korszak egyik legmegbízhatóbb belső tanácsadója, aki a stratégiai döntések előkészítésében és a kormányzati kommunikáció finomhangolásában játszik kulcsszerepet.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Daniel Hardman</div>
-                        <div class="reference-role">Kommunikációs tanácsadó</div>
-                        <div class="reference-desc">A waikiki kormányzati kommunikáció kiépítője, aki a sajtókapcsolatok és állampolgári tájékoztatás kialakításától a nemzeti narratíva és ideológia formálásáig terjedő feladatokat lát el.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Christian Sewing</div>
-                        <div class="reference-role">Befektetési tanácsadó</div>
-                        <div class="reference-desc">A Nemzeti Vagyonalap és az állami befektetési stratégia szakértője, aki a pénzügyi piacok ismeretét a királyi család szuverén vagyonkezelésének szolgálatába állítja.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Roger Penrose</div>
-                        <div class="reference-role">Főelemző</div>
-                        <div class="reference-desc">Nobel-díjas elméleti fizikus, aki a diktátori kabinet tudományos elemzőjeként a stratégiai döntések tudományos megalapozásáért és az innováció hosszú távú irányának kijelöléséért felel.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Harris Cochrane</div>
-                        <div class="reference-role">Belbiztonsági tanácsadó</div>
-                        <div class="reference-desc">A nemzetbiztonsági és belbiztonsági területek veterán szakértője. Tizenöt év szolgálat után a belbiztonsági tanácsadói pozícióban folytatja munkáját az új kormányzati ciklusban.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Dana Scottie</div>
-                        <div class="reference-role">Toborzási specialista</div>
-                        <div class="reference-desc">A kormányzati tehetségkutatás és a meritokratikus kiválasztási rendszer szakembere, aki biztosítja, hogy a legkiválóbb jelöltek kerüljenek a vezető állami pozíciókba.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Rachel Zane</div>
-                        <div class="reference-role">Kabinetfőnök</div>
-                        <div class="reference-desc">Jogi végzettségű szervező, aki asszisztensből a kabinet mindennapi működésének irányítójává emelkedett. A koordináció és az adminisztratív fegyelem biztosításáért felel.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Julie Stark</div>
-                        <div class="reference-role">Jogi tanácsadó</div>
-                        <div class="reference-desc">Az alkotmányos kérdések és a jogszabályi koherencia felügyelője, aki a diktátori döntések jogi megalapozásáért és a törvényességi kontroll folyamatos biztosításáért felel.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Mike Leavitt</div>
-                        <div class="reference-role">Környezetvédelmi tanácsadó</div>
-                        <div class="reference-desc">A környezetvédelmi szabályozás kidolgozója, aki esőerdővédelmi programokat indított el, majd a diktátori kabinet zöldpolitikai tanácsadójaként folytatta munkáját.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Eleanor Sui Yang</div>
-                        <div class="reference-role">Közkapcsolati tanácsadó</div>
-                        <div class="reference-desc">A társadalmi párbeszéd és a közkapcsolatok stratégája, aki a kormányzati kommunikáció és a közbizalom fenntartásában játszik tanácsadói szerepet.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Zoe Lawford</div>
-                        <div class="reference-role">Titkár</div>
-                        <div class="reference-desc">A diktátori iroda adminisztratív titkára, aki a bejövő információk szűrését, az ülések koordinálását, a megbeszélések és fogadások ütemezését és a személyes ütemterv kezelését végzi.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Josh Earnest</div>
-                        <div class="reference-role">Sajtófőnök</div>
-                        <div class="reference-desc">Raimondo Chease diktátori korszakának szóvivője, aki a kormányzati üzenetek pontos, fegyelmezett és egységes közvetítéséért felel a hazai és nemzetközi média felé.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Jason Furman</div>
-                        <div class="reference-role">Külkereskedelmi tanácsadó</div>
-                        <div class="reference-desc">Közgazdász hátterű diplomata, aki a külpolitikát a gazdasági érdekérvényesítéssel kapcsolta össze, majd a diktátori kabinet külkereskedelmi tanácsadójaként folytatta munkáját.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Chloe Bennet</div>
-                        <div class="reference-role">Kabinetvezető</div>
-                        <div class="reference-desc">A diktátori kabinet operatív működtetésének felelőse, aki a tanácsadók közötti munkafolyamatokat koordinálja és a döntés-előkészítési folyamat hatékonyságát biztosítja.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Winnefeld Daniels</div>
-                        <div class="reference-role">NATO küldött</div>
-                        <div class="reference-desc">A waikiki fegyveres erők korábbi főparancsnoka, majd védelmi miniszter és jelenleg NATO küldött. A hadsereg szervezeti kultúráját és doktrináját formáló, meghatározó katonai vezető.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">Nicole Minetti</div>
-                        <div class="reference-role">Családjóléti megbízott</div>
-                        <div class="reference-desc">A prémium turisztikai márka egyik megteremtője, aki három ciklusban formálta a Waikiki-brand nemzetközi vonzerejét. Jelenleg a diktátori kabinet családjóléti megbízottja.</div>
-                    </div>
-                </div>
-                <div class="reference-card">
-                    <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
-                    <div class="reference-info">
-                        <div class="reference-name">London Tipton</div>
-                        <div class="reference-role">Vezető asszisztens</div>
-                        <div class="reference-desc">A diktátor személyes asszisztense, aki a mindennapos ügykezelés, a protokolláris feladatok, diplomáciai utak és a belső kommunikáció gyors lebonyolításáért felel.</div>
-                    </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">2010 - 2014</div>
+                    <div class="member-name">Aaron Eckhart</div>
+                    <div class="member-description">A Demokratikus Párt elnökeként az oktatási és gazdasági reformok irányítója, akinek hivatali ideje alatt Waikiki a világ leggazdagabb országává vált. Kormánya rendezte a Nova Aurelia-i Olimpiai Játékokat, részt vett az EAN létrehozásában és megkezdte a modern állami infrastruktúra nagyszabású kiépítését.</div>
                 </div>
             </div>
-        </section>
-
-        <section class="light-bg fade-in">
-            <h2 class="section-title">Kormányzati ügynökségek</h2>
-            <div class="table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tisztség</th>
-                            <th>2000 - 2007</th>
-                            <th>2008 - 2015</th>
-                            <th>2016 - 2023</th>
-                            <th>2024 - 2031</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Nemzeti Bank elnöke</td>
-                            <td>Robert Menéndez</td>
-                            <td>Jessica Walker</td>
-                            <td>Michael J. Cavanagh</td>
-                            <td>Jessica Walker</td>
-                        </tr>
-                        <tr>
-                            <td>Médiatanács elnöke</td>
-                            <td>Marc Benioff</td>
-                            <td>Rupert Murdoch</td>
-                            <td>Rupert Murdoch</td>
-                            <td>Colin Farrell</td>
-                        </tr>
-                        <tr>
-                            <td>Főbíró</td>
-                            <td>Marilyn R. Reid</td>
-                            <td>Sebastian Stark</td>
-                            <td>Sebastian Stark</td>
-                            <td>Sebastian Stark</td>
-                        </tr>
-                        <tr>
-                            <td>Főparancsnok</td>
-                            <td>Winnefeld Daniels</td>
-                            <td>Logan Davis</td>
-                            <td>Logan Davis</td>
-                            <td>Logan Davis</td>
-                        </tr>
-                        <tr>
-                            <td>Titkosszolgálat igazgató</td>
-                            <td>Alejandro Ramirez</td>
-                            <td>Elena Martinez</td>
-                            <td>Elena Martinez</td>
-                            <td>Smith Edward</td>
-                        </tr>
-                        <tr>
-                            <td>Legfőbb ügyész</td>
-                            <td>Dias Toffoli</td>
-                            <td>Paul Ryan</td>
-                            <td>Marilyn R. Reid</td>
-                            <td>Vincent Kartheiser</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">2015 - 2024</div>
+                    <div class="member-name">George Bush</div>
+                    <div class="member-description">A Világuralmi Párt elnökeként Waikiki leghosszabb ideig szolgáló államfője. A jóléti reformok és a NATO-csatlakozás időszakának vezetője. Két ciklusa alatt valósult meg az ingyenes egészségügy, a készpénzmentes gazdaság, az ingyenes tömegközlekedés, a Világkormány megalapítása és a körforgásos gazdasági stratégia.</div>
+                </div>
             </div>
-        </section>
-    </div>
-
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">2025 óta</div>
+                    <div class="member-name">Aaron Eckhart</div>
+                    <div class="member-description">Második elnöki ciklusát töltő kormányfő. Kormánya a fiskális stabilitás, a digitális közigazgatás és a közintézmények teljesítményelvű irányításának programját viszi tovább, miközben a NATO-tagságból fakadó új szövetségi kötelezettségek beépítése a kormányzati működésbe kiemelt feladata.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fade-in">
+        <h2 class="section-title">A jelenlegi kormány</h2>
+        <div class="cabinet-grid">
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Külügyminiszter</div>
+                    <div class="member-name">George Bush</div>
+                    <div class="member-description">A globális politika veterán szereplője, aki korábbi államfői tapasztalatát Waikiki külpolitikai érdekérvényesítésének szolgálatába állítja. Feladata, hogy a waikiki álláspontot a nemzetközi tárgyalások legmagasabb szintjén képviselje.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Védelmi miniszter</div>
+                    <div class="member-name">John Bolton</div>
+                    <div class="member-description">Bolton a védelmi stratégia és a katonai doktrína őre, aki a hiteles elrettentésre és a területvédelemre építi munkáját. Irányítása alatt a haderő fejlesztése nem öncélú erődemonstráció, hanem a nemzeti biztonság kiszámítható garanciája.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Hadügyminiszter</div>
+                    <div class="member-name">Morgan Clark</div>
+                    <div class="member-description">A fegyveres erők belső működésének és harckészültségének felelőse. Clark a haderő támadó és expedíciós képességeinek fejlesztését irányítja, kiemelt figyelemmel a páncélos erőkre és a stratégiai bombázó kapacitásokra.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Pénzügyminiszter</div>
+                    <div class="member-name">Scott Walker</div>
+                    <div class="member-description">Feladata az állami kiadások racionalizálása és a befektetőbarát környezet fenntartása. A költségvetés kidolgozásának kulcsszereplője, aki biztosítja, hogy a kiadási fegyelem és a hosszú távú vagyonépítés egyensúlyban maradjon.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Kereskedelmi miniszter</div>
+                    <div class="member-name">Rick Santorum</div>
+                    <div class="member-description">A Waikiki First kereskedelempolitika következetes képviselője. Feladata a vámmegállapodások és piacszervezési tárgyalások vezetése, valamint a tisztességtelen versenygyakorlatok elleni fellépés a nemzetközi térben.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Iparfejlesztési miniszter</div>
+                    <div class="member-name">Thomas Boone</div>
+                    <div class="member-description">A könnyű- és nehézipari kapacitások stratégiai irányítója. Feladata a célzott iparpolitika működtetése, a stratégiai ágazatok fejlesztése, valamint a vállalati innováció és az állami megrendelések összekapcsolása.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Energetikai miniszter</div>
+                    <div class="member-name">Carte Goodwin</div>
+                    <div class="member-description">Feladata az energiaellátás biztonságának garantálása és az energiarendszer modernizációja. Irányítása alá tartozik a földgáz- és olajkitermelés, a fúziós erőművek és a nukleáris technológiák állami programjai.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Oktatási miniszter</div>
+                    <div class="member-name">Tom Kirkman</div>
+                    <div class="member-description">Feladata, hogy az oktatási rendszer egyszerre legyen világszínvonalú, teljesítményelvű és társadalomformáló. Kiemelten kezeli a piacképes tudás, a magas szintű nyelvi és digitális kompetenciák fejlesztését.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Környezetvédelmi miniszter</div>
+                    <div class="member-name">Darius Tanz</div>
+                    <div class="member-description">A fenntarthatóságot mérnöki és innovációs kihívásként kezeli. Felügyeli az esőerdők védelmét és regenerációját, valamint a biodiverzitási programokat, összekapcsolva a kutatást a klímastratégiával.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Egészségügyminiszter</div>
+                    <div class="member-name">Jonathan Gruber</div>
+                    <div class="member-description">Az ingyenes egészségügyi rendszer tervezésének és korszerűsítésének felelőse. Adatalapú irányítással őrzi a rendszer pénzügyi fenntarthatóságát és biztosítja, hogy a rendszer hozzáférhető és szakmailag kiemelkedő maradjon.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Tudományügyi miniszter</div>
+                    <div class="member-name">Timothy John</div>
+                    <div class="member-description">A kutatás-fejlesztési politika és a stratégiai innováció kormányzati felelőse. Finanszírozási és szabályozási eszközökkel támogatja a találmányok hasznosítását, és felügyeli a Waikiki Űrügynökség működését.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Igazságügyminiszter</div>
+                    <div class="member-name">Marilyn R. Reid</div>
+                    <div class="member-description">A törvényesség és a közrend következetes őre. Különös figyelmet fordít a bűnözéssel szembeni zéró tolerancia elvének érvényesítésére, a nyomozóhatóságok és a bírósági rendszer együttműködésére.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Bevándorlásügyi miniszter</div>
+                    <div class="member-name">Mickey Haller</div>
+                    <div class="member-description">A bevándorlási rendszer stratégiai irányítója. Olyan jogi szűrőket működtet, amelyekkel Waikiki szelektíven képes fogadni a hasznos bevándorlókat, miközben következetesen elutasítja a nem kívánt belépőket.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Kulturális miniszter</div>
+                    <div class="member-name">Fernando H. Cardoso</div>
+                    <div class="member-description">A kulturális identitás és az intellektuális színvonal őre. Gondoskodik arról, hogy Waikiki a világban a magas kultúra, a tudományos igényesség és a társadalmi modernitás képeként jelenjen meg, valamint biztosítja az állami média működését.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Turisztikai miniszter</div>
+                    <div class="member-name">Diane Hunter</div>
+                    <div class="member-description">A prémium turizmus felügyelője, aki biztosítja, hogy Waikiki a világ egyik legexkluzívabb úti célja maradjon. Célja a csendes luxus elvére épülő vonzerő megőrzése és a tömegturizmus káros hatásainak elkerülése.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Családtámogatási miniszter</div>
+                    <div class="member-name">Kate Beckinsale</div>
+                    <div class="member-description">A családpolitika és a demográfiai stabilitás arca. Feladata a családtámogatási programok kialakítása, a gyermekellátási infrastruktúra bővítése, támogatva, hogy az anyaság és a karrier egyaránt teljes értékű életpálya legyen.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Belügyminiszter</div>
+                    <div class="member-name">John Boehner</div>
+                    <div class="member-description">A belső stabilitás és a kormányzati rend fenntartásának felelőse. Feladata a rendőrség, a tűzoltóság, a katasztrófavédelem irányítása, valamint a közrenddel kapcsolatos intézmények összehangolása.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Munkaügyi miniszter</div>
+                    <div class="member-name">Steve Preston</div>
+                    <div class="member-description">A munkaerőpiac menedzsere és a kormányzati humánpolitika stratégiai irányítója. Preston a versenyszféra munkaetikáját és hatékonysági módszereit ülteti át a közintézményekbe, miközben garantálja az állami munkahelyek fenntartását.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Mezőgazdasági miniszter</div>
+                    <div class="member-name">Jack Bowman</div>
+                    <div class="member-description">A mezőgazdasági termelés és az élelmezésbiztonság felelőse. Feladata az intenzív és modern termelési rendszerek támogatása, valamint a vidéki ellátási láncok stabilitásának biztosítása.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="member-image"><img src="https://api.iconify.design/mdi/account.svg?color=%23CCCCCC&width=100&height=100" /></div>
+                <div class="member-content">
+                    <div class="member-role">Infrastrukturális miniszter</div>
+                    <div class="member-name">Mary Bono Mack</div>
+                    <div class="member-description">A nagy állami infrastruktúra-beruházások stratégiai koordinátora. Feladata az utak, a vasúti hálózat, a repülőterek, valamint a tengeri alagutak és kikötői kapacitások fejlesztési és karbantartási programjainak irányítása.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="light-bg fade-in">
+        <h2 class="section-title">Történelmi kormánytagok</h2>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tisztség</th>
+                        <th>2000 - 2004</th>
+                        <th>2005 - 2009</th>
+                        <th>2010 - 2014</th>
+                        <th>2015 - 2019</th>
+                        <th>2020 - 2024</th>
+                        <th>2025 - 2029</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Elnök</td>
+                        <td>John Boehner</td>
+                        <td>Rick Santorum</td>
+                        <td>Aaron Eckhart</td>
+                        <td>George Bush</td>
+                        <td>George Bush</td>
+                        <td>Aaron Eckhart</td>
+                    </tr>
+                    <tr>
+                        <td>Kereskedelmi miniszter</td>
+                        <td>Ayden Roberts</td>
+                        <td>Ayden Roberts</td>
+                        <td>Ayden Roberts</td>
+                        <td>Ayden Roberts</td>
+                        <td>Ayden Roberts</td>
+                        <td>Rick Santorum</td>
+                    </tr>
+                    <tr>
+                        <td>Belügyminiszter</td>
+                        <td>Rick Santorum</td>
+                        <td>John Boehner</td>
+                        <td>John Boehner</td>
+                        <td>John Boehner</td>
+                        <td>John Boehner</td>
+                        <td>John Boehner</td>
+                    </tr>
+                    <tr>
+                        <td>Külügyminiszter</td>
+                        <td>Enrique Pena Nieto</td>
+                        <td>Donald Evans</td>
+                        <td>Jason Furman</td>
+                        <td>Aaron Eckhart</td>
+                        <td>Aaron Eckhart</td>
+                        <td>George Bush</td>
+                    </tr>
+                    <tr>
+                        <td>Pénzügyminiszter</td>
+                        <td>Peter Lynch</td>
+                        <td>Michael J. Cavanagh</td>
+                        <td>Michael J. Cavanagh</td>
+                        <td>Scott Walker</td>
+                        <td>Scott Walker</td>
+                        <td>Scott Walker</td>
+                    </tr>
+                    <tr>
+                        <td>Igazságügyminiszter</td>
+                        <td>Sebastian Stark</td>
+                        <td>Alejandro Ramirez</td>
+                        <td>Marilyn R. Reid</td>
+                        <td>Paul Ryan</td>
+                        <td>Paul Ryan</td>
+                        <td>Marilyn R. Reid</td>
+                    </tr>
+                    <tr>
+                        <td>Egészségügyminiszter</td>
+                        <td>Rogelio Olmeda</td>
+                        <td>Rogelio Olmeda</td>
+                        <td>Tommy Thompson</td>
+                        <td>Jonathan Gruber</td>
+                        <td>Jonathan Gruber</td>
+                        <td>Jonathan Gruber</td>
+                    </tr>
+                    <tr>
+                        <td>Kulturális miniszter</td>
+                        <td>Jorge Ramos</td>
+                        <td>Rupert Murdoch</td>
+                        <td>Fernando Henrique Cardoso</td>
+                        <td>George LeMieux</td>
+                        <td>George LeMieux</td>
+                        <td>Fernando Henrique Cardoso</td>
+                    </tr>
+                    <tr>
+                        <td>Energetikai miniszter</td>
+                        <td>Eva Longoria</td>
+                        <td>Sherry Rehman</td>
+                        <td>Spencer Abraham</td>
+                        <td>Carte Goodwin</td>
+                        <td>Carte Goodwin</td>
+                        <td>Carte Goodwin</td>
+                    </tr>
+                    <tr>
+                        <td>Oktatási miniszter</td>
+                        <td>Ellen Ochoa</td>
+                        <td>David Vitter</td>
+                        <td>Rod Paige</td>
+                        <td>David Vitter</td>
+                        <td>David Vitter</td>
+                        <td>Tom Kirkman</td>
+                    </tr>
+                    <tr>
+                        <td>Mezőgazdasági miniszter</td>
+                        <td>Gabriel Prieto</td>
+                        <td>Gabriel Prieto</td>
+                        <td>Ed Schafer</td>
+                        <td>Michel Temer</td>
+                        <td>Rick Santorum</td>
+                        <td>Jack Bowman</td>
+                    </tr>
+                    <tr>
+                        <td>Turisztikai miniszter</td>
+                        <td>Steve Preston</td>
+                        <td>Nicole Minetti</td>
+                        <td>Steve Preston</td>
+                        <td>Nicole Minetti</td>
+                        <td>Nicole Minetti</td>
+                        <td>Diane Hunter</td>
+                    </tr>
+                    <tr>
+                        <td>Hadügyminiszter</td>
+                        <td>George Zambellas</td>
+                        <td>Morgan Clark</td>
+                        <td>Dick Cheney</td>
+                        <td>Morgan Clark</td>
+                        <td>Morgan Clark</td>
+                        <td>Morgan Clark</td>
+                    </tr>
+                    <tr>
+                        <td>Védelmi miniszter</td>
+                        <td>-</td>
+                        <td>Logan Davis</td>
+                        <td>Winnefeld Daniels</td>
+                        <td>Winnefeld Daniels</td>
+                        <td>Winnefeld Daniels</td>
+                        <td>John Bolton</td>
+                    </tr>
+                    <tr>
+                        <td>Iparfejlesztési miniszter</td>
+                        <td>-</td>
+                        <td>Salvador Pardo Cruz</td>
+                        <td>Salvador Pardo Cruz</td>
+                        <td>Salvador Pardo Cruz</td>
+                        <td>Thomas Boone</td>
+                        <td>Thomas Boone</td>
+                    </tr>
+                    <tr>
+                        <td>Tudományügyi miniszter</td>
+                        <td>-</td>
+                        <td>Tommy Thompson</td>
+                        <td>Timothy John</td>
+                        <td>Timothy John</td>
+                        <td>Timothy John</td>
+                        <td>Timothy John</td>
+                    </tr>
+                    <tr>
+                        <td>Infrastrukturális miniszter</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Rick Santorum</td>
+                        <td>Mary Bono Mack</td>
+                        <td>Mary Bono Mack</td>
+                        <td>Mary Bono Mack</td>
+                    </tr>
+                    <tr>
+                        <td>Környezetvédelmi miniszter</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Mike Leavitt</td>
+                        <td>Mitt Romney</td>
+                        <td>Darius Tanz</td>
+                        <td>Darius Tanz</td>
+                    </tr>
+                    <tr>
+                        <td>Munkaügyi miniszter</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Steve Preston</td>
+                        <td>Matt Daemon</td>
+                        <td>Steve Preston</td>
+                    </tr>
+                    <tr>
+                        <td>Erőforrásügyi miniszter</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Ruby Dhalla</td>
+                        <td>Ruby Dhalla</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Fejlesztési miniszter</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Rick Santorum</td>
+                        <td>Ricardo Gomez</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Bevándorlásügyi miniszter</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Mickey Haller</td>
+                    </tr>
+                    <tr>
+                        <td>Családtámogatási miniszter</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Kate Beckinsale</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="fade-in">
+        <h2 class="section-title">Diktátori kabinet</h2>
+        <div class="cabinet-grid">
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Aaron Shore</div>
+                    <div class="reference-role">Különleges tanácsadó</div>
+                    <div class="reference-desc">A legelső tanácsadó, aki Chease Young mellett az államalapítástól kezdve szolgál. Kabinetfőnökként az intézményi működés alapjait rakta le, majd különleges tanácsadói pozícióba került.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Emily Whiteborough</div>
+                    <div class="reference-role">Különleges tanácsadó</div>
+                    <div class="reference-desc">Az alapító korszak egyik legmegbízhatóbb belső tanácsadója, aki a stratégiai döntések előkészítésében és a kormányzati kommunikáció finomhangolásában játszik kulcsszerepet.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Daniel Hardman</div>
+                    <div class="reference-role">Kommunikációs tanácsadó</div>
+                    <div class="reference-desc">A waikiki kormányzati kommunikáció kiépítője, aki a sajtókapcsolatok és állampolgári tájékoztatás kialakításától a nemzeti narratíva és ideológia formálásáig terjedő feladatokat lát el.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Christian Sewing</div>
+                    <div class="reference-role">Befektetési tanácsadó</div>
+                    <div class="reference-desc">A Nemzeti Vagyonalap és az állami befektetési stratégia szakértője, aki a pénzügyi piacok ismeretét a királyi család szuverén vagyonkezelésének szolgálatába állítja.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Roger Penrose</div>
+                    <div class="reference-role">Főelemző</div>
+                    <div class="reference-desc">Nobel-díjas elméleti fizikus, aki a diktátori kabinet tudományos elemzőjeként a stratégiai döntések tudományos megalapozásáért és az innováció hosszú távú irányának kijelöléséért felel.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Harris Cochrane</div>
+                    <div class="reference-role">Belbiztonsági tanácsadó</div>
+                    <div class="reference-desc">A nemzetbiztonsági és belbiztonsági területek veterán szakértője. Tizenöt év szolgálat után a belbiztonsági tanácsadói pozícióban folytatja munkáját az új kormányzati ciklusban.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Dana Scottie</div>
+                    <div class="reference-role">Toborzási specialista</div>
+                    <div class="reference-desc">A kormányzati tehetségkutatás és a meritokratikus kiválasztási rendszer szakembere, aki biztosítja, hogy a legkiválóbb jelöltek kerüljenek a vezető állami pozíciókba.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Rachel Zane</div>
+                    <div class="reference-role">Kabinetfőnök</div>
+                    <div class="reference-desc">Jogi végzettségű szervező, aki asszisztensből a kabinet mindennapi működésének irányítójává emelkedett. A koordináció és az adminisztratív fegyelem biztosításáért felel.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Julie Stark</div>
+                    <div class="reference-role">Jogi tanácsadó</div>
+                    <div class="reference-desc">Az alkotmányos kérdések és a jogszabályi koherencia felügyelője, aki a diktátori döntések jogi megalapozásáért és a törvényességi kontroll folyamatos biztosításáért felel.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Mike Leavitt</div>
+                    <div class="reference-role">Környezetvédelmi tanácsadó</div>
+                    <div class="reference-desc">A környezetvédelmi szabályozás kidolgozója, aki esőerdővédelmi programokat indított el, majd a diktátori kabinet zöldpolitikai tanácsadójaként folytatta munkáját.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Eleanor Sui Yang</div>
+                    <div class="reference-role">Közkapcsolati tanácsadó</div>
+                    <div class="reference-desc">A társadalmi párbeszéd és a közkapcsolatok stratégája, aki a kormányzati kommunikáció és a közbizalom fenntartásában játszik tanácsadói szerepet.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Zoe Lawford</div>
+                    <div class="reference-role">Titkár</div>
+                    <div class="reference-desc">A diktátori iroda adminisztratív titkára, aki a bejövő információk szűrését, az ülések koordinálását, a megbeszélések és fogadások ütemezését és a személyes ütemterv kezelését végzi.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Josh Earnest</div>
+                    <div class="reference-role">Sajtófőnök</div>
+                    <div class="reference-desc">Raimondo Chease diktátori korszakának szóvivője, aki a kormányzati üzenetek pontos, fegyelmezett és egységes közvetítéséért felel a hazai és nemzetközi média felé.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Jason Furman</div>
+                    <div class="reference-role">Külkereskedelmi tanácsadó</div>
+                    <div class="reference-desc">Közgazdász hátterű diplomata, aki a külpolitikát a gazdasági érdekérvényesítéssel kapcsolta össze, majd a diktátori kabinet külkereskedelmi tanácsadójaként folytatta munkáját.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Chloe Bennet</div>
+                    <div class="reference-role">Kabinetvezető</div>
+                    <div class="reference-desc">A diktátori kabinet operatív működtetésének felelőse, aki a tanácsadók közötti munkafolyamatokat koordinálja és a döntés-előkészítési folyamat hatékonyságát biztosítja.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Winnefeld Daniels</div>
+                    <div class="reference-role">NATO küldött</div>
+                    <div class="reference-desc">A waikiki fegyveres erők korábbi főparancsnoka, majd védelmi miniszter és jelenleg NATO küldött. A hadsereg szervezeti kultúráját és doktrináját formáló, meghatározó katonai vezető.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">Nicole Minetti</div>
+                    <div class="reference-role">Családjóléti megbízott</div>
+                    <div class="reference-desc">A prémium turisztikai márka egyik megteremtője, aki három ciklusban formálta a Waikiki-brand nemzetközi vonzerejét. Jelenleg a diktátori kabinet családjóléti megbízottja.</div>
+                </div>
+            </div>
+            <div class="reference-card">
+                <div class="reference-icon"><img src="https://api.iconify.design/mdi/account.svg?color=%23FFFFFF" /></div>
+                <div class="reference-info">
+                    <div class="reference-name">London Tipton</div>
+                    <div class="reference-role">Vezető asszisztens</div>
+                    <div class="reference-desc">A diktátor személyes asszisztense, aki a mindennapos ügykezelés, a protokolláris feladatok, diplomáciai utak és a belső kommunikáció gyors lebonyolításáért felel.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="light-bg fade-in">
+        <h2 class="section-title">Kormányzati ügynökségek</h2>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tisztség</th>
+                        <th>2000 - 2007</th>
+                        <th>2008 - 2015</th>
+                        <th>2016 - 2023</th>
+                        <th>2024 - 2031</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nemzeti Bank elnöke</td>
+                        <td>Robert Menéndez</td>
+                        <td>Jessica Walker</td>
+                        <td>Michael J. Cavanagh</td>
+                        <td>Jessica Walker</td>
+                    </tr>
+                    <tr>
+                        <td>Médiatanács elnöke</td>
+                        <td>Marc Benioff</td>
+                        <td>Rupert Murdoch</td>
+                        <td>Rupert Murdoch</td>
+                        <td>Colin Farrell</td>
+                    </tr>
+                    <tr>
+                        <td>Főbíró</td>
+                        <td>Marilyn R. Reid</td>
+                        <td>Sebastian Stark</td>
+                        <td>Sebastian Stark</td>
+                        <td>Sebastian Stark</td>
+                    </tr>
+                    <tr>
+                        <td>Főparancsnok</td>
+                        <td>Winnefeld Daniels</td>
+                        <td>Logan Davis</td>
+                        <td>Logan Davis</td>
+                        <td>Logan Davis</td>
+                    </tr>
+                    <tr>
+                        <td>Titkosszolgálat igazgató</td>
+                        <td>Alejandro Ramirez</td>
+                        <td>Elena Martinez</td>
+                        <td>Elena Martinez</td>
+                        <td>Smith Edward</td>
+                    </tr>
+                    <tr>
+                        <td>Legfőbb ügyész</td>
+                        <td>Dias Toffoli</td>
+                        <td>Paul Ryan</td>
+                        <td>Marilyn R. Reid</td>
+                        <td>Vincent Kartheiser</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     <footer>
         <div class="footer-content">
             <div class="footer-links"><a href="index.html">Főoldal</a><a href="tourism.html">Turizmus</a><a href="diplomacy.html">Diplomácia</a><a href="culture.html">Kultúra</a><a href="parties.html">Politika</a><a href="leadership.html">Vezetés</a><a href="economy.html">Gazdaság</a><a href="wealth-fund.html">Vagyonalap</a><a href="history.html">Történelem</a><a href="military.html">Hadsereg</a><a href="faq.html">GYIK</a></div>
@@ -772,5 +764,4 @@
     </footer>
     <script src="../js/common.js"></script>
 </body>
-
 </html>
