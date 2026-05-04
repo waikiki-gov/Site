@@ -406,7 +406,7 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
     .gallery-toolbar {
         padding: 10px 1rem;
     }

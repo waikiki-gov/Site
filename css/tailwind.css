@@ -37,7 +37,6 @@
     z-index: 20;
     position: relative;
     text-align: center;
-    padding-top: 5rem;
 }
 
 .hero-badge {
@@ -75,14 +74,14 @@
     line-height: 1.75rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .hero-title {
         font-size: 4.5rem;
         line-height: 1;
     }
 }
 
-@media (min-width: 640px) {
+@media (max-width: 600px) {
     .hero-content {
         padding-left: 0;
         padding-right: 0;
