@@ -90,7 +90,7 @@ A kabinet egészét tekintve Waikiki kormányzása a rend, a szakértelem és a 
 | Tudományügyi miniszter | | Tommy Thompson | Timothy John | Timothy John | Timothy John | Timothy John |
 | Infrastrukturális miniszter | | | Rick Santorum | Mary Bono Mack | Mary Bono Mack | Mary Bono Mack |
 | Környezetvédelmi miniszter | | | Mike Leavitt | Mitt Romney | Darius Tanz | Darius Tanz |
-| Munkaügyi miniszter | | | Steve Preston | Matt Daemon | Steve Preston | |
+| Munkaügyi miniszter | | | Steve Preston | Matt Damon | Steve Preston | |
 | Erőforrásügyi miniszter | | | Ruby Dhalla | Ruby Dhalla | | |
 | Fejlesztési miniszter | | | Rick Santorum | Ricardo Gomez | | |
 | Bevándorlásügyi miniszter | | | | | | Mickey Haller |
