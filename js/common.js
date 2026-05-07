@@ -37,9 +37,7 @@ const setTheme = () => {
  */
 const CONFIG = {
     NAVBAR_HEIGHT: 70,
-    SCROLL_DURATION: 1200,
-    ANIMATION_THRESHOLD: 0.15,
-    OBSERVER_ROOT_MARGIN: '0px 0px -100px 0px' // Reduced from -200px for earlier animations
+    SCROLL_DURATION: 1200
 };
 
 /**
@@ -149,43 +147,6 @@ function initNavigationHighlight() {
 }
 
 /**
- * Create scroll progress indicator at top of page
- */
-function initScrollIndicator() {
-    const indicator = document.createElement('div');
-    indicator.id = 'scroll-indicator';
-    indicator.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 4px;
-        background: var(--primary);
-        width: 0%;
-        z-index: var(--z-scroll-indicator);
-        transition: width 0.1s ease;
-    `;
-    document.body.appendChild(indicator);
-
-    window.addEventListener('scroll', () => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollPercent = (scrollTop / scrollHeight) * 100;
-        indicator.style.width = scrollPercent + '%';
-    });
-}
-
-/**
- * Add hover effects to cards
- */
-function initCardHoverEffects() {
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', function () {
-            this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-    });
-}
-
-/**
  * Initialize hamburger menu functionality
  */
 function initHamburgerMenu() {
@@ -244,8 +205,6 @@ function initCommon() {
     initSmoothScrolling();
     initFadeInObserver();
     initNavigationHighlight();
-    //initScrollIndicator();
-    initCardHoverEffects();
     initHamburgerMenu();
 
     console.log('Waikiki Official Website - Common Scripts Loaded');
