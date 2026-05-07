@@ -1,4 +1,4 @@
-/* ============== GOVERNMENT PAGE STYLES ============== */
+/* GOVERNMENT PAGE STYLES */
 
 .table td:first-child {
     font-weight: 600
@@ -115,7 +115,7 @@
     }
 }
 
-/* ============== DARK MODE ============== */
+/* DARK MODE */
 
 .body-dark .member-name,
 .body-dark .reference-name {

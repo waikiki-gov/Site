@@ -115,7 +115,7 @@ body {
     }
 }
 
-/* ============== DARK MODE ============== */
+/* DARK MODE */
 
 .body-dark .mission {
   background: var(--dark-bg);

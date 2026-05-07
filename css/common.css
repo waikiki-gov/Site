@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap";
 
-/* ============== CSS VARIABLES ============== */
+/* CSS VARIABLES */
 
 :root {
   /* Color palette */
@@ -62,7 +62,7 @@
   --card-shadow-hover: 0 16px 50px rgba(0, 0, 0, 0.12);
 }
 
-/* ============== GLOBAL STYLES ============== */
+/* GLOBAL STYLES */
 
 * {
   box-sizing: border-box;
@@ -90,7 +90,7 @@ section {
   width: 100%
 }
 
-/* ============== NAVIGATION ============== */
+/* NAVIGATION */
 
 nav {
   animation: slideDown .6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -156,7 +156,7 @@ nav {
   width: 80%
 }
 
-/* ============== HAMBURGER MENU ============== */
+/* HAMBURGER MENU */
 
 .hamburger-menu {
   display: block;
@@ -281,7 +281,7 @@ nav {
   transform: translateX(5px)
 }
 
-/* ============== HERO SECTION ============== */
+/* HERO SECTION */
 
 .hero {
   align-content: center;
@@ -348,7 +348,7 @@ nav {
   margin-top: 3rem
 }
 
-/* ============== SECTION STYLES ============== */
+/* SECTION STYLES */
 
 .section-title {
   animation: slideInFromLeft .8s ease-out;
@@ -388,7 +388,7 @@ nav {
   background: var(--light-bg)
 }
 
-/* ============== CARD COMPONENTS ============== */
+/* CARD COMPONENTS */
 
 .card-grid {
   display: grid;
@@ -455,7 +455,7 @@ nav {
   transform: translateY(-8px) scale(1.03)
 }
 
-/* ============== STAT COMPONENTS ============== */
+/* STAT COMPONENTS */
 
 .stat-card {
   animation: fadeInUp var(--animation-duration) ease-out backwards;
@@ -535,7 +535,7 @@ nav {
   line-height: 1.6
 }
 
-/* ============== ANIMATION DELAYS ============== */
+/* ANIMATION DELAYS */
 
 .card:nth-child(1),
 .stat-card:nth-child(1),
@@ -624,7 +624,7 @@ nav {
   color: var(--secondary)
 }
 
-/* ============== NARRATIVE & TEXT STYLES ============== */
+/* NARRATIVE & TEXT STYLES */
 
 .narrative-content {
   margin: 0 auto;
@@ -680,7 +680,7 @@ nav {
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* ============== TABLE COMPONENTS ============== */
+/* TABLE COMPONENTS */
 
 .table {
   display: block !important;
@@ -719,7 +719,7 @@ nav {
   }
 }
 
-/* ============== BUTTON COMPONENTS ============== */
+/* BUTTON COMPONENTS */
 
 .menu-btn {
   background-color: var(--secondary);
@@ -741,7 +741,7 @@ nav {
   justify-content: center
 }
 
-/* ============== FOOTER ============== */
+/* FOOTER */
 
 footer {
   background: var(--secondary);
@@ -791,7 +791,7 @@ footer {
   width: 100%
 }
 
-/* ============== FAQ COMPONENTS ============== */
+/* FAQ COMPONENTS */
 
 .faq-container {
   margin: 0 auto;
@@ -933,7 +933,7 @@ footer {
   text-align: justify
 }
 
-/* ============== SECTION LINKS ============== */
+/* SECTION LINKS */
 
 .section-link-wrapper {
   display: flex;
@@ -964,7 +964,7 @@ footer {
 }
 
 
-/* ============== DARK MODE ============== */
+/* DARK MODE */
 
 .body-dark {
   background-color: var(--dark-bg) !important;
@@ -1333,7 +1333,7 @@ footer {
   }
 }
 
-/* ============== RESPONSIVE DESIGN ============== */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 1600px) {
   .nav-links {
@@ -1434,7 +1434,7 @@ footer {
   }
 }
 
-/* ============== KEYFRAME ANIMATIONS ============== */
+/* KEYFRAME ANIMATIONS */
 
 @keyframes fadeIn {
   from {
@@ -1520,7 +1520,7 @@ footer {
   }
 }
 
-/* ============== VIDEO COMPONENTS ============== */
+/* VIDEO COMPONENTS */
 
 .video-wrapper {
   position: relative;
