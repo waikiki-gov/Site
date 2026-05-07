@@ -1519,15 +1519,12 @@ footer {
 /* VIDEO COMPONENTS */
 
 .video-wrapper {
-  position: relative;
   max-width: 1200px;
   margin: 10px auto;
   border-radius: var(--card-border-radius);
-  overflow: hidden;
   box-shadow: var(--card-shadow-hover);
-  aspect-ratio: 16 / 9;
-  background: var(--black);
   transition: transform 0.5s var(--transition-easing);
+  background-size: cover;
 }
 
 .video-wrapper:hover {
