@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waikiki Tartományai</title>
+    <meta name="description" content="Waikiki három tartományának interaktív térképe, városai és közigazgatási rendszere." />
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="1024x1024" href="../icons/logo.png" />
+    <link href="../manifest.json" rel="manifest" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/map.css" />
+</head>
+<body>
+    <nav class="nav-container">
+        <a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+        <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
+            <span class="toggle__content">
+                <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
+                    <g class="clouds">
+                        <path fill="#D9D9D9" d="M335 147.5c0 27.89-22.61 50.5-50.5 50.5a50.78 50.78 0 0 1-9.29-.853c-2.478 12.606-10.595 23.188-21.615 29.011C245.699 243.749 228.03 256 207.5 256a50.433 50.433 0 0 1-16.034-2.599A41.811 41.811 0 0 1 166 262a41.798 41.798 0 0 1-22.893-6.782A42.21 42.21 0 0 1 135 256a41.82 41.82 0 0 1-19.115-4.592A41.84 41.84 0 0 1 88 262c-1.827 0-3.626-.117-5.391-.343C74.911 270.448 63.604 276 51 276c-23.196 0-42-18.804-42-42s18.804-42 42-42c1.827 0 3.626.117 5.391.343C64.089 183.552 75.396 178 88 178a41.819 41.819 0 0 1 19.115 4.592C114.532 176.002 124.298 172 135 172a41.798 41.798 0 0 1 22.893 6.782 42.066 42.066 0 0 1 7.239-.773C174.137 164.159 189.749 155 207.5 155c.601 0 1.199.01 1.794.031A41.813 41.813 0 0 1 234 147h.002c.269-27.66 22.774-50 50.498-50 27.89 0 50.5 22.61 50.5 50.5Z" />
+                    </g>
+                </svg>
+                <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
+                    <g class="clouds">
+                        <path fill="#fff" d="M328 167.5c0 15.214-7.994 28.56-20.01 36.068.007.31.01.621.01.932 0 23.472-19.028 42.5-42.5 42.5-3.789 0-7.461-.496-10.957-1.426C249.671 263.676 233.141 277 213.5 277a42.77 42.77 0 0 1-7.702-.696C198.089 284.141 187.362 289 175.5 289a42.338 42.338 0 0 1-27.864-10.408A42.411 42.411 0 0 1 133.5 281c-4.36 0-8.566-.656-12.526-1.876C113.252 287.066 102.452 292 90.5 292a42.388 42.388 0 0 1-15.8-3.034A42.316 42.316 0 0 1 48.5 298C25.028 298 6 278.972 6 255.5S25.028 213 48.5 213a42.388 42.388 0 0 1 15.8 3.034A42.316 42.316 0 0 1 90.5 207c4.36 0 8.566.656 12.526 1.876C110.748 200.934 121.548 196 133.5 196a42.338 42.338 0 0 1 27.864 10.408A42.411 42.411 0 0 1 175.5 204c2.63 0 5.204.239 7.702.696C190.911 196.859 201.638 192 213.5 192c3.789 0 7.461.496 10.957 1.426 2.824-10.491 9.562-19.377 18.553-24.994-.007-.31-.01-.621-.01-.932 0-23.472 19.028-42.5 42.5-42.5s42.5 19.028 42.5 42.5Z" />
+                    </g>
+                </svg>
+                <span class="toggle__indicator-wrapper">
+                    <span class="toggle__indicator">
+                        <span class="toggle__star">
+                            <span class="sun"></span>
+                            <span class="moon">
+                                <span class="moon__crater"></span>
+                                <span class="moon__crater"></span>
+                                <span class="moon__crater"></span>
+                            </span>
+                        </span>
+                    </span>
+                </span>
+                <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
+                    <g>
+                        <g class="stars">
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M61 11.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.749 3.749 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.749 3.749 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813a3.749 3.749 0 0 0 2.576-2.576l.813-2.846A.75.75 0 0 1 61 11.5Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M62.5 45.219a.329.329 0 0 1 .315.238l.356 1.245a1.641 1.641 0 0 0 1.127 1.127l1.245.356a.328.328 0 0 1 0 .63l-1.245.356a1.641 1.641 0 0 0-1.127 1.127l-.356 1.245a.328.328 0 0 1-.63 0l-.356-1.245a1.641 1.641 0 0 0-1.127-1.127l-1.245-.356a.328.328 0 0 1 0-.63l1.245-.356a1.641 1.641 0 0 0 1.127-1.127l.356-1.245a.328.328 0 0 1 .315-.238Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M32 31.188a.28.28 0 0 1 .27.204l.305 1.067a1.405 1.405 0 0 0 .966.966l1.068.305a.28.28 0 0 1 0 .54l-1.068.305a1.405 1.405 0 0 0-.966.966l-.305 1.068a.28.28 0 0 1-.54 0l-.305-1.068a1.406 1.406 0 0 0-.966-.966l-1.067-.305a.28.28 0 0 1 0-.54l1.067-.305a1.406 1.406 0 0 0 .966-.966l.305-1.068a.281.281 0 0 1 .27-.203Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M41.5 74.219a.329.329 0 0 1 .315.238l.356 1.245a1.641 1.641 0 0 0 1.127 1.127l1.245.356a.328.328 0 0 1 0 .63l-1.245.356a1.641 1.641 0 0 0-1.127 1.127l-.356 1.245a.328.328 0 0 1-.63 0l-.356-1.245a1.641 1.641 0 0 0-1.127-1.127l-1.245-.356a.328.328 0 0 1 0-.63l1.245-.356a1.641 1.641 0 0 0 1.127-1.127l.356-1.245a.328.328 0 0 1 .315-.238Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M63 89.25a.375.375 0 0 1 .36.272l.407 1.423a1.874 1.874 0 0 0 1.288 1.288l1.423.406a.374.374 0 0 1 0 .722l-1.423.406a1.874 1.874 0 0 0-1.288 1.288l-.407 1.423a.374.374 0 0 1-.72 0l-.407-1.423a1.874 1.874 0 0 0-1.288-1.288l-1.423-.406a.374.374 0 0 1 0-.722l1.423-.406a1.874 1.874 0 0 0 1.288-1.288l.407-1.423a.376.376 0 0 1 .36-.272Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M120 27.188a.279.279 0 0 1 .27.204l.305 1.067a1.41 1.41 0 0 0 .966.966l1.067.305a.283.283 0 0 1 .148.1.286.286 0 0 1 0 .34.283.283 0 0 1-.148.1l-1.067.305a1.403 1.403 0 0 0-.966.966l-.305 1.067a.279.279 0 0 1-.439.147.275.275 0 0 1-.101-.147l-.305-1.067a1.41 1.41 0 0 0-.966-.966l-1.068-.305a.284.284 0 0 1-.147-.1.286.286 0 0 1 0-.34.284.284 0 0 1 .147-.1l1.068-.305a1.405 1.405 0 0 0 .966-.966l.305-1.067a.279.279 0 0 1 .27-.204Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M155 28.5a.753.753 0 0 1 .721.544l.813 2.846a3.746 3.746 0 0 0 2.576 2.576l2.846.813a.747.747 0 0 1 .543.721.75.75 0 0 1-.543.721l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.747.747 0 0 1-.721.543.749.749 0 0 1-.721-.543l-.813-2.846a3.746 3.746 0 0 0-2.576-2.576l-2.846-.813a.747.747 0 0 1-.543-.721.75.75 0 0 1 .543-.721l2.846-.813a3.75 3.75 0 0 0 2.576-2.576l.813-2.846A.751.751 0 0 1 155 28.5Z" clip-rule="evenodd" />
+                            </g>
+                            <g>
+                                <path fill="#fff" fill-rule="evenodd" d="M125.5 76.344a.513.513 0 0 1 .496.374l.559 1.956a2.574 2.574 0 0 0 1.771 1.771l1.956.56a.514.514 0 0 1 .27.805.514.514 0 0 1-.27.186l-1.956.559a2.57 2.57 0 0 0-1.771 1.77l-.559 1.957a.514.514 0 0 1-.806.27.514.514 0 0 1-.186-.27l-.559-1.956a2.574 2.574 0 0 0-1.771-1.771l-1.956-.56a.514.514 0 0 1-.27-.805.514.514 0 0 1 .27-.186l1.956-.559a2.57 2.57 0 0 0 1.771-1.77l.559-1.957a.515.515 0 0 1 .496-.374Z" clip-rule="evenodd" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+        </button>
+    </nav>
+    <div class="hamburger-menu">
+        <button class="hamburger-button"><span></span><span></span><span></span></button>
+    </div>
+    <div class="hamburger-overlay"></div>
+    <nav class="hamburger-panel">
+        <ul class="hamburger-links">
+            <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Főoldal </a></li>
+            <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Turizmus </a></li>
+            <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomácia </a></li>
+            <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kultúra </a></li>
+            <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Gazdaság </a></li>
+            <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vagyonalap</a></li>
+            <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Történelem </a></li>
+            <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politika </a></li>
+            <li><a href="government.html"><img src="https://api.iconify.design/mdi/bank-outline.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Kormány </a></li>
+            <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Vezetés </a></li>
+            <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Hadsereg </a></li>
+            <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />GYIK </a></li>
+        </ul>
+    </nav>
+    <!-- Hero -->
+    <section class="hero" style="background: linear-gradient(135deg, #0e308e 0%, #0071bc 50%, #00b0c3 100%);">
+        <div class="hero-content">
+            <h1>Tartományok és Közigazgatás</h1>
+            <p class="liquid">Waikiki három tartományból áll: Waikiki, Amazónia és Brazília. Az ország 8,84 millió négyzetkilométert fed le és 212 millió lakosnak ad otthont. A tartományok élén a diktátor által kinevezett helytartó áll, aki a regionális infrastruktúráért és beruházásokért felel.</p>
+            <div class="hero-stats">
+                <div class="stat-item liquid"><span class="stat-number">3</span><span class="stat-label">Tartomány</span></div>
+                <div class="stat-item liquid"><span class="stat-number">8,84M km²</span><span class="stat-label">Összterület</span></div>
+                <div class="stat-item liquid"><span class="stat-number">212M</span><span class="stat-label">Lakosság</span></div>
+                <div class="stat-item liquid"><span class="stat-number">24 fő/km²</span><span class="stat-label">Népsűrűség</span></div>
+            </div>
+        </div>
+    </section>
+    <!-- Interactive Map -->
+    <section class="fade-in" id="map">
+        <h2 class="section-title">Interaktív Térkép</h2>
+        <p class="section-intro">Kattintson egy tartományra a részletes információk megtekintéséhez. Waikiki három tartománya egyedi földrajzi, gazdasági és kulturális jellemzőkkel rendelkezik, amelyeket a központi kormányzat egységes keretben koordinál.</p>
+        <div class="map-container">
+            <svg id="waikiki-map" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="ocean" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#e8f4fd"/><stop offset="100%" style="stop-color:#d1ecf9"/></linearGradient>
+                </defs>
+                <!-- Ocean background -->
+                <rect width="900" height="700" fill="url(#ocean)" rx="12"/>
+                <!-- Grid lines -->
+                <g stroke="#c5dff0" stroke-width="0.5" opacity="0.4">
+                    <line x1="0" y1="100" x2="900" y2="100"/><line x1="0" y1="200" x2="900" y2="200"/>
+                    <line x1="0" y1="300" x2="900" y2="300"/><line x1="0" y1="400" x2="900" y2="400"/>
+                    <line x1="0" y1="500" x2="900" y2="500"/><line x1="0" y1="600" x2="900" y2="600"/>
+                    <line x1="150" y1="0" x2="150" y2="700"/><line x1="300" y1="0" x2="300" y2="700"/>
+                    <line x1="450" y1="0" x2="450" y2="700"/><line x1="600" y1="0" x2="600" y2="700"/>
+                    <line x1="750" y1="0" x2="750" y2="700"/>
+                </g>
+                <!-- Waikiki Province (Caribbean islands) -->
+                <g id="province-waikiki" data-province="waikiki">
+                    <path class="province-path province-waikiki" d="M80,120 L200,105 L280,115 L320,130 L340,155 L330,180 L310,195 L280,200 L240,195 L200,210 L160,220 L120,210 L90,190 L75,160 Z" />
+                    <path class="province-path province-waikiki" d="M340,170 L380,160 L410,170 L420,190 L410,210 L380,215 L350,205 L340,185 Z" />
+                    <path class="province-path province-waikiki" d="M430,195 L470,185 L510,195 L520,215 L505,235 L470,240 L440,230 L425,210 Z" />
+                    <path class="province-path province-waikiki" d="M200,230 L250,225 L290,235 L300,260 L280,280 L240,285 L210,270 L195,250 Z" />
+                </g>
+                <!-- Amazónia Province (Northern Brazil / Amazon) -->
+                <g id="province-amazonia" data-province="amazonia">
+                    <path class="province-path province-amazonia" d="M350,280 L430,260 L530,265 L620,280 L700,270 L780,285 L820,310 L830,370 L820,430 L790,460 L740,470 L680,465 L620,480 L560,475 L500,460 L440,470 L390,455 L350,430 L330,390 L320,350 L330,310 Z" />
+                </g>
+                <!-- Brazília Province (Southern Brazil) -->
+                <g id="province-brazilia" data-province="brazilia">
+                    <path class="province-path province-brazilia" d="M390,455 L440,470 L500,460 L560,475 L620,480 L680,465 L740,470 L760,500 L770,540 L760,580 L730,610 L690,635 L640,650 L580,660 L520,655 L460,640 L410,615 L380,580 L360,540 L355,500 L365,470 Z" />
+                </g>
+                <!-- City markers - Waikiki Province -->
+                <g class="city-marker" data-city="Nova Aurelia">
+                    <circle class="city-pulse" cx="220" cy="165" r="10" fill="#bc9200" opacity="0.4"/>
+                    <polygon class="capital-star" points="220,155 223,163 231,163 225,168 227,176 220,172 213,176 215,168 209,163 217,163" />
+                    <text class="city-label" x="235" y="168" font-size="12" font-weight="700">Nova Aurelia ★</text>
+                </g>
+                <g class="city-marker" data-city="Port Royal"><circle class="city-dot" cx="380" cy="190" r="4" fill="#fff" stroke="#0071bc" stroke-width="2"/><text class="city-label" x="390" y="194">Port Royal</text></g>
+                <g class="city-marker" data-city="Carib City"><circle class="city-dot" cx="470" cy="215" r="4" fill="#fff" stroke="#0071bc" stroke-width="2"/><text class="city-label" x="480" y="219">Carib City</text></g>
+                <g class="city-marker" data-city="Santiago"><circle class="city-dot" cx="250" cy="255" r="4" fill="#fff" stroke="#0071bc" stroke-width="2"/><text class="city-label" x="260" y="259">Santiago</text></g>
+                <!-- City markers - Amazónia Province -->
+                <g class="city-marker" data-city="Manaus"><circle class="city-dot" cx="520" cy="350" r="5" fill="#fff" stroke="#2e7d32" stroke-width="2"/><text class="city-label" x="534" y="354">Manaus</text></g>
+                <g class="city-marker" data-city="Belém"><circle class="city-dot" cx="700" cy="320" r="4" fill="#fff" stroke="#2e7d32" stroke-width="2"/><text class="city-label" x="712" y="324">Belém</text></g>
+                <g class="city-marker" data-city="Amazonia City"><circle class="city-dot" cx="450" cy="380" r="4" fill="#fff" stroke="#2e7d32" stroke-width="2"/><text class="city-label" x="462" y="384">Amazonia City</text></g>
+                <g class="city-marker" data-city="Fortaleza"><circle class="city-dot" cx="750" cy="360" r="4" fill="#fff" stroke="#2e7d32" stroke-width="2"/><text class="city-label" x="710" y="380">Fortaleza</text></g>
+                <!-- City markers - Brazília Province -->
+                <g class="city-marker" data-city="São Paulo"><circle class="city-dot" cx="580" cy="560" r="5" fill="#fff" stroke="#f9a825" stroke-width="2"/><text class="city-label" x="594" y="564">São Paulo</text></g>
+                <g class="city-marker" data-city="Rio de Janeiro"><circle class="city-dot" cx="650" cy="530" r="4" fill="#fff" stroke="#f9a825" stroke-width="2"/><text class="city-label" x="662" y="534">Rio de Janeiro</text></g>
+                <g class="city-marker" data-city="Brasília"><circle class="city-dot" cx="560" cy="500" r="4" fill="#fff" stroke="#f9a825" stroke-width="2"/><text class="city-label" x="572" y="504">Brasília</text></g>
+                <g class="city-marker" data-city="Porto Alegre"><circle class="city-dot" cx="530" cy="620" r="4" fill="#fff" stroke="#f9a825" stroke-width="2"/><text class="city-label" x="542" y="624">Porto Alegre</text></g>
+                <!-- Province labels -->
+                <text x="220" y="145" font-family="Inter,sans-serif" font-size="16" font-weight="800" fill="#fff" text-anchor="middle" filter="url(#glow)">WAIKIKI</text>
+                <text x="580" y="380" font-family="Inter,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle" filter="url(#glow)">AMAZÓNIA</text>
+                <text x="580" y="570" font-family="Inter,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle" opacity="0" id="brazilia-label">BRAZÍLIA</text>
+                <text x="560" y="545" font-family="Inter,sans-serif" font-size="16" font-weight="800" fill="#4a3000" text-anchor="middle" filter="url(#glow)">BRAZÍLIA</text>
+                <!-- Compass -->
+                <g transform="translate(60,620)">
+                    <circle r="25" fill="rgba(255,255,255,0.9)" stroke="#0e308e" stroke-width="1.5"/>
+                    <text x="0" y="-10" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#0e308e">É</text>
+                    <text x="0" y="18" text-anchor="middle" font-family="Inter" font-size="10" fill="#555">D</text>
+                    <text x="-13" y="5" text-anchor="middle" font-family="Inter" font-size="10" fill="#555">Ny</text>
+                    <text x="13" y="5" text-anchor="middle" font-family="Inter" font-size="10" fill="#555">K</text>
+                    <polygon points="0,-20 -4,-8 4,-8" fill="#0e308e"/>
+                </g>
+                <!-- Scale bar -->
+                <g transform="translate(750,660)">
+                    <line x1="0" y1="0" x2="100" y2="0" stroke="#0e308e" stroke-width="2"/>
+                    <line x1="0" y1="-5" x2="0" y2="5" stroke="#0e308e" stroke-width="2"/>
+                    <line x1="100" y1="-5" x2="100" y2="5" stroke="#0e308e" stroke-width="2"/>
+                    <text x="50" y="15" text-anchor="middle" font-family="Inter" font-size="10" fill="#555">1000 km</text>
+                </g>
+            </svg>
+            <!-- Map Legend -->
+            <div class="map-legend">
+                <div class="legend-item" data-target="waikiki" onclick="showProvince('waikiki')"><span class="legend-color" style="background:#0071bc"></span>Waikiki tartomány</div>
+                <div class="legend-item" data-target="amazonia" onclick="showProvince('amazonia')"><span class="legend-color" style="background:#2e7d32"></span>Amazónia tartomány</div>
+                <div class="legend-item" data-target="brazilia" onclick="showProvince('brazilia')"><span class="legend-color" style="background:#f9a825"></span>Brazília tartomány</div>
+                <div class="legend-item"><span class="legend-color" style="background: linear-gradient(135deg, #bc9200, #d4a017);"></span>★ Főváros</div>
+            </div>
+        </div>
+        <!-- Province Info Panels -->
+        <div id="info-waikiki" class="province-info-panel border-waikiki">
+            <div class="info-header">
+                <span class="info-province-badge badge-waikiki">Waikiki tartomány</span>
+                <span class="info-title">Waikiki</span>
+            </div>
+            <div class="info-stats">
+                <div class="info-stat"><span class="info-stat-value">293 000 km²</span><span class="info-stat-label">Terület</span></div>
+                <div class="info-stat"><span class="info-stat-value">13,5M fő</span><span class="info-stat-label">Lakosság</span></div>
+                <div class="info-stat"><span class="info-stat-value">46 fő/km²</span><span class="info-stat-label">Népsűrűség</span></div>
+                <div class="info-stat"><span class="info-stat-value">$219 489</span><span class="info-stat-label">GDP / fő</span></div>
+            </div>
+            <p class="info-description">Az ország történelmi magja, az egykori Kuba és a környező karibi szigetek területén. Itt található a főváros, Nova Aurelia, amely piramisokkal, felhőkarcolókkal és mesterséges szigetekkel büszkélkedik. A tartomány a pénzügyi szolgáltatások, a turizmus és a csúcstechnológia központja, valamint a kormányzati intézmények székhelye.</p>
+            <div class="info-governor">
+                <div class="governor-avatar"><img src="../images/kate-beckinsale.jpg" alt="Kate Beckinsale" /></div>
+                <div class="governor-info"><span class="governor-role">Helytartó</span><span class="governor-name">Kate Beckinsale</span></div>
+            </div>
+            <div class="info-cities"><h4>Főbb városok</h4>
+                <div class="cities-grid">
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#bc9200"></span>Nova Aurelia ★</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#0071bc"></span>Port Royal</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#0071bc"></span>Carib City</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#0071bc"></span>Santiago</div>
+                </div>
+            </div>
+        </div>
+        <div id="info-amazonia" class="province-info-panel border-amazonia">
+            <div class="info-header">
+                <span class="info-province-badge badge-amazonia">Amazónia tartomány</span>
+                <span class="info-title">Amazónia</span>
+            </div>
+            <div class="info-stats">
+                <div class="info-stat"><span class="info-stat-value">4 305 000 km²</span><span class="info-stat-label">Terület</span></div>
+                <div class="info-stat"><span class="info-stat-value">92,3M fő</span><span class="info-stat-label">Lakosság</span></div>
+                <div class="info-stat"><span class="info-stat-value">21 fő/km²</span><span class="info-stat-label">Népsűrűség</span></div>
+                <div class="info-stat"><span class="info-stat-value">$193 722</span><span class="info-stat-label">GDP / fő</span></div>
+            </div>
+            <p class="info-description">Az Amazonas-vidéket és Észak-Brazília területét magában foglaló hatalmas tartomány, amely természeti kincsekben rendkívül gazdag. Az esőerdők, a folyamrendszerek és a biodiverzitás megőrzése stratégiai prioritás. A tartomány gazdasága a mezőgazdaságra, a bányászatra és a megújuló energiára épül, miközben fejlett ipari központokkal is rendelkezik.</p>
+            <div class="info-governor">
+                <div class="governor-avatar"><img src="../images/colin-farrell.jpg" alt="Colin Farrell" /></div>
+                <div class="governor-info"><span class="governor-role">Helytartó</span><span class="governor-name">Colin Farrell</span></div>
+            </div>
+            <div class="info-cities"><h4>Főbb városok</h4>
+                <div class="cities-grid">
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#2e7d32"></span>Manaus</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#2e7d32"></span>Belém</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#2e7d32"></span>Amazonia City</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#2e7d32"></span>Fortaleza</div>
+                </div>
+            </div>
+        </div>
+        <div id="info-brazilia" class="province-info-panel border-brazilia">
+            <div class="info-header">
+                <span class="info-province-badge badge-brazilia">Brazília tartomány</span>
+                <span class="info-title">Brazília</span>
+            </div>
+            <div class="info-stats">
+                <div class="info-stat"><span class="info-stat-value">4 242 000 km²</span><span class="info-stat-label">Terület</span></div>
+                <div class="info-stat"><span class="info-stat-value">106,2M fő</span><span class="info-stat-label">Lakosság</span></div>
+                <div class="info-stat"><span class="info-stat-value">25 fő/km²</span><span class="info-stat-label">Népsűrűség</span></div>
+                <div class="info-stat"><span class="info-stat-value">$178 667</span><span class="info-stat-label">GDP / fő</span></div>
+            </div>
+            <p class="info-description">Dél-Brazília területét felölelő tartomány, amely 2006-ban csatlakozott népszavazással Waikikihez. Iparosodott nagyvárosaival, termékeny mezőgazdasági területeivel és fejlett szolgáltatási szektorával a tartomány az ország legnagyobb gazdasági motorja, a teljes GDP 47,7%-át állítja elő.</p>
+            <div class="info-governor">
+                <div class="governor-avatar"><img src="../images/vincent-kartheiser.jpg" alt="Vincent Kartheiser" /></div>
+                <div class="governor-info"><span class="governor-role">Helytartó</span><span class="governor-name">Vincent Kartheiser</span></div>
+            </div>
+            <div class="info-cities"><h4>Főbb városok</h4>
+                <div class="cities-grid">
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#f9a825"></span>São Paulo</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#f9a825"></span>Rio de Janeiro</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#f9a825"></span>Brasília</div>
+                    <div class="city-chip"><span class="city-chip-dot" style="background:#f9a825"></span>Porto Alegre</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Admin Structure -->
+    <section class="light-bg fade-in" id="admin">
+        <h2 class="section-title">Közigazgatási Rendszer</h2>
+        <p class="section-intro">Waikiki közigazgatási rendszere a központi kormányzat és a tartományi helytartók együttműködésén alapul. A diktátor nevezi ki a helytartókat, akik a regionális infrastruktúráért, beruházásokért és közszolgáltatásokért felelnek. A tartományok önálló költségvetéssel rendelkeznek, de a stratégiai döntéseket a központi kormányzat hozza.</p>
+        <div class="admin-grid">
+            <div class="admin-card admin-waikiki">
+                <div class="admin-card-header">
+                    <div class="admin-icon icon-waikiki"><img src="https://api.iconify.design/mdi/island.svg?color=%23FFFFFF&width=28&height=28" /></div>
+                    <h3>Waikiki tartomány</h3>
+                </div>
+                <p>A karibi szigetcsoport az ország szíve, ahol a főváros és a kormányzati intézmények székhelnek. A tartomány a pénzügyi szolgáltatások, az űripar és a turizmus központja. Nova Aurelia a Világkormány és a nemzetközi szervezetek székhelye.</p>
+                <div class="admin-data">
+                    <div class="admin-data-item"><span class="admin-data-value">293 000</span><span class="admin-data-label">km² terület</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">13,5M</span><span class="admin-data-label">lakosság</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">69%</span><span class="admin-data-label">állampolgár</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">7,4%</span><span class="admin-data-label">GDP arány</span></div>
+                </div>
+            </div>
+            <div class="admin-card admin-amazonia">
+                <div class="admin-card-header">
+                    <div class="admin-icon icon-amazonia"><img src="https://api.iconify.design/mdi/forest.svg?color=%23FFFFFF&width=28&height=28" /></div>
+                    <h3>Amazónia tartomány</h3>
+                </div>
+                <p>A világ legnagyobb esőerdejét magában foglaló tartomány, ahol a természetvédelem és a fenntartható fejlődés kiemelt stratégiai prioritás. A gazdag ásványi készletek és a megújuló energiaforrások az ország energiatermelésének alapját képezik.</p>
+                <div class="admin-data">
+                    <div class="admin-data-item"><span class="admin-data-value">4 305 000</span><span class="admin-data-label">km² terület</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">92,3M</span><span class="admin-data-label">lakosság</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">65%</span><span class="admin-data-label">állampolgár</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">44,9%</span><span class="admin-data-label">GDP arány</span></div>
+                </div>
+            </div>
+            <div class="admin-card admin-brazilia">
+                <div class="admin-card-header">
+                    <div class="admin-icon icon-brazilia"><img src="https://api.iconify.design/mdi/city.svg?color=%234a3000&width=28&height=28" /></div>
+                    <h3>Brazília tartomány</h3>
+                </div>
+                <p>Az ország legnagyobb gazdasági régiója, amely fejlett ipari központjaival, modern mezőgazdaságával és szolgáltatási szektorával a GDP közel felét termeli. A 2006-os csatlakozás óta a tartomány gyors modernizáción ment keresztül.</p>
+                <div class="admin-data">
+                    <div class="admin-data-item"><span class="admin-data-value">4 242 000</span><span class="admin-data-label">km² terület</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">106,2M</span><span class="admin-data-label">lakosság</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">58%</span><span class="admin-data-label">állampolgár</span></div>
+                    <div class="admin-data-item"><span class="admin-data-value">47,7%</span><span class="admin-data-label">GDP arány</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Comparison Table -->
+    <section class="fade-in" id="comparison">
+        <h2 class="section-title">Tartományi Összehasonlítás</h2>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr><th></th><th>Összesen</th><th>Waikiki</th><th>Amazónia</th><th>Brazília</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Terület (km²)</td><td>8 840 000</td><td>293 000</td><td>4 305 000</td><td>4 242 000</td></tr>
+                    <tr><td>Népesség (fő)</td><td>212 000 000</td><td>13 500 000</td><td>92 300 000</td><td>106 200 000</td></tr>
+                    <tr><td>Népsűrűség (fő/km²)</td><td>24</td><td>46</td><td>21</td><td>25</td></tr>
+                    <tr><td>Állampolgárok (%)</td><td>61%</td><td>69%</td><td>65%</td><td>58%</td></tr>
+                    <tr><td>Állandó lakosok (%)</td><td>34%</td><td>17%</td><td>30%</td><td>40%</td></tr>
+                    <tr><td>Vendégmunkások (%)</td><td>4%</td><td>14%</td><td>5%</td><td>3%</td></tr>
+                    <tr><td>GDP arány</td><td>100%</td><td>7,4%</td><td>44,9%</td><td>47,7%</td></tr>
+                    <tr><td>GDP / fő (USD)</td><td>187 821</td><td>219 489</td><td>193 722</td><td>178 667</td></tr>
+                    <tr><td>Helytartó</td><td>—</td><td>Kate Beckinsale</td><td>Colin Farrell</td><td>Vincent Kartheiser</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Főoldal</a>
+                <a href="tourism.html">Turizmus</a>
+                <a href="diplomacy.html">Diplomácia</a>
+                <a href="culture.html">Kultúra</a>
+                <a href="parties.html">Politika</a>
+                <a href="government.html">Kormány</a>
+                <a href="leadership.html">Vezetés</a>
+                <a href="economy.html">Gazdaság</a>
+                <a href="wealth-fund.html">Vagyonalap</a>
+                <a href="history.html">Történelem</a>
+                <a href="military.html">Hadsereg</a>
+                <a href="faq.html">GYIK</a>
+            </div>
+            <p>&copy; 2025 Waikiki Szuverén Állam. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+    <script src="../js/common.js"></script>
+    <script>
+    // Interactive Map Logic
+    function showProvince(province) {
+        // Hide all panels
+        document.querySelectorAll('.province-info-panel').forEach(p => p.classList.remove('visible'));
+        document.querySelectorAll('.province-path').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.legend-item').forEach(l => l.classList.remove('active'));
+        // Show selected
+        const panel = document.getElementById('info-' + province);
+        if (panel) {
+            panel.classList.add('visible');
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        // Highlight province paths
+        const group = document.getElementById('province-' + province);
+        if (group) group.querySelectorAll('.province-path').forEach(p => p.classList.add('active'));
+        // Highlight legend
+        const legend = document.querySelector('.legend-item[data-target="' + province + '"]');
+        if (legend) legend.classList.add('active');
+    }
+    // SVG click handlers
+    document.querySelectorAll('[data-province]').forEach(g => {
+        g.addEventListener('click', () => showProvince(g.dataset.province));
+    });
+    </script>
+</body>
+</html>
