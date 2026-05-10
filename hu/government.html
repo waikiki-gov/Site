@@ -14,6 +14,11 @@
 </head>
 <body>
     <nav class="nav-container"><a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+        <ul class="nav-links">
+            <li><a href="#presidents">Elnökök</a></li>
+            <li><a href="#ministers">Miniszterek</a></li>
+            <li><a href="#cabinet">Kabinet</a></li>
+        </ul>
         <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
             <span class="toggle__content">
                 <svg aria-hidden=true class="toggle__backdrop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 290 228">
@@ -111,7 +116,7 @@
             <p class="narrative-text"> Waikiki kormánya a modern államszervezés egyik legmerészebb és legkifinomultabb intézményi modellje, amely szakít a hagyományos politikai elitképzés konvencióival. A kabinet összeállítása nem pártok közötti alkukból és belső hatalmi versenyekből áll össze, hanem szakértelmen alapuló kiválasztásból, a vállalati szférából ismert vezetői toborzásból, valamint a nyilvános szerepvállalás és a közbizalom építésének tudatos összehangolásából. A kiválasztás alapja a teljesítmény, a lojalitás az alkotmányos rendhez, valamint a nemzetközi hitelesség, így a kabinet egyszerre képes a stratégiai célok következetes képviseletére és a szolgáltató állam mindennapi működtetésére. </p>
         </div>
     </section>
-    <section class="light-bg fade-in">
+    <section id="presidents" class="light-bg fade-in">
         <h2 class="section-title">Waikiki elnökei</h2>
         <div class="cabinet-grid">
             <div class="card">
@@ -156,7 +161,7 @@
             </div>
         </div>
     </section>
-    <section class="fade-in">
+    <section id="ministers" class="fade-in">
         <h2 class="section-title">A jelenlegi kormány</h2>
         <div class="cabinet-grid">
             <div class="card">
@@ -548,7 +553,7 @@
             </table>
         </div>
     </section>
-    <section class="fade-in">
+    <section id="cabinet" class="fade-in">
         <h2 class="section-title">Diktátori kabinet</h2>
         <div class="cabinet-grid">
             <div class="reference-card">
