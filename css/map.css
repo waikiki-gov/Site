@@ -73,24 +73,6 @@
     transition: r 0.3s ease, fill 0.3s ease;
 }
 
-.city-pulse {
-    animation: cityPulse 2s ease-in-out infinite;
-}
-
-@keyframes cityPulse {
-
-    0%,
-    100% {
-        opacity: 0.4;
-        r: 8;
-    }
-
-    50% {
-        opacity: 0;
-        r: 16;
-    }
-}
-
 .city-label {
     font-family: 'Inter', sans-serif;
     font-size: 11px;
@@ -308,10 +290,6 @@
     flex-shrink: 0;
 }
 
-.city-chip .capital-icon {
-    font-size: 1rem;
-}
-
 /* ========== ADMIN STRUCTURE ========== */
 .admin-grid {
     display: grid;
@@ -464,15 +442,6 @@
 
 .body-dark .province-path {
     stroke: var(--dark-blue);
-}
-
-.body-dark .city-label {
-    fill: var(--white);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-}
-
-.body-dark .city-label-bg {
-    fill: rgba(10, 25, 48, 0.8);
 }
 
 .body-dark .map-legend,
