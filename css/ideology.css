@@ -1,5 +1,4 @@
 /* Ideology Page Styles */
-
 body {
     background-color: var(--dark-bg);
     color: var(--white);
@@ -116,15 +115,14 @@ body {
 }
 
 /* DARK MODE */
-
 .body-dark .mission {
-  background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 .body-dark .mission h2 {
-  color: var(--tertiary);
+    color: var(--tertiary);
 }
 
 .body-dark .pillars {
-  background: var(--dark-bg);
+    background: var(--dark-bg);
 }

@@ -1,11 +1,9 @@
 /* GOVERNMENT PAGE STYLES */
-
 .table td:first-child {
     font-weight: 600
 }
 
 /*  CABINET GRID  */
-
 .member-role {
     color: var(--primary);
     font-weight: 700;
@@ -42,7 +40,6 @@
 }
 
 /*  HISTORICAL REFERENCE CARDS  */
-
 .reference-card {
     display: flex;
     align-items: flex-start;
@@ -96,7 +93,6 @@
 }
 
 /*  RESPONSIVE  */
-
 @media (max-width: 1200px) {
     .reference-card {
         flex-direction: row;
@@ -108,7 +104,6 @@
 }
 
 /* DARK MODE */
-
 .body-dark .member-name,
 .body-dark .reference-name {
     color: var(--white);
