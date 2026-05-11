@@ -4,14 +4,7 @@
     font-weight: 600
 }
 
-/* ========== CABINET GRID ========== */
-
-.cabinet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: var(--card-gap);
-    margin-top: 3rem;
-}
+/*  CABINET GRID  */
 
 .member-role {
     color: var(--primary);
@@ -48,7 +41,7 @@
     width: 100%;
 }
 
-/* ========== HISTORICAL REFERENCE CARDS ========== */
+/*  HISTORICAL REFERENCE CARDS  */
 
 .reference-card {
     display: flex;
@@ -102,13 +95,9 @@
     color: var(--silver);
 }
 
-/* ========== RESPONSIVE ========== */
+/*  RESPONSIVE  */
 
 @media (max-width: 1200px) {
-    .cabinet-grid {
-        grid-template-columns: 1fr;
-    }
-
     .reference-card {
         flex-direction: row;
     }

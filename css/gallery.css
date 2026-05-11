@@ -1,5 +1,4 @@
 /* Gallery Page Styles */
-
 /* Toolbar */
 .gallery-toolbar {
     position: sticky;
@@ -16,10 +15,11 @@
     flex-wrap: wrap;
 }
 
-.toolbar-left {
+.toolbar-left,
+.toolbar-right {
     display: flex;
-    align-items: center;
     gap: 8px;
+    align-items: center;
 }
 
 .gallery-count {
@@ -27,12 +27,6 @@
     font-size: 0.85rem;
     font-weight: 500;
     white-space: nowrap;
-}
-
-.toolbar-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
 .view-btn {
@@ -245,10 +239,7 @@
     line-height: 1.6;
 }
 
-/* ==================
-   LIGHTBOX / DETAIL VIEW
-   ================== */
-
+/* LIGHTBOX / DETAIL VIEW */
 .lightbox {
     position: fixed;
     inset: 0;

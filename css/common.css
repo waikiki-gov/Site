@@ -535,73 +535,109 @@ nav {
 
 .card:nth-child(1),
 .stat-card:nth-child(1),
-.stat-item:nth-child(1) {
+.stat-item:nth-child(1),
+.economy-stat:nth-child(1),
+.timeline-item:nth-child(1),
+.timeline-period:nth-child(1) {
   animation-delay: calc(var(--base-animation-delay) + 0 * var(--animation-delay-increment))
 }
 
 .card:nth-child(2),
 .stat-card:nth-child(2),
-.stat-item:nth-child(2) {
+.stat-item:nth-child(2),
+.economy-stat:nth-child(2),
+.timeline-item:nth-child(2),
+.timeline-period:nth-child(2) {
   animation-delay: calc(var(--base-animation-delay) + 1 * var(--animation-delay-increment))
 }
 
 .card:nth-child(3),
 .stat-card:nth-child(3),
-.stat-item:nth-child(3) {
+.stat-item:nth-child(3),
+.economy-stat:nth-child(3),
+.timeline-item:nth-child(3),
+.timeline-period:nth-child(3) {
   animation-delay: calc(var(--base-animation-delay) + 2 * var(--animation-delay-increment))
 }
 
 .card:nth-child(4),
 .stat-card:nth-child(4),
-.stat-item:nth-child(4) {
+.stat-item:nth-child(4),
+.economy-stat:nth-child(4),
+.timeline-item:nth-child(4),
+.timeline-period:nth-child(4) {
   animation-delay: calc(var(--base-animation-delay) + 3 * var(--animation-delay-increment))
 }
 
 .card:nth-child(5),
 .stat-card:nth-child(5),
-.stat-item:nth-child(5) {
+.stat-item:nth-child(5),
+.economy-stat:nth-child(5),
+.timeline-item:nth-child(5),
+.timeline-period:nth-child(5) {
   animation-delay: calc(var(--base-animation-delay) + 4 * var(--animation-delay-increment))
 }
 
 .card:nth-child(6),
 .stat-card:nth-child(6),
-.stat-item:nth-child(6) {
+.stat-item:nth-child(6),
+.economy-stat:nth-child(6),
+.timeline-item:nth-child(6),
+.timeline-period:nth-child(6) {
   animation-delay: calc(var(--base-animation-delay) + 5 * var(--animation-delay-increment))
 }
 
 .card:nth-child(7),
 .stat-card:nth-child(7),
-.stat-item:nth-child(7) {
+.stat-item:nth-child(7),
+.economy-stat:nth-child(7),
+.timeline-item:nth-child(7),
+.timeline-period:nth-child(7) {
   animation-delay: calc(var(--base-animation-delay) + 6 * var(--animation-delay-increment))
 }
 
 .card:nth-child(8),
 .stat-card:nth-child(8),
-.stat-item:nth-child(8) {
+.stat-item:nth-child(8),
+.economy-stat:nth-child(8),
+.timeline-item:nth-child(8),
+.timeline-period:nth-child(8) {
   animation-delay: calc(var(--base-animation-delay) + 7 * var(--animation-delay-increment))
 }
 
 .card:nth-child(9),
 .stat-card:nth-child(9),
-.stat-item:nth-child(9) {
+.stat-item:nth-child(9),
+.economy-stat:nth-child(9),
+.timeline-item:nth-child(9),
+.timeline-period:nth-child(9) {
   animation-delay: calc(var(--base-animation-delay) + 8 * var(--animation-delay-increment))
 }
 
 .card:nth-child(10),
 .stat-card:nth-child(10),
-.stat-item:nth-child(10) {
+.stat-item:nth-child(10),
+.economy-stat:nth-child(10),
+.timeline-item:nth-child(10),
+.timeline-period:nth-child(10) {
   animation-delay: calc(var(--base-animation-delay) + 9 * var(--animation-delay-increment))
 }
 
 .card:nth-child(11),
 .stat-card:nth-child(11),
-.stat-item:nth-child(11) {
+.stat-item:nth-child(11),
+.economy-stat:nth-child(11),
+.timeline-item:nth-child(11),
+.timeline-period:nth-child(11) {
   animation-delay: calc(var(--base-animation-delay) + 10 * var(--animation-delay-increment))
 }
 
 .card:nth-child(12),
 .stat-card:nth-child(12),
-.stat-item:nth-child(12) {
+.stat-item:nth-child(12),
+.economy-stat:nth-child(12),
+.timeline-item:nth-child(12),
+.timeline-period:nth-child(12) {
   animation-delay: calc(var(--base-animation-delay) + 11 * var(--animation-delay-increment))
 }
 

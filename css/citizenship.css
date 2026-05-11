@@ -108,7 +108,7 @@ h3 {
 
 .body-dark .assessment-modal .space-y-3>button:hover {
     background: rgba(0, 113, 188, 0.28) !important;
-    border-color: #00b0c3 !important;
+    border-color: var(--tertiary) !important;
 }
 
 .body-dark .assessment-modal .space-y-3>button .rounded-full {

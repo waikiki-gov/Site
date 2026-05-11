@@ -68,7 +68,7 @@
     }
 }
 
-/* ========== MAP CONTAINER ========== */
+/*  MAP CONTAINER  */
 .map-container {
     position: relative;
     max-width: 1800px;
@@ -86,7 +86,7 @@
     display: block;
 }
 
-/* ========== SVG PROVINCE STYLING ========== */
+/*  SVG PROVINCE STYLING  */
 .province-path {
     stroke: var(--white);
     stroke-width: 1.5;
@@ -107,7 +107,7 @@
 
 /* Province colors */
 .province-waikiki {
-    fill: #0071bc;
+    fill: var(--primary);
 }
 
 .province-amazonia {
@@ -133,7 +133,7 @@
     fill: #fdd835;
 }
 
-/* ========== CITY MARKERS ========== */
+/*  CITY MARKERS  */
 .city-marker {
     cursor: pointer;
 }
@@ -164,7 +164,7 @@
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
 }
 
-/* ========== MAP LEGEND ========== */
+/*  MAP LEGEND  */
 .map-legend {
     display: flex;
     flex-wrap: wrap;
@@ -208,7 +208,7 @@
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-/* ========== INFO PANEL ========== */
+/*  INFO PANEL  */
 .province-info-panel {
     background: var(--white);
     border-radius: var(--card-border-radius);
@@ -231,7 +231,7 @@
 }
 
 .province-info-panel.border-waikiki {
-    border-left-color: #0071bc;
+    border-left-color: var(--primary);
 }
 
 .province-info-panel.border-amazonia {
@@ -264,7 +264,7 @@
 }
 
 .badge-waikiki {
-    background: #0071bc;
+    background: var(--primary);
 }
 
 .badge-amazonia {
@@ -317,7 +317,7 @@
     margin-top: 1rem;
 }
 
-/* ========== CITIES LIST ========== */
+/*  CITIES LIST  */
 .info-cities {
     margin-top: 1.5rem;
 }
@@ -359,7 +359,7 @@
     flex-shrink: 0;
 }
 
-/* ========== ADMIN STRUCTURE ========== */
+/*  ADMIN STRUCTURE  */
 .admin-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -382,7 +382,7 @@
 }
 
 .admin-card.admin-waikiki {
-    border-top-color: #0071bc;
+    border-top-color: var(--primary);
 }
 
 .admin-card.admin-amazonia {
@@ -413,7 +413,7 @@
 }
 
 .admin-icon.icon-waikiki {
-    background: #0071bc;
+    background: var(--primary);
 }
 
 .admin-icon.icon-amazonia {
@@ -464,12 +464,12 @@
     margin-top: 0.2rem;
 }
 
-/* ========== COMPARISON TABLE WRAPPER ========== */
+/*  COMPARISON TABLE WRAPPER  */
 .comparison-section {
     margin-top: 3rem;
 }
 
-/* ========== RESPONSIVE ========== */
+/*  RESPONSIVE  */
 @media (max-width: 768px) {
     .map-container {
         padding: 1rem;
@@ -501,7 +501,7 @@
     }
 }
 
-/* ========== DARK MODE OVERRIDES ========== */
+/*  DARK MODE OVERRIDES  */
 .body-dark .map-container,
 .body-dark .province-info-panel,
 .body-dark .admin-card {
