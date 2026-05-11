@@ -14,6 +14,7 @@
 
 ## 2001
 - Népszavazás a nemzeti jelképekről.
+- Haiti, Jamaica és a Dominikai Köztársaság csatlakozása egy konföderáció keretében.
 
 ## 2002
 - Aaron Shore kabinetfőnöki kinevezése.
@@ -69,13 +70,13 @@
 ## 2013
 - Kormányzó és helytartók kinevezése.
 - GYES időtartamának 3 évre bővítése.
-- Az EAN megalakulása.
 - Angelina barcelonai ösztöndíjas tanulmányai az IESE Business Schoolban.
 - Angelina befejezi mesterképzését a Waikiki Economics University-n.
 
 ## 2014
 - Angelina fellép a Davosi Gazdasági Fórumon.
 - Elkészül a Hercegi Palota.
+- Az EAN megalakulása.
 - Raimondo és Selena először találkoznak a Mátrix 4 forgatásán
 - Angelina és Taylor ázsiai körutazása (Kiotó, Tokió, Szingapúr, Bhután, Bangkok, Agra, Peking).
 - Elkészül Angelina Palazzo Versace palotája.

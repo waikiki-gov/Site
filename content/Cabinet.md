@@ -17,7 +17,7 @@ Ez a csoport felel a biztonságpolitikai doktrína érvényesítéséért, a bel
 
 **John Bolton - Védelmi miniszter** Bolton a védelmi stratégia és a katonai doktrína őre, aki a hiteles elrettentésre és a területvédelemre építi munkáját. A védelmi minisztérium feladatai közé tartozik a nukleáris elrettentés fenntartása, a stratégiai csapásmérő képességek fegyelmezett felügyelete, valamint az interkontinentális rakétavédelem és a modern légvédelmi rendszer fejlesztése. Bolton irányítása alatt a haderő fejlesztése nem öncélú erődemonstráció, hanem a nemzeti biztonság kiszámítható garanciája, amely a szövetségi kötelezettségek teljesítését és a honvédelem mindennapi készenlétét egyszerre szolgálja. A miniszter felügyeli a védelmi beszerzések integritását, a haditechnikai innovációt, valamint a válsághelyzeti reagálás stratégiai kereteit.
 
-**Morgan Clark - Hadügyminiszter** A hadügyminiszter a fegyveres erők belső működésének és harckészültségének központi felelőse. Feladata a tiszti kar lojalitásának megerősítése, az egységek kiképzési fegyelmének fenntartása és a katonai szervezet folyamatos modernizációja. Clark a haderő támadó és expedíciós képességeinek fejlesztését is irányítja, kiemelt figyelemmel a páncélos erőkre, a repülőgéphordozó képességre, valamint a stratégiai bombázó kapacitásokra. Munkája biztosítja, hogy Waikiki a szükséges pillanatban gyorsan és összehangoltan legyen képes fellépni, miközben a hadsereg minden körülmények között az alkotmányos rend és az államérdek szolgálatában marad.
+**Mark Milley - Hadügyminiszter** A hadügyminiszter a fegyveres erők belső működésének és harckészültségének központi felelőse. Feladata a tiszti kar lojalitásának megerősítése, az egységek kiképzési fegyelmének fenntartása és a katonai szervezet folyamatos modernizációja. Milley a haderő támadó és expedíciós képességeinek fejlesztését is irányítja, kiemelt figyelemmel a páncélos erőkre, a repülőgéphordozó képességre, valamint a stratégiai bombázó kapacitásokra. Munkája biztosítja, hogy Waikiki a szükséges pillanatban gyorsan és összehangoltan legyen képes fellépni, miközben a hadsereg minden körülmények között az alkotmányos rend és az államérdek szolgálatában marad.
 
 ## A gazdasági motor
 A Szuverén Korporativizmus és a Waikiki First gazdaságpolitika napi szintű működtetői azok a tárcák és vezetők, akik az állami profitot termelik, a beruházási döntéseket előkészítik, és a nemzeti vagyon gyarapítását kézzelfogható eredményekké alakítják. E szárny feladata a költségvetési fegyelem fenntartása, a stratégiai ágazatok védelme és fejlesztése, továbbá a külkereskedelmi és energiaellátási feltételek olyan kialakítása, amely a növekedést hosszú távon is kiszámíthatóvá teszi. A gazdasági motor egyszerre szolgálja a nemzetközi versenyképességet és azt a társadalmi szerződést, amelyben a közszolgáltatások színvonala a pénzügyi stabilitásból és a hatékony állami vagyonkezelésből táplálkozik.
@@ -84,13 +84,13 @@ A kabinet egészét tekintve Waikiki kormányzása a rend, a szakértelem és a 
 | Oktatási miniszter | Ellen Ochoa | David Vitter | Rod Paige | David Vitter | David Vitter | Tom Kirkman |
 | Mezőgazdasági miniszter | Gabriel Prieto | Gabriel Prieto | Ed Schafer | Michel Temer | Rick Santorum | Jack Bowman |
 | Turisztikai miniszter | Steve Preston | Nicole Minetti | Steve Preston | Nicole Minetti | Nicole Minetti | Diane Hunter |
-| Hadügyminiszter | George Zambellas | Morgan Clark | Dick Cheney | Morgan Clark | Morgan Clark | Morgan Clark |
+| Hadügyminiszter | George Zambellas | Morgan Clark | Dick Cheney | Morgan Clark | Morgan Clark | Mark Milley |
 | Védelmi miniszter | | Logan Davis | Winnefeld Daniels | Winnefeld Daniels | Winnefeld Daniels | John Bolton |
 | Iparfejlesztési miniszter | | Salvador Pardo Cruz | Salvador Pardo Cruz | Salvador Pardo Cruz | Thomas Boone | Thomas Boone |
 | Tudományügyi miniszter | | Tommy Thompson | Timothy John | Timothy John | Timothy John | Timothy John |
 | Infrastrukturális miniszter | | | Rick Santorum | Mary Bono Mack | Mary Bono Mack | Mary Bono Mack |
 | Környezetvédelmi miniszter | | | Mike Leavitt | Mitt Romney | Darius Tanz | Darius Tanz |
-| Munkaügyi miniszter | | | Steve Preston | Matt Daemon | Steve Preston | |
+| Munkaügyi miniszter | | | Steve Preston | Matt Damon | Steve Preston | |
 | Erőforrásügyi miniszter | | | Ruby Dhalla | Ruby Dhalla | | |
 | Fejlesztési miniszter | | | Rick Santorum | Ricardo Gomez | | |
 | Bevándorlásügyi miniszter | | | | | | Mickey Haller |

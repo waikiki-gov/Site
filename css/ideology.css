@@ -92,14 +92,6 @@ body {
     text-align: center;
 }
 
-.visual-content svg {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 20px;
-    fill: var(--gold);
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-}
-
 .visual-content h4 {
     color: var(--gold);
     text-transform: uppercase;
@@ -123,7 +115,7 @@ body {
     }
 }
 
-/* ======================================== DARK MODE ======================================== */
+/* DARK MODE */
 
 .body-dark .mission {
   background: var(--dark-bg);

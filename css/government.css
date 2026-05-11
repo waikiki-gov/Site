@@ -1,4 +1,4 @@
-/* ======================================== GOVERNMENT PAGE STYLES ======================================== */
+/* GOVERNMENT PAGE STYLES */
 
 .table td:first-child {
     font-weight: 600
@@ -19,7 +19,7 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .member-name {
@@ -34,6 +34,18 @@
     line-height: 1.8;
     color: var(--silver);
     text-align: justify;
+}
+
+.member-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.reference-icon img,
+.member-image img {
+    width: 100%;
 }
 
 /* ========== HISTORICAL REFERENCE CARDS ========== */
@@ -57,19 +69,10 @@
 }
 
 .reference-icon {
-    flex-shrink: 0;
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.reference-icon img {
-    width: 28px;
-    height: 28px;
+    overflow: hidden;
 }
 
 .reference-info {
@@ -115,7 +118,7 @@
     }
 }
 
-/* ======================================== DARK MODE ======================================== */
+/* DARK MODE */
 
 .body-dark .member-name,
 .body-dark .reference-name {

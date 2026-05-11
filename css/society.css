@@ -1,0 +1,560 @@
+/* Society Page Specific Styles */
+
+.check-icon {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+
+.cross-icon {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+
+.stats-container {
+    background: var(--dark-blue);
+    padding: 100px 3rem;
+    color: var(--white);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(188, 146, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold);
+}
+
+.stat-box h3 {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        padding: 60px 1.5rem;
+    }
+}
+
+/* ========== MAP CONTAINER ========== */
+.map-container {
+    position: relative;
+    max-width: 1800px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.map-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== SVG PROVINCE STYLING ========== */
+.province-path {
+    stroke: var(--white);
+    stroke-width: 1.5;
+    cursor: pointer;
+    transition: fill 0.4s ease, stroke-width 0.3s ease, filter 0.4s ease;
+}
+
+.province-path:hover {
+    stroke-width: 3;
+    filter: brightness(1.15) drop-shadow(0 0 8px rgba(0, 113, 188, 0.4));
+}
+
+.province-path.active {
+    stroke: var(--gold);
+    stroke-width: 3;
+    filter: brightness(1.1) drop-shadow(0 0 12px rgba(188, 146, 0, 0.5));
+}
+
+/* Province colors */
+.province-waikiki {
+    fill: #0071bc;
+}
+
+.province-amazonia {
+    fill: #2e7d32;
+}
+
+.province-brazilia {
+    fill: #f9a825;
+}
+
+.province-waikiki:hover,
+.province-waikiki.active {
+    fill: #2196f3;
+}
+
+.province-amazonia:hover,
+.province-amazonia.active {
+    fill: #43a047;
+}
+
+.province-brazilia:hover,
+.province-brazilia.active {
+    fill: #fdd835;
+}
+
+/* ========== CITY MARKERS ========== */
+.city-marker {
+    cursor: pointer;
+}
+
+.city-dot {
+    transition: r 0.3s ease, fill 0.3s ease;
+}
+
+.city-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    fill: var(--secondary);
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.city-label-bg {
+    fill: rgba(255, 255, 255, 0.85);
+    rx: 3;
+    ry: 3;
+}
+
+.capital-star {
+    fill: var(--gold);
+    stroke: #8B6914;
+    stroke-width: 0.5;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+}
+
+/* ========== MAP LEGEND ========== */
+.map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--silver);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.legend-item:hover {
+    background: rgba(0, 113, 188, 0.08);
+    color: var(--secondary);
+}
+
+.legend-item.active {
+    background: rgba(0, 113, 188, 0.12);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.legend-color {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ========== INFO PANEL ========== */
+.province-info-panel {
+    background: var(--white);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-left: 5px solid var(--primary);
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.province-info-panel.visible {
+    transform: translateY(0);
+    max-height: 2000px;
+    padding: 2rem;
+    display: block;
+}
+
+.province-info-panel.border-waikiki {
+    border-left-color: #0071bc;
+}
+
+.province-info-panel.border-amazonia {
+    border-left-color: #2e7d32;
+}
+
+.province-info-panel.border-brazilia {
+    border-left-color: #f9a825;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.info-province-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.badge-waikiki {
+    background: #0071bc;
+}
+
+.badge-amazonia {
+    background: #2e7d32;
+}
+
+.badge-brazilia {
+    background: #f9a825;
+    color: var(--dark-bg);
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.info-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.info-stat {
+    text-align: center;
+    padding: 1.2rem;
+    background: var(--light-bg);
+    border-radius: 12px;
+}
+
+.info-stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+}
+
+.info-stat-label {
+    font-size: 0.85rem;
+    color: var(--silver);
+    margin-top: 0.3rem;
+}
+
+.info-description {
+    color: var(--silver);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    text-align: justify;
+    margin-top: 1rem;
+}
+
+/* ========== CITIES LIST ========== */
+.info-cities {
+    margin-top: 1.5rem;
+}
+
+.info-cities h4 {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+}
+
+.city-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--silver);
+    transition: all 0.3s ease;
+}
+
+.city-chip:hover {
+    background: rgba(0, 113, 188, 0.08);
+    color: var(--primary);
+}
+
+.city-chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ========== ADMIN STRUCTURE ========== */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--card-gap);
+    margin-top: 3rem;
+}
+
+.admin-card {
+    background: var(--white);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    padding: var(--card-padding);
+    border-top: 5px solid var(--primary);
+    transition: all 0.4s var(--transition-easing);
+}
+
+.admin-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-5px);
+}
+
+.admin-card.admin-waikiki {
+    border-top-color: #0071bc;
+}
+
+.admin-card.admin-amazonia {
+    border-top-color: #2e7d32;
+}
+
+.admin-card.admin-brazilia {
+    border-top-color: #f9a825;
+}
+
+.admin-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.admin-icon.icon-waikiki {
+    background: #0071bc;
+}
+
+.admin-icon.icon-amazonia {
+    background: #2e7d32;
+}
+
+.admin-icon.icon-brazilia {
+    background: #f9a825;
+    color: var(--dark-bg);
+}
+
+.admin-card h3 {
+    color: var(--secondary);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.admin-card p {
+    color: var(--silver);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.admin-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.admin-data-item {
+    padding: 0.8rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.admin-data-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+}
+
+.admin-data-label {
+    font-size: 0.78rem;
+    color: var(--silver);
+    margin-top: 0.2rem;
+}
+
+/* ========== COMPARISON TABLE WRAPPER ========== */
+.comparison-section {
+    margin-top: 3rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .map-container {
+        padding: 1rem;
+    }
+
+    .info-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-title {
+        font-size: 1.5rem;
+    }
+
+    .info-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-data {
+        grid-template-columns: 1fr;
+    }
+
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== DARK MODE OVERRIDES ========== */
+.body-dark .map-container,
+.body-dark .province-info-panel,
+.body-dark .admin-card {
+    background: var(--dark-blue);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.body-dark .province-path {
+    stroke: var(--dark-blue);
+}
+
+.body-dark .map-legend,
+.body-dark .info-stat,
+.body-dark .city-chip,
+.body-dark .admin-data-item {
+    background: var(--dark-grey);
+}
+
+.body-dark .info-title,
+.body-dark .info-cities h4,
+.body-dark .admin-card h3 {
+    color: var(--white);
+}
+
+.body-dark .legend-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+}
+
+.body-dark .legend-item.active {
+    background: rgba(0, 176, 195, 0.15);
+    color: var(--tertiary);
+}
+
+.body-dark .info-stat-value,
+.body-dark .admin-data-value {
+    color: var(--tertiary);
+}
+
+.body-dark .legend-color {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.body-dark .city-chip:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--tertiary);
+}
+
+/* Ocean Dark Mode */
+.body-dark #ocean stop:first-child {
+    stop-color: #0a1128 !important;
+}
+
+.body-dark #ocean stop:last-child {
+    stop-color: #1c2541 !important;
+}
