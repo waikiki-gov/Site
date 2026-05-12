@@ -1,5 +1,4 @@
 /* Economy Page Styles */
-
 /* Chart wrapper for Chart.js */
 .chart-wrapper {
   position: relative;
@@ -103,7 +102,6 @@
 
 /* Responsive Design */
 @media (max-width: 800px) {
-
   .chart-grid {
     grid-template-columns: 1fr;
   }
@@ -120,7 +118,6 @@
 }
 
 /* DARK MODE */
-
 .body-dark .data-viz-container,
 .body-dark .data-viz-container-half {
   background: var(--dark-bg);

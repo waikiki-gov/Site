@@ -124,7 +124,6 @@
 }
 
 /* DARK MODE */
-
 .body-dark .timeline-year {
   background: var(--dark-bg);
   border-color: var(--gold);

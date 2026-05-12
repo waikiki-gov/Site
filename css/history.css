@@ -1,5 +1,4 @@
 /* History Page Styles */
-
 .timeline-expanded {
   max-width: 1400px;
   margin: 0 auto;
@@ -92,7 +91,6 @@
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 800px) {
   .timeline-period {
     margin-bottom: 3rem;
@@ -122,7 +120,6 @@
 }
 
 /* DARK MODE */
-
 .body-dark .period-title {
   color: var(--tertiary);
   background: rgba(0, 176, 195, 0.05);
