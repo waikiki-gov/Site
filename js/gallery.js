@@ -70,7 +70,7 @@ const Gallery = (() => {
             // Load from cache
             const cacheId = url.split('/s/')[1]?.split('/')[0] || 'default';
             const cacheKey = 'gallery_cache_' + cacheId;
-            const cacheTTL = 7 * 24 * 60 * 60 * 1000; //One week
+            const cacheTTL = 24 * 60 * 60 * 1000; // One day
 
             const cached = localStorage.getItem(cacheKey);
             if (cached) {
