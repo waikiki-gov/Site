@@ -106,30 +106,30 @@
 
 /* Province colors */
 .province-waikiki {
-    fill: var(--primary);
+    fill: var(--waikiki);
 }
 
 .province-amazonia {
-    fill: #2e7d32;
+    fill: var(--amazonia);
 }
 
 .province-brazilia {
-    fill: #f9a825;
+    fill: var(--brazilia);
 }
 
 .province-waikiki:hover,
 .province-waikiki.active {
-    fill: #2196f3;
+    fill: var(--waikiki-hover);
 }
 
 .province-amazonia:hover,
 .province-amazonia.active {
-    fill: #43a047;
+    fill: var(--amazonia-hover);
 }
 
 .province-brazilia:hover,
 .province-brazilia.active {
-    fill: #fdd835;
+    fill: var(--brazilia-hover);
 }
 
 /*  CITY MARKERS  */
@@ -234,11 +234,11 @@
 }
 
 .province-info-panel.border-amazonia {
-    border-left-color: #2e7d32;
+    border-left-color: var(--amazonia);
 }
 
 .province-info-panel.border-brazilia {
-    border-left-color: #f9a825;
+    border-left-color: var(--brazilia);
 }
 
 .info-header {
@@ -263,15 +263,16 @@
 }
 
 .badge-waikiki {
-    background: var(--primary);
+    background: var(--waikiki);
 }
 
 .badge-amazonia {
-    background: #2e7d32;
+    background: var(--amazonia);
+    color: var(--dark-bg);
 }
 
 .badge-brazilia {
-    background: #f9a825;
+    background: var(--brazilia);
     color: var(--dark-bg);
 }
 
@@ -385,11 +386,11 @@
 }
 
 .admin-card.admin-amazonia {
-    border-top-color: #2e7d32;
+    border-top-color: var(--amazonia);
 }
 
 .admin-card.admin-brazilia {
-    border-top-color: #f9a825;
+    border-top-color: var(--brazilia);
 }
 
 .admin-card-header {
@@ -416,11 +417,12 @@
 }
 
 .admin-icon.icon-amazonia {
-    background: #2e7d32;
+    background: var(--amazonia);
+    color: var(--dark-bg);
 }
 
 .admin-icon.icon-brazilia {
-    background: #f9a825;
+    background: var(--brazilia);
     color: var(--dark-bg);
 }
 

@@ -18,6 +18,15 @@
   --dark-grey: #212121;
   --dark-azure: #2F4042;
   --dark-blue: #0A1930;
+
+  /* Province Colors */
+  --waikiki: #0071bc;
+  --waikiki-hover: #2196f3;
+  --amazonia: #2e7d32;
+  --amazonia-hover: #43a047;
+  --brazilia: #f9a825;
+  --brazilia-hover: #fdd835;
+
   --easing: cubic-bezier(.4, -0.3, .6, 1.3);
   --speed: 0.5s;
   --width: 70px;
