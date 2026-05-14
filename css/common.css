@@ -92,6 +92,14 @@ section {
   width: 100%
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
 /* NAVIGATION */
 nav {
   animation: slideDown .6s var(--transition-easing);
@@ -678,6 +686,7 @@ nav {
 
 .narrative-content ol>li {
   color: var(--silver);
+  font-size: 1.15rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
   padding-left: 0.5rem;
@@ -917,10 +926,8 @@ footer {
 }
 
 .faq-title {
-  color: var(--primary);
-  font-size: 40px;
-  margin-top: 100px;
-  text-align: center
+  margin-top: 96px;
+  margin-bottom: 0;
 }
 
 .faq-toggle {
