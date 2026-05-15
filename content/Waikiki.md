@@ -26,8 +26,8 @@ Waikiki a világ legfejlettebb országa, a világ pénzügyi és gazdasági köz
 - Évi népességnövekedés: 500 000 fő/év
 - Írástudatlanság: 0,0%
 - Születéskor várható élettartam:
-  - Nők: 98 év
-  - Férfiak: 95 év
+  - Nők: 88 év
+  - Férfiak: 85 év
 
 ## Gazdasági szerkezet
 - Foglalkoztatottsági megoszlás:
