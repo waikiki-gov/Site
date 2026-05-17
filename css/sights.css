@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     gap: 4rem;
     align-items: center;
-    padding: 2rem 0;
     max-width: 1600px;
     margin: auto;
 }
@@ -12,6 +11,7 @@
 .sight-image {
     flex: 1;
     min-width: 350px;
+    max-width: 600px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -94,6 +94,8 @@
 
 .comparison-item {
     text-align: center;
+    max-width: 600px;
+    margin: auto;
 }
 
 .comparison-item img {
@@ -129,13 +131,14 @@
     color: var(--tertiary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .sight-section {
         gap: 2rem;
+        flex-direction: column;
     }
 
     .sight-section.reverse {
-        flex-direction: row-reverse;
+        flex-direction: column-reverse;
     }
 
     .comparison-grid {
