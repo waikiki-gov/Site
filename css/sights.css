@@ -81,6 +81,8 @@
 .comparison-container {
     padding: 4rem;
     margin-top: 4rem;
+    max-width: 1600px;
+    margin: auto;
 }
 
 .comparison-grid {
