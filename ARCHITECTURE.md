@@ -162,6 +162,142 @@ To add a new page to the site:
    <script src="js/about.js"></script>
    ```
 
+## Standard Page Structure
+
+All standard content pages (in `en/` and `hu/` locales) must follow this consistent HTML structure to ensure unified layout, accessibility, sitemap alignment, and visual synchronization:
+
+### 1. Document Head (`<head>`)
+Contains metadata, mobile responsiveness settings, app icons, and linked stylesheets:
+```html
+<!DOCTYPE html>
+<html lang="en"> <!-- or lang="hu" -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title - Waikiki</title>
+    <!-- Icons & Manifest -->
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="1024x1024" href="../icons/logo.png" />
+    <link href="../manifest.json" rel="manifest" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- Optional page-specific styles -->
+    <link rel="stylesheet" href="../css/page-name.css">
+    <!-- Optional hero image preload for performance -->
+    <link rel="preload" as="image" href="../images/hero.jpg" fetchpriority="high">
+</head>
+```
+
+### 2. Header and Top Navigation Bar (`<nav class="nav-container">`)
+Stays fixed at the top of the viewport and contains the logo, main in-page desktop links, and the sötét mód (dark mode) toggle:
+```html
+<nav class="nav-container">
+    <a href="index.html" class="logo"><span><span class="first-letter">W</span>aikiki</span></a>
+    <!-- In-page anchor navigation links for desktop -->
+    <ul class="nav-links">
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+    </ul>
+    <!-- Unified dark-mode-switch with SVGs for sun/moon -->
+    <button id="dark-mode-switch" class="toggle" aria-pressed="false" onclick="setTheme()">
+        <!-- ... sun/moon clouds/stars SVGs ... -->
+    </button>
+</nav>
+```
+
+### 3. Mobile Hamburger Menu Trigger and Slide-Out Panel
+Required on all subpages to provide standardized cross-page navigation. It consists of three parts:
+```html
+<!-- Trigger Button -->
+<div class="hamburger-menu">
+    <button class="hamburger-button"><span></span><span></span><span></span></button>
+</div>
+
+<!-- Backdrop Overlay -->
+<div class="hamburger-overlay"></div>
+
+<!-- Slide-Out Navigation Panel -->
+<nav class="hamburger-panel">
+    <ul class="hamburger-links">
+        <li><a href="index.html"><img src="https://api.iconify.design/mdi/home.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Home </a></li>
+        <li><a href="tourism.html"><img src="https://api.iconify.design/mdi/compass.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Tourism </a></li>
+        <li><a href="diplomacy.html"><img src="https://api.iconify.design/mdi/earth.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Diplomacy </a></li>
+        <li><a href="society.html"><img src="https://api.iconify.design/mdi/account-multiple.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Society </a></li>
+        <li><a href="culture.html"><img src="https://api.iconify.design/mdi/palette.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Culture </a></li>
+        <li><a href="economy.html"><img src="https://api.iconify.design/mdi/chart-line.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Economy </a></li>
+        <li><a href="wealth-fund.html"><img src="https://api.iconify.design/mdi/bank.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Wealth Fund </a></li>
+        <li><a href="history.html"><img src="https://api.iconify.design/mdi/book-open.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />History </a></li>
+        <li><a href="parties.html"><img src="https://api.iconify.design/mdi/account-group.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Politics </a></li>
+        <li><a href="government.html"><img src="https://api.iconify.design/mdi/bank-outline.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Government </a></li>
+        <li><a href="leadership.html"><img src="https://api.iconify.design/mdi/crown.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Leadership </a></li>
+        <li><a href="military.html"><img src="https://api.iconify.design/mdi/shield-sword.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />Military </a></li>
+        <li><a href="faq.html"><img src="https://api.iconify.design/mdi/help-circle.svg?color=%23FFFFFF&width=24&height=24" class="menu-icon" />FAQ </a></li>
+    </ul>
+</nav>
+```
+
+### 4. Main Page Body Structure
+Organized into a Hero section and successive scroll-animated sections:
+```html
+<!-- Hero Banner -->
+<section class="hero" style="background: url('../images/hero.jpg') center/cover no-repeat;">
+    <div class="hero-content">
+        <h1>Page Title</h1>
+        <p class="liquid">Introductory lead paragraph...</p>
+        <div class="hero-stats">
+            <div class="stat-item liquid"><span class="stat-number">100</span><span class="stat-label">Metric</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Sections with scroll fade-in animations and alternate light background option -->
+<section id="section1" class="fade-in">
+    <h2 class="section-title">Section Title</h2>
+    <p class="section-intro">Explanatory sub-heading...</p>
+    <div class="card-grid">
+        <div class="card">
+            <span class="card-icon"><img src="https://api.iconify.design/...?color=%230071BC" /></span>
+            <h3>Card Title</h3>
+            <p>Card description text...</p>
+        </div>
+    </div>
+</section>
+```
+
+### 5. Standard Page Footer
+Matches the main mobile hamburger navigation link structure:
+```html
+<footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="tourism.html">Tourism</a>
+            <a href="diplomacy.html">Diplomacy</a>
+            <a href="society.html">Society</a>
+            <a href="culture.html">Culture</a>
+            <a href="parties.html">Politics</a>
+            <a href="government.html">Government</a>
+            <a href="leadership.html">Leadership</a>
+            <a href="economy.html">Economy</a>
+            <a href="wealth-fund.html">Wealth Fund</a>
+            <a href="history.html">History</a>
+            <a href="military.html">Military</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <p>&copy; 2025 The Sovereign Nation of Waikiki. All rights reserved.</p>
+    </div>
+</footer>
+```
+
+### 6. Script References (Footer)
+```html
+    <script src="../js/common.js"></script>
+    <!-- Optional page-specific JavaScript files -->
+    <script src="../js/page-name.js"></script>
+</body>
+</html>
+```
+
 ## Color Palette
 
 The site uses a consistent color scheme defined in CSS custom properties:
