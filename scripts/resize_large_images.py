@@ -3,7 +3,7 @@ import subprocess
 import sys
 
 site_dir = "/Volumes/Samsung X5 SSD/Projektek/Site"
-MAX_SIZE = 5120  # Maximum allowed width or height in pixels
+MAX_SIZE = 5520  # Maximum allowed width or height in pixels
 
 # Supported image extensions (case-insensitive)
 IMAGE_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.webp', '.gif', '.tiff', '.bmp')
