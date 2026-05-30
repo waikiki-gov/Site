@@ -100,3 +100,16 @@
         font-size: 2.5rem;
     }
 }
+
+@media (max-width: 1900px) and (min-width: 1600px) {
+
+    .gallery-item:first-child:nth-last-child(2),
+    .gallery-item:first-child:nth-last-child(2)~.gallery-item {
+        width: 730px;
+    }
+
+    .gallery-item:first-child:nth-last-child(3),
+    .gallery-item:first-child:nth-last-child(3)~.gallery-item {
+        width: 730px;
+    }
+}
