@@ -168,6 +168,5 @@ All interactive elements use consistent hover animations:
 
 ### Targets
 - Chrome/Edge: Latest 2 versions
-- Firefox: Latest
 - Safari: Latest 2 versions
 - Mobile browsers: Latest
