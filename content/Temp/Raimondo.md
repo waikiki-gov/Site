@@ -79,7 +79,7 @@ A pandémia a világ leggazdagabb párját sem kímélte meg a kihívásoktól. 
 
 ### A maldív-szigeteki ígéret
 
-A maldív-szigeteki elvonulás egy csendes, de annál mélyebb fordulópont volt a kapcsolatukban. Raimondo egy teljes atollt bérelt ki kettejük számára, ahol napokig a civilizáció zajától teljesen elzárva, kizárólag egymásra és a természet szépségére koncentrálhattak. Ezen az utazáson Selena már nem csupán a herceg szerelme és szövetségese volt, hanem hivatalosan is élettársakká és politikai partnerekké váltak. A türkizkék lagúnában tett közös búvárkodások, a pálmafák alatt eltöltött csendes esték és a hajnalig tartó beszélgetések megerősítették azt, amit mindketten éreztek: nincs a világon erő, amely el tudná őket választani egymástól. Ez az utazás volt az, ahol a jövő tervei – az esküvő, a közös dinasztikus örökség, a következő évtizedek víziója – először öltöttek konkrét formát.
+A maldív-szigeteki elvonulás csendes, de annál mélyebb fordulópont volt a kapcsolatukban. Raimondo egy teljes atollt bérelt ki kettejük számára, ahol napokig a civilizáció zajától elzárva, kizárólag egymásra és a természet szépségére koncentrálhattak. Ezen az utazáson hivatalosan is élettársakká és politikai partnerekké váltak. A türkizkék lagúnában tett közös búvárkodások, a pálmafák alatt eltöltött csendes esték és az éjszakába nyúló beszélgetések megerősítették, amit mindketten éreztek: nincs a világon erő, amely el tudná választani őket. Itt öltöttek először konkrét formát a jövő tervei, az esküvő, a közös dinasztikus örökség, a következő évtizedek víziója.
 
 ### Az Évszázad Esküvője
 
@@ -87,21 +87,21 @@ Közel egy évtizednyi partnerség, barátság és fokozatosan mélyülő szerel
 
 ## 4. Érzelmi dinamika
 
-Kapcsolatuk nem villámrománc eredménye, hanem évtizedes barátságon és közös munkán alapuló, mély szövetség, amely a Waikiki Állam stabilitásának és prosperitásának egyik alappillére.
+Kapcsolatuk évtizedes barátságon és közös munkán alapuló, mély szövetség, amely a Waikiki Állam stabilitásának és prosperitásának egyik alappillére.
 
-* **Egymás menedéke.** A világ egyik legbefolyásosabb emberpárjaként kapcsolatuk az egyetlen hely, ahol levethetik a maszkjaikat. Selena az az érzelmi horgony, aki biztonságos teret teremt Raimondónak. Reggelente gyengéd gesztusokkal ébreszti, esténként pedig érzéki masszázzsal vagy csendes összebújással oldja a feszültséget.
+* **Egymás menedéke.** A világ egyik legbefolyásosabb párjaként kapcsolatuk az egyetlen tér, ahol levethetik a nyilvánosság maszkjait. Selena érzelmi horgonyként biztonságos közeget teremt Raimondónak. Reggelente gyengéd gesztusokkal ébreszti, esténként érzéki masszázzsal vagy csendes összebújással oldja a napi feszültséget.
 * **Megbonthatatlan lojalitás.** Érzelmi világukat a feltétlen hűség jellemzi. Éveken át tartó partnerségük alatt olyan bizalmi szintet építettek fel, amely minden külső politikai vagy társadalmi nyomásnak ellenáll.
-* **Gondoskodó kölcsönösség.** Raimondo részéről a kapcsolatot a természetes védelmező ösztön jellemzi. Mindent megad Selenának, hogy kifejezze háláját és szeretetét. Selena pedig a maga gyengédségével és figyelmességével viszonozza ezt.
+* **Gondoskodó kölcsönösség.** Raimondo védelmező ösztönnel ad biztonságot és háláját grandiózus gesztusokkal fejezi ki. Selena gyengédséggel és figyelmességgel viszonoz.
 * **Lelki társak.** Kapcsolatuk több mint szerelem, sorsszerű összefonódás, ahol két rendkívüli ember talált egymásban tökéletes társra és igazi otthonra.
 
 ### Az érzelmek két oldala
 
-* **Raimondo érzelmei:** Raimondo szeretete mélyen védelmező és rajongó. Bár a magánéletben is természetes vezető, ezt arra használja, hogy Selena imádottnak, biztonságban lévőnek és kívánatosnak érezze magát. Szellemi partnerként egyenrangúnak tekinti, és őszintén nagyra értékeli intellektusát és diplomáciai érzékét.
-* **Selena érzelmei:** Selena odaadása természetes és mély. Számára a legnagyobb boldogság, ha Raimondo boldog és kiegyensúlyozott. A magánéletben örömmel engedi át az irányítást, mert bízik a férfi szeretetében és védelmében. Ez nem alávetettség, hanem a teljes bizalom kifejeződése. Raimondo elégedettsége a saját boldogságának forrása.
+* **Raimondo érzelmei:** Szeretete védelmező és rajongó. Bár a magánéletben is természetes vezető, ezt arra használja, hogy Selena imádottnak, biztonságban lévőnek és kívánatosnak érezze magát. Szellemi partnerként egyenrangúnak tekinti, és őszintén nagyra értékeli intellektusát és diplomáciai érzékét.
+* **Selena érzelmei:** Odaadása természetes és mély. Számára a legnagyobb boldogság, ha Raimondo boldog és kiegyensúlyozott. A magánéletben örömmel engedi át az irányítást, mert bízik a férfi szeretetében és védelmében. Ez nem alávetettség, hanem a teljes bizalom kifejeződése. Raimondo elégedettsége a saját boldogságának forrása.
 
 ### Szellemi és lelki harmónia
 
-Ritka az olyan kapcsolat, ahol a nő képes a nemzetközi diplomácia legfelső szintjein magabiztosan helytállni, majd este a leggyengédebb, legbensőségesebb társsá válni. Raimondónak nem kell választania a harcostárs és a szerelme között, Selena mindkettő egy személyben. Az űrutazástól kezdve a maldív-szigeteki búvárkodáson át a közös sci-fi rajongásig Selena mindenben tökéletes partnere, aki nem csak kíséri, hanem gazdagítja is az élményeket és például ő szervezi a privát programokat a diplomáciai utak alatt.
+Raimondónak nem kell választania a harcostárs és a szerelme között, Selena mindkettő egy személyben. Az űrutazástól kezdve a maldív-szigeteki búvárkodáson át a közös sci-fi rajongásig Selena mindenben tökéletes partnere, aki nem csak kíséri, hanem gazdagítja is az élményeket és például ő szervezi a privát programokat a diplomáciai utak alatt.
 
 **Mit kap Raimondo? (A megfizethetetlen békét)**
 
@@ -109,7 +109,7 @@ Egy olyan ember számára, akinek közel 2 000 milliárd dollárja és szinte te
 
 * **Horgonyt a valóságban:** Selena segít abban, hogy Raimondo a földön maradjon, és ne vesszen el a korlátlan lehetőségek szédítő világában. Ő adja azt a stabilitást és perspektívát, amire minden vezetőnek szüksége van.
 * **Tiszta szerelmet:** Diktátorként Raimondo sosem lehetne biztos benne, kit vonz a hatalom és kit az ember. Selena éveken át tartó, türelmes jelenléte bizonyította, hogy ő a férfit szereti, nem pedig a koronát.
-* **Érzelmi menedéket:** Azt a ritka luxust, hogy valaki előtt leteheti a „határozott vezető” páncélját, és lehet sebezhető, játékos, vagy egyszerűen csak fáradt.
+* **Érzelmi menedéket:** Azt a ritka luxust, hogy valaki előtt leteheti a határozott vezető páncélját, és lehet sebezhető, játékos, vagy egyszerűen csak fáradt.
 
 **Mit kap Selena? (A korlátlan horizontot)**
 
@@ -150,7 +150,7 @@ Selena egyik legnagyobb erénye, hogy nem próbálja megváltoztatni Raimondót,
 
 * **Az érzékeny társ.** Ahol Raimondo lelkesen veti bele magát egy új helyzetbe, Selena figyelmesen olvassa a kontextust, és ha szükséges, finoman felhívja a figyelmét a részletekre gazdagítva a távlatait.
 * **A vízió formálója.** Amikor Raimondo kitalál egy merész, grandiózus programot (egy spontán űrutazást, egy antarktiszi expedíciót), Selena nem mond nemet. Ehelyett hozzáteszi a maga kreativitását, így a spontán kalandból gyakran egy emlékezetes diplomáciai és tudományos esemény születik.
-* **A játszótárs.** Pontosan tudja, hogy Raimondónak szüksége van a felszabadultságra és a játékosságra, hogy kiegyensúlyozott maradjon. Készségesen partnere a kalandokban. Hagyja, hogy Raimondo mellette az az önfeledt, lelkes fiatalember lehessen, aki valójában.
+* **A játszótárs.** Pontosan tudja, hogy Raimondónak szüksége van a felszabadultságra, hogy kiegyensúlyozott maradjon. Készségesen partnere a kalandokban és hagyja, hogy mellette az az önfeledt, lelkes fiatalember lehessen, aki valójában.
 * **Az állandó biztos pont.** Raimondo olykor csapongó energiái mellett Selena képviseli az állandóságot és a nyugalmat. A herceg tudja, hogy bárhová is sodorja a lelkesedése, Selena mindig ott van, mint a biztos kikötő, ahová bármikor hazatérhet.
 
 ## 6. A mindennapok luxusa és az életmód
@@ -201,18 +201,12 @@ Selena szabadon költhet a ruhatárára, a Waikiki Charity projektjeire és a di
 
 ## 9. A nyilvánosság és a magánélet kettőssége
 
-Életstílusuk legelbűvölőbb eleme az a kettős dinamika, ahogyan egymással léteznek – a nyilvánosságban és a magánéletben egyaránt.
-
-* **A nyilvánosság előtt:** Két magabiztos, karizmatikus vezető, a világ legbefolyásosabb álompárja, akik egyenrangú félként tárgyalnak a globális elittel, és akiknek puszta megjelenése emlékezetessé tesz minden eseményt. Munkakapcsolatuk alapja a szakmai felkészültség és a közös politikai világnézet.
-* **A zárt ajtók mögött:** Selena természetes örömmel veszi fel a gondoskodó, gyengéd női szerepet. Átengedi az irányítást Raimondónak, akinek boldogsága és kényelme az elsődleges. Ő ébreszti, ő masszírozza, és ő nyújtja azt az érzelmi és fizikai menedéket, ami egyensúlyban tartja a herceget. Raimondo cserébe feltétlen szeretetet, védelmet és férfias biztonságot biztosít számára.
+* **A nyilvánosság előtt:** Két magabiztos, karizmatikus vezető, a világ legbefolyásosabb álompárja, akik egyenrangú félként tárgyalnak a globális elittel, és akiknek puszta megjelenése emlékezetessé tesz minden eseményt.
+* **A zárt ajtók mögött:** Selena természetes örömmel veszi fel a gondoskodó női szerepet, ahol Raimondo boldogsága az elsődleges. Cserébe feltétlen szeretetet, védelmet és biztonságot kap. Ez a kölcsönös odaadás tartja egyensúlyban kettejük világát.
 
 ### Tudatos és elegáns nyilvános jelenlét
 
-Saját fotósaikkal készített „spontán” képeik (mint a washingtoni Reflecting Poolnál) a közös életük legszebb pillanatait osztják meg a világgal. A megjelenésük mindig átgondolt: Selena egyedi haute couture ruhái és a gondosan megválasztott helyszínek a birodalom eleganciáját és kulturális kifinomultságát sugározzák.
-
-### Bailey Pickett és a múlt
-
-Bailey Pickett még mindig a Szenátus tagja. Selena jelenlétében – egy új, Raimondótól kapott ékszerben csillogva – a parlamenti folyosókon tapintható az egykori rivalizálás emléke. Selena diplomáciai sikerei részben személyes motivációjúak is: büszke arra, hogy nem csak a szívét, hanem a tehetségét és a hasznosságát is bizonyítja nap mint nap.
+Saját fotósaikkal készített „spontán” képeik a közös életük legszebb pillanatait osztják meg a világgal. A megjelenésük mindig átgondolt, Selena egyedi haute couture ruhái és a gondosan megválasztott helyszínek a birodalom eleganciáját és kulturális kifinomultságát sugározzák.
 
 ## 10. Protokoll és megszólítások
 
