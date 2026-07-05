@@ -28,6 +28,32 @@ Selena nem csupán egy nemzetközileg ünnepelt popkulturális ikon és zenei sz
 
 Raimondo és Selena szerelmi kapcsolata nem egy hirtelen fellángolás, hanem egy gyönyörű, hosszú éveken át tartó, organikus és rendkívül tudatos fejlődés csodálatos gyümölcse. Kettőjük története a legtisztább és legklasszikusabb „friends to lovers” történet, amely rácáfol a felszínes hollywoodi romantikára. Ebben a kivételes kapcsolatban a türelem, az egymás iránti legmélyebb, feltétel nélküli kölcsönös tisztelet, valamint a páratlanul erős intellektuális és lelki összhang az idő múlásával fokozatosan, egyre erősebben mélyült el, míg végül a világ egyik legkülönlegesebb és legstabilabb szerelmi szövetségévé nem kovácsolódott.
 
+Raimondo, Selena és Bailey története egy mélyen rétegzett, feszültséggel és politikai intrikákkal teli érzelmi háromszög, amely éveken át ívelve formálta a Chease-dinasztia uralkodójának személyiségét és végleges választását.
+
+### Az ifjúkor és a stabilitás évei: Raimondo és Bailey (2011–2014)
+
+A történet alapjai 2011-ben dőlnek el, amikor Raimondo és Bailey útjai keresztezik egymást az SS Tipton fedélzetén. Ez a korai találkozás egy olyan időszakban történik, amikor a személyiségek még csak formálódnak. 2011 szeptembere és 2012 júniusa között együtt tanulnak a Seven Seas High School falai között, ami megteremti a mindennapi intimitást és a közös élmények bázisát.
+
+A szoros barátság 2012-re érik be igazán, ekkor válik Bailey Raimondo első komoly, meghatározó barátnőjévé. A kapcsolatuk a közös jövőkép mentén épül tovább: 2012-től mindketten a rangos Nova Aurelia Economic University hallgatóiként folytatják tanulmányaikat. Ez az időszak a stabilitást, a közös egyetemi éveket és egy intellektuális szövetség nyugalmát jelenti Raimondo számára.
+
+### A katalizátor és a politikai felemelkedés (2014–2015)
+
+A nyugodt egyetemi dinamika 2014-ben vesz radikális fordulatot, amikor Raimondo a *Mátrix 4* forgatásán találkozik Selena Gomezzel. Selena belépése a képbe nem egy azonnali, nyílt konfliktust eredményez. Sőt, a helyzet sajátos pszichológiai mélységét az adja, hogy Selena és Bailey baráti viszonyt alakítanak ki egymással. A felszínen béke és harmónia honol, miközben a háttérben Raimondo és Selena között egy megmagyarázhatatlan, egyre szorosabb és elkerülhetetlenebb kötelék kezd kibontakozni.
+
+2015 egy igazi mérföldkő mindhármuk életében: mindannyian bekerülnek a nagypolitikába, és szenátori pozícióba emelkednek. Ez a politikai erőtér teljesen új szintre emeli a hármasuk dinamikáját. A hatalom, a felelősség és a folyamatos nyilvános szereplés nyomása alatt az emberi viszonyok is átrendeződnek.
+
+### A kettős élet: A titkos szövetség (2015–2016)
+
+A 2015 és 2016 közötti korszak a történet legintenzívebb és legkockázatosabb időszaka. A nyilvánosság és a hivatalos protokoll felé Raimondo továbbra is a megbízható, stabil párt alkotja Baileyvel. A zárt ajtók mögött azonban a politikai szövetségesként és barátként indult viszony Selenával átlépi a határokat.
+
+Raimondo és Selena egyre közelebb kerülnek egymáshoz, és egy "barátság extrákkal" jellegű, mélyen intim, de titkos kapcsolat alakul ki közöttük. Ez a fázis egy érzelmi kötéltánc: Raimondo kénytelen lavírozni az első komoly szerelme iránti lojalitás és az új, mindent elsöprő, intellektuális és fizikai vonzalom között, amit Selena jelent számára. Selena és Bailey barátsága miatt ez a titok hatalmas érzelmi teherrel és feszültséggel jár.
+
+### A töréspont és az új korszak hajnala (2017)
+
+A kettős élet nem fenntartható a végtelenségig, és a feszültség 2017 tavaszán éri el a kritikus pontot. Márciusban Raimondo és Selena egy közös thaiföldi nyaralásra utaznak. Ez a zárt, külvilágtól elzárt egzotikus utazás jelenti a végső tisztánlátást és a katalizátort. A thaiföldi út után nincs visszaút: a hazatérést követően a fenntarthatatlanná vált helyzet felszínre tör, és Raimondo, valamint Bailey hivatalosan is lezárják az éveken át tartó kapcsolatukat.
+
+Az átmenet kíméletlen és viharos tempójú. A szakítást követően alig telik el néhány nap, és a sokáig titkolt vonzalom a nyilvánosság elé kerül: Raimondo és Selena hivatalosan is bejelentik, hogy egy párt alkotnak. Ezzel a határozott lépéssel nemcsak Bailey korszaka zárul le végérvényesen, hanem megkezdődik annak a "power couple" szövetségnek az épülése, amely egy megállíthatatlan globális birodalom élére repíti Raimondót és Selenát.
+
 ### Az első találkozás és a döntő pillanat
 
 2014-ben a Mátrix 4 forgatásán találkoztak először, ahol azonnali szellemi összhang alakult ki köztük, bár ekkor még mindketten mással voltak kapcsolatban (Raimondo Bailey-vel, Selena pedig Justinnal). Selena már ekkor érezte, hogy különleges kötelék fűzi Raimondóhoz, és egy spontán pillanatban, a stáb pletykái szerint egy forgatási szünetben, a szálloda erkélyén közel hajolt hozzá. A levegő megfagyott köztük, amikor a lány megcsókolta Raimondót. Raimondo azonban hűséges volt Bailey-hez, és tiszteletteljesen visszalépett.
