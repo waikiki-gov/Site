@@ -9,9 +9,13 @@
 .economy-stat {
   text-align: center;
   padding: 2rem;
-  background: var(--primary);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   color: var(--white);
   border-radius: 16px;
+  box-shadow: var(--glass-inner-reflection), var(--glass-shadow);
   transition: all var(--animation-duration) var(--transition-easing);
   animation: fadeInUp var(--animation-duration) ease-out backwards;
   position: relative;
@@ -20,8 +24,10 @@
 }
 
 .economy-stat:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(0, 113, 188, 0.3);
+  box-shadow: var(--glass-inner-reflection-hover), var(--glass-shadow-hover);
 }
 
 .economy-number {
@@ -74,17 +80,22 @@
 }
 
 .timeline-content {
-  background: var(--white);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--glass-inner-reflection), var(--glass-shadow);
   max-width: 45%;
   transition: all var(--animation-duration) var(--transition-easing);
 }
 
 .timeline-content:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
   transform: translateY(-8px) scale(1.03);
-  box-shadow: var(--card-shadow-hover);
+  box-shadow: var(--glass-inner-reflection-hover), var(--glass-shadow-hover);
 }
 
 .timeline-year {
@@ -144,8 +155,9 @@
 
 /* DARK MODE */
 .body-dark .timeline-content {
-  background: var(--dark-bg);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-inner-reflection), var(--glass-shadow);
 }
 
 .body-dark .timeline-text {
@@ -153,7 +165,9 @@
 }
 
 .body-dark .timeline-content:hover {
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35);
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-inner-reflection-hover), var(--glass-shadow-hover);
 }
 
 .body-dark .timeline-year {
