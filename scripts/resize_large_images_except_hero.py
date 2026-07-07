@@ -4,15 +4,15 @@ import sys
 import re
 
 site_dir = "/Volumes/Samsung X5 SSD/Projektek/Site"
-MAX_SIZE = 1500  # Maximum allowed width or height in pixels
-TARGET_SIZE = 1280  # Target size for resizing
+TARGET_WIDTH = 1280
+TARGET_HEIGHT = 720
 
 # Supported image extensions (case-insensitive)
 IMAGE_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.webp', '.gif', '.tiff', '.bmp')
 
-def get_hero_images(site_dir):
-    """Finds all images used in elements with a class containing 'hero' in HTML files."""
-    hero_image_paths = set()
+def get_excluded_images(site_dir):
+    """Finds all images used in elements with a class containing 'hero' or 'portrait' in HTML files."""
+    excluded_image_paths = set()
     
     for root, dirs, files in os.walk(site_dir):
         # Skip hidden directories like .git or .github
@@ -35,18 +35,24 @@ def get_hero_images(site_dir):
                             url_match = re.search(r'url\([\'"]?([^\'"\)]+)[\'"]?\)', attrs)
                             if url_match:
                                 img_url = url_match.group(1)
-                                hero_image_paths.add((img_url, html_path))
+                                excluded_image_paths.add((img_url, html_path))
                                 
                             # Extract src="..." if present (used in <img> tags)
                             src_match = re.search(r'src=[\'"]([^\'"]+)[\'"]', attrs)
                             if src_match:
                                 img_url = src_match.group(1)
-                                hero_image_paths.add((img_url, html_path))
+                                excluded_image_paths.add((img_url, html_path))
+
+                    # Also find images within 'portrait' class divs
+                    portrait_pattern = re.compile(r'<div[^>]*class="[^"]*portrait[^"]*"[^>]*>\s*<img[^>]*src=[\'"]([^\'"]+)[\'"]', re.IGNORECASE)
+                    for match in portrait_pattern.finditer(content):
+                        excluded_image_paths.add((match.group(1), html_path))
+
                 except Exception as e:
                     print(f"Error reading {html_path}: {e}", file=sys.stderr)
 
     resolved_paths = set()
-    for img_url, html_path in hero_image_paths:
+    for img_url, html_path in excluded_image_paths:
         # Ignore data URIs or absolute external URLs
         if img_url.startswith('data:') or img_url.startswith(('http://', 'https://')):
             continue
@@ -81,10 +87,10 @@ def get_image_dimensions(file_path):
     return None, None
 
 def resize_image(file_path):
-    """Resizes the image using 'mogrify -resize {TARGET_SIZE}x{TARGET_SIZE}>'."""
+    """Resizes and crops the image to exactly {TARGET_WIDTH}x{TARGET_HEIGHT}."""
     try:
         subprocess.run(
-            ['mogrify', '-resize', f'{TARGET_SIZE}x{TARGET_SIZE}>', file_path],
+            ['mogrify', '-resize', f'{TARGET_WIDTH}x{TARGET_HEIGHT}^', '-gravity', 'center', '-extent', f'{TARGET_WIDTH}x{TARGET_HEIGHT}', file_path],
             check=True
         )
         return True
@@ -95,8 +101,8 @@ def resize_image(file_path):
 def main():
     print(f"Scanning for images in: {site_dir}")
     
-    hero_images = get_hero_images(site_dir)
-    print(f"Found {len(hero_images)} hero images to exclude.")
+    excluded_images = get_excluded_images(site_dir)
+    print(f"Found {len(excluded_images)} excluded images (hero/portrait).")
     
     image_paths = []
     for root, dirs, files in os.walk(site_dir):
@@ -104,17 +110,17 @@ def main():
         dirs[:] = [d for d in dirs if not d.startswith('.')]
         
         for file in files:
-            if file.startswith('.'):
+            if not file.startswith('UniversalUpscaler'):
                 continue
             ext = os.path.splitext(file)[1].lower()
             if ext in IMAGE_EXTENSIONS:
                 abs_path = os.path.join(root, file)
-                if abs_path not in hero_images:
+                if abs_path not in excluded_images:
                     image_paths.append(abs_path)
 
-    print(f"Found {len(image_paths)} images to process (excluding hero images).")
+    print(f"Found {len(image_paths)} images to process (excluding hero/portrait images).")
     
-    large_images_count = 0
+    images_to_resize_count = 0
     resized_count = 0
     
     for path in image_paths:
@@ -124,9 +130,9 @@ def main():
         if width is None or height is None:
             continue
             
-        if width > MAX_SIZE or height > MAX_SIZE:
-            large_images_count += 1
-            print(f"Large image found: {rel_path} ({width}x{height}px)")
+        if width != TARGET_WIDTH or height != TARGET_HEIGHT:
+            images_to_resize_count += 1
+            print(f"Image needs resizing/cropping: {rel_path} ({width}x{height}px)")
             
             # Perform resize
             if resize_image(path):
@@ -140,9 +146,9 @@ def main():
                 print("  -> Failed to resize")
 
     print("\nSummary:")
-    print(f"Total hero images excluded: {len(hero_images)}")
+    print(f"Total hero/portrait images excluded: {len(excluded_images)}")
     print(f"Total images scanned: {len(image_paths)}")
-    print(f"Images larger than {MAX_SIZE}: {large_images_count}")
+    print(f"Images needing resize/crop: {images_to_resize_count}")
     print(f"Successfully resized images: {resized_count}")
 
 if __name__ == '__main__':
