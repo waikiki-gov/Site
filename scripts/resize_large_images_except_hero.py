@@ -4,11 +4,11 @@ import sys
 import re
 
 site_dir = "/Volumes/Samsung X5 SSD/Projektek/Site"
-TARGET_WIDTH = 1280
-TARGET_HEIGHT = 720
+TARGET_WIDTH = 2560
+TARGET_HEIGHT = 1440
 
 # Supported image extensions (case-insensitive)
-IMAGE_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.webp', '.gif', '.tiff', '.bmp')
+IMAGE_EXTENSIONS = ('.jpg', '.jpeg')
 
 def get_excluded_images(site_dir):
     """Finds all images used in elements with a class containing 'hero' or 'portrait' in HTML files."""
