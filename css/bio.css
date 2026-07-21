@@ -1,0 +1,25 @@
+/* Selena Gomez Biography Stylesheet */
+
+/* Bio summary list formatting */
+.bio-summary {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: #BC9200;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+/* Narrative section titles */
+#narrative .section-title {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+/* Bio closing quote */
+.bio-quote {
+    font-style: italic;
+    text-align: center;
+    margin-top: 3rem;
+}

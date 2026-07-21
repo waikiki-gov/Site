@@ -4,6 +4,7 @@ import sys
 
 site_dir = "/Volumes/Samsung X5 SSD/Projektek/Site"
 MAX_SIZE = 5520  # Maximum allowed width or height in pixels
+TARGET_SIZE = 5120  # Target size for resizing
 
 # Supported image extensions (case-insensitive)
 IMAGE_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.webp', '.gif', '.tiff', '.bmp')
@@ -26,10 +27,10 @@ def get_image_dimensions(file_path):
     return None, None
 
 def resize_image(file_path):
-    """Resizes the image using 'mogrify -resize 5120x5120>'."""
+    """Resizes the image using 'mogrify -resize {TARGET_SIZE}x{TARGET_SIZE}>'."""
     try:
         subprocess.run(
-            ['mogrify', '-resize', '5120x5120>', file_path],
+            ['mogrify', '-resize', f'{TARGET_SIZE}x{TARGET_SIZE}>', file_path],
             check=True
         )
         return True
