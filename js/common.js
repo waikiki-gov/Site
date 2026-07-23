@@ -190,6 +190,41 @@ function initHamburgerMenu() {
 }
 
 /**
+ * Initialize language selector logic
+ */
+function initLanguageSelector() {
+    const selector = document.querySelector('.hamburger-lang-selector');
+    if (!selector) return;
+
+    const path = window.location.pathname;
+    const isHu = path.includes('/hu/');
+    const isEn = path.includes('/en/');
+
+    const huOption = selector.querySelector('.lang-option.hu');
+    const enOption = selector.querySelector('.lang-option.en');
+
+    if (isHu) {
+        if (huOption) huOption.classList.add('active');
+        if (enOption) {
+            enOption.classList.remove('active');
+            const targetPath = path.replace('/hu/', '/en/');
+            if (targetPath !== path && (!enOption.getAttribute('href') || enOption.getAttribute('href') === '#')) {
+                enOption.href = targetPath;
+            }
+        }
+    } else if (isEn) {
+        if (enOption) enOption.classList.add('active');
+        if (huOption) {
+            huOption.classList.remove('active');
+            const targetPath = path.replace('/en/', '/hu/');
+            if (targetPath !== path && (!huOption.getAttribute('href') || huOption.getAttribute('href') === '#')) {
+                huOption.href = targetPath;
+            }
+        }
+    }
+}
+
+/**
  * Initialize all common functionality
  */
 function initCommon() {
@@ -197,6 +232,7 @@ function initCommon() {
     initFadeInObserver();
     initNavigationHighlight();
     initHamburgerMenu();
+    initLanguageSelector();
 
     console.log('Waikiki Official Website - Common Scripts Loaded');
 }
