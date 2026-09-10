@@ -120,7 +120,7 @@ Az igazságügyminiszter részt vesz a törvényjavaslatok előkészítésében 
  
 ## Bíróságok
 Waikiki négy szintű bírósági rendszerrel rendelkezik, melyek fellebbviteli sorrendben a megyei bíróságok, a regionális bíróságok, a tartományi bíróságok és a Legfelsőbb Bíróság.
-A Legfelsőbb Bíróság tagjait és Waikiki főbíróját a Szenátus nevezi ki. Megbízatásuk 7 évre szól és korlátlan alkalommal meghosszabbítható.
+A Legfelsőbb Bíróság tagjait és Waikiki főbíróját az Elnök javaslatára a Szenátus nevezi ki. Megbízatásuk 7 évre szól és korlátlan alkalommal meghosszabbítható.
 A Legfelsőbb Bíróság tagjai felügyelik a kormány törvényeknek megfelelő működését és az alkotmány betartását.
 A jogszabályokat, náluk magasabb törvénnyel vagy az alkotmánnyal való ellentmondásuk esetén a Legfelsőbb Bíróság érvényteleníti, és visszaküldi az azt megalkotó szervnek.
 A Legfelsőbb Bíróság az alkotmányellenességről soron kívül, de legkésőbb harminc napon belül határoz, ha alkotmányellenességet állapít meg, azonnal hatályon kívül helyezi az adott jogszabályt.
@@ -166,7 +166,7 @@ Országos hatályú rendeletalkotási joggal rendelkezik a Diktátor, az Elnök,
 Helyi hatályú rendeletet alkothatnak az önkormányzatok. Az önkormányzati rendeletek meghozatalához helyi népszavazás szükséges.
 Egyetlen jogszabály visszavonásához sem lehet szükség nagyobb felhatalmazásra, mint ami az elfogadásához szükséges.
 Törvényt a Diktátor, a kancellár, az Elnök, a Kormány tagjai, a Kongresszusi képviselők vagy a Szenátus bármely tagja kezdeményezhet.
-Az elfogadott törvényt a Parlament öt napon belül megküldi a Diktátornak, aki a megküldött törvényt öt napon belül aláírja, és elrendeli annak kihirdetését vagy gyakorolja vétójogát.
+Az elfogadott törvényt a Parlament öt napon belül megküldi a Diktátornak, aki a megküldött törvényt öt napon belül aláírja, és elrendeli annak kihirdetését vagy gyakorolja vétójogát, melyet a törvényhozás a szavazatok kétharmadával felülírhat.
 Ha bármely képviselő egy törvényt vagy annak valamely rendelkezését az Alkotmánnyal ellentétesnek tart, vizsgálatára küldheti azt a Legfelsőbb Bíróságnak.
  
 ## Rendkívüli jogrend
@@ -223,7 +223,7 @@ Waikiki állampolgárai, akár a lakóhelyüktől távol, online formában, vagy
 ## Diktátori jogok
 A Diktátor az Alkotmánnyal és az ország törvényeivel összhangban, a Kormánnyal megosztva gyakorolja a végrehajtó hatalmat.
 A Diktátor törvényjavaslatokat és más intézkedéseket terjeszthet a Parlament elé és népszavazási kezdeményezéseket nyújthat be.
-A Parlament által elfogadott törvényjavaslatokkal szemben a Diktátor vétójogot gyakorolhat, melynek esetén a törvény nem lép hatályba.
+A Parlament által elfogadott törvényjavaslatokkal szemben a Diktátor vétójogot gyakorolhat, melyet a törvényhozás a szavazatok kétharmadával felülírhat.
 A Diktátor rendeletet alkothat a Nemzeti Bank által kibocsátott pénz mennyiségéről vagy más olyan kérdésről, melyet törvény nem szabályoz.
 A diktátori rendeletek a törvénynél alacsonyabb szintű, de más rendeleteknél magasabban elhelyezkedő jogszabályok.
 A Diktátor dönt a Szenátus felépítéséről, tagjairól és fizetéséről. A Diktátor szabadon módosíthatja a Szenátus összetételét.
