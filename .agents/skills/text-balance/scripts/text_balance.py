@@ -60,8 +60,9 @@ class ComponentParser(html.parser.HTMLParser):
         attr_dict = dict(attrs)
         classes = attr_dict.get("class", "").split()
 
+        NON_CARD_PREFIXES = ("card-grid", "card-list", "card-container", "card-group", "card-icon", "card-media", "card-image", "card-img", "card-header", "card-body", "card-footer", "card-actions")
         is_card = tag in ("div", "article", "li") and any(
-            cls == "card" or cls.endswith("-card") or cls.startswith("card-") for cls in classes
+            cls == "card" or cls.endswith("-card") or (cls.startswith("card-") and not any(cls.startswith(pfx) for pfx in NON_CARD_PREFIXES)) for cls in classes
         )
 
         if tag == "section":
@@ -74,14 +75,19 @@ class ComponentParser(html.parser.HTMLParser):
         elif is_card:
             self.in_card = True
             self.cur_card_tag = tag
+            self.card_depth = 1
             self.cur_title = []
             self.cur_p = []
             self.cur_specs_count = 0
         elif self.in_card:
-            if tag in ("h2", "h3", "h4") or "title" in attr_dict.get("class", ""):
+            if tag == getattr(self, "cur_card_tag", "div"):
+                self.card_depth += 1
+            if tag in ("h2", "h3", "h4") or any("title" in cls or "name" in cls for cls in classes):
                 self.in_h3 = True
-            elif tag == "p":
+                self.cur_h3_tag = tag
+            elif tag == "p" or any("desc" in cls or "description" in cls or "bio" in cls for cls in classes):
                 self.in_p = True
+                self.cur_p_tag = tag
             elif tag in ("ul", "ol") and "spec-list" in classes:
                 self.in_spec_list = True
             elif tag == "li" and self.in_spec_list:
@@ -90,23 +96,26 @@ class ComponentParser(html.parser.HTMLParser):
     def handle_endtag(self, tag):
         if tag == "section":
             self.current_sec = None
-        elif self.in_card and tag == getattr(self, "cur_card_tag", "div"):
-            self.in_card = False
-            if self.current_sec:
-                title = " ".join("".join(self.cur_title).split())
-                p_text = " ".join("".join(self.cur_p).split())
-                if p_text:  # only track cards with descriptive prose
-                    self.current_sec["cards"].append({
-                        "title": title or "(Untitled Card)",
-                        "text": p_text,
-                        "char_count": len(p_text),
-                        "word_count": len(p_text.split()) if p_text else 0,
-                        "spec_count": self.cur_specs_count,
-                    })
-        elif tag in ("h2", "h3", "h4") and self.in_h3:
-            self.in_h3 = False
-        elif tag == "p" and self.in_p:
-            self.in_p = False
+        elif self.in_card:
+            if tag == getattr(self, "cur_card_tag", "div"):
+                self.card_depth -= 1
+                if self.card_depth == 0:
+                    self.in_card = False
+                    if self.current_sec:
+                        title = " ".join("".join(self.cur_title).split())
+                        p_text = " ".join("".join(self.cur_p).split())
+                        if p_text:  # only track cards with descriptive prose
+                            self.current_sec["cards"].append({
+                                "title": title or "(Untitled Card)",
+                                "text": p_text,
+                                "char_count": len(p_text),
+                                "word_count": len(p_text.split()) if p_text else 0,
+                                "spec_count": self.cur_specs_count,
+                            })
+            if self.in_h3 and tag == getattr(self, "cur_h3_tag", tag):
+                self.in_h3 = False
+            if self.in_p and tag == getattr(self, "cur_p_tag", tag):
+                self.in_p = False
         elif tag in ("ul", "ol") and self.in_spec_list:
             self.in_spec_list = False
 
@@ -160,17 +169,23 @@ def measure_with_browser(file_path: Path, width: int = VIEWPORT_WIDTH, height: i
     # Layout probe script that computes exact rendered line count
     probe_script = f"""
     <script id="text-balance-probe">
-    window.addEventListener('DOMContentLoaded', () => {{
+    window.addEventListener('DOMContentLoaded', async () => {{
+        try {{ if (document.fonts) await document.fonts.ready; }} catch(e) {{}}
         setTimeout(() => {{
             const results = {{}};
             document.querySelectorAll('section').forEach(sec => {{
                 const secId = sec.id || 'sec';
-                const cards = sec.querySelectorAll('.card, [class*="-card"], [class*="card-"]');
+                const cards = Array.from(sec.querySelectorAll('.card, [class*="-card"], [class^="card-"]')).filter(el => {{
+                    const cls = typeof el.className === 'string' ? el.className : '';
+                    if (/card-(grid|list|container|group|icon|media|image|img|header|body|footer|actions)/.test(cls)) return false;
+                    if (el.querySelector('.card, [class*="-card"]')) return false;
+                    return true;
+                }});
                 if (cards.length > 1) {{
                     const cardList = [];
                     cards.forEach((c, idx) => {{
-                        const h3 = c.querySelector('h2, h3, h4, [class*="title"]');
-                        const p = c.querySelector('p');
+                        const h3 = c.querySelector('h2, h3, h4, [class*="title"], [class*="name"]');
+                        const p = c.querySelector('p, [class*="description"], [class*="desc"], [class*="bio"], [class*="text"]');
                         if (p) {{
                             let lines = 0;
                             try {{
@@ -239,7 +254,7 @@ def measure_with_browser(file_path: Path, width: int = VIEWPORT_WIDTH, height: i
     return None
 
 
-def audit_file(file_path: Path, use_browser: bool = False, only_imbalanced: bool = False, width: int = VIEWPORT_WIDTH, max_imbalance: int = 2) -> int:
+def audit_file(file_path: Path, use_browser: bool = True, only_imbalanced: bool = False, width: int = VIEWPORT_WIDTH, max_imbalance: int = 2) -> int:
     parser = ComponentParser()
     try:
         content = file_path.read_text(encoding="utf-8", errors="ignore")
@@ -338,12 +353,15 @@ def audit_file(file_path: Path, use_browser: bool = False, only_imbalanced: bool
 def main():
     parser = argparse.ArgumentParser(description="Audit and unify component text lengths and line counts on a page (always 2560px desktop width by default)")
     parser.add_argument("file", nargs="?", help="HTML file to audit (e.g. hu/space-research.html)")
-    parser.add_argument("--browser", "-b", action="store_true", help="Use headless Google Chrome for exact rendered line counts (at 2560px)")
+    parser.add_argument("--static", "--no-browser", action="store_true", help="Use fast static heuristic estimation instead of live browser rendering")
+    parser.add_argument("--browser", "-b", action="store_true", default=True, help="Use live Playwright/Chrome browser for exact rendered line counts (default: enabled)")
     parser.add_argument("--width", "-w", type=int, default=VIEWPORT_WIDTH, help=f"Viewport width for browser test (default: {VIEWPORT_WIDTH}px)")
     parser.add_argument("--all", "-a", action="store_true", help="Audit all English and Hungarian content pages")
     parser.add_argument("--imbalanced", "-i", action="store_true", help="Only display sections with imbalanced line counts (variance > max_imbalance)")
     parser.add_argument("--max-imbalance", "-m", type=int, default=2, help="Maximum allowed line variance between min and max cards in a section grid (default: 2; e.g. 4 and 6 are ok, 4 and 7 are imbalanced)")
     args = parser.parse_args()
+
+    use_browser = not args.static
 
     print("=================================================================")
     print(f" Sovereign Nation of Waikiki — Component Text Balance Auditor ({args.width}px, max imbalance: {args.max_imbalance})")
@@ -370,7 +388,7 @@ def main():
     for f in target_files:
         total_imbalanced += audit_file(
             f,
-            use_browser=args.browser,
+            use_browser=use_browser,
             only_imbalanced=args.imbalanced,
             width=args.width,
             max_imbalance=args.max_imbalance,

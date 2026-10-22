@@ -48,18 +48,28 @@ async function measurePage(filePath, width = 2560, height = 1440) {
         });
 
         await page.goto(`file://${absPath}`, { waitUntil: 'domcontentloaded' });
-        await page.waitForTimeout(200);
+
+        // Ensure web fonts are fully loaded for precise typographic line measurements
+        await page.evaluate(async () => {
+            if (document.fonts) await document.fonts.ready;
+        });
+        await page.waitForTimeout(100);
 
         const results = await page.evaluate(() => {
             const data = {};
             document.querySelectorAll('section').forEach(sec => {
                 const secId = sec.id || sec.className.split(' ')[0] || 'section';
-                const cards = sec.querySelectorAll('.card, [class*="-card"], [class*="card-"]');
+                const cards = Array.from(sec.querySelectorAll('.card, [class*="-card"], [class^="card-"]')).filter(el => {
+                    const cls = typeof el.className === 'string' ? el.className : '';
+                    if (/card-(grid|list|container|group|icon|media|image|img|header|body|footer|actions)/.test(cls)) return false;
+                    if (el.querySelector('.card, [class*="-card"]')) return false;
+                    return true;
+                });
                 if (cards.length > 1) {
                     const cardList = [];
                     cards.forEach((c, idx) => {
-                        const h3 = c.querySelector('h2, h3, h4, [class*="title"]');
-                        const p = c.querySelector('p');
+                        const h3 = c.querySelector('h2, h3, h4, [class*="title"], [class*="name"]');
+                        const p = c.querySelector('p, [class*="description"], [class*="desc"], [class*="bio"], [class*="text"]');
                         if (p) {
                             let lines = 0;
                             try {
