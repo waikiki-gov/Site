@@ -108,7 +108,7 @@ window.__runLayoutAudit = function(isDark) {
 
     // 2. Text Clipping Check
     document.querySelectorAll('p, h1, h2, h3, h4, span.spec-badge, .btn, a.next-card, li').forEach(el => {
-        if (el.closest('#site-menu') || el.closest('.site-menu')) return;
+        if (el.closest('#site-menu') || el.closest('.site-menu') || el.classList.contains('visually-hidden') || el.closest('.visually-hidden')) return;
         const cs = window.getComputedStyle(el);
         if (cs.display === 'none' || cs.visibility === 'hidden') return;
 
@@ -231,10 +231,12 @@ window.__runLayoutAudit = function(isDark) {
 
     // 5. Broken Images Check
     document.querySelectorAll('img').forEach(img => {
+        const rawSrc = (img.getAttribute('src') || '').trim();
+        if (!rawSrc) return; // Skip unpopulated modal/lightbox image placeholders
         if (img.src && img.complete && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
             report.brokenMedia.push({
                 selector: getElementSelector(img),
-                src: img.getAttribute('src') || ''
+                src: rawSrc
             });
         }
     });
