@@ -231,7 +231,7 @@ window.__runLayoutAudit = function(isDark) {
 
     // 5. Broken Images Check
     document.querySelectorAll('img').forEach(img => {
-        if (img.src && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
+        if (img.src && img.complete && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
             report.brokenMedia.push({
                 selector: getElementSelector(img),
                 src: img.getAttribute('src') || ''
@@ -287,7 +287,20 @@ def execute_browser_audit(file_path: Path, width: int, height: int, is_dark: boo
     runner_script = f"""
     {AUDIT_JS_PROBE}
     <script>
-    window.addEventListener('DOMContentLoaded', () => {{
+    window.addEventListener('DOMContentLoaded', async () => {{
+        try {{
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {{
+                img.loading = 'eager';
+            }});
+            await Promise.all(Array.from(document.querySelectorAll('img')).map(img => {{
+                if (img.complete) return Promise.resolve();
+                return new Promise(resolve => {{
+                    img.addEventListener('load', resolve, {{ once: true }});
+                    img.addEventListener('error', resolve, {{ once: true }});
+                    setTimeout(resolve, 2000);
+                }});
+            }}));
+        }} catch(e) {{}}
         setTimeout(() => {{
             try {{
                 const res = window.__runLayoutAudit({theme_bool});
@@ -301,7 +314,7 @@ def execute_browser_audit(file_path: Path, width: int, height: int, is_dark: boo
                 err.textContent = JSON.stringify({{ error: String(e) }});
                 document.body.appendChild(err);
             }}
-        }}, 400);
+        }}, 200);
     }});
     </script>
     """

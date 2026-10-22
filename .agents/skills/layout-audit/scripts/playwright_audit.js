@@ -217,7 +217,7 @@ function evaluatePage(isDark) {
 
     // 5. Broken Media Check
     document.querySelectorAll('img').forEach(img => {
-        if (img.src && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
+        if (img.src && img.complete && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
             report.brokenMedia.push({
                 selector: getElementSelector(img),
                 src: img.getAttribute('src') || ''
@@ -269,7 +269,21 @@ async function runAudit(filePath, requestedWidths, requestedModes) {
                 });
 
                 await page.goto(fileUrl, { waitUntil: 'domcontentloaded' });
-                await page.waitForTimeout(250);
+                // Force all lazy images to load eagerly and wait for them to finish
+                await page.evaluate(async () => {
+                    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                        img.loading = 'eager';
+                    });
+                    await Promise.all(Array.from(document.querySelectorAll('img')).map(img => {
+                        if (img.complete) return Promise.resolve();
+                        return new Promise(resolve => {
+                            img.addEventListener('load', resolve, { once: true });
+                            img.addEventListener('error', resolve, { once: true });
+                            setTimeout(resolve, 2500);
+                        });
+                    }));
+                });
+                await page.waitForTimeout(150);
 
                 const auditData = await page.evaluate(evaluatePage, isDark);
 
