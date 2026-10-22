@@ -463,6 +463,7 @@ def main():
     parser = argparse.ArgumentParser(description="Multi-viewport, multi-theme layout and contrast checker")
     parser.add_argument("file", nargs="?", help="Specific HTML file to inspect (e.g. hu/overview.html)")
     parser.add_argument("--all", "-a", action="store_true", help="Audit all English and Hungarian pages")
+    parser.add_argument("--lang", "-l", choices=["hu", "en"], help="Audit all pages for a specific language (hu or en)")
     parser.add_argument("--widths", "-w", default="2560,1280,430", help="Comma-separated widths: 2560, 1280, 430 (default: all)")
     parser.add_argument("--modes", "-m", default="light,dark", help="Comma-separated themes: light, dark (default: both)")
     parser.add_argument("--json", "-j", action="store_true", help="Output JSON results")
@@ -477,12 +478,19 @@ def main():
     print("=================================================================")
 
     if args.file:
-        files = [Path(args.file).resolve()]
+        p = Path(args.file).resolve()
+        if p.is_dir():
+            files = sorted(f for f in p.rglob("*.html") if f.is_file())
+        else:
+            files = [p]
+    elif args.lang:
+        p = ROOT / args.lang
+        files = sorted(f for f in p.rglob("*.html") if f.is_file())
     elif args.all:
         files = []
         for lang in ("hu", "en"):
             p = ROOT / lang
-            files.extend(p.glob("*.html"))
+            files.extend(sorted(f for f in p.rglob("*.html") if f.is_file()))
         files.sort()
     else:
         # Default test page
