@@ -365,7 +365,6 @@
 
 .island-tab-btn.is-active svg,
 .island-tab-btn[aria-selected="true"] svg {
-  color: var(--accent-subtle);
   transform: scale(1.1);
 }
 
