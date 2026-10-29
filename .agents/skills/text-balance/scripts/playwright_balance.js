@@ -56,20 +56,28 @@ async function measurePage(filePath, width = 2560, height = 1440) {
         await page.waitForTimeout(100);
 
         const results = await page.evaluate(() => {
+            // Temporarily unhide tabpanes for accurate measurement of cards inside tabs
+            document.querySelectorAll('.aircraft-tab-pane, [role="tabpanel"], .tab-pane').forEach(el => el.style.display = 'block');
+
             const data = {};
             document.querySelectorAll('section').forEach(sec => {
                 const secId = sec.id || sec.className.split(' ')[0] || 'section';
-                const cards = Array.from(sec.querySelectorAll('.card, [class*="-card"], [class^="card-"]')).filter(el => {
+                const rawCards = Array.from(sec.querySelectorAll('.card, [class*="-card"], [class^="card-"]')).filter(el => {
                     const cls = typeof el.className === 'string' ? el.className : '';
+                    if (/-(title|desc|description|role|name|image|img|icon|badge|meta|header|footer|body|actions|label|wrapper|inner|content|banner|tagline)/.test(cls)) return false;
                     if (/card-(grid|list|container|group|icon|media|image|img|header|body|footer|actions)/.test(cls)) return false;
-                    if (el.querySelector('.card, [class*="-card"]')) return false;
                     return true;
                 });
+                const cards = rawCards.filter(el => !rawCards.some(other => other !== el && el.contains(other)));
                 if (cards.length > 1) {
                     const cardList = [];
                     cards.forEach((c, idx) => {
                         const h3 = c.querySelector('h2, h3, h4, [class*="title"], [class*="name"]');
-                        const p = c.querySelector('p, [class*="description"], [class*="desc"], [class*="bio"], [class*="text"]');
+                        const ps = Array.from(c.querySelectorAll('p, [class*="description"], [class*="desc"], [class*="bio"], [class*="text"]'));
+                        let p = ps.find(el => /(description|desc|bio)/.test(el.className));
+                        if (!p && ps.length > 0) {
+                            p = ps.reduce((max, el) => (el.innerText.trim().length > max.innerText.trim().length ? el : max), ps[0]);
+                        }
                         if (p) {
                             let lines = 0;
                             try {
