@@ -93,7 +93,7 @@ WHITELIST = {
 
     # Classical History & Antiquity
     "caesarion", "caesarionnak", "caesarionba", "caesar", "augustus", "hadrian", "trajan",
-    "montezuma", "acamapichtli", "mies", "rohe", "gaudí", "gaudí's", "uffizi",
+    "vaikikia", "montezuma", "acamapichtli", "mies", "rohe", "gaudí", "gaudí's", "uffizi",
 
     # Geography & Landmarks
     "manaus", "manausban", "cancun", "rio", "janeiro", "riói", "bogota", "lima", "quito", "santiago",
