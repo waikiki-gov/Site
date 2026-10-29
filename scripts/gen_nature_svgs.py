@@ -1643,9 +1643,13 @@ def build_transect(labels):
     terrain = interp(keys)
 
     # Andes massif on the right with cirque glacier seated in the high saddle and blending into the alpine páramo
-    andes, _ = mountain(s, "andes", [(1295, 325), (1355, 252), (1405, 178), (1438, 142), (1475, 96), (1512, 146), (1548, 114), (1600, 162)],
+    andes, _ = mountain(s, "andes", [(1310, 320), (1362, 244), (1405, 178), (1438, 142), (1475, 96), (1512, 146), (1548, 114), (1600, 162)],
                         325, "#786454", shade="#24202c", shade_op=0.44, snow=168, rough=10)
     s.add(andes)
+    # Mid-ground vegetated Yungas / cloud-forest foothill ridge bridging Cerrado -> Cataracts -> Andes massif
+    foothill, _ = hill(s, [(1165, 366), (1225, 336), (1275, 298), (1328, 268), (1372, 256), (1425, 294)],
+                       370, "#4f6e48", rough=6)
+    s.add(foothill)
     # Valley glacier ribbon descending from the cirque saddle into a high alpine tarn & meltwater stream
     glac_l = [(1476, 134), (1466, 178), (1452, 224), (1434, 268), (1418, 294)]
     glac_r = [(1504, 142), (1490, 184), (1474, 228), (1458, 270), (1444, 293)]
@@ -1653,7 +1657,7 @@ def build_transect(labels):
              fill="#dceef8", opacity=0.92))
     s.add(el("path", d="M1462,182 Q1476,188 1488,184 M1448,224 Q1462,230 1472,226 M1434,262 Q1446,268 1456,264",
              stroke="#6b9ebc", stroke_width=1.2, fill="none", opacity=0.65))
-    s.add(mist(s, 1455, 248, 145, 18, op=0.62))
+    s.add(mist(s, 1465, 242, 135, 16, op=0.58))
 
     # Caribbean Sea water column (x=0..368, bounded smoothly by the sloping beach shoreline)
     sea_top = 412
@@ -1792,9 +1796,13 @@ def build_transect(labels):
         m_in.append(el("path", d=f"M{n(x0)},{n(top + 22)} Q{n((x0 + x1) * 0.5)},{n(top + 12)} {n(x1)},{n(top + 22)} L{n(x1)},{n(top)} L{n(x0)},{n(top)}Z",
                        fill="#24471e"))
         s.add(g(m_in, clip_path=cid))
-        for i in range(9):
-            vx = x0 + mw * (0.08 + 0.84 * i / 8)
-            s.add(crown(rng, vx, top + rng.uniform(3, 12) + abs(vx - (x0 + x1) * 0.5) * 0.15, rng.uniform(6.0, 8.5),
+        # Lush overhanging summit dome cap following the curved top contour naturally
+        for i in range(11):
+            t_ = i / 10
+            vx = x0 + mw * (0.06 + 0.88 * t_)
+            arch = ((t_ - 0.5) * 2) ** 2
+            vy = top - 2 + arch * 13 + rng.uniform(-1.2, 1.5)
+            s.add(crown(rng, vx, vy, rng.uniform(7.0, 9.5),
                         ("#20481e", "#3c6e2e", "#6ea044"), k=5, detail=False))
         # Basal piedmont shrubs blending the mogote base smoothly into the valley & adjacent biomes
         for i in range(6):
@@ -1847,13 +1855,16 @@ def build_transect(labels):
     s.add(termite_mound(1096, terrain(1096), 16), termite_mound(1210, terrain(1210), 13))
     s.add(maned_wolf(1170, terrain(1170) - 5, 0.58))
 
-    # Zone 6: Atlantic Forest Escarpment and Cataracts (1225-1340)
-    # Foothill shrubs & upper rim gallery forest clothing the basalt cliff transition
-    s.add(g(canopy_band(s, 1222, 1265, terrain, 6, 9, 14, ("#1d4828", "#2f6a35", "#5a9846"), lift=2, k=5)))
-    s.add(g(canopy_band(s, 1295, 1365, terrain, 9, 10, 16, ("#1b4628", "#2b6834", "#589846"), lift=3, k=5)))
-    s.add(waterfall(s, 1292, 303, 353, 14))
-    s.add(el("ellipse", cx=1278, cy=354, rx=24, ry=4.8, fill="#5cb8d4"))
-    s.add(water_lines(rng, 1260, 1296, 352, 356, 5, op=0.65))
+    # Zone 6: Atlantic Forest Escarpment and Cataracts (1225-1345)
+    # Foothill shrubs & upper rim gallery forest clothing the basalt cliff transition on both sides
+    s.add(g(canopy_band(s, 1225, 1272, terrain, 7, 9, 14, ("#1d4828", "#2f6a35", "#5a9846"), lift=2, k=5)))
+    s.add(g(canopy_band(s, 1298, 1362, terrain, 9, 10, 15, ("#1b4628", "#2b6834", "#589846"), lift=3, k=5)))
+    s.add(waterfall(s, 1290, 303, 353, 14))
+    s.add(el("ellipse", cx=1286, cy=355, rx=23, ry=4.8, fill=s.linear("cat_pool", [(0, "#72cce0"), (1, "#3b8da8")])))
+    s.add(water_lines(rng, 1268, 1302, 353, 357, 5, op=0.65))
+    # Mossy basalt bank stones framing the plunge pool transition
+    for bx, by, br in ((1262, 356, 5.5), (1306, 356, 6.0)):
+        s.add(el("path", d=f"M{n(bx - br)},{n(by)} Q{n(bx)},{n(by - br * 0.9)} {n(bx + br)},{n(by)}Z", fill="#3d3834"))
 
     # Zone 7: Andes Alpine Páramo & Cordillera (1340-1600)
     s.add(tufts(rng, 1345, 1595, terrain, 58, 9, "#b8a854"))
@@ -1866,7 +1877,6 @@ def build_transect(labels):
         y = terrain(x) + 2
         s.add(el("path", d=f"M{n(x - r)},{n(y)} L{n(x - r * 0.6)},{n(y - r * 0.7)} L{n(x + r * 0.5)},{n(y - r * 0.65)} L{n(x + r)},{n(y)}Z",
                  fill="#7a7b75"))
-    s.add(mist(s, 1410, 292, 115, 15, op=0.65))
     s.add(condor(1420, 118, 0.75))
 
     # Interactive Biome Badges
