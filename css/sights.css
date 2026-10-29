@@ -9,6 +9,11 @@
     padding: clamp(3rem, 6vw, 5rem) var(--gutter);
 }
 
+.sight-section .section-link-wrapper {
+    flex: 0 0 100%;
+    margin-top: calc(1.5rem - clamp(2.5rem, 5vw, 4.5rem));
+}
+
 .sight-image {
     flex: 1;
     min-width: min(100%, 360px);
@@ -142,6 +147,10 @@
 
     .sight-section.reverse {
         flex-direction: column-reverse;
+    }
+
+    .sight-section .section-link-wrapper {
+        order: -1;
     }
 }
 
