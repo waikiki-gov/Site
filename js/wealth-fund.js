@@ -5,6 +5,8 @@ Chart.defaults.font.family = "'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans
 Chart.defaults.font.size = 13;
 Chart.defaults.color = '#555555';
 
+const isHu = (document.documentElement.lang || '').toLowerCase().startsWith('hu');
+
 // Color constants
 const COLORS = {
     primary: '#0071BC',
@@ -120,7 +122,7 @@ function initFundGrowthChart() {
             labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
             datasets: [
                 {
-                    label: 'Fund Assets (Trillion WUD)',
+                    label: isHu ? 'Alap vagyona (billió WUD)' : 'Fund Assets (Trillion WUD)',
                     data: [0.03, 0.51, 3.16, 6.56, 9.46, 11.12],
                     borderColor: COLORS.gold,
                     backgroundColor: 'rgba(188, 146, 0, 0.1)',
@@ -135,7 +137,7 @@ function initFundGrowthChart() {
                     formatter: (value) => value.toFixed(2) + 'T'
                 },
                 {
-                    label: 'Fund Assets (Trillion USD)',
+                    label: isHu ? 'Alap vagyona (billió USD)' : 'Fund Assets (Trillion USD)',
                     data: [0.03, 0.61, 4.93, 13.13, 21.39, 25.58],
                     borderColor: COLORS.primary,
                     backgroundColor: 'rgba(0, 113, 188, 0.1)',
@@ -185,7 +187,7 @@ function initGDPRatioChart() {
         const data = {
             labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
             datasets: [{
-                label: 'Fund as % of GDP',
+                label: isHu ? 'Alap a GDP százalékában' : 'Fund as % of GDP',
                 data: [2, 11, 35, 48, 61, 61],
                 backgroundColor: [
                     'rgba(0, 113, 188, 0.8)',
@@ -251,7 +253,7 @@ function initProjectionChart() {
             labels: ['2025', '2027', '2029', '2031', '2033', '2035', '2037', '2039'],
             datasets: [
                 {
-                    label: 'Projected Assets (Trillion WUD)',
+                    label: isHu ? 'Tervezett vagyon (billió WUD)' : 'Projected Assets (Trillion WUD)',
                     data: [11.12, 11.82, 12.91, 13.68, 14.27, 15.08, 16.14, 16.58],
                     borderColor: COLORS.gold,
                     backgroundColor: 'rgba(188, 146, 0, 0.7)',
