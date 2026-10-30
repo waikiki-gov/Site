@@ -103,8 +103,6 @@ SEQUENCE: list[str] = []
 for _, _, _pages in GROUPS:
     for _slug, _ in _pages:
         SEQUENCE.append(_slug)
-        if _slug == "dynasty":
-            SEQUENCE.extend(BIOS)
         if _slug in COUPLES:
             SEQUENCE.extend(f"{_slug}{suffix}" for suffix, _ in COUPLE_TABS[1:])
 
@@ -190,7 +188,7 @@ def label_for(slug: str, locale: str) -> str | None:
 
 def group_for(slug: str) -> str:
     base = slug.split("/")[-1]
-    if slug.startswith("bio/") or base in ("raimondo-and-bailey-detailed", "family-tree"):
+    if slug.startswith("bio/") or base in ("raimondo-and-bailey-detailed"):
         return "royal"
     for couple in COUPLES:
         if base.startswith(couple):
@@ -390,22 +388,18 @@ def build_subnav(page: Page) -> str:
 TARGET_NEXT_IMAGES = {
     "overview": "UniversalUpscaler_Pro_Precise_2_1f1c19d5-4a8a-6240-8c96-a28f543c898c.jpg",
     "infrastructure": "UniversalUpscaler_Pro_Precise_2_1f1c1a29-2ad2-6700-ba29-0886f847836a.jpg",
-    "space-research": "UniversalUpscaler_Pro_Precise_2_1f1c2357-5be5-6860-9aa6-0dca8e8888b7.jpg",
-    "banking-system": "UniversalUpscaler_Pro_Precise_2_1f1c235a-8739-6b80-818f-9814e906014a.jpg",
     "constitution": "UniversalUpscaler_Pro_Precise_2_1f1c1a2a-3682-6450-b953-3cd17cf5a1a7.jpg",
-    "nature": "UniversalUpscaler_Pro_Precise_2_1f1cafd8-c168-69e0-8654-e23fef3eb0b0.jpg",
     "travel-guide": "UniversalUpscaler_Pro_Precise_2_1f1c1a3a-8488-6130-962d-09f15cdbb0eb.jpg",
-    "visa": "UniversalUpscaler_Pro_Precise_2_1f1c8726-8cda-62d0-a130-3eed92bc8395.jpg",
     "faq": "UniversalUpscaler_82625004-8a28-4ed6-9515-e204957d9457.jpg",
-    "family-tree": "UniversalUpscaler_e38222ed-70b3-4c90-9777-c114aa60d527-U.jpg",
 }
 
 def build_next(page: Page, meta: dict[str, dict]) -> str:
     target = None
-    if page.slug.endswith("-private"):
+    if page.slug.endswith("-private") or page.slug == "raimondo-and-bailey-detailed":
         target = "dynasty"
-    elif page.slug == "raimondo-and-bailey-detailed":
-        target = "angelina-and-taylor"
+    elif page.slug in BIOS:
+        idx = BIOS.index(page.slug)
+        target = BIOS[idx + 1] if idx + 1 < len(BIOS) else "family-tree"
     elif page.slug in SEQUENCE:
         index = SEQUENCE.index(page.slug)
         for offset in range(1, len(SEQUENCE)):
