@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- @chrome:head -->
+    <meta name="theme-color" content="#fbf7f0" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <script>
+        (function(d) {
+            var h = d.documentElement;
+            h.classList.add('js');
+            try {
+                if (localStorage.getItem('isDarkMode') === 'true') h.classList.add('body-dark');
+                if (localStorage.getItem('isAnimationDisabled') === 'true') h.classList.add('no-reveal')
+            } catch (e) {}
+            setTimeout(function() {
+                if (!h.classList.contains('reveal-ready')) h.classList.remove('js')
+            }, 3500)
+        })(document);
+    </script>
+    <!-- /@chrome:head -->
+    <title>The Royal Family Tree</title>
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="1024x1024" href="../icons/logo-blue.png" />
+    <link href="../manifest.json" rel="manifest" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/family-tree.css" />
+    <link rel="preload" as="image" href="../images/UniversalUpscaler_e38222ed-70b3-4c90-9777-c114aa60d527-U.jpg" fetchpriority="high" />
+</head>
+<body class="page-family-tree group-royal">
+    <!-- @chrome:header -->
+    <div class="page-curtain" aria-hidden="true"><img class="brand-mark" src="../icons/logo.svg" alt="Waikiki" width="64" height="64" loading="eager" /></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+        <a href="index.html" class="brand"><img class="brand-mark" src="../icons/logo.svg" alt="Waikiki" width="44" height="44" loading="eager" /><span class="brand-word">Waikiki</span></a>
+        <nav class="primary-nav">
+            <a href="tourism.html">Visit</a><a href="society.html">Society</a><a href="economy.html">Economy</a><a href="government.html">Government</a><a href="history.html">History</a><a href="dynasty.html" aria-current="page">Royal Family</a>
+        </nav>
+        <div class="header-actions">
+            <a class="lang-pill" href="../hu/family-tree.html" hreflang="hu" lang="hu" title="Magyar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" />
+                </svg>
+                <span>HU</span>
+            </a>
+            <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+                <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <mask id="theme-mask">
+                        <rect width="24" height="24" fill="#fff" />
+                        <circle class="theme-cut" cx="26" cy="2" r="6" fill="#000" />
+                    </mask>
+                    <circle class="theme-core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#theme-mask)" />
+                    <g class="theme-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                        <path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5" />
+                    </g>
+                </svg>
+            </button>
+            <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                <span class="menu-lines" aria-hidden="true"></span>
+                <span class="menu-label-open">Menu</span>
+                <span class="menu-label-close">Close</span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+        </div>
+    </header>
+    <div class="site-menu" id="site-menu" aria-hidden="true" inert>
+        <div class="site-menu-inner">
+            <aside class="menu-aside">
+                <div class="menu-clock-block">
+                    <div class="menu-clock-header">
+                        <p class="menu-clock-label">Local time in the capital</p>
+                        <div class="menu-weather" data-capital-weather><span class="weather-icon" aria-hidden="true">☀️</span> <span class="weather-temp">28°C</span> <span class="weather-desc">Sunny</span></div>
+                    </div>
+                    <p class="menu-clock" data-capital-clock>--:--</p>
+                    <p class="menu-clock-city">Nova Aurelia, Waikiki Province</p>
+                </div>
+                <p class="menu-motto">Prosperity, stability and progress, from the Caribbean to the Amazon.</p>
+                <div class="menu-aside-row">
+                    <a class="menu-chip is-active" href="../en/family-tree.html" hreflang="en" lang="en">English</a><a class="menu-chip" href="../hu/family-tree.html" hreflang="hu" lang="hu">Magyar</a>
+                    <button class="menu-chip" type="button" data-theme-toggle aria-pressed="false">Night mode</button>
+                    <button class="menu-chip is-active" type="button" data-animate-toggle aria-pressed="true">Animate</button>
+                </div>
+            </aside>
+            <div class="menu-group">
+                <h2>Nation</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="overview.html">Overview</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="society.html">Society</a></li>
+                    <li><a href="culture.html">Culture</a></li>
+                    <li><a href="ideology.html">Ideology</a></li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <h2>Governance</h2>
+                <ul>
+                    <li><a href="government.html">Government</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="parties.html">Politics</a></li>
+                    <li><a href="constitution.html">Constitution</a></li>
+                    <li><a href="military.html">Military</a></li>
+                    <li><a href="diplomacy.html">Diplomacy</a></li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <h2>Prosperity</h2>
+                <ul>
+                    <li><a href="economy.html">Economy</a></li>
+                    <li><a href="banking-system.html">Banking System</a></li>
+                    <li><a href="wealth-fund.html">Wealth Fund</a></li>
+                    <li><a href="citizenship.html">Citizenship</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="space-research.html">Space Research</a></li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <h2>Royal Family</h2>
+                <ul>
+                    <li><a href="dynasty.html">The Dynasty</a></li>
+                    <li><a href="chease-and-jessica.html">Chease and Jessica</a></li>
+                    <li><a href="raimondo-and-selena.html">Raimondo and Selena</a></li>
+                    <li><a href="angelina-and-taylor.html">Angelina and Taylor</a></li>
+                    <li><a href="jennifer-and-tyler.html">Jennifer and Tyler</a></li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <h2>Visit</h2>
+                <ul>
+                    <li><a href="tourism.html">Tourism</a></li>
+                    <li><a href="sights.html">Sights</a></li>
+                    <li><a href="nature.html">Nature</a></li>
+                    <li><a href="travel-guide.html">Travel Guide</a></li>
+                    <li><a href="visa.html">Visa and Entry</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /@chrome:header -->
+    <main id="main">
+        <section class="hero" data-hero>
+            <div class="hero-media"><img src="../images/UniversalUpscaler_e38222ed-70b3-4c90-9777-c114aa60d527-U.jpg" alt="House of Chease Family Tree" fetchpriority="high" /></div>
+            <div class="hero-veil"></div>
+            <div class="hero-content">
+                <span class="hero-eyebrow">House of Chease · Sovereign Genealogy</span>
+                <h1 class="hero-title">The Royal <em>Family Tree</em></h1>
+                <p class="hero-lead">An authoritative record of the dynastic lineage, constitutional branches, and family based governance model of the Sovereign Nation of Waikiki, spanning the founding monarchs, their governing children and consorts, and the rising heirs of the meritocratic dynasty.</p>
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Generations of Lineage</span></div>
+                    <div class="stat-item"><span class="stat-number">1999</span><span class="stat-label">Sovereign Foundation</span></div>
+                    <div class="stat-item"><span class="stat-number">3</span><span class="stat-label">Governing Pillars</span></div>
+                    <div class="stat-item"><span class="stat-number">1</span><span class="stat-label">Unified Royal House</span></div>
+                </div>
+            </div>
+        </section>
+        <!-- @chrome:subnav --><!-- /@chrome:subnav -->
+        <nav class="family-nav-bar" aria-label="Family Tree Navigation">
+            <a class="family-nav-pill" href="#overview">Overview</a>
+            <a class="family-nav-pill" href="#tree">Dynastic Tree</a>
+            <a class="family-nav-pill" href="#members">Member Dossiers</a>
+            <a class="family-nav-pill" href="#succession">Line of Succession</a>
+            <a class="family-nav-pill" href="#governance">Governance Matrix</a>
+            <a class="family-nav-pill" href="#chronology">Dynastic Chronology</a>
+        </nav>
+        <section id="overview" class="fade-in">
+            <div class="tree-section-header">
+                <span class="tree-hero-badge">Dynastic Architecture</span>
+                <h2 class="section-title">Lineage of the Sovereign House of Chease</h2>
+                <p class="section-intro">An architectural and historical overview of the family based governance model of Waikiki, rooted in kinship, shared constitutional responsibility, and long horizon generational stewardship.</p>
+            </div>
+            <div class="overview-pillars-grid">
+                <div class="pillar-card">
+                    <span class="pillar-badge">Founding Genesis</span>
+                    <h3>The Founding Covenant (1992–1999)</h3>
+                    <p>The modern dynasty traces its origins to the intellectual and strategic union of Chease Young and Jessica Walker in New York. Uniting financial acumen with geopolitical vision, they married in 1993 and subsequently established the Sovereign Nation of Waikiki on March 10, 1999, forging a nation where sovereignty is exercised as familial duty and public guardianship.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-badge">Constitutional Rank</span>
+                    <h3>Papal Coronation and Meritocratic Monarchy (2005)</h3>
+                    <p>Following military victory in the Pacific War and decisive economic reconstruction, the citizenry voted overwhelmingly in 2005 to elevate the family to a sovereign royal house. Pope Benedict XVI crowned Chease Young as King on August 4, 2005, embedding hereditary legitimacy within an uncompromising meritocracy that measures royal authority by tangible public welfare.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-badge">Executive Continuity</span>
+                    <h3>The Tripartite Generational Transition (2017–Present)</h3>
+                    <p>The peaceful transfer of the supreme dictatorial office to Crown Prince Raimondo Chease in 2017 initiated the mature era of dynastic leadership. Joined by his sisters Angelina and Jennifer and their respective spouses in the Senate and key executive organs, the three branches operate as synchronized pillars of defense, finance, ecology, and digital statehood.</p>
+                </div>
+            </div>
+        </section>
+        <section id="tree" class="light-bg fade-in">
+            <div class="tree-section-header">
+                <span class="tree-hero-badge">Pedigree Chart</span>
+                <h2 class="section-title">Generational Pedigree and Lineage Chart</h2>
+                <p class="section-intro">The interactive dynastic pedigree chart of the House of Chease across four generational tiers, illustrating ancestral origins, sovereign founders, the three governing branches, and the rising dynastic heirs.</p>
+            </div>
+            <div class="pedigree-viewport">
+                <div class="pedigree-tree">
+                    <div class="tree-generation">
+                        <span class="generation-label">Generation 0 · Ancestral Roots</span>
+                        <div class="tree-roots-cluster">
+                            <div class="tree-node-card ancestor-card">
+                                <div class="tree-node-thumb">
+                                    <img src="../images/UniversalUpscaler_13200b7d-454a-405a-838e-f6c8924fe894.jpg" alt="The Young Lineage" loading="lazy" />
+                                </div>
+                                <div class="tree-node-info">
+                                    <span class="tree-node-role">Patriarchal Ancestor</span>
+                                    <h4 class="tree-node-name">Senior Young</h4>
+                                    <span class="tree-node-dates">New York Hospitality Patriarch</span>
+                                    <span class="tree-node-office">Starlight Hotels Chain Founder</span>
+                                </div>
+                            </div>
+                            <div class="tree-node-card ancestor-card">
+                                <div class="tree-node-thumb">
+                                    <img src="../images/UniversalUpscaler_14c6b937-7f3c-4aa9-aaf7-e06d69d2aa25.jpg" alt="The Walker Lineage" loading="lazy" />
+                                </div>
+                                <div class="tree-node-info">
+                                    <span class="tree-node-role">Maternal Lineage</span>
+                                    <h4 class="tree-node-name">The Walker Lineage</h4>
+                                    <span class="tree-node-dates">New York Financial Heritage</span>
+                                    <span class="tree-node-office">Banking and Insurance Holdings</span>
+                                </div>
+                            </div>
+                            <div class="tree-node-card ancestor-card">
+                                <div class="tree-node-thumb">
+                                    <img src="../images/UniversalUpscaler_Legacy_Cinematic_2_1f1746e1-6eb4-6ce0-b476-70bb9ed319de.jpg" alt="Consort Lineages" loading="lazy" />
+                                </div>
+                                <div class="tree-node-info">
+                                    <span class="tree-node-role">Consort Heritages</span>
+                                    <h4 class="tree-node-name">Gomez, Lautner and Posey</h4>
+                                    <span class="tree-node-dates">Texas, Michigan and California</span>
+                                    <span class="tree-node-office">Judicial, Civic and Engineering Roots</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-connector-down"></div>
+                    <div class="tree-generation">
+                        <span class="generation-label">Generation I · Sovereign Founders</span>
+                        <div class="tree-sovereign-pair">
+                            <span class="tree-marriage-badge">Royal Union 1993 · Papal Coronation 2005</span>
+                            <div class="tree-node-card founder-card">
+                                <div class="tree-node-thumb">
+                                    <img src="../images/UniversalUpscaler_13200b7d-454a-405a-838e-f6c8924fe894.jpg" alt="King Chease Young" loading="lazy" />
+                                </div>
+                                <div class="tree-node-info">
+                                    <span class="tree-node-role">Sovereign King · Founder</span>
+                                    <h3 class="tree-node-name">King Chease Young</h3>
+                                    <span class="tree-node-dates">Born 1972 · Reign 1999–2017</span>
+                                    <span class="tree-node-office">Chancellor of Waikiki · Nobel Laureate 2009</span>
+                                </div>
+                            </div>
+                            <div class="tree-node-card founder-card">
+                                <div class="tree-node-thumb">
+                                    <img src="../images/UniversalUpscaler_14c6b937-7f3c-4aa9-aaf7-e06d69d2aa25.jpg" alt="Queen Jessica Walker" loading="lazy" />
+                                </div>
+                                <div class="tree-node-info">
+                                    <span class="tree-node-role">Sovereign Queen · Consort</span>
+                                    <h3 class="tree-node-name">Queen Jessica Walker</h3>
+                                    <span class="tree-node-dates">Married 1993 · Coronated 2005</span>
+                                    <span class="tree-node-office">President of Waikiki National Bank · Nobel Laureate 2009</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-connector-down"></div>
+                    <div class="tree-fork-line">
+                        <div class="tree-fork-mid"></div>
+                    </div>
+                    <div class="tree-generation">
+                        <span class="generation-label">Generation II · Governing Siblings and Consorts</span>
+                        <div class="tree-branches-row">
+                            <div class="tree-branch-column">
+                                <span class="branch-pillar-tag">Pillar I · Executive and Diplomacy</span>
+                                <div class="branch-pair-grid">
+                                    <div class="tree-node-card">
+                                        <div class="tree-node-thumb">
+                                            <img src="../images/UniversalUpscaler_Legacy_Cinematic_2_1f17dff4-aa66-6f70-a4dd-3fb4e94170bd-U.jpg" alt="Crown Prince Raimondo Chease" loading="lazy" />
+                                        </div>
+                                        <div class="tree-node-info">
+                                            <span class="tree-node-role">Crown Prince · Dictator</span>
+                                            <h4 class="tree-node-name">Raimondo Chease</h4>
+                                            <span class="tree-node-dates">Born July 7, 1996 · Invested 2017</span>
+                                            <span class="tree-node-office">Head of Government · Commander-in-Chief</span>
+                                        </div>
+                                    </div>
+                                    <div class="tree-node-card">
+                                        <div class="tree-node-thumb">
+                                            <img src="../images/UniversalUpscaler_Legacy_Cinematic_2_1f1746e1-6eb4-6ce0-b476-70bb9ed319de.jpg" alt="Princess Selena Gomez" loading="lazy" />
+                                        </div>
+                                        <div class="tree-node-info">
+                                            <span class="tree-node-role">Princess · Consul of State</span>
+                                            <h4 class="tree-node-name">Selena Gomez</h4>
+                                            <span class="tree-node-dates">Born July 22, 1992 · Married 2026</span>
+                                            <span class="tree-node-office">Diplomatic Envoy · Senator</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tree-branch-column">
+                                <span class="branch-pillar-tag">Pillar II · Ecology and Monetary Policy</span>
+                                <div class="branch-pair-grid">
+                                    <div class="tree-node-card">
+                                        <div class="tree-node-thumb">
+                                            <img src="../images/UniversalUpscaler_Legacy_Cinematic_2_1f16667b-d88f-6490-a4c4-ea5c452c156a.jpg" alt="Princess Angelina Chease" loading="lazy" />
+                                        </div>
+                                        <div class="tree-node-info">
+                                            <span class="tree-node-role">Princess · Monetary Councillor</span>
+                                            <h4 class="tree-node-name">Angelina Chease</h4>
+                                            <span class="tree-node-dates">Born 1993 · Elevated 2005</span>
+                                            <span class="tree-node-office">Senator · Founder of GaiaNova Holding</span>
+                                        </div>
+                                    </div>
+                                    <div class="tree-node-card">
+                                        <div class="tree-node-thumb">
+                                            <img src="../images/UniversalUpscaler_Pro_Precise_2_1f185c11-4e6a-6c00-868b-10816a1d038f.jpg" alt="Prince Taylor Lautner" loading="lazy" />
+                                        </div>
+                                        <div class="tree-node-info">
+                                            <span class="tree-node-role">Prince of Waikiki · Senator</span>
+                                            <h4 class="tree-node-name">Taylor Lautner</h4>
+                                            <span class="tree-node-dates">Born Feb 11, 1992 · Invested 2017</span>
+                                            <span class="tree-node-office">Infrastructure and Sports Envoy · Astronaut</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tree-branch-column">
+                                <span class="branch-pillar-tag">Pillar III · Digital State and Innovation</span>
+                                <div class="branch-pair-grid">
+                                    <div class="tree-node-card">
+                                        <div class="tree-node-thumb">
+                                            <img src="../images/UniversalUpscaler_87e18912-5c93-406d-9da8-d9c729acdbea.jpg" alt="Princess Jennifer Chease" loading="lazy" />
+                                        </div>
+                                        <div class="tree-node-info">
+                                            <span class="tree-node-role">Princess · Digital State Chief</span>
+                                            <h4 class="tree-node-name">Jennifer Chease</h4>
+                                            <span class="tree-node-dates">Born 1996 · Elevated 2005</span>
+                                            <span class="tree-node-office">Senator · PhD in Public Administration</span>
+                                        </div>
+                                    </div>
+                                    <div class="tree-node-card">
+                                        <div class="tree-node-thumb">
+                                            <img src="../images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d-U.jpg" alt="Prince Tyler Posey" loading="lazy" />
+                                        </div>
+                                        <div class="tree-node-info">
+                                            <span class="tree-node-role">Prince of Waikiki · Senator</span>
+                                            <h4 class="tree-node-name">Tyler Posey</h4>
+                                            <span class="tree-node-dates">Born Oct 18, 1991 · Invested 2017</span>
+                                            <span class="tree-node-office">Systems Engineer · Urban Tech Architect</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-connector-down"></div>
+                    <div class="tree-generation">
+                        <span class="generation-label">Generation III · Dynastic Succession and Heirs</span>
+                        <div class="heirs-strip">
+                            <span class="heirs-icon" aria-hidden="true">👑</span>
+                            <div class="heirs-body">
+                                <h4>The Rising Third Generation and Grandchildren</h4>
+                                <p>The rising grandchildren of King Chease Young and Queen Jessica Walker represent the living continuation of the dynastic covenant. Educated in Nova Aurelia under private familial mentorship, their training integrates statecraft, macroeconomic modeling, and ethical stewardship to safeguard Waikiki's sovereignty for the next century.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="members" class="fade-in">
+            <div class="tree-section-header">
+                <span class="tree-hero-badge">Biographical Archives</span>
+                <h2 class="section-title">Dossiers of the Sovereign House</h2>
+                <p class="section-intro">Biographical archives, constitutional roles, educational credentials, and official portfolios for each principal member of the royal family.</p>
+            </div>
+            <div class="dossiers-grid">
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_13200b7d-454a-405a-838e-f6c8924fe894.jpg" alt="King Chease Young" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Sovereign King</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">King Chease Young</h3>
+                            <p class="dossier-title">Founder of Waikiki and Chancellor</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Birth</span><strong class="spec-val">1972 (New York)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">Chancellor (2017–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Prior Office</span><strong class="spec-val">Dictator of Waikiki (1999–2017)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Education</span><strong class="spec-val">Stanford University (Economics, 1991)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Coronation</span><strong class="spec-val">August 4, 2005 (Pope Benedict XVI)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Major Honor</span><strong class="spec-val">Nobel Prize in Economics (2009)</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">The strategic architect of Waikiki. Following his inheritance and expansion of Starlight Hotels, Chease assumed leadership of the collapsing Cuban territory on March 10, 1999, founding Waikiki and directing its transformation into a global superpower. As Chancellor, he directs global strategy, the World Government presidency, and dynastic mentorship.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">State Founder</span>
+                            <span class="achievement-chip">Nobel Laureate 2009</span>
+                            <span class="achievement-chip">Alliance of Atomic Powers</span>
+                            <span class="achievement-chip">Trilateral Commission</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_14c6b937-7f3c-4aa9-aaf7-e06d69d2aa25.jpg" alt="Queen Jessica Walker" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Sovereign Queen</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">Queen Jessica Walker</h3>
+                            <p class="dossier-title">Queen Consort and WNB President</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Marriage</span><strong class="spec-val">1993 (Pacific Estate)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">President of WNB (2008–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Diplomatic Office</span><strong class="spec-val">Former UN Deputy Secretary-General</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Education</span><strong class="spec-val">New York Financial Studies</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Coronation</span><strong class="spec-val">August 4, 2005 (Queen of Waikiki)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Major Honor</span><strong class="spec-val">Nobel Prize in Economics (2009)</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">The supreme guardian of the nation's financial sovereignty. Queen Jessica architected the world's first totally cashless economy in 2018 and stewarded the National Wealth Fund. Reappointed as WNB President in 2024, she anchors currency stability, macroeconomic discipline, and family unity.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">Cashless Economy 2018</span>
+                            <span class="achievement-chip">Nobel Laureate 2009</span>
+                            <span class="achievement-chip">World Bank Director</span>
+                            <span class="achievement-chip">Wealth Fund Steward</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_Legacy_Cinematic_2_1f17dff4-aa66-6f70-a4dd-3fb4e94170bd-U.jpg" alt="Crown Prince Raimondo Chease" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Reigning Dictator</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">Crown Prince Raimondo Chease</h3>
+                            <p class="dossier-title">Crown Prince and Dictator of Waikiki</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Birth</span><strong class="spec-val">July 7, 1996 (Washington D.C.)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">Dictator of Waikiki (2017–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Legislative Office</span><strong class="spec-val">Senator of Waikiki (2015–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Education</span><strong class="spec-val">WEU (BSc and MSc in Economics)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">High School</span><strong class="spec-val">Seven Seas High School (SS Tipton)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Global Rank</span><strong class="spec-val">Forbes #1 Most Influential (2018)</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">The supreme executive leader of Waikiki. Assuming dictatorial office on July 7, 2017, Raimondo spearheaded iconic mega-projects including the Mega Pyramid, the Florida-Waikiki undersea maglev, the four-day workweek, and NATO accession in 2025. He commands the armed forces and oversees a $41 trillion national economy.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">Dictator since 2017</span>
+                            <span class="achievement-chip">Space Mission 2018</span>
+                            <span class="achievement-chip">Blue Belt Agreement</span>
+                            <span class="achievement-chip">NATO Accession 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_Legacy_Cinematic_2_1f1746e1-6eb4-6ce0-b476-70bb9ed319de.jpg" alt="Princess Selena Gomez" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Consul of State</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">Princess Selena Gomez</h3>
+                            <p class="dossier-title">Princess of Waikiki and Consul</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Birth</span><strong class="spec-val">July 22, 1992 (Grand Prairie, Texas)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">Consul of Waikiki (2017–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Legislative Office</span><strong class="spec-val">Senator of Waikiki (2015–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Marriage</span><strong class="spec-val">February 7, 2026 (Ducal Palace)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Investiture</span><strong class="spec-val">Coronated Princess (October 2017)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Diplomacy</span><strong class="spec-val">Former UNICEF Goodwill Ambassador</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">The leading diplomatic and cultural voice of Waikiki. Appointed as Senator in 2015 and elevated to Princess and Consul in 2017, Selena represents the nation at international summits from Moscow to Washington. Married to Raimondo Chease in February 2026, she combines emotional intelligence with resolute negotiation prowess.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">Consul of Waikiki</span>
+                            <span class="achievement-chip">UNICEF Ambassador</span>
+                            <span class="achievement-chip">Diplomatic Envoy</span>
+                            <span class="achievement-chip">Cultural Icon</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_Legacy_Cinematic_2_1f16667b-d88f-6490-a4c4-ea5c452c156a.jpg" alt="Princess Angelina Chease" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Eldest Princess</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">Princess Angelina Chease</h3>
+                            <p class="dossier-title">Princess and Monetary Councillor</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Birth</span><strong class="spec-val">1993 (Washington D.C.)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">Monetary Council Member (2024–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Legislative Office</span><strong class="spec-val">Senator of Waikiki (2015–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Education</span><strong class="spec-val">WEU (BSc 2011, MSc 2013), IESE Barcelona</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Corporate Role</span><strong class="spec-val">Founder and Chair of GaiaNova Holding</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Forum Rank</span><strong class="spec-val">Youngest Davos Plenary Speaker (Age 21)</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">The ethical conscience and environmental champion of the dynasty. Appointed Senator in 2015 and Monetary Councillor in 2024, Angelina drives green finance, the Tesla-Waikiki Green Energy Pact, and the 2030 carbon neutrality mandate. She completed a 10-day orbital mission to the Waikiki Space Station in 2021.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">GaiaNova Holding</span>
+                            <span class="achievement-chip">Monetary Council 2024</span>
+                            <span class="achievement-chip">Astronaut 2021</span>
+                            <span class="achievement-chip">Davos Speaker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_Pro_Precise_2_1f185c11-4e6a-6c00-868b-10816a1d038f.jpg" alt="Prince Taylor Lautner" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Royal Prince</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">Prince Taylor Lautner</h3>
+                            <p class="dossier-title">Prince of Waikiki and Senator</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Birth</span><strong class="spec-val">February 11, 1992 (Grand Rapids, MI)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">Prince of Waikiki (crowned 2017)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Legislative Office</span><strong class="spec-val">Senator of Waikiki (2015–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Alliance</span><strong class="spec-val">Partner to Angelina Chease (since 2012)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Education</span><strong class="spec-val">Waikiki Economics University</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Specialty</span><strong class="spec-val">Infrastructure and Public Safety Strategist</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">A stalwart leader of infrastructure resilience and youth athletics. Taylor co-founded the WEU Sustainability Circle in 2012 and entered the Senate in 2015. He played a frontline role in public security modernization and spacewalk operations during the 2021 orbital mission, providing steadfast support to Angelina.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">Senate Mandate 2015</span>
+                            <span class="achievement-chip">Astronaut 2021</span>
+                            <span class="achievement-chip">Sports Diplomacy</span>
+                            <span class="achievement-chip">Public Safety Envoy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_87e18912-5c93-406d-9da8-d9c729acdbea.jpg" alt="Princess Jennifer Chease" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Digital Architect</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">Princess Jennifer Chease</h3>
+                            <p class="dossier-title">Princess and Digital State Chief</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Birth</span><strong class="spec-val">1996 (Washington D.C.)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">Princess of Waikiki (elevated 2005)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Legislative Office</span><strong class="spec-val">Senator of Waikiki (2015–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Education</span><strong class="spec-val">PhD in Public Admin and Welfare Economics</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">State Portfolio</span><strong class="spec-val">Chief of Digital State and Media Policy</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Key Statute</span><strong class="spec-val">Charter of Digital Fundamental Rights</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">The administrative visionary and digital architect of the realm. Jennifer directs the transformation of public bureaucracy into an automated, zero-friction operating system. Working alongside Tyler Posey in the Senate's 'Engine Room', she spearheads AI education, telemedicine initiatives, and youth outreach.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">Digital Rights Charter</span>
+                            <span class="achievement-chip">Education 2030</span>
+                            <span class="achievement-chip">Health Innovation Fund</span>
+                            <span class="achievement-chip">Senate Engine Room</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-card">
+                    <div class="dossier-hero">
+                        <img src="../images/UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d-U.jpg" alt="Prince Tyler Posey" loading="lazy" />
+                        <div class="dossier-veil"></div>
+                        <span class="dossier-crown-tag">Royal Prince</span>
+                        <div class="dossier-title-overlay">
+                            <h3 class="dossier-name">Prince Tyler Posey</h3>
+                            <p class="dossier-title">Prince of Waikiki and Systems Architect</p>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <ul class="dossier-specs-list">
+                            <li class="dossier-spec-item"><span class="spec-key">Date of Birth</span><strong class="spec-val">October 18, 1991 (Santa Monica, CA)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Constitutional Office</span><strong class="spec-val">Prince of Waikiki (elevated 2017)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Legislative Office</span><strong class="spec-val">Senator of Waikiki (2015–present)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Alliance</span><strong class="spec-val">Partner to Jennifer Chease (since 2015)</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Background</span><strong class="spec-val">Applied Systems and Network Engineering</strong></li>
+                            <li class="dossier-spec-item"><span class="spec-key">Specialty</span><strong class="spec-val">Smart Grids and Urban Tech Diplomacy</strong></li>
+                        </ul>
+                        <p class="dossier-bio-text">The technological realist and engineering backbone of administrative modernization. Tyler brings engineering rigor to legislation, designing fiber-optic communication backbones, smart energy grids, and digital learning platforms. He bridges the gap between public policy and Silicon Valley technology.</p>
+                        <div class="dossier-achievements">
+                            <span class="achievement-chip">Smart Grid Rollout</span>
+                            <span class="achievement-chip">Urban Tech Envoy</span>
+                            <span class="achievement-chip">Senate Engine Room</span>
+                            <span class="achievement-chip">Broadband Universalization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="succession" class="light-bg fade-in">
+            <div class="tree-section-header">
+                <span class="tree-hero-badge">Constitutional Law</span>
+                <h2 class="section-title">Constitutional Order of Succession</h2>
+                <p class="section-intro">The statutory framework governing executive continuity, combining dynastic line of succession with parliamentary confirmation in accordance with Waikiki constitutional doctrine.</p>
+            </div>
+            <div class="succession-grid">
+                <div class="succession-card">
+                    <span class="succession-order-num">I</span>
+                    <span class="succession-role">Reigning Dictator</span>
+                    <h3>Crown Prince Raimondo Chease</h3>
+                    <p>Supreme executive authority and the dictatorial office are currently vested in Crown Prince Raimondo Chease. Appointed with parliamentary two-thirds confirmation in 2017, he exercises supreme authority over national defense, state mega-projects, and international affairs.</p>
+                </div>
+                <div class="succession-card">
+                    <span class="succession-order-num">II</span>
+                    <span class="succession-role">Chancellor Regency</span>
+                    <h3>King Chease Young</h3>
+                    <p>Under Article 14 of the Constitution, should the Dictator resign or face temporary incapacity, the Chancellor automatically assumes the dictatorial office in an emergency regency capacity until Parliament confirms the elected successor.</p>
+                </div>
+                <div class="succession-card">
+                    <span class="succession-order-num">III</span>
+                    <span class="succession-role">Secondary Dynastic Line</span>
+                    <h3>Princess Angelina and Princess Jennifer</h3>
+                    <p>The secondary line of dynastic succession flows to Princess Angelina Chease, followed by Princess Jennifer Chease. Both hold lifelong senatorial mandates, anchoring institutional resilience and family continuity across all branches of state.</p>
+                </div>
+                <div class="succession-card">
+                    <span class="succession-order-num">IV</span>
+                    <span class="succession-role">Meritocratic Principle</span>
+                    <h3>Meritocratic Monarchy Doctrine</h3>
+                    <p>Waikiki strictly separates ceremonial royal titles from state administrative power. While royal rank is dynastic and hereditary, direct executive power derives from formal constitutional office, requiring proven competence and parliamentary validation.</p>
+                </div>
+            </div>
+        </section>
+        <section id="governance" class="fade-in">
+            <div class="tree-section-header">
+                <span class="tree-hero-badge">State Stewardship</span>
+                <h2 class="section-title">Strategic Governance Matrix</h2>
+                <p class="section-intro">The operational division of state stewardship among royal family members, establishing direct accountability and eliminating administrative friction across five vital domains.</p>
+            </div>
+            <div class="governance-matrix-grid">
+                <div class="matrix-card">
+                    <div class="matrix-icon-wrap" aria-hidden="true">🛡️</div>
+                    <span class="branch-pillar-tag">Defense and Executive</span>
+                    <h3>Sovereign Defense and Strategy</h3>
+                    <p class="matrix-officials">Raimondo Chease and Chease Young</p>
+                    <p>Supreme command of the armed forces, military deterrence doctrine, intelligence integration, strategic G8 and NATO partnerships, and geopolitical balancing across the Americas.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon-wrap" aria-hidden="true">🏛️</div>
+                    <span class="branch-pillar-tag">Finance and Economy</span>
+                    <h3>Monetary Sovereignty and Wealth</h3>
+                    <p class="matrix-officials">Jessica Walker and Angelina Chease</p>
+                    <p>Stewardship of the Waikiki National Bank, management of the National Wealth Fund, enforcement of the 2018 cashless economy, and green financial capital allocations.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon-wrap" aria-hidden="true">🌐</div>
+                    <span class="branch-pillar-tag">Diplomacy and Culture</span>
+                    <h3>Foreign Relations and Treaties</h3>
+                    <p class="matrix-officials">Selena Gomez and Raimondo Chease</p>
+                    <p>Global diplomatic missions, cultural envoys, international treaty negotiations, bilateral humanitarian pacts, and representation before the United Nations and World Bank.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon-wrap" aria-hidden="true">🌱</div>
+                    <span class="branch-pillar-tag">Ecology and Mega-Projects</span>
+                    <h3>Green Transition and Infrastructure</h3>
+                    <p class="matrix-officials">Angelina Chease and Taylor Lautner</p>
+                    <p>Execution of the 2030 carbon neutrality mandate, GaiaNova clean-energy production in the Amazon, public safety modernizations, and space station ecological research.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon-wrap" aria-hidden="true">⚡</div>
+                    <span class="branch-pillar-tag">Digital State and Tech</span>
+                    <h3>Administrative Modernization</h3>
+                    <p class="matrix-officials">Jennifer Chease and Tyler Posey</p>
+                    <p>Enforcement of the Charter of Digital Fundamental Rights, curriculum modernization under Education 2030, telemedicine expansion, and smart grid infrastructure rollout.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon-wrap" aria-hidden="true">🤝</div>
+                    <span class="branch-pillar-tag">Dynastic Mentorship</span>
+                    <h3>Generational Formation</h3>
+                    <p class="matrix-officials">Chease Young and Jessica Walker</p>
+                    <p>Internal dynastic council meetings, ethical mentorship of the third generation, preservation of foundational archives, and protection of the family covenant.</p>
+                </div>
+            </div>
+        </section>
+        <section id="chronology" class="light-bg fade-in">
+            <div class="tree-section-header">
+                <span class="tree-hero-badge">Historical Milestones</span>
+                <h2 class="section-title">Chronology of the Royal Dynasty</h2>
+                <p class="section-intro">Chronological record of defining family and state milestones shaping the House of Chease from 1992 to 2026.</p>
+            </div>
+            <div class="dynasty-timeline">
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">1992</div>
+                    <div class="milestone-card">
+                        <h4>Genesis in New York</h4>
+                        <p>Chease Young and Jessica Walker meet at the Starlight Hotel in New York, forming an intellectual and strategic alliance focused on modern statecraft and financial systems.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">1993</div>
+                    <div class="milestone-card">
+                        <h4>Royal Marriage and Birth of Angelina</h4>
+                        <p>Chease Young and Jessica Walker marry on a private Pacific estate. In the same year, their first child, Princess Angelina Chease, is born in Washington.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">1996</div>
+                    <div class="milestone-card">
+                        <h4>Birth of Raimondo and Jennifer</h4>
+                        <p>Crown Prince Raimondo Chease is born on July 7 in Washington D.C., followed by the birth of Princess Jennifer Chease, completing the second generation siblings.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">1999</div>
+                    <div class="milestone-card">
+                        <h4>Founding of the Sovereign Nation of Waikiki</h4>
+                        <p>On March 10, 1999, Chease Young assumes state authority on the Cuban territory, declaring the Sovereign Nation of Waikiki with Jessica Walker as senior financial advisor.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">2005</div>
+                    <div class="milestone-card">
+                        <h4>Papal Coronation and Elevation to Royal House</h4>
+                        <p>Following referendum approval on August 4, 2005, Pope Benedict XVI crowns Chease Young as King and Jessica Walker as Queen of Waikiki before Parliament.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">2009</div>
+                    <div class="milestone-card">
+                        <h4>Nobel Prize in Economic Sciences</h4>
+                        <p>Chease Young and Jessica Walker are jointly awarded the Nobel Prize in Economics for pioneering macroeconomic stability models during the global financial crisis.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">2015</div>
+                    <div class="milestone-card">
+                        <h4>Establishment of the Senate</h4>
+                        <p>The Senate of Waikiki is founded. Raimondo, Angelina, and Jennifer Chease receive lifelong mandates alongside Taylor Lautner, Tyler Posey, and Selena Gomez.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">2017</div>
+                    <div class="milestone-card">
+                        <h4>Generational Transition of Dictatorship</h4>
+                        <p>On July 7, 2017, Chease Young transfers the dictatorial office to Raimondo Chease. Taylor, Tyler, and Selena are officially elevated to princely and consular ranks.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">2018</div>
+                    <div class="milestone-card">
+                        <h4>Space Expedition and Cashless Reform</h4>
+                        <p>Raimondo and Selena conduct a 14-day orbital mission aboard the Waikiki Space Station. Simultaneously, Queen Jessica enacts the world's first fully cashless economy.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">2024</div>
+                    <div class="milestone-card">
+                        <h4>Monetary Council Expansion</h4>
+                        <p>Jessica Walker returns to the presidency of the Waikiki National Bank, while Princess Angelina Chease is appointed to the Monetary Council to oversee green investments.</p>
+                    </div>
+                </div>
+                <div class="dynasty-milestone-item">
+                    <div class="milestone-marker">2026</div>
+                    <div class="milestone-card">
+                        <h4>The Royal Wedding of the Century</h4>
+                        <p>On February 7, 2026, Crown Prince Raimondo Chease and Princess Selena Gomez celebrate their marriage at the Ducal Palace in Nova Aurelia with international heads of state.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @chrome:next --><!-- /@chrome:next -->
+    </main>
+    <!-- @chrome:footer -->
+    <footer class="site-footer">
+        <svg class="footer-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 50c160 0 160-36 320-36s160 36 320 36 160-36 320-36 160 36 320 36 160-36 160-36V90H0z" />
+        </svg>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand"><img class="brand-mark" src="../icons/logo.svg" alt="Waikiki" width="44" height="44" loading="lazy" /><span class="brand-word">Waikiki</span></a>
+                    <p class="footer-motto">Prosperity, stability and progress, from the Caribbean to the Amazon.</p>
+                    <p class="footer-about">The official portal of the Nation of Waikiki. Founded 10 March 1999 · Nova Aurelia. This site was generated with AI, any resemblance to real people, countries or institutions is just a coincidence.</p>
+                </div>
+                <div class="footer-col">
+                    <h2>Nation</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="overview.html">Overview</a></li>
+                        <li><a href="history.html">History</a></li>
+                        <li><a href="society.html">Society</a></li>
+                        <li><a href="culture.html">Culture</a></li>
+                        <li><a href="ideology.html">Ideology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Governance</h2>
+                    <ul>
+                        <li><a href="government.html">Government</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="parties.html">Politics</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="military.html">Military</a></li>
+                        <li><a href="diplomacy.html">Diplomacy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Prosperity</h2>
+                    <ul>
+                        <li><a href="economy.html">Economy</a></li>
+                        <li><a href="banking-system.html">Banking System</a></li>
+                        <li><a href="wealth-fund.html">Wealth Fund</a></li>
+                        <li><a href="citizenship.html">Citizenship</a></li>
+                        <li><a href="infrastructure.html">Infrastructure</a></li>
+                        <li><a href="space-research.html">Space Research</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Royal Family</h2>
+                    <ul>
+                        <li><a href="dynasty.html">The Dynasty</a></li>
+                        <li><a href="chease-and-jessica.html">Chease and Jessica</a></li>
+                        <li><a href="raimondo-and-selena.html">Raimondo and Selena</a></li>
+                        <li><a href="angelina-and-taylor.html">Angelina and Taylor</a></li>
+                        <li><a href="jennifer-and-tyler.html">Jennifer and Tyler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Visit</h2>
+                    <ul>
+                        <li><a href="tourism.html">Tourism</a></li>
+                        <li><a href="sights.html">Sights</a></li>
+                        <li><a href="nature.html">Nature</a></li>
+                        <li><a href="travel-guide.html">Travel Guide</a></li>
+                        <li><a href="visa.html">Visa and Entry</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <span class="footer-mega" aria-hidden="true">Waikiki</span>
+            <div class="footer-bottom">
+                <p>© 2026 The Sovereign Nation of Waikiki. All rights reserved.</p>
+                <nav>
+                    <a style="margin-right: 40px" href="../hu/family-tree.html" hreflang="hu" lang="hu">Magyar</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <button class="to-top" type="button">
+        <svg viewBox="0 0 54 54" aria-hidden="true">
+            <circle class="ring-bg" cx="27" cy="27" r="24" />
+            <circle class="ring" cx="27" cy="27" r="24" />
+        </svg><span aria-hidden="true">↑</span>
+    </button>
+    <!-- /@chrome:footer -->
+    <script src="../js/common.js"></script>
+</body>
+</html>

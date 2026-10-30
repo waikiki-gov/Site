@@ -102,8 +102,16 @@ def palm_svg(t):
     # --------------------------------------------------------------------------
     o += [
         "<!-- Outer Coral Reef outside the Crescent Breakwater -->",
+        f'<path d="{outer_reef}" fill="none" stroke="#14b8a6" stroke-width="18" stroke-linecap="round" opacity="0.22" />',
         f'<path d="{outer_reef}" fill="none" stroke="#2ba29e" stroke-width="2.5" stroke-dasharray="8 6" opacity="0.65" />',
-        f'<path d="{cres_all}" fill="none" stroke="#2ba29e" stroke-width="40" stroke-linecap="round" opacity="0.45" />',
+        f'<path d="{cres_all}" fill="none" stroke="#2ba29e" stroke-width="44" stroke-linecap="round" opacity="0.45" />',
+        # Inner lagoon bathymetry and coral shoals
+        '<g opacity="0.32" fill="#2dd4bf">',
+        '<ellipse cx="380" cy="180" rx="45" ry="18" transform="rotate(-28 380 180)" />',
+        '<ellipse cx="820" cy="180" rx="45" ry="18" transform="rotate(28 820 180)" />',
+        '<ellipse cx="330" cy="490" rx="52" ry="20" transform="rotate(22 330 490)" />',
+        '<ellipse cx="870" cy="490" rx="52" ry="20" transform="rotate(-22 870 490)" />',
+        "</g>",
     ]
 
     # --------------------------------------------------------------------------
@@ -112,10 +120,11 @@ def palm_svg(t):
     o += [
         "<!-- === LAYER 1: SAND === -->",
         "<!-- Crescent Breakwater Sand -->",
-        f'<path class="map-frond-edge" d="{cres_all}" stroke-width="26" />',
+        f'<path class="map-frond-edge" d="{cres_all}" stroke-width="28" />',
         f'<path class="map-frond" d="{cres_all}" stroke-width="22" />',
         "<!-- Crescent Apex Crown Platform Sand -->",
-        f'<ellipse cx="{hx}" cy="{hy}" rx="54" ry="24" class="map-sand" />',
+        f'<ellipse cx="{hx}" cy="{hy}" rx="58" ry="25" class="map-sand" />',
+        f'<ellipse cx="{wx}" cy="{wy + 4}" rx="34" ry="15" class="map-sand" />',
         "<!-- Central Trunk Sand reaching all the way to the barrier -->",
         '<path class="map-sand" d="M570,678 L570,495 Q572,270 582,68 L618,68 Q628,270 630,495 L630,678 Z" />',
         "<!-- Gateway Marina Lobe (West) and Golden Mile Lobe (East) on Trunk -->",
@@ -126,6 +135,17 @@ def palm_svg(t):
         '<line x1="524" y1="602" x2="556" y2="602" />',
         '<line x1="524" y1="614" x2="556" y2="614" />',
         '<line x1="524" y1="626" x2="556" y2="626" />',
+        "</g>",
+        "<!-- Docked Yachts in Gateway Marina and Lagoon Cruising Yachts -->",
+        '<g fill="#ffffff" stroke="#0284c7" stroke-width="0.6">',
+        '<rect x="528" y="598" width="7" height="2.8" rx="1.2" />',
+        '<rect x="539" y="598" width="8" height="2.8" rx="1.2" />',
+        '<rect x="528" y="610" width="8" height="2.8" rx="1.2" />',
+        '<rect x="541" y="610" width="7" height="2.8" rx="1.2" />',
+        '<rect x="530" y="622" width="9" height="2.8" rx="1.2" />',
+        '<polygon points="445,565 456,568 445,571" />',
+        '<polygon points="748,555 759,558 748,561" />',
+        '<polygon points="420,165 431,168 420,171" />',
         "</g>",
         "<!-- 16 Palm Fronds Sand -->",
         f'<path class="map-frond-edge" d="{fronds_d}" stroke-width="21" />',
@@ -143,6 +163,7 @@ def palm_svg(t):
         f'<path class="map-frond-core" d="{cres_all}" stroke-width="4.5" />',
         "<!-- Crescent Apex Crown Platform Greenery -->",
         f'<ellipse cx="{hx}" cy="{hy}" rx="42" ry="16" class="map-greenery" />',
+        f'<ellipse cx="{wx}" cy="{wy + 4}" rx="25" ry="10" class="map-greenery" />',
         "<!-- Central Trunk Green Park Spine reaching to the barrier -->",
         '<rect x="588" y="68" width="24" height="610" rx="8" class="map-greenery" />',
         "<!-- 16 Palm Fronds Green Core -->",
@@ -178,12 +199,22 @@ def palm_svg(t):
     o.append("</g>")
 
     o += [
-        "<!-- Crescent Apex Hotel Architecture (Hotel Khalifa) -->",
+        "<!-- Aquaventure Waterpark Pools & Slides on East Apex Lobe -->",
+        f'<g transform="translate({wx}, {wy + 3})">',
+        '<ellipse cx="-6" cy="2" rx="11" ry="5" fill="#38bdf8" stroke="#bae6fd" stroke-width="0.8" />',
+        '<ellipse cx="9" cy="0" rx="8" ry="4" fill="#0ea5e9" stroke="#bae6fd" stroke-width="0.8" />',
+        '<path d="M-12,-4 Q-4,-10 4,-2 T14,3" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round" />',
+        '<path d="M-8,-5 Q0,-12 8,-3" fill="none" stroke="#ef4444" stroke-width="1.4" stroke-linecap="round" />',
+        "</g>",
+        "<!-- Crescent Apex Hotel Architecture (Hotel Khalifa Royal Twin Arch & Spire) -->",
         f'<g transform="translate({hx}, {hy})">',
-        '<ellipse cx="0" cy="2" rx="22" ry="9" fill="#002244" opacity="0.75" />',
-        '<path d="M-14,4 L0,-22 L14,4 Z" fill="#c29a57" filter="url(#glow-gold)" />',
-        '<path d="M-6,4 L0,-18 L6,4 Z" fill="#ffffff" />',
-        '<circle cx="0" cy="-22" r="3" fill="#e3735a" class="twinkle" />',
+        '<ellipse cx="0" cy="3" rx="28" ry="10" fill="#002244" opacity="0.75" />',
+        '<path d="M-24,5 L-18,-10 L-8,-10 L-8,5 Z" fill="#d4af37" />',
+        '<path d="M8,5 L8,-10 L18,-10 L24,5 Z" fill="#d4af37" />',
+        '<path d="M-15,5 L0,-26 L15,5 Z" fill="#c29a57" filter="url(#glow-gold)" />',
+        '<path d="M-7,5 L0,-20 L7,5 Z" fill="#ffffff" />',
+        '<rect x="-6" y="-6" width="12" height="5" rx="1" fill="#0284c7" />',
+        '<circle cx="0" cy="-26" r="3" fill="#e3735a" class="twinkle" />',
         "</g>",
     ]
 

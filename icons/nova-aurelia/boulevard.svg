@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="city-ill" viewBox="0 0 640 420" role="img" aria-label="Via Aurelia and Ceremonial Forum">
+<defs>
+<linearGradient id="na-boulevard-bld-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#1e3a8a"/><stop offset="0.6" stop-color="#3b82f6"/><stop offset="1.0" stop-color="#93c5fd"/></linearGradient>
+<linearGradient id="na-boulevard-bld-pave" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#475569"/><stop offset="0.5" stop-color="#334155"/><stop offset="1.0" stop-color="#1e293b"/></linearGradient>
+<linearGradient id="na-boulevard-bld-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#fef08a"/><stop offset="0.5" stop-color="#f59e0b"/><stop offset="1.0" stop-color="#b45309"/></linearGradient>
+</defs>
+<rect width="640" height="420" fill="url(#na-boulevard-bld-sky)"/>
+<rect x="280" y="140" width="80" height="75" fill="#f8fafc" stroke="#b45309" stroke-width="2"/>
+<path d="M305,215 A15,25 0 0 1 335,215 Z" fill="#1e3a8a"/>
+<rect x="275" y="134" width="90" height="8" fill="url(#na-boulevard-bld-gold)"/>
+<polygon points="290,215 350,215 580,420 60,420" fill="url(#na-boulevard-bld-pave)"/>
+<rect x="270" y="180" width="6" height="40" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="360" y="180" width="6" height="40" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="225" y="213" width="7.8" height="52" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="405" y="213" width="7.8" height="52" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="180" y="246" width="9.6" height="64" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="450" y="246" width="9.6" height="64" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="135" y="279" width="11.4" height="76" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="495" y="279" width="11.4" height="76" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="90" y="312" width="13.2" height="88" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="540" y="312" width="13.2" height="88" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<polygon points="315,215 325,215 335,420 305,420" fill="#166534"/>
+<line x1="320" y1="250" x2="320" y2="225" stroke="#38bdf8" stroke-width="2.5" class="city-anim-water"/>
+<ellipse cx="320" cy="250" rx="12" ry="4" fill="#bae6fd" opacity="0.8"/>
+<line x1="320" y1="310" x2="320" y2="285" stroke="#38bdf8" stroke-width="2.5" class="city-anim-water"/>
+<ellipse cx="320" cy="310" rx="12" ry="4" fill="#bae6fd" opacity="0.8"/>
+<line x1="320" y1="380" x2="320" y2="355" stroke="#38bdf8" stroke-width="2.5" class="city-anim-water"/>
+<ellipse cx="320" cy="380" rx="12" ry="4" fill="#bae6fd" opacity="0.8"/>
+<rect x="200" y="340" width="55" height="28" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+<rect x="208" y="346" width="38" height="12" rx="3" fill="#38bdf8" opacity="0.7"/>
+<circle cx="210" cy="368" r="5" fill="#0f172a"/>
+<circle cx="245" cy="368" r="5" fill="#0f172a"/>
+<rect x="20" y="20" width="264" height="28" rx="14" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="32" y="38" fill="#ffffff" font-size="12" font-weight="bold" font-family="system-ui, sans-serif">Via Aurelia and Ceremonial Forum</text>
+</svg>

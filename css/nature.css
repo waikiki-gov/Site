@@ -368,50 +368,83 @@
 
 .province-card {
     background: var(--surface);
+    background-clip: padding-box;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: clamp(1.5rem, 2.5vw, 2rem);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+    box-shadow: 0 0 0 1px var(--primary-alpha-05), var(--shadow-sm);
+    transition:
+        transform 0.7s var(--ease-out),
+        box-shadow 0.7s var(--ease-out),
+        border-color 0.4s,
+        background-color 0.6s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    isolation: isolate;
     overflow: hidden;
 }
 
 .province-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(480px circle at var(--mx, var(--mouse-x, 50%)) var(--my, var(--mouse-y, -20%)), var(--tertiary-border), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.province-card::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    border-radius: 4px 4px 0 0;
-    opacity: 0.85;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s var(--ease-out);
+    z-index: 1;
 }
 
-.province-card[data-prov="waikiki"]::before {
+.province-card[data-prov="waikiki"]::after {
     background: linear-gradient(90deg, var(--primary-light), var(--waikiki-light));
 }
 
-.province-card[data-prov="amazonia"]::before {
+.province-card[data-prov="amazonia"]::after {
     background: linear-gradient(90deg, #2e7d47, var(--amazonia-light));
 }
 
-.province-card[data-prov="brazilia"]::before {
+.province-card[data-prov="brazilia"]::after {
     background: linear-gradient(90deg, var(--accent), var(--accent-light));
 }
 
 .province-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    border-color: var(--primary-light-alpha-30);
     box-shadow: var(--shadow-lg);
+}
+
+.province-card:hover::before {
+    opacity: 1;
+}
+
+.province-card:hover::after {
+    transform: scaleX(1);
 }
 
 .body-dark .province-card {
     background: var(--surface-card);
-    border-color: var(--tertiary-border);
-    box-shadow: 0 8px 24px var(--black-alpha-35);
+    border-color: var(--white-alpha-18);
+    box-shadow: 0 0 0 1px var(--white-alpha-08), 0 8px 24px var(--black-alpha-35);
+}
+
+.body-dark .province-card:hover {
+    border-color: var(--tertiary);
+    box-shadow: 0 16px 36px var(--black-alpha-50);
 }
 
 .province-card-top {
@@ -564,49 +597,83 @@
 
 .sanctuary-item {
     background: var(--surface);
+    background-clip: padding-box;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: clamp(1.5rem, 2.5vw, 2rem);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 0 0 1px var(--primary-alpha-05), var(--shadow-sm);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+    transition:
+        transform 0.7s var(--ease-out),
+        box-shadow 0.7s var(--ease-out),
+        border-color 0.4s,
+        background-color 0.6s;
     position: relative;
+    isolation: isolate;
     overflow: hidden;
 }
 
 .sanctuary-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(480px circle at var(--mx, var(--mouse-x, 50%)) var(--my, var(--mouse-y, -20%)), var(--tertiary-border), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.sanctuary-item::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 3px;
-    opacity: 0.85;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s var(--ease-out);
+    z-index: 1;
 }
 
-.sanctuary-item[data-prov="waikiki"]::before {
+.sanctuary-item[data-prov="waikiki"]::after {
     background: linear-gradient(90deg, var(--primary-light), var(--waikiki-light));
 }
 
-.sanctuary-item[data-prov="amazonia"]::before {
+.sanctuary-item[data-prov="amazonia"]::after {
     background: linear-gradient(90deg, #2e7d47, var(--amazonia-light));
 }
 
-.sanctuary-item[data-prov="brazilia"]::before {
+.sanctuary-item[data-prov="brazilia"]::after {
     background: linear-gradient(90deg, var(--accent), var(--accent-light));
 }
 
 .sanctuary-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    border-color: var(--primary-light-alpha-30);
     box-shadow: var(--shadow-lg);
+}
+
+.sanctuary-item:hover::before {
+    opacity: 1;
+}
+
+.sanctuary-item:hover::after {
+    transform: scaleX(1);
 }
 
 .body-dark .sanctuary-item {
     background: var(--surface-card);
-    border-color: var(--tertiary-border);
-    box-shadow: 0 8px 24px var(--black-alpha-35);
+    border-color: var(--white-alpha-18);
+    box-shadow: 0 0 0 1px var(--white-alpha-08), 0 8px 24px var(--black-alpha-35);
+}
+
+.body-dark .sanctuary-item:hover {
+    border-color: var(--tertiary);
+    box-shadow: 0 16px 36px var(--black-alpha-50);
 }
 
 .sanctuary-badge-prov {
@@ -667,10 +734,16 @@
     margin: 0 0 1.25rem 0;
     border-radius: 14px;
     box-shadow: var(--shadow-xs);
+    overflow: hidden;
 }
 
 .sanctuary-art .nature-ill {
     border-radius: 13px;
+    transition: transform 1.4s var(--ease-out);
+}
+
+.sanctuary-item:hover .sanctuary-art .nature-ill {
+    transform: scale(1.05);
 }
 
 .sanctuary-item p {
@@ -694,23 +767,69 @@
 
 .charter-rule-card {
     background: var(--surface);
+    background-clip: padding-box;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: clamp(1.5rem, 2vw, 2rem);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+    box-shadow: 0 0 0 1px var(--primary-alpha-05), var(--shadow-sm);
+    transition:
+        transform 0.7s var(--ease-out),
+        box-shadow 0.7s var(--ease-out),
+        border-color 0.4s,
+        background-color 0.6s;
     position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.charter-rule-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(480px circle at var(--mx, var(--mouse-x, 50%)) var(--my, var(--mouse-y, -20%)), var(--tertiary-border), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.charter-rule-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2e7d47, var(--amazonia-light) 45%, var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s var(--ease-out);
+    z-index: 1;
 }
 
 .charter-rule-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    border-color: var(--primary-light-alpha-30);
     box-shadow: var(--shadow-lg);
+}
+
+.charter-rule-card:hover::before {
+    opacity: 1;
+}
+
+.charter-rule-card:hover::after {
+    transform: scaleX(1);
 }
 
 .body-dark .charter-rule-card {
     background: var(--surface-card);
-    border-color: var(--tertiary-border);
-    box-shadow: 0 8px 24px var(--black-alpha-35);
+    border-color: var(--white-alpha-18);
+    box-shadow: 0 0 0 1px var(--white-alpha-08), 0 8px 24px var(--black-alpha-35);
+}
+
+.body-dark .charter-rule-card:hover {
+    border-color: var(--tertiary);
+    box-shadow: 0 16px 36px var(--black-alpha-50);
 }
 
 .charter-index-num {
@@ -728,6 +847,16 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
     box-shadow: 0 4px 12px rgba(78, 139, 90, 0.08);
+    transition:
+        transform 0.8s var(--ease-spring),
+        background-color 0.4s,
+        border-color 0.4s,
+        box-shadow 0.4s;
+}
+
+.charter-rule-card:hover .charter-index-num {
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: 0 6px 16px rgba(78, 139, 90, 0.2);
 }
 
 .body-dark .charter-index-num {
@@ -735,6 +864,11 @@
     border-color: rgba(136, 212, 158, 0.35);
     color: var(--amazonia-light);
     box-shadow: 0 4px 14px var(--black-alpha-40);
+}
+
+.body-dark .charter-rule-card:hover .charter-index-num {
+    border-color: var(--amazonia-light);
+    box-shadow: 0 6px 18px var(--black-alpha-50);
 }
 
 .charter-rule-card h3 {
@@ -759,4 +893,16 @@
 
 .body-dark .charter-rule-card p {
     color: var(--text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sanctuary-item:hover .sanctuary-art .nature-ill,
+    .charter-rule-card:hover .charter-index-num {
+        transform: none !important;
+    }
+}
+
+html.no-reveal .sanctuary-item:hover .sanctuary-art .nature-ill,
+html.no-reveal .charter-rule-card:hover .charter-index-num {
+    transform: none !important;
 }

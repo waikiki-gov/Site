@@ -1,0 +1,1090 @@
+/* Sovereign Nation of Waikiki - Royal Family Tree Stylesheet */
+/* Tropical Luxe and Lagoon Night Design System */
+
+/* Tree Container and Controls */
+.tree-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    background: rgba(194, 138, 41, 0.15);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.tree-section-header {
+    text-align: center;
+    max-width: 840px;
+    margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+}
+
+.tree-section-header .section-title {
+    margin-bottom: 0.75rem;
+}
+
+.tree-section-header .section-intro {
+    font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+    line-height: 1.75;
+    color: var(--text-secondary);
+}
+
+/* Quick Nav Ribbon */
+.family-nav-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 auto clamp(2rem, 3vw, 3rem);
+    max-width: 1000px;
+    padding: 0 1rem;
+}
+
+.family-nav-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--heading);
+    text-decoration: none;
+    transition: all 0.25s var(--ease-out);
+    box-shadow: var(--shadow-sm);
+}
+
+.family-nav-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Pedigree Tree Wrapper */
+.pedigree-viewport {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1.5rem 0.5rem 3rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pedigree-tree {
+    min-width: 1100px;
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Generation Level Blocks */
+.tree-generation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 3.5rem;
+}
+
+.tree-generation:last-child {
+    margin-bottom: 0;
+}
+
+.generation-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1.2rem;
+    background: var(--surface-card);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+    z-index: 2;
+    position: relative;
+}
+
+/* Connector Lines */
+.tree-connector-down {
+    width: 2px;
+    height: 2.5rem;
+    background: linear-gradient(180deg, var(--accent), var(--line-strong));
+    margin: 0 auto;
+}
+
+.tree-fork-line {
+    position: relative;
+    width: 78%;
+    height: 2px;
+    background: var(--accent);
+    margin: 0 auto 1.5rem;
+}
+
+.tree-fork-line::before,
+.tree-fork-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 1.5rem;
+    background: var(--accent);
+}
+
+.tree-fork-line::before {
+    left: 0;
+}
+
+.tree-fork-line::after {
+    right: 0;
+}
+
+.tree-fork-mid {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 1.5rem;
+    background: var(--accent);
+}
+
+/* Generational Clusters */
+.tree-roots-cluster {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1.25rem, 2.5vw, 2.5rem);
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.tree-sovereign-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    padding: 1rem 1.5rem;
+    background: rgba(194, 138, 41, 0.05);
+    border: 1px solid rgba(194, 138, 41, 0.3);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.tree-marriage-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.2rem 0.8rem;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+    z-index: 3;
+}
+
+.tree-branches-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2vw, 2rem);
+    width: 100%;
+}
+
+.tree-branch-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.tree-branch-column:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(194, 138, 41, 0.4);
+}
+
+.branch-pillar-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: var(--primary-subtle);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.5rem;
+}
+
+.branch-pair-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Individual Tree Node Card */
+.tree-node-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.3s var(--ease-out);
+    position: relative;
+}
+
+.tree-node-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.tree-node-card.founder-card {
+    max-width: 440px;
+    padding: 1.25rem 1.5rem;
+    background: var(--surface);
+    border: 2px solid rgba(194, 138, 41, 0.5);
+}
+
+.tree-node-card.ancestor-card {
+    max-width: 340px;
+    padding: 0.85rem 1rem;
+    background: var(--surface);
+}
+
+.tree-node-thumb {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.founder-card .tree-node-thumb {
+    width: 82px;
+    height: 82px;
+    border-width: 3px;
+}
+
+.ancestor-card .tree-node-thumb {
+    width: 52px;
+    height: 52px;
+}
+
+.tree-node-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+.tree-node-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.tree-node-role {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.tree-node-name {
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--heading);
+    line-height: 1.25;
+    margin: 0;
+}
+
+.founder-card .tree-node-name {
+    font-size: 1.25rem;
+}
+
+.tree-node-dates {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.tree-node-office {
+    font-size: 0.78rem;
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* Generation III Succession Strip */
+.heirs-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    background: var(--surface-card);
+    border: 1px dashed var(--accent);
+    border-radius: var(--radius-lg);
+    max-width: 860px;
+    width: 100%;
+    text-align: center;
+}
+
+.heirs-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.heirs-body h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 0.4rem;
+}
+
+.heirs-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Overview Cards Grid */
+.overview-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    margin-top: 2rem;
+}
+
+.pillar-card {
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 2.5vw, 2.25rem);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s var(--ease-out);
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(194, 138, 41, 0.4);
+}
+
+.pillar-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent-subtle);
+    border: 1px solid rgba(194, 138, 41, 0.3);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.pillar-card h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1.8vw, 1.45rem);
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 0.85rem;
+    line-height: 1.3;
+}
+
+.pillar-card p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Member Dossiers Showcase */
+.dossiers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    margin-top: 2rem;
+}
+
+.dossier-card {
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s var(--ease-out);
+}
+
+.dossier-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(194, 138, 41, 0.4);
+}
+
+.dossier-hero {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.dossier-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.8s var(--ease-out);
+}
+
+.dossier-card:hover .dossier-hero img {
+    transform: scale(1.04);
+}
+
+.dossier-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 24, 48, 0.85) 100%);
+}
+
+.dossier-crown-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 0.85rem;
+    background: rgba(0, 24, 48, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.dossier-title-overlay {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.5rem;
+    right: 1.5rem;
+}
+
+.dossier-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.2rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dossier-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dossier-content {
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex-grow: 1;
+}
+
+.dossier-specs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1.25rem;
+}
+
+.dossier-spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.spec-key {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.spec-val {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--heading);
+}
+
+.dossier-bio-text {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.dossier-achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.achievement-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    background: var(--neutral-200);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Succession Line Section */
+.succession-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1rem, 2vw, 1.75rem);
+    margin-top: 2rem;
+}
+
+.succession-card {
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s var(--ease-out);
+}
+
+.succession-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(194, 138, 41, 0.4);
+}
+
+.succession-order-num {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.succession-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 0.4rem;
+}
+
+.succession-role {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+    margin-bottom: 0.85rem;
+}
+
+.succession-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Governance Matrix */
+.governance-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    margin-top: 2rem;
+}
+
+.matrix-card {
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s var(--ease-out);
+    display: flex;
+    flex-direction: column;
+}
+
+.matrix-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(194, 138, 41, 0.4);
+}
+
+.matrix-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    background: var(--accent-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.matrix-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 0.5rem;
+}
+
+.matrix-officials {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 0.85rem;
+}
+
+.matrix-card p {
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Timeline Milestones */
+.dynasty-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 2.5rem auto 0;
+    padding: 1rem 0;
+}
+
+.dynasty-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--line-strong));
+}
+
+.dynasty-milestone-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.dynasty-milestone-item:last-child {
+    margin-bottom: 0;
+}
+
+.milestone-marker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--surface-card);
+    border: 2px solid var(--accent);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.milestone-card {
+    background: var(--surface-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    flex-grow: 1;
+    transition: all 0.25s var(--ease-out);
+}
+
+.milestone-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.milestone-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 0.35rem;
+}
+
+.milestone-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ==========================================================================
+   Desktop-First Media Queries (NO min-width queries!)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .pedigree-tree {
+        min-width: 1000px;
+    }
+
+    .dossiers-grid {
+        grid-template-columns: 1fr;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .succession-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .governance-matrix-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .overview-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tree-branches-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tree-fork-line {
+        display: none;
+    }
+
+    .tree-sovereign-pair {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .succession-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .governance-matrix-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dossier-specs-list {
+        grid-template-columns: 1fr;
+    }
+
+    .dossier-hero {
+        height: 230px;
+    }
+
+    .tree-roots-cluster {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dynasty-timeline::before {
+        left: 20px;
+    }
+
+    .milestone-marker {
+        width: 42px;
+        height: 42px;
+        font-size: 0.75rem;
+    }
+
+    .dynasty-milestone-item {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .family-nav-bar {
+        gap: 0.5rem;
+    }
+
+    .family-nav-pill {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.82rem;
+    }
+
+    .heirs-strip {
+        flex-direction: column;
+        padding: 1.25rem 1rem;
+    }
+}
+
+/* ==========================================================================
+   Lagoon Night (Dark Mode) Theme Engine
+   ========================================================================== */
+
+.body-dark .tree-hero-badge {
+    background: rgba(194, 138, 41, 0.25);
+    color: var(--accent-light);
+}
+
+.body-dark .family-nav-pill {
+    background: var(--dark-surface);
+    border-color: rgba(107, 164, 217, 0.18);
+    color: var(--dark-heading);
+}
+
+.body-dark .family-nav-pill:hover {
+    border-color: var(--tertiary);
+    color: var(--tertiary);
+}
+
+.body-dark .generation-label {
+    background: var(--dark-surface);
+    border-color: var(--accent-light);
+    color: var(--accent-light);
+}
+
+.body-dark .tree-sovereign-pair {
+    background: rgba(194, 138, 41, 0.08);
+    border-color: rgba(194, 138, 41, 0.4);
+}
+
+.body-dark .tree-branch-column {
+    background: var(--dark-surface);
+    border-color: rgba(107, 164, 217, 0.16);
+}
+
+.body-dark .tree-branch-column:hover {
+    border-color: var(--tertiary);
+}
+
+.body-dark .branch-pillar-tag {
+    background: rgba(107, 164, 217, 0.15);
+    color: var(--tertiary);
+}
+
+.body-dark .tree-node-card {
+    background: var(--dark-surface-2);
+    border-color: rgba(107, 164, 217, 0.14);
+}
+
+.body-dark .tree-node-card:hover {
+    border-color: var(--tertiary);
+}
+
+.body-dark .tree-node-card.founder-card {
+    border-color: rgba(194, 138, 41, 0.6);
+}
+
+.body-dark .tree-node-thumb {
+    border-color: var(--accent-light);
+}
+
+.body-dark .tree-node-name {
+    color: var(--dark-heading);
+}
+
+.body-dark .tree-node-dates {
+    color: var(--dark-text);
+}
+
+.body-dark .tree-node-office {
+    color: var(--dark-text);
+}
+
+.body-dark .heirs-strip {
+    background: var(--dark-surface);
+    border-color: rgba(194, 138, 41, 0.6);
+}
+
+.body-dark .heirs-body h4 {
+    color: var(--dark-heading);
+}
+
+.body-dark .heirs-body p {
+    color: var(--dark-text);
+}
+
+.body-dark .pillar-card {
+    background: var(--dark-surface);
+    border-color: rgba(107, 164, 217, 0.16);
+}
+
+.body-dark .pillar-card h3 {
+    color: var(--dark-heading);
+}
+
+.body-dark .pillar-card p {
+    color: var(--dark-text);
+}
+
+.body-dark .pillar-badge {
+    background: rgba(194, 138, 41, 0.2);
+    color: var(--accent-light);
+}
+
+.body-dark .dossier-card {
+    background: var(--dark-surface);
+    border-color: rgba(107, 164, 217, 0.16);
+}
+
+.body-dark .dossier-specs-list {
+    border-bottom-color: rgba(107, 164, 217, 0.16);
+}
+
+.body-dark .spec-key {
+    color: var(--dark-text);
+}
+
+.body-dark .spec-val {
+    color: var(--dark-heading);
+}
+
+.body-dark .dossier-bio-text {
+    color: var(--dark-text);
+}
+
+.body-dark .achievement-chip {
+    background: var(--dark-surface-2);
+    border-color: rgba(107, 164, 217, 0.16);
+    color: var(--dark-text);
+}
+
+.body-dark .succession-card {
+    background: var(--dark-surface);
+    border-color: rgba(107, 164, 217, 0.16);
+}
+
+.body-dark .succession-card h3 {
+    color: var(--dark-heading);
+}
+
+.body-dark .succession-role {
+    color: var(--tertiary);
+}
+
+.body-dark .succession-card p {
+    color: var(--dark-text);
+}
+
+.body-dark .matrix-card {
+    background: var(--dark-surface);
+    border-color: rgba(107, 164, 217, 0.16);
+}
+
+.body-dark .matrix-card h3 {
+    color: var(--dark-heading);
+}
+
+.body-dark .matrix-officials {
+    color: var(--tertiary);
+}
+
+.body-dark .matrix-card p {
+    color: var(--dark-text);
+}
+
+.body-dark .matrix-icon-wrap {
+    background: rgba(107, 164, 217, 0.16);
+    color: var(--tertiary);
+}
+
+.body-dark .milestone-marker {
+    background: var(--dark-surface);
+    border-color: var(--accent-light);
+    color: var(--accent-light);
+}
+
+.body-dark .milestone-card {
+    background: var(--dark-surface);
+    border-color: rgba(107, 164, 217, 0.16);
+}
+
+.body-dark .milestone-card h4 {
+    color: var(--dark-heading);
+}
+
+.body-dark .milestone-card p {
+    color: var(--dark-text);
+}

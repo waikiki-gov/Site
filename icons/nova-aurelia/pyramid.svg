@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="city-ill" viewBox="0 0 1200 700" role="img" aria-label="The Grand Sovereign Pyramid and Royal Court">
+<defs>
+<linearGradient id="na-pyramid-pyr-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#0e1e36"/><stop offset="0.5" stop-color="#1a365d"/><stop offset="0.85" stop-color="#2a5584"/><stop offset="1.0" stop-color="#487ba8"/></linearGradient>
+<linearGradient id="na-pyramid-pyr-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#fff5cf"/><stop offset="0.35" stop-color="#f7c858"/><stop offset="0.8" stop-color="#b8831e"/><stop offset="1.0" stop-color="#7a5310"/></linearGradient>
+<linearGradient id="na-pyramid-pyr-basalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#334155"/><stop offset="0.5" stop-color="#1e293b"/><stop offset="1.0" stop-color="#0f172a"/></linearGradient>
+<linearGradient id="na-pyramid-pyr-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0.0" stop-color="#c2e5ff" stop-opacity="0.9"/><stop offset="0.4" stop-color="#60a5fa" stop-opacity="0.75"/><stop offset="0.8" stop-color="#2563eb" stop-opacity="0.85"/><stop offset="1.0" stop-color="#1e3a8a" stop-opacity="0.9"/></linearGradient>
+<linearGradient id="na-pyramid-pyr-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#0284c7"/><stop offset="0.5" stop-color="#0369a1"/><stop offset="1.0" stop-color="#075985"/></linearGradient>
+</defs>
+<rect width="1200" height="700" fill="url(#na-pyramid-pyr-sky)"/>
+<circle cx="600" cy="150" r="260" fill="url(#na-pyramid-pyr-gold)" opacity="0.1"/>
+<polygon points="120,560 220,460 980,460 1080,560" fill="url(#na-pyramid-pyr-basalt)"/>
+<polygon points="220,460 600,460 600,560 120,560" fill="#243447" opacity="0.4"/>
+<polygon points="220,460 330,360 870,360 980,460" fill="url(#na-pyramid-pyr-basalt)"/>
+<polygon points="330,360 440,260 760,260 870,360" fill="url(#na-pyramid-pyr-basalt)"/>
+<polygon points="440,260 530,160 670,160 760,260" fill="url(#na-pyramid-pyr-basalt)"/>
+<polygon points="600,160 670,160 760,260 870,360 980,460 1080,560 600,560" fill="url(#na-pyramid-pyr-glass)"/>
+<line x1="600" y1="200" x2="676" y2="200" stroke="#bae6fd" stroke-width="1.4" opacity="0.6"/>
+<line x1="600" y1="250" x2="723.5" y2="250" stroke="#bae6fd" stroke-width="1.4" opacity="0.6"/>
+<line x1="600" y1="300" x2="771" y2="300" stroke="#bae6fd" stroke-width="1.4" opacity="0.6"/>
+<line x1="600" y1="350" x2="818.5" y2="350" stroke="#bae6fd" stroke-width="1.4" opacity="0.6"/>
+<line x1="600" y1="400" x2="866" y2="400" stroke="#bae6fd" stroke-width="1.4" opacity="0.6"/>
+<line x1="600" y1="450" x2="913.5" y2="450" stroke="#bae6fd" stroke-width="1.4" opacity="0.6"/>
+<line x1="600" y1="500" x2="961" y2="500" stroke="#bae6fd" stroke-width="1.4" opacity="0.6"/>
+<rect x="230" y="452" width="360" height="12" rx="4" fill="#166534"/>
+<circle cx="240" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="246" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="268" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="274" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="296" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="302" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="324" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="330" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="352" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="358" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="380" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="386" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="408" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="414" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="436" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="442" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="464" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="470" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="492" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="498" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="520" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="526" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="548" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="554" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="576" cy="448" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="582" cy="445" r="6" fill="#4ade80" opacity="0.8"/>
+<rect x="340" y="352" width="250" height="12" rx="4" fill="#166534"/>
+<circle cx="350" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="356" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="378" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="384" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="406" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="412" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="434" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="440" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="462" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="468" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="490" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="496" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="518" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="524" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="546" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="552" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="574" cy="348" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="580" cy="345" r="6" fill="#4ade80" opacity="0.8"/>
+<rect x="450" y="252" width="140" height="12" rx="4" fill="#166534"/>
+<circle cx="460" cy="248" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="466" cy="245" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="488" cy="248" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="494" cy="245" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="516" cy="248" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="522" cy="245" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="544" cy="248" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="550" cy="245" r="6" fill="#4ade80" opacity="0.8"/>
+<circle cx="572" cy="248" r="8" fill="#22c55e" opacity="0.9"/>
+<circle cx="578" cy="245" r="6" fill="#4ade80" opacity="0.8"/>
+<rect x="590" y="160" width="20" height="100" fill="#38bdf8" opacity="0.9"/>
+<ellipse cx="600" cy="260" rx="24" ry="6" fill="#ffffff" opacity="0.9"/>
+<rect x="590" y="260" width="20" height="100" fill="#38bdf8" opacity="0.9"/>
+<ellipse cx="600" cy="360" rx="24" ry="6" fill="#ffffff" opacity="0.9"/>
+<rect x="590" y="360" width="20" height="100" fill="#38bdf8" opacity="0.9"/>
+<ellipse cx="600" cy="460" rx="24" ry="6" fill="#ffffff" opacity="0.9"/>
+<rect x="590" y="460" width="20" height="100" fill="#38bdf8" opacity="0.9"/>
+<ellipse cx="600" cy="560" rx="24" ry="6" fill="#ffffff" opacity="0.9"/>
+<polygon points="530,160 600,100 670,160" fill="url(#na-pyramid-pyr-gold)"/>
+<circle cx="600" cy="100" r="8" fill="#ffffff" class="city-anim-beacon"/>
+<polygon points="596,100 604,100 625,0 575,0" fill="#fef08a" opacity="0.7" class="city-anim-beacon"/>
+<rect x="240" y="410" width="220" height="120" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+<path d="M325,510 A25,15.0 0 0 1 375,510" stroke="#94a3b8" stroke-width="3" fill="none"/>
+<path d="M309,510 A41,24.599999999999998 0 0 1 391,510" stroke="#94a3b8" stroke-width="3" fill="none"/>
+<path d="M293,510 A57,34.199999999999996 0 0 1 407,510" stroke="#94a3b8" stroke-width="3" fill="none"/>
+<path d="M277,510 A73,43.8 0 0 1 423,510" stroke="#94a3b8" stroke-width="3" fill="none"/>
+<path d="M261,510 A89,53.4 0 0 1 439,510" stroke="#94a3b8" stroke-width="3" fill="none"/>
+<circle cx="350" cy="510" r="8" fill="#f59e0b"/>
+<rect x="0" y="560" width="1200" height="140" fill="#1e293b"/>
+<rect x="400" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="430" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="460" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="490" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="520" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="550" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="580" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="610" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="640" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="670" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="700" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="730" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="760" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="790" y="535" width="8" height="35" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="390" y="530" width="430" height="6" fill="#f8fafc"/>
+<rect x="80" y="590" width="420" height="80" rx="6" fill="url(#na-pyramid-pyr-water)" stroke="#f59e0b" stroke-width="1.5"/>
+<rect x="700" y="590" width="420" height="80" rx="6" fill="url(#na-pyramid-pyr-water)" stroke="#f59e0b" stroke-width="1.5"/>
+<rect x="540" y="620" width="45" height="18" rx="5" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+<rect x="615" y="635" width="45" height="18" rx="5" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+<line x1="600" y1="83" x2="600" y2="100" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="475.8" y="63" width="248.5" height="22" rx="11" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="600" y="78" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Apex Beacon and Hall of Nations</text>
+<line x1="220" y1="298" x2="330" y2="350" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="88.2" y="278" width="263.5" height="22" rx="11" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="220" y="293" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Cascading Terraces and Waterfalls</text>
+<line x1="980" y1="298" x2="870" y2="360" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="863.2" y="278" width="233.5" height="22" rx="11" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="980" y="293" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Solar-Glass Photovoltaic Skin</text>
+<line x1="180" y1="488" x2="240" y2="480" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="55.8" y="468" width="248.5" height="22" rx="11" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="180" y="483" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Sovereign Assembly Amphitheater</text>
+<line x1="600" y1="523" x2="600" y2="532" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="479.5" y="503" width="241" height="22" rx="11" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+<text x="600" y="518" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Ceremonial Colonnade and Pools</text>
+</svg>

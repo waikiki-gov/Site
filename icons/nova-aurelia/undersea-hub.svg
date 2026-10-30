@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="city-ill" viewBox="0 0 1200 700" role="img" aria-label="Trans-Lagoon Maglev and Marine Concourse">
+<defs>
+<linearGradient id="na-undersea-hub-uh-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#0284c7"/><stop offset="0.6" stop-color="#38bdf8"/><stop offset="1.0" stop-color="#bae6fd"/></linearGradient>
+<linearGradient id="na-undersea-hub-uh-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#0284c7" stop-opacity="0.8"/><stop offset="0.2" stop-color="#0369a1"/><stop offset="0.5" stop-color="#075985"/><stop offset="0.8" stop-color="#0c4a6e"/><stop offset="1.0" stop-color="#082f49"/></linearGradient>
+<linearGradient id="na-undersea-hub-uh-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#ffffff" stop-opacity="0.6"/><stop offset="0.3" stop-color="#38bdf8" stop-opacity="0.3"/><stop offset="0.7" stop-color="#0284c7" stop-opacity="0.4"/><stop offset="1.0" stop-color="#ffffff" stop-opacity="0.7"/></linearGradient>
+<linearGradient id="na-undersea-hub-uh-train" x1="0" y1="0" x2="0" y2="1"><stop offset="0.0" stop-color="#ffffff"/><stop offset="0.4" stop-color="#e0f2fe"/><stop offset="0.8" stop-color="#0284c7"/><stop offset="1.0" stop-color="#0369a1"/></linearGradient>
+</defs>
+<rect width="1200" height="240" fill="url(#na-undersea-hub-uh-sky)"/>
+<rect x="120" y="140" width="360" height="100" fill="#f8fafc" stroke="#0369a1" stroke-width="2"/>
+<path d="M100,140 Q300,50 500,140 Z" fill="#bae6fd" opacity="0.8" stroke="#0284c7" stroke-width="2"/>
+<rect x="0" y="230" width="1200" height="15" fill="#334155"/>
+<path d="M680,230 L840,230 L860,205 L720,205 Z" fill="#ffffff" stroke="#0369a1" stroke-width="1.5"/>
+<rect x="730" y="185" width="80" height="20" rx="4" fill="#38bdf8" opacity="0.8"/>
+<path d="M0,240 Q150,234 300,240 T600,240 T900,240 T1200,240 L1200,700 L0,700 Z" fill="url(#na-undersea-hub-uh-sea)"/>
+<polygon points="150,240 190,240 290,700 90,700" fill="#ffffff" opacity="0.1"/>
+<polygon points="330,240 370,240 470,700 270,700" fill="#ffffff" opacity="0.1"/>
+<polygon points="510,240 550,240 650,700 450,700" fill="#ffffff" opacity="0.1"/>
+<polygon points="690,240 730,240 830,700 630,700" fill="#ffffff" opacity="0.1"/>
+<polygon points="870,240 910,240 1010,700 810,700" fill="#ffffff" opacity="0.1"/>
+<polygon points="1050,240 1090,240 1190,700 990,700" fill="#ffffff" opacity="0.1"/>
+<path d="M0,640 Q250,610 500,635 T900,615 T1200,645 L1200,700 L0,700 Z" fill="#1e293b"/>
+<ellipse cx="80" cy="630" rx="35" ry="28" fill="#f43f5e" opacity="0.8"/>
+<path d="M60,630 Q80,609.0 100,630" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5"/>
+<ellipse cx="180" cy="630" rx="35" ry="20" fill="#ec4899" opacity="0.8"/>
+<path d="M160,630 Q180,615.0 200,630" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5"/>
+<ellipse cx="480" cy="630" rx="35" ry="24" fill="#a855f7" opacity="0.8"/>
+<path d="M460,630 Q480,612.0 500,630" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5"/>
+<ellipse cx="920" cy="630" rx="35" ry="32" fill="#f97316" opacity="0.8"/>
+<path d="M900,630 Q920,606.0 940,630" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5"/>
+<ellipse cx="1080" cy="630" rx="35" ry="26" fill="#10b981" opacity="0.8"/>
+<path d="M1060,630 Q1080,610.5 1100,630" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5"/>
+<circle cx="330" cy="420" r="60" fill="#bae6fd" opacity="0.5" stroke="#38bdf8" stroke-width="3"/>
+<rect x="322" y="240" width="16" height="125" fill="#64748b"/>
+<circle cx="325" cy="415" r="4" fill="#f8fafc"/>
+<circle cx="340" cy="415" r="4" fill="#f8fafc"/>
+<rect x="140" y="550" width="28" height="85" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+<polygon points="128,635 180,635 168,590 140,590" fill="#334155"/>
+<rect x="480" y="550" width="28" height="85" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+<polygon points="468,635 520,635 508,590 480,590" fill="#334155"/>
+<rect x="780" y="550" width="28" height="85" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+<polygon points="768,635 820,635 808,590 780,590" fill="#334155"/>
+<rect x="1060" y="550" width="28" height="85" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+<polygon points="1048,635 1100,635 1088,590 1060,590" fill="#334155"/>
+<rect x="0" y="470" width="1200" height="80" rx="40" fill="url(#na-undersea-hub-uh-glass)" stroke="#38bdf8" stroke-width="2.5"/>
+<line x1="0" y1="535" x2="1200" y2="535" stroke="#0284c7" stroke-width="4"/>
+<line x1="0" y1="537" x2="1200" y2="537" stroke="#00ffff" stroke-width="1.8"/>
+<path d="M520,530 L800,530 Q870,530 880,520 Q870,490 800,490 L520,490 Z" fill="url(#na-undersea-hub-uh-train)"/>
+<rect x="540" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<rect x="572" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<rect x="604" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<rect x="636" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<rect x="668" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<rect x="700" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<rect x="732" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<rect x="764" y="498" width="22" height="14" rx="3" fill="#fef08a" opacity="0.9"/>
+<line x1="520" y1="524" x2="870" y2="524" stroke="#38bdf8" stroke-width="2"/>
+<path d="M680,340 Q710,300 750,335 Q710,345 680,340 M680,340 Q650,300 610,335 Q650,345 680,340 M680,340 L680,380" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<ellipse cx="980" cy="380" rx="18" ry="14" fill="#15803d" stroke="#166534" stroke-width="1.5"/>
+<circle cx="1000" cy="378" r="5" fill="#166534"/>
+<path d="M168,320 A12,10 0 0 1 192,320 Z" fill="#00ffff" opacity="0.8" class="city-anim-biolum"/>
+<path d="M172,320 Q170,340 174,355" stroke="#00ffff" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M188,320 Q190,340 186,355" stroke="#00ffff" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M828,420 A12,10 0 0 1 852,420 Z" fill="#00ffff" opacity="0.8" class="city-anim-biolum"/>
+<path d="M832,420 Q830,440 834,455" stroke="#00ffff" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M848,420 Q850,440 846,455" stroke="#00ffff" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M1038,280 A12,10 0 0 1 1062,280 Z" fill="#00ffff" opacity="0.8" class="city-anim-biolum"/>
+<path d="M1042,280 Q1040,300 1044,315" stroke="#00ffff" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M1058,280 Q1060,300 1056,315" stroke="#00ffff" stroke-width="1.2" fill="none" opacity="0.7"/>
+<line x1="300" y1="118" x2="300" y2="140" stroke="#00ffff" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="205.8" y="98" width="188.5" height="22" rx="11" fill="#082f49" stroke="#00ffff" stroke-width="1.2"/>
+<text x="300" y="113" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Surface Harbor Terminal</text>
+<line x1="180" y1="428" x2="270" y2="420" stroke="#00ffff" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="67" y="408" width="226" height="22" rx="11" fill="#082f49" stroke="#00ffff" stroke-width="1.2"/>
+<text x="180" y="423" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Subsea Observation Concourse</text>
+<line x1="1020" y1="443" x2="1020" y2="470" stroke="#00ffff" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="910.8" y="423" width="218.5" height="22" rx="11" fill="#082f49" stroke="#00ffff" stroke-width="1.2"/>
+<text x="1020" y="438" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Acrylic Vacuum Transit Tube</text>
+<line x1="700" y1="468" x2="700" y2="490" stroke="#00ffff" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="605.8" y="448" width="188.5" height="22" rx="11" fill="#082f49" stroke="#00ffff" stroke-width="1.2"/>
+<text x="700" y="463" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">High-Speed Maglev Train</text>
+<line x1="920" y1="683" x2="920" y2="630" stroke="#00ffff" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="792" y="663" width="256" height="22" rx="11" fill="#082f49" stroke="#00ffff" stroke-width="1.2"/>
+<text x="920" y="678" fill="#ffffff" font-size="11" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Protected Living Coral Sanctuary</text>
+</svg>

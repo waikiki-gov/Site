@@ -189,7 +189,7 @@ def label_for(slug: str, locale: str) -> str | None:
 
 def group_for(slug: str) -> str:
     base = slug.split("/")[-1]
-    if slug.startswith("bio/") or base == "raimondo-and-bailey-detailed":
+    if slug.startswith("bio/") or base in ("raimondo-and-bailey-detailed", "family-tree"):
         return "royal"
     for couple in COUPLES:
         if base.startswith(couple):

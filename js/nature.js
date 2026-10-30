@@ -35,6 +35,11 @@
                                 card.style.transition = 'opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
                                 card.style.opacity = '1';
                                 card.style.transform = 'translateY(0)';
+                                window.setTimeout(() => {
+                                    card.style.transition = '';
+                                    card.style.transform = '';
+                                    card.style.opacity = '';
+                                }, 360);
                             });
                         }, delay);
                     } else {
@@ -96,7 +101,7 @@
     }
 
     function initCardSpotlight() {
-        const cards = Array.from(document.querySelectorAll('.province-card, .sanctuary-item, .charter-rule-card'));
+        const cards = Array.from(document.querySelectorAll('.card, .province-card, .sanctuary-item, .charter-rule-card'));
         if (!cards.length) return;
 
         cards.forEach(card => {
@@ -104,6 +109,8 @@
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
+                card.style.setProperty('--mx', `${x}px`);
+                card.style.setProperty('--my', `${y}px`);
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
             }, { passive: true });

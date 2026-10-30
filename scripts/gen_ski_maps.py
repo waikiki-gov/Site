@@ -176,16 +176,22 @@ def draw_peak(apex, w, base_y, c, snow_y, seed=1, detail=False):
             out.append(
                 f'<path d="M{pt(a)} Q{n((a[0] + cc[0]) / 2)},{n((a[1] + cc[1]) / 2 + 5)} {pt(cc)}" fill="none" stroke="#dbeafe" stroke-width="1" opacity="0.55" />'
             )
-        # Sunlit crags just below the spine
+        # Sunlit crags just below the spine and secondary sub-ridges
         for k in (2, 4, 6):
             a, b = spine[k], spine[k + 1]
-            m = lerp(a, left_fa[k], 0.3)
-            out.append(f'<path d="{poly([a, (m[0], m[1] + 8), b])}" fill="{c["rock"]}" opacity="0.32" />')
+            m = lerp(a, left_fa[k], 0.34)
+            out.append(f'<path d="{poly([a, (m[0], m[1] + 9), b])}" fill="{c["rock"]}" opacity="0.34" />')
+            # Secondary sunlit snow facet rib
+            if k <= 4:
+                rib_end = lerp(left_fa[min(k + 2, 7)], spine[min(k + 2, 7)], 0.45)
+                out.append(
+                    f'<path d="M{pt(a)} Q{n((a[0] + rib_end[0]) / 2 - 4)},{n((a[1] + rib_end[1]) / 2)} {pt(rib_end)}" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.55" />'
+                )
         out.append(
-            f'<path d="{poly(head(left_fa, min(f, 0.6)), close=False)}" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.85" />'
+            f'<path d="{poly(head(left_fa, min(f, 0.65)), close=False)}" fill="none" stroke="#ffffff" stroke-width="1.3" opacity="0.88" />'
         )
         out.append(
-            f'<path d="{poly(head(spine, min(f, 0.75)), close=False)}" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.9" />'
+            f'<path d="{poly(head(spine, min(f, 0.78)), close=False)}" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.92" />'
         )
     return out
 
@@ -227,7 +233,7 @@ def draw_glacier_bowl(points, ice_fill):
 
 
 def draw_conifer_forest(clusters):
-    """Layered alpine spruce trees with shadows and snow caps (depth sorted)."""
+    """Layered 3-tier alpine spruce trees with trunks, shadows, and snow-draped boughs (depth sorted)."""
     out = ['<g class="alpine-forest">']
     for cx, cy, count, spread_x, spread_y, scale_base, seed in clusters:
         trees = []
@@ -236,46 +242,67 @@ def draw_conifer_forest(clusters):
             r = math.sqrt((i + 0.5) / count)
             tx = cx + math.cos(ang) * spread_x * r
             ty = cy + math.sin(ang) * spread_y * r
-            sc = scale_base * (0.72 + 0.48 * ((i * 37 + seed * 13) % 10) / 10.0)
+            sc = scale_base * (0.74 + 0.48 * ((i * 37 + seed * 13) % 10) / 10.0)
             trees.append((ty, tx, sc))
         trees.sort()
         for ty, tx, sc in trees:
-            h = 17.0 * sc
-            w = 6.2 * sc
+            h = 18.5 * sc
+            w = 6.6 * sc
             out.append(
-                f'<ellipse cx="{n(tx + 2)}" cy="{n(ty + 1)}" rx="{n(w * 0.95)}" ry="{n(w * 0.3)}" fill="#0f2947" opacity="0.28" />'
-            )
-            out.append(f'<path d="M{n(tx)},{n(ty - h)} L{n(tx - w)},{n(ty)} L{n(tx + w)},{n(ty)} Z" fill="#0f3d3e" />')
-            out.append(
-                f'<path d="M{n(tx)},{n(ty - h * 1.04)} L{n(tx - w * 0.76)},{n(ty - h * 0.36)} L{n(tx + w * 0.76)},{n(ty - h * 0.36)} Z" fill="#195959" />'
+                f'<ellipse cx="{n(tx + 2.2 * sc)}" cy="{n(ty + 1)}" rx="{n(w * 0.98)}" ry="{n(w * 0.32)}" fill="#0b1f38" opacity="0.32" />'
             )
             out.append(
-                f'<path d="M{n(tx)},{n(ty - h * 1.04)} L{n(tx - w * 0.48)},{n(ty - h * 0.62)} L{n(tx + w * 0.18)},{n(ty - h * 0.66)} Z" fill="#eef7ff" opacity="0.9" />'
+                f'<rect x="{n(tx - 0.8 * sc)}" y="{n(ty - h * 0.18)}" width="{n(1.6 * sc)}" height="{n(h * 0.22)}" fill="#4a2c18" />'
+            )
+            # Bottom bough tier
+            out.append(
+                f'<path d="M{n(tx)},{n(ty - h * 0.72)} L{n(tx - w)},{n(ty - h * 0.08)} Q{n(tx)},{n(ty + h * 0.04)} {n(tx + w)},{n(ty - h * 0.08)} Z" fill="#0d3538" />'
+            )
+            # Middle bough tier
+            out.append(
+                f'<path d="M{n(tx)},{n(ty - h * 0.92)} L{n(tx - w * 0.82)},{n(ty - h * 0.36)} Q{n(tx)},{n(ty - h * 0.26)} {n(tx + w * 0.82)},{n(ty - h * 0.36)} Z" fill="#154c4e" />'
+            )
+            # Top crown tier
+            out.append(
+                f'<path d="M{n(tx)},{n(ty - h * 1.08)} L{n(tx - w * 0.6)},{n(ty - h * 0.62)} Q{n(tx)},{n(ty - h * 0.54)} {n(tx + w * 0.6)},{n(ty - h * 0.62)} Z" fill="#1e6663" />'
+            )
+            # Snow cap & bough frost
+            out.append(
+                f'<path d="M{n(tx)},{n(ty - h * 1.08)} L{n(tx - w * 0.48)},{n(ty - h * 0.68)} Q{n(tx - w * 0.1)},{n(ty - h * 0.62)} {n(tx + w * 0.24)},{n(ty - h * 0.72)} Z" fill="#f0f8ff" opacity="0.92" />'
             )
     out.append("</g>")
     return out
 
 
 def draw_palm_tree(x, y, scale=1.0, tilt=1.0):
-    """Tropical coconut palm for the Haiti beach zone."""
-    tx = x + 7 * tilt * scale
-    ty = y - 25 * scale
+    """Realistic multi-frond tropical coconut palm with ringed curved trunk and coconuts."""
+    tx = x + 7.5 * tilt * scale
+    ty = y - 26 * scale
+    ctrl_x = x + 2.8 * tilt * scale
+    ctrl_y = y - 13 * scale
     out = [
-        f'<ellipse cx="{n(x + 3)}" cy="{n(y + 1)}" rx="{n(8 * scale)}" ry="{n(2.5 * scale)}" fill="#bfa06a" opacity="0.45" />',
-        f'<path d="M{n(x)},{n(y)} Q{n(x + 2.5 * tilt * scale)},{n(y - 13 * scale)} {n(tx)},{n(ty)}" fill="none" stroke="#6b4423" stroke-width="{n(2.6 * scale)}" stroke-linecap="round" />',
+        f'<ellipse cx="{n(x + 3 * scale)}" cy="{n(y + 1)}" rx="{n(8.5 * scale)}" ry="{n(2.6 * scale)}" fill="#a3834c" opacity="0.45" />',
+        f'<path d="M{n(x - 1.4 * scale)},{n(y)} Q{n(ctrl_x - 0.9 * scale)},{n(ctrl_y)} {n(tx - 0.6 * scale)},{n(ty)} L{n(tx + 0.7 * scale)},{n(ty)} Q{n(ctrl_x + 1.0 * scale)},{n(ctrl_y)} {n(x + 1.4 * scale)},{n(y)} Z" fill="#6b4423" />',
+        f'<path d="M{n(x)},{n(y)} Q{n(ctrl_x)},{n(ctrl_y)} {n(tx)},{n(ty)}" fill="none" stroke="#8c5a32" stroke-width="{n(1.1 * scale)}" stroke-dasharray="1.8 2.2" opacity="0.75" />',
     ]
     fronds = [
-        (-15, -3, -8, -8, "#15803d"),
-        (-13, 6, -7, -1, "#166534"),
-        (15, -3, 8, -8, "#22c55e"),
-        (14, 6, 7, -1, "#15803d"),
-        (-5, -12, -2, -9, "#22c55e"),
-        (7, -11, 3, -8, "#16a34a"),
+        (-17, 2, -9, -6, "#14532d"),
+        (-15, 8, -8, 0, "#166534"),
+        (17, 2, 9, -6, "#15803d"),
+        (15, 8, 8, 0, "#166534"),
+        (-13, -6, -7, -10, "#16a34a"),
+        (13, -6, 7, -10, "#22c55e"),
+        (-5, -13, -2, -9, "#4ade80"),
+        (6, -12, 3, -9, "#22c55e"),
     ]
     for dx, dy, cx_off, cy_off, fcol in fronds:
+        fx, fy = tx + dx * scale, ty + dy * scale
+        qx, qy = tx + cx_off * scale, ty + cy_off * scale
         out.append(
-            f'<path d="M{n(tx)},{n(ty)} Q{n(tx + cx_off * scale)},{n(ty + cy_off * scale)} {n(tx + dx * scale)},{n(ty + dy * scale)}" fill="none" stroke="{fcol}" stroke-width="{n(2.1 * scale)}" stroke-linecap="round" />'
+            f'<path d="M{n(tx)},{n(ty)} Q{n(qx)},{n(qy)} {n(fx)},{n(fy)} Q{n(qx + (0.5 if dx > 0 else -0.5) * scale)},{n(qy + 2.8 * scale)} {n(tx)},{n(ty + 1.0 * scale)} Z" fill="{fcol}" opacity="0.94" />'
         )
+    out.append(f'<circle cx="{n(tx - 1.2 * scale)}" cy="{n(ty + 1.4 * scale)}" r="{n(1.5 * scale)}" fill="#451a03" />')
+    out.append(f'<circle cx="{n(tx + 1.2 * scale)}" cy="{n(ty + 1.6 * scale)}" r="{n(1.4 * scale)}" fill="#5c2d0c" />')
     return out
 
 
@@ -967,57 +994,137 @@ def build_haiti_svg() -> str:
     ]
     o += mist_band(370, 80, "haiti-mist")
 
-    # 4. Coastal jungle foothills with canopy texture
-    def top(x):
-        return 448 + 8 * math.sin(x / 60) + 5 * math.sin(x / 23)
-
+    # 4. Seamless Montane Cloud Forest & Tropical Rainforest Canopy Belt
     def coast(x):
         return 542 + 5 * math.sin(x / 90)
 
-    foot = [(10, 552)] + [(x, top(x)) for x in range(60, 1150, 30)] + [(1190, 552)]
-    o += ["<!-- 4. Cloud forest and coastal jungle -->", f'<path d="{poly(foot)}" fill="url(#haiti-jungle)" />']
-    palette = ("#1f7a55", "#2a8f63", "#17654a", "#349c6c")
-    o.append("<g>")
-    for row in range(6):
-        for col_i, x in enumerate(range(90, 1120, 20)):
-            xj = x + (rnd(col_i, row + 1) - 0.5) * 10
-            y = 458 + row * 14 + (rnd(col_i + 50, row + 3) - 0.5) * 8
-            if y < top(xj) + 6 or y > coast(xj) - 6:
-                continue
-            r = 4.5 + 2.5 * rnd(col_i + 99, row)
-            o.append(f'<circle cx="{n(xj)}" cy="{n(y)}" r="{n(r)}" fill="{palette[(col_i + row) % 4]}" />')
-    o.append("</g>")
-    o += [
-        '<path d="M452,380 C450,420 444,470 440,528" fill="none" stroke="#bae6fd" stroke-width="3.2" stroke-linecap="round" opacity="0.9" />',
-        '<ellipse cx="440" cy="529" rx="11" ry="3.5" fill="#38bdf8" opacity="0.85" />',
-        '<path d="M790,382 C796,425 802,475 806,530" fill="none" stroke="#bae6fd" stroke-width="3" stroke-linecap="round" opacity="0.88" />',
-        '<ellipse cx="806" cy="531" rx="10" ry="3.5" fill="#38bdf8" opacity="0.85" />',
+    o.append("<!-- 4. Seamless Montane Cloud Forest and Tropical Rainforest Canopy -->")
+    # Sub-alpine krummholz / montane transition ridge (y ~ 396..445)
+    montane_pts = [
+        (0, 445),
+        *[
+            (
+                x,
+                404
+                + 10 * math.sin(x / 72 + 0.5)
+                + 6 * math.cos(x / 29)
+                - 14 * math.exp(-((x - 560) / 360) ** 2),
+            )
+            for x in range(0, 1201, 24)
+        ],
+        (1200, 555),
+        (0, 555),
     ]
+    o.append(f'<path d="{poly(montane_pts)}" fill="#134e3a" opacity="0.92" />')
+
+    # 5 layered scalloped organic rainforest canopy waves (back-to-front from y=418 to y=536)
+    canopy_tiers = [
+        (422, 9.0, 26, "#165b41", "#227a56", 11),
+        (444, 10.5, 24, "#1b6b4c", "#298f63", 23),
+        (468, 11.5, 22, "#1f7a55", "#34a873", 37),
+        (494, 12.0, 20, "#196748", "#2d9666", 53),
+        (518, 11.0, 22, "#14533a", "#25855a", 71),
+    ]
+    for base_y, crown_h, step_x, fill_col, rim_col, cseed in canopy_tiers:
+        d_parts = [f"M0,{n(base_y + 18)}"]
+        rim_parts = []
+        cx = 0
+        idx = 0
+        while cx < 1200:
+            nx = min(1200, cx + step_x + int((rnd(idx, cseed) - 0.5) * 8))
+            mx = (cx + nx) * 0.5
+            arch = base_y - crown_h * (0.65 + 0.55 * rnd(idx + 17, cseed)) + 5 * math.sin(cx / 85.0 + cseed)
+            valley = base_y + 3 * (rnd(idx + 31, cseed) - 0.3) + 5 * math.sin(nx / 85.0 + cseed)
+            d_parts.append(f"Q{n(mx)},{n(arch)} {n(nx)},{n(valley)}")
+            if idx % 2 == 0 and 40 < cx < 1160:
+                rim_parts.append(f"M{n(cx + 2)},{n(valley - 1)} Q{n(mx)},{n(arch - 1.2)} {n(nx - 2)},{n(valley - 1)}")
+            cx = nx
+            idx += 1
+        d_parts.append("L1200,556 L0,556 Z")
+        o.append(f'<path d="{" ".join(d_parts)}" fill="{fill_col}" />')
+        o.append(
+            f'<path d="{" ".join(rim_parts)}" fill="none" stroke="{rim_col}" stroke-width="1.4" stroke-linecap="round" opacity="0.65" />'
+        )
+
+    # Emergent ceiba & mahogany tree crowns rising out of the rainforest canopy
+    o.append('<g class="emergent-crowns">')
+    for ex, ey, erx, ery, ecol, elcol in [
+        (145, 452, 22, 11, "#166534", "#4ade80"),
+        (265, 476, 25, 12, "#14532d", "#22c55e"),
+        (395, 448, 24, 11, "#15803d", "#4ade80"),
+        (515, 488, 26, 12, "#166534", "#34d399"),
+        (615, 458, 23, 11, "#14532d", "#4ade80"),
+        (735, 482, 25, 12, "#15803d", "#22c55e"),
+        (885, 456, 24, 11, "#166534", "#4ade80"),
+        (985, 492, 22, 11, "#14532d", "#34d399"),
+        (1095, 466, 23, 11, "#15803d", "#4ade80"),
+    ]:
+        o.append(f'<ellipse cx="{ex}" cy="{ey + 3}" rx="{erx + 2}" ry="{ery}" fill="#0a2e1f" opacity="0.45" />')
+        o.append(f'<ellipse cx="{ex}" cy="{ey}" rx="{erx}" ry="{ery}" fill="{ecol}" />')
+        o.append(f'<ellipse cx="{ex - 4}" cy="{ey - 3}" rx="{erx * 0.65:.1f}" ry="{ery * 0.6:.1f}" fill="{elcol}" opacity="0.45" />')
+    o.append("</g>")
+
+    # Glacial meltwater rivers & multi-tier jungle waterfalls with misty plunge pools
+    o += [
+        '<path d="M454,368 C452,398 446,422 444,448 C442,478 441,504 438,536" fill="none" stroke="#0f3f2e" stroke-width="6.5" stroke-linecap="round" opacity="0.55" />',
+        '<path d="M454,368 C452,398 446,422 444,448 C442,478 441,504 438,536" fill="none" stroke="#7dd3fc" stroke-width="3.4" stroke-linecap="round" opacity="0.92" />',
+        '<path d="M454,368 C452,398 446,422 444,448 C442,478 441,504 438,536" fill="none" stroke="#ffffff" stroke-width="1.3" stroke-dasharray="6 4" stroke-linecap="round" opacity="0.85" />',
+        '<ellipse cx="445" cy="448" rx="9" ry="3.2" fill="#e0f2fe" opacity="0.78" />',
+        '<ellipse cx="438" cy="536" rx="14" ry="4.2" fill="#38bdf8" opacity="0.85" />',
+        '<ellipse cx="438" cy="536" rx="8" ry="2.2" fill="#ffffff" opacity="0.75" />',
+        '<path d="M788,370 C794,402 798,428 801,456 C804,484 805,508 808,538" fill="none" stroke="#0f3f2e" stroke-width="6.0" stroke-linecap="round" opacity="0.55" />',
+        '<path d="M788,370 C794,402 798,428 801,456 C804,484 805,508 808,538" fill="none" stroke="#7dd3fc" stroke-width="3.2" stroke-linecap="round" opacity="0.9" />',
+        '<path d="M788,370 C794,402 798,428 801,456 C804,484 805,508 808,538" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="5 4" stroke-linecap="round" opacity="0.85" />',
+        '<ellipse cx="801" cy="456" rx="8.5" ry="3.0" fill="#e0f2fe" opacity="0.78" />',
+        '<ellipse cx="808" cy="538" rx="13" ry="4.0" fill="#38bdf8" opacity="0.85" />',
+        '<ellipse cx="808" cy="538" rx="7.5" ry="2.0" fill="#ffffff" opacity="0.75" />',
+    ]
+    # Sub-alpine spruce & cloud-forest pine clusters along the snowline ecotone (y ~ 368..412)
     o += draw_conifer_forest(
         [
-            (270, 392, 12, 34, 10, 0.5, 11),
-            (470, 388, 12, 36, 10, 0.5, 12),
-            (780, 380, 12, 36, 10, 0.5, 13),
-            (1040, 395, 10, 30, 10, 0.5, 14),
+            (195, 396, 14, 38, 12, 0.52, 10),
+            (285, 390, 16, 42, 12, 0.55, 11),
+            (465, 384, 16, 42, 12, 0.56, 12),
+            (615, 388, 14, 38, 11, 0.52, 15),
+            (775, 380, 16, 42, 12, 0.56, 13),
+            (915, 392, 14, 36, 11, 0.52, 16),
+            (1045, 396, 14, 36, 11, 0.52, 14),
         ]
     )
+    o += mist_band(392, 52, "haiti-mist")
 
-    # 5. Beach, lagoon, reef
-    beach = [(x, coast(x) - 4) for x in range(0, 1201, 40)] + [(1200, 700), (0, 700)]
-    sea = [(x, coast(x) + 12 + 3 * math.sin(x / 50)) for x in range(0, 1201, 40)] + [(1200, 700), (0, 700)]
+    # 5. Golden beach, turquoise coral lagoon, and barrier reef
+    beach_top = [(x, coast(x) - 6 + 2 * math.sin(x / 35)) for x in range(0, 1201, 30)]
+    beach = beach_top + [(1200, 700), (0, 700)]
+    wet_sand = [(x, coast(x) + 6 + 2.5 * math.sin(x / 45)) for x in range(0, 1201, 30)] + [(1200, 700), (0, 700)]
+    sea = [(x, coast(x) + 12 + 3 * math.sin(x / 50)) for x in range(0, 1201, 30)] + [(1200, 700), (0, 700)]
     o += [
         "<!-- 5. Golden beach and Caribbean Sea -->",
-        f'<path d="{poly(beach)}" fill="#f3dfb6" />',
+        f'<path d="{poly(beach)}" fill="#f6e3ba" />',
+        f'<path d="{poly(wet_sand)}" fill="#dfbe82" opacity="0.7" />',
         f'<path d="{poly(sea)}" fill="url(#haiti-carib-sea)" />',
-        '<path d="M0,566 Q300,580 600,570 T1200,575 L1200,612 Q900,600 600,610 T0,604 Z" fill="#2dd4bf" opacity="0.35" />',
-        '<path d="M0,558 Q300,566 600,560 T1200,564" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="12 6" opacity="0.85" class="dash" />',
-        '<path d="M60,648 Q380,628 680,642 T1140,634" fill="none" stroke="#5eead4" stroke-width="8" stroke-linecap="round" opacity="0.3" />',
-        '<path d="M60,648 Q380,628 680,642 T1140,634" fill="none" stroke="#ffffff" stroke-width="1.3" stroke-dasharray="5 7" opacity="0.7" />',
+        '<path d="M0,564 Q300,578 600,568 T1200,573 L1200,618 Q900,606 600,616 T0,608 Z" fill="#2dd4bf" opacity="0.38" />',
+        # Submerged coral reef heads & turquoise sandbars
+        '<g opacity="0.48">',
+        '<ellipse cx="140" cy="592" rx="46" ry="9" fill="#0d9488" />',
+        '<ellipse cx="145" cy="590" rx="28" ry="5" fill="#5eead4" />',
+        '<ellipse cx="380" cy="602" rx="58" ry="11" fill="#0f766e" />',
+        '<ellipse cx="385" cy="600" rx="34" ry="6" fill="#5eead4" />',
+        '<ellipse cx="675" cy="596" rx="52" ry="10" fill="#0d9488" />',
+        '<ellipse cx="670" cy="594" rx="30" ry="5.5" fill="#99f6e4" />',
+        '<ellipse cx="980" cy="598" rx="64" ry="11" fill="#0f766e" />',
+        '<ellipse cx="985" cy="596" rx="36" ry="6" fill="#5eead4" />',
+        "</g>",
+        '<path d="M0,556 Q300,565 600,558 T1200,563" fill="none" stroke="#ffffff" stroke-width="2.0" stroke-dasharray="14 6" opacity="0.88" class="dash" />',
+        '<path d="M50,646 Q380,626 680,640 T1150,632" fill="none" stroke="#5eead4" stroke-width="9" stroke-linecap="round" opacity="0.32" />',
+        '<path d="M50,646 Q380,626 680,640 T1150,632" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.78" />',
     ]
     for px, py, psc, ptilt in [
-        (60, 548, 0.7, -1), (95, 550, 0.75, 1), (300, 548, 0.7, 1), (340, 549, 0.72, -1),
-        (520, 543, 0.7, 1), (640, 545, 0.68, -1), (900, 549, 0.72, 1), (940, 548, 0.68, -1),
-        (1100, 545, 0.75, -1), (1140, 547, 0.7, 1),
+        (52, 546, 0.78, -1), (88, 548, 0.85, 1), (125, 545, 0.72, 0.6),
+        (285, 546, 0.8, -0.8), (320, 548, 0.86, 1), (355, 547, 0.74, -1),
+        (495, 542, 0.82, -0.9), (530, 544, 0.76, 1), (635, 544, 0.8, -1), (670, 546, 0.74, 0.8),
+        (885, 547, 0.82, 1), (922, 548, 0.76, -1), (955, 546, 0.7, 0.7),
+        (1090, 544, 0.84, -1), (1130, 546, 0.78, 1), (1162, 545, 0.7, -0.7),
     ]:
         o += draw_palm_tree(px, py, scale=psc, tilt=ptilt)
 

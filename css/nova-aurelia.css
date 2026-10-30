@@ -1,0 +1,562 @@
+/* Sovereign Nation of Waikiki — Nova Aurelia Design System */
+/* Integrated with Tropical Luxe, Imperial Architecture, and Lagoon Night tokens */
+
+/* Section Spacing and Typographic Rhythm */
+.page-nova-aurelia .section-title {
+    line-height: 1.45;
+    padding-top: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-nova-aurelia .section-lead {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--neutral-700);
+    max-width: 840px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.body-dark.page-nova-aurelia .section-lead {
+    color: var(--neutral-300);
+}
+
+/* Metric Stats Row */
+.city-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 3.5rem 0 1rem;
+}
+
+.city-stat-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.city-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.city-stat-val {
+    display: block;
+    font-family: var(--font-display, "Playfair Display", Georgia, serif);
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+}
+
+.body-dark .city-stat-val {
+    color: var(--accent-light);
+}
+
+.city-stat-label {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--neutral-600);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+}
+
+.body-dark .city-stat-label {
+    color: var(--neutral-400);
+}
+
+/* Illustration Container and Frames */
+.city-ill-frame {
+    width: 100%;
+    max-width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    margin: 2.5rem 0;
+}
+
+.body-dark .city-ill-frame {
+    background: #0d1722;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.city-ill {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: calc(var(--radius-lg) - 2px);
+}
+
+/* Feature Grid and Callout Layouts */
+.city-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.city-highlight-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.body-dark .city-highlight-card {
+    background: var(--surface-card);
+    border-color: var(--tertiary-border);
+}
+
+.city-highlight-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    line-height: 1.35;
+}
+
+.body-dark .city-highlight-card h3 {
+    color: var(--accent-light);
+}
+
+.city-highlight-card p {
+    font-size: 0.94rem;
+    color: var(--neutral-700);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.body-dark .city-highlight-card p {
+    color: var(--neutral-300);
+}
+
+/* Split Feature Display (e.g. Pyramid and Transit) */
+.city-split-layout {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 2.5rem 0;
+}
+
+.city-split-layout.city-split--reverse {
+    grid-template-columns: 1fr 1.25fr;
+}
+
+.city-split-info h3 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.body-dark .city-split-info h3 {
+    color: var(--accent-light);
+}
+
+.city-split-info p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--neutral-700);
+    margin-bottom: 1.5rem;
+}
+
+.body-dark .city-split-info p {
+    color: var(--neutral-300);
+}
+
+.city-specs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.city-specs-list li {
+    padding-left: 1.8rem;
+    position: relative;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--neutral-800);
+}
+
+.body-dark .city-specs-list li {
+    color: var(--neutral-200);
+}
+
+.city-specs-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px rgba(194, 138, 41, 0.5);
+}
+
+/* Districts 2x2 Grid */
+.city-districts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.city-district-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.body-dark .city-district-card {
+    background: var(--surface-card);
+    border-color: var(--tertiary-border);
+}
+
+.city-district-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--tertiary);
+}
+
+.city-district-media {
+    width: 100%;
+    overflow: hidden;
+    background: #0d1722;
+}
+
+.city-district-body {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.city-district-tag {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--accent-subtle);
+    color: var(--accent-dark);
+    margin-bottom: 0.8rem;
+}
+
+.body-dark .city-district-tag {
+    background: rgba(245, 196, 110, 0.15);
+    color: var(--accent-light);
+}
+
+.city-district-body h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.body-dark .city-district-body h3 {
+    color: var(--neutral-100);
+}
+
+.city-district-body p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: var(--neutral-700);
+    margin: 0;
+}
+
+.body-dark .city-district-body p {
+    color: var(--neutral-300);
+}
+
+/* Historical Timeline Grid */
+.city-timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.city-timeline-step {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.25rem;
+    position: relative;
+    box-shadow: var(--shadow-xs);
+}
+
+.body-dark .city-timeline-step {
+    background: var(--surface-card);
+    border-color: var(--tertiary-border);
+}
+
+.city-timeline-step::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--accent);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.city-timeline-era {
+    font-family: var(--font-display, "Playfair Display", Georgia, serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.body-dark .city-timeline-era {
+    color: var(--accent-light);
+}
+
+.city-timeline-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin-bottom: 0.5rem;
+}
+
+.body-dark .city-timeline-title {
+    color: var(--neutral-100);
+}
+
+.city-timeline-desc {
+    font-size: 0.88rem;
+    color: var(--neutral-600);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.body-dark .city-timeline-desc {
+    color: var(--neutral-400);
+}
+
+/* Civic Future Three Pillars */
+.city-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+}
+
+.city-pillar-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2.2rem 1.8rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.body-dark .city-pillar-card {
+    background: var(--surface-card);
+    border-color: var(--tertiary-border);
+}
+
+.city-pillar-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--primary-subtle);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+}
+
+.body-dark .city-pillar-badge {
+    background: rgba(107, 164, 217, 0.18);
+    color: var(--tertiary-light);
+}
+
+.city-pillar-badge svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.city-pillar-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+.body-dark .city-pillar-card h3 {
+    color: var(--accent-light);
+}
+
+.city-pillar-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--neutral-700);
+    margin: 0;
+}
+
+.body-dark .city-pillar-card p {
+    color: var(--neutral-300);
+}
+
+/* Vector Animation Keyframes */
+@keyframes beaconPulse {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(0.96);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes gentleWater {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+@keyframes cloudDrift {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(12px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes biolumPulse {
+    0%, 100% {
+        opacity: 0.55;
+        filter: drop-shadow(0 0 4px #00ffff);
+    }
+    50% {
+        opacity: 0.95;
+        filter: drop-shadow(0 0 10px #00ffff);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .city-anim-beacon {
+        animation: beaconPulse 2.8s ease-in-out infinite;
+        transform-origin: center center;
+    }
+
+    .city-anim-water {
+        animation: gentleWater 4s ease-in-out infinite;
+    }
+
+    .city-anim-cloud {
+        animation: cloudDrift 18s ease-in-out infinite;
+    }
+
+    .city-anim-biolum {
+        animation: biolumPulse 3.5s ease-in-out infinite;
+    }
+}
+
+/* Responsive Desktop-First Media Queries */
+@media (max-width: 1200px) {
+    .city-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .city-highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .city-timeline-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .city-split-layout,
+    .city-split-layout.city-split--reverse {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .city-districts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .city-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .city-timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .city-stats-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .city-highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .city-timeline-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .city-stat-val {
+        font-size: 2rem;
+    }
+}

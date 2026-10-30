@@ -156,7 +156,10 @@ WHITELIST = {
     "heliski", "snowpark", "superpipe", "microgrid", "microgrids",
 
     # Space & Advanced Aeronautics
-    "wsa", "its", "nrho", "retropropulsion", "aerospike"
+    "wsa", "its", "nrho", "retropropulsion", "aerospike", "skyport",
+
+    # Antiquity & Regional Lore Additions
+    "portus", "mesoamerican"
 }
 
 # --------------------------------------------------------------------------- #
