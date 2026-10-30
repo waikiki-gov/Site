@@ -21,6 +21,12 @@ The Sovereign Nation of Waikiki web portal is engineered as a high-performance, 
 
 ```
 /
+├── .agents/
+│   └── rules/
+│       ├── AGENTS.md           # Agent workflow & rules for the site
+│       ├── ARCHITECTURE.md     # Technical architecture, components & pipelines
+│       ├── PAGE-EDITING.md     # Page build rules, editorial standards, colors, and narrative canon
+│       └── STYLE-GUIDELINES.md # Visual design system, token catalog, and typography rules
 ├── css/
 │   ├── common.css          # Master design system: tokens, typography, header, footer, animations
 │   ├── index.css           # Landing & portal specific layouts
@@ -63,9 +69,7 @@ The Sovereign Nation of Waikiki web portal is engineered as a high-performance, 
 │   └── ...                 # 36 additional Hungarian topic pages
 ├── images/                 # Optimized high-resolution photography & web assets
 ├── icons/                  # Vector heraldic symbols (icons/logo.svg), flags, coat of arms
-├── index.html              # Multi-lingual entry portal (English & Magyar selector)
-├── STYLE-GUIDELINES.md     # Visual design system, token catalog, and typography rules
-└── ARCHITECTURE.md         # This document
+└── index.html              # Multi-lingual entry portal (English & Magyar selector)
 ```
 
 ---
