@@ -2909,6 +2909,351 @@ def build_cataracts(labels):
     return s.render(labels["aria"]["cataracts"])
 
 
+def cuban_trogon(x, y, s, flip=False):
+    """Endemic Cuban Trogon / Tocororo (Priotelus temnurus) perched with scalloped tail, metallic green back, white breast, crimson belly, and blue crown."""
+    sx = -1 if flip else 1
+    return g([
+        # Distinctive scalloped/toothed long tail feathers (dark blue-green with white-edged lateral rectrices)
+        el("path", d="M-2,6 L-9,33 L-6,31 L-4,34 L-1,31 L2,34 L4,8Z", fill="#193b52"),
+        el("path", d="M-5.5,14 L-8.5,31 L-6,30 L-3.5,14Z M1.5,14 L2,31 L0,30 L-0.5,14Z", fill="#eef4f8", opacity=0.88),
+        # Crimson-scarlet lower belly and undertail coverts
+        el("path", d="M-2,3 C0,1 6,2 7.5,8 C6.5,14 2.5,16 -1,13 C-3,10 -3,6 -2,3Z", fill="#d92626"),
+        # Pure white throat and upper breast collar
+        el("path", d="M0,-4 C4,-5 8,-2 7.5,4 C4,5.5 -0.5,4.5 -1.5,1 C-2,-2 -1,-3.5 0,-4Z", fill="#f7f9fc"),
+        # Iridescent bronze-emerald back & folded wing with fine white tertial vermiculations
+        el("path", d="M-4,-3 C-5,2 -4,10 0,13 C2,8 2.5,1 0,-4Z", fill="#1d7848"),
+        el("path", d="M-3.5,-1 C-1,0 1,4 0,10 C-2.5,9 -4,4 -3.5,-1Z", fill="#2da060"),
+        el("path", d="M-2.5,2 L0,3 M-2.8,4.5 L0,5.5 M-2.5,7 L-0.2,8", stroke="#e8f2ee", stroke_width=0.75, opacity=0.8),
+        # Violet-blue crown and nape, dark mask, crimson iris with white orbital ring, and stout coral-red bill
+        el("path", d="M-3.5,-4 C-4,-9 1,-11.5 5,-9.5 C6.5,-8 6,-4.5 3.5,-3.5 C0.5,-3 -2.5,-3 -3.5,-4Z", fill="#1f448c"),
+        el("path", d="M0.5,-7.5 C3.5,-8 5.8,-6.5 5.5,-4 C3.5,-3.5 1,-4 0.5,-7.5Z", fill="#161c24"),
+        el("circle", cx=3.2, cy=-6.0, r=1.35, fill="#ffffff"),
+        el("circle", cx=3.2, cy=-6.0, r=0.85, fill="#b81d1d"),
+        el("path", d="M5.2,-7.2 C8.5,-7.0 9.8,-5.5 8.8,-4.2 C7.2,-4.0 5.8,-4.2 5.2,-4.8Z", fill="#e03c32"),
+    ], transform=f"translate({n(x)} {n(y)}) scale({n(sx * s)} {n(s)})")
+
+
+def build_elnicho(labels):
+    """El Nicho Travertine Cascades (Topes de Collantes, Escambray Mountains, Cuba): stepped turquoise travertine pools, lacy veil cascades, royal palms, tree ferns, and Cuban trogon."""
+    s = vignette("elnicho", 110)
+    rng = s.rng
+    sky(s, [(0, "#4f97c9"), (0.5, "#9ed2e6"), (1, "#e6f5ec")], h=110)
+    sun(s, 395, 42, 16, glow="#fff2c2")
+
+    # Misty Sierra del Escambray mountain ridges in the background
+    m_far, _ = hill(s, [(0, 86), (95, 54), (205, 74), (320, 48), (425, 68), (480, 58)], 125, "#6b998b")
+    s.add(m_far)
+    s.add(mist(s, 240, 82, 210, 14, op=0.55))
+
+    # Lush Escambray cloud-forest canopy & Cuban royal palms along the upper canyon rim
+    s.add(g(canopy_band(s, -15, 495, lambda x: 96 + 4 * math.sin(x / 28), 24, 11, 18, ("#174223", "#2b6933", "#589c49"), k=5)))
+    for px, py, ph, plean in ((88, 96, 52, -5), (124, 98, 44, 4), (358, 94, 54, 6), (402, 96, 46, -4)):
+        s.add(palm(rng, px, py, ph, plean, 18, cols=("#1f5727", "#488e3e"), trunk_col="#cfc9bc", royal=True, coconuts=False))
+
+    # Upper emerald stream feeding the travertine ledges
+    s.add(el("rect", x=45, y=96, width=390, height=22, fill=s.linear("uppool", [(0, "#1d6b63"), (1, "#359c8e")])))
+    s.add(water_lines(rng, 65, 415, 99, 114, 18, col="#dcf7f2", op=0.55))
+
+    # Stepped limestone & calcified travertine canyon walls (organic craggy profile, no flat horizontal top bar)
+    canyon_top = [(0, 102), (35, 96), (72, 112), (175, 110), (245, 113), (315, 110), (408, 112), (445, 98), (480, 104)]
+    s.add(el("path", d=smooth(canyon_top) + " L480,235 L0,235Z", fill="#3d342b"))
+    # Upper travertine dam rim (y ~ 112..156) with natural scalloped tufa lobes
+    for tx, tw, th, col in ((68, 112, 42, "#8c7b65"), (168, 148, 46, "#9e8c74"), (304, 116, 42, "#877660")):
+        s.add(el("path", d=(
+            f"M{tx},112 Q{tx + tw * 0.25},108 {tx + tw * 0.5},111 Q{tx + tw * 0.75},108 {tx + tw},112 "
+            f"Q{tx + tw + 8},{112 + th * 0.5} {tx + tw - 4},{112 + th} "
+            f"L{tx + 4},{112 + th} Q{tx - 8},{112 + th * 0.5} {tx},112Z"
+        ), fill=col))
+        # Vertical fluted tufa stalactite ribs on travertine face
+        flutes = " ".join(f"M{n(x)},113 Q{n(x + rng.uniform(-1.5, 1.5))},{112 + th * 0.5} {n(x)},{110 + th}"
+                          for x in range(tx + 8, tx + tw - 6, 6))
+        s.add(el("path", d=flutes, stroke="#5e5040", stroke_width=1.2, fill="none", opacity=0.6))
+        # Natural botanical moss & fern clusters along the travertine lip
+        s.add(crown(rng, tx + tw * 0.24, 111, 12, ("#1d4720", "#316e2d", "#5c9e48"), k=4, flat=0.45, detail=False))
+        s.add(crown(rng, tx + tw * 0.78, 112, 11, ("#1d4720", "#316e2d", "#5c9e48"), k=4, flat=0.45, detail=False))
+
+    # Tier 1 lacy white-water veil cascades plunging into the middle travertine pool
+    for wx, ww in ((115, 22), (195, 28), (248, 34), (298, 22), (355, 24)):
+        s.add(waterfall(s, wx, 111, 158, ww))
+
+    # Middle turquoise-jade travertine terrace basin (y = 152..188)
+    mid_pool_d = "M52,156 Q145,149 245,152 Q345,149 428,156 Q442,174 418,188 Q245,195 62,188 Q38,174 52,156Z"
+    s.add(el("path", d=mid_pool_d, fill=s.linear("midpool", [(0, "#3fd4c0"), (0.55, "#1ea898"), (1, "#12736a")])))
+    s.add(water_lines(rng, 72, 405, 158, 184, 24, col="#e4fcf8", op=0.62))
+    s.add(mist(s, 245, 156, 145, 10, op=0.58))
+
+    # Scalloped calcified travertine rim dam of the middle pool (y = 182..224) with multi-stepped tufa shelves
+    for sx_, sw_, sy_, sh_ in ((58, 125, 183, 40), (168, 154, 185, 42), (308, 120, 183, 40)):
+        s.add(el("path", d=(
+            f"M{sx_},{sy_} Q{sx_ + sw_ * 0.5},{sy_ + 6} {sx_ + sw_},{sy_} "
+            f"Q{sx_ + sw_ + 10},{sy_ + sh_ * 0.6} {sx_ + sw_ - 6},{sy_ + sh_} "
+            f"L{sx_ + 6},{sy_ + sh_} Q{sx_ - 10},{sy_ + sh_ * 0.6} {sx_},{sy_}Z"
+        ), fill="#a8947a"))
+        s.add(el("path", d=f"M{sx_},{sy_} Q{sx_ + sw_ * 0.5},{sy_ + 6} {sx_ + sw_},{sy_}",
+                 stroke="#dfd2be", stroke_width=2.6, fill="none", opacity=0.8))
+        flutes2 = " ".join(f"M{n(x)},{sy_ + 2} L{n(x + rng.uniform(-1.5, 1.5))},{sy_ + sh_ - 2}"
+                           for x in range(sx_ + 9, sx_ + sw_ - 8, 6))
+        s.add(el("path", d=flutes2, stroke="#695947", stroke_width=1.15, fill="none", opacity=0.6))
+        s.add(crown(rng, sx_ + sw_ * 0.5, sy_ + 2, 13, ("#1d4720", "#316e2d", "#5c9e48"), k=4, flat=0.42, detail=False))
+
+    # Tier 2 bridal-veil travertine cascades spilling into the crystal lower swimming lagoon
+    for wx, ww in ((96, 20), (148, 26), (212, 32), (268, 30), (324, 24), (382, 18)):
+        s.add(waterfall(s, wx, 185, 226, ww))
+    s.add(mist(s, 240, 224, 165, 12, op=0.62))
+
+    # Lower crystal-clear emerald-turquoise natural swimming lagoon (y = 220..300)
+    s.add(el("rect", x=0, y=220, width=480, height=80,
+             fill=s.linear("lowpool", [(0, "#4ce0cc"), (0.38, "#22b5a4"), (0.78, "#0f7d73"), (1, "#084f4a")])))
+    # Submerged cream travertine shelves visible through the crystal water
+    s.add(el("ellipse", cx=195, cy=252, rx=78, ry=12, fill="#8cebe0", opacity=0.32))
+    s.add(el("ellipse", cx=310, cy=268, rx=65, ry=10, fill="#8cebe0", opacity=0.25))
+    s.add(water_lines(rng, 25, 455, 226, 294, 38, col="#e8fffb", op=0.65))
+
+    # Framing limestone grotto banks with giant Cuban tree ferns, heliconias, mariposa orchids, and perched Cuban Trogon
+    left_bank = [(0, 128), (48, 146), (68, 196), (82, 248), (64, 300), (0, 300)]
+    right_bank = [(480, 134), (432, 152), (416, 202), (404, 254), (422, 300), (480, 300)]
+    s.add(el("path", d=smooth(left_bank) + "Z", fill="#29241e"))
+    s.add(el("path", d=smooth(right_bank) + "Z", fill="#29241e"))
+    s.add(crown(rng, 24, 142, 32, ("#153b1e", "#28612e", "#4e8f42"), k=6))
+    s.add(crown(rng, 456, 148, 30, ("#153b1e", "#28612e", "#4e8f42"), k=6))
+    s.add(fern(rng, 32, 218, 44, "#3b8236"))
+    s.add(fern(rng, 58, 256, 48, "#52a348"))
+    s.add(fern(rng, 442, 228, 44, "#3b8236"))
+    s.add(fern(rng, 418, 264, 42, "#52a348"))
+    s.add(heliconia(22, 286, 46))
+    s.add(heliconia(454, 288, 42))
+
+    # Mossy overhanging branch on the left with white Cuban Mariposa (Hedychium) blossom & perched Cuban Trogon (Tocororo)
+    s.add(el("path", d="M0,174 Q48,170 98,178 Q114,180 124,175", stroke="#4a3727", stroke_width=4.8, fill="none", stroke_linecap="round"))
+    s.add(el("path", d="M0,172 Q48,168 96,176", stroke="#6c963e", stroke_width=1.8, fill="none", stroke_linecap="round"))
+    s.add(bromeliad(rng, 88, 176, 9.5))
+    s.add(cuban_trogon(56, 166, 0.96))
+    return s.render(labels["aria"]["elnicho"])
+
+
+def build_anavilhanas(labels):
+    """Anavilhanas Fluvial Archipelago and Encontro das Águas (Amazonas): emerald igapó islands in dark mirror Rio Negro channels meeting golden-ochre Solimões water with pink river dolphins."""
+    s = vignette("anavilhanas", 111)
+    rng = s.rng
+    sky(s, [(0, "#3b7cb8"), (0.45, "#88bee0"), (0.82, "#dfeef2"), (1, "#f7e6c4")], h=96)
+    sun(s, 392, 42, 16, glow="#ffebb5")
+    s.add(cloud(rng, 118, 38, 92), cloud(rng, 275, 44, 82))
+
+    # Distant continuous Amazonian rainforest horizon line
+    s.add(g(canopy_band(s, -15, 495, lambda x: 92 + 2.5 * math.sin(x / 35), 28, 8, 13, ("#1c4228", "#2d6136", "#4a8244"), k=4)))
+
+    # Base river water: deep tea-black Rio Negro mirror water across upper/left channels
+    negro_grad = s.linear("negro", [(0, "#1d2e3a"), (0.45, "#122028"), (1, "#0a141a")])
+    s.add(el("rect", x=0, y=92, width=480, height=208, fill=negro_grad))
+
+    # Encontro das Águas (Meeting of Waters): sandy golden-ochre Solimões current sweeping across the right/lower basin
+    solimoes_grad = s.linear("solimoes", [(0, "#c99b56"), (0.5, "#b88642"), (1, "#9c6d2e")])
+    encontro_pts = [
+        (480, 148), (415, 156), (348, 168), (295, 184),
+        (258, 204), (218, 226), (168, 252), (112, 278), (68, 300), (480, 300),
+    ]
+    s.add(el("path", d=smooth(encontro_pts) + "Z", fill=solimoes_grad))
+
+    # Swirling two-tone current eddies, sediment plumes, and foam line along the sinuous Rio Negro / Solimões interface
+    seam_pts = encontro_pts[:-1]
+    s.add(el("path", d=smooth(seam_pts), stroke="#dfb572", stroke_width=5.5, fill="none", opacity=0.55, filter=s.url("soft")))
+    s.add(el("path", d=smooth([(x - 5, y - 1.5) for x, y in seam_pts]), stroke="#162830", stroke_width=3.2, fill="none", opacity=0.7))
+    s.add(el("path", d=smooth([(x + 2, y + 0.5) for x, y in seam_pts]), stroke="#f7e6c4", stroke_width=1.6, fill="none", opacity=0.75))
+    # Small interlocking current tongues along the confluence seam
+    for cx_, cy_, rx_, col_ in ((365, 166, 16, "#16262e"), (312, 179, 18, "#d4a660"),
+                                (272, 196, 15, "#16262e"), (232, 218, 19, "#d4a660"),
+                                (185, 242, 16, "#16262e"), (138, 266, 18, "#d4a660")):
+        s.add(el("ellipse", cx=cx_, cy=cy_, rx=rx_, ry=3.2, fill=col_, opacity=0.72))
+
+    # Helper to draw an elongated Anavilhanas flooded igapó forest island with dark water reflection & Mauritia palms
+    def igapo_island(x0, x1, y_base, h_canopy, n_crowns, palms=()):
+        w = x1 - x0
+        # Submerged dark reflection in the mirror Rio Negro water
+        refl_d = (f"M{n(x0 + 4)},{n(y_base)} L{n(x1 - 4)},{n(y_base)} "
+                  f"Q{n(x1 - w * 0.12)},{n(y_base + h_canopy * 0.65)} {n((x0 + x1) * 0.5)},{n(y_base + h_canopy * 0.72)} "
+                  f"Q{n(x0 + w * 0.12)},{n(y_base + h_canopy * 0.65)} {n(x0 + 4)},{n(y_base)}Z")
+        items = [
+            el("path", d=refl_d, fill="#091614", opacity=0.68),
+            # Flooded igapó root & sedge bank
+            el("path", d=f"M{n(x0)},{n(y_base)} Q{n((x0 + x1) * 0.5)},{n(y_base - 6)} {n(x1)},{n(y_base)} "
+                         f"Q{n((x0 + x1) * 0.5)},{n(y_base + 3)} {n(x0)},{n(y_base)}Z", fill="#2b2118"),
+        ]
+        # Dense rounded emerald archipelago canopy
+        for i in range(n_crowns):
+            t = (i + 0.5) / n_crowns
+            cx_ = x0 + w * (0.1 + 0.8 * t)
+            arch = math.sin(math.pi * t)
+            r_ = h_canopy * (0.45 + 0.45 * arch) * rng.uniform(0.9, 1.08)
+            cy_ = y_base - r_ * 0.52 - arch * h_canopy * 0.22
+            items.append(crown(rng, cx_, cy_, r_, ("#143b20", "#26632e", "#529944"), k=6, flat=0.72))
+        for px_, ph_, plean_ in palms:
+            items.append(palm(rng, px_, y_base - 2, ph_, plean_, 14, cols=("#1f5727", "#4c9140"),
+                              trunk_col="#6e5842", coconuts=False))
+        # Shoreline water ripple lines strictly inside island width
+        rip_d = (f"M{n(x0 + w * 0.08)},{n(y_base + 1.5)} Q{n((x0 + x1) * 0.5)},{n(y_base + 2.8)} {n(x1 - w * 0.08)},{n(y_base + 1.5)} "
+                 f"M{n(x0 + w * 0.22)},{n(y_base + 3.8)} L{n(x1 - w * 0.22)},{n(y_base + 3.8)}")
+        items.append(el("path", d=rip_d, stroke="#7ab8b0", stroke_width=0.85, fill="none", opacity=0.42))
+        return g(items)
+
+    # Four layered Anavilhanas archipelago islands threading the Rio Negro channels
+    s.add(igapo_island(25, 165, 124, 24, 6, palms=((72, 34, -4), (128, 30, 3))))
+    s.add(igapo_island(215, 378, 120, 22, 7, palms=((268, 32, 4), (332, 28, -3))))
+    s.add(igapo_island(375, 472, 138, 22, 5, palms=((425, 30, -4),)))
+    s.add(igapo_island(-10, 198, 174, 30, 7, palms=((58, 42, 5), (144, 38, -4))))
+    s.add(igapo_island(195, 312, 162, 24, 5, palms=((248, 34, 3),)))
+
+    # Shimmering water lines on both the dark Rio Negro and golden Solimões currents
+    s.add(water_lines(rng, 10, 260, 180, 275, 26, col="#6fa8a4", op=0.35))
+    s.add(water_lines(rng, 220, 470, 175, 292, 30, col="#fae3b4", op=0.52))
+
+    # Giant Victoria amazonica water lilies floating in the calm blackwater bay on the lower left
+    for lx, ly, lr, fl in ((42, 246, 16, False), (88, 258, 22, True), (36, 278, 26, True), (104, 284, 18, False)):
+        s.add(water_lily(rng, lx, ly, lr, flower=fl))
+
+    # Pair of Amazonian Pink River Dolphins (Boto / Inia geoffrensis) breaching across the Encontro das Águas boundary!
+    s.add(dolphin(258, 224, 1.05))
+    s.add(dolphin(338, 252, 0.82))
+
+    # Scarlet Macaws flying over the archipelago channels
+    s.add(macaw(168, 62, 0.72))
+    s.add(macaw(212, 74, 0.56))
+    return s.render(labels["aria"]["anavilhanas"])
+
+
+def build_chapada(labels):
+    """Chapada Diamantina Mesas and Poço Encantado Crystal Grotto (Brazil): flat-topped Morro do Pai Inácio tablelands above and subterranean cobalt cavern lake pierced by a diagonal sunbeam below."""
+    s = vignette("chapada", 112)
+    rng = s.rng
+    sky(s, [(0, "#4384bf"), (0.5, "#8ec2e2"), (1, "#f5dec0")], h=128)
+    sun(s, 96, 46, 15, glow="#ffeaad")
+    s.add(cloud(rng, 362, 38, 86))
+
+    # Upper Vista: Iconic flat-topped sandstone mesas of Chapada Diamantina (Morro do Pai Inácio & Morro do Camelo)
+    # Far mesa on left with stratified caprock and talus apron
+    s.add(el("path", d="M8,108 L22,68 L30,65 L108,64 L116,68 L132,108Z", fill="#9e7462", opacity=0.82))
+    s.add(el("path", d="M22,68 L30,65 L108,64 L116,68 L120,78 L18,78Z", fill="#c49378", opacity=0.68))
+    s.add(el("path", d="M68,65 L108,64 L116,68 L132,108 L82,108Z", fill="#69483b", opacity=0.42))
+
+    # Main Morro do Pai Inácio tableland on center-right with craggy battlements, 3D sunlit/shadow facets, and strata
+    mesa_top = [(186, 47), (202, 43), (228, 44), (256, 42), (288, 44), (316, 43), (332, 47)]
+    mesa_pts = [(162, 108), (178, 74)] + mesa_top + [(346, 74), (364, 108)]
+    mesa_d = P(mesa_pts)
+    s.add(el("path", d=mesa_d, fill="#7d5243"))
+    mcid = s.clip("pai_inacio", mesa_d)
+    mesa_details = [
+        # Sunlit left cliff face & shadowed right cliff flank
+        el("path", d="M160,40 L256,40 L242,110 L160,110Z", fill="#b87e63", opacity=0.48),
+        el("path", d="M272,40 L370,40 L370,110 L285,110Z", fill="#3d241c", opacity=0.45),
+        # Horizontal sandstone strata bands
+        el("path", d="M160,54 L365,54 L365,63 L160,63Z", fill="#c98e70", opacity=0.55),
+        el("path", d="M160,72 L365,72 L365,81 L160,81Z", fill="#59362b", opacity=0.52),
+        # Basal talus cones
+        el("path", d="M162,108 L195,78 L232,96 L275,76 L318,95 L344,80 L364,108Z", fill="#4a2e24", opacity=0.65),
+    ]
+    mesa_flutes = " ".join(f"M{n(x)},43 L{n(x + rng.uniform(-2, 2))},102" for x in range(188, 332, 8))
+    mesa_details.append(el("path", d=mesa_flutes, stroke="#3d241c", stroke_width=1.25, fill="none", opacity=0.65))
+    s.add(g(mesa_details, clip_path=mcid))
+    # Organic campos rupestres cushion mats along the summit plateau
+    for vx, vr in ((204, 14), (236, 18), (272, 16), (308, 15)):
+        s.add(crown(rng, vx, 43.5, vr * 0.65, ("#244a1e", "#3b6e30", "#62994a"), k=4, flat=0.35, detail=False))
+
+    # Undulating campos rupestres highland ridge above the cavern
+    ridge_pts = [(0, 102), (45, 96), (92, 100), (155, 98), (225, 92), (310, 96), (395, 90), (480, 98)]
+    s.add(el("path", d=smooth(ridge_pts) + " L480,126 L0,126Z", fill="#4d6932"))
+    s.add(tufts(rng, 0, 480, interp(ridge_pts), 42, 7, "#769c48", op=0.75))
+
+    # Lower Cutaway: Vaulted Quartzite Cavern of Poço Encantado (y = 104..300)
+    s.add(el("rect", x=0, y=106, width=480, height=194, fill="#0e1018"))
+    # Back cavern wall with stratified quartzite ledges above the subterranean lake
+    s.add(el("path", d="M45,114 L445,114 L455,214 L35,214Z", fill="#221e28"))
+    for k, col in enumerate(("#382e3b", "#4a3b48", "#2d2533", "#423542", "#251f2b")):
+        yb = 122 + k * 17
+        pts_w = [(x, yb + 3.2 * math.sin(x * 0.045 + k)) for x in range(40, 455, 32)]
+        s.add(el("path", d=smooth(pts_w) + f" L450,{yb + 13} L40,{yb + 13}Z", fill=col, opacity=0.78))
+    # Vertical cavern wall fractures
+    wall_cracks = " ".join(f"M{n(x)},118 L{n(x + rng.uniform(-6, 6))},206" for x in range(75, 415, 24))
+    s.add(el("path", d=wall_cracks, stroke="#141118", stroke_width=1.3, fill="none", opacity=0.65))
+
+    # Subterranean Crystal-Clear Cobalt Lake (Poço Encantado, y = 206..300)
+    lake_grad = s.radial("poco", [
+        (0, "#42eeff", 1),
+        (0.26, "#189cf7", 1),
+        (0.56, "#0b4ec4", 1),
+        (0.82, "#062570", 1),
+        (1, "#031033", 1),
+    ], cx=0.52, cy=0.42, r=0.62)
+    s.add(el("rect", x=0, y=206, width=480, height=94, fill=lake_grad))
+
+    # 3D Faceted Submerged Quartzite Rock Slabs & Boulders visible 60m below through the crystal-clear cobalt water!
+    def submerged_rock(rx, ry, rw, rh, lit_c="#38bdf8", mid_c="#1368cc", dark_c="#083375"):
+        p_top = [(rx - rw * 0.48, ry), (rx - rw * 0.22, ry - rh * 0.65), (rx + rw * 0.28, ry - rh * 0.55), (rx + rw * 0.5, ry)]
+        p_front = [(rx - rw * 0.48, ry), (rx + rw * 0.5, ry), (rx + rw * 0.38, ry + rh * 0.45), (rx - rw * 0.35, ry + rh * 0.42)]
+        p_shade = [(rx + rw * 0.05, ry - rh * 0.6), (rx + rw * 0.28, ry - rh * 0.55), (rx + rw * 0.5, ry),
+                   (rx + rw * 0.38, ry + rh * 0.45), (rx + rw * 0.02, ry + rh * 0.2)]
+        return g([
+            el("path", d=P(p_front), fill=mid_c, opacity=0.72),
+            el("path", d=P(p_top), fill=lit_c, opacity=0.55),
+            el("path", d=P(p_shade), fill=dark_c, opacity=0.68),
+        ])
+
+    for rx_, ry_, rw_, rh_ in ((145, 276, 46, 15), (195, 264, 52, 17), (255, 278, 64, 20),
+                               (318, 262, 50, 16), (282, 248, 38, 12), (368, 276, 44, 14)):
+        s.add(submerged_rock(rx_, ry_, rw_, rh_))
+    # Submerged fallen trunk on the lake bed
+    s.add(el("path", d="M188,286 Q248,274 312,287", stroke="#0a3b87", stroke_width=5.5, fill="none", stroke_linecap="round", opacity=0.78))
+    s.add(el("path", d="M188,285 Q248,273 312,286", stroke="#5ce4ff", stroke_width=1.6, fill="none", stroke_linecap="round", opacity=0.48))
+
+    # Iconic Diagonal Shaft of Sunlight piercing from the upper-left cave skylight (x=94..150, y=104) into the cobalt pool
+    beam_grad = s.linear("poco_beam", [
+        (0, "#fff9de", 0.66),
+        (0.35, "#aef0ff", 0.40),
+        (0.75, "#38b6ff", 0.25),
+        (1, "#1678f0", 0.0),
+    ], x1=0.2, y1=0, x2=0.65, y2=1)
+    s.add(el("path", d="M92,102 L152,102 L368,288 L175,288Z", fill=beam_grad, filter=s.url("soft")))
+    s.add(el("path", d="M106,102 L138,102 L322,278 L208,278Z", fill=beam_grad))
+    # Individual diagonal sunbeam rays inside the shaft
+    s.add(light_rays(s, 96, 142, 102, 272, 6, op=0.22))
+    # Brilliant turquoise-white surface caustic reflection where the sunbeam enters the water
+    s.add(el("ellipse", cx=238, cy=218, rx=66, ry=8.5, fill="#8cf4ff", opacity=0.52, filter=s.url("soft")))
+    s.add(el("ellipse", cx=238, cy=218, rx=40, ry=4.2, fill="#e6ffff", opacity=0.75))
+    s.add(water_lines(rng, 90, 400, 210, 294, 30, col="#a8f0ff", op=0.54))
+
+    # Vaulted Cavern Roof Arch & Framing Quartzite Walls with Natural Skylight Window at x=92..152
+    left_arch = [
+        (0, 102), (45, 96), (94, 100), (98, 114), (86, 136), (72, 168),
+        (78, 206), (62, 248), (74, 300), (0, 300),
+    ]
+    right_arch = [
+        (148, 100), (225, 92), (310, 96), (395, 90), (480, 98), (480, 300),
+        (402, 300), (418, 258), (396, 214), (408, 172), (376, 140),
+        (322, 126), (255, 122), (195, 116), (162, 112), (148, 106),
+    ]
+    s.add(el("path", d=P(left_arch), fill="#2e201d"))
+    s.add(el("path", d=P(right_arch), fill="#261a18"))
+    # Organic 3D sunlit sandstone facets along the skylight rim & cavern walls (no rectangular planks!)
+    s.add(el("path", d="M94,100 L98,114 L86,136 L72,168 L58,156 L72,126 L80,104Z", fill="#8c563e", opacity=0.72))
+    s.add(el("path", d="M72,168 L78,206 L62,248 L48,236 L62,198 L58,156Z", fill="#5e3929", opacity=0.65))
+    s.add(el("path", d="M148,100 L162,112 L195,116 L255,122 L222,108 L175,104Z", fill="#7d4c36", opacity=0.68))
+    s.add(el("path", d="M408,172 L396,214 L418,258 L434,242 L416,204 L424,168Z", fill="#472c22", opacity=0.65))
+    # Stalactites and craggy rock pendants hanging from the cavern ceiling arch
+    stal_d = " ".join(f"M{n(x)},{n(114 + (x - 165) * 0.06)} l3,{n(rng.uniform(9, 20))} l3.5,{n(-rng.uniform(9, 20))}"
+                      for x in range(175, 385, 20))
+    s.add(el("path", d=stal_d, fill="#1a1211"))
+
+    # Upper rim foliage, Vellozia rosettes, ferns, and magenta Chapada rock orchids along the skylight & foreground ledges
+    s.add(crown(rng, 42, 98, 16, ("#1f471e", "#366b2d", "#5e9646"), k=5, flat=0.55, detail=False))
+    s.add(crown(rng, 435, 96, 18, ("#1f471e", "#366b2d", "#5e9646"), k=5, flat=0.55, detail=False))
+    s.add(fern(rng, 80, 102, 26, "#3e8438"))
+    s.add(fern(rng, 160, 102, 26, "#4d9844"))
+    s.add(fern(rng, 38, 252, 36, "#2e6b2b"))
+    s.add(fern(rng, 438, 254, 36, "#2e6b2b"))
+    s.add(bromeliad(rng, 62, 100, 9.5, col="#5c8f36", flower="#e0367a"))
+    s.add(bromeliad(rng, 184, 98, 9.5, col="#5c8f36", flower="#e0367a"))
+    s.add(condor(405, 56, 0.55))
+    return s.render(labels["aria"]["chapada"])
+
+
 # ==============================================================================
 # LOCALIZATION & INJECTION
 # ==============================================================================
@@ -2929,6 +3274,9 @@ LABELS = {
             "bluehole": "Submarine blue hole sinkhole dropping into deep indigo water surrounded by turquoise coral flats with a reef shark and sea turtle",
             "tepui": "Flat-topped sandstone tepui mesa with sheer vertical cliffs, waterfalls plunging into cloud forest and endemic pitcher plants",
             "cataracts": "Multi-tiered roaring waterfalls cascading over dark basalt cliffs with a mist rainbow, lush subtropical ferns and toucan",
+            "elnicho": "Stepped turquoise travertine waterfall pools in the Escambray cloud forest of Cuba with royal palms, giant tree ferns and a perched Cuban trogon",
+            "anavilhanas": "Flooded emerald igapo forest islands of the Anavilhanas Archipelago above the Meeting of Waters where dark Rio Negro and golden Solimoes currents flow side by side with pink river dolphins",
+            "chapada": "Flat-topped sandstone mesas of Chapada Diamantina above the subterranean Poco Encantado cavern lake illuminated in glowing cobalt blue by a diagonal shaft of sunlight",
         },
     },
     "hu": {
@@ -2947,6 +3295,9 @@ LABELS = {
             "bluehole": "Mély kobaltkékbe vesző tenger alatti víznyelő türkiz korallzátonyokkal, szirti cápával és tengeri teknőssel",
             "tepui": "Függőleges homokkősziklákkal a felhők fölé magasodó lapos tetejű tepui vízesésekkel és húsevő növényekkel",
             "cataracts": "Bazaltsziklákon lezúduló hatalmas vízesésrendszer szivárvánnyal, szubtrópusi páfrányokkal és tukánnal",
+            "elnicho": "Lépcsőzetes türkizkék mésztufa-vízesések és medencék a kubai Escambray-hegység köderdejében királypálmákkal, páfrányfákkal és kubai trogonnal",
+            "anavilhanas": "Az Anavilhanas folyami szigetvilág smaragdzöld ártéri szigetei és a fekete Rio Negro, valamint az okkersárga Solimões folyók találkozása rózsaszín folyami delfinekkel",
+            "chapada": "A Chapada Diamantina lapos tetejű homokkő táblahegyei és a beszűrődő napsugártól kobaltkéken ragyogó földalatti Poço Encantado barlangi tó",
         },
     },
 }
@@ -2965,6 +3316,9 @@ BUILDERS = {
     "bluehole": build_bluehole,
     "tepui": build_tepui,
     "cataracts": build_cataracts,
+    "elnicho": build_elnicho,
+    "anavilhanas": build_anavilhanas,
+    "chapada": build_chapada,
 }
 
 CONTAINER_RE = r'(<div[^>]*\bdata-nature-svg="{key}"[^>]*>\s*)<svg\b.*?</svg>(\s*</div>)'

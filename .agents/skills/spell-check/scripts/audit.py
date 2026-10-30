@@ -149,6 +149,8 @@ WHITELIST = {
     "pantanal", "mogotes", "hypersaline", "várzea", "caatinga", "staghorn", "elkhorn",
     "amazonica", "morpho", "firme", "páramo", "puya", "raimondii", "frailejón", "viñales",
     "enriquillo", "lençóis", "heliamphora", "ipê", "mandacaru", "bromeliad", "bromeliads",
+    "nicho", "escambray", "anavilhanas", "encontro", "igapó", "chapada", "poço", "encantado",
+    "pai", "inácio",
 
     # Alpine, Ski Paradise, Engineering & Luxury
     "soberano", "pininfarina", "pérignon", "cryo-grid", "cryo-glacier", "cryo-dome",
