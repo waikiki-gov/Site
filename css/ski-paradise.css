@@ -12,39 +12,6 @@
 }
 
 /* Alpine SVG animations */
-.ill .snow-fall {
-  animation: illSnow 7s linear infinite;
-}
-
-.ill .snow-fall.slow {
-  animation-duration: 10s;
-  animation-delay: -3.5s;
-}
-
-.ill .snow-fall.fast {
-  animation-duration: 5.2s;
-  animation-delay: -1.8s;
-}
-
-@keyframes illSnow {
-  0% {
-    transform: translate(0, -16px);
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 0.85;
-  }
-
-  80% {
-    opacity: 0.85;
-  }
-
-  100% {
-    transform: translate(-14px, 44px);
-    opacity: 0;
-  }
-}
 
 /* Essentials Tiles */
 .fact-grid {
@@ -845,12 +812,3 @@
 }
 
 /* Responsive and Motion Preferences */
-@media (prefers-reduced-motion: reduce) {
-  .ill .snow-fall {
-    animation: none !important;
-  }
-}
-
-html.no-reveal .ill .snow-fall {
-  animation: none !important;
-}

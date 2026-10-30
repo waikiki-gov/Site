@@ -456,15 +456,6 @@
     }
 }
 
-@keyframes gentleWater {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(2px);
-    }
-}
-
 @keyframes cloudDrift {
     0% {
         transform: translateX(0);
@@ -494,16 +485,48 @@
         transform-origin: center center;
     }
 
-    .city-anim-water {
-        animation: gentleWater 4s ease-in-out infinite;
-    }
-
     .city-anim-cloud {
         animation: cloudDrift 18s ease-in-out infinite;
     }
 
     .city-anim-biolum {
         animation: biolumPulse 3.5s ease-in-out infinite;
+    }
+
+    .city-ill .flow {
+        animation: cityFlowDash 2.6s linear infinite;
+    }
+
+    .city-ill .bob {
+        animation: cityBob 3.8s ease-in-out infinite;
+    }
+
+    .city-ill .swim {
+        animation: citySwim 6s ease-in-out infinite;
+    }
+}
+
+@keyframes cityFlowDash {
+    to {
+        stroke-dashoffset: -48;
+    }
+}
+
+@keyframes cityBob {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.5px);
+    }
+}
+
+@keyframes citySwim {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(6px) translateY(-2px);
     }
 }
 
