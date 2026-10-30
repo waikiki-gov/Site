@@ -62,6 +62,7 @@ GROUPS = [
     ]),
     ("royal", {"en": "Royal Family", "hu": "Királyi Család"}, [
         ("dynasty", {"en": "The Dynasty", "hu": "A Dinasztia"}),
+        ("family-tree", {"en": "Family Tree", "hu": "Családfa"}),
         ("chease-and-jessica", {"en": "Chease and Jessica", "hu": "Chease és Jessica"}),
         ("raimondo-and-selena", {"en": "Raimondo and Selena", "hu": "Raimondo és Selena"}),
         ("angelina-and-taylor", {"en": "Angelina and Taylor", "hu": "Angelina és Taylor"}),
@@ -396,6 +397,7 @@ TARGET_NEXT_IMAGES = {
     "travel-guide": "UniversalUpscaler_Pro_Precise_2_1f1c1a3a-8488-6130-962d-09f15cdbb0eb.jpg",
     "visa": "UniversalUpscaler_Pro_Precise_2_1f1c8726-8cda-62d0-a130-3eed92bc8395.jpg",
     "faq": "UniversalUpscaler_82625004-8a28-4ed6-9515-e204957d9457.jpg",
+    "family-tree": "UniversalUpscaler_e38222ed-70b3-4c90-9777-c114aa60d527-U.jpg",
 }
 
 def build_next(page: Page, meta: dict[str, dict]) -> str:
