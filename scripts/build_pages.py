@@ -168,6 +168,16 @@ FOOTER_WAVE = (
     '<path d="M0 50c160 0 160-36 320-36s160 36 320 36 160-36 320-36 160 36 320 36 160-36 160-36V90H0z"/></svg>'
 )
 
+TARGET_NEXT_IMAGES = {
+    "overview": "UniversalUpscaler_Pro_Precise_2_1f1c19d5-4a8a-6240-8c96-a28f543c898c.jpg",
+    "infrastructure": "UniversalUpscaler_Pro_Precise_2_1f1c1a29-2ad2-6700-ba29-0886f847836a.jpg",
+    "constitution": "UniversalUpscaler_Pro_Precise_2_1f1c1a2a-3682-6450-b953-3cd17cf5a1a7.jpg",
+    "travel-guide": "UniversalUpscaler_Pro_Precise_2_1f1c1a3a-8488-6130-962d-09f15cdbb0eb.jpg",
+    "faq": "UniversalUpscaler_82625004-8a28-4ed6-9515-e204957d9457.jpg",
+}
+
+FALLBACK_IMAGE = "UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d-U.jpg"
+
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
@@ -385,14 +395,6 @@ def build_subnav(page: Page) -> str:
     </nav>
     <!-- /@chrome:subnav -->"""
 
-TARGET_NEXT_IMAGES = {
-    "overview": "UniversalUpscaler_Pro_Precise_2_1f1c19d5-4a8a-6240-8c96-a28f543c898c.jpg",
-    "infrastructure": "UniversalUpscaler_Pro_Precise_2_1f1c1a29-2ad2-6700-ba29-0886f847836a.jpg",
-    "constitution": "UniversalUpscaler_Pro_Precise_2_1f1c1a2a-3682-6450-b953-3cd17cf5a1a7.jpg",
-    "travel-guide": "UniversalUpscaler_Pro_Precise_2_1f1c1a3a-8488-6130-962d-09f15cdbb0eb.jpg",
-    "faq": "UniversalUpscaler_82625004-8a28-4ed6-9515-e204957d9457.jpg",
-}
-
 def build_next(page: Page, meta: dict[str, dict]) -> str:
     target = None
     if page.slug.endswith("-private") or page.slug == "raimondo-and-bailey-detailed":
@@ -512,8 +514,6 @@ def convert_hero(page: Page, body: str) -> tuple[str, str]:
         return new + body, lead or ""
 
     return body, ""
-
-FALLBACK_IMAGE = "UniversalUpscaler_93281a3c-f408-4f55-b29b-e8a6b87ab85d-U.jpg"
 
 def replace_block(text: str, name: str, content: str) -> str:
     pattern = re.compile(rf"<!-- @chrome:{name} -->.*?<!-- /@chrome:{name} -->", re.S)
