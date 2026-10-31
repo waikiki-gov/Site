@@ -47,25 +47,6 @@
 
 /* Space Research SVG animations */
 
-.ill .spin-rev {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: illSpinRev 16s linear infinite;
-}
-
-.ill .pulse-glow {
-    animation: illPulseGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes illSpinRev {
-    to { transform: rotate(-360deg); }
-}
-
-@keyframes illPulseGlow {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
 /* Space Fleet Section */
 .fleet-group-title {
     font-family: var(--font-display);

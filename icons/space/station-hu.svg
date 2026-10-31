@@ -4,18 +4,12 @@
             <rect width="1160" height="520" />
         </clipPath>
         <style>
-            @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-            @keyframes spin-rev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-            @keyframes pulse { 0%, 100% { opacity: 0.35; transform: scale(0.96); } 50% { opacity: 1; transform: scale(1.04); } }
             @keyframes pulse-glow { 0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 2px rgba(245, 196, 110, 0.4)); } 50% { opacity: 1; filter: drop-shadow(0 0 10px rgba(245, 196, 110, 0.9)); } }
             @keyframes twinkle { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
             @keyframes dash { to { stroke-dashoffset: -40; } }
             .twinkle { animation: twinkle 3.2s ease-in-out infinite; }
             .twinkle:nth-of-type(2n) { animation-duration: 4.5s; animation-delay: 0.8s; }
             .twinkle:nth-of-type(3n) { animation-duration: 2.8s; animation-delay: 1.5s; }
-            .spin { animation: spin 24s linear infinite; transform-origin: center; }
-            .spin-rev { animation: spin-rev 32s linear infinite; transform-origin: center; }
-            .pulse { animation: pulse 3s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
             .pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
             .dash { animation: dash 2.5s linear infinite; }
             text { font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -211,7 +205,7 @@
 <circle cx="815" cy="492" r="1.3" />
 <circle cx="860" cy="484" r="1.4" />
 </g>
-<path id="sr-hu-docking-path" d="M60,310 C320,180 840,180 1100,310" fill="none" stroke="#f5c46e" stroke-width="1.8" stroke-dasharray="6 8" opacity="0.75" class="dash" />
+<path id="sr-hu-docking-path" d="M-40,110 C320,65 840,65 1200,110" fill="none" stroke="#f5c46e" stroke-width="1.8" stroke-dasharray="6 8" opacity="0.65" class="dash" />
 <!-- Approaching Autonomous Spacecraft -->
     <g>
         <path d="M-14,-5 L6,-5 L14,0 L6,5 L-14,5 L-10,0Z" fill="#ffffff" stroke="#003366" stroke-width="1.2" />
@@ -219,7 +213,7 @@
         <polygon points="-14,5 -19,10 -9,5" fill="#c95a41" />
         <rect x="-8" y="-3" width="8" height="6" rx="1.5" fill="#1a528f" />
         <circle cx="9" cy="0" r="2.2" fill="#6BA4D9" />
-        <animateMotion dur="18s" repeatCount="indefinite" rotate="auto">
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
             <mpath href="#sr-hu-docking-path" />
         </animateMotion>
     </g>
@@ -311,7 +305,8 @@
 <circle cx="920" cy="232" r="5" fill="#f5c46e" />
 <!-- Central Artificial-Gravity Rotating Torus Ring -->
     <g transform="translate(580, 232)">
-        <g class="spin-rev">
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="32s" repeatCount="indefinite" />
             <circle cx="0" cy="0" r="92" fill="none" stroke="#16383c" stroke-width="22" opacity="0.5" />
             <circle cx="0" cy="0" r="92" fill="none" stroke="#dff0ec" stroke-width="16" />
             <circle cx="0" cy="0" r="100.5" fill="none" stroke="#f5c46e" stroke-width="1.5" />
@@ -393,8 +388,14 @@
         <path d="M-22,8 C-12,-8 12,-8 22,8" fill="none" stroke="#f5c46e" stroke-width="3.2" stroke-linecap="round" />
         <line x1="0" y1="14" x2="0" y2="-4" stroke="#ffffff" stroke-width="1.8" />
         <circle cx="0" cy="-4" r="2.5" fill="#f5c46e" />
-        <circle class="pulse" cx="0" cy="-6" r="14" fill="none" stroke="#6BA4D9" stroke-width="1.8" />
-        <circle class="pulse" cx="0" cy="-6" r="28" fill="none" stroke="#6BA4D9" stroke-width="1.2" style="animation-delay: 1.2s;" />
+        <circle cx="0" cy="-6" r="8" fill="none" stroke="#6BA4D9" stroke-width="1.8">
+            <animate attributeName="r" values="6;26" dur="2.4s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.9;0" dur="2.4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="0" cy="-6" r="8" fill="none" stroke="#6BA4D9" stroke-width="1.8">
+            <animate attributeName="r" values="6;26" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.9;0" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+        </circle>
     </g>
 <!-- TOP HUD TELEMETRY BAR -->
     <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">
