@@ -35,38 +35,6 @@
 }
 
 /* Quick Nav Ribbon */
-.family-nav-bar {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: 0 auto clamp(2rem, 3vw, 3rem);
-    max-width: 1000px;
-    padding: 0 1rem;
-}
-
-.family-nav-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.6rem 1.25rem;
-    background: var(--surface-card);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--heading);
-    text-decoration: none;
-    transition: all 0.25s var(--ease-out);
-    box-shadow: var(--shadow-sm);
-}
-
-.family-nav-pill:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
 
 /* Pedigree Tree Wrapper */
 .pedigree-viewport {
@@ -899,14 +867,6 @@
 }
 
 @media (max-width: 480px) {
-    .family-nav-bar {
-        gap: 0.5rem;
-    }
-
-    .family-nav-pill {
-        padding: 0.45rem 0.9rem;
-        font-size: 0.82rem;
-    }
 
     .heirs-strip {
         flex-direction: column;
@@ -921,17 +881,6 @@
 .body-dark .tree-hero-badge {
     background: rgba(194, 138, 41, 0.25);
     color: var(--accent-light);
-}
-
-.body-dark .family-nav-pill {
-    background: var(--dark-surface);
-    border-color: rgba(107, 164, 217, 0.18);
-    color: var(--dark-heading);
-}
-
-.body-dark .family-nav-pill:hover {
-    border-color: var(--tertiary);
-    color: var(--tertiary);
 }
 
 .body-dark .generation-label {
