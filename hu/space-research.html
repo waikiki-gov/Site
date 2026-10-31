@@ -165,180 +165,437 @@
                         <clipPath id="sr-hu-clip1">
                             <rect width="1160" height="520" />
                         </clipPath>
-                        <radialGradient id="sr-hu-space-bg" cx="50%" cy="30%" r="70%">
-                            <stop offset="0%" stop-color="#0c2f2b" />
-                            <stop offset="45%" stop-color="#061a19" />
-                            <stop offset="100%" stop-color="#020d0d" />
+                        <radialGradient id="sr-space-bg" cx="50%" cy="25%" r="75%">
+                            <stop offset="0%" stop-color="#0a1d2e" />
+                            <stop offset="35%" stop-color="#05101a" />
+                            <stop offset="70%" stop-color="#02080e" />
+                            <stop offset="100%" stop-color="#010408" />
                         </radialGradient>
-                        <radialGradient id="sr-hu-earth-glow" cx="50%" cy="0%" r="80%">
-                            <stop offset="0%" stop-color="#5eb8ab" />
-                            <stop offset="25%" stop-color="#24877e" />
-                            <stop offset="60%" stop-color="#0f4944" />
-                            <stop offset="100%" stop-color="#06201f" />
+                        <radialGradient id="sr-nebula-teal" cx="35%" cy="20%" r="55%">
+                            <stop offset="0%" stop-color="#145258" stop-opacity="0.32" />
+                            <stop offset="50%" stop-color="#0c3238" stop-opacity="0.15" />
+                            <stop offset="100%" stop-color="#02080e" stop-opacity="0" />
                         </radialGradient>
-                        <linearGradient id="sr-hu-solar-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#ffdc89" />
-                            <stop offset="40%" stop-color="#d9a74a" />
-                            <stop offset="80%" stop-color="#b07d2b" />
-                            <stop offset="100%" stop-color="#7a5416" />
+                        <radialGradient id="sr-nebula-blue" cx="75%" cy="30%" r="50%">
+                            <stop offset="0%" stop-color="#183e68" stop-opacity="0.28" />
+                            <stop offset="60%" stop-color="#0d2440" stop-opacity="0.12" />
+                            <stop offset="100%" stop-color="#02080e" stop-opacity="0" />
+                        </radialGradient>
+                        <linearGradient id="sr-earth-ocean" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#0d3f66" />
+                            <stop offset="30%" stop-color="#092d4a" />
+                            <stop offset="70%" stop-color="#051c2e" />
+                            <stop offset="100%" stop-color="#020d17" />
                         </linearGradient>
-                        <linearGradient id="sr-hu-hull-light" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <linearGradient id="sr-atmo-limb" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#70d6ff" stop-opacity="0.85" />
+                            <stop offset="25%" stop-color="#38b6ff" stop-opacity="0.65" />
+                            <stop offset="65%" stop-color="#0066cc" stop-opacity="0.30" />
+                            <stop offset="100%" stop-color="#002244" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient id="sr-solar-wafer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#1a3b68" />
+                            <stop offset="30%" stop-color="#0d2448" />
+                            <stop offset="70%" stop-color="#081832" />
+                            <stop offset="100%" stop-color="#040c1c" />
+                        </linearGradient>
+                        <linearGradient id="sr-solar-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffd57a" />
+                            <stop offset="35%" stop-color="#dfa438" />
+                            <stop offset="70%" stop-color="#b27a20" />
+                            <stop offset="100%" stop-color="#6e460e" />
+                        </linearGradient>
+                        <linearGradient id="sr-radiator" x1="0%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stop-color="#ffffff" />
-                            <stop offset="40%" stop-color="#e2efec" />
-                            <stop offset="80%" stop-color="#b5d3ce" />
-                            <stop offset="100%" stop-color="#80a8a2" />
+                            <stop offset="45%" stop-color="#d4e6e6" />
+                            <stop offset="85%" stop-color="#9eb6b6" />
+                            <stop offset="100%" stop-color="#789292" />
                         </linearGradient>
+                        <linearGradient id="sr-hull-cyl" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff" />
+                            <stop offset="35%" stop-color="#e2eff2" />
+                            <stop offset="75%" stop-color="#a4c2c8" />
+                            <stop offset="100%" stop-color="#5a7a82" />
+                        </linearGradient>
+                        <linearGradient id="sr-hull-shadow" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#688a94" />
+                            <stop offset="100%" stop-color="#18262a" />
+                        </linearGradient>
+                        <filter id="sr-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
                     </defs>
                     <g clip-path="url(#sr-hu-clip1)">
-                        <rect width="1160" height="520" fill="url(#sr-hu-space-bg)" />
-                        <!-- Kozmikus gázködök -->
-                        <ellipse cx="320" cy="140" rx="380" ry="110" fill="#14514c" opacity=".25" />
-                        <ellipse cx="860" cy="160" rx="340" ry="120" fill="#1b5a54" opacity=".22" />
-                        <ellipse cx="580" cy="80" rx="280" ry="70" fill="#6BA4D9" opacity=".12" />
-                        <!-- Csillagmező animált villódzással -->
-                        <g fill="#fbf7f0">
-                            <circle class="twinkle" cx="50" cy="50" r="1.5" />
-                            <circle class="twinkle" cx="120" cy="120" r="1.2" />
-                            <circle class="twinkle" cx="190" cy="60" r="1.8" />
-                            <circle class="twinkle" cx="280" cy="100" r="1.1" />
-                            <circle class="twinkle" cx="370" cy="45" r="1.6" />
-                            <circle class="twinkle" cx="460" cy="85" r="1.3" />
-                            <circle class="twinkle" cx="550" cy="35" r="2.0" />
-                            <circle class="twinkle" cx="640" cy="90" r="1.2" />
-                            <circle class="twinkle" cx="730" cy="40" r="1.7" />
-                            <circle class="twinkle" cx="820" cy="95" r="1.1" />
-                            <circle class="twinkle" cx="910" cy="50" r="1.9" />
-                            <circle class="twinkle" cx="1000" cy="80" r="1.3" />
-                            <circle class="twinkle" cx="1090" cy="45" r="1.8" />
-                            <circle class="twinkle" cx="80" cy="190" r="1.2" />
-                            <circle class="twinkle" cx="240" cy="170" r="1.5" />
-                            <circle class="twinkle" cx="950" cy="180" r="1.4" />
-                            <circle class="twinkle" cx="1060" cy="200" r="1.2" />
-                            <circle class="twinkle" cx="1130" cy="130" r="1.5" />
+                        <rect width="1160" height="520" fill="url(#sr-space-bg)" />
+                        <ellipse cx="340" cy="120" rx="360" ry="100" fill="url(#sr-nebula-teal)" />
+                        <ellipse cx="880" cy="140" rx="320" ry="110" fill="url(#sr-nebula-blue)" />
+                        <ellipse cx="580" cy="70" rx="260" ry="60" fill="#6BA4D9" opacity="0.08" />
+                        <g fill="#ffffff" opacity="0.65">
+                            <circle cx="738.9" cy="16.3" r="0.7" />
+                            <circle cx="264.5" cy="194.1" r="0.9" />
+                            <circle cx="1027.1" cy="31.7" r="0.8" />
+                            <circle cx="44" cy="64.7" r="0.8" />
+                            <circle cx="40.3" cy="59.7" r="0.9" />
+                            <circle cx="631.2" cy="65.1" r="0.8" />
+                            <circle cx="932.8" cy="11.6" r="0.9" />
+                            <circle cx="805.9" cy="95.1" r="0.7" />
+                            <circle cx="1101.2" cy="94.1" r="0.6" />
+                            <circle cx="120.3" cy="221.9" r="0.8" />
+                            <circle cx="930.1" cy="192.4" r="0.8" />
+                            <circle cx="1119.4" cy="104.6" r="0.8" />
+                            <circle cx="955.5" cy="164.6" r="0.9" />
+                            <circle cx="668.2" cy="186.1" r="0.6" />
+                            <circle cx="269.8" cy="82.3" r="0.6" />
+                            <circle cx="275.4" cy="35.3" r="0.7" />
+                            <circle cx="734.7" cy="101.2" r="0.7" />
+                            <circle cx="248.8" cy="76.7" r="1" />
+                            <circle cx="748.8" cy="162.3" r="0.7" />
+                            <circle cx="841.2" cy="50.9" r="0.8" />
+                            <circle cx="1138.1" cy="170" r="0.8" />
+                            <circle cx="790.5" cy="220.7" r="0.9" />
+                            <circle cx="271.1" cy="18" r="0.7" />
+                            <circle cx="315.2" cy="62.7" r="1" />
+                            <circle cx="1009.1" cy="88.7" r="0.9" />
+                            <circle cx="461" cy="238.6" r="0.8" />
+                            <circle cx="312" cy="71.7" r="0.8" />
+                            <circle cx="309.5" cy="156.1" r="1" />
+                            <circle cx="465.3" cy="64.8" r="1" />
+                            <circle cx="590.9" cy="32.7" r="0.6" />
+                            <circle cx="135" cy="166.9" r="0.9" />
+                            <circle cx="491.3" cy="25.9" r="0.8" />
+                            <circle cx="1145.6" cy="142.3" r="1" />
+                            <circle cx="991.3" cy="12.9" r="0.9" />
+                            <circle cx="787.1" cy="144.2" r="0.7" />
+                            <circle cx="740.7" cy="37.9" r="0.8" />
+                            <circle cx="527.2" cy="248.5" r="1" />
+                            <circle cx="310.3" cy="135.1" r="0.7" />
+                            <circle cx="1050.4" cy="227.6" r="0.7" />
+                            <circle cx="738.4" cy="162.2" r="0.7" />
+                            <circle cx="879.3" cy="144.8" r="0.9" />
+                            <circle cx="614.6" cy="10.1" r="0.7" />
+                            <circle cx="32.2" cy="242.3" r="1" />
+                            <circle cx="958.1" cy="86.9" r="0.6" />
+                            <circle cx="1010.9" cy="246.7" r="0.6" />
+                            <circle cx="564" cy="27.3" r="0.9" />
+                            <circle cx="883.1" cy="42.1" r="0.8" />
+                            <circle cx="636.8" cy="76.3" r="0.9" />
+                            <circle cx="492.4" cy="62.9" r="0.8" />
+                            <circle cx="842.1" cy="60.3" r="0.7" />
+                            <circle cx="1144.5" cy="172.5" r="0.8" />
+                            <circle cx="600" cy="40.3" r="0.7" />
+                            <circle cx="395.4" cy="157.1" r="0.7" />
+                            <circle cx="261" cy="27.7" r="0.9" />
+                            <circle cx="271" cy="236.4" r="0.9" />
+                            <circle cx="90.8" cy="69.5" r="0.9" />
+                            <circle cx="254.2" cy="43.1" r="1" />
+                            <circle cx="661" cy="128.2" r="0.9" />
+                            <circle cx="930.5" cy="57.6" r="0.6" />
+                            <circle cx="501.4" cy="115.9" r="0.8" />
+                            <circle cx="841.1" cy="178.3" r="1" />
+                            <circle cx="122.2" cy="110.7" r="0.7" />
+                            <circle cx="992.3" cy="72.2" r="0.7" />
+                            <circle cx="521.4" cy="115.5" r="0.7" />
+                            <circle cx="294.8" cy="240.8" r="0.8" />
+                            <circle cx="991.9" cy="147.6" r="0.6" />
+                            <circle cx="1149.2" cy="219" r="1" />
+                            <circle cx="1066.1" cy="222.2" r="0.7" />
+                            <circle cx="563.6" cy="63.4" r="0.8" />
+                            <circle cx="76.8" cy="104.7" r="1" />
+                            <circle cx="312.3" cy="206" r="0.8" />
+                            <circle cx="492.2" cy="249.3" r="1" />
+                            <circle cx="643.6" cy="189.6" r="0.7" />
+                            <circle cx="348.2" cy="252.2" r="0.8" />
+                            <circle cx="628.1" cy="197" r="0.6" />
+                            <circle cx="676" cy="135.7" r="0.9" />
+                            <circle cx="189.5" cy="250.2" r="0.6" />
+                            <circle cx="221.8" cy="158.8" r="0.9" />
+                            <circle cx="278.1" cy="40" r="1" />
+                            <circle cx="290.7" cy="158.6" r="0.8" />
+                            <circle cx="487.9" cy="155.9" r="0.8" />
+                            <circle cx="1075.6" cy="61.1" r="0.9" />
+                            <circle cx="282.1" cy="108.9" r="0.9" />
+                            <circle cx="352" cy="89" r="0.9" />
+                            <circle cx="92.7" cy="124.6" r="1" />
                         </g>
-                        <!-- Földi horizont és légkör íve -->
-                        <path d="M-60 610 C 260 410, 900 410, 1220 610 L 1220 660 L -60 660 Z" fill="url(#sr-hu-earth-glow)" />
-                        <path d="M-60 610 C 260 410, 900 410, 1220 610" fill="none" stroke="#6BA4D9" stroke-width="26" opacity=".18" />
-                        <path d="M-60 610 C 260 410, 900 410, 1220 610" fill="none" stroke="#66c9bc" stroke-width="12" opacity=".35" />
-                        <path d="M-60 610 C 260 410, 900 410, 1220 610" fill="none" stroke="#e0f8f5" stroke-width="2.5" opacity=".8" />
-                        <!-- Kontinens és tengerparti ívek -->
-                        <path d="M180 500 c60-25 150-30 220-10 c40 12 90 8 130-15 c30-18 80-20 120-4 c50 20 120 15 170-12 c40-22 90-18 130 5" fill="none" stroke="#3db6a6" stroke-width="14" stroke-linecap="round" opacity=".5" />
-                        <path d="M160 505 c50-20 130-24 190-8 c35 10 75 6 110-14 c28-16 70-18 105-3 c45 18 105 14 150-10 c38-20 85-15 120 8" fill="none" stroke="#4a8b60" stroke-width="8" stroke-linecap="round" opacity=".75" />
-                        <!-- Városi éjszakai fények -->
-                        <g fill="#f5c46e" opacity=".85">
-                            <circle cx="240" cy="495" r="1.4" />
-                            <circle cx="280" cy="488" r="1.5" />
-                            <circle cx="350" cy="482" r="1.6" />
-                            <circle cx="390" cy="478" r="1.8" />
-                            <circle cx="520" cy="458" r="1.8" />
-                            <circle cx="640" cy="460" r="1.6" />
-                            <circle cx="740" cy="470" r="1.5" />
-                        </g>
-                        <!-- Pályamenti megközelítési vonal -->
-                        <path id="sr-hu-docking-path" d="M60 310 C 320 180, 840 180, 1100 310" fill="none" stroke="#f5c46e" stroke-width="1.8" stroke-dasharray="6 8" opacity=".75" class="dash" />
-                        <!-- Érkező waikiki űrhajó -->
                         <g>
-                            <path d="M-12 -5 h16 l8 5 l-8 5 h-16 l4 -5 z" fill="#ffffff" stroke="#003366" stroke-width="1" />
-                            <polygon points="-12,-5 -16,-9 -8,-5" fill="#c95a41" />
-                            <polygon points="-12,5 -16,9 -8,5" fill="#c95a41" />
-                            <circle cx="4" cy="0" r="2.5" fill="#6BA4D9" />
+                            <circle class="twinkle" cx="45" cy="42" r="1.6" fill="#ffffff" />
+                            <circle class="twinkle" cx="115" cy="110" r="1.3" fill="#aed8f2" />
+                            <circle class="twinkle" cx="185" cy="55" r="1.8" fill="#ffe8b8" />
+                            <circle class="twinkle" cx="275" cy="92" r="1.2" fill="#ffffff" />
+                            <circle class="twinkle" cx="365" cy="38" r="1.6" fill="#b8e2f8" />
+                            <circle class="twinkle" cx="455" cy="78" r="1.4" fill="#ffffff" />
+                            <circle class="twinkle" cx="545" cy="32" r="2.0" fill="#ffe0a0" />
+                            <circle class="twinkle" cx="635" cy="82" r="1.3" fill="#ffffff" />
+                            <circle class="twinkle" cx="725" cy="36" r="1.7" fill="#a8d8f8" />
+                            <circle class="twinkle" cx="815" cy="88" r="1.2" fill="#ffffff" />
+                            <circle class="twinkle" cx="905" cy="45" r="1.9" fill="#ffffff" />
+                            <circle class="twinkle" cx="995" cy="72" r="1.4" fill="#ffdca0" />
+                            <circle class="twinkle" cx="1085" cy="40" r="1.8" fill="#ffffff" />
+                            <circle class="twinkle" cx="75" cy="175" r="1.3" fill="#aed8f2" />
+                            <circle class="twinkle" cx="235" cy="155" r="1.5" fill="#ffffff" />
+                            <circle class="twinkle" cx="945" cy="165" r="1.4" fill="#ffffff" />
+                            <circle class="twinkle" cx="1055" cy="185" r="1.3" fill="#ffe2b0" />
+                            <circle class="twinkle" cx="1125" cy="120" r="1.5" fill="#ffffff" />
+                        </g>
+                        <path d="M-80,620 L-80,560 C250,395 910,395 1240,560 L1240,620Z" fill="url(#sr-earth-ocean)" />
+                        <path d="M-80,560 C250,395 910,395 1240,560" fill="none" stroke="#003366" stroke-width="28" opacity="0.45" />
+                        <path d="M-80,560 C250,395 910,395 1240,560" fill="none" stroke="#1d8cf8" stroke-width="16" opacity="0.38" />
+                        <path d="M-80,560 C250,395 910,395 1240,560" fill="none" stroke="#62d6ff" stroke-width="8" opacity="0.65" />
+                        <path d="M-80,560 C250,395 910,395 1240,560" fill="none" stroke="#dcf8ff" stroke-width="2.2" opacity="0.95" />
+                        <path d="M160,505 C240,465 340,460 410,482 C460,496 520,490 570,468 C620,446 710,444 760,465 C820,490 920,480 980,455 C1020,438 1080,442 1120,470" fill="none" stroke="#1fb8a8" stroke-width="14" stroke-linecap="round" opacity="0.45" />
+                        <path d="M140,510 C220,470 320,464 390,486 C440,500 500,494 550,472 C600,450 690,448 740,469 C800,494 900,484 960,459 C1000,442 1060,446 1100,474" fill="none" stroke="#368c56" stroke-width="8" stroke-linecap="round" opacity="0.75" />
+                        <path d="M220,485 C250,465 295,470 325,482 C345,490 380,482 400,474 C360,470 310,458 260,470 C235,476 215,482 220,485Z" fill="#051c2e" opacity="0.4" transform="translate(4, 4)" />
+                        <path d="M220,485 C250,465 295,470 325,482 C345,490 380,482 400,474 C360,470 310,458 260,470 C235,476 215,482 220,485Z" fill="#f0faff" opacity="0.82" />
+                        <path d="M460,475 C510,450 570,452 610,468 C645,482 690,478 725,462 C680,454 625,444 565,450 C515,456 475,468 460,475Z" fill="#051c2e" opacity="0.4" transform="translate(4, 4)" />
+                        <path d="M460,475 C510,450 570,452 610,468 C645,482 690,478 725,462 C680,454 625,444 565,450 C515,456 475,468 460,475Z" fill="#f0faff" opacity="0.82" />
+                        <path d="M780,480 C820,460 880,458 925,474 C960,486 1010,476 1045,458 C995,450 940,446 885,452 C835,458 795,472 780,480Z" fill="#051c2e" opacity="0.4" transform="translate(4, 4)" />
+                        <path d="M780,480 C820,460 880,458 925,474 C960,486 1010,476 1045,458 C995,450 940,446 885,452 C835,458 795,472 780,480Z" fill="#f0faff" opacity="0.82" />
+                        <g fill="#ffcf70" opacity="0.85" filter="url(#sr-glow)">
+                            <circle cx="720" cy="482" r="1.4" />
+                            <circle cx="755" cy="488" r="1.8" />
+                            <circle cx="790" cy="478" r="1.6" />
+                            <circle cx="840" cy="474" r="2.0" />
+                            <circle cx="875" cy="468" r="1.8" />
+                            <circle cx="910" cy="462" r="1.5" />
+                            <circle cx="945" cy="472" r="1.7" />
+                            <circle cx="990" cy="465" r="1.9" />
+                            <circle cx="1030" cy="472" r="1.5" />
+                            <circle cx="1070" cy="480" r="1.8" />
+                            <circle cx="815" cy="492" r="1.3" />
+                            <circle cx="860" cy="484" r="1.4" />
+                        </g>
+                        <path id="sr-docking-path" d="M60,310 C320,180 840,180 1100,310" fill="none" stroke="#f5c46e" stroke-width="1.8" stroke-dasharray="6 8" opacity="0.75" class="dash" />
+                        <g>
+                            <path d="M-14,-5 L6,-5 L14,0 L6,5 L-14,5 L-10,0Z" fill="#ffffff" stroke="#003366" stroke-width="1.2" />
+                            <polygon points="-14,-5 -19,-10 -9,-5" fill="#c95a41" />
+                            <polygon points="-14,5 -19,10 -9,5" fill="#c95a41" />
+                            <rect x="-8" y="-3" width="8" height="6" rx="1.5" fill="#1a528f" />
+                            <circle cx="9" cy="0" r="2.2" fill="#6BA4D9" />
                             <animateMotion dur="18s" repeatCount="indefinite" rotate="auto">
-                                <mpath href="#sr-hu-docking-path" />
+                                <mpath href="#sr-docking-path" />
                             </animateMotion>
                         </g>
-                        <!-- WNSS ÁLLOMÁSSZERKEZET -->
-                        <!-- Főtartó rácsos híd -->
-                        <rect x="260" y="226" width="640" height="12" rx="3" fill="#3a5c57" stroke="#6BA4D9" stroke-width="1" />
-                        <line x1="260" y1="232" x2="900" y2="232" stroke="#d5ede9" stroke-width="2" stroke-dasharray="8 6" opacity=".8" />
-                        <!-- Bal oldali napelemszárnyak -->
-                        <g transform="translate(190, 140)">
-                            <rect x="0" y="0" width="70" height="80" rx="3" fill="url(#sr-hu-solar-gold)" stroke="#7a5416" stroke-width="1.2" class="pulse-glow" />
-                            <rect x="0" y="92" width="70" height="80" rx="3" fill="url(#sr-hu-solar-gold)" stroke="#7a5416" stroke-width="1.2" class="pulse-glow" />
-                            <line x1="23" y1="0" x2="23" y2="172" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="47" y1="0" x2="47" y2="172" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="26" x2="70" y2="26" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="53" x2="70" y2="53" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="118" x2="70" y2="118" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="145" x2="70" y2="145" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <rect x="68" y="82" width="16" height="8" fill="#cbe0dc" />
+                        <!-- Integrated Truss System (ITS) -->
+                        <rect x="250" y="226" width="660" height="12" rx="2" fill="#2d424b" stroke="#6BA4D9" stroke-width="1.2" />
+                        <line x1="250" y1="232" x2="910" y2="232" stroke="#d5ede9" stroke-width="2" stroke-dasharray="8 6" opacity="0.85" />
+                        <path d="M260,226 L272,238 M272,226 L260,238 M284,226 L296,238 M296,226 L284,238 M308,226 L320,238 M320,226 L308,238 M332,226 L344,238 M344,226 L332,238 M356,226 L368,238 M368,226 L356,238 M380,226 L392,238 M392,226 L380,238 M404,226 L416,238 M416,226 L404,238 M428,226 L440,238 M440,226 L428,238 M452,226 L464,238 M464,226 L452,238 M476,226 L488,238 M488,226 L476,238 M500,226 L512,238 M512,226 L500,238 M524,226 L536,238 M536,226 L524,238 M548,226 L560,238 M560,226 L548,238 M572,226 L584,238 M584,226 L572,238 M596,226 L608,238 M608,226 L596,238 M620,226 L632,238 M632,226 L620,238 M644,226 L656,238 M656,226 L644,238 M668,226 L680,238 M680,226 L668,238 M692,226 L704,238 M704,226 L692,238 M716,226 L728,238 M728,226 L716,238 M740,226 L752,238 M752,226 L740,238 M764,226 L776,238 M776,226 L764,238 M788,226 L800,238 M800,226 L788,238 M812,226 L824,238 M824,226 L812,238 M836,226 L848,238 M848,226 L836,238 M860,226 L872,238 M872,226 L860,238 M884,226 L896,238 M896,226 L884,238" stroke="#466570" stroke-width="1.0" opacity="0.75" />
+                        <!-- Port Thermal Radiators -->
+                        <g transform="translate(365, 172)">
+                            <rect x="0" y="0" width="56" height="42" rx="2" fill="url(#sr-radiator)" stroke="#527882" stroke-width="1.0" />
+                            <line x1="14" y1="0" x2="14" y2="42" stroke="#789ea8" stroke-width="0.8" />
+                            <line x1="28" y1="0" x2="28" y2="42" stroke="#789ea8" stroke-width="0.8" />
+                            <line x1="42" y1="0" x2="42" y2="42" stroke="#789ea8" stroke-width="0.8" />
+                            <line x1="28" y1="42" x2="28" y2="54" stroke="#8faeb6" stroke-width="2.5" />
                         </g>
-                        <!-- Jobb oldali napelemszárnyak -->
-                        <g transform="translate(900, 140)">
-                            <rect x="0" y="0" width="70" height="80" rx="3" fill="url(#sr-hu-solar-gold)" stroke="#7a5416" stroke-width="1.2" class="pulse-glow" />
-                            <rect x="0" y="92" width="70" height="80" rx="3" fill="url(#sr-hu-solar-gold)" stroke="#7a5416" stroke-width="1.2" class="pulse-glow" />
-                            <line x1="23" y1="0" x2="23" y2="172" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="47" y1="0" x2="47" y2="172" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="26" x2="70" y2="26" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="53" x2="70" y2="53" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="118" x2="70" y2="118" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <line x1="0" y1="145" x2="70" y2="145" stroke="#4a300a" stroke-width="0.8" opacity=".6" />
-                            <rect x="-14" y="82" width="16" height="8" fill="#cbe0dc" />
+                        <!-- Starboard Thermal Radiators -->
+                        <g transform="translate(738, 250)">
+                            <rect x="0" y="0" width="56" height="42" rx="2" fill="url(#sr-radiator)" stroke="#527882" stroke-width="1.0" />
+                            <line x1="14" y1="0" x2="14" y2="42" stroke="#789ea8" stroke-width="0.8" />
+                            <line x1="28" y1="0" x2="28" y2="42" stroke="#789ea8" stroke-width="0.8" />
+                            <line x1="42" y1="0" x2="42" y2="42" stroke="#789ea8" stroke-width="0.8" />
+                            <line x1="28" y1="-12" x2="28" y2="0" stroke="#8faeb6" stroke-width="2.5" />
                         </g>
-                        <!-- Központi forgó lakógyűrű -->
+                        <!-- Port Solar Array Wings (Left) -->
+                        <g transform="translate(150, 136)" class="pulse-glow">
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-wafer)" stroke="#8c6218" stroke-width="1.4" />
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-gold)" opacity="0.38" />
+                            <line x1="20" y1="0" x2="20" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="40" y1="0" x2="40" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="60" y1="0" x2="60" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="0" y1="8" x2="80" y2="8" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="20" x2="80" y2="20" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="32" x2="80" y2="32" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="44" x2="80" y2="44" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="56" x2="80" y2="56" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="68" x2="80" y2="68" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="80" x2="80" y2="80" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="40.0" y1="0" x2="40.0" y2="84" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
+                        </g>
+                        <g transform="translate(150, 244)" class="pulse-glow">
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-wafer)" stroke="#8c6218" stroke-width="1.4" />
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-gold)" opacity="0.38" />
+                            <line x1="20" y1="0" x2="20" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="40" y1="0" x2="40" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="60" y1="0" x2="60" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="0" y1="8" x2="80" y2="8" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="20" x2="80" y2="20" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="32" x2="80" y2="32" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="44" x2="80" y2="44" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="56" x2="80" y2="56" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="68" x2="80" y2="68" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="80" x2="80" y2="80" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="40.0" y1="0" x2="40.0" y2="84" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
+                        </g>
+                        <rect x="228" y="228" width="24" height="8" rx="1" fill="#cbe0dc" stroke="#486872" stroke-width="1" />
+                        <circle cx="240" cy="232" r="5" fill="#f5c46e" />
+                        <!-- Starboard Solar Array Wings (Right) -->
+                        <g transform="translate(930, 136)" class="pulse-glow">
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-wafer)" stroke="#8c6218" stroke-width="1.4" />
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-gold)" opacity="0.38" />
+                            <line x1="20" y1="0" x2="20" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="40" y1="0" x2="40" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="60" y1="0" x2="60" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="0" y1="8" x2="80" y2="8" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="20" x2="80" y2="20" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="32" x2="80" y2="32" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="44" x2="80" y2="44" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="56" x2="80" y2="56" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="68" x2="80" y2="68" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="80" x2="80" y2="80" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="40.0" y1="0" x2="40.0" y2="84" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
+                        </g>
+                        <g transform="translate(930, 244)" class="pulse-glow">
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-wafer)" stroke="#8c6218" stroke-width="1.4" />
+                            <rect x="0" y="0" width="80" height="84" rx="2" fill="url(#sr-solar-gold)" opacity="0.38" />
+                            <line x1="20" y1="0" x2="20" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="40" y1="0" x2="40" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="60" y1="0" x2="60" y2="84" stroke="#ffcc66" stroke-width="0.7" opacity="0.65" />
+                            <line x1="0" y1="8" x2="80" y2="8" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="20" x2="80" y2="20" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="32" x2="80" y2="32" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="44" x2="80" y2="44" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="56" x2="80" y2="56" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="68" x2="80" y2="68" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="0" y1="80" x2="80" y2="80" stroke="#ffcc66" stroke-width="0.6" opacity="0.45" />
+                            <line x1="40.0" y1="0" x2="40.0" y2="84" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
+                        </g>
+                        <rect x="908" y="228" width="24" height="8" rx="1" fill="#cbe0dc" stroke="#486872" stroke-width="1" />
+                        <circle cx="920" cy="232" r="5" fill="#f5c46e" />
+                        <!-- Central Artificial-Gravity Rotating Torus Ring -->
                         <g transform="translate(580, 232)">
                             <g class="spin-rev">
-                                <circle cx="0" cy="0" r="88" fill="none" stroke="#2a6f68" stroke-width="18" opacity=".35" />
-                                <circle cx="0" cy="0" r="88" fill="none" stroke="#e0f2ef" stroke-width="14" stroke-dasharray="16 12" />
-                                <circle cx="0" cy="0" r="95" fill="none" stroke="#f5c46e" stroke-width="1.5" />
-                                <circle cx="0" cy="0" r="81" fill="none" stroke="#6BA4D9" stroke-width="1.2" />
-                                <line x1="0" y1="-88" x2="0" y2="88" stroke="#bedbd6" stroke-width="3" />
-                                <line x1="-88" y1="0" x2="88" y2="0" stroke="#bedbd6" stroke-width="3" />
-                                <line x1="-62" y1="-62" x2="62" y2="62" stroke="#bedbd6" stroke-width="2" />
-                                <line x1="-62" y1="62" x2="62" y2="-62" stroke="#bedbd6" stroke-width="2" />
-                                <circle cx="0" cy="-88" r="8" fill="#fbf7f0" stroke="#003366" stroke-width="1.5" />
-                                <circle cx="0" cy="88" r="8" fill="#fbf7f0" stroke="#003366" stroke-width="1.5" />
-                                <circle cx="-88" cy="0" r="8" fill="#fbf7f0" stroke="#003366" stroke-width="1.5" />
-                                <circle cx="88" cy="0" r="8" fill="#fbf7f0" stroke="#003366" stroke-width="1.5" />
+                                <!-- Outer Torus Shadow Ring -->
+                                <circle cx="0" cy="0" r="92" fill="none" stroke="#16383c" stroke-width="22" opacity="0.5" />
+                                <!-- Main Pressurized Torus Hull -->
+                                <circle cx="0" cy="0" r="92" fill="none" stroke="#dff0ec" stroke-width="16" />
+                                <!-- Outer & Inner Hull Armor Ribs -->
+                                <circle cx="0" cy="0" r="100.5" fill="none" stroke="#f5c46e" stroke-width="1.5" />
+                                <circle cx="0" cy="0" r="83.5" fill="none" stroke="#6BA4D9" stroke-width="1.5" />
+                                <!-- Segmented Torus Modules with Expansion Joints -->
+                                <circle cx="0" cy="0" r="92" fill="none" stroke="#003366" stroke-width="16" stroke-dasharray="2 18" opacity="0.6" />
+                                <!-- Torus Observation Windows (Illuminated Cyan) -->
+                                <circle cx="0" cy="0" r="92" fill="none" stroke="#42d0f5" stroke-width="3" stroke-dasharray="10 10" opacity="0.85" />
+                                <!-- 8 Pressurized Transit Spokes connecting to Central Spindle Hub -->
+                                <line x1="0" y1="-92" x2="0" y2="92" stroke="#b4d6d0" stroke-width="3.5" />
+                                <line x1="-92" y1="0" x2="92" y2="0" stroke="#b4d6d0" stroke-width="3.5" />
+                                <line x1="-65" y1="-65" x2="65" y2="65" stroke="#90b8b2" stroke-width="2.5" />
+                                <line x1="-65" y1="65" x2="65" y2="-65" stroke="#90b8b2" stroke-width="2.5" />
+                                <!-- Elevator Transit Cars & Peripheral Pods -->
+                                <rect x="-5" y="-97" width="10" height="10" rx="2" fill="#ffffff" stroke="#003366" stroke-width="1.5" />
+                                <rect x="-5" y="87" width="10" height="10" rx="2" fill="#ffffff" stroke="#003366" stroke-width="1.5" />
+                                <rect x="-97" y="-5" width="10" height="10" rx="2" fill="#ffffff" stroke="#003366" stroke-width="1.5" />
+                                <rect x="87" y="-5" width="10" height="10" rx="2" fill="#ffffff" stroke="#003366" stroke-width="1.5" />
+                                <circle cx="0" cy="-92" r="2.5" fill="#2ecc71" />
+                                <circle cx="0" cy="92" r="2.5" fill="#2ecc71" />
+                                <circle cx="-92" cy="0" r="2.5" fill="#2ecc71" />
+                                <circle cx="92" cy="0" r="2.5" fill="#2ecc71" />
                             </g>
-                            <!-- Központi állomásmag -->
-                            <circle cx="0" cy="0" r="32" fill="url(#sr-hu-hull-light)" stroke="#003366" stroke-width="2.5" />
-                            <circle cx="0" cy="0" r="22" fill="#002244" stroke="#6BA4D9" stroke-width="1.5" />
-                            <circle cx="0" cy="0" r="8" fill="#f5c46e" />
+                            <!-- Non-Rotating Central Spindle & Docking Node Hub -->
+                            <circle cx="0" cy="0" r="34" fill="url(#sr-hull-cyl)" stroke="#003366" stroke-width="2.5" />
+                            <circle cx="0" cy="0" r="24" fill="#031d36" stroke="#6BA4D9" stroke-width="1.8" />
+                            <circle cx="0" cy="0" r="10" fill="#f5c46e" />
+                            <!-- Optical Docking Crosshairs -->
+                            <line x1="-18" y1="0" x2="-6" y2="0" stroke="#6BA4D9" stroke-width="1.5" />
+                            <line x1="6" y1="0" x2="18" y2="0" stroke="#6BA4D9" stroke-width="1.5" />
+                            <line x1="0" y1="-18" x2="0" y2="-6" stroke="#6BA4D9" stroke-width="1.5" />
+                            <line x1="0" y1="6" x2="0" y2="18" stroke="#6BA4D9" stroke-width="1.5" />
                         </g>
-                        <!-- Nyomás alatt álló kutatómodulok -->
-                        <g transform="translate(430, 218)">
-                            <rect x="0" y="0" width="85" height="28" rx="6" fill="url(#sr-hu-hull-light)" stroke="#003366" stroke-width="1.5" />
-                            <line x1="28" y1="0" x2="28" y2="28" stroke="#003366" stroke-width="1" />
-                            <line x1="56" y1="0" x2="56" y2="28" stroke="#003366" stroke-width="1" />
-                            <rect x="15" y="-18" width="55" height="18" rx="2" fill="#c4ded9" stroke="#6BA4D9" stroke-width="0.8" opacity=".8" />
+                        <!-- Port Primary Research Laboratory Stack -->
+                        <g transform="translate(420, 216)">
+                            <rect x="0" y="0" width="100" height="32" rx="6" fill="url(#sr-hull-cyl)" stroke="#003366" stroke-width="1.6" />
+                            <!-- Hull insulation seams & micrometeoroid armor plates -->
+                            <line x1="25" y1="0" x2="25" y2="32" stroke="#003366" stroke-width="1.2" />
+                            <line x1="50" y1="0" x2="50" y2="32" stroke="#003366" stroke-width="1.2" />
+                            <line x1="75" y1="0" x2="75" y2="32" stroke="#003366" stroke-width="1.2" />
+                            <!-- Yellow EVA Grab Handrails -->
+                            <line x1="8" y1="5" x2="92" y2="5" stroke="#f5c46e" stroke-width="1.0" />
+                            <line x1="8" y1="27" x2="92" y2="27" stroke="#f5c46e" stroke-width="1.0" />
+                            <!-- Panoramic Viewing Windows -->
+                            <circle cx="37" cy="16" r="3.2" fill="#42d0f5" stroke="#003366" stroke-width="0.8" />
+                            <circle cx="63" cy="16" r="3.2" fill="#42d0f5" stroke="#003366" stroke-width="0.8" />
                         </g>
-                        <g transform="translate(645, 218)">
-                            <rect x="0" y="0" width="85" height="28" rx="6" fill="url(#sr-hu-hull-light)" stroke="#003366" stroke-width="1.5" />
-                            <line x1="28" y1="0" x2="28" y2="28" stroke="#003366" stroke-width="1" />
-                            <line x1="56" y1="0" x2="56" y2="28" stroke="#003366" stroke-width="1" />
-                            <rect x="15" y="28" width="55" height="18" rx="2" fill="#c4ded9" stroke="#6BA4D9" stroke-width="0.8" opacity=".8" />
+                        <!-- Starboard Habitation and Engineering Stack -->
+                        <g transform="translate(640, 216)">
+                            <rect x="0" y="0" width="100" height="32" rx="6" fill="url(#sr-hull-cyl)" stroke="#003366" stroke-width="1.6" />
+                            <line x1="25" y1="0" x2="25" y2="32" stroke="#003366" stroke-width="1.2" />
+                            <line x1="50" y1="0" x2="50" y2="32" stroke="#003366" stroke-width="1.2" />
+                            <line x1="75" y1="0" x2="75" y2="32" stroke="#003366" stroke-width="1.2" />
+                            <!-- Yellow EVA Grab Handrails -->
+                            <line x1="8" y1="5" x2="92" y2="5" stroke="#f5c46e" stroke-width="1.0" />
+                            <line x1="8" y1="27" x2="92" y2="27" stroke="#f5c46e" stroke-width="1.0" />
+                            <!-- External Exposed Experiment Facility (JEM-EF) Platform -->
+                            <rect x="70" y="32" width="26" height="12" fill="#607d8b" stroke="#003366" stroke-width="1.0" />
+                            <rect x="74" y="34" width="7" height="8" fill="#ffd54f" />
+                            <rect x="85" y="34" width="7" height="8" fill="#81d4fa" />
                         </g>
-                        <!-- Dokkolt siklóhajó -->
-                        <g transform="translate(390, 232)">
-                            <polygon points="0,-10 32,-4 32,4 0,10" fill="#ffffff" stroke="#003366" stroke-width="1.2" />
-                            <polygon points="12,-4 32,-18 32,-4" fill="#c95a41" />
-                            <polygon points="12,4 32,18 32,4" fill="#c95a41" />
-                            <circle cx="16" cy="0" r="2" fill="#6BA4D9" />
+                        <!-- Articulated Robotic Manipulator Arm (SSRMS) -->
+                        <g transform="translate(485, 216)">
+                            <!-- Mobile base cart on truss -->
+                            <rect x="-8" y="-7" width="16" height="7" rx="1.5" fill="#78909c" stroke="#37474f" stroke-width="0.9" />
+                            <!-- Shoulder, elbow, & boom links -->
+                            <path d="M0,-7 L-18,-28 L-42,-18 L-65,-36" fill="none" stroke="#cfd8dc" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M0,-7 L-18,-28 L-42,-18 L-65,-36" fill="none" stroke="#263238" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                            <!-- Rotary joints -->
+                            <circle cx="0" cy="-7" r="3.5" fill="#f5c46e" stroke="#37474f" stroke-width="0.8" />
+                            <circle cx="-18" cy="-28" r="3.2" fill="#f5c46e" stroke="#37474f" stroke-width="0.8" />
+                            <circle cx="-42" cy="-18" r="3.2" fill="#f5c46e" stroke="#37474f" stroke-width="0.8" />
+                            <!-- Latching End Effector (LEE) inspecting external module -->
+                            <circle cx="-65" cy="-36" r="3.8" fill="#ffffff" stroke="#c95a41" stroke-width="1.2" />
+                            <line x1="-65" y1="-36" x2="-72" y2="-42" stroke="#42d0f5" stroke-width="1.2" />
                         </g>
-                        <!-- Telemetriai antenna pulzáló rádióhullámokkal -->
-                        <g transform="translate(580, 110)">
-                            <line x1="0" y1="34" x2="0" y2="12" stroke="#bedbd6" stroke-width="2" />
-                            <path d="M-18 6 C -10 -6, 10 -6, 18 6" fill="none" stroke="#f5c46e" stroke-width="2.5" />
-                            <line x1="0" y1="12" x2="0" y2="-2" stroke="#ffffff" stroke-width="1.5" />
-                            <circle class="pulse" cx="0" cy="-4" r="14" fill="none" stroke="#6BA4D9" stroke-width="1.8" />
-                            <circle class="pulse" cx="0" cy="-4" r="26" fill="none" stroke="#6BA4D9" stroke-width="1.2" style="animation-delay: 1.2s;" />
+                        <!-- Docked Crew Transport Spaceplane -->
+                        <g transform="translate(378, 232)">
+                            <!-- Pressurized Docking Adaptor Tunnel -->
+                            <rect x="30" y="-7" width="12" height="14" rx="2" fill="#90a4ae" stroke="#37474f" stroke-width="1.0" />
+                            <!-- Aerodynamic Lifting Body Fuselage -->
+                            <path d="M-4,-12 L30,-5 L30,5 L-4,12 L-10,0Z" fill="#ffffff" stroke="#003366" stroke-width="1.4" />
+                            <!-- Thermal Protection Black Underside / Tiles -->
+                            <path d="M-4,0 L30,2 L30,5 L-4,12 L-10,0Z" fill="#212121" opacity="0.65" />
+                            <!-- Cantilevering Delta Wings with Crimson WSA Wingtips -->
+                            <polygon points="10,-5 30,-22 30,-5" fill="#c95a41" />
+                            <polygon points="10,5 30,22 30,5" fill="#c95a41" />
+                            <!-- Cockpit Glass Canopy -->
+                            <ellipse cx="6" cy="0" r="3.2" rx="4.5" ry="2.2" fill="#42d0f5" />
                         </g>
-                        <!-- Felső telemetriai fejléc -->
+                        <!-- Docked Autonomous Cargo Capsule (Dragon / Cygnus style) -->
+                        <g transform="translate(690, 248)">
+                            <!-- Berthed docking collar -->
+                            <rect x="-6" y="0" width="12" height="8" fill="#90a4ae" stroke="#37474f" stroke-width="0.9" />
+                            <!-- Conical capsule trunk -->
+                            <path d="M-12,8 L12,8 L16,28 L-16,28Z" fill="#ffffff" stroke="#003366" stroke-width="1.3" />
+                            <line x1="-12" y1="18" x2="12" y2="18" stroke="#003366" stroke-width="1.0" />
+                            <!-- Miniature solar arrays on cargo trunk -->
+                            <rect x="-32" y="16" width="16" height="10" fill="#1a3b68" stroke="#ffc107" stroke-width="0.8" />
+                            <rect x="16" y="16" width="16" height="10" fill="#1a3b68" stroke="#ffc107" stroke-width="0.8" />
+                        </g>
+                        <!-- High-Gain Deep Space Telemetry Antenna -->
+                        <g transform="translate(580, 105)">
+                            <line x1="0" y1="40" x2="0" y2="14" stroke="#b0bec5" stroke-width="2.5" />
+                            <!-- Parabolic dish reflector with 3D gradient -->
+                            <path d="M-22,8 C-12,-8 12,-8 22,8" fill="none" stroke="#f5c46e" stroke-width="3.2" stroke-linecap="round" />
+                            <line x1="0" y1="14" x2="0" y2="-4" stroke="#ffffff" stroke-width="1.8" />
+                            <circle cx="0" cy="-4" r="2.5" fill="#f5c46e" />
+                            <!-- Pulsing radar/telemetry waves -->
+                            <circle class="pulse" cx="0" cy="-6" r="14" fill="none" stroke="#6BA4D9" stroke-width="1.8" />
+                            <circle class="pulse" cx="0" cy="-6" r="28" fill="none" stroke="#6BA4D9" stroke-width="1.2" style="animation-delay: 1.2s;" />
+                        </g>
+                        <!-- TOP HUD TELEMETRY BAR -->
                         <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">
-                            <rect x="330" y="18" width="500" height="32" rx="16" fill="#061c1b" stroke="#6BA4D9" stroke-width="1.2" opacity=".95" />
-                            <text x="350" y="38" fill="#6BA4D9">MAGASSÁG: 420.4 KM</text>
-                            <text x="530" y="38" fill="#f5c46e">SEBESSÉG: 7.66 KM/S</text>
-                            <text x="730" y="38" fill="#2ecc71">12 FŐ AKTÍV</text>
+                            <rect x="330" y="18" width="500" height="32" rx="16" fill="#04121a" stroke="#6BA4D9" stroke-width="1.2" opacity="0.95" />
+                            <text x="355" y="38" fill="#6BA4D9">MAGASSÁG: 420.4 KM</text>
+                            <text x="520" y="38" fill="#f5c46e">SEBESSÉG: 7.66 KM/S</text>
+                            <text x="680" y="38" fill="#2ecc71">12 FŐ AKTÍV</text>
                         </g>
-                        <!-- Bal alsó telemetria -->
+                        <!-- Bottom-left corner telemetry badge -->
                         <g font-family="Manrope, sans-serif" font-size="10" font-weight="600" letter-spacing="1">
-                            <rect x="30" y="445" width="230" height="50" rx="8" fill="#061c1b" stroke="rgba(107, 164, 217, 0.4)" stroke-width="1" opacity=".9" />
+                            <rect x="30" y="445" width="245" height="50" rx="8" fill="#04121a" stroke="rgba(107, 164, 217, 0.45)" stroke-width="1" opacity="0.95" />
                             <text x="44" y="468" fill="#f5c46e">WSA ŰRÁLLOMÁS LOGISZTIKA</text>
-                            <text x="44" y="484" fill="#bedbd6">NAPELEMES TELJESÍTMÉNY: 140 KW</text>
+                            <text x="44" y="484" fill="#bedbd6">NAPELEMES TELJESÍTMÉNY: 140 KW (100%)</text>
                         </g>
-                        <!-- Jobb alsó telemetria -->
+                        <!-- Bottom-right corner telemetry badge -->
                         <g font-family="Manrope, sans-serif" font-size="10" font-weight="600" letter-spacing="1" text-anchor="end">
-                            <rect x="900" y="445" width="230" height="50" rx="8" fill="#061c1b" stroke="rgba(107, 164, 217, 0.4)" stroke-width="1" opacity=".9" />
+                            <rect x="885" y="445" width="245" height="50" rx="8" fill="#04121a" stroke="rgba(107, 164, 217, 0.45)" stroke-width="1" opacity="0.95" />
                             <text x="1116" y="468" fill="#6BA4D9">DOKKOLÓKAPUK: 6 AKTÍV</text>
                             <text x="1116" y="484" fill="#bedbd6">AUTOMATIKUS KÖZELÍTÉSRE KÉSZ</text>
                         </g>
@@ -400,116 +657,237 @@
                         <clipPath id="sr-hu-clip2">
                             <rect width="1160" height="480" />
                         </clipPath>
-                        <radialGradient id="sr-hu-deep-space" cx="50%" cy="40%" r="65%">
-                            <stop offset="0%" stop-color="#0e2423" />
-                            <stop offset="50%" stop-color="#081817" />
-                            <stop offset="100%" stop-color="#030c0c" />
+                        <radialGradient id="sr-deep-space" cx="50%" cy="40%" r="65%">
+                            <stop offset="0%" stop-color="#0a1d28" />
+                            <stop offset="45%" stop-color="#051018" />
+                            <stop offset="85%" stop-color="#02080e" />
+                            <stop offset="100%" stop-color="#010408" />
                         </radialGradient>
-                        <radialGradient id="sr-hu-mars-sphere" cx="40%" cy="35%" r="65%">
-                            <stop offset="0%" stop-color="#e3735a" />
-                            <stop offset="60%" stop-color="#c95a41" />
-                            <stop offset="100%" stop-color="#7a2b1c" />
+                        <radialGradient id="sr-earth-3d" cx="35%" cy="30%" r="70%">
+                            <stop offset="0%" stop-color="#80d0ff" />
+                            <stop offset="35%" stop-color="#1e70c8" />
+                            <stop offset="75%" stop-color="#0a3275" />
+                            <stop offset="100%" stop-color="#021438" />
                         </radialGradient>
-                        <radialGradient id="sr-hu-moon-sphere" cx="40%" cy="35%" r="65%">
-                            <stop offset="0%" stop-color="#e8f3f1" />
-                            <stop offset="50%" stop-color="#bfd6d2" />
-                            <stop offset="100%" stop-color="#6e8f89" />
+                        <radialGradient id="sr-moon-3d" cx="35%" cy="30%" r="70%">
+                            <stop offset="0%" stop-color="#f2f8f8" />
+                            <stop offset="40%" stop-color="#cbd8d8" />
+                            <stop offset="75%" stop-color="#7c9292" />
+                            <stop offset="100%" stop-color="#3c4c4c" />
                         </radialGradient>
-                        <radialGradient id="sr-hu-earth-sphere" cx="40%" cy="35%" r="65%">
-                            <stop offset="0%" stop-color="#6BA4D9" />
-                            <stop offset="40%" stop-color="#1A528F" />
-                            <stop offset="80%" stop-color="#003366" />
-                            <stop offset="100%" stop-color="#001830" />
+                        <radialGradient id="sr-mars-3d" cx="35%" cy="30%" r="70%">
+                            <stop offset="0%" stop-color="#f89078" />
+                            <stop offset="35%" stop-color="#d6583e" />
+                            <stop offset="75%" stop-color="#8a2a16" />
+                            <stop offset="100%" stop-color="#420f05" />
                         </radialGradient>
+                        <filter id="sr-planet-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
                     </defs>
                     <g clip-path="url(#sr-hu-clip2)">
-                        <rect width="1160" height="480" fill="url(#sr-hu-deep-space)" />
-                        <!-- Csillagmező -->
-                        <g fill="#fbf7f0" opacity=".7">
-                            <circle class="twinkle" cx="80" cy="70" r="1.3" />
-                            <circle class="twinkle" cx="220" cy="110" r="1.5" />
-                            <circle class="twinkle" cx="380" cy="50" r="1.2" />
-                            <circle class="twinkle" cx="490" cy="90" r="1.6" />
-                            <circle class="twinkle" cx="620" cy="60" r="1.1" />
-                            <circle class="twinkle" cx="740" cy="120" r="1.4" />
-                            <circle class="twinkle" cx="860" cy="70" r="1.7" />
-                            <circle class="twinkle" cx="1020" cy="110" r="1.3" />
-                            <circle class="twinkle" cx="1110" cy="50" r="1.5" />
-                            <circle class="twinkle" cx="140" cy="410" r="1.4" />
-                            <circle class="twinkle" cx="320" cy="380" r="1.2" />
-                            <circle class="twinkle" cx="680" cy="420" r="1.5" />
-                            <circle class="twinkle" cx="820" cy="390" r="1.3" />
-                            <circle class="twinkle" cx="1080" cy="420" r="1.6" />
+                        <rect width="1160" height="480" fill="url(#sr-deep-space)" />
+                        <g>
+                            <line x1="40" y1="120" x2="1120" y2="120" stroke="#1e405a" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.35" />
+                            <line x1="40" y1="240" x2="1120" y2="240" stroke="#1e405a" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.35" />
+                            <line x1="40" y1="360" x2="1120" y2="360" stroke="#1e405a" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.35" />
+                            <line x1="180" y1="40" x2="180" y2="440" stroke="#1e405a" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.35" />
+                            <line x1="540" y1="40" x2="540" y2="440" stroke="#1e405a" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.35" />
+                            <line x1="960" y1="40" x2="960" y2="440" stroke="#1e405a" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.35" />
                         </g>
-                        <!-- Pályamenti pályák -->
-                        <path id="sr-hu-path-moon" d="M180 240 C 300 130, 440 140, 540 190" fill="none" stroke="#f5c46e" stroke-width="2.5" stroke-dasharray="8 6" class="dash" />
-                        <path id="sr-hu-path-mars" d="M180 240 C 420 40, 780 40, 960 240" fill="none" stroke="#e3735a" stroke-width="2.5" stroke-dasharray="10 8" class="dash" />
-                        <path d="M540 190 C 680 180, 840 200, 960 240" fill="none" stroke="#6BA4D9" stroke-width="1.5" stroke-dasharray="4 6" opacity=".6" />
-                        <!-- 1. FÖLD ÉS WNSS -->
+                        <g fill="#ffffff" opacity="0.6">
+                            <circle cx="166.2" cy="378.9" r="1" />
+                            <circle cx="451.3" cy="141.7" r="0.7" />
+                            <circle cx="110.6" cy="114.5" r="0.7" />
+                            <circle cx="976.3" cy="103.9" r="0.7" />
+                            <circle cx="1059.3" cy="423.5" r="0.6" />
+                            <circle cx="381.5" cy="455" r="0.8" />
+                            <circle cx="723" cy="324.3" r="0.9" />
+                            <circle cx="82" cy="338.1" r="0.9" />
+                            <circle cx="521.7" cy="172.1" r="0.9" />
+                            <circle cx="1128" cy="434.7" r="0.7" />
+                            <circle cx="870.2" cy="235.6" r="1" />
+                            <circle cx="1107" cy="232.9" r="1" />
+                            <circle cx="1010.8" cy="69.1" r="0.8" />
+                            <circle cx="1080.3" cy="123.3" r="0.8" />
+                            <circle cx="724.5" cy="175.1" r="0.9" />
+                            <circle cx="224.3" cy="283" r="0.8" />
+                            <circle cx="50.3" cy="368.3" r="0.9" />
+                            <circle cx="974.5" cy="104" r="0.8" />
+                            <circle cx="188.8" cy="342.8" r="0.8" />
+                            <circle cx="1018.3" cy="80" r="0.7" />
+                            <circle cx="100.5" cy="427.8" r="0.9" />
+                            <circle cx="177.8" cy="345.1" r="0.8" />
+                            <circle cx="470.2" cy="364.2" r="0.9" />
+                            <circle cx="563" cy="148.6" r="0.8" />
+                            <circle cx="454.9" cy="101.6" r="0.7" />
+                            <circle cx="646.9" cy="447.3" r="0.8" />
+                            <circle cx="472.5" cy="33.3" r="1" />
+                            <circle cx="375.4" cy="149.6" r="0.9" />
+                            <circle cx="1008.3" cy="68.7" r="0.6" />
+                            <circle cx="262" cy="457.7" r="0.8" />
+                            <circle cx="134.7" cy="306.2" r="0.8" />
+                            <circle cx="138.3" cy="49.3" r="0.7" />
+                            <circle cx="1104.3" cy="208.1" r="1" />
+                            <circle cx="440.8" cy="162.6" r="0.6" />
+                            <circle cx="698" cy="91.1" r="1" />
+                            <circle cx="718.8" cy="29.3" r="0.8" />
+                            <circle cx="550" cy="310.1" r="0.8" />
+                            <circle cx="145.8" cy="230.8" r="0.9" />
+                            <circle cx="115.1" cy="405.5" r="0.9" />
+                            <circle cx="234.8" cy="53.2" r="0.8" />
+                            <circle cx="724.2" cy="296.7" r="0.6" />
+                            <circle cx="686.7" cy="262.3" r="0.7" />
+                            <circle cx="583.6" cy="297.2" r="0.9" />
+                            <circle cx="145.6" cy="52.3" r="0.9" />
+                            <circle cx="1125.7" cy="266.3" r="1" />
+                            <circle cx="445.3" cy="90.6" r="0.9" />
+                            <circle cx="330.9" cy="397.8" r="0.9" />
+                            <circle cx="76.8" cy="157" r="0.9" />
+                            <circle cx="81.3" cy="118.4" r="0.6" />
+                            <circle cx="796.7" cy="444.8" r="0.9" />
+                            <circle cx="1019.2" cy="106.9" r="0.9" />
+                            <circle cx="1131.5" cy="381.1" r="0.7" />
+                            <circle cx="353" cy="433.8" r="0.9" />
+                            <circle cx="479.1" cy="134.9" r="0.6" />
+                            <circle cx="889.3" cy="282.7" r="0.7" />
+                            <circle cx="164.1" cy="455.7" r="1" />
+                            <circle cx="27.8" cy="94.1" r="1" />
+                            <circle cx="521.9" cy="397.6" r="0.8" />
+                            <circle cx="444.9" cy="440.8" r="0.7" />
+                            <circle cx="1073.7" cy="361" r="0.7" />
+                            <circle cx="1062.3" cy="439.4" r="0.6" />
+                            <circle cx="621.1" cy="235.6" r="0.7" />
+                            <circle cx="844.9" cy="426.6" r="1" />
+                            <circle cx="926.3" cy="202.2" r="0.9" />
+                            <circle cx="980.7" cy="162.5" r="0.9" />
+                            <circle cx="505.9" cy="418.3" r="0.7" />
+                            <circle cx="631.7" cy="218.4" r="0.7" />
+                            <circle cx="567.2" cy="343.7" r="0.9" />
+                            <circle cx="1071.5" cy="368.9" r="0.6" />
+                            <circle cx="578.9" cy="217" r="0.6" />
+                        </g>
+                        <g>
+                            <circle class="twinkle" cx="80" cy="70" r="1.4" fill="#ffffff" />
+                            <circle class="twinkle" cx="220" cy="110" r="1.6" fill="#ffffff" />
+                            <circle class="twinkle" cx="380" cy="50" r="1.3" fill="#ffffff" />
+                            <circle class="twinkle" cx="490" cy="90" r="1.7" fill="#ffffff" />
+                            <circle class="twinkle" cx="620" cy="60" r="1.2" fill="#ffffff" />
+                            <circle class="twinkle" cx="740" cy="120" r="1.5" fill="#ffffff" />
+                            <circle class="twinkle" cx="860" cy="70" r="1.8" fill="#ffffff" />
+                            <circle class="twinkle" cx="1020" cy="110" r="1.4" fill="#ffffff" />
+                            <circle class="twinkle" cx="1110" cy="50" r="1.6" fill="#ffffff" />
+                            <circle class="twinkle" cx="140" cy="410" r="1.5" fill="#ffffff" />
+                            <circle class="twinkle" cx="320" cy="380" r="1.3" fill="#ffffff" />
+                            <circle class="twinkle" cx="680" cy="420" r="1.6" fill="#ffffff" />
+                            <circle class="twinkle" cx="820" cy="390" r="1.4" fill="#ffffff" />
+                            <circle class="twinkle" cx="1080" cy="420" r="1.7" fill="#ffffff" />
+                        </g>
+                        <!-- Interplanetary Transfer Trajectories -->
+                        <path id="sr-hu-path-moon" d="M180,240 C300,130 440,140 540,190" fill="none" stroke="#f5c46e" stroke-width="2.5" stroke-dasharray="8 6" class="dash" />
+                        <path id="sr-hu-path-mars" d="M180,240 C420,35 780,35 960,240" fill="none" stroke="#e3735a" stroke-width="2.6" stroke-dasharray="10 8" class="dash" />
+                        <path d="M540,190 C680,175 840,195 960,240" fill="none" stroke="#6BA4D9" stroke-width="1.6" stroke-dasharray="4 6" opacity="0.65" />
+                        <circle cx="430" cy="205" r="7" fill="none" stroke="#f5c46e" stroke-width="1" stroke-dasharray="2 3" opacity="0.7" />
+                        <circle cx="430" cy="205" r="2" fill="#f5c46e" opacity="0.85" />
+                        <text x="430" y="222" fill="#f5c46e" font-family="Manrope, sans-serif" font-size="9" font-weight="600" text-anchor="middle" opacity="0.8">L1</text>
+                        <!-- 1. PLANET EARTH NODE -->
                         <g transform="translate(180, 240)">
-                            <circle cx="0" cy="0" r="74" fill="none" stroke="#6BA4D9" stroke-width="1.5" stroke-dasharray="6 4" class="spin" />
-                            <circle cx="0" cy="0" r="62" fill="url(#sr-hu-earth-sphere)" />
-                            <circle cx="0" cy="0" r="62" fill="none" stroke="#6BA4D9" stroke-width="6" opacity=".4" />
-                            <circle cx="0" cy="0" r="62" fill="none" stroke="#e0f8f5" stroke-width="1.5" opacity=".8" />
-                            <path d="M-30 -20 c20-15 45-5 50 15 c-10 20-30 25-45 10 z" fill="#4e8b5a" opacity=".85" />
-                            <path d="M-10 15 c15 5 25 25 10 30 c-15 -5 -15 -25 -10 -30 z" fill="#4e8b5a" opacity=".85" />
-                            <circle cx="0" cy="0" r="82" fill="none" stroke="#f5c46e" stroke-width="1" stroke-dasharray="4 4" />
-                            <circle cx="58" cy="-58" r="4" fill="#fbf7f0" stroke="#003366" stroke-width="1.2" />
-                            <text x="0" y="105" fill="#fbf7f0" font-family="Manrope, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.5">FÖLD</text>
-                            <text x="0" y="122" fill="#6BA4D9" font-family="Manrope, sans-serif" font-size="10" font-weight="600" text-anchor="middle">INDÍTÁSI BÁZIS</text>
+                            <!-- Orbital Coordinate Tracking Rings -->
+                            <circle cx="0" cy="0" r="76" fill="none" stroke="#6BA4D9" stroke-width="1.4" stroke-dasharray="6 4" class="spin" />
+                            <!-- Earth 3D Sphere -->
+                            <circle cx="0" cy="0" r="62" fill="url(#sr-earth-3d)" />
+                            <!-- Atmospheric Scattering Limb Glow -->
+                            <circle cx="0" cy="0" r="62" fill="none" stroke="#6BA4D9" stroke-width="7" opacity="0.38" />
+                            <circle cx="0" cy="0" r="62" fill="none" stroke="#e0f8ff" stroke-width="1.8" opacity="0.9" />
+                            <!-- Realistic Continents (Americas & Pacific Basin) -->
+                            <path d="M-28,-32 C-15,-42 12,-35 22,-20 C28,-8 18,12 2,24 C-12,32 -26,18 -32,-4Z" fill="#328254" opacity="0.85" />
+                            <path d="M-6,8 C14,12 24,32 12,42 C0,48 -14,36 -8,18Z" fill="#328254" opacity="0.85" />
+                            <!-- Swirling Cloud Systems -->
+                            <path d="M-36,-14 C-18,-24 16,-18 34,-6 C42,-2 32,4 18,2 C-4,-2 -24,8 -38,2Z" fill="#ffffff" opacity="0.75" />
+                            <path d="M-22,18 C-8,12 18,22 32,32 C24,36 4,28 -14,30Z" fill="#ffffff" opacity="0.75" />
+                            <!-- WNSS Station LEO Orbit Ring -->
+                            <circle cx="0" cy="0" r="84" fill="none" stroke="#f5c46e" stroke-width="1.1" stroke-dasharray="4 4" />
+                            <circle cx="59" cy="-60" r="4.5" fill="#ffffff" stroke="#003366" stroke-width="1.3" />
+                            <text x="0" y="106" fill="#fbf7f0" font-family="Manrope, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.5">FÖLD</text>
+                            <text x="0" y="123" fill="#6BA4D9" font-family="Manrope, sans-serif" font-size="10" font-weight="600" text-anchor="middle">ELSŐDLEGES BÁZIS</text>
                         </g>
-                        <!-- 2. HOLD ÉS HOLDBÁZIS -->
+                        <!-- 2. MOON NODE AND LUNAR BASE -->
                         <g transform="translate(540, 190)">
-                            <circle cx="0" cy="0" r="44" fill="none" stroke="#d5ede9" stroke-width="1" stroke-dasharray="4 4" class="spin-rev" />
-                            <circle cx="0" cy="0" r="34" fill="url(#sr-hu-moon-sphere)" />
-                            <circle cx="0" cy="0" r="34" fill="none" stroke="#d5ede9" stroke-width="1" opacity=".7" />
-                            <circle cx="-12" cy="-8" r="6" fill="#88a8a2" opacity=".6" />
-                            <circle cx="10" cy="6" r="8" fill="#88a8a2" opacity=".5" />
-                            <circle cx="-6" cy="14" r="4" fill="#88a8a2" opacity=".6" />
-                            <!-- Tervezett leszállási zóna jeladó -->
-                            <circle cx="8" cy="-14" r="3" fill="#2ecc71" />
-                            <circle class="pulse" cx="8" cy="-14" r="12" fill="none" stroke="#2ecc71" stroke-width="1.5" />
-                            <text x="0" y="65" fill="#fbf7f0" font-family="Manrope, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.5">HOLD-KÜLDETÉS</text>
-                            <text x="0" y="82" fill="#f5c46e" font-family="Manrope, sans-serif" font-size="10" font-weight="600" text-anchor="middle">2026-2030</text>
+                            <!-- Near-Rectilinear Halo Orbit Ring -->
+                            <circle cx="0" cy="0" r="46" fill="none" stroke="#d5ede9" stroke-width="1.1" stroke-dasharray="4 4" class="spin-rev" />
+                            <!-- Moon 3D Sphere -->
+                            <circle cx="0" cy="0" r="35" fill="url(#sr-moon-3d)" />
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="#e8f4f4" stroke-width="1.2" opacity="0.7" />
+                            <!-- Lunar Maria Basalt Plains (Mare Tranquillitatis, Oceanus Procellarum) -->
+                            <ellipse cx="-12" cy="-9" rx="8" ry="6" fill="#586c6c" opacity="0.65" />
+                            <ellipse cx="11" cy="7" rx="10" ry="8" fill="#586c6c" opacity="0.55" />
+                            <ellipse cx="-6" cy="15" rx="6" ry="4.5" fill="#586c6c" opacity="0.65" />
+                            <!-- Tycho / Copernicus Impact Crater Ray System -->
+                            <circle cx="-14" cy="12" r="2.2" fill="#ffffff" opacity="0.85" />
+                            <line x1="-14" y1="12" x2="-26" y2="4" stroke="#ffffff" stroke-width="0.6" opacity="0.6" />
+                            <line x1="-14" y1="12" x2="-8" y2="24" stroke="#ffffff" stroke-width="0.6" opacity="0.6" />
+                            <line x1="-14" y1="12" x2="-2" y2="10" stroke="#ffffff" stroke-width="0.6" opacity="0.6" />
+                            <!-- Planned Aitken Basin Landing Zone Beacon -->
+                            <circle cx="9" cy="-15" r="3.2" fill="#2ecc71" />
+                            <circle class="pulse" cx="9" cy="-15" r="13" fill="none" stroke="#2ecc71" stroke-width="1.6" />
+                            <text x="0" y="66" fill="#fbf7f0" font-family="Manrope, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.5">HOLD-KÜLDETÉS</text>
+                            <text x="0" y="83" fill="#f5c46e" font-family="Manrope, sans-serif" font-size="10" font-weight="600" text-anchor="middle">2026-2030</text>
                         </g>
-                        <!-- 3. MARS ÉS BÁZISÁLLOMÁS -->
+                        <!-- 3. MARS NODE AND EXPEDITION TARGET -->
                         <g transform="translate(960, 240)">
-                            <circle cx="0" cy="0" r="76" fill="none" stroke="#e3735a" stroke-width="1.5" stroke-dasharray="6 4" class="spin" />
-                            <circle cx="0" cy="0" r="58" fill="url(#sr-hu-mars-sphere)" />
-                            <circle cx="0" cy="0" r="58" fill="none" stroke="#e3735a" stroke-width="6" opacity=".4" />
-                            <circle cx="0" cy="0" r="58" fill="none" stroke="#ffdcd3" stroke-width="1.5" opacity=".8" />
-                            <path d="M-30 0 c20-10 40 5 45 20 c-20 15 -45 5 -45 -20 z" fill="#692417" opacity=".6" />
-                            <!-- Lockheed Martin keringő állomás -->
-                            <g transform="translate(0, -76)">
-                                <circle cx="0" cy="0" r="6" fill="#fbf7f0" stroke="#c95a41" stroke-width="1.5" />
-                                <line x1="-14" y1="0" x2="14" y2="0" stroke="#f5c46e" stroke-width="2" />
-                                <circle class="pulse" cx="0" cy="0" r="14" fill="none" stroke="#e3735a" stroke-width="1.2" />
+                            <!-- Mars Orbital Tracking Rings -->
+                            <circle cx="0" cy="0" r="78" fill="none" stroke="#e3735a" stroke-width="1.4" stroke-dasharray="6 4" class="spin" />
+                            <!-- Mars 3D Sphere -->
+                            <circle cx="0" cy="0" r="60" fill="url(#sr-mars-3d)" />
+                            <!-- Thin Dusty Martian Atmosphere Limb Glow -->
+                            <circle cx="0" cy="0" r="60" fill="none" stroke="#e3735a" stroke-width="6" opacity="0.35" />
+                            <circle cx="0" cy="0" r="60" fill="none" stroke="#ffdcd3" stroke-width="1.6" opacity="0.85" />
+                            <!-- Martian Dark Surface Albedo & Valles Marineris Canyon Chasm -->
+                            <path d="M-36,2 C-18,-8 18,-4 38,12 C28,26 -4,28 -28,18Z" fill="#521508" opacity="0.65" />
+                            <path d="M-18,6 Q8,4 28,14" stroke="#2b0a04" stroke-width="2.2" fill="none" />
+                            <!-- Olympus Mons Shield Volcano & Tharsis Montes -->
+                            <ellipse cx="-24" cy="-14" rx="7" ry="5.5" fill="#752212" opacity="0.8" />
+                            <circle cx="-24" cy="-14" r="2.0" fill="#2b0a04" />
+                            <!-- North Polar Carbon-Dioxide Ice Cap -->
+                            <ellipse cx="-2" cy="-56" rx="14" ry="4.5" fill="#ffffff" opacity="0.95" />
+                            <!-- Mars Orbital Base Station (Forward Outpost) -->
+                            <g transform="translate(0, -78)">
+                                <circle cx="0" cy="0" r="6.5" fill="#ffffff" stroke="#c95a41" stroke-width="1.6" />
+                                <line x1="-15" y1="0" x2="15" y2="0" stroke="#f5c46e" stroke-width="2.2" />
+                                <circle class="pulse" cx="0" cy="0" r="14" fill="none" stroke="#e3735a" stroke-width="1.3" />
                             </g>
+                            <!-- Spirit II Landing Site Marker -->
                             <polygon points="-8,-12 0,-24 8,-12" fill="#f5c46e" />
                             <circle cx="0" cy="-14" r="2" fill="#003366" />
-                            <text x="0" y="105" fill="#fbf7f0" font-family="Manrope, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.5">MARS-KÜLDETÉS</text>
-                            <text x="0" y="122" fill="#e3735a" font-family="Manrope, sans-serif" font-size="10" font-weight="600" text-anchor="middle">2035-2040</text>
+                            <text x="0" y="106" fill="#fbf7f0" font-family="Manrope, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.5">MARS-KÜLDETÉS</text>
+                            <text x="0" y="123" fill="#e3735a" font-family="Manrope, sans-serif" font-size="10" font-weight="600" text-anchor="middle">2035-2040</text>
                         </g>
-                        <!-- Marsra tartó űrhajó -->
+                        <!-- Interplanetary Starship (Mars Cycler) -->
                         <g>
-                            <path d="M-14 -6 h18 l8 6 l-8 6 h-18 l5 -6 z" fill="#fbf7f0" stroke="#c95a41" stroke-width="1.2" />
-                            <polygon points="-14,-6 -20,-12 -8,-6" fill="#f5c46e" />
-                            <polygon points="-14,6 -20,12 -8,6" fill="#f5c46e" />
-                            <circle cx="6" cy="0" r="3" fill="#2ecc71" />
+                            <path d="M-16,-6 L8,-6 L18,0 L8,6 L-16,6 L-12,0Z" fill="#ffffff" stroke="#c95a41" stroke-width="1.3" />
+                            <!-- Nuclear-thermal / Ion Engine Glow -->
+                            <polygon points="-16,-6 -24,-12 -10,-6" fill="#f5c46e" />
+                            <polygon points="-16,6 -24,12 -10,6" fill="#f5c46e" />
+                            <!-- Radiator wings -->
+                            <rect x="-6" y="-12" width="12" height="4" fill="#64b5f6" />
+                            <rect x="-6" y="8" width="12" height="4" fill="#64b5f6" />
+                            <circle cx="8" cy="0" r="3" fill="#2ecc71" />
                             <animateMotion dur="14s" repeatCount="indefinite" rotate="auto">
                                 <mpath href="#sr-hu-path-mars" />
                             </animateMotion>
                         </g>
-                        <!-- Holdra tartó szállítóhajó -->
+                        <!-- Cislunar Crew Transport Vessel -->
                         <g>
-                            <polygon points="10,0 -8,-7 -4,0 -8,7" fill="#ffffff" stroke="#003366" stroke-width="1" />
+                            <polygon points="12,0 -9,-8 -5,0 -9,8" fill="#ffffff" stroke="#003366" stroke-width="1.2" />
+                            <rect x="-7" y="-3" width="6" height="6" fill="#ffd54f" />
                             <animateMotion dur="9s" repeatCount="indefinite" rotate="auto">
                                 <mpath href="#sr-hu-path-moon" />
                             </animateMotion>
                         </g>
-                        <!-- Küldetésfejléc -->
+                        <!-- HUD Mission Status Header -->
                         <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">
-                            <rect x="310" y="20" width="540" height="32" rx="16" fill="#081817" stroke="#e3735a" stroke-width="1.2" opacity=".95" />
+                            <rect x="310" y="20" width="540" height="32" rx="16" fill="#04121a" stroke="#e3735a" stroke-width="1.2" opacity="0.95" />
                             <text x="580" y="41" fill="#fbf7f0" text-anchor="middle">HOLDBÁZIS ÉS MARSI BOLYGÓKÖZI FOLYOSÓ</text>
                         </g>
                     </g>

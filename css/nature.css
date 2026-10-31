@@ -1,20 +1,6 @@
 /* Sovereign Nation of Waikiki — Nature and Sanctuaries Design System */
 /* Integrated with Tropical Luxe and Lagoon Night standards */
 
-/* Typography and Section Title Refinement */
-.page-nature .section-title {
-    line-height: 1.45;
-    padding-top: 2.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.page-nature .split-word {
-    overflow: hidden;
-    vertical-align: bottom;
-    padding: 0 0.04em;
-    margin: 0;
-}
-
 /* Illustration System Tokens and Classes */
 .nature-ill-frame {
     width: 100%;
@@ -67,120 +53,6 @@
     opacity: 0.95;
 }
 
-/* Ambient Motion for Procedural Biome SVGs */
-.nature-ill .drift {
-    animation: natDrift 18s ease-in-out infinite alternate;
-}
-
-.nature-ill .bob {
-    animation: natBob 5.5s ease-in-out infinite;
-}
-
-.nature-ill .sway {
-    animation: natSway 6.5s ease-in-out infinite alternate;
-}
-
-.nature-ill .swim {
-    animation: natSwim 11s ease-in-out infinite alternate;
-}
-
-.nature-ill .fly {
-    animation: natFly 7s ease-in-out infinite alternate;
-}
-
-.nature-ill .flow {
-    stroke-dasharray: 8 10;
-    animation: natFlow 2.6s linear infinite;
-}
-
-.nature-ill .shimmer {
-    animation: natShimmer 5s ease-in-out infinite alternate;
-}
-
-.nature-ill .pulse-glow {
-    animation: natPulse 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-    transform-origin: center;
-}
-
-.nature-ill .twinkle {
-    animation: natTwinkle 3.2s ease-in-out infinite;
-}
-
-@keyframes natDrift {
-    from { transform: translateX(-12px); }
-    to { transform: translateX(12px); }
-}
-
-@keyframes natBob {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-@keyframes natSway {
-    from { transform: rotate(-1.6deg); }
-    to { transform: rotate(1.6deg); }
-}
-
-@keyframes natSwim {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(-8px, -4px); }
-    100% { transform: translate(6px, 3px); }
-}
-
-@keyframes natFly {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(6px, -5px); }
-    100% { transform: translate(-4px, 3px); }
-}
-
-@keyframes natFlow {
-    from { stroke-dashoffset: 36; }
-    to { stroke-dashoffset: 0; }
-}
-
-@keyframes natShimmer {
-    from { opacity: 0.55; }
-    to { opacity: 0.95; }
-}
-
-@keyframes natPulse {
-    0% { opacity: 0.9; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(1.15); }
-    100% { opacity: 0.9; transform: scale(1); }
-}
-
-@keyframes natTwinkle {
-    0%, 100% { opacity: 0.25; }
-    50% { opacity: 0.95; }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-    .nature-ill .drift,
-    .nature-ill .bob,
-    .nature-ill .sway,
-    .nature-ill .swim,
-    .nature-ill .fly,
-    .nature-ill .flow,
-    .nature-ill .shimmer,
-    .nature-ill .pulse-glow,
-    .nature-ill .twinkle {
-        animation: none !important;
-    }
-}
-
-.no-reveal .nature-ill .drift,
-.no-reveal .nature-ill .bob,
-.no-reveal .nature-ill .sway,
-.no-reveal .nature-ill .swim,
-.no-reveal .nature-ill .fly,
-.no-reveal .nature-ill .flow,
-.no-reveal .nature-ill .shimmer,
-.no-reveal .nature-ill .pulse-glow,
-.no-reveal .nature-ill .twinkle {
-    animation: none !important;
-}
-
 /* Section Feature Split Layout */
 .nature-feature-split {
     display: flex;
@@ -225,10 +97,6 @@
     height: 3px;
     background: var(--accent);
     border-radius: var(--radius-3xs);
-}
-
-.body-dark .nature-feature-text h3 {
-    color: var(--heading);
 }
 
 .nature-feature-text p {
@@ -367,84 +235,24 @@
 }
 
 .province-card {
-    background: var(--surface);
-    background-clip: padding-box;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    padding: clamp(1.5rem, 2.5vw, 2rem);
-    box-shadow: 0 0 0 1px var(--primary-alpha-05), var(--shadow-sm);
-    transition:
-        transform 0.7s var(--ease-out),
-        box-shadow 0.7s var(--ease-out),
-        border-color 0.4s,
-        background-color 0.6s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
 }
 
-.province-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(480px circle at var(--mx, var(--mouse-x, 50%)) var(--my, var(--mouse-y, -20%)), var(--tertiary-border), transparent 45%);
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-}
-
-.province-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.8s var(--ease-out);
-    z-index: 1;
-}
-
-.province-card[data-prov="waikiki"]::after {
+.province-card[data-prov="waikiki"]::after,
+.sanctuary-item[data-prov="waikiki"]::after {
     background: linear-gradient(90deg, var(--primary-light), var(--waikiki-light));
 }
 
-.province-card[data-prov="amazonia"]::after {
+.province-card[data-prov="amazonia"]::after,
+.sanctuary-item[data-prov="amazonia"]::after {
     background: linear-gradient(90deg, #2e7d47, var(--amazonia-light));
 }
 
-.province-card[data-prov="brazilia"]::after {
+.province-card[data-prov="brazilia"]::after,
+.sanctuary-item[data-prov="brazilia"]::after {
     background: linear-gradient(90deg, var(--accent), var(--accent-light));
-}
-
-.province-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary-light-alpha-30);
-    box-shadow: var(--shadow-lg);
-}
-
-.province-card:hover::before {
-    opacity: 1;
-}
-
-.province-card:hover::after {
-    transform: scaleX(1);
-}
-
-.body-dark .province-card {
-    background: var(--surface-card);
-    border-color: var(--white-alpha-18);
-    box-shadow: 0 0 0 1px var(--white-alpha-08), 0 8px 24px var(--black-alpha-35);
-}
-
-.body-dark .province-card:hover {
-    border-color: var(--tertiary);
-    box-shadow: 0 16px 36px var(--black-alpha-50);
 }
 
 .province-card-top {
@@ -479,10 +287,6 @@
     color: var(--heading);
     margin-bottom: 0.75rem;
     line-height: 1.3;
-}
-
-.body-dark .province-card h3 {
-    color: var(--heading);
 }
 
 .province-card p {
@@ -596,84 +400,11 @@
 }
 
 .sanctuary-item {
-    background: var(--surface);
-    background-clip: padding-box;
-    border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: clamp(1.5rem, 2.5vw, 2rem);
-    box-shadow: 0 0 0 1px var(--primary-alpha-05), var(--shadow-sm);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition:
-        transform 0.7s var(--ease-out),
-        box-shadow 0.7s var(--ease-out),
-        border-color 0.4s,
-        background-color 0.6s;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-}
-
-.sanctuary-item::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(480px circle at var(--mx, var(--mouse-x, 50%)) var(--my, var(--mouse-y, -20%)), var(--tertiary-border), transparent 45%);
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-}
-
-.sanctuary-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.8s var(--ease-out);
-    z-index: 1;
-}
-
-.sanctuary-item[data-prov="waikiki"]::after {
-    background: linear-gradient(90deg, var(--primary-light), var(--waikiki-light));
-}
-
-.sanctuary-item[data-prov="amazonia"]::after {
-    background: linear-gradient(90deg, #2e7d47, var(--amazonia-light));
-}
-
-.sanctuary-item[data-prov="brazilia"]::after {
-    background: linear-gradient(90deg, var(--accent), var(--accent-light));
-}
-
-.sanctuary-item:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary-light-alpha-30);
-    box-shadow: var(--shadow-lg);
-}
-
-.sanctuary-item:hover::before {
-    opacity: 1;
-}
-
-.sanctuary-item:hover::after {
-    transform: scaleX(1);
-}
-
-.body-dark .sanctuary-item {
-    background: var(--surface-card);
-    border-color: var(--white-alpha-18);
-    box-shadow: 0 0 0 1px var(--white-alpha-08), 0 8px 24px var(--black-alpha-35);
-}
-
-.body-dark .sanctuary-item:hover {
-    border-color: var(--tertiary);
-    box-shadow: 0 16px 36px var(--black-alpha-50);
 }
 
 .sanctuary-badge-prov {
@@ -726,10 +457,6 @@
     line-height: 1.3;
 }
 
-.body-dark .sanctuary-item h3 {
-    color: var(--heading);
-}
-
 .sanctuary-art.nature-ill-frame {
     margin: 0 0 1.25rem 0;
     border-radius: 14px;
@@ -766,70 +493,12 @@
 }
 
 .charter-rule-card {
-    background: var(--surface);
-    background-clip: padding-box;
-    border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: clamp(1.5rem, 2vw, 2rem);
-    box-shadow: 0 0 0 1px var(--primary-alpha-05), var(--shadow-sm);
-    transition:
-        transform 0.7s var(--ease-out),
-        box-shadow 0.7s var(--ease-out),
-        border-color 0.4s,
-        background-color 0.6s;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-}
-
-.charter-rule-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(480px circle at var(--mx, var(--mouse-x, 50%)) var(--my, var(--mouse-y, -20%)), var(--tertiary-border), transparent 45%);
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
 }
 
 .charter-rule-card::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 3px;
     background: linear-gradient(90deg, #2e7d47, var(--amazonia-light) 45%, var(--accent));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.8s var(--ease-out);
-    z-index: 1;
-}
-
-.charter-rule-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary-light-alpha-30);
-    box-shadow: var(--shadow-lg);
-}
-
-.charter-rule-card:hover::before {
-    opacity: 1;
-}
-
-.charter-rule-card:hover::after {
-    transform: scaleX(1);
-}
-
-.body-dark .charter-rule-card {
-    background: var(--surface-card);
-    border-color: var(--white-alpha-18);
-    box-shadow: 0 0 0 1px var(--white-alpha-08), 0 8px 24px var(--black-alpha-35);
-}
-
-.body-dark .charter-rule-card:hover {
-    border-color: var(--tertiary);
-    box-shadow: 0 16px 36px var(--black-alpha-50);
 }
 
 .charter-index-num {
@@ -878,10 +547,6 @@
     color: var(--heading);
     margin-bottom: 0.65rem;
     line-height: 1.3;
-}
-
-.body-dark .charter-rule-card h3 {
-    color: var(--heading);
 }
 
 .charter-rule-card p {

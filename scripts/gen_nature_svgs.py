@@ -36,6 +36,22 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+from functools import lru_cache
+sys.path.insert(0, str(ROOT / "scripts"))
+import svg_textures
+
+@lru_cache(maxsize=1)
+def get_relief_pattern_uri():
+    return svg_textures.relief_tile(size=128, seed=11, octaves=4)
+
+@lru_cache(maxsize=1)
+def get_ripple_pattern_uri():
+    return svg_textures.ripple_tile(w=128, h=64, seed=21)
+
+@lru_cache(maxsize=1)
+def get_grain_pattern_uri():
+    return svg_textures.grain_tile(size=96, seed=7)
+
 OUT_DIR = ROOT / "icons" / "nature"
 TAU = math.tau
 
@@ -200,6 +216,39 @@ class Scene:
         self.defs.append(f'<clipPath id="{self.id(name)}"><path d="{d}"/></clipPath>')
         return self.url(name)
 
+    def relief_pattern(self) -> str:
+        if not hasattr(self, "_has_relief") or not self._has_relief:
+            self._has_relief = True
+            uri = get_relief_pattern_uri()
+            self.defs.append(
+                f'<pattern id="{self.id("relief")}" width="128" height="128" patternUnits="userSpaceOnUse">'
+                f'<image href="{uri}" width="128" height="128" preserveAspectRatio="none"/>'
+                f'</pattern>'
+            )
+        return self.url("relief")
+
+    def ripple_pattern(self) -> str:
+        if not hasattr(self, "_has_ripple") or not self._has_ripple:
+            self._has_ripple = True
+            uri = get_ripple_pattern_uri()
+            self.defs.append(
+                f'<pattern id="{self.id("ripple")}" width="128" height="64" patternUnits="userSpaceOnUse">'
+                f'<image href="{uri}" width="128" height="64" preserveAspectRatio="none"/>'
+                f'</pattern>'
+            )
+        return self.url("ripple")
+
+    def grain_pattern(self) -> str:
+        if not hasattr(self, "_has_grain") or not self._has_grain:
+            self._has_grain = True
+            uri = get_grain_pattern_uri()
+            self.defs.append(
+                f'<pattern id="{self.id("grain")}" width="96" height="96" patternUnits="userSpaceOnUse">'
+                f'<image href="{uri}" width="96" height="96" preserveAspectRatio="none"/>'
+                f'</pattern>'
+            )
+        return self.url("grain")
+
     def render(self, label: str) -> str:
         head = (
             f'<svg xmlns="http://www.w3.org/2000/svg" class="nature-ill" viewBox="0 0 {self.w} {self.h}" '
@@ -240,6 +289,8 @@ def mountain(s: Scene, name, keys, base, fill, shade="#1f3348", shade_op=0.38, s
     inner = [
         # Sunlit base rock tone
         el("path", d=d, fill=lit_col, opacity=0.32),
+        # Embossed micro-relief rock texture
+        el("path", d=d, fill=s.relief_pattern(), opacity=0.20, style="mix-blend-mode:multiply"),
     ]
 
     # Identify peaks and valleys for 3D ridge facets
@@ -409,12 +460,11 @@ def cloud(rng, x, y, w, col="#ffffff", shade="#d4e0ec", op=0.94, cls="drift"):
         el("path", d=shade_d, fill=shade, opacity=0.65),
         g(puffs_mid, fill=mix(col, shade, 0.32), opacity=0.55),
         g(puffs_lit, fill=col),
-    ], opacity=op, class_=cls, style=f"animation-delay:{n(-rng.uniform(0, 14))}s")
+    ], opacity=op)
 
 
 def mist(s: Scene, x, y, rx, ry, op=0.55, col="#ffffff", blur="mist", cls="drift"):
-    return el("ellipse", cx=x, cy=y, rx=rx, ry=ry, fill=col, opacity=op, filter=s.url(blur), class_=cls,
-              style=f"animation-delay:{n(-s.rng.uniform(0, 16))}s")
+    return el("ellipse", cx=x, cy=y, rx=rx, ry=ry, fill=col, opacity=op, filter=s.url(blur))
 
 
 # ==============================================================================
@@ -637,7 +687,7 @@ def palm(rng, x, y, h, lean, L, cols=("#26582c", "#4b8c3f"), trunk_col="#8b6b4c"
         crown_g.append(g(c_items))
     crown_g.append(g(fronds_front))
     style = f"transform-origin:{n(tx)}px {n(ty)}px;animation-delay:{n(-rng.uniform(0, 6))}s"
-    out.append(g(crown_g, class_="sway" if sway else None, style=style) if sway else g(crown_g))
+    out.append(g(crown_g))
     return g(out)
 
 
@@ -806,51 +856,79 @@ def gnarled_tree(rng, x, y, h, leaf=("#2f4f22", "#4c7232", "#789e4c"), trunk_col
 
 
 def cactus(x, y, h, col="#4f7d52", rib="#2f5236"):
-    """Realistic Mandacaru / Cereus columnar cactus with distinct multi-height arms, fluted ribs, spines, and blooms."""
-    w = max(5.0, h * 0.125)
-    lit = mix(col, "#b8d89a", 0.28)
-    shade = mix(col, "#182e1d", 0.35)
+    """Realistic Mandacaru / Cereus columnar cactus with distinct multi-height arms, fluted 3D ribs, fine radial spines, and blooms."""
+    w = max(5.2, h * 0.125)
+    lit = mix(col, "#c4e2a4", 0.30)
+    shade = mix(col, "#152b1a", 0.40)
     out = [
         # Ground shadow
-        el("ellipse", cx=x + 2, cy=y + 1, rx=w * 1.4, ry=w * 0.32, fill="#000000", opacity=0.22),
+        el("ellipse", cx=x + 2, cy=y + 1, rx=w * 1.5, ry=w * 0.34, fill="#000000", opacity=0.24),
     ]
-    # Arms with distinct horizontal offsets so they never overlap into a ladder
+    # Arms with natural asymmetric heights and smooth upward curves
     arms = [
-        (-1, 0.38, 0.38, 2.15),
-        (1, 0.48, 0.36, 1.95),
-        (-1, 0.66, 0.25, 1.35),
-        (1, 0.74, 0.20, 1.25),
+        (-1, 0.38, 0.38, 2.05),
+        (1, 0.48, 0.36, 1.88),
+        (-1, 0.67, 0.24, 1.32),
+        (1, 0.75, 0.19, 1.22),
     ]
-    arm_w = w * 0.76
-    for side, at, ah, reach in arms:
+    arm_w = w * 0.74
+    for idx, (side, at, ah, reach) in enumerate(arms):
         ay = y - h * at
         ax = x + side * w * reach
         top_y = ay - h * ah
-        # Outer dark shadow stroke, main arm fill stroke, inner highlight stroke
-        d_arm = f"M{n(x + side * w * 0.2)},{n(ay)} Q{n(ax)},{n(ay)} {n(ax)},{n(ay - arm_w * 0.8)} L{n(ax)},{n(top_y)}"
-        out.append(el("path", d=d_arm, stroke=shade, stroke_width=arm_w + 1.2, fill="none", stroke_linecap="round"))
+        d_arm = (
+            f"M{n(x + side * w * 0.18)},{n(ay)} "
+            f"C{n(x + side * w * reach * 0.75)},{n(ay + 1)} {n(ax)},{n(ay - arm_w * 0.4)} {n(ax)},{n(ay - arm_w * 1.1)} "
+            f"L{n(ax)},{n(top_y)}"
+        )
+        out.append(el("path", d=d_arm, stroke=shade, stroke_width=arm_w + 1.4, fill="none", stroke_linecap="round"))
         out.append(el("path", d=d_arm, stroke=col, stroke_width=arm_w, fill="none", stroke_linecap="round"))
-        out.append(el("path", d=d_arm, stroke=lit, stroke_width=arm_w * 0.32, fill="none", stroke_linecap="round", opacity=0.55))
-        # Rib line along arm
-        out.append(el("path", d=f"M{n(ax)},{n(ay - arm_w * 0.5)} L{n(ax)},{n(top_y + 2)}",
-                      stroke=rib, stroke_width=0.75, fill="none", opacity=0.65))
+        out.append(el("path", d=d_arm, stroke=lit, stroke_width=arm_w * 0.30, fill="none", stroke_linecap="round", opacity=0.52))
+        # Subtle fluted rib shadows along each arm
+        out.append(el("path", d=f"M{n(ax - arm_w * 0.16)},{n(ay - arm_w * 0.7)} L{n(ax - arm_w * 0.16)},{n(top_y + 2)} "
+                                f"M{n(ax + arm_w * 0.18)},{n(ay - arm_w * 0.7)} L{n(ax + arm_w * 0.18)},{n(top_y + 2)}",
+                      stroke=rib, stroke_width=0.65, fill="none", opacity=0.62))
+        # Blooming nocturnal white flower on the first two major arms
+        if idx < 2 and h >= 50:
+            fx, fy = ax + side * arm_w * 0.28, top_y + 1.5
+            out.append(g([
+                el("path", d=f"M{n(fx - side * 2)},{n(fy + 1)} L{n(fx + side * 2.5)},{n(fy - 2.5)} L{n(fx + side * 1)},{n(fy + 2.5)}Z", fill="#7ca658"),
+                el("ellipse", cx=fx + side * 2.2, cy=fy - 1.5, rx=w * 0.24, ry=w * 0.14,
+                   transform=f"rotate({-25 * side} {n(fx + side * 2.2)} {n(fy - 1.5)})", fill="#fffdf7"),
+                el("circle", cx=fx + side * 2.4, cy=fy - 1.5, r=w * 0.09, fill="#f2c938"),
+            ]))
 
-    # Main central stem with 3D cylindrical shading
+    # Main central stem with 3D cylindrical shading and fluted ribs
     out.append(el("rect", x=x - w / 2, y=y - h, width=w, height=h, rx=w / 2, fill=col))
-    out.append(el("rect", x=x, y=y - h, width=w / 2, height=h, rx=w / 4, fill=shade, opacity=0.38))
-    out.append(el("rect", x=x - w * 0.36, y=y - h + 2, width=w * 0.22, height=h - 4, rx=w * 0.1, fill=lit, opacity=0.45))
-    # Fluted vertical ribs and spine areoles on main stem
-    ribs, spines = [], []
-    for f in (-0.28, 0.0, 0.28):
+    out.append(el("rect", x=x + w * 0.04, y=y - h, width=w * 0.46, height=h, rx=w * 0.22, fill=shade, opacity=0.42))
+    out.append(el("rect", x=x - w * 0.36, y=y - h + 2, width=w * 0.22, height=h - 4, rx=w * 0.1, fill=lit, opacity=0.48))
+    # Fluted vertical ribs and delicate areole spine tufts (no X stitch marks!)
+    ribs, areoles, spines = [], [], []
+    for f in (-0.28, -0.04, 0.22):
         rx_ = x + w * f
-        ribs.append(f"M{n(rx_)},{n(y - h + w * 0.45)} L{n(rx_)},{n(y - 2)}")
-        for sy in range(int(y - h + w * 0.7), int(y - 4), max(6, int(h * 0.09))):
-            spines.append(f"M{n(rx_ - 2)},{n(sy - 1)} L{n(rx_ + 2)},{n(sy + 1)} M{n(rx_ - 2)},{n(sy + 1)} L{n(rx_ + 2)},{n(sy - 1)}")
-    out.append(el("path", d=" ".join(ribs), stroke=rib, stroke_width=0.85, fill="none", opacity=0.7))
-    out.append(el("path", d=" ".join(spines), stroke="#e8dec8", stroke_width=0.65, fill="none", opacity=0.75))
-    # White Mandacaru night-blooming flower on crown
-    out.append(el("circle", cx=x - w * 0.15, cy=y - h + 1, r=w * 0.28, fill="#fffdf5"))
-    out.append(el("circle", cx=x - w * 0.15, cy=y - h + 1, r=w * 0.12, fill="#f2c938"))
+        ribs.append(f"M{n(rx_)},{n(y - h + w * 0.42)} L{n(rx_)},{n(y - 2)}")
+        step_y = max(7, int(h * 0.10))
+        for sy in range(int(y - h + w * 0.65), int(y - 5), step_y):
+            areoles.append(el("circle", cx=rx_, cy=sy, r=0.65, fill="#d8ccb8", opacity=0.75))
+            spines.append(f"M{n(rx_)},{n(sy)} l-1.8,-0.9 M{n(rx_)},{n(sy)} l1.8,-0.8 M{n(rx_)},{n(sy)} l-1.6,0.8")
+    # Marginal profile spines along left and right edges
+    for sy in range(int(y - h + w * 0.7), int(y - 6), max(8, int(h * 0.11))):
+        spines.append(f"M{n(x - w * 0.5)},{n(sy)} l-2.0,-0.8 M{n(x + w * 0.5)},{n(sy)} l2.0,-0.8")
+    out.append(el("path", d=" ".join(ribs), stroke=rib, stroke_width=0.85, fill="none", opacity=0.72))
+    out.append(el("path", d=" ".join(spines), stroke="#e6dcc8", stroke_width=0.45, fill="none", opacity=0.58))
+    out.extend(areoles)
+    # Sculpted nocturnal Mandacaru blossom on upper crown
+    bx, by = x - w * 0.18, y - h + 1.2
+    out.append(g([
+        el("path", d=f"M{n(bx - w * 0.12)},{n(by + 2)} Q{n(bx - w * 0.25)},{n(by - w * 0.25)} {n(bx)},{n(by - w * 0.32)} "
+                     f"Q{n(bx + w * 0.25)},{n(by - w * 0.25)} {n(bx + w * 0.12)},{n(by + 2)}Z", fill="#8ab068"),
+        el("ellipse", cx=bx - w * 0.14, cy=by - w * 0.22, rx=w * 0.22, ry=w * 0.11,
+           transform=f"rotate(-28 {n(bx - w * 0.14)} {n(by - w * 0.22)})", fill="#f5f0e2"),
+        el("ellipse", cx=bx + w * 0.14, cy=by - w * 0.22, rx=w * 0.22, ry=w * 0.11,
+           transform=f"rotate(28 {n(bx + w * 0.14)} {n(by - w * 0.22)})", fill="#fffdf7"),
+        el("ellipse", cx=bx, cy=by - w * 0.26, rx=w * 0.15, ry=w * 0.22, fill="#ffffff"),
+        el("circle", cx=bx, cy=by - w * 0.20, r=w * 0.10, fill="#f2c938"),
+    ]))
     return g(out)
 
 
@@ -951,60 +1029,72 @@ def water_lines(rng, x0, x1, y0, y1, count, col="#ffffff", op=0.35, w=1.0):
         t = (y - y0) / max(1, (y1 - y0))
         L = rng.uniform(10, 44) * (0.45 + 0.75 * t)
         segs.append(f"M{n(x)},{n(y)} q{n(L * 0.25)},{n(-0.8)} {n(L * 0.5)},0 t{n(L * 0.5)},0")
-    return el("path", d=" ".join(segs), stroke=col, stroke_width=w, fill="none", opacity=op, stroke_linecap="round", class_="shimmer")
+    return el("path", d=" ".join(segs), stroke=col, stroke_width=w, fill="none", opacity=op, stroke_linecap="round")
 
 
 def waterfall(s: Scene, x, y_top, y_bot, w, col="#e8f6fc"):
-    """Multi-tiered cascading waterfall with rock step ledges, turbulent water ribbons, foam plumes, and base spray."""
+    """Multi-tiered cascading waterfall with rock step ledges, translucent water veils, frothy crests, and base spray."""
     rng = s.rng
     h = y_bot - y_top
     wb = w * 1.48
+    wf_id = f"wf-{int(x)}-{int(y_top)}"
+    wf_grad = s.linear(wf_id, [
+        (0, "#7dd8e8", 0.78),
+        (0.18, col, 0.85),
+        (0.75, "#ffffff", 0.82),
+        (1, "#ffffff", 0.15),
+    ])
     out = [
         # Deep wet rock recess behind waterfall
-        el("path", d=P([
-            (x - w * 0.58, y_top), (x + w * 0.58, y_top),
-            (x + wb * 0.62, y_bot), (x - wb * 0.62, y_bot)
-        ]), fill="#182630", opacity=0.52),
-        # Translucent cyan-white water curtain
-        el("path", d=P([
-            (x - w * 0.50, y_top), (x + w * 0.50, y_top),
-            (x + wb * 0.55, y_bot), (x - wb * 0.55, y_bot)
-        ]), fill=col, opacity=0.72),
+        el("path", d=(
+            f"M{n(x - w * 0.56)},{n(y_top)} Q{n(x)},{n(y_top - 1.5)} {n(x + w * 0.56)},{n(y_top)} "
+            f"C{n(x + w * 0.62)},{n(y_top + h * 0.45)} {n(x + wb * 0.60)},{n(y_top + h * 0.8)} {n(x + wb * 0.62)},{n(y_bot)} "
+            f"L{n(x - wb * 0.62)},{n(y_bot)} "
+            f"C{n(x - wb * 0.60)},{n(y_top + h * 0.8)} {n(x - w * 0.62)},{n(y_top + h * 0.45)} {n(x - w * 0.56)},{n(y_top)}Z"
+        ), fill="#16232b", opacity=0.48),
+        # Sculpted translucent cyan-white water curtain
+        el("path", d=(
+            f"M{n(x - w * 0.48)},{n(y_top)} Q{n(x)},{n(y_top - 1.2)} {n(x + w * 0.48)},{n(y_top)} "
+            f"C{n(x + w * 0.54)},{n(y_top + h * 0.42)} {n(x + wb * 0.52)},{n(y_top + h * 0.78)} {n(x + wb * 0.55)},{n(y_bot)} "
+            f"L{n(x - wb * 0.55)},{n(y_bot)} "
+            f"C{n(x - wb * 0.52)},{n(y_top + h * 0.78)} {n(x - w * 0.54)},{n(y_top + h * 0.42)} {n(x - w * 0.48)},{n(y_top)}Z"
+        ), fill=wf_grad),
     ]
     # Mid-cliff terrace step foam ledges (where water rebounds off horizontal rock shelves)
-    for frac in (0.36, 0.66):
-        ly = y_top + h * frac + rng.uniform(-3, 3)
-        lw = (w * (1 - frac) + wb * frac) * 0.52
-        out.append(el("ellipse", cx=x + rng.uniform(-2, 2), cy=ly, rx=lw, ry=max(2.5, w * 0.08),
-                      fill="#ffffff", opacity=0.58))
+    for frac in (0.36, 0.68):
+        ly = y_top + h * frac + rng.uniform(-2, 2)
+        lw = (w * (1 - frac) + wb * frac) * 0.48
+        step_pts = [(x + (j / 6 - 0.5) * lw * 1.9, ly + rng.uniform(-1.4, 1.4)) for j in range(7)]
+        out.append(el("path", d=smooth(step_pts), stroke="#ffffff", stroke_width=max(2.0, w * 0.09),
+                      fill="none", stroke_linecap="round", opacity=0.48))
 
     # Cascading water ribbons (background soft + foreground crisp animated)
     ribbons_bg, strands_fg = [], []
     n_strands = int(w / 2.2) + 5
     for i in range(n_strands):
         t = (i / max(1, n_strands - 1)) - 0.5
-        sx = x + t * w * 0.92 + rng.uniform(-1.5, 1.5)
-        ex = x + t * wb * 0.98 + rng.uniform(-4, 4)
-        mx1 = sx + (ex - sx) * 0.33 + rng.uniform(-3, 3)
-        mx2 = sx + (ex - sx) * 0.68 + rng.uniform(-4, 4)
+        sx = x + t * w * 0.90 + rng.uniform(-1.2, 1.2)
+        ex = x + t * wb * 0.96 + rng.uniform(-3.5, 3.5)
+        mx1 = sx + (ex - sx) * 0.33 + rng.uniform(-2.5, 2.5)
+        mx2 = sx + (ex - sx) * 0.68 + rng.uniform(-3.5, 3.5)
         path_d = f"M{n(sx)},{n(y_top)} C{n(mx1)},{n(y_top + h * 0.32)} {n(mx2)},{n(y_top + h * 0.68)} {n(ex)},{n(y_bot)}"
         if i % 2 == 0:
             ribbons_bg.append(path_d)
         else:
             strands_fg.append(path_d)
 
-    out.append(el("path", d=" ".join(ribbons_bg), stroke="#bfe6f8", stroke_width=2.4, opacity=0.72, fill="none", stroke_linecap="round"))
-    out.append(el("path", d=" ".join(strands_fg), stroke="#ffffff", stroke_width=1.5, opacity=0.92, fill="none",
-                  stroke_linecap="round", class_="flow", stroke_dasharray="14 8"))
+    out.append(el("path", d=" ".join(ribbons_bg), stroke="#bce6f7", stroke_width=2.1, opacity=0.68, fill="none", stroke_linecap="round"))
+    out.append(el("path", d=" ".join(strands_fg), stroke="#ffffff", stroke_width=1.35, opacity=0.88, fill="none",
+                  stroke_linecap="round", stroke_dasharray="14 8"))
 
-    # Lip foam crest and base boiling whitewater
-    lip_bubbles = [el("circle", cx=x + (i / 6 - 0.5) * w * 0.9, cy=y_top + rng.uniform(-1, 2), r=rng.uniform(2, 4.2))
-                   for i in range(7)]
-    base_bubbles = [el("circle", cx=x + (i / 10 - 0.5) * wb * 1.1, cy=y_bot + rng.uniform(-4, 3), r=rng.uniform(3.5, 8.5))
-                    for i in range(11)]
-    out.append(g(lip_bubbles, fill="#ffffff", opacity=0.88))
-    out.append(g(base_bubbles, fill="#ffffff", opacity=0.80))
-    out.append(mist(s, x, y_bot, wb * 1.25, max(8, w * 0.48), op=0.85, blur="mist"))
+    # Naturalistic frothy water crest at the lip & boiling whitewater ripples at base (no solid white circles!)
+    lip_pts = [(x + (i / 8 - 0.5) * w * 0.96, y_top + rng.uniform(-0.8, 1.8)) for i in range(9)]
+    base_pts = [(x + (i / 10 - 0.5) * wb * 1.12, y_bot + rng.uniform(-2.5, 2.0)) for i in range(11)]
+    out.append(el("path", d=smooth(lip_pts), stroke="#e8f9ff", stroke_width=max(2.0, min(4.2, w * 0.14)),
+                  fill="none", stroke_linecap="round", opacity=0.82))
+    out.append(el("path", d=smooth(base_pts), stroke="#ffffff", stroke_width=max(2.6, min(5.5, w * 0.18)),
+                  fill="none", stroke_linecap="round", opacity=0.68))
+    out.append(mist(s, x, y_bot - 2, wb * 1.15, max(7, min(18, w * 0.38)), op=0.72, blur="mist"))
     return out
 
 
@@ -1045,7 +1135,7 @@ def fish(x, y, s, body, fin=None, stripe=None, flip=False, tall=0.45):
 def school(rng, cx, cy, count, spread, s, body, stripe=None, flip=False, cls="swim"):
     fishes = [fish(cx + rng.uniform(-spread, spread), cy + rng.uniform(-spread * 0.35, spread * 0.35), s * rng.uniform(0.8, 1.15),
                    body, stripe=stripe, flip=flip) for _ in range(count)]
-    return g(fishes, class_=cls, style=f"animation-delay:{n(-rng.uniform(0, 10))}s")
+    return g(fishes)
 
 
 def turtle(x, y, s, flip=False):
@@ -1108,7 +1198,7 @@ def manta(x, y, s):
 def shark(x, y, s, flip=False):
     """Caribbean reef shark (Carcharhinus perezi) with streamlined countershading, gill slits, and heterocercal tail."""
     sx = -1 if flip else 1
-    return g([
+    inner = g([
         # Pectoral fin (far side)
         el("path", d="M8,3 C12,13 18,18 22,17 C19,10 15,5 12,3Z", fill="#132c47"),
         # First & second dorsal fins
@@ -1128,14 +1218,15 @@ def shark(x, y, s, flip=False):
         el("path", d="M34,4.2 Q39,3.2 43,4.5", stroke="#0c2036", stroke_width=0.8, fill="none"),
         el("circle", cx=38, cy=0.6, r=1.3, fill="#08121e"),
         el("circle", cx=38.3, cy=0.3, r=0.4, fill="#ffffff"),
-    ], transform=f"translate({n(x)} {n(y)}) scale({n(sx * s)} {n(s)})", class_="swim")
+    ], transform=f"translate({n(x)} {n(y)}) scale({n(sx * s)} {n(s)})")
+    return g(inner)
 
 
 def macaw(x, y, s, flip=False, palette=("#d62828", "#1d56b8", "#f5c428")):
     """Detailed Scarlet or Hyacinth Macaw in flight with layered wing coverts, primaries, tail streamers, and facial patch."""
     red, blue, yellow = palette
     sx = -1 if flip else 1
-    return g([
+    inner = g([
         # Far wing (upbeat/downbeat)
         el("path", d="M-2,2 C-8,14 -18,22 -28,24 C-20,16 -12,8 4,2Z", fill=mix(blue, "#081838", 0.32)),
         el("path", d="M-1,1 C-5,9 -11,14 -17,15 C-11,9 -6,4 3,1Z", fill=mix(yellow, "#8a6800", 0.2)),
@@ -1155,7 +1246,8 @@ def macaw(x, y, s, flip=False, palette=("#d62828", "#1d56b8", "#f5c428")):
         el("circle", cx=16.0, cy=-2.8, r=1.0, fill="#1a1a1a"),
         el("path", d="M18.2,-4.5 C23,-4.2 25.5,-1.2 23.5,2.5 C21.5,1.2 19.5,0 18.2,-1.2Z", fill="#f2ead8"),
         el("path", d="M17.5,-1.2 C19.5,1.2 21,1.8 21.8,0.5 C20.2,-0.5 18.8,-1 17.5,-1.2Z", fill="#222222"),
-    ], transform=f"translate({n(x)} {n(y)}) scale({n(sx * s)} {n(s)})", class_="fly")
+    ], transform=f"translate({n(x)} {n(y)}) scale({n(sx * s)} {n(s)})")
+    return g(inner)
 
 
 def toucan(x, y, s):
@@ -1186,7 +1278,7 @@ def toucan(x, y, s):
 
 def condor(x, y, s, cls="fly"):
     """Soaring Andean Condor (Vultur gryphus) with slotted primary feathers, white wing panels, and neck ruff."""
-    return g([
+    inner = g([
         # Broad wings with slotted primary fingertips
         el("path", d=(
             "M0,0 C-14,-6 -32,-8 -46,-5 L-58,-4 L-51,-1.5 L-60,0.5 L-51,2 L-58,4.5 L-48,4.8 L-53,7 L-42,6.5 "
@@ -1200,7 +1292,8 @@ def condor(x, y, s, cls="fly"):
         el("ellipse", cx=0, cy=-1.2, rx=3.8, ry=2.0, fill="#f5f7fa"),
         el("ellipse", cx=0, cy=-4.2, rx=2.2, ry=2.6, fill="#b5544a"),
         el("path", d="M-0.8,-6.5 L0,-8.5 L0.8,-6.5Z", fill="#d9c8b2"),
-    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})", class_=cls)
+    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})")
+    return g(inner)
 
 
 def bird_v(x, y, s, col="#2b3440"):
@@ -1350,7 +1443,7 @@ def caiman(x, y, s, flip=False):
 
 def dolphin(x, y, s):
     """Amazon Pink River Dolphin (Inia geoffrensis) breaching with bulbous melon, long beak, and low dorsal ridge."""
-    return g([
+    inner = g([
         # Surface splash rings
         el("ellipse", cx=0, cy=1, rx=24, ry=2.6, fill="none", stroke="#f4f7ec", stroke_width=0.9, opacity=0.55),
         # Arched body, low keel-like dorsal fin, and beak
@@ -1365,7 +1458,8 @@ def dolphin(x, y, s):
         # Flipper & eye
         el("path", d="M8,-3 C10,1 13,2 14,1 C13,-1 11,-2 10,-3Z", fill="#cf7480"),
         el("circle", cx=14.5, cy=-4.8, r=0.65, fill="#1f1418"),
-    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})", class_="bob")
+    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})")
+    return g(inner)
 
 
 def maned_wolf(x, y, s, flip=False):
@@ -1425,19 +1519,20 @@ def iguana(x, y, s):
 
 def morpho(x, y, s):
     """Iridescent Blue Morpho butterfly (Morpho menelaus) with black wing margins and white marginal spots."""
-    return g([
+    inner = g([
         # Forewings and hindwings with dark border and iridescent blue interior
         el("path", d="M0,0 C-3,-6 -9,-8 -11,-3 C-11,1 -6,3 -1,1 C-5,4 -7,8 -4,9 C-1,9 0,5 0,1Z", fill="#182232"),
         el("path", d="M0,0 C3,-6 9,-8 11,-3 C11,1 6,3 1,1 C5,4 7,8 4,9 C1,9 0,5 0,1Z", fill="#182232"),
         el("path", d="M-0.5,0 C-3,-5 -8,-6.5 -9.5,-2.5 C-9.5,0.5 -5,2 -1,0.8 C-4,3.5 -5.5,6.5 -3.5,7.5 C-1.5,7.5 -0.5,4 -0.5,0.8Z", fill="#1f82e8"),
         el("path", d="M0.5,0 C3,-5 8,-6.5 9.5,-2.5 C9.5,0.5 5,2 1,0.8 C4,3.5 5.5,6.5 3.5,7.5 C1.5,7.5 0.5,4 0.5,0.8Z", fill="#46a8ff"),
         el("ellipse", cx=0, cy=1, rx=0.8, ry=3.5, fill="#121820"),
-    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})", class_="fly")
+    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})")
+    return g(inner)
 
 
 def hummingbird(x, y, s):
     """Glittering emerald hummingbird hovering with iridescent gorget, blurred wings, and needle bill."""
-    return g([
+    inner = g([
         # Motion-blurred upper and lower wing beats
         el("path", d="M-1,-1 C-6,-10 -12,-12 -14,-9 C-12,-4 -6,-1 -1,0Z", fill="#88d4be", opacity=0.72),
         el("path", d="M-2,-1 C-8,-7 -13,-6 -14,-3 C-10,-1 -5,0 -2,0Z", fill="#54a890", opacity=0.55),
@@ -1448,7 +1543,8 @@ def hummingbird(x, y, s):
         el("path", d="M1.5,-1.2 C4,-1.5 5.5,-0.2 4.5,1.2 C2.8,1.5 1.2,0.5 1.5,-1.2Z", fill="#e02b68"),
         el("path", d="M5,-1.0 L14,-2.2", stroke="#181818", stroke_width=0.85, stroke_linecap="round"),
         el("circle", cx=3.5, cy=-1.2, r=0.65, fill="#111111"),
-    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})", class_="fly")
+    ], transform=f"translate({n(x)} {n(y)}) scale({n(s)})")
+    return g(inner)
 
 
 def pitcher_plant(x, y, s, flower=False):
@@ -1564,7 +1660,7 @@ def sea_fan(rng, x, y, h, col="#9448b0"):
         fan,
         el("path", d=" ".join(segs_mesh), stroke=mix(col, "#ffc8f0", 0.3), stroke_width=0.65, fill="none", opacity=0.7),
         el("path", d=" ".join(segs_main), stroke=col, stroke_width=1.15, fill="none", opacity=0.92),
-    ], class_="sway", style=f"transform-origin:{n(x)}px {n(y)}px;animation-delay:{n(-rng.uniform(0, 5))}s")
+    ])
 
 
 def tube_sponge(x, y, h, col="#b552bd"):
@@ -1594,7 +1690,7 @@ def seagrass(rng, x0, x1, y, count, h, col="#569844"):
     return g([
         el("path", d=" ".join(segs_dark), stroke=dark, stroke_width=1.9, fill="none", stroke_linecap="round"),
         el("path", d=" ".join(segs_light), stroke=light, stroke_width=1.6, fill="none", stroke_linecap="round"),
-    ], class_="sway", style=f"transform-origin:{n((x0 + x1) / 2)}px {n(y)}px")
+    ])
 
 
 def light_rays(s: Scene, x0, x1, y0, y1, count, op=0.18):
@@ -1606,7 +1702,7 @@ def light_rays(s: Scene, x0, x1, y0, y1, count, op=0.18):
         w = rng.uniform(16, 48)
         sk = rng.uniform(42, 115)
         rays.append(el("path", d=P([(x, y0), (x + w, y0), (x + w + sk * 1.45, y1), (x + sk, y1)])))
-    return g(rays, fill=grad, class_="shimmer")
+    return g(rays, fill=grad)
 
 
 # ==============================================================================
@@ -1650,14 +1746,26 @@ def build_transect(labels):
     foothill, _ = hill(s, [(1165, 366), (1225, 336), (1275, 298), (1328, 268), (1372, 256), (1425, 294)],
                        370, "#4f6e48", rough=6)
     s.add(foothill)
-    # Valley glacier ribbon descending from the cirque saddle into a high alpine tarn & meltwater stream
-    glac_l = [(1476, 134), (1466, 178), (1452, 224), (1434, 268), (1418, 294)]
-    glac_r = [(1504, 142), (1490, 184), (1474, 228), (1458, 270), (1444, 293)]
-    s.add(el("path", d=smooth(glac_l) + " " + " ".join(f"L{n(x)},{n(y)}" for x, y in reversed(glac_r)) + "Z",
-             fill="#dceef8", opacity=0.92))
-    s.add(el("path", d="M1462,182 Q1476,188 1488,184 M1448,224 Q1462,230 1472,226 M1434,262 Q1446,268 1456,264",
-             stroke="#6b9ebc", stroke_width=1.2, fill="none", opacity=0.65))
-    s.add(mist(s, 1465, 242, 135, 16, op=0.58))
+    # Realistic branching alpine cirque & valley glacier descending from the snow saddle into a turquoise moraine tarn
+    glac_grad = s.linear("tr_glac", [(0, "#f5fafe"), (0.55, "#d4eaf7"), (1, "#8fc0de")])
+    glac_poly = [
+        (1474, 108), (1492, 134), (1512, 144), (1536, 124), (1544, 136),
+        (1522, 168), (1496, 204), (1474, 244), (1454, 276), (1440, 293),
+        (1414, 294), (1428, 268), (1448, 232), (1462, 192), (1468, 148),
+    ]
+    s.add(el("path", d=smooth(glac_poly, closed=True), fill=glac_grad, opacity=0.95))
+    # 3D blue-ice serac shading & dark rock lateral/medial moraines
+    s.add(el("path", d="M1512,144 L1536,124 L1544,136 L1522,168 L1496,204 L1474,244 L1454,276 L1440,293 L1430,293 L1462,235 L1492,175Z",
+             fill="#78adc9", opacity=0.48))
+    s.add(el("path", d="M1468,148 Q1460,195 1444,238 Q1428,270 1414,294 M1524,164 Q1495,205 1472,246 Q1454,276 1442,293",
+             stroke="#594d43", stroke_width=2.2, fill="none", opacity=0.65))
+    s.add(el("path", d="M1510,145 Q1488,185 1465,232", stroke="#695c50", stroke_width=1.3, fill="none", opacity=0.55))
+    s.add(el("path", d="M1464,178 Q1482,186 1500,178 M1452,208 Q1470,218 1486,208 M1438,242 Q1455,252 1470,242 M1425,270 Q1440,278 1454,270",
+             stroke="#4282a8", stroke_width=1.1, fill="none", opacity=0.72))
+    # Proglacial turquoise moraine tarn at glacier toe (1426, 294)
+    s.add(el("ellipse", cx=1426, cy=294, rx=22, ry=4.2, fill="#564e46"))
+    s.add(el("ellipse", cx=1426, cy=293.5, rx=19, ry=3.4, fill="#4dc4d6"))
+    s.add(mist(s, 1465, 242, 135, 16, op=0.52))
 
     # Caribbean Sea water column (x=0..368, bounded smoothly by the sloping beach shoreline)
     sea_top = 412
@@ -1768,10 +1876,10 @@ def build_transect(labels):
     for x, h, lean in ((398, 68, 9), (414, 56, -7)):
         s.add(palm(rng, x, terrain(x) + 2, h, lean, 24, nfr=10))
 
-    # Zone 2: Mogotes Karst (425-565) with realistic sheer limestone cliffs & piedmont vegetation transitions
+    # Zone 2: Mogotes Karst (425-565) with realistic sheer limestone cliffs, talus cones, & piedmont vegetation transitions
     for keys_m, r_lit, r_sh in (
-        ([(426, 386), (430, 312), (445, 294), (462, 298), (474, 386)], "#c2beb0", "#858173"),
-        ([(504, 386), (509, 296), (529, 282), (548, 290), (562, 386)], "#c8c4b4", "#8a8677"),
+        ([(424, 386), (429, 326), (434, 304), (446, 292), (461, 297), (469, 324), (476, 386)], "#c2beb0", "#7c796c"),
+        ([(502, 386), (508, 316), (515, 290), (530, 280), (547, 288), (556, 318), (564, 386)], "#c8c4b4", "#827e70"),
     ):
         x0, x1 = keys_m[0][0], keys_m[-1][0]
         top = min(p[1] for p in keys_m)
@@ -1780,18 +1888,26 @@ def build_transect(labels):
         s.add(el("path", d=d, fill=r_lit))
         cid = s.clip(f"mog{x0}", d)
         m_in = [
-            el("path", d=f"M{n(x0 + mw * 0.50)},{n(top)} L{n(x1)},{n(top)} L{n(x1)},388 L{n(x0 + mw * 0.55)},388Z",
+            # 3D faceted limestone shadow face
+            el("path", d=f"M{n(x0 + mw * 0.46)},{n(top)} L{n(x1)},{n(top)} L{n(x1)},388 L{n(x0 + mw * 0.56)},388 L{n(x0 + mw * 0.42)},{n(top + 42)}Z",
                fill=r_sh, opacity=0.92),
+            # Mid-tone limestone cliff facet & basal talus apron
+            el("path", d=f"M{n(x0 + mw * 0.24)},{n(top + 16)} L{n(x0 + mw * 0.48)},{n(top + 8)} L{n(x0 + mw * 0.54)},386 L{n(x0 + mw * 0.28)},386Z",
+               fill=mix(r_lit, r_sh, 0.45), opacity=0.55),
+            el("path", d=f"M{n(x0)},386 L{n(x0 + mw * 0.22)},354 L{n(x0 + mw * 0.55)},362 L{n(x0 + mw * 0.82)},348 L{n(x1)},386Z",
+               fill="#455436", opacity=0.55),
         ]
-        for b in range(1, 7):
-            fx = x0 + mw * (0.10 + 0.80 * b / 7)
-            m_in.append(el("path", d=f"M{n(fx)},{n(top + 10)} L{n(fx + 3)},{n(top + 12)} L{n(fx + 2)},385 L{n(fx - 1)},385Z",
-                           fill="#595c52", opacity=0.45))
-        m_in.append(el("path", d=f"M{n(x0)},{n(top + 38)} Q{n((x0 + x1) * 0.5)},{n(top + 42)} {n(x1)},{n(top + 37)} "
-                                 f"M{n(x0)},{n(top + 64)} Q{n((x0 + x1) * 0.5)},{n(top + 68)} {n(x1)},{n(top + 63)}",
-                       stroke="#3e4238", stroke_width=0.9, opacity=0.45, fill="none"))
-        m_in.append(el("path", d=f"M{n(x0 + mw * 0.32)},386 Q{n(x0 + mw * 0.42)},370 {n(x0 + mw * 0.52)},386Z",
-                       fill="#182214", opacity=0.85))
+        # Natural diagonal karst fissures & solution flutes (no regular prison bars!)
+        fiss = (
+            f"M{n(x0 + mw * 0.22)},{n(top + 18)} Q{n(x0 + mw * 0.26)},345 {n(x0 + mw * 0.20)},382 "
+            f"M{n(x0 + mw * 0.48)},{n(top + 14)} Q{n(x0 + mw * 0.44)},340 {n(x0 + mw * 0.52)},382 "
+            f"M{n(x0 + mw * 0.72)},{n(top + 18)} Q{n(x0 + mw * 0.76)},345 {n(x0 + mw * 0.70)},382 "
+            f"M{n(x0)},{n(top + 38)} Q{n((x0 + x1) * 0.5)},{n(top + 44)} {n(x1)},{n(top + 36)} "
+            f"M{n(x0)},{n(top + 64)} Q{n((x0 + x1) * 0.5)},{n(top + 59)} {n(x1)},{n(top + 65)}"
+        )
+        m_in.append(el("path", d=fiss, stroke="#3d4238", stroke_width=1.0, opacity=0.52, fill="none"))
+        m_in.append(el("path", d=f"M{n(x0 + mw * 0.30)},386 Q{n(x0 + mw * 0.41)},366 {n(x0 + mw * 0.52)},386Z",
+                       fill="#162012", opacity=0.88))
         # Overhanging jungle cap & basal piedmont shrub skirt inside clip
         m_in.append(el("path", d=f"M{n(x0)},{n(top + 22)} Q{n((x0 + x1) * 0.5)},{n(top + 12)} {n(x1)},{n(top + 22)} L{n(x1)},{n(top)} L{n(x0)},{n(top)}Z",
                        fill="#24471e"))
@@ -1805,9 +1921,9 @@ def build_transect(labels):
             s.add(crown(rng, vx, vy, rng.uniform(7.0, 9.5),
                         ("#20481e", "#3c6e2e", "#6ea044"), k=5, detail=False))
         # Basal piedmont shrubs blending the mogote base smoothly into the valley & adjacent biomes
-        for i in range(6):
-            bx = x0 + mw * (0.05 + 0.90 * i / 5)
-            s.add(crown(rng, bx, 381 + rng.uniform(-2, 3), rng.uniform(5.5, 8.0),
+        for i in range(7):
+            bx = x0 + mw * (0.04 + 0.92 * i / 6)
+            s.add(crown(rng, bx, 381 + rng.uniform(-3, 2), rng.uniform(6.0, 9.0),
                         ("#1e441c", "#346428", "#5c8e3c"), k=5, detail=False))
     # Tobacco valley rows & curing bohío between mogotes
     rows = " ".join(f"M{n(474 + i * 4.5)},384 l2,3" for i in range(7))
@@ -1817,7 +1933,10 @@ def build_transect(labels):
           el("path", d="M487,368 L497,379 L489,379Z", fill="#75562e"))
     s.add(palm(rng, 499, 384, 48, 2, 16, royal=True, nfr=10, trunk_col="#d4ccb8"))
 
-    # Zone 3: Amazon Rainforest (555-865) with recessed meandering river channel & gallery transition
+    # Zone 3: Amazon Rainforest (555-865) with continuous deep forest backdrop & recessed meandering river channel
+    # Deep atmospheric forest silhouette wall so no empty gaps appear behind the canopy
+    bg_rf = [(550, 384), (568, 336), (625, 318), (695, 326), (765, 320), (835, 332), (875, 384)]
+    s.add(el("path", d=smooth(bg_rf) + "Z", fill="#193d22", opacity=0.88))
     # Recessed Amazon river water filling the concave channel (x=682..808) BEFORE foreground bank foliage
     s.add(el("path", d=smooth([(680, 384), (745, 385), (810, 384)]) +
                        " " + " ".join(f"L{n(x)},{n(terrain(x) + 1)}" for x in range(810, 679, -10)) + "Z",
@@ -1826,9 +1945,10 @@ def build_transect(labels):
     s.add(dolphin(746, 388, 0.55))
 
     # Continuous multi-tier rainforest canopy bridging smoothly from the second mogote (x=552) to the Pantanal edge (x=868)
-    s.add(g(canopy_band(s, 552, 868, lambda x: min(terrain(x), 383), 30, 14, 22, ("#194224", "#296432", "#4b8c42"), lift=10, k=6)))
-    s.add(g(canopy_band(s, 558, 692, terrain, 11, 14, 21, ("#204f2b", "#367838", "#64a44c"), lift=2, k=6)))
-    s.add(g(canopy_band(s, 798, 865, terrain, 7, 13, 19, ("#204f2b", "#367838", "#64a44c"), lift=2, k=6)))
+    s.add(g(canopy_band(s, 550, 870, lambda x: min(terrain(x), 383), 36, 15, 24, ("#15381e", "#24582c", "#427d3a"), lift=24, k=6)))
+    s.add(g(canopy_band(s, 552, 868, lambda x: min(terrain(x), 383), 32, 14, 22, ("#194224", "#296432", "#4b8c42"), lift=10, k=6)))
+    s.add(g(canopy_band(s, 558, 692, terrain, 12, 14, 21, ("#204f2b", "#367838", "#64a44c"), lift=2, k=6)))
+    s.add(g(canopy_band(s, 798, 865, terrain, 8, 13, 19, ("#204f2b", "#367838", "#64a44c"), lift=2, k=6)))
     s.add(broadleaf_tree(rng, 636, terrain(636), 96, 32, ("#1f4a27", "#387838", "#72ae50"), emergent=True))
     s.add(broadleaf_tree(rng, 792, terrain(792), 88, 28, ("#24542c", "#40823e", "#78b456"), emergent=True))
     s.add(macaw(700, 268, 0.58), macaw(742, 252, 0.52, flip=True))
@@ -1925,40 +2045,59 @@ def build_reef(labels):
     for x, h, lean in ((865, 66, 9), (898, 82, -7), (938, 72, 11), (982, 58, -9), (1012, 48, 8)):
         s.add(palm(rng, x, WL - 13, h * 0.82, lean, 23, nfr=10))
 
-    # Red Mangrove (Rhizophora mangle) island on the left with dense arching prop roots
-    for x in range(-10, 425, 30):
-        cx = x + rng.uniform(-5, 5)
-        cy = WL - rng.uniform(68, 98)
-        roots_back, roots_front = [], []
-        for idx, d in enumerate((-38, -26, -15, -4, 7, 18, 29, 38)):
-            end_y = WL + rng.uniform(55, 140)
-            cmd = f"M{n(cx + d * 0.22)},{n(cy + 18)} Q{n(cx + d * 0.82)},{n(WL - 24)} {n(cx + d)},{n(end_y)}"
-            (roots_back if idx % 2 == 0 else roots_front).append(cmd)
-        s.add(el("path", d=" ".join(roots_back), stroke="#3d2f20", stroke_width=2.4, fill="none"))
-        s.add(el("path", d=" ".join(roots_front), stroke="#5c4732", stroke_width=2.0, fill="none"))
-    s.add(g(canopy_band(s, -25, 445, lambda x: WL - 72, 24, 28, 42, ("#1c4424", "#2e6632", "#589644"), flat=0.58, k=7)))
-    s.add(egret(250, WL - 108, 0.92), egret(118, WL - 96, 0.82, flip=True))
-    s.add(g([bird_v(555, 88, 9), bird_v(588, 78, 7.5), bird_v(620, 94, 8)], class_="drift"))
-
-    # Underwater column & Snell's window surface meniscus
+    # Underwater column & Snell's window surface meniscus (drawn before submerged mangrove roots so roots extend through the water!)
     s.add(el("rect", x=0, y=WL, width=W, height=H - WL,
              fill=s.linear("water", [(0, "#35bfd6"), (0.28, "#1b92b8"), (0.68, "#0e5e8a"), (1, "#063254")])))
+    s.add(light_rays(s, 360, 1160, WL, H - 50, 14, op=0.19))
+
+    # Red Mangrove (Rhizophora mangle) island on the left with dense arching aerial & underwater prop roots
+    s.add(el("ellipse", cx=205, cy=WL + 95, rx=235, ry=65, fill="#083d4f", opacity=0.35, filter=s.url("mist")))
+    # Intertidal peat & mudbank shelf under the mangrove island
+    s.add(el("path", d="M-15,204 Q190,198 395,212 Q420,235 375,265 Q185,285 -15,275Z", fill="#2d261e", opacity=0.55))
+    roots_sub_dark, roots_sub_lit, roots_air_back, roots_air_front, sponges_root = [], [], [], [], []
+    for x in range(-10, 415, 28):
+        cx = x + rng.uniform(-6, 6)
+        cy = WL - rng.uniform(64, 96)
+        # Main gnarled mangrove trunks descending from canopy to water
+        roots_air_back.append(f"M{n(cx)},{n(cy)} Q{n(cx + rng.uniform(-12, 12))},{n(WL - 32)} {n(cx + rng.uniform(-8, 8))},{n(WL + 8)}")
+        for idx, d in enumerate((-44, -30, -18, -6, 8, 20, 32, 44)):
+            water_x = cx + d * 0.85 + rng.uniform(-3, 3)
+            end_x = cx + d * 1.18 + rng.uniform(-5, 5)
+            end_y = WL + rng.uniform(75, 185) * (1 - 0.25 * (max(0, x) / 420))
+            # Aerial prop root arch above water
+            cmd_air = f"M{n(cx + d * 0.18)},{n(cy + 16)} Q{n(cx + d * 0.68)},{n(WL - 28)} {n(water_x)},{n(WL + 2)}"
+            (roots_air_back if idx % 2 == 0 else roots_air_front).append(cmd_air)
+            # Submerged prop root continuing down into lagoon water with secondary fork
+            cmd_sub = f"M{n(water_x)},{n(WL + 2)} Q{n((water_x + end_x) * 0.5)},{n((WL + end_y) * 0.5)} {n(end_x)},{n(end_y)}"
+            (roots_sub_dark if idx % 2 == 0 else roots_sub_lit).append(cmd_sub)
+            if idx % 3 == 0:
+                fork_x = end_x + rng.uniform(-10, 10)
+                roots_sub_dark.append(f"M{n((water_x + end_x) * 0.5)},{n((WL + end_y) * 0.5)} Q{n(fork_x)},{n(end_y - 18)} {n(fork_x)},{n(end_y + 8)}")
+                # Encrusting red/orange mangrove root sponges & oysters
+                sponges_root.append(el("ellipse", cx=(water_x + end_x) * 0.5, cy=(WL + end_y) * 0.5, rx=2.6, ry=5.5,
+                                       fill="#d95b43" if (x + idx) % 2 == 0 else "#e09a3e", opacity=0.72))
+    s.add(el("path", d=" ".join(roots_sub_dark), stroke="#1c2f2f", stroke_width=2.5, fill="none", stroke_linecap="round", opacity=0.78))
+    s.add(el("path", d=" ".join(roots_sub_lit), stroke="#384d3b", stroke_width=1.9, fill="none", stroke_linecap="round", opacity=0.82))
+    s.add(g(sponges_root))
+    s.add(el("path", d=" ".join(roots_air_back), stroke="#3d2f20", stroke_width=2.6, fill="none", stroke_linecap="round"))
+    s.add(el("path", d=" ".join(roots_air_front), stroke="#5c4732", stroke_width=2.1, fill="none", stroke_linecap="round"))
+    s.add(g(canopy_band(s, -25, 445, lambda x: WL - 72, 26, 28, 42, ("#1c4424", "#2e6632", "#589644"), flat=0.58, k=7)))
+    s.add(egret(250, WL - 108, 0.92), egret(118, WL - 96, 0.82, flip=True))
+    s.add(g([bird_v(555, 88, 9), bird_v(588, 78, 7.5), bird_v(620, 94, 8)]))
+
+    # Water surface meniscus ripple wave & caustic network
     surf = [(x, WL + 3.5 * math.sin(x / 24) + 1.5 * math.cos(x / 11)) for x in range(0, W + 1, 16)]
     s.add(el("path", d=smooth(surf) + f" L{W},{WL - 5} L0,{WL - 5}Z", fill="#a8eaf2", opacity=0.78))
     s.add(el("path", d=smooth([(x, y + 3) for x, y in surf]), stroke="#ffffff", stroke_width=1.4, fill="none", opacity=0.65))
     s.add(water_lines(rng, 0, W, WL + 5, WL + 46, 68, op=0.48))
-    s.add(light_rays(s, 360, 1160, WL, H - 50, 14, op=0.19))
-
-    # Caustic light network near surface
     caust = " ".join(f"M{n(x)},{n(WL + 18 + rng.uniform(0, 42))} q12,-7 24,0 t24,0" for x in range(400, W, 42))
-    s.add(el("path", d=caust, stroke="#c8f6fa", stroke_width=1.1, fill="none", opacity=0.38, class_="shimmer"))
+    s.add(el("path", d=caust, stroke="#c8f6fa", stroke_width=1.1, fill="none", opacity=0.38))
 
-    # Mangrove root shadow and juvenile fish nursery
-    s.add(el("ellipse", cx=205, cy=WL + 95, rx=235, ry=65, fill="#083d4f", opacity=0.32, filter=s.url("mist")))
+    # Juvenile fish nursery sheltering among the submerged mangrove roots
     s.add(school(rng, 175, WL + 72, 16, 62, 4.2, "#d0dee6", stripe="#f2d43b"))
     s.add(school(rng, 305, WL + 122, 10, 42, 4.8, "#f5c428", stripe="#182430", flip=True))
 
-    # Distant background reef ridge for underwater depth
+    # Distant background reef ridge & pelagic drop-off for underwater depth
     bg_reef = [(350, 610), (460, 520), (590, 495), (740, 510), (900, 475), (1080, 485), (1200, 465), (1200, 620)]
     s.add(el("path", d=smooth(bg_reef[:-1]) + " L1200,620 L350,620Z", fill="#0c4c73", opacity=0.55))
 
@@ -1966,50 +2105,108 @@ def build_reef(labels):
     floor = [(0, 600), (150, 610), (330, 590), (520, 560), (700, 575), (880, 545), (1050, 560), (1200, 540)]
     fl = interp(floor)
     s.add(el("path", d=smooth(floor) + f" L{W},{H} L0,{H}Z", fill=s.linear("sand", [(0, "#e8d7aa"), (1, "#b89f6d")])))
-    ripples = " ".join(f"M{n(x)},{n(fl(x) + 18 + (x * 7) % 62)} q14,-4 28,0" for x in range(12, W, 32))
+    ripples = " ".join(f"M{n(x)},{n(fl(x) + 18 + (x * 7) % 62)} q14,-4 28,0" for x in range(12, 480, 32))
     s.add(el("path", d=ripples, stroke="#9e8756", stroke_width=1.1, fill="none", opacity=0.52))
-    # Starfish on the sandy lagoon floor
+    # Cushion sea stars (Oreaster reticulatus) on the sandy lagoon floor
     for sx_, sy_ in ((140, 655), (275, 635)):
         pts_star = []
         for k in range(10):
             ang = TAU * k / 10 - math.pi / 2
-            rr = 8.5 if k % 2 == 0 else 3.5
+            rr = 9.0 if k % 2 == 0 else 3.8
             pts_star.append((sx_ + math.cos(ang) * rr, sy_ + math.sin(ang) * rr * 0.55))
         s.add(el("path", d=P(pts_star), fill="#d95338", stroke="#a63620", stroke_width=0.6))
 
-    s.add(seagrass(rng, 0, 340, 642, 130, 36, "#549640"))
-    s.add(seagrass(rng, 35, 310, 662, 85, 28, "#74ae4e"))
+    s.add(seagrass(rng, 0, 360, 642, 135, 36, "#549640"))
+    s.add(seagrass(rng, 25, 330, 668, 95, 28, "#74ae4e"))
 
-    # Primary limestone coral reef wall with 3D rock ledges
-    reef = [(395, 720), (428, 598), (480, 558), (560, 538), (640, 550), (700, 528), (780, 518),
-            (860, 498), (940, 510), (1020, 488), (1120, 502), (1200, 492), (1200, 720)]
-    s.add(el("path", d=smooth(reef[:-1]) + " L1200,720Z", fill=s.linear("reefrock", [(0, "#8c7b68"), (0.5, "#6b5c4d"), (1, "#4a3e34")])))
+    # Primary 3D terraced limestone coral reef buttress with overhangs & sandy channels (no repetitive grid!)
+    reef = [(380, 720), (425, 605), (475, 558), (545, 535), (618, 552), (688, 520), (768, 508),
+            (848, 492), (928, 512), (1012, 486), (1110, 500), (1200, 488), (1200, 720)]
+    s.add(el("path", d=smooth(reef[:-1]) + " L1200,720Z", fill=s.linear("reefrock", [(0, "#8c7b68"), (0.5, "#635446"), (1, "#3d3229")])))
     rf = interp(reef[1:-1])
-    # Rock crevices and coralline algae patches on reef substrate
-    for rx_ in range(440, 1180, 55):
-        ry_ = rf(rx_) + rng.uniform(25, 85)
-        s.add(el("ellipse", cx=rx_, cy=ry_, rx=rng.uniform(18, 36), ry=rng.uniform(5, 10), fill="#524438", opacity=0.55))
-        s.add(el("ellipse", cx=rx_ - 4, cy=ry_ - 2, rx=rng.uniform(10, 20), ry=rng.uniform(3, 6), fill="#9c5278", opacity=0.35))
+    # Sculpted 3D carbonate bommie ledges, dark cave overhangs, and pink coralline algae crusts
+    bommies = [
+        (485, 595, 68, 26), (595, 582, 74, 28), (725, 558, 82, 30),
+        (855, 542, 78, 28), (965, 565, 72, 26), (1105, 548, 84, 30),
+        (540, 648, 85, 32), (690, 635, 92, 34), (840, 622, 88, 32), (1010, 642, 95, 34),
+    ]
+    for bx, by, bw, bh in bommies:
+        s.add(el("path", d=f"M{bx - bw * 0.5},{by} Q{bx},{by - bh} {bx + bw * 0.5},{by} Q{bx},{by + bh * 0.45} {bx - bw * 0.5},{by}Z",
+                 fill="#786856"))
+        s.add(el("path", d=f"M{bx - bw * 0.46},{by + 1} Q{bx},{by + bh * 0.48} {bx + bw * 0.46},{by + 1} Q{bx},{by + bh * 0.85} {bx - bw * 0.46},{by + 1}Z",
+                 fill="#2e251e", opacity=0.68))
+        s.add(el("ellipse", cx=bx - bw * 0.12, cy=by - bh * 0.28, rx=bw * 0.28, ry=bh * 0.22, fill="#a85c82", opacity=0.38))
 
-    # Rich Coral Garden
-    coral_cols = ["#e26d52", "#e8b24c", "#d95b82", "#cfa240", "#f28452", "#9662c4", "#e5c670"]
-    for i, x in enumerate(range(436, 1200, 42)):
-        y = rf(x) + 6
-        kind = i % 5
-        c = coral_cols[(i * 3) % len(coral_cols)]
-        if kind == 0:
-            s.add(branch_coral(rng, x, y, 28, 3, c, 3.5))
-        elif kind == 1:
-            s.add(brain_coral(rng, x, y, 25, c))
-        elif kind == 2:
-            s.add(sea_fan(rng, x, y, 52, "#984cb5" if i % 2 else "#c94886"))
-        elif kind == 3:
-            s.add(tube_sponge(x, y, 32, "#b552bd" if i % 2 else "#e68235"))
-        else:
-            s.add(branch_coral(rng, x, y, 35, 3, "#dba242", 4.8, spread=0.88, up=-math.pi / 2))
-    for x in range(465, 1190, 60):
-        s.add(brain_coral(rng, x + 18, rf(x + 18) + 32, 17, "#c29238"))
-        s.add(tube_sponge(x - 6, rf(x) + 42, 20, "#d9534f"))
+    # Helper for tabular Elkhorn / Table Coral (Acropora palmata) plates
+    def elkhorn_coral(cx, cy, sc=1.0, col="#d9923b"):
+        lit = mix(col, "#fff3cc", 0.42)
+        shade = mix(col, "#4a2808", 0.42)
+        plates = []
+        for dx, dy, rx_, ry_ in ((0, 0, 26, 5.5), (-16, -9, 22, 4.8), (15, -12, 24, 5.0), (-4, -20, 20, 4.2), (12, -24, 16, 3.6)):
+            px, py = cx + dx * sc, cy + dy * sc
+            plates.append(el("ellipse", cx=px, cy=py + 2 * sc, rx=rx_ * sc, ry=ry_ * sc, fill=shade))
+            plates.append(el("ellipse", cx=px, cy=py, rx=rx_ * sc, ry=ry_ * sc, fill=col))
+            plates.append(el("ellipse", cx=px - 2 * sc, cy=py - 0.8 * sc, rx=rx_ * 0.82 * sc, ry=ry_ * 0.6 * sc, fill=lit))
+        return g([
+            el("path", d=f"M{n(cx - 6 * sc)},{n(cy + 8 * sc)} L{n(cx - 2 * sc)},{n(cy - 18 * sc)} L{n(cx + 5 * sc)},{n(cy - 18 * sc)} L{n(cx + 8 * sc)},{n(cy + 8 * sc)}Z", fill=shade),
+            *plates,
+        ])
+
+    # Organic, naturalistic coral clusters across the upper crest, mid-slope, and deep foreground
+    s.add(elkhorn_coral(535, rf(535) + 8, 1.05, "#dba242"))
+    s.add(elkhorn_coral(765, rf(765) + 6, 1.18, "#e08b38"))
+    s.add(elkhorn_coral(935, rf(935) + 12, 0.95, "#cfa240"))
+    s.add(elkhorn_coral(665, 628, 1.12, "#d9923b"))
+
+    # Staghorn & pillar corals at varied natural coordinates and scales
+    for cx_, cy_, Lc, col_, w_ in (
+        (452, rf(452) + 8, 26, "#e26d52", 3.4),
+        (592, rf(592) + 14, 32, "#f08452", 3.8),
+        (705, rf(705) + 10, 28, "#d95b82", 3.4),
+        (842, rf(842) + 8, 34, "#e8b24c", 4.0),
+        (1025, rf(1025) + 8, 28, "#e26d52", 3.5),
+        (1152, rf(1152) + 10, 30, "#d95b82", 3.6),
+        (495, 645, 34, "#f28452", 4.2),
+        (782, 618, 36, "#e26d52", 4.2),
+        (915, 658, 32, "#e8b24c", 3.8),
+    ):
+        s.add(branch_coral(rng, cx_, cy_, Lc, 3, col_, w_))
+
+    # Grooved brain corals nestled on rock ledges
+    for bx_, by_, br_, bc_ in (
+        (488, rf(488) + 16, 22, "#cfa240"),
+        (648, rf(648) + 18, 26, "#c29238"),
+        (805, rf(805) + 22, 24, "#d4a848"),
+        (980, rf(980) + 18, 21, "#c29238"),
+        (1108, rf(1108) + 22, 25, "#cfa240"),
+        (575, 652, 28, "#b8862d"),
+        (735, 668, 25, "#cfa240"),
+        (855, 638, 22, "#c29238"),
+    ):
+        s.add(brain_coral(rng, bx_, by_, br_, bc_))
+
+    # Swaying Gorgonian sea fans & stove-pipe tube sponge clusters
+    for fx_, fy_, fh_, fc_ in (
+        (438, rf(438) + 12, 48, "#984cb5"),
+        (568, rf(568) + 26, 54, "#c94886"),
+        (732, rf(732) + 24, 50, "#8c48a8"),
+        (888, rf(888) + 16, 56, "#c94886"),
+        (1068, rf(1068) + 18, 48, "#984cb5"),
+        (625, 640, 58, "#8c48a8"),
+        (965, 645, 52, "#c94886"),
+    ):
+        s.add(sea_fan(rng, fx_, fy_, fh_, fc_))
+
+    for sx_, sy_, sh_, sc_ in (
+        (512, rf(512) + 28, 30, "#b552bd"),
+        (678, rf(678) + 24, 34, "#e68235"),
+        (828, rf(828) + 32, 28, "#d9534f"),
+        (948, rf(948) + 30, 32, "#b552bd"),
+        (1135, rf(1135) + 32, 28, "#e68235"),
+        (528, 678, 34, "#d9534f"),
+        (812, 672, 36, "#b552bd"),
+    ):
+        s.add(tube_sponge(sx_, sy_, sh_, sc_))
 
     # Marine Fauna
     s.add(manta(820, 298, 1.45))
@@ -2018,9 +2215,9 @@ def build_reef(labels):
     s.add(school(rng, 700, 458, 12, 42, 6.8, "#f5d236", stripe="#141e2b", flip=True))
     for x, y, c, st in ((638, 468, "#26b8a8", "#e8689c"), (1042, 448, "#f58432", "#ffffff"),
                         (898, 468, "#4ec4e6", "#f5d236"), (518, 498, "#ebca34", "#2e72d4")):
-        s.add(g(fish(x, y, 12, c, stripe=st, flip=rng.random() < 0.5), class_="swim"))
+        s.add(g(fish(x, y, 12, c, stripe=st, flip=rng.random() < 0.5)))
     s.add(g([el("circle", cx=562 + rng.uniform(-8, 8), cy=358 - i * 18, r=rng.uniform(1.8, 3.8), fill="#ffffff",
-                fill_opacity=0.2, stroke="#e8fbff", stroke_width=0.9, opacity=0.75) for i in range(7)], class_="bob"))
+                fill_opacity=0.2, stroke="#e8fbff", stroke_width=0.9, opacity=0.75) for i in range(7)]))
 
     # Queen Jessica Coral Nursery Frames (with tagged fragments & mooring floats)
     nurs = []
@@ -2036,7 +2233,6 @@ def build_reef(labels):
             nurs.append(el("path", d=f"M{n(fx)},{n(by + 14)} l0,9 M{n(fx - 2.5)},{n(by + 20)} l2.5,-3 l2.5,3",
                            stroke="#f28452", stroke_width=2.2, stroke_linecap="round", fill="none"))
     s.add(g(nurs))
-    s.add(el("rect", x=0, y=H - 36, width=W, height=36, fill="#062844", opacity=0.28))
     return s.render(labels["aria"]["reef"])
 
 
@@ -2054,14 +2250,14 @@ def build_rainforest(labels):
     s.add(cloud(rng, 320, 82, 190, op=0.78), cloud(rng, 680, 68, 150, op=0.72))
 
     haze = "#c6dcd2"
-    # Four receding atmospheric canopy strata (using step=40 so x reaches 1200 cleanly)
-    layers = [(296, 11, 17, 0.76), (346, 15, 23, 0.58), (396, 19, 29, 0.40), (448, 23, 35, 0.22)]
+    # Four receding atmospheric canopy strata with dense overlapping tree crowns
+    layers = [(292, 14, 22, 0.74), (342, 18, 27, 0.56), (394, 22, 33, 0.38), (446, 26, 39, 0.20)]
     base_cols = ("#184224", "#2b6634", "#589848")
     for li, (gy, rmin, rmax, hz) in enumerate(layers):
         cols = tuple(mix(c, haze, hz) for c in base_cols)
         ground = lambda x, gy=gy, li=li: gy + 15 * math.sin(x / (88 + li * 22) + li)
         s.add(el("path", d=P([(0, ground(0))] + [(x, ground(x)) for x in range(0, W + 1, 40)] + [(W, H), (0, H)]), fill=cols[0]))
-        s.add(g(canopy_band(s, -35, W + 35, ground, int(W / (rmin + rmax) * 1.45), rmin, rmax, cols, k=5, detail=False)))
+        s.add(g(canopy_band(s, -35, W + 35, ground, int(W / (rmin + rmax) * 1.85), rmin, rmax, cols, k=6, detail=False)))
         s.add(mist(s, rng.uniform(120, 1080), gy + 12, rng.uniform(280, 440), 19, op=0.48 - li * 0.07))
 
     # Crepuscular sunbeams piercing the canopy
@@ -2077,28 +2273,52 @@ def build_rainforest(labels):
         lianas.append(f"M{n(x0)},242 C{n(x0 - 12)},355 {n(x1 + 12)},422 {n(x1)},558")
     s.add(el("path", d=" ".join(lianas), stroke="#355224", stroke_width=2.2, fill="none", opacity=0.88))
 
-    # Near canopy layer framing the river banks
+    # Near canopy layer framing the river bend
     near_cols = ("#12361d", "#20542b", "#46863e")
-    s.add(g(canopy_band(s, -45, 425, lambda x: 520 - x * 0.1, 15, 35, 54, near_cols, k=6, detail=True)))
-    s.add(g(canopy_band(s, 795, 1245, lambda x: 470 + (x - 800) * 0.15, 15, 35, 54, near_cols, k=6, detail=True)))
+    s.add(g(canopy_band(s, -45, 455, lambda x: 515 - x * 0.08, 18, 35, 54, near_cols, k=6, detail=True)))
+    s.add(g(canopy_band(s, 765, 1245, lambda x: 470 + (x - 800) * 0.14, 18, 35, 54, near_cols, k=6, detail=True)))
 
-    # Winding Amazonian river with smooth alluvial clay banks, canopy reflections, and sun shimmer
-    river = s.linear("river", [(0, "#a8ba90"), (0.35, "#878c5c"), (0.72, "#6c6842"), (1, "#544c30")])
-    rpts_l = [(520, 520), (468, 560), (378, 610), (228, 660), (36, 720)]
-    rpts_r = [(1200, 720), (998, 690), (818, 630), (688, 570), (600, 520)]
-    bank_l = [(x - 12, y - 5) for x, y in rpts_l]
-    bank_r = [(x + 12, y - 5) for x, y in rpts_r]
-    s.add(el("path", d=smooth(bank_l) + " L1200,720 " + smooth(bank_r)[1:] + "Z", fill="#6b5035"))
-    s.add(el("path", d=smooth(rpts_l) + " L1200,720 " + smooth(rpts_r)[1:] + "Z", fill=river))
-    # Deep green canopy reflections along both riverbanks
-    s.add(el("path", d=smooth(rpts_l) + " L300,720 L545,520Z", fill="#1a381f", opacity=0.35, filter=s.url("haze")))
-    s.add(el("path", d="M575,520 L920,720 " + smooth(rpts_r)[1:] + "Z", fill="#1a381f", opacity=0.35, filter=s.url("haze")))
-    s.add(el("path", d=smooth([(520, 520), (560, 512), (600, 520)]), stroke="#cbd6b8", stroke_width=2, fill="none", opacity=0.65))
-    s.add(water_lines(rng, 280, 960, 550, 706, 58, col="#e8eed8", op=0.45))
+    # Sinuous S-curved meandering Amazonian river with natural alluvial mudbanks & sandy point bars (no straight ramp!)
+    river = s.linear("river", [(0, "#b0c29a"), (0.28, "#8e9968"), (0.65, "#6b6e44"), (1, "#4d4c2e")])
+    rpts_l = [
+        (536, 506), (512, 526), (442, 558), (412, 592),
+        (318, 634), (168, 678), (24, 720),
+    ]
+    rpts_r = [
+        (1196, 720), (1025, 682), (835, 638), (762, 594),
+        (668, 554), (618, 526), (588, 506),
+    ]
+    # Forest floor & organic multi-tiered clay/sand riverbanks
+    s.add(el("rect", x=0, y=506, width=W, height=H - 506, fill="#1c3b20"))
+    # Exposed golden-ochre alluvial point-bar sandbanks along inner river bends
+    s.add(el("path", d="M405,545 Q475,558 448,595 Q365,622 300,636 L260,595Z", fill="#c4a668", opacity=0.85))
+    s.add(el("path", d="M750,582 Q825,605 945,658 L985,620 Q845,575 750,582Z", fill="#b8985a", opacity=0.82))
+    # Main river water surface
+    s.add(el("path", d=smooth(rpts_l) + " L1196,720 " + smooth(rpts_r)[1:] + " L536,506Z", fill=river))
+    # Deep emerald canopy reflections shimmering along both riverbanks
+    s.add(el("path", d=smooth(rpts_l) + " L285,720 L552,508Z", fill="#16331c", opacity=0.42, filter=s.url("haze")))
+    s.add(el("path", d="M572,508 L935,720 " + smooth(rpts_r)[1:] + "Z", fill="#16331c", opacity=0.42, filter=s.url("haze")))
+    # Sunlit water path down the center of the channel
+    s.add(el("path", d="M555,510 Q580,585 605,720 L665,720 Q610,585 572,510Z", fill="#dce6c6", opacity=0.26, filter=s.url("haze")))
+    s.add(water_lines(rng, 240, 980, 528, 708, 68, col="#e8eed8", op=0.48))
 
-    # Giant Victoria amazonica water lilies with flowers
-    for x, y, r, flw in ((298, 668, 32, True), (362, 640, 23, True), (246, 692, 27, False),
-                         (422, 618, 17, False), (848, 660, 25, False), (912, 692, 33, True), (778, 632, 19, False)):
+    # Overhanging vegetated mudbanks, riparian roots, and fallen mossy rainforest log on left bank
+    left_mud = [(0, 520), (245, 520), (455, 548), (418, 590), (315, 636), (158, 682), (0, 720)]
+    right_mud = [(1200, 520), (885, 520), (675, 552), (768, 594), (842, 640), (1035, 686), (1200, 720)]
+    s.add(el("path", d=smooth(left_mud) + "Z", fill="#4a3723"))
+    s.add(el("path", d=smooth(right_mud) + "Z", fill="#4a3723"))
+    s.add(g(canopy_band(s, -20, 445, interp(left_mud[1:6]), 22, 16, 28, ("#173e20", "#296330", "#549442"), lift=6, k=5)))
+    s.add(g(canopy_band(s, 685, 1220, interp(right_mud[1:6]), 22, 16, 28, ("#173e20", "#296330", "#549442"), lift=6, k=5)))
+    s.add(tufts(rng, 290, 455, interp(left_mud[2:5]), 36, 11, "#5c8c38"))
+    s.add(tufts(rng, 680, 860, interp(right_mud[2:5]), 36, 11, "#5c8c38"))
+    # Fallen mossy tree trunk jutting into the river at (330, 628) -> (445, 640)
+    s.add(el("ellipse", cx=395, cy=638, rx=58, ry=4.5, fill="#1a2614", opacity=0.45))
+    s.add(el("path", d="M312,624 Q378,628 438,636 L436,643 Q376,637 308,634Z", fill="#4d3926"))
+    s.add(el("path", d="M315,624 Q375,627 422,633", stroke="#62943c", stroke_width=3.2, fill="none", stroke_linecap="round"))
+
+    # Giant Victoria amazonica water lilies with flowers in calm eddies
+    for x, y, r, flw in ((298, 668, 32, True), (368, 650, 23, True), (246, 694, 27, False),
+                         (452, 616, 17, False), (848, 660, 25, False), (912, 692, 33, True), (778, 632, 19, False)):
         s.add(water_lily(rng, x, y, r, flower=flw))
 
     # Foreground botanical details: Tree ferns, Heliconia, Bromeliads, Açaí/Euterpe palms
@@ -2107,16 +2327,16 @@ def build_rainforest(labels):
     for x, y, h in ((72, 654, 64), (150, 636, 48), (1148, 662, 68), (1096, 632, 54)):
         s.add(heliconia(x, y, h))
     s.add(bromeliad(rng, 236, 298, 16), bromeliad(rng, 272, 316, 13), bromeliad(rng, 1002, 328, 15))
-    for x, y, h, lean in ((138, 602, 145, 13), (1082, 612, 155, -15), (478, 522, 114, 7), (702, 542, 104, -5)):
+    for x, y, h, lean in ((138, 602, 145, 13), (1082, 612, 155, -15), (462, 536, 114, 7), (708, 544, 104, -5)):
         s.add(palm(rng, x, y, h, lean, 42, cols=("#24582a", "#407d36"), coconuts=False, trunk_col="#665540", nfr=12))
 
     # Fauna: Boto river dolphin, Caiman, Scarlet Macaws, Toco Toucan, Blue Morpho butterflies
     s.add(dolphin(608, 610, 1.65))
-    s.add(caiman(465, 596, 0.85))
+    s.add(caiman(488, 596, 0.88))
     s.add(macaw(558, 198, 1.15), macaw(642, 178, 0.98, flip=True), macaw(722, 218, 0.85))
     s.add(toucan(1018, 298, 1.15))
     s.add(morpho(538, 448, 1.5), morpho(762, 478, 1.25), morpho(330, 540, 1.3))
-    s.add(mist(s, 600, 502, 310, 24, op=0.45))
+    s.add(mist(s, 565, 502, 260, 22, op=0.45))
     return s.render(labels["aria"]["rainforest"])
 
 
@@ -2128,6 +2348,7 @@ def build_highlands(labels):
     rng = s.rng
     W, H = s.w, s.h
     s.blur("mist", 14)
+    s.blur("soft", 3)
     sky(s, [(0, "#4f8cc4"), (0.48, "#9ec6e2"), (0.82, "#dcebf2"), (1, "#eff4f1")])
     sun(s, 260, 98, 24)
     s.add(cloud(rng, 825, 88, 175, op=0.88), cloud(rng, 515, 58, 125, op=0.82))
@@ -2145,71 +2366,139 @@ def build_highlands(labels):
                      560, "#75685e", shade="#24222e", shade_op=0.45, snow=212, rough=11, tongue=0.28)
     s.add(r2)
 
-    # Sculpted valley glacier nestled inside the cirque saddle between peaks (690,114) and (802,136)
-    glac_pts_l = [(708, 162), (716, 212), (728, 265), (746, 314), (766, 352), (782, 366)]
-    glac_pts_r = [(834, 358), (812, 330), (788, 286), (768, 236), (754, 192), (742, 166)]
-    s.add(el("path", d=smooth(glac_pts_l) + " L" + " L".join(f"{n(x)},{n(y)}" for x, y in glac_pts_r) + "Z",
-             fill=s.linear("glacier", [(0, "#f4f9fd"), (0.55, "#d8ebf6"), (1, "#9cc9e2")])))
-    # Shadowed ice margin, lateral moraine ridges, and crevasse arcs
-    s.add(el("path", d="M742,166 L754,192 L768,236 L788,286 L812,330 L834,358 L814,362 L772,300 L746,225Z",
-             fill="#7eaec9", opacity=0.48))
-    s.add(el("path", d=smooth(glac_pts_l), stroke="#5a4f47", stroke_width=3.2, fill="none", opacity=0.65))
-    crev = [
-        "M718,212 Q738,220 756,210",
-        "M725,240 Q748,250 768,238",
-        "M735,270 Q760,282 782,268",
-        "M748,302 Q774,314 798,298",
-        "M762,332 Q790,344 816,328",
+    # Realistic branching alpine cirque & valley glacier originating directly in the snow saddle (690,114)..(742,166)..(802,136)
+    glac_poly = [
+        (690, 116), (715, 148), (742, 164), (772, 150), (800, 138),
+        (792, 176), (784, 218), (796, 264), (816, 314), (842, 358),
+        (774, 368), (754, 334), (734, 286), (718, 236), (704, 186), (684, 142),
     ]
-    s.add(el("path", d=" ".join(crev), stroke="#3b7ca1", stroke_width=1.4, fill="none", opacity=0.75))
-    s.add(el("path", d=" ".join(crev), stroke="#ffffff", stroke_width=0.8, fill="none", opacity=0.85, transform="translate(0 -1.2)"))
+    s.add(el("path", d=smooth(glac_poly, closed=True),
+             fill=s.linear("glacier", [(0, "#f5fafe"), (0.48, "#d8ecf8"), (1, "#8ec2e0")])))
+    # 3D blue-ice serac facets, central medial moraine, and dark rocky lateral moraine walls
+    s.add(el("path", d="M742,164 L772,150 L800,138 L792,176 L784,218 L796,264 L816,314 L842,358 L812,364 L768,292 L748,220Z",
+             fill="#75aac9", opacity=0.52))
+    s.add(el("path", d="M684,142 Q708,195 724,255 Q742,315 774,368 M792,176 Q784,228 802,282 Q820,325 842,358",
+             stroke="#4f463f", stroke_width=3.2, fill="none", opacity=0.72))
+    s.add(el("path", d="M742,165 Q748,225 768,285 Q784,328 802,362",
+             stroke="#635850", stroke_width=1.6, fill="none", opacity=0.55))
+    # Irregular chevron crevasse fields across the icefall zones
+    crev = (
+        "M708,186 L726,194 L744,188 M752,188 L768,195 L782,186 "
+        "M718,218 L738,228 L758,220 M762,222 L776,228 L786,220 "
+        "M728,252 L750,264 L772,254 M774,256 L788,262 L794,254 "
+        "M740,288 L764,300 L788,290 M754,322 L780,335 L808,324 "
+        "M768,348 L794,358 L824,348"
+    )
+    s.add(el("path", d=crev, stroke="#34759c", stroke_width=1.35, fill="none", opacity=0.75, stroke_linejoin="round"))
+    s.add(el("path", d=crev, stroke="#ffffff", stroke_width=0.8, fill="none", opacity=0.85, transform="translate(0 -1.2)"))
 
-    # Turquoise glacial moraine lake with shoreline boulders and reflection
-    s.add(el("ellipse", cx=816, cy=373, rx=76, ry=15, fill="#58524a"))
-    s.add(el("ellipse", cx=816, cy=372, rx=72, ry=13.5, fill=s.linear("lake", [(0, "#68d2d8"), (0.5, "#36aebf"), (1, "#1d7a94")])))
+    # Turquoise glacial moraine lake nestled in a rocky terminal moraine basin
+    s.add(el("path", d="M726,372 Q770,354 825,356 Q878,358 902,374 Q875,392 815,392 Q752,390 726,372Z", fill="#544d45"))
+    s.add(el("ellipse", cx=816, cy=373, rx=76, ry=14.5, fill=s.linear("lake", [(0, "#68d2d8"), (0.5, "#36aebf"), (1, "#1d7a94")])))
     s.add(el("ellipse", cx=812, cy=369, rx=56, ry=6, fill="#c8f4f6", opacity=0.48))
     s.add(water_lines(rng, 755, 875, 366, 379, 14, op=0.55))
+    # Terminal moraine boulders along lake rim
+    for bx_, by_, br_ in ((742, 378, 8), (758, 383, 6), (868, 382, 9), (886, 377, 7)):
+        s.add(el("path", d=f"M{bx_ - br_},{by_} L{bx_ - br_ * 0.5},{by_ - br_ * 0.7} L{bx_ + br_ * 0.6},{by_ - br_ * 0.6} L{bx_ + br_},{by_}Z", fill="#665f57"))
 
-    # Mid slope: Páramo alpine grassland band
-    paramo = [(0, 470), (200, 430), (420, 420), (600, 400), (820, 390), (1000, 410), (1200, 430)]
-    pf = interp(paramo)
-    s.add(el("path", d=smooth(paramo) + f" L{W},{H} L0,{H}Z", fill=s.linear("paramo", [(0, "#a6a25e"), (0.55, "#87914c"), (1, "#6b7a3e")])))
-    s.add(tufts(rng, 0, W, pf, 155, 13, "#c7b868", op=0.92))
+    # Multi-layered rolling Páramo alpine grassland ridges & bofedales cushion bogs
+    paramo1 = [(0, 465), (200, 428), (420, 416), (600, 396), (820, 388), (1000, 408), (1200, 426)]
+    pf1 = interp(paramo1)
+    s.add(el("path", d=smooth(paramo1) + f" L{W},{H} L0,{H}Z", fill=s.linear("paramo1", [(0, "#a8a460"), (0.5, "#8b944e"), (1, "#6b7a3e")])))
+    # Second rolling mid-ground páramo ridge for terrain depth
+    paramo2 = [(280, 520), (460, 478), (650, 462), (850, 482), (1040, 468), (1200, 492)]
+    pf2 = interp(paramo2)
+    s.add(el("path", d=smooth(paramo2) + f" L{W},{H} L280,{H}Z", fill=s.linear("paramo2", [(0, "#94994e"), (1, "#627338")])))
+    # Third rolling lower páramo slope
+    paramo3 = [(340, 575), (540, 528), (740, 538), (940, 518), (1200, 545)]
+    pf3 = interp(paramo3)
+    s.add(el("path", d=smooth(paramo3) + f" L{W},{H} L340,{H}Z", fill="#768442"))
 
-    # Giant Puya raimondii bromeliad spikes and Espeletia frailejón rosettes on the páramo
-    for x in (518, 592, 902, 962):
-        y = pf(x) + 6
-        spiky_base = " ".join(f"M{n(x)},{n(y)} q{n(d * 0.55)},-8 {n(d * 1.15)},{n(-10 + abs(d) * 0.22)}" for d in range(-16, 17, 3))
-        spike_clusters = [el("ellipse", cx=x + (k % 2 - 0.5) * 2.5, cy=y - 18 - k * 4.5, rx=4.8 - k * 0.18, ry=2.2,
-                             fill="#cfc87e" if k % 2 else "#a8a158") for k in range(12)]
-        s.add(g([
-            el("path", d=spiky_base, stroke="#4d6b42", stroke_width=1.8, fill="none", stroke_linecap="round"),
-            el("rect", x=x - 2, y=y - 22, width=4, height=22, fill="#6b5d42"),
-            *spike_clusters,
-        ]))
-    for x in (640, 682, 722, 1040, 1082):
-        y = pf(x) + 8
-        rosette = [el("ellipse", cx=x + math.cos(a) * 5.5, cy=y - 23 + math.sin(a) * 3.5, rx=5.5, ry=1.6,
-                      fill="#c8d2b4" if i % 2 else "#9aa888",
-                      transform=f"rotate({n(math.degrees(a))} {n(x + math.cos(a) * 5.5)} {n(y - 23 + math.sin(a) * 3.5)})")
+    # Braided glacial meltwater stream winding from the moraine lake (765,380) across the páramo valley to feed the cataract (290,362)!
+    stream_outer = "M768,382 C710,402 620,412 520,408 C430,404 355,378 292,362 L286,366 C350,386 428,414 522,418 C625,422 715,410 778,384Z"
+    s.add(el("path", d=stream_outer, fill="#544d44", opacity=0.65))
+    stream_water = "M772,382 C712,404 622,414 520,410 C430,406 352,380 289,363"
+    s.add(el("path", d=stream_water, stroke="#56bfd0", stroke_width=5.2, fill="none", stroke_linecap="round"))
+    s.add(el("path", d=stream_water, stroke="#cef6fc", stroke_width=1.8, fill="none", stroke_linecap="round", opacity=0.8))
+    # Emerald bofedales cushion-plant bogs along the braided stream & mid-ground depressions
+    for cx_, cy_, rx_, ry_ in ((545, 416, 48, 6.5), (665, 408, 42, 5.5), (765, 476, 56, 8.0), (925, 524, 62, 8.5)):
+        s.add(el("ellipse", cx=cx_, cy=cy_, rx=rx_, ry=ry_, fill="#4e7836", opacity=0.75))
+        s.add(el("ellipse", cx=cx_ - 6, cy=cy_ - 1, rx=rx_ * 0.65, ry=ry_ * 0.65, fill="#6e9c46", opacity=0.7))
+
+    s.add(tufts(rng, 320, W, pf1, 95, 10, "#c7b868", op=0.85))
+    s.add(tufts(rng, 340, W, pf2, 110, 13, "#bfae5c", op=0.90))
+    s.add(tufts(rng, 380, W, pf3, 95, 15, "#b3a250", op=0.92))
+
+    # Helper for Espeletia frailejón & Puya raimondii at any scale for natural depth clustering
+    def frailejon(fx, fy, sc=1.0):
+        rosette = [el("ellipse", cx=fx + math.cos(a) * 5.8 * sc, cy=fy - 23 * sc + math.sin(a) * 3.6 * sc,
+                      rx=5.8 * sc, ry=1.7 * sc, fill="#c8d2b4" if i % 2 else "#9aa888",
+                      transform=f"rotate({n(math.degrees(a))} {n(fx + math.cos(a) * 5.8 * sc)} {n(fy - 23 * sc + math.sin(a) * 3.6 * sc)})")
                    for i, a in enumerate([k * TAU / 14 for k in range(14)])]
-        s.add(g([
-            el("rect", x=x - 2.5, y=y - 22, width=5, height=22, rx=1.5, fill="#5c4a38"),
-            el("path", d=f"M{n(x - 3.5)},{n(y - 14)} L{n(x + 3.5)},{n(y - 14)} M{n(x - 3.2)},{n(y - 9)} L{n(x + 3.2)},{n(y - 9)}",
-               stroke="#8a7964", stroke_width=1.2),
+        return g([
+            el("ellipse", cx=fx + 1, cy=fy + 1, rx=6 * sc, ry=1.8 * sc, fill="#000000", opacity=0.22),
+            el("rect", x=fx - 2.6 * sc, y=fy - 22 * sc, width=5.2 * sc, height=22 * sc, rx=1.6 * sc, fill="#5c4a38"),
+            el("path", d=f"M{n(fx - 3.6 * sc)},{n(fy - 14 * sc)} L{n(fx + 3.6 * sc)},{n(fy - 14 * sc)} "
+                         f"M{n(fx - 3.2 * sc)},{n(fy - 8 * sc)} L{n(fx + 3.2 * sc)},{n(fy - 8 * sc)}",
+               stroke="#8a7964", stroke_width=1.2 * sc),
             *rosette,
-            el("circle", cx=x, cy=y - 23, r=2.2, fill="#e6c84a"),
-        ]))
+            el("circle", cx=fx, cy=fy - 23 * sc, r=2.3 * sc, fill="#e6c84a"),
+        ])
 
-    # Cloud forest on the left cliff with multi-tiered cataract waterfall
-    cliff = [(0, 330), (60, 320), (150, 340), (230, 345), (302, 380), (362, 565), (0, 565)]
-    s.add(el("path", d=smooth(cliff[:-1]) + " L0,565Z", fill="#4d4c44"))
-    s.add(el("path", d="M20,380 L285,395 M10,425 L318,440 M35,472 L338,485 M15,518 L348,530", stroke="#36352f", stroke_width=2.2, opacity=0.55))
+    def puya_spike(px, py, sc=1.0):
+        spiky_base = " ".join(f"M{n(px)},{n(py)} q{n(d * 0.55 * sc)},{n(-8 * sc)} {n(d * 1.15 * sc)},{n((-10 + abs(d) * 0.22) * sc)}"
+                              for d in range(-16, 17, 3))
+        spike_clusters = [el("ellipse", cx=px + (k % 2 - 0.5) * 2.5 * sc, cy=py - (18 + k * 4.5) * sc,
+                             rx=(4.8 - k * 0.18) * sc, ry=2.2 * sc, fill="#cfc87e" if k % 2 else "#a8a158")
+                          for k in range(12)]
+        return g([
+            el("ellipse", cx=px + 1, cy=py + 1, rx=14 * sc, ry=2.5 * sc, fill="#000000", opacity=0.22),
+            el("path", d=spiky_base, stroke="#4d6b42", stroke_width=1.8 * sc, fill="none", stroke_linecap="round"),
+            el("rect", x=px - 2 * sc, y=py - 22 * sc, width=4 * sc, height=22 * sc, fill="#6b5d42"),
+            *spike_clusters,
+        ])
+
+    # Distant, mid-ground, and near-ground Puya & Frailejón clusters across the 3 páramo ridges
+    for x, sc in ((518, 0.72), (582, 0.78), (912, 0.75), (968, 0.68)):
+        s.add(puya_spike(x, pf1(x) + 5, sc))
+    for x, sc in ((642, 0.68), (678, 0.75), (712, 0.65), (1035, 0.74), (1078, 0.68)):
+        s.add(frailejon(x, pf1(x) + 6, sc))
+    for x, sc in ((495, 0.95), (615, 1.05), (845, 0.92), (1015, 1.02), (1125, 0.88)):
+        s.add(frailejon(x, pf2(x) + 8, sc))
+    for x, sc in ((725, 0.98), (1068, 0.94)):
+        s.add(puya_spike(x, pf2(x) + 8, sc))
+    for x, sc in ((585, 1.22), (632, 1.12), (895, 1.25), (948, 1.15)):
+        s.add(frailejon(x, pf3(x) + 10, sc))
+
+    # Sculpted 3D craggy Andean rock cliff on the left with stepped ledges, cloud forest, and multi-stage cataract
+    cliff = [(0, 326), (65, 318), (148, 336), (235, 342), (308, 362), (342, 445), (368, 565), (0, 565)]
+    cliff_d = smooth(cliff[:-1]) + " L0,565Z"
+    s.add(el("path", d=cliff_d, fill="#545048"))
+    ccid = s.clip("hl_cliff", cliff_d)
+    cliff_facets = [
+        # 3D sunlit and shadowed rock buttresses
+        el("path", d="M0,320 L165,335 L145,565 L0,565Z", fill="#6e685d", opacity=0.55),
+        el("path", d="M215,340 L370,360 L370,565 L245,565Z", fill="#33302b", opacity=0.65),
+        # Stepped geological rock shelves & diagonal fractures
+        el("path", d="M0,382 Q110,392 225,386 Q295,394 345,402 L345,418 Q220,406 0,398Z", fill="#3d3a34", opacity=0.72),
+        el("path", d="M0,446 Q125,458 245,450 Q315,458 358,468 L358,484 Q230,470 0,462Z", fill="#36332e", opacity=0.72),
+        el("path", d="M0,508 Q140,518 265,512 L365,524 L365,540 L0,522Z", fill="#2b2924", opacity=0.72),
+        el("path", d="M72,330 L58,445 L75,555 M155,338 L172,455 L158,555 M232,345 L218,465 L235,555",
+           stroke="#262420", stroke_width=1.6, fill="none", opacity=0.6),
+    ]
+    # Clinging cloud-forest moss & shrub ledges on the cliff face
+    for lx, ly, lr in ((65, 384, 16), (145, 388, 18), (218, 390, 15), (95, 448, 17), (188, 452, 19), (135, 512, 16)):
+        cliff_facets.append(crown(rng, lx, ly, lr, ("#1c3e26", "#2e5c38", "#588c52"), k=4, flat=0.45, detail=False))
+    s.add(g(cliff_facets, clip_path=ccid))
+
     cf = interp(cliff[:5])
-    s.add(g(canopy_band(s, -25, 312, cf, 24, 17, 27, ("#22452e", "#36663d", "#649658"), k=5)))
-    s.add(waterfall(s, 290, 358, 560, 25))
+    s.add(g(canopy_band(s, -25, 275, cf, 24, 17, 27, ("#22452e", "#36663d", "#649658"), k=5)))
+    # Multi-tiered cataract plunging from the stream notch (288, 358) over a mid-cliff rock ledge into the plunge pool
+    s.add(waterfall(s, 286, 356, 456, 22))
+    s.add(el("path", d="M258,456 Q290,450 322,456 L316,466 L264,466Z", fill="#45413a"))
+    s.add(waterfall(s, 292, 454, 560, 26))
 
-    # Lower cloud-forest bank sweeping smoothly into the foreground alpine meadow (no vertical cut!)
+    # Lower cloud-forest bank sweeping smoothly into the foreground alpine meadow
     lower = [(0, 560), (200, 545), (360, 560), (485, 608), (620, 680), (650, H)]
     lf = interp(lower[:5])
     s.add(el("path", d=smooth(lower) + f" L0,{H}Z", fill="#345430"))
@@ -2220,10 +2509,10 @@ def build_highlands(labels):
     for x, y in ((58, 522), (148, 502), (418, 562)):
         s.add(fern(rng, x, y, 42, "#468640"))
     s.add(heliconia(105, 545, 44))
-    s.add(mist(s, 180, 340, 240, 26, op=0.65))
-    s.add(mist(s, 300, 452, 165, 20, op=0.58))
+    s.add(mist(s, 180, 340, 240, 26, op=0.58))
+    s.add(mist(s, 295, 456, 125, 18, op=0.55))
 
-    # Foreground alpine meadow overlapping the lower slope naturally with mossy boulders & ferns
+    # Foreground alpine meadow overlapping the lower slope naturally with mossy boulders, ferns, & foreground frailejón
     fg = [(380, H), (455, 632), (550, 592), (660, 582), (820, 598), (1000, 585), (1200, 600)]
     s.add(el("path", d=smooth(fg) + f" L{W},{H} L380,{H}Z", fill="#63753c"))
     s.add(tufts(rng, 420, W, interp(fg), 115, 18, "#bda956", width=1.35))
@@ -2239,8 +2528,8 @@ def build_highlands(labels):
 
     # Fauna: Soaring Andean Condors and hovering Emerald Hummingbird
     s.add(condor(640, 228, 1.55), condor(902, 258, 0.95))
-    s.add(hummingbird(248, 468, 1.65))
-    s.add(g([bird_v(1000, 120, 8), bird_v(1032, 110, 6.5)], class_="drift"))
+    s.add(hummingbird(218, 488, 1.65))
+    s.add(g([bird_v(1000, 120, 8), bird_v(1032, 110, 6.5)]))
     return s.render(labels["aria"]["highlands"])
 
 
@@ -2257,20 +2546,21 @@ def vignette(key, seed):
 def build_mogotes(labels):
     s = vignette("mogotes", 101)
     rng = s.rng
-    sky(s, [(0, "#6faad9"), (0.55, "#b8daf0"), (1, "#f4ecdc")])
-    sun(s, 385, 58, 15)
-    s.add(cloud(rng, 118, 54, 105), cloud(rng, 290, 42, 78, op=0.82))
+    sky(s, [(0, "#5a98d4"), (0.5, "#a8d4ee"), (1, "#f7ecd8")])
+    sun(s, 385, 54, 16, glow="#fff2d0")
+    s.add(cloud(rng, 118, 50, 105), cloud(rng, 290, 40, 80, op=0.82))
 
-    # Distant hazy karst hills
-    h_far, _ = hill(s, [(0, 195), (90, 165), (210, 185), (340, 158), (480, 180)], 240, "#9ab5a2", rough=5)
+    # Distant hazy karst hills in atmospheric perspective
+    h_far, _ = hill(s, [(0, 192), (90, 162), (210, 182), (340, 155), (480, 178)], 240, "#9bb7a3", rough=6)
     s.add(h_far)
+    s.add(mist(s, 240, 180, 260, 14, op=0.45))
 
-    # Four sculpted limestone mogote haystack towers with realistic craggy rock faces & jungle caps
+    # Sculpted limestone mogote haystack towers with authentic 3D karst rock faces, fissures, & jungle crowns
     mogote_specs = [
-        (-25, 142, 116, "#6b8f6e", "#466349", "#b0ada0", "#7d7a6e"),
-        (296, 505, 106, "#628765", "#3f5c43", "#bab7a8", "#827f72"),
-        (106, 294, 72, "#467336", "#26451e", "#c8c4b4", "#8a8677"),
-        (356, 474, 122, "#3a662d", "#1e3b16", "#bebaa8", "#7d796b"),
+        (-25, 142, 112, "#5e8a60", "#38543a", "#b5b09f", "#787464"),
+        (296, 505, 102, "#58825a", "#344e36", "#beb9a8", "#7e7a6a"),
+        (106, 294, 68, "#427032", "#224218", "#cbc6b4", "#868272"),
+        (356, 474, 118, "#366328", "#1c3814", "#c0bca8", "#787464"),
     ]
     for x0, x1, top, col, shade, rock_lit, rock_sh in mogote_specs:
         mw = x1 - x0
@@ -2284,44 +2574,50 @@ def build_mogotes(labels):
         cid = s.clip(f"m{x0}", d)
         inner = [
             # 3D right-flank shadow across the sheer limestone face
-            el("path", d=f"M{n(x0 + mw * 0.48)},{n(top)} L{n(x1)},{n(top)} L{n(x1)},240 L{n(x0 + mw * 0.54)},240Z",
+            el("path", d=f"M{n(x0 + mw * 0.46)},{n(top)} L{n(x1)},{n(top)} L{n(x1)},240 L{n(x0 + mw * 0.52)},240Z",
                fill=rock_sh, opacity=0.92),
         ]
-        # Vertical karst solution flutes, faceted limestone ribs, and horizontal bedding joints across the cliff
-        for b in range(1, 9):
-            fx = x0 + mw * (0.08 + 0.84 * b / 9) + rng.uniform(-2, 2)
-            fw = mw * rng.uniform(0.04, 0.08)
-            f_col = mix(rock_lit if b < 5 else rock_sh, "#252922", 0.28)
-            inner.append(el("path", d=f"M{n(fx)},{n(top + 14)} L{n(fx + fw)},{n(top + 18)} L{n(fx + fw * 0.7)},236 L{n(fx - fw * 0.2)},236Z",
-                            fill=f_col, opacity=0.55))
-            inner.append(el("path", d=f"M{n(fx)},{n(top + 12)} Q{n(fx - 2)},{n((top + 236) * 0.5)} {n(fx + 1)},235",
-                            stroke="#2b3026", stroke_width=1.0, opacity=0.55, fill="none"))
-        for hy in (top + (235 - top) * 0.38, top + (235 - top) * 0.66):
-            inner.append(el("path", d=f"M{n(x0)},{n(hy)} Q{n((x0 + x1) * 0.5)},{n(hy + 6)} {n(x1)},{n(hy - 2)}",
-                            stroke="#3b4035", stroke_width=1.1, opacity=0.45, fill="none"))
-        # Dark karst cavern mouths at cliff base
-        inner.append(el("path", d=f"M{n(x0 + mw * 0.30)},238 Q{n(x0 + mw * 0.39)},212 {n(x0 + mw * 0.48)},238Z",
-                        fill="#162012", opacity=0.86))
-        # Vegetated cliff-face ledges clinging to karst crevices
-        for lx, ly, lr in ((x0 + mw * 0.26, top + (235 - top) * 0.52, 7.5),
-                           (x0 + mw * 0.64, top + (235 - top) * 0.46, 8.0),
-                           (x0 + mw * 0.44, top + (235 - top) * 0.70, 7.0)):
-            inner.append(crown(rng, lx, ly, lr, (mix(col, "#0d240c", 0.38), col, mix(col, "#a8cc62", 0.22)), k=5, detail=False))
-        # Talus piedmont jungle skirt at base
-        for i in range(14):
-            vx = x0 + mw * (0.04 + 0.92 * i / 13)
-            inner.append(crown(rng, vx, rng.uniform(215, 232), rng.uniform(9, 14),
-                               (mix(col, "#0d240c", 0.38), col, mix(col, "#a8cc62", 0.22)), k=5, detail=False))
-        # Dense overhanging summit dome jungle cap
-        inner.append(el("path", d=f"M{n(x0)},{n(top + 38)} Q{n((x0 + x1) * 0.5)},{n(top + 18)} {n(x1)},{n(top + 38)} L{n(x1)},{n(top)} L{n(x0)},{n(top)}Z",
+        # Organic, irregular karst fissures and vertical solution flutes (no regular barcode slats!)
+        fissure_pts = []
+        for fx_rel in (0.15, 0.28, 0.38, 0.52, 0.65, 0.78, 0.88):
+            fx = x0 + mw * fx_rel + rng.uniform(-3, 3)
+            fw = mw * rng.uniform(0.04, 0.07)
+            # Irregular jagged solution groove
+            f_col = mix(rock_lit if fx_rel < 0.5 else rock_sh, "#1a2016", 0.45)
+            inner.append(el("path", d=f"M{n(fx)},{n(top + 16)} L{n(fx + fw)},{n(top + 20)} L{n(fx + fw * 0.6 + rng.uniform(-2, 2))},236 L{n(fx - fw * 0.2)},236Z",
+                            fill=f_col, opacity=0.45))
+            inner.append(el("path", d=f"M{n(fx)},{n(top + 14)} Q{n(fx + rng.uniform(-4, 4))},{n((top + 236) * 0.5)} {n(fx + rng.uniform(-2, 2))},235",
+                            stroke="#242820", stroke_width=rng.uniform(0.9, 1.4), opacity=0.6, fill="none"))
+        # Weathered horizontal karst dissolution bedding lines
+        for hy_rel in (0.35, 0.58, 0.78):
+            hy = top + (236 - top) * hy_rel + rng.uniform(-4, 4)
+            inner.append(el("path", d=f"M{n(x0)},{n(hy)} Q{n((x0 + x1) * 0.5)},{n(hy + rng.uniform(3, 8))} {n(x1)},{n(hy - 2)}",
+                            stroke="#363b30", stroke_width=1.2, opacity=0.48, fill="none"))
+        # Karst cavern mouth and hollows at cliff base
+        inner.append(el("path", d=f"M{n(x0 + mw * 0.32)},238 Q{n(x0 + mw * 0.40)},210 {n(x0 + mw * 0.48)},238Z",
+                        fill="#121a0e", opacity=0.9))
+        inner.append(el("path", d=f"M{n(x0 + mw * 0.68)},238 Q{n(x0 + mw * 0.73)},222 {n(x0 + mw * 0.78)},238Z",
+                        fill="#121a0e", opacity=0.82))
+        # Vegetated rock ledges clinging to crevices
+        for lx, ly, lr in ((x0 + mw * 0.25, top + (235 - top) * 0.48, 8.5),
+                           (x0 + mw * 0.62, top + (235 - top) * 0.42, 9.0),
+                           (x0 + mw * 0.42, top + (235 - top) * 0.68, 7.5)):
+            inner.append(crown(rng, lx, ly, lr, (mix(col, "#0d240c", 0.4), col, mix(col, "#a8cc62", 0.25)), k=5, detail=False))
+        # Talus piedmont skirt at cliff base
+        for i in range(12):
+            vx = x0 + mw * (0.05 + 0.90 * i / 11) + rng.uniform(-3, 3)
+            inner.append(crown(rng, vx, rng.uniform(218, 234), rng.uniform(9, 15),
+                               (mix(col, "#0d240c", 0.38), col, mix(col, "#a8cc62", 0.25)), k=5, detail=False))
+        # Dense rounded tropical jungle cap over the summit dome
+        inner.append(el("path", d=f"M{n(x0)},{n(top + 36)} Q{n((x0 + x1) * 0.5)},{n(top + 16)} {n(x1)},{n(top + 36)} L{n(x1)},{n(top)} L{n(x0)},{n(top)}Z",
                         fill=shade))
-        for i in range(20):
-            vx = x0 + mw * (0.05 + 0.90 * i / 19) + rng.uniform(-3, 3)
-            vy = top + rng.uniform(4, 22) + abs(vx - (x0 + x1) / 2) * 0.14
-            inner.append(crown(rng, vx, vy, rng.uniform(8.5, 13.5),
+        for i in range(18):
+            vx = x0 + mw * (0.06 + 0.88 * i / 17) + rng.uniform(-3, 3)
+            vy = top + rng.uniform(4, 20) + abs(vx - (x0 + x1) / 2) * 0.12
+            inner.append(crown(rng, vx, vy, rng.uniform(9, 14),
                                (mix(col, "#0d240c", 0.35), col, mix(col, "#c4e078", 0.28)), k=5, detail=False))
         s.add(g(inner, clip_path=cid))
-        s.add(mist(s, (x0 + x1) / 2, 234, mw * 0.62, 11, op=0.58))
+        s.add(mist(s, (x0 + x1) / 2, 234, mw * 0.65, 11, op=0.55))
 
     # Rich terra-rossa red soil valley floor & lush furrowed tobacco plantation rows in perspective
     s.add(el("rect", x=0, y=232, width=480, height=68, fill=s.linear("soil", [(0, "#8f4e2c"), (1, "#5c2e16")])))
@@ -2360,47 +2656,47 @@ def build_mogotes(labels):
              stroke="#5e4424", stroke_width=1.1, opacity=0.65))
     s.add(el("path", d="M322,216 L334,216", stroke="#4a3419", stroke_width=2.0, stroke_linecap="round"))
 
-    # Cuban Royal Palms (Roystonea regia)
-    for x, y, h, lean in ((58, 266, 116, 4), (422, 268, 126, -5), (248, 256, 94, 3), (185, 246, 68, -2)):
+    # Cuban Royal Palms (Roystonea regia) positioned naturally along valley borders & flanking the bohío
+    for x, y, h, lean in ((38, 272, 118, 4), (432, 274, 128, -5), (262, 252, 92, 3), (388, 252, 88, -3)):
         s.add(palm(rng, x, y, h, lean, 25 * (h / 110), royal=True, nfr=11, trunk_col="#d6cfc0"))
-    s.add(g([bird_v(210, 72, 6.5), bird_v(228, 65, 5.5)], class_="drift"))
+    s.add(g([bird_v(210, 72, 6.5), bird_v(228, 65, 5.5)]))
     return s.render(labels["aria"]["mogotes"])
 
 
 def build_enriquillo(labels):
     s = vignette("enriquillo", 102)
     rng = s.rng
-    sky(s, [(0, "#68a6d8"), (0.55, "#b8daf0"), (1, "#f7ead0")])
-    sun(s, 88, 58, 16)
-    s.add(cloud(rng, 250, 48, 95, op=0.85), cloud(rng, 400, 62, 75, op=0.75))
+    sky(s, [(0, "#5898cc"), (0.55, "#aed2ea"), (1, "#f7ead2")])
+    sun(s, 88, 56, 16, glow="#fff0cc")
+    s.add(cloud(rng, 250, 46, 95, op=0.85), cloud(rng, 400, 60, 75, op=0.75))
 
-    # Arid Sierra de Bahoruco / Neiba mountain ranges
-    m_far, _ = mountain(s, "mf", [(0, 175), (140, 128), (260, 152), (390, 108), (480, 138)], 205,
-                        "#ccb494", shade="#8c7358", shade_op=0.3, rough=6)
+    # Arid Sierra de Bahoruco / Neiba mountain ranges with stratified rock facets
+    m_far, _ = mountain(s, "mf", [(0, 175), (140, 126), (260, 150), (390, 106), (480, 136)], 205,
+                        "#cca885", shade="#856b50", shade_op=0.32, rough=6)
     s.add(m_far)
-    m, _ = mountain(s, "m", [(0, 168), (92, 116), (182, 148), (292, 86), (382, 128), (480, 106)], 206,
-                    "#b5956e", shade="#664e3a", shade_op=0.38, rough=8)
+    m, _ = mountain(s, "m", [(0, 166), (92, 114), (182, 146), (292, 84), (382, 126), (480, 104)], 206,
+                    "#b89066", shade="#614732", shade_op=0.40, rough=8)
     s.add(m)
 
-    # Hypersaline Lago Enriquillo water body with mineral salt-crust shoreline
+    # Hypersaline Lago Enriquillo water body with sparkling mineral salt-crust shoreline
     s.add(el("rect", x=0, y=198, width=480, height=64,
-             fill=s.linear("lake", [(0, "#64ced0"), (0.45, "#38aab8"), (1, "#1e748c")])))
+             fill=s.linear("lake", [(0, "#5ec9cc"), (0.45, "#32a4b2"), (1, "#186e85")])))
     salt_far = [(0, 198), (80, 201), (190, 199), (310, 202), (420, 199), (480, 201)]
-    s.add(el("path", d=smooth(salt_far) + " L480,196 L0,196Z", fill="#f7f5ed", opacity=0.92))
-    s.add(water_lines(rng, 0, 480, 204, 256, 38, op=0.48))
+    s.add(el("path", d=smooth(salt_far) + " L480,196 L0,196Z", fill="#faf7f0", opacity=0.92))
+    s.add(water_lines(rng, 0, 480, 204, 256, 38, col="#e6f7f6", op=0.52))
 
     # Sun-baked arid shoreline & fossil coral limestone outcrops
     shore = [(0, 262), (120, 253), (260, 261), (390, 252), (480, 249)]
-    s.add(el("path", d=smooth([(x, y - 3) for x, y in shore]) + " L480,265 L0,265Z", fill="#f2efe4"))
-    s.add(el("path", d=smooth(shore) + " L480,300 L0,300Z", fill=s.linear("sand", [(0, "#decb9e"), (1, "#bfa674")])))
+    s.add(el("path", d=smooth([(x, y - 3) for x, y in shore]) + " L480,265 L0,265Z", fill="#f4f1e6"))
+    s.add(el("path", d=smooth(shore) + " L480,300 L0,300Z", fill=s.linear("sand", [(0, "#dfcd9e"), (1, "#bfa472")])))
     # Bleached salt-encrusted dead tree snags emerging from hypersaline lake
     s.add(el("path", d="M38,242 Q58,239 76,243 L84,237 M62,241 L68,234 M425,218 L425,196 L418,188 M425,204 L433,195",
-             stroke="#e0d8c6", stroke_width=2.2, fill="none", stroke_linecap="round"))
+             stroke="#eae2d2", stroke_width=2.2, fill="none", stroke_linecap="round"))
 
     # Dry scrub & columnar cacti
     s.add(thorn_bush(rng, 85, 272, 16), thorn_bush(rng, 305, 270, 15))
     for x, y, h in ((36, 276, 52), (418, 272, 54), (452, 278, 44)):
-        s.add(cactus(x, y, h, "#588252", rib="#355432"))
+        s.add(cactus(x, y, h, "#547e4e", rib="#32502e"))
 
     # Flock of Caribbean Flamingos in varied wading and filter-feeding poses with water reflections
     flamingo_specs = [
@@ -2416,8 +2712,8 @@ def build_enriquillo(labels):
         s.add(flamingo(fx, fy, fs, flip=flp, pose=pose))
 
     # Stratified limestone basking slab & Rhinoceros Iguana + American Crocodile
-    s.add(el("path", d="M328,284 L338,274 L364,270 L392,275 L402,284Z", fill="#a6957a"))
-    s.add(el("path", d="M364,270 L392,275 L402,284 L368,284Z", fill="#786952"))
+    s.add(el("path", d="M328,284 L338,274 L364,270 L392,275 L402,284Z", fill="#aa997e"))
+    s.add(el("path", d="M364,270 L392,275 L402,284 L368,284Z", fill="#75654e"))
     s.add(iguana(364, 271, 1.18))
     s.add(caiman(108, 236, 0.92))
     return s.render(labels["aria"]["enriquillo"])
@@ -2426,10 +2722,10 @@ def build_enriquillo(labels):
 def build_pantanal(labels):
     s = vignette("pantanal", 103)
     rng = s.rng
-    sky(s, [(0, "#d97b48"), (0.38, "#eea862"), (0.72, "#f7d294"), (1, "#faeed2")])
-    sun(s, 330, 142, 22, glow="#ffcf7c")
-    s.add(cloud(rng, 110, 52, 105, col="#ffe6be", shade="#d99b6c", op=0.78))
-    s.add(cloud(rng, 390, 44, 85, col="#ffe6be", shade="#d99b6c", op=0.72))
+    sky(s, [(0, "#d47542"), (0.38, "#eaa25b"), (0.72, "#f6ce8e"), (1, "#f9eacd")])
+    sun(s, 330, 138, 22, glow="#ffcc74")
+    s.add(cloud(rng, 110, 50, 105, col="#ffe4ba", shade="#d69666", op=0.78))
+    s.add(cloud(rng, 390, 42, 85, col="#ffe4ba", shade="#d69666", op=0.72))
 
     # Distant mountain/gallery horizon
     s.add(el("path", d=smooth([(0, 168), (120, 162), (260, 166), (480, 160)]) + " L480,174 L0,174Z", fill="#9c7a5c", opacity=0.55))
@@ -2437,26 +2733,35 @@ def build_pantanal(labels):
     # Flooded Pantanal wetland mirror water with golden sun-path reflection
     s.add(el("rect", x=0, y=168, width=480, height=132,
              fill=s.linear("water", [(0, "#e3b276"), (0.42, "#b0966e"), (0.78, "#6a8888"), (1, "#446870")])))
-    s.add(el("ellipse", cx=330, cy=215, rx=56, ry=44, fill="#ffeab8", opacity=0.35, filter=s.url("mist")))
+    s.add(el("ellipse", cx=330, cy=215, rx=58, ry=45, fill="#ffeab8", opacity=0.35, filter=s.url("mist")))
     s.add(water_lines(rng, 0, 480, 174, 296, 48, col="#fff3d6", op=0.52))
 
-    # Flooded savanna cordilheira islands & marsh reeds
-    for x0, x1, y in ((-10, 184, 172), (256, 490, 168), (104, 388, 214)):
+    # Flooded savanna cordilheira islands & marsh banks (providing a solid natural land base for the capybaras)
+    for x0, x1, y in ((-10, 184, 172), (256, 490, 168)):
         cx_, rx_ = (x0 + x1) / 2, (x1 - x0) / 2
         s.add(el("ellipse", cx=cx_, cy=y + 2.5, rx=rx_, ry=9, fill="#2e401b", opacity=0.48))
         s.add(el("ellipse", cx=cx_, cy=y, rx=rx_, ry=8, fill="#5f7d34"))
         s.add(tufts(rng, max(4, x0 + 10), min(476, x1 - 10), lambda x, y=y: y - 2, 38, 11, "#869e44"))
+
+    # Mid-ground cordilheira island where the capybara family rests
+    c_pts = [(88, 218), (125, 210), (165, 208), (205, 212), (225, 220), (195, 226), (145, 227), (95, 224)]
+    s.add(el("path", d=smooth(c_pts, closed=True), fill="#4a3b25"))
+    c_top = [(92, 217), (128, 209), (165, 207), (202, 211), (220, 218), (192, 222), (145, 223), (98, 221)]
+    s.add(el("path", d=smooth(c_top, closed=True), fill="#5c7a30"))
+    s.add(tufts(rng, 100, 212, lambda x: 212 + 2 * math.sin(x * 0.1), 32, 10, "#88a342"))
 
     # Gallery forest and Carandá palms (Copernicia alba)
     s.add(g(canopy_band(s, 276, 476, lambda x: 158, 10, 13, 22, ("#2f4a20", "#4b6b2f", "#789648"), k=5)))
     for x, h, lean in ((56, 74, -4), (98, 90, 5), (208, 64, -3)):
         s.add(palm(rng, x, 173, h, lean, 21, cols=("#3d5c28", "#628438"), coconuts=False, trunk_col="#544434", nfr=10))
 
-    # Giant Victoria amazonica water lilies & blooming purple Eichhornia water hyacinths in foreground marsh
-    for x in range(24, 468, 38):
-        s.add(water_lily(rng, x, 270 + (x % 15), 11 + (x % 5), flower=(x % 76 == 24)))
-    for hx_ in (215, 295, 348):
-        hy_ = 220
+    # Giant Victoria amazonica water lilies in organic clusters & blooming Eichhornia hyacinths
+    for lx, ly, lr, fl in ((35, 272, 15, True), (72, 278, 18, False), (115, 282, 14, False),
+                           (245, 274, 16, True), (288, 280, 20, False), (335, 276, 17, True),
+                           (385, 282, 19, False), (435, 275, 15, True),
+                           (160, 258, 11, False), (395, 254, 12, False)):
+        s.add(water_lily(rng, lx, ly, lr, flower=fl))
+    for hx_, hy_ in ((215, 220), (295, 218), (348, 222)):
         s.add(g([
             el("ellipse", cx=hx_, cy=hy_, rx=8, ry=3, fill="#4e7d2e"),
             el("ellipse", cx=hx_, cy=hy_ - 5, rx=2.5, ry=4.5, fill="#9b6bd4"),
@@ -2465,40 +2770,51 @@ def build_pantanal(labels):
 
     # Fauna: Jabiru storks, Capybara family, Yacare Caiman, and flying wetland birds
     s.add(jabiru(328, 200, 1.22), jabiru(374, 205, 1.02, flip=True))
-    s.add(capybara(154, 212, 1.24), capybara(116, 214, 0.94, flip=True), capybara(184, 214, 0.68))
+    s.add(capybara(154, 210, 1.24), capybara(116, 212, 0.94, flip=True), capybara(184, 212, 0.68))
     s.add(caiman(242, 250, 1.32))
-    s.add(g([bird_v(178, 78, 7.5), bird_v(198, 72, 6.5), bird_v(215, 84, 6.5), bird_v(232, 76, 5.5)], class_="drift"))
+    s.add(g([bird_v(178, 78, 7.5), bird_v(198, 72, 6.5), bird_v(215, 84, 6.5), bird_v(232, 76, 5.5)]))
     return s.render(labels["aria"]["pantanal"])
 
 
 def build_cerrado(labels):
     s = vignette("cerrado", 104)
     rng = s.rng
-    sky(s, [(0, "#5e9ed4"), (0.55, "#b0d4ec"), (1, "#f5ead0")])
-    sun(s, 72, 58, 15)
-    s.add(cloud(rng, 358, 58, 118), cloud(rng, 118, 76, 78))
+    sky(s, [(0, "#4a8ec8"), (0.55, "#a2d0ec"), (1, "#f7ecd4")])
+    sun(s, 72, 54, 16, glow="#ffeaad")
+    s.add(cloud(rng, 358, 54, 118), cloud(rng, 118, 72, 78))
 
-    # Distant Chapada mesa and rolling Cerrado hills
-    s.add(el("path", d="M260,175 L285,138 L395,136 L425,175Z", fill="#a8946e", opacity=0.7))
-    h1, r_h1 = hill(s, [(0, 190), (140, 158), (300, 174), (480, 148)], 240, "#b8a264")
+    # Distant stratified sandstone Chapada tableland mesa with sunlit & shadowed rock faces
+    mesa_d = "M248,176 L278,134 L305,132 L398,131 L418,135 L438,176Z"
+    s.add(el("path", d=mesa_d, fill="#b59472", opacity=0.85))
+    s.add(el("path", d="M305,132 L398,131 L418,135 L438,176 L335,176Z", fill="#75523c", opacity=0.55))
+    s.add(el("path", d="M278,134 L418,135 L415,142 L280,141Z", fill="#d2ab86", opacity=0.7))
+    s.add(el("path", d="M270,154 L426,154 L424,158 L272,158Z", stroke="#543828", stroke_width=0.9, opacity=0.6))
+    s.add(el("path", d="M252,176 L284,152 L340,165 L395,150 L435,176Z", fill="#5a3d2c", opacity=0.45))
+
+    # Rolling Cerrado hills & plateau ridges
+    h1, r_h1 = hill(s, [(0, 186), (140, 156), (300, 172), (480, 146)], 240, "#c2ad6a")
     s.add(h1)
-    # Gallery forest along the valley depression
-    s.add(g(canopy_band(s, 220, 360, interp(r_h1), 9, 8, 13, ("#2f4f24", "#486e34", "#6e9248"), lift=-4, k=5)))
 
-    # Golden savanna grassland foreground
+    # Shimmering Vereda stream and Buriti palms (Mauritia flexuosa) threading the valley depression
+    s.add(el("path", d="M185,182 Q255,176 345,184 L340,188 Q255,180 182,186Z", fill="#6ebfc2", opacity=0.75))
+    s.add(g(canopy_band(s, 195, 365, interp(r_h1), 10, 8, 14, ("#2a4b20", "#426b30", "#689444"), lift=-4, k=5)))
+    for px, py, ph, plean in ((212, 180, 36, -3), (232, 178, 42, 4), (298, 179, 38, -4), (324, 181, 34, 3)):
+        s.add(palm(rng, px, py, ph, plean, 12, cols=("#285c2c", "#528e44"), trunk_col="#6a5640", coconuts=False))
+
+    # Golden savanna grassland foreground with rich terra-cotta soil tones
     ground = interp([(0, 228), (240, 218), (480, 226)])
     s.add(el("path", d=smooth([(0, 228), (240, 218), (480, 226)]) + " L480,300 L0,300Z",
-             fill=s.linear("sav", [(0, "#cca856"), (1, "#a68238")])))
+             fill=s.linear("sav", [(0, "#cca856"), (1, "#9e7a32")])))
     s.add(tufts(rng, 0, 480, ground, 135, 12, "#dec26a"))
-    s.add(tufts(rng, 0, 480, lambda x: 268 + (x % 19), 90, 16, "#8f722e"))
+    s.add(tufts(rng, 0, 480, lambda x: 268 + (x % 19), 90, 16, "#886b28"))
 
-    # Tortuous Cerrado trees, blooming yellow and pink Ipê trees, and cathedral termite mounds
+    # Tortuous Cerrado trees with corky bark, blooming yellow & pink Ipê trees, and cathedral termite mounds
     for x in (58, 178, 396):
         s.add(gnarled_tree(rng, x, ground(x), 62))
     s.add(ipe(rng, 290, ground(290), 82), ipe(rng, 442, ground(442) + 10, 66, bloom="#e86ca6", bloom2="#c44b84"))
     s.add(termite_mound(118, 264, 36), termite_mound(352, 252, 26))
 
-    # Fauna: Maned Wolf (Chrysocyon brachyurus) and Hyacinth Macaw (Anodorhynchus hyacinthinus)
+    # Fauna: Maned Wolf (Chrysocyon brachyurus) on savanna turf & Hyacinth Macaw in flight
     s.add(maned_wolf(228, 268, 1.25))
     s.add(macaw(152, 108, 0.78, palette=("#2452b5", "#193b8a", "#f5c428")))
     return s.render(labels["aria"]["cerrado"])
@@ -2508,9 +2824,9 @@ def build_lencois(labels):
     """Realistic sweeping barchan quartz sand dunes with S-curved slip-faces and recessed inter-dunal rainwater lagoons."""
     s = vignette("lencois", 105)
     rng = s.rng
-    sky(s, [(0, "#3d88cc"), (0.55, "#8cc4e8"), (1, "#def0f8")], h=145)
-    sun(s, 82, 52, 16)
-    s.add(cloud(rng, 310, 56, 130), cloud(rng, 135, 68, 85, op=0.82))
+    sky(s, [(0, "#3680c6"), (0.55, "#82bee4"), (1, "#dcf0f8")], h=145)
+    sun(s, 82, 50, 16, glow="#fff5d8")
+    s.add(cloud(rng, 310, 54, 130), cloud(rng, 135, 66, 85, op=0.82))
 
     # Base quartz sand desert floor
     s.add(el("rect", x=0, y=132, width=480, height=168, fill="#f5f0e2"))
@@ -2559,14 +2875,14 @@ def build_lencois(labels):
             out.append(el("ellipse", cx=bar_cx, cy=bar_cy, rx=bar_rx, ry=4.2, fill="#80ede2", opacity=0.38))
         return g(out)
 
-    # Layer 1: Far horizon dunes & recessed inter-dunal lagoons (drawn BEFORE Layer 2 dunes so Layer 2 overlaps them!)
+    # Layer 1: Far horizon dunes & recessed inter-dunal lagoons
     s.add(barchan_dune(-30, 55, 175, 160, 26, y_bot=220, lit="#f7f4ea", shade="#dfd7c4"))
     s.add(barchan_dune(110, 215, 335, 162, 30, y_bot=220, lit="#f7f4ea", shade="#dfd7c4"))
     s.add(barchan_dune(265, 380, 510, 160, 28, y_bot=220, lit="#f7f4ea", shade="#dfd7c4"))
     s.add(dune_lagoon([(30, 160), (98, 154), (168, 160), (145, 176), (50, 175)], lag_turq, 98, 163, 28))
     s.add(dune_lagoon([(235, 161), (310, 155), (382, 162), (355, 178), (255, 176)], lag_em, 310, 164, 30))
 
-    # Layer 2: Mid-ground sweeping dunes overlapping the far lagoons, followed by mid-ground crescent lagoons
+    # Layer 2: Mid-ground sweeping dunes overlapping the far lagoons naturally
     s.add(barchan_dune(-40, 82, 235, 206, 44, y_bot=275, lit="#faf7ef", shade="#dbd2be"))
     s.add(barchan_dune(165, 312, 465, 210, 48, y_bot=275, lit="#faf7ef", shade="#dbd2be"))
     s.add(barchan_dune(360, 458, 540, 206, 36, y_bot=275, lit="#faf7ef", shade="#dbd2be"))
@@ -2583,22 +2899,27 @@ def build_lencois(labels):
     ripples += " " + " ".join(f"M{n(258 + i * 15)},{n(256 - i * 2.1)} q20,-3.5 40,0.8" for i in range(6))
     s.add(el("path", d=ripples, stroke="#dfd6c0", stroke_width=1.15, fill="none", opacity=0.8))
 
-    # Layer 4: Foreground crystal rainwater lagoon & white quartz sand spit
+    # Layer 4: Foreground crystal rainwater lagoon nestled inside pristine quartz sand
     fg_lag = [(28, 272), (135, 258), (265, 256), (398, 263), (458, 276), (420, 295), (250, 298), (85, 295)]
     s.add(dune_lagoon(fg_lag, lag_turq, 245, 276, 110))
     s.add(water_lines(rng, 70, 420, 264, 292, 24, op=0.68))
-    s.add(g([bird_v(210, 88, 6.5), bird_v(232, 80, 5.5), bird_v(250, 90, 5.5)], class_="drift"))
+    s.add(g([bird_v(210, 88, 6.5), bird_v(232, 80, 5.5), bird_v(250, 90, 5.5)]))
     return s.render(labels["aria"]["lencois"])
 
 
 def build_caatinga(labels):
     s = vignette("caatinga", 106)
     rng = s.rng
-    sky(s, [(0, "#8eb8d9"), (0.55, "#d8d4be"), (1, "#f6dfc0")])
-    sun(s, 400, 68, 19, glow="#ffdfa2")
+    sky(s, [(0, "#7aaad2"), (0.55, "#d2cfb8"), (1, "#f7dec0")])
+    sun(s, 400, 64, 20, glow="#ffdfa0")
 
-    # Distant Sertão inselbergs and dry hills
-    s.add(el("path", d="M40,175 L65,136 L115,132 L145,175Z", fill="#bfa082", opacity=0.65))
+    # Distant Sertão granite inselberg bornhardt dome with 3D exfoliation facets & scree slope
+    insel_d = "M35,176 C45,150 72,132 105,130 C132,132 152,152 165,176Z"
+    s.add(el("path", d=insel_d, fill="#bca286", opacity=0.75))
+    s.add(el("path", d="M105,130 C132,132 152,152 165,176 L112,176Z", fill="#755e4c", opacity=0.55))
+    s.add(el("path", d="M60,158 Q105,142 145,162", stroke="#5a4535", stroke_width=1.1, fill="none", opacity=0.5))
+    s.add(el("path", d="M40,176 L75,162 L115,168 L158,176Z", fill="#5a4232", opacity=0.38))
+
     h1, _ = hill(s, [(0, 170), (120, 148), (260, 174), (360, 138), (480, 164)], 232, "#c4986e")
     s.add(h1)
 
@@ -2635,9 +2956,9 @@ def build_caatinga(labels):
         el("circle", cx=222, cy=269.5, r=1.1, fill="#f78ca2"),
     ]))
 
-    # Iconic Mandacaru columnar cacti (with distinct arms and white night blooms)
+    # Iconic Mandacaru columnar cacti (with 3D fluted ribs and nocturnal white blossoms)
     for x, h in ((88, 112), (298, 132), (422, 84)):
-        s.add(cactus(x, ground(x) + 32, h, "#527d56", rib="#305236"))
+        s.add(cactus(x, ground(x) + 32, h, "#4c7748", rib="#2c4e2a"))
 
     # Weathered exfoliating granite boulders & pebbles
     for rx_, ry_, rr in ((42, 282, 16), (252, 276, 15), (362, 286, 18)):
@@ -2657,8 +2978,8 @@ def build_caatinga(labels):
 def build_bluehole(labels):
     s = vignette("bluehole", 107)
     rng = s.rng
-    sky(s, [(0, "#4e9ad2"), (0.6, "#98cde8"), (1, "#e6f4f8")], h=96)
-    sun(s, 400, 44, 14)
+    sky(s, [(0, "#3e8ed0"), (0.6, "#90c7e6"), (1, "#e6f4f8")], h=96)
+    sun(s, 400, 44, 14, glow="#fff4d4")
     s.add(cloud(rng, 138, 40, 95), cloud(rng, 308, 48, 76))
 
     # Distant coral keys, coastal vegetation berm, and coconut palms on horizon
@@ -2675,7 +2996,7 @@ def build_bluehole(labels):
     s.add(el("path", d="M0,118 Q64,116 104,140 Q114,182 82,242 Q42,282 0,300Z", fill="#82d4ce", opacity=0.78))
     s.add(el("path", d="M480,118 Q416,116 376,140 Q366,182 398,242 Q438,282 480,300Z", fill="#82d4ce", opacity=0.78))
 
-    # The Great Blue Hole circular karst sinkhole with stepped limestone ledges & stalactites
+    # The Great Blue Hole circular karst sinkhole with stepped limestone ledges & deep abyss
     cx, cy = 240, 196
     chasm_grad = s.radial("chasm", [
         (0, "#010610", 1),
@@ -2693,14 +3014,11 @@ def build_bluehole(labels):
     s.add(el("path", d=stal, fill="#0c2b4f", opacity=0.65))
     s.add(el("ellipse", cx=cx, cy=cy + 4, rx=98, ry=52, fill="#010714", opacity=0.96))
 
-    # Shallow carbonate sand & irregular coral rim ring around the sinkhole
-    s.add(el("path", d=(
-        f"M{cx - 152},{cy} C{cx - 142},{cy - 82} {cx + 142},{cy - 82} {cx + 152},{cy} "
-        f"C{cx + 142},{cy + 82} {cx - 142},{cy + 82} {cx - 152},{cy}Z"
-    ), stroke="#a8e6df", stroke_width=5.5, fill="none", opacity=0.68))
-    s.add(el("path", d=(
-        f"M{cx - 156},{cy} C{cx - 146},{cy - 85} {cx + 146},{cy - 85} {cx + 156},{cy}"
-    ), stroke="#e4faf7", stroke_width=2.0, fill="none", opacity=0.55))
+    # Organic, multi-lobed shallow carbonate sand & coral reef rim dropping off into the deep abyss
+    rim_outer = [(cx + 162 * math.cos(a), cy + 94 * math.sin(a) + 3 * math.sin(5 * a)) for a in [i * math.pi / 16 for i in range(32)]]
+    rim_inner = [(cx + 148 * math.cos(a), cy + 84 * math.sin(a) + 2 * math.sin(5 * a)) for a in [i * math.pi / 16 for i in range(32)]]
+    s.add(el("path", d=smooth(rim_outer, closed=True), fill="none", stroke="#a2e8df", stroke_width=6.0, opacity=0.72))
+    s.add(el("path", d=smooth(rim_inner, closed=True), fill="none", stroke="#dcf8f4", stroke_width=2.4, opacity=0.82))
 
     # Diagonal sunbeams piercing into the abyss
     s.add(light_rays(s, 135, 345, 108, 286, 8, op=0.20))
@@ -2731,7 +3049,7 @@ def build_bluehole(labels):
         el("path", d="M200,107 L203,102 L221,102 L224,107Z", fill="#1a528f"),
         el("rect", x=204, y=103, width=15, height=2.5, rx=0.8, fill="#8cd2f0"),
         el("line", x1=212, y1=102, x2=212, y2=96, stroke="#444444", stroke_width=0.9),
-    ], class_="bob"))
+    ]))
     return s.render(labels["aria"]["bluehole"])
 
 
@@ -2740,14 +3058,14 @@ def build_tepui(labels):
     s = vignette("tepui", 108)
     rng = s.rng
     sky(s, [(0, "#d9885b"), (0.36, "#f2bfa0"), (0.72, "#cde2ee"), (1, "#a2cae0")])
-    sun(s, 86, 58, 16, glow="#ffdfb0")
-    s.add(cloud(rng, 390, 48, 90, col="#fff2e2", shade="#d4b29c", op=0.8))
+    sun(s, 86, 56, 16, glow="#ffdfb0")
+    s.add(cloud(rng, 390, 46, 90, col="#fff2e2", shade="#d4b29c", op=0.8))
 
     # Distant sister tepui silhouette on the left horizon shrouded in mist
     s.add(el("path", d="M-20,128 L86,126 L94,142 L106,215 L-20,215Z", fill="#9c8588", opacity=0.52))
     s.add(mist(s, 40, 195, 90, 18, op=0.65))
 
-    # Main Tepui Tabletop Fortress with craggy sandstone battlements (no geometric mushroom row!)
+    # Main Tepui Tabletop Fortress with craggy sandstone battlements
     tabletop = [
         (112, 88), (126, 83), (144, 85), (165, 81), (185, 86), (204, 80),
         (232, 81), (258, 85), (284, 79), (316, 81), (345, 85), (372, 80),
@@ -2796,13 +3114,16 @@ def build_tepui(labels):
     s.add(waterfall(s, 185, 86, 244, 9))
     s.add(waterfall(s, 345, 85, 246, 10))
 
-    # Soft drifting valley mist & cloud sea around the base of the tepui (no hard-edged sky clouds!)
+    # Continuous dense cloud forest foundation floor at base of Tepui (eliminates any sky gap)
+    s.add(el("rect", x=0, y=246, width=480, height=54, fill="#182e1c"))
+
+    # Soft drifting valley mist & cloud sea around the base of the tepui
     s.add(mist(s, 175, 232, 130, 18, op=0.78))
     s.add(mist(s, 355, 230, 135, 18, op=0.75))
     s.add(mist(s, 250, 244, 240, 20, op=0.82))
 
     # Cloud forest canopy at base of Tepui
-    s.add(g(canopy_band(s, -20, 500, lambda x: 250 + 6 * math.sin(x / 30), 22, 14, 26, ("#173d1e", "#285929", "#4f8a3e"), k=5)))
+    s.add(g(canopy_band(s, -20, 500, lambda x: 248 + 6 * math.sin(x / 30), 22, 14, 26, ("#173d1e", "#285929", "#4f8a3e"), k=5)))
 
     # Foreground sandstone boulder terrace with endemic Heliamphora pitcher plants & Oreophrynella pebble toad
     fg_rock = [(0, 238), (95, 240), (142, 248), (162, 278), (135, 300), (0, 300)]
@@ -2835,7 +3156,7 @@ def build_tepui(labels):
 
 
 def build_cataracts(labels):
-    """Multi-tiered roaring basalt cataracts (Iguazú / Rio Esmeralda style) with rock steps, spray cauldron, rainbow, and toucan."""
+    """Multi-tiered roaring basalt cataracts (Iguazú / Rio Esmeralda style) with 3D columnar basalt cliffs, spray cauldron, rainbow, and toucan."""
     s = vignette("cataracts", 109)
     rng = s.rng
     sky(s, [(0, "#468cc8"), (0.55, "#94c6e4"), (1, "#dcf0f6")], h=118)
@@ -2848,14 +3169,21 @@ def build_cataracts(labels):
     s.add(el("rect", x=0, y=88, width=480, height=26, fill=s.linear("upriv", [(0, "#2f6359"), (1, "#488c7e")])))
     s.add(water_lines(rng, 0, 480, 91, 110, 26, col="#e0f4f0", op=0.55))
 
-    # Columnar flood-basalt canyon wall with stepped horizontal terrace ledges
+    # Columnar flood-basalt canyon wall with stepped 3D polygonal columns and terrace shelves
     canyon_lip = [(0, 112), (90, 115), (180, 110), (270, 114), (370, 110), (480, 114)]
-    s.add(el("path", d=smooth(canyon_lip) + " L480,242 L0,242Z", fill="#2d2623"))
-    basalt_cols = " ".join(f"M{n(x)},114 L{n(x)},238" for x in range(12, 475, 14))
-    s.add(el("path", d=basalt_cols, stroke="#1c1715", stroke_width=1.4, opacity=0.65))
-    s.add(el("path", d="M0,168 Q120,174 250,166 Q370,172 480,168 L480,182 L0,182Z", fill="#3d3430"))
-    # Craggy 3D basalt rock shelves & hanging cliff vegetation between the waterfalls (no flat ovals!)
-    for rx_, ry_, rw_ in ((108, 170, 28), (208, 172, 32), (322, 170, 30), (412, 173, 24)):
+    s.add(el("path", d=smooth(canyon_lip) + " L480,242 L0,242Z", fill="#28221f"))
+
+    # Alternating 3D shaded columnar basalt facets across the gorge wall
+    col_paths_sh, col_paths_lit = [], []
+    for x in range(4, 480, 14):
+        col_paths_sh.append(f"M{x},114 L{x + 7},114 L{x + 7},238 L{x},238Z")
+        col_paths_lit.append(f"M{x + 7},114 L{x + 14},114 L{x + 14},238 L{x + 7},238Z")
+    s.add(el("path", d=" ".join(col_paths_sh), fill="#1f1a18", opacity=0.75))
+    s.add(el("path", d=" ".join(col_paths_lit), fill="#3a302a", opacity=0.55))
+
+    # Stepped horizontal basalt flow tiers
+    s.add(el("path", d="M0,166 Q120,172 250,164 Q370,170 480,166 L480,178 L0,178Z", fill="#352b27"))
+    for rx_, ry_, rw_ in ((108, 168, 28), (208, 170, 32), (322, 168, 30), (412, 171, 24)):
         s.add(el("path", d=f"M{rx_ - rw_ * 0.5},{ry_} L{rx_ - rw_ * 0.35},{ry_ - 5} L{rx_ + rw_ * 0.38},{ry_ - 4} L{rx_ + rw_ * 0.5},{ry_} L{rx_ + rw_ * 0.3},{ry_ + 6} L{rx_ - rw_ * 0.3},{ry_ + 5}Z",
                  fill="#4a3f3a"))
         s.add(crown(rng, rx_, ry_ - 4, rw_ * 0.32, ("#1d4422", "#346e34", "#5c9c46"), k=4, flat=0.55, detail=False))
@@ -2950,9 +3278,9 @@ def build_elnicho(labels):
     for px, py, ph, plean in ((88, 96, 52, -5), (124, 98, 44, 4), (358, 94, 54, 6), (402, 96, 46, -4)):
         s.add(palm(rng, px, py, ph, plean, 18, cols=("#1f5727", "#488e3e"), trunk_col="#cfc9bc", royal=True, coconuts=False))
 
-    # Upper emerald stream feeding the travertine ledges
-    s.add(el("rect", x=45, y=96, width=390, height=22, fill=s.linear("uppool", [(0, "#1d6b63"), (1, "#359c8e")])))
-    s.add(water_lines(rng, 65, 415, 99, 114, 18, col="#dcf7f2", op=0.55))
+    # Upper emerald stream feeding the travertine ledges (seamless from edge to edge)
+    s.add(el("rect", x=0, y=96, width=480, height=22, fill=s.linear("uppool", [(0, "#1d6b63"), (1, "#359c8e")])))
+    s.add(water_lines(rng, 10, 470, 99, 114, 22, col="#dcf7f2", op=0.55))
 
     # Stepped limestone & calcified travertine canyon walls (organic craggy profile, no flat horizontal top bar)
     canyon_top = [(0, 102), (35, 96), (72, 112), (175, 110), (245, 113), (315, 110), (408, 112), (445, 98), (480, 104)]
@@ -3023,7 +3351,7 @@ def build_elnicho(labels):
     s.add(heliconia(22, 286, 46))
     s.add(heliconia(454, 288, 42))
 
-    # Mossy overhanging branch on the left with white Cuban Mariposa (Hedychium) blossom & perched Cuban Trogon (Tocororo)
+    # Mossy overhanging branch on the left with perched Cuban Trogon (Tocororo)
     s.add(el("path", d="M0,174 Q48,170 98,178 Q114,180 124,175", stroke="#4a3727", stroke_width=4.8, fill="none", stroke_linecap="round"))
     s.add(el("path", d="M0,172 Q48,168 96,176", stroke="#6c963e", stroke_width=1.8, fill="none", stroke_linecap="round"))
     s.add(bromeliad(rng, 88, 176, 9.5))
@@ -3035,7 +3363,7 @@ def build_anavilhanas(labels):
     """Anavilhanas Fluvial Archipelago and Encontro das Águas (Amazonas): emerald igapó islands in dark mirror Rio Negro channels meeting golden-ochre Solimões water with pink river dolphins."""
     s = vignette("anavilhanas", 111)
     rng = s.rng
-    sky(s, [(0, "#3b7cb8"), (0.45, "#88bee0"), (0.82, "#dfeef2"), (1, "#f7e6c4")], h=96)
+    sky(s, [(0, "#3675b2"), (0.45, "#82b8dc"), (0.82, "#dfeef2"), (1, "#f7e6c4")], h=96)
     sun(s, 392, 42, 16, glow="#ffebb5")
     s.add(cloud(rng, 118, 38, 92), cloud(rng, 275, 44, 82))
 
@@ -3054,16 +3382,25 @@ def build_anavilhanas(labels):
     ]
     s.add(el("path", d=smooth(encontro_pts) + "Z", fill=solimoes_grad))
 
-    # Swirling two-tone current eddies, sediment plumes, and foam line along the sinuous Rio Negro / Solimões interface
+    # Sinuous hydrodynamic shear plumes & boundary mixing along the Rio Negro / Solimões interface
     seam_pts = encontro_pts[:-1]
-    s.add(el("path", d=smooth(seam_pts), stroke="#dfb572", stroke_width=5.5, fill="none", opacity=0.55, filter=s.url("soft")))
-    s.add(el("path", d=smooth([(x - 5, y - 1.5) for x, y in seam_pts]), stroke="#162830", stroke_width=3.2, fill="none", opacity=0.7))
-    s.add(el("path", d=smooth([(x + 2, y + 0.5) for x, y in seam_pts]), stroke="#f7e6c4", stroke_width=1.6, fill="none", opacity=0.75))
-    # Small interlocking current tongues along the confluence seam
-    for cx_, cy_, rx_, col_ in ((365, 166, 16, "#16262e"), (312, 179, 18, "#d4a660"),
-                                (272, 196, 15, "#16262e"), (232, 218, 19, "#d4a660"),
-                                (185, 242, 16, "#16262e"), (138, 266, 18, "#d4a660")):
-        s.add(el("ellipse", cx=cx_, cy=cy_, rx=rx_, ry=3.2, fill=col_, opacity=0.72))
+    s.add(el("path", d=smooth(seam_pts), stroke="#dfb572", stroke_width=7.5, fill="none", opacity=0.45, filter=s.url("mist")))
+    s.add(el("path", d=smooth([(x - 4, y - 2) for x, y in seam_pts]), stroke="#102028", stroke_width=4.5, fill="none", opacity=0.6, filter=s.url("soft")))
+    s.add(el("path", d=smooth([(x + 2, y + 1) for x, y in seam_pts]), stroke="#f4dfb2", stroke_width=1.6, fill="none", opacity=0.75))
+
+    # Flowing fluid current filaments and interlocking sediment tongues
+    current_filaments = [
+        # Dark Rio Negro tongues feathering into the golden Solimões
+        ("M380,162 Q352,168 340,180 Q332,190 318,194", "#122026", 2.2, 0.7),
+        ("M295,198 Q270,205 258,218 Q248,228 235,234", "#122026", 2.0, 0.7),
+        ("M205,238 Q182,246 172,258 Q162,268 148,274", "#122026", 1.8, 0.65),
+        # Golden Solimões plumes curling into the dark Rio Negro
+        ("M400,168 Q375,176 362,166 Q350,158 335,164", "#d8ab68", 2.2, 0.65),
+        ("M312,204 Q288,214 276,204 Q262,196 248,202", "#d8ab68", 2.0, 0.65),
+        ("M222,244 Q198,254 186,244 Q174,236 160,242", "#d8ab68", 1.8, 0.6),
+    ]
+    for d_f, col_f, sw_f, op_f in current_filaments:
+        s.add(el("path", d=d_f, stroke=col_f, stroke_width=sw_f, fill="none", opacity=op_f, stroke_linecap="round"))
 
     # Helper to draw an elongated Anavilhanas flooded igapó forest island with dark water reflection & Mauritia palms
     def igapo_island(x0, x1, y_base, h_canopy, n_crowns, palms=()):
@@ -3321,7 +3658,7 @@ BUILDERS = {
     "chapada": build_chapada,
 }
 
-CONTAINER_RE = r'(<div[^>]*\bdata-nature-svg="{key}"[^>]*>\s*)<svg\b.*?</svg>(\s*</div>)'
+CONTAINER_RE = r'(<div[^>]*\bdata-nature-svg="{key}"[^>]*>\s*)(?:<svg\b.*?</svg>|<img\b[^>]*>)?(\s*</div>)'
 
 
 def validate(svg: str, key: str) -> None:
@@ -3331,26 +3668,35 @@ def validate(svg: str, key: str) -> None:
         sys.exit(f"Error: generated SVG '{key}' is invalid XML: {exc}")
 
 
-def inline(svg: str) -> str:
-    return re.sub(r'\s+xmlns="http://www\.w3\.org/2000/svg"', "", svg, count=1)
-
-
 def update_pages(rendered: dict[str, dict[str, str]]) -> None:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from build_pages import format_and_remove_empty_lines
 
+    dims = {
+        "transect": (1600, 600),
+        "reef": (1200, 720),
+        "rainforest": (1200, 720),
+        "highlands": (1200, 700),
+    }
+    default_dim = (480, 300)
+
     for lang in ("en", "hu"):
         path = ROOT / lang / "nature.html"
         text = path.read_text(encoding="utf-8")
-        for key, svg in rendered[lang].items():
+        for key in BUILDERS.keys():
+            w, h = dims.get(key, default_dim)
+            alt_txt = LABELS[lang]["aria"].get(key, "")
+            src_file = f"transect-{lang}.svg" if key == "transect" else f"{key}.svg"
+            img_tag = f'<img class="nature-ill" src="../icons/nature/{src_file}" alt="{html.escape(alt_txt, quote=True)}" width="{w}" height="{h}" loading="lazy" />'
             pattern = re.compile(CONTAINER_RE.format(key=key), re.S)
             match = pattern.search(text)
             if not match:
                 print(f"  ! no data-nature-svg=\"{key}\" container in {path.relative_to(ROOT)}")
                 continue
-            text = text[: match.start()] + match.group(1) + inline(svg) + match.group(2) + text[match.end():]
-        path.write_text(format_and_remove_empty_lines(text), encoding="utf-8")
-        print(f"Updated {path.relative_to(ROOT)}")
+            text = text[: match.start()] + match.group(1) + img_tag + match.group(2) + text[match.end():]
+        formatted = format_and_remove_empty_lines(text)
+        path.write_text(formatted, encoding="utf-8")
+        print(f"Updated and formatted {path.relative_to(ROOT)}")
 
 
 def main() -> None:
@@ -3361,9 +3707,18 @@ def main() -> None:
             svg = builder(LABELS[lang])
             validate(svg, key)
             rendered[lang][key] = svg
-        out = OUT_DIR / f"{key}.svg"
-        out.write_text(rendered["en"][key] + "\n", encoding="utf-8")
-        print(f"Generated {out.relative_to(ROOT)} ({len(rendered['en'][key]) / 1024:.1f} KB)")
+        if key == "transect":
+            out_en = OUT_DIR / "transect-en.svg"
+            out_hu = OUT_DIR / "transect-hu.svg"
+            out_std = OUT_DIR / "transect.svg"
+            out_en.write_text(rendered["en"][key] + "\n", encoding="utf-8")
+            out_hu.write_text(rendered["hu"][key] + "\n", encoding="utf-8")
+            out_std.write_text(rendered["en"][key] + "\n", encoding="utf-8")
+            print(f"Generated {out_en.relative_to(ROOT)} and {out_hu.relative_to(ROOT)}")
+        else:
+            out = OUT_DIR / f"{key}.svg"
+            out.write_text(rendered["en"][key] + "\n", encoding="utf-8")
+            print(f"Generated {out.relative_to(ROOT)} ({len(rendered['en'][key]) / 1024:.1f} KB)")
     if "--no-inject" not in sys.argv:
         update_pages(rendered)
 
