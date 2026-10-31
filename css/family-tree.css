@@ -372,6 +372,15 @@
     font-size: 2rem;
     color: var(--accent);
     line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heirs-icon svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    stroke: currentColor;
 }
 
 .heirs-body h4 {
@@ -700,6 +709,12 @@
     font-size: 1.5rem;
     color: var(--accent);
     margin-bottom: 1.25rem;
+}
+
+.matrix-icon-wrap svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
 }
 
 .matrix-card h3 {
