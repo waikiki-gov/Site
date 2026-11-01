@@ -138,4 +138,9 @@ All motion follows natural organic physics with custom cubic Bézier curves:
 - **Keyboard Navigation**: Clear `:focus-visible` rings with `--coral-500` glow and `outline-offset: 3px`.
 - **Multilingual Semantics**: Proper `hreflang="hu"` and `hreflang="en"` links on language selectors; `lang` attributes on `<html>`.
 - **Responsive Media Queries**: Desktop-first architecture. Base rules define large-screen styles; adaptations for smaller viewports use `@media (max-width: ...)` queries, avoiding `min-width` media queries.
+- **Compact CSS Comments**: Keep stylesheet comments concise, single-line, and free of decorative ASCII banners or `=` marks:
+  - Remove redundant design system subtitles (e.g., `/* Tropical Luxe and Lagoon Night Design System */` and similar).
+  - Simplify stylesheet titles by removing verbose prefixes/suffixes (e.g., `/* Sovereign Nation of Waikiki - Royal Family Tree Stylesheet */` » `/* Royal Family Tree Stylesheet */` and similar).
+  - Compact multi-line comments into clean, single-line comments without `=` marks.
+  - Standardize dark mode comments (`Lagoon Night (Dark Mode) Theme Engine` » `Dark Mode`).
 - **Remove unused css**: `purgecss --css css/*.css --output css/ --content **/*.html **/*.js`

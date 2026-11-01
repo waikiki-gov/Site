@@ -37,44 +37,44 @@ LOCALES = ("en", "hu")
 # --------------------------------------------------------------------------- #
 GROUPS = [
     ("nation", {"en": "Nation", "hu": "Nemzet"}, [
-        ("index", {"en": "Home", "hu": "Főoldal"}),
-        ("overview", {"en": "Overview", "hu": "Áttekintés"}),
-        ("history", {"en": "History", "hu": "Történelem"}),
-        ("society", {"en": "Society", "hu": "Társadalom"}),
-        ("culture", {"en": "Culture", "hu": "Kultúra"}),
-        ("ideology", {"en": "Ideology", "hu": "Ideológia"}),
+        ("index", {"en": "Home", "hu": "Főoldal"}, None),
+        ("overview", {"en": "Overview", "hu": "Áttekintés"}, None),
+        ("history", {"en": "History", "hu": "Történelem"}, "history"),
+        ("society", {"en": "Society", "hu": "Társadalom"}, "society"),
+        ("culture", {"en": "Culture", "hu": "Kultúra"}, "society"),
+        ("ideology", {"en": "Ideology", "hu": "Ideológia"}, None),
     ]),
     ("governance", {"en": "Governance", "hu": "Kormányzás"}, [
-        ("government", {"en": "Government", "hu": "Kormány"}),
-        ("leadership", {"en": "Leadership", "hu": "Vezetés"}),
-        ("parties", {"en": "Politics", "hu": "Politika"}),
-        ("constitution", {"en": "Constitution", "hu": "Alkotmány"}),
-        ("military", {"en": "Military", "hu": "Hadsereg"}),
-        ("diplomacy", {"en": "Diplomacy", "hu": "Diplomácia"}),
+        ("government", {"en": "Government", "hu": "Kormány"}, "government"),
+        ("leadership", {"en": "Leadership", "hu": "Vezetés"}, "government"),
+        ("parties", {"en": "Politics", "hu": "Politika"}, "government"),
+        ("constitution", {"en": "Constitution", "hu": "Alkotmány"}, "government"),
+        ("military", {"en": "Military", "hu": "Hadsereg"}, "government"),
+        ("diplomacy", {"en": "Diplomacy", "hu": "Diplomácia"}, "government"),
     ]),
     ("prosperity", {"en": "Prosperity", "hu": "Jólét"}, [
-        ("economy", {"en": "Economy", "hu": "Gazdaság"}),
-        ("banking-system", {"en": "Banking System", "hu": "Bankrendszer"}),
-        ("wealth-fund", {"en": "Wealth Fund", "hu": "Vagyonalap"}),
-        ("citizenship", {"en": "Citizenship", "hu": "Állampolgárság"}),
-        ("infrastructure", {"en": "Infrastructure", "hu": "Infrastruktúra"}),
-        ("space-research", {"en": "Space Research", "hu": "Űrkutatás"}),
+        ("economy", {"en": "Economy", "hu": "Gazdaság"}, "economy"),
+        ("banking-system", {"en": "Banking System", "hu": "Bankrendszer"}, "economy"),
+        ("wealth-fund", {"en": "Wealth Fund", "hu": "Vagyonalap"}, "economy"),
+        ("citizenship", {"en": "Citizenship", "hu": "Állampolgárság"}, "economy"),
+        ("infrastructure", {"en": "Infrastructure", "hu": "Infrastruktúra"}, "economy"),
+        ("space-research", {"en": "Space Research", "hu": "Űrkutatás"}, "economy"),
     ]),
     ("royal", {"en": "Royal Family", "hu": "Királyi Család"}, [
-        ("dynasty", {"en": "The Dynasty", "hu": "A Dinasztia"}),
-        ("family-tree", {"en": "Family Tree", "hu": "Családfa"}),
-        ("chease-and-jessica", {"en": "Chease and Jessica", "hu": "Chease és Jessica"}),
-        ("raimondo-and-selena", {"en": "Raimondo and Selena", "hu": "Raimondo és Selena"}),
-        ("angelina-and-taylor", {"en": "Angelina and Taylor", "hu": "Angelina és Taylor"}),
-        ("jennifer-and-tyler", {"en": "Jennifer and Tyler", "hu": "Jennifer és Tyler"}),
+        ("dynasty", {"en": "The Dynasty", "hu": "A Dinasztia"}, "dynasty"),
+        ("family-tree", {"en": "Family Tree", "hu": "Családfa"}, "dynasty"),
+        ("chease-and-jessica", {"en": "Chease and Jessica", "hu": "Chease és Jessica"}, "dynasty"),
+        ("raimondo-and-selena", {"en": "Raimondo and Selena", "hu": "Raimondo és Selena"}, "dynasty"),
+        ("angelina-and-taylor", {"en": "Angelina and Taylor", "hu": "Angelina és Taylor"}, "dynasty"),
+        ("jennifer-and-tyler", {"en": "Jennifer and Tyler", "hu": "Jennifer és Tyler"}, "dynasty"),
     ]),
     ("visit", {"en": "Visit", "hu": "Látogatás"}, [
-        ("tourism", {"en": "Tourism", "hu": "Turizmus"}),
-        ("sights", {"en": "Sights", "hu": "Látnivalók"}),
-        ("nature", {"en": "Nature", "hu": "Természet"}),
-        ("travel-guide", {"en": "Travel Guide", "hu": "Utazási Kalauz"}),
-        ("visa", {"en": "Visa and Entry", "hu": "Vízum és belépés"}),
-        ("faq", {"en": "FAQ", "hu": "GYIK"}),
+        ("tourism", {"en": "Tourism", "hu": "Turizmus"}, "tourism"),
+        ("sights", {"en": "Sights", "hu": "Látnivalók"}, "tourism"),
+        ("nature", {"en": "Nature", "hu": "Természet"}, "tourism"),
+        ("travel-guide", {"en": "Travel Guide", "hu": "Utazási Kalauz"}, "tourism"),
+        ("visa", {"en": "Visa and Entry", "hu": "Vízum és belépés"}, "tourism"),
+        ("faq", {"en": "FAQ", "hu": "GYIK"}, None),
     ]),
 ]
 
@@ -101,7 +101,7 @@ BIOS = ["bio/raimondo", "bio/selena", "bio/angelina", "bio/taylor"]
 # Reading order used for the "next chapter" banner.
 SEQUENCE: list[str] = []
 for _, _, _pages in GROUPS:
-    for _slug, _ in _pages:
+    for _slug, *_ in _pages:
         SEQUENCE.append(_slug)
         if _slug in COUPLES:
             SEQUENCE.extend(f"{_slug}{suffix}" for suffix, _ in COUPLE_TABS[1:])
@@ -191,7 +191,7 @@ def strip_tags(fragment: str) -> str:
 
 def label_for(slug: str, locale: str) -> str | None:
     for _, _, pages in GROUPS:
-        for page_slug, labels in pages:
+        for page_slug, labels, *_ in pages:
             if page_slug == slug:
                 return labels[locale]
     return None
@@ -204,9 +204,22 @@ def group_for(slug: str) -> str:
         if base.startswith(couple):
             return "royal"
     for key, _, pages in GROUPS:
-        if any(page_slug == base for page_slug, _ in pages):
+        if any(page_slug == base for page_slug, *_ in pages):
             return key
     return "nation"
+
+def primary_nav_for(slug: str) -> str | None:
+    base = slug.split("/")[-1]
+    if slug.startswith("bio/") or base in ("raimondo-and-bailey-detailed"):
+        return "dynasty"
+    for couple in COUPLES:
+        if base.startswith(couple):
+            return "dynasty"
+    for _, _, pages in GROUPS:
+        for page_slug, _, *rest in pages:
+            if page_slug == base:
+                return rest[0] if rest else None
+    return None
 
 def group_label(key: str, locale: str) -> str:
     for group_key, labels, _ in GROUPS:
@@ -232,6 +245,7 @@ class Page:
         self.root_prefix = "../" * self.depth
         self.locale_prefix = "../" * (self.depth - 1)
         self.group = group_for(self.slug)
+        self.primary_nav = primary_nav_for(self.slug)
 
     def href(self, slug: str) -> str:
         return f"{self.locale_prefix}{slug}.html"
@@ -277,13 +291,13 @@ def build_header(page: Page) -> str:
     other = "hu" if loc == "en" else "en"
     nav_links = []
     for slug, labels in PRIMARY_NAV:
-        current = ' aria-current="page"' if (slug == page.slug or (slug == "dynasty" and page.group == "royal")) else ""
+        current = ' aria-current="page"' if (slug == page.slug or slug == page.primary_nav) else ""
         nav_links.append(f'<a href="{page.href(slug)}"{current}>{esc(labels[loc])}</a>')
 
     groups_html = []
     for _, labels, pages in GROUPS:
         items = []
-        for slug, page_labels in pages:
+        for slug, page_labels, *_ in pages:
             current = ' aria-current="page"' if slug == page.slug or couple_for(page.slug) == slug else ""
             items.append(f'<li><a href="{page.href(slug)}"{current}>{esc(page_labels[loc])}</a></li>')
         groups_html.append(
@@ -347,7 +361,7 @@ def build_footer(page: Page) -> str:
     loc = page.locale
     cols = []
     for _, labels, pages in GROUPS:
-        items = "".join(f'<li><a href="{page.href(slug)}">{esc(page_labels[loc])}</a></li>' for slug, page_labels in pages)
+        items = "".join(f'<li><a href="{page.href(slug)}">{esc(page_labels[loc])}</a></li>' for slug, page_labels, *_ in pages)
         cols.append(f'<div class="footer-col"><h2>{esc(labels[loc])}</h2><ul>{items}</ul></div>')
     other = "hu" if loc == "en" else "en"
     return f"""<!-- @chrome:footer -->

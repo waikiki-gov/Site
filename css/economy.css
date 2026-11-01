@@ -1,4 +1,4 @@
-/* Waikiki Economy and Data Visualization Stylesheet - Tropical Luxe and Lagoon Night Edition */
+/* Economy and Data Visualization Stylesheet */
 
 .stat-card .stat-number {
   margin: 0.4rem 0;
@@ -321,7 +321,7 @@
     }
 }
 
-/* Lagoon Night (Dark Mode) */
+/* Dark Mode */
 .body-dark .data-viz-container,
 .body-dark .data-viz-container-half {
     background: var(--surface-card);

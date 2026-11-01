@@ -1,6 +1,6 @@
 # Editorial, Style & Orthography Guidelines
 
-This document details the stylistic conventions, tone of voice, linguistic rules, typography, and structural invariants governing all content on the Sovereign Nation of Waikiki portal.
+This document details the stylistic conventions, tone of voice, linguistic rules, typography, design tokens, and structural invariants governing all content on the Sovereign Nation of Waikiki portal.
 
 ---
 
@@ -26,7 +26,7 @@ The site represents the official public face of a modern, sovereign constitution
 
 ---
 
-## 3. Ampersand Policy (AGENTS.md)
+## 3. Ampersand Policy (AGENTS.md & STYLE-GUIDELINES.md)
 
 1. **Rule**: In titles, section headings, card headers, labels, navigation, and copy, always use the spelled-out word:
    - **Hungarian**: Use `és`
@@ -72,6 +72,36 @@ The site represents the official public face of a modern, sovereign constitution
   - *Bailey Pickett* $\rightarrow$ *Baileyvel*, *Pickett-tel*
   - *Tyler Posey* $\rightarrow$ *Poseyval*, *Tylerrel*
 
+### D. Igényes Nyelvhasználat & Államférfiúi Regiszter
+A szövegek a szuverén Waikiki hivatalos állami portáljának anyagát képezik, ezért megfogalmazásuknak méltóságteljesnek, választékosnak és gördülékenynek kell lennie:
+- Kerüld a lapos, semmitmondó vagy hivatali szürkeségű mondatokat.
+- Használj kifejező igéket és plasztikus jelzőket a sematikus fordulatok helyett.
+- Kiemelt figyelemmel ügyelj a tudományos, űrkutatási, alpesi mérnöki és természetvédelmi terminusok pontos, természetes beillesztésére.
+
+### E. Szóismétlések Szigorú Kiküszöbölése (Anti-Repetition)
+Egászmás melletti vagy közeli mondatokban, felsorolásokban és kártyablokkokban tilos ugyanazt a tartalmas szót vagy szótövet megismételni. Használj gazdag szinonimakészletet:
+
+| Gyakran ismételt kifejezés | Választékos magyar alternatívák |
+| :--- | :--- |
+| **biztosít** | szavatol, garantál, elősegíti, megalapozza, elmélyíti, záloga, szolgálja, nyújt |
+| **számára** | részére, javára, polgároknak, lakosoknak, közösségnek, rétegnek |
+| **kiemelkedő** | rangos, meghatározó, mérvadó, páratlan, élenjáró, számottevő, fenséges |
+| **fejlesztés** | beruházás, korszerűsítés, bővítés, finomhangolás, modernizáció, gyarapodás |
+| **lehetőséget nyújt** | utat nyit, teret enged, felvértezi, felkínálja, megnyitja kapuit, elérhetővé teszi |
+| **zártkörű** | szűk körű, privát, meghitt, kötetlen, bizalmas, diszkrét |
+| **területén** | szférájában, berkeiben, vonzáskörzetében, mezsgyéjén, horizontján |
+| **különleges** | rendhagyó, egyedülálló, ritka, sajátos arculatú, unikális |
+
+### F. Magyartalan Kifejezések és Szerkezetek Felszámolása
+1. **Kerüld a terpeszkedő kifejezéseket és passzív igeneves szerkezeteket**:
+   - Kerüld a „kerül lebonyolításra / átadásra / bemutatásra” típusú fordulatokat: használd az aktív igéket (*szervezik*, *adják át*, *mutatják be*).
+   - Kerüld a felesleges elöljárószerű kifejezéseket (*„megvalósításra kerülő beruházás tekintetében”* $\rightarrow$ *„a megvalósuló beruházásban”*).
+2. **Pleonazmusok és szóhalmozások megszüntetése**:
+   - A nyilvánvaló vagy kétszeresen leírt tulajdonságokat finomítsd (pl. *„színpompás morpho-pillangók”* helyett *„lazúrkék morpho-pillangók”* vagy *„Morpho-pillangók”*).
+3. **Természetes mondatfűzés és magyar szórend**:
+   - A mondat hangsúlyos része kerüljön az ige elé (fókuszpozíció).
+   - Ügyelj az igekötők természetes elválására és helyzetére.
+
 ---
 
 ## 5. English Style & Dialect Conventions
@@ -95,19 +125,68 @@ The site represents the official public face of a modern, sovereign constitution
    - Section 2: `<section id="..." class="light-bg fade-in">`
    - Section 3: `<section id="..." class="fade-in">`
 4. **Card Structure**:
-   - Each card in a grid contains an optional `<span class="card-icon">` (when appropriate for the domain; omitted for rockets/schematics), an optional `<span class="spec-badge">`, an `<h3>` heading, a `<p>` description, and an optional `<ul class="spec-list">`.
+   - Each card in a grid contains an optional `<span class="card-icon">` (omitted for technical schematics/rockets), an optional `<span class="spec-badge">`, an `<h3>` heading, a `<p>` description, and an optional `<ul class="spec-list">`.
 5. **Page Titles**: Must end with the standardized branding suffix:
    - Hungarian: `<title>Oldalcím — Waikiki Szuverén Állam</title>`
    - English: `<title>Page Title — Sovereign Nation of Waikiki</title>`
 
 ---
 
-## 7. Automated Audit & Formatting Tooling
+## 7. Style Guidelines & Design System Specifications (`STYLE-GUIDELINES.md`)
 
-Always execute the automated build and audit scripts after any content update:
+### A. Typography Hierarchy
+- **Display Serif**: `Fraunces` (Google Fonts: 400, 600, 700, 800, italic, optical size 144)
+  - Insignia, hero titles (`.hero-title`), section headlines (`.section-title`), stat numbers (`.stat-number`), card titles (`.card h3`), blockquotes.
+- **Body & Interface**: `Manrope` (Google Fonts: 400, 500, 600, 700, 800)
+  - Narrative body text (`p`, `.narrative-text`), navigation links, buttons, table data, subnav rails, chips.
+- **Typographic Scale**:
+  - Hero Title (`.hero-title`): `clamp(2.75rem, 6vw, 4.5rem)`, weight 800, line-height 1.05.
+  - Section Title (`.section-title`): `clamp(2rem, 4vw, 3rem)`, weight 700, line-height 1.15.
+  - Card Title (`.card h3`): `clamp(1.25rem, 2vw, 1.5rem)`, weight 700, line-height 1.25.
+  - Hero Lead (`.hero-lead`): `clamp(1.1rem, 1.6vw, 1.35rem)`, weight 400, line-height 1.65.
+  - Body Text (`p`, `.narrative-text`): `clamp(1rem, 1.3vw, 1.12rem)`, weight 400, line-height 1.8.
+  - Eyebrow (`.hero-eyebrow`): `0.85rem`, weight 700, uppercase, tracking `0.18em`.
+
+### B. Color Tokens & Palette
+- **Primary Tokens**:
+  - Canvas: `--sand-50: #FBF7F0`
+  - Secondary Surface: `--sand-100: #F5EDE1`
+  - Dividers: `--sand-200: #E8DCB8`
+  - Brand Navy: `--primary-dark: #001830`, `--secondary: #002244`, `--primary: #003366`, `--primary-light: #1A528F`
+  - Azure & Gold: `--tertiary: #6BA4D9`, `--accent: #C28A29`, `--accent-hover: #C95A41`, `--accent-light: #F5C46E`, `--accent-dark: #78531A`
+- **Midnight Sovereign (Dark Mode)**:
+  - Canvas: `#0A1420` · Surface Card: `#0E2035` · Surface Subtle: `#091626`
+  - Text: Primary `#FBF7F0`, Secondary `#C2CDD8` · Accents: Glow `#6BA4D9`, Coral `#E3735A`
+- **Province Identifiers**:
+  - Waikiki: `--waikiki: #1A528F` · Amazonia: `--amazonia: #4E8B5A` · Brazilia: `--brazilia: #C28A29`
+
+### C. Desktop-First Media Queries
+- Base CSS rules define styles for large (desktop) screens.
+- Media queries adapt for tablet and mobile strictly via `@media (max-width: ...)` breakpoints.
+- Avoid using `min-width` media queries.
+
+### D. Motion & Kinematics
+- Curves: `ease-out: cubic-bezier(0.16, 1, 0.3, 1)`, `spring: cubic-bezier(0.34, 1.56, 0.64, 1)`, `curtain: cubic-bezier(0.76, 0, 0.24, 1)`.
+- Core Motion: Curtain Navigation (400ms), Word-Split Hero Reveal (`.split-word`), Scroll Reveal (`.fade-in`, `.revealed`), Spotlight Tracking Cards, Stat Number Count-Up, Smart Header, Back-to-Top Progress Ring.
+
+### E. Accessibility & Landmarks
+- Required Landmarks: `<header>`, `<nav>`, `<main id="main">`, `<section>`, `<article>`, `<footer>`.
+- Contrast: Strict minimum 4.5:1 text-to-background ratio in both light and dark modes.
+- Respect `@media (prefers-reduced-motion: reduce)`.
+- Keyboard focus visible: `--coral-500` glow with `outline-offset: 3px`.
+
+---
+
+## 8. Automated Audit & Formatting Tooling
+
+Always execute the automated build and audit scripts after any content or style update:
 - **Format and clean single file**:
   ```bash
   python3 scripts/build_pages.py --format <path/to/page.html>
+  ```
+- **Format and clean all pages**:
+  ```bash
+  python3 scripts/build_pages.py --format --all
   ```
 - **Run copy quality & spell checker**:
   ```bash
@@ -116,4 +195,12 @@ Always execute the automated build and audit scripts after any content update:
 - **Run bilingual parity checker**:
   ```bash
   python3 .agents/skills/locale-sync/scripts/sync_check.py <path/to/page.html>
+  ```
+- **Run text balance auditor**:
+  ```bash
+  python3 .agents/skills/text-balance/scripts/text_balance.py --static <path/to/page.html>
+  ```
+- **Clean and purge unused CSS**:
+  ```bash
+  purgecss --css css/*.css --output css/ --content **/*.html **/*.js --keyframes
   ```

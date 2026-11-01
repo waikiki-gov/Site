@@ -1,4 +1,4 @@
-/* Waikiki Biographies Stylesheet - Tropical Luxe and Lagoon Night Edition */
+/* Biographies Stylesheet */
 
 /* Narrative Container */
 #narrative {
@@ -76,7 +76,7 @@
     max-width: 900px;
 }
 
-/* Lagoon Night (Dark Mode) */
+/* Dark Mode */
 .body-dark #narrative {
     background: var(--neutral-900);
 }

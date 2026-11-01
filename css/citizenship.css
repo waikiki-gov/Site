@@ -1,4 +1,4 @@
-/* Waikiki Citizenship and Immigration Stylesheet — Sovereign Nation of Waikiki */
+/* Citizenship and Immigration Stylesheet */
 
 .page-citizenship,
 .group-prosperity {
@@ -141,7 +141,7 @@
     line-height: 1.65;
 }
 
-/* Dark Mode Support */
+/* Dark Mode */
 .body-dark .tier-icon {
     background: rgba(255, 255, 255, 0.06);
     border-color: var(--tertiary-border);

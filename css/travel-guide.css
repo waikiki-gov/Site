@@ -1,4 +1,4 @@
-/* Travel Guide - Sovereign Nation of Waikiki - Tropical Luxe and Lagoon Night Edition */
+/* Travel Guide Stylesheet */
 
 .card-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));

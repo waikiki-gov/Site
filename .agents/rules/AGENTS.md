@@ -8,6 +8,11 @@
 ## CSS & Media Query Guidelines
 
 1. **Desktop-First Media Queries**: Write default styles for large screens (desktop). Use `@media (max-width: ...)` queries to adapt for smaller screens, avoiding `min-width` media queries.
+2. **Compact CSS Comments**: Keep stylesheet comments concise, single-line, and free of decorative ASCII banners or `=` marks:
+   - Remove redundant design system subtitles (e.g., `/* Tropical Luxe and Lagoon Night Design System */` and similar).
+   - Simplify stylesheet titles by removing verbose prefixes and suffixes (`/* Sovereign Nation of Waikiki - Royal Family Tree Stylesheet */` » `/* Royal Family Tree Stylesheet */` and similar).
+   - Compact multi-line comments into clean, single-line comments without `=` marks.
+   - Standardize dark mode comments (`Lagoon Night (Dark Mode) Theme Engine` » `Dark Mode`).
 
 ## HTML Page Builds and Edits
 

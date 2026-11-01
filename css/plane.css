@@ -1,4 +1,4 @@
-/* Sovereign Nation of Waikiki — Diplomatic Fleet (Plane Showcase) Stylesheet */
+/* Diplomatic Fleet (Plane Showcase) Stylesheet */
 
 /* Page layout container */
 .plane-fleet-section {
@@ -677,7 +677,7 @@
   margin: 0;
 }
 
-/* Dark mode styling */
+/* Dark Mode */
 .body-dark .aircraft-card {
   border-color: var(--white-alpha-12);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);

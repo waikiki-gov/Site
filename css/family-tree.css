@@ -1,5 +1,4 @@
-/* Sovereign Nation of Waikiki - Royal Family Tree Stylesheet */
-/* Tropical Luxe and Lagoon Night Design System */
+/* Royal Family Tree Stylesheet */
 
 /* Tree Container and Controls */
 .tree-hero-badge {
@@ -784,9 +783,7 @@
     margin: 0;
 }
 
-/* ==========================================================================
-   Desktop-First Media Queries (NO min-width queries!)
-   ========================================================================== */
+/* Desktop-First Media Queries */
 
 @media (max-width: 1200px) {
     .pedigree-tree {
@@ -809,23 +806,107 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+    .pedigree-viewport {
+        overflow-x: visible;
+        padding: 0.5rem 0 2rem;
+    }
+
+    .pedigree-tree {
+        min-width: 0;
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
     .overview-pillars-grid {
         grid-template-columns: 1fr;
     }
 
-    .tree-branches-row {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .tree-generation {
+        margin-bottom: 2rem;
+    }
+
+    .generation-label {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+        padding: 0.35rem 1rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+    }
+
+    .tree-roots-cluster {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+        width: 100%;
+    }
+
+    .tree-sovereign-pair {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 1.75rem 1.25rem 1.25rem;
+    }
+
+    .tree-marriage-badge {
+        max-width: calc(100% - 1.5rem);
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+        padding: 0.35rem 0.85rem;
+        border-radius: var(--radius-sm);
     }
 
     .tree-fork-line {
         display: none;
     }
 
-    .tree-sovereign-pair {
+    .tree-branches-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .tree-branch-column {
+        width: 100%;
+        padding: 1.5rem 1.25rem;
+        box-sizing: border-box;
+    }
+
+    .branch-pillar-tag {
+        text-align: center;
+        white-space: normal;
+        line-height: 1.35;
+    }
+
+    .branch-pair-grid {
+        width: 100%;
+        gap: 0.85rem;
+    }
+
+    .tree-node-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tree-node-card.founder-card {
+        max-width: 100%;
+    }
+
+    .tree-node-card.ancestor-card {
+        max-width: 100%;
+    }
+
+    .heirs-strip {
         flex-direction: column;
-        gap: 1rem;
+        width: 100%;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
     }
 }
 
@@ -846,9 +927,20 @@
         height: 230px;
     }
 
-    .tree-roots-cluster {
-        flex-direction: column;
-        align-items: center;
+    .tree-connector-down {
+        height: 1.75rem;
+    }
+
+    .tree-sovereign-pair {
+        padding: 1.75rem 1rem 1rem;
+    }
+
+    .tree-branch-column {
+        padding: 1.25rem 1rem;
+    }
+
+    .branch-pillar-tag {
+        font-size: 0.72rem;
     }
 
     .dynasty-timeline::before {
@@ -867,16 +959,108 @@
 }
 
 @media (max-width: 480px) {
+    .pedigree-tree {
+        max-width: 100%;
+    }
+
+    .tree-generation {
+        margin-bottom: 1.5rem;
+    }
+
+    .generation-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        padding: 0.35rem 0.85rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .tree-sovereign-pair {
+        padding: 1.6rem 0.85rem 0.85rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .tree-marriage-badge {
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
+        padding: 0.25rem 0.65rem;
+        top: -10px;
+    }
+
+    .tree-connector-down {
+        height: 1.5rem;
+    }
+
+    .tree-branch-column {
+        padding: 1rem 0.85rem;
+        border-radius: var(--radius);
+        gap: 0.85rem;
+    }
+
+    .branch-pair-grid {
+        gap: 0.75rem;
+    }
+
+    .tree-node-card {
+        padding: 0.85rem 0.95rem;
+        gap: 0.75rem;
+    }
+
+    .tree-node-card.founder-card {
+        padding: 0.95rem 1rem;
+    }
+
+    .founder-card .tree-node-thumb {
+        width: 68px;
+        height: 68px;
+    }
+
+    .tree-node-thumb {
+        width: 58px;
+        height: 58px;
+    }
+
+    .ancestor-card .tree-node-thumb {
+        width: 46px;
+        height: 46px;
+    }
+
+    .tree-node-name {
+        font-size: 1.05rem;
+    }
+
+    .founder-card .tree-node-name {
+        font-size: 1.15rem;
+    }
+
+    .tree-node-role {
+        font-size: 0.68rem;
+    }
+
+    .tree-node-dates {
+        font-size: 0.75rem;
+    }
+
+    .tree-node-office {
+        font-size: 0.74rem;
+        line-height: 1.3;
+    }
 
     .heirs-strip {
-        flex-direction: column;
-        padding: 1.25rem 1rem;
+        padding: 1.15rem 0.95rem;
+        gap: 0.75rem;
+    }
+
+    .heirs-body h4 {
+        font-size: 1.08rem;
+    }
+
+    .heirs-body p {
+        font-size: 0.9rem;
+        line-height: 1.55;
     }
 }
 
-/* ==========================================================================
-   Lagoon Night (Dark Mode) Theme Engine
-   ========================================================================== */
+/* Dark Mode */
 
 .body-dark .tree-hero-badge {
     background: rgba(194, 138, 41, 0.25);

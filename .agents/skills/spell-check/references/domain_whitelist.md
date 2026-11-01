@@ -53,22 +53,7 @@ This document catalogues canonical characters, official titles, geographic regio
 
 ---
 
-## 4. Botanical & Zoological Species
-
-- **Flora**:
-  - *Puya raimondii*: Queen of the Andes, giant bromeliad.
-  - *Frailejón (Espeletia)*: Endemic high-altitude rosette plant of the páramo.
-  - *Victoria amazonica*: Giant Amazonian water lily.
-  - *Heliamphora*: Sun pitcher plant endemic to tepui plateaus.
-  - *Ipê (Handroanthus)*: National flowering hardwood tree.
-  - *Mandacaru (Cereus jamacaru)*: Iconic drought-resistant cactus of the Caatinga.
-- **Fauna & Marine Life**:
-  - *Morpho*: Iridescent blue morpho butterfly of the tropical rainforest.
-  - *Staghorn & Elkhorn Corals*: Keystone reef-building branching corals (*Acropora cervicornis*, *Acropora palmata*).
-
----
-
-## 5. Aeronautics, Space Exploration & Engineering
+## 4. Aeronautics, Space Exploration & Engineering
 
 - **Spacecraft & Launch Vehicles**:
   - **Delta III A / Delta III B**: Heavy-lift orbital launch vehicles.
@@ -79,28 +64,12 @@ This document catalogues canonical characters, official titles, geographic regio
 - **Space Agencies & Orbital Infrastructure**:
   - **WSA (Waikiki Space Agency / Waikiki Űrügynökség)**: Sovereign national space agency.
   - **WNSS (Waikiki National Space Station)**: Sovereign low-Earth orbit research complex.
-  - **NRHO (Near-Rectilinear Halo Orbit)**: Target orbital corridor for the permanent Lunar Orbital Station.
-- **Aviation & Marine Fleets**:
-  - **Supersonic & Suborbital**: Commercial supersonic fleet, transcontinental business jets.
-  - **Tiltrotor Fleet**: Dual-mode vertical takeoff and cruise aircraft for regional alpine transport.
-  - **Watermark Schematics**: Architectural SVG wireframe outlines embedded in fleet cards.
 
 ---
 
-## 6. Alpine Technology & Ski Engineering
-
-- **Pico Soberano Alpine Resort**: Premier high-altitude winter sports development.
-- **Cryo-Grid / Cryo-Glacier / Cryo-Dome**: Sub-surface cryogenic refrigeration grid preserving year-round ski glaciers.
-- **Heli-Hub**: Specialized alpine helicopter and tiltrotor passenger terminal.
-- **Snowpark & Superpipe**: World-class Olympic-spec alpine acrobatic facilities.
-- **Pininfarina**: Architectural and cabin design studio partner.
-
----
-
-## 7. Economy, Finance & Institutional Infrastructure
+## 5. Economy, Finance & Institutional Infrastructure
 
 - **WUD (Waikiki Dollar)**: Sovereign national currency issued by the Central Bank.
-- **CBDC & Saphir**: National central bank digital currency and high-speed settlement network.
 - **GaiaNova**: Green investment and renewable technology holding founded by Princess Angelina.
 - **Walker Finance and Insurance Holding**: Sovereign financial and insurance conglomerate founded by Queen Jessica.
 - **WEU (Waikiki Economics University)**: Flagship higher education institution.

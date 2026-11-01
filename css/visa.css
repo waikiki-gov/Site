@@ -1,6 +1,6 @@
-/* Visa and Entry Requirements Stylesheet — Sovereign Nation of Waikiki */
+/* Visa and Entry Requirements Stylesheet */
 
-/* 1. Category and Spec Cards */
+/* Category and Spec Cards */
 .visa-badge {
     display: inline-flex;
     align-items: center;
@@ -133,7 +133,7 @@
     text-align: right;
 }
 
-/* 2. Interactive Eligibility Checker */
+/* Interactive Eligibility Checker */
 .checker-wrapper {
     background: var(--surface);
     border: 1px solid var(--line);
@@ -518,7 +518,7 @@
     margin: 0;
 }
 
-/* 4. Customs and Allowances Grid */
+/* Customs and Allowances Grid */
 .customs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

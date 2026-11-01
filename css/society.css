@@ -1,4 +1,4 @@
-/* Waikiki Society and Provinces Stylesheet - Tropical Luxe and Lagoon Night Edition */
+/* Society and Provinces Stylesheet */
 
 /* Utility Icons */
 .check-icon {
@@ -527,7 +527,7 @@
     }
 }
 
-/* Lagoon Night (Dark Mode) */
+/* Dark Mode */
 .body-dark .map-container,
 .body-dark .province-info-panel,
 .body-dark .admin-card {

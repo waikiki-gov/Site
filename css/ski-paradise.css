@@ -1,4 +1,4 @@
-/* Ski Paradise - Sovereign Nation of Waikiki - Alpine Luxe and Glacier Night Edition */
+/* Ski Paradise Stylesheet */
 
 .card-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
