@@ -14,10 +14,11 @@ What it does for each page in en/, hu/, en/bio/ and hu/bio/:
 Generated regions are wrapped in <!-- @chrome:NAME --> markers so the script can
 be re-run safely after menu or copy changes:
 
-    python3 scripts/build_pages.py            # rebuild everything
-    python3 scripts/build_pages.py --check    # report pages that would change
-    python3 scripts/build_pages.py --empty    # generate an empty page (en/empty.html and hu/empty.html)
-    python3 scripts/build_pages.py --new SLUG # generate a new empty page with the given slug
+    python3 scripts/build_pages.py                  # rebuild everything and run structural check
+    python3 scripts/build_pages.py --check          # report pages that would change & run structural check
+    python3 scripts/build_pages.py --check-structure # run structural checks on all pages (or specified files)
+    python3 scripts/build_pages.py --empty          # generate an empty page (en/empty.html and hu/empty.html)
+    python3 scripts/build_pages.py --new SLUG       # generate a new empty page with the given slug
 """
 
 from __future__ import annotations
@@ -27,6 +28,7 @@ import html
 import re
 import subprocess
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -38,11 +40,11 @@ LOCALES = ("en", "hu")
 GROUPS = [
     ("nation", {"en": "Nation", "hu": "Nemzet"}, [
         ("index", {"en": "Home", "hu": "Főoldal"}, None),
-        ("overview", {"en": "Overview", "hu": "Áttekintés"}, None),
+        ("overview", {"en": "Overview", "hu": "Áttekintés"}, "history"),
         ("history", {"en": "History", "hu": "Történelem"}, "history"),
         ("society", {"en": "Society", "hu": "Társadalom"}, "society"),
         ("culture", {"en": "Culture", "hu": "Kultúra"}, "society"),
-        ("ideology", {"en": "Ideology", "hu": "Ideológia"}, None),
+        ("ideology", {"en": "Ideology", "hu": "Ideológia"}, "society"),
     ]),
     ("governance", {"en": "Governance", "hu": "Kormányzás"}, [
         ("government", {"en": "Government", "hu": "Kormány"}, "government"),
@@ -56,7 +58,7 @@ GROUPS = [
         ("economy", {"en": "Economy", "hu": "Gazdaság"}, "economy"),
         ("banking-system", {"en": "Banking System", "hu": "Bankrendszer"}, "economy"),
         ("wealth-fund", {"en": "Wealth Fund", "hu": "Vagyonalap"}, "economy"),
-        ("citizenship", {"en": "Citizenship", "hu": "Állampolgárság"}, "economy"),
+        ("citizenship", {"en": "Citizenship", "hu": "Állampolgárság"}, "society"),
         ("infrastructure", {"en": "Infrastructure", "hu": "Infrastruktúra"}, "economy"),
         ("space-research", {"en": "Space Research", "hu": "Űrkutatás"}, "economy"),
     ]),
@@ -772,9 +774,350 @@ def create_empty_page(
     target_file.write_text(template, encoding="utf-8")
     return target_file
 
+# --------------------------------------------------------------------------- #
+# Structural validation
+# --------------------------------------------------------------------------- #
+HTML5_TAGS = {
+    "a", "abbr", "address", "area", "article", "aside", "audio", "b", "base",
+    "bdi", "bdo", "blockquote", "body", "br", "button", "canvas", "caption",
+    "cite", "code", "col", "colgroup", "data", "datalist", "dd", "del",
+    "details", "dfn", "dialog", "div", "dl", "dt", "em", "embed", "fieldset",
+    "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5",
+    "h6", "head", "header", "hgroup", "hr", "html", "i", "iframe", "img",
+    "input", "ins", "kbd", "label", "legend", "li", "link", "main", "map",
+    "mark", "math", "menu", "meta", "meter", "nav", "noscript", "object",
+    "ol", "optgroup", "option", "output", "p", "picture", "portal", "pre",
+    "progress", "q", "rp", "rt", "ruby", "s", "samp", "script", "search",
+    "section", "select", "slot", "small", "source", "span", "strong", "style",
+    "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea",
+    "tfoot", "th", "thead", "time", "title", "tr", "track", "u", "ul", "var",
+    "video", "wbr",
+}
+
+SVG_TAGS = {
+    "svg", "animate", "animatemotion", "animatetransform", "circle",
+    "clippath", "defs", "desc", "ellipse", "feblend", "fecolormatrix",
+    "fecomponenttransfer", "fecomposite", "feconvolvematrix",
+    "fediffuselighting", "fedisplacementmap", "fedistantlight",
+    "fedropshadow", "feflood", "fefunca", "fefuncb", "fefuncg", "fefuncr",
+    "fegaussianblur", "feimage", "femerge", "femergenode", "femorphology",
+    "feoffset", "fepointlight", "fespecularlighting", "fespotlight",
+    "fetile", "feturbulence", "filter", "foreignobject", "g", "image",
+    "line", "lineargradient", "marker", "mask", "metadata", "mpath",
+    "path", "pattern", "polygon", "polyline", "radialgradient", "rect",
+    "set", "stop", "style", "switch", "symbol", "text", "textpath",
+    "title", "tspan", "use", "view",
+}
+
+MATHML_TAGS = {
+    "math", "semantics", "annotation", "annotation-xml", "mi", "mo", "mn",
+    "ms", "mspace", "mtext", "menclose", "merror", "mfenced", "mfrac",
+    "mpadded", "mphantom", "mroot", "mrow", "msqrt", "mstyle",
+    "mmultiscripts", "mover", "mprescripts", "msub", "msubsup", "msup",
+    "munder", "munderover", "none", "mtable", "mtd", "mtr",
+}
+
+VALID_TAGS = HTML5_TAGS | SVG_TAGS | MATHML_TAGS
+
+VOID_ELEMENTS = {
+    "area", "base", "br", "col", "embed", "hr", "img", "input",
+    "link", "meta", "param", "source", "track", "wbr",
+}
+
+
+def validate_css_content(css_text: str, filename: str = "") -> list[str]:
+    """Validates CSS syntax: balanced brackets/braces/parentheses, closed quotes and comments."""
+    errors: list[str] = []
+    if not css_text.strip():
+        errors.append(f"{filename}: CSS content is empty")
+        return errors
+
+    i = 0
+    n = len(css_text)
+    line = 1
+    col = 1
+    stack: list[tuple[str, int, int]] = []
+    in_comment = False
+    comment_start = (1, 1)
+
+    while i < n:
+        c = css_text[i]
+        if c == "\n":
+            line += 1
+            col = 1
+        else:
+            col += 1
+
+        if not in_comment and c == "/" and i + 1 < n and css_text[i + 1] == "*":
+            in_comment = True
+            comment_start = (line, col - 1)
+            i += 2
+            col += 1
+            continue
+        elif in_comment:
+            if c == "*" and i + 1 < n and css_text[i + 1] == "/":
+                in_comment = False
+                i += 2
+                col += 1
+                continue
+            i += 1
+            continue
+
+        if c in ('"', "'"):
+            quote = c
+            qline, qcol = line, col - 1
+            i += 1
+            closed = False
+            while i < n:
+                qc = css_text[i]
+                if qc == "\n":
+                    line += 1
+                    col = 1
+                    if i > 0 and css_text[i - 1] != "\\":
+                        errors.append(f"{filename}:{qline}:{qcol}: Unclosed string")
+                        break
+                else:
+                    col += 1
+                if qc == quote and (i == 0 or css_text[i - 1] != "\\"):
+                    closed = True
+                    i += 1
+                    break
+                i += 1
+            if not closed and not any("Unclosed string" in e for e in errors):
+                errors.append(f"{filename}:{qline}:{qcol}: Unclosed string")
+            continue
+
+        if c in "({[":
+            stack.append((c, line, col - 1))
+        elif c in ")}]":
+            matching = {"(": ")", "{": "}", "[": "]"}
+            if not stack:
+                errors.append(f"{filename}:{line}:{col - 1}: Unmatched closing '{c}'")
+            else:
+                top, tline, tcol = stack.pop()
+                expected = matching.get(top)
+                if expected != c:
+                    errors.append(
+                        f"{filename}:{line}:{col - 1}: Mismatched bracket: expected '{expected}' for '{top}' from line {tline}:{tcol}, got '{c}'"
+                    )
+        i += 1
+
+    if in_comment:
+        errors.append(f"{filename}:{comment_start[0]}:{comment_start[1]}: Unclosed comment (/*)")
+    for top, tline, tcol in stack:
+        errors.append(f"{filename}:{tline}:{tcol}: Unclosed bracket or brace '{top}'")
+
+    return errors
+
+
+class StructuralChecker(HTMLParser):
+    def __init__(self, file_path: Path):
+        super().__init__()
+        self.file_path = file_path
+        self.stack: list[tuple[str, int, int]] = []
+        self.errors: list[str] = []
+        self.referenced_files: list[tuple[str, int]] = []
+        self.linked_css_files: list[tuple[str, int]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]):
+        tag_lower = tag.lower()
+        pos = self.getpos()
+
+        if tag_lower not in VALID_TAGS:
+            self.errors.append(f"Line {pos[0]}:{pos[1]}: Invalid HTML tag <{tag}>")
+
+        attr_dict = dict(attrs)
+        for attr_name in ("src", "href", "poster"):
+            val = attr_dict.get(attr_name)
+            if val:
+                self.referenced_files.append((val.strip(), pos[0]))
+
+        srcset = attr_dict.get("srcset")
+        if srcset:
+            for item in srcset.split(","):
+                part = item.strip().split()[0] if item.strip() else ""
+                if part:
+                    self.referenced_files.append((part, pos[0]))
+
+        if tag_lower == "link":
+            href = attr_dict.get("href")
+            rel = attr_dict.get("rel", "").lower()
+            as_attr = attr_dict.get("as", "").lower()
+            if href and ("stylesheet" in rel or as_attr == "style" or href.endswith(".css")):
+                self.linked_css_files.append((href.strip(), pos[0]))
+
+        if tag_lower in VOID_ELEMENTS:
+            return
+
+        self.stack.append((tag_lower, pos[0], pos[1]))
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]):
+        tag_lower = tag.lower()
+        pos = self.getpos()
+
+        if tag_lower not in VALID_TAGS:
+            self.errors.append(f"Line {pos[0]}:{pos[1]}: Invalid HTML tag <{tag}/>")
+
+        attr_dict = dict(attrs)
+        for attr_name in ("src", "href", "poster"):
+            val = attr_dict.get(attr_name)
+            if val:
+                self.referenced_files.append((val.strip(), pos[0]))
+
+        srcset = attr_dict.get("srcset")
+        if srcset:
+            for item in srcset.split(","):
+                part = item.strip().split()[0] if item.strip() else ""
+                if part:
+                    self.referenced_files.append((part, pos[0]))
+
+        if tag_lower == "link":
+            href = attr_dict.get("href")
+            rel = attr_dict.get("rel", "").lower()
+            as_attr = attr_dict.get("as", "").lower()
+            if href and ("stylesheet" in rel or as_attr == "style" or href.endswith(".css")):
+                self.linked_css_files.append((href.strip(), pos[0]))
+
+        if tag_lower not in VOID_ELEMENTS and tag_lower not in SVG_TAGS and tag_lower not in MATHML_TAGS:
+            self.errors.append(f"Line {pos[0]}:{pos[1]}: Self-closing syntax not allowed on non-void HTML tag <{tag}/>")
+
+    def handle_endtag(self, tag: str):
+        tag_lower = tag.lower()
+        pos = self.getpos()
+
+        if tag_lower in VOID_ELEMENTS:
+            self.errors.append(f"Line {pos[0]}:{pos[1]}: Void element <{tag}> must not have closing tag </{tag}>")
+            return
+
+        if not self.stack:
+            self.errors.append(f"Line {pos[0]}:{pos[1]}: Unexpected closing tag </{tag}> (no matching open tag)")
+            return
+
+        last_tag, l_line, l_col = self.stack.pop()
+        if last_tag != tag_lower:
+            self.errors.append(
+                f"Line {pos[0]}:{pos[1]}: Mismatched closing tag: expected </{last_tag}> (opened at line {l_line}:{l_col}), got </{tag}>"
+            )
+
+    def finalize(self):
+        while self.stack:
+            tag, l_line, l_col = self.stack.pop()
+            self.errors.append(f"Unclosed tag <{tag}> opened at line {l_line}:{l_col}")
+
+
+def check_page_structure(
+    file_path: Path,
+    content: str | None = None,
+    css_cache: dict[Path, list[str]] | None = None,
+) -> list[str]:
+    """Check structural validity of an HTML page.
+
+    Checks:
+      1. Only valid HTML5, SVG, and MathML tags.
+      2. Matching open and close tags (no unclosed tags, no mismatched tags, no void element close tags).
+      3. All referenced files exist (src, href, poster, srcset) except TODO.jpg.
+      4. All linked CSS files exist and are syntactically valid CSS.
+    """
+    errors: list[str] = []
+    text = content if content is not None else file_path.read_text(encoding="utf-8")
+
+    # 1 & 2: Tag validation & matching
+    parser = StructuralChecker(file_path)
+    try:
+        parser.feed(text)
+        parser.finalize()
+    except Exception as exc:
+        errors.append(f"HTML parse error: {exc}")
+    errors.extend(parser.errors)
+
+    # 3: Check all referenced files exist (except TODO.jpg)
+    for ref, line_no in parser.referenced_files:
+        if not ref or ref.startswith(("http://", "https://", "//", "mailto:", "tel:", "javascript:", "#", "data:")):
+            continue
+        clean_ref = ref.split("?")[0].split("#")[0].strip()
+        if not clean_ref:
+            continue
+        # Rule: "except TODO.jpg"
+        if Path(clean_ref).name == "TODO.jpg":
+            continue
+
+        if clean_ref.startswith("/"):
+            target = (ROOT / clean_ref.lstrip("/")).resolve()
+        else:
+            target = (file_path.parent / clean_ref).resolve()
+
+        if not target.exists():
+            errors.append(f"Line {line_no}: Referenced file does not exist: '{ref}'")
+
+    # 4: Check linked CSS files are valid
+    if css_cache is None:
+        css_cache = {}
+
+    for css_ref, line_no in parser.linked_css_files:
+        clean_css = css_ref.split("?")[0].split("#")[0].strip()
+        if not clean_css:
+            continue
+        if clean_css.startswith("/"):
+            css_path = (ROOT / clean_css.lstrip("/")).resolve()
+        else:
+            css_path = (file_path.parent / clean_css).resolve()
+
+        if not css_path.exists():
+            # Missing file is already flagged by referenced_files check
+            continue
+
+        if css_path not in css_cache:
+            try:
+                css_text = css_path.read_text(encoding="utf-8")
+                rel_css = css_path.relative_to(ROOT) if css_path.is_relative_to(ROOT) else css_path
+                css_cache[css_path] = validate_css_content(css_text, str(rel_css))
+            except Exception as exc:
+                css_cache[css_path] = [f"Error reading CSS file: {exc}"]
+
+        for cerr in css_cache[css_path]:
+            errors.append(f"Line {line_no}: Linked CSS '{clean_css}' is invalid: {cerr}")
+
+    return errors
+
+
+def run_structural_check(target_paths: list[Path]) -> int:
+    """Run structural checks on target HTML pages and print diagnostic report."""
+    css_cache: dict[Path, list[str]] = {}
+    total_issues = 0
+    pages_with_issues = 0
+
+    for path in target_paths:
+        if not path.exists():
+            print(f"!! {path}: File does not exist", file=sys.stderr)
+            total_issues += 1
+            pages_with_issues += 1
+            continue
+
+        errors = check_page_structure(path, css_cache=css_cache)
+        if errors:
+            pages_with_issues += 1
+            total_issues += len(errors)
+            rel = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
+            print(f"\n!! {rel} ({len(errors)} issue{'s' if len(errors) > 1 else ''}):", file=sys.stderr)
+            for err in errors:
+                print(f"   * {err}", file=sys.stderr)
+
+    if total_issues == 0:
+        print(f"✓ Structural check passed: {len(target_paths)} page(s) verified (tags, matching, files, CSS).")
+        return 0
+    else:
+        print(f"\n✗ Structural check failed: {total_issues} issue(s) across {pages_with_issues} page(s).", file=sys.stderr)
+        return 1
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--check", action="store_true", help="only report pages that would change")
+    parser.add_argument(
+        "--check-structure",
+        "--validate",
+        action="store_true",
+        help="run structural checks (valid tags, tag matching, referenced files, CSS)",
+    )
     parser.add_argument(
         "--new",
         nargs="?",
@@ -819,6 +1162,22 @@ def main() -> int:
         help="optional HTML file(s) to format and clean",
     )
     args = parser.parse_args()
+
+    # Structural check mode
+    if args.check_structure:
+        target_files = []
+        if args.format is not None and args.format:
+            target_files = [Path(f).resolve() for f in args.format]
+        elif args.files:
+            target_files = [Path(f).resolve() for f in args.files]
+        elif args.all:
+            target_files = get_all_html_files(ROOT / "en") + get_all_html_files(ROOT / "hu")
+            root_index = ROOT / "index.html"
+            if root_index.exists():
+                target_files.append(root_index)
+        else:
+            target_files = all_pages()
+        return run_structural_check(target_files)
 
     # Direct formatting mode
     formatting_files = None
@@ -884,7 +1243,10 @@ def main() -> int:
                 path.write_text(new_text, encoding="utf-8")
 
     print(f"{'Would update' if args.check else 'Updated'} {changed} of {len(paths)} pages")
-    return 0
+    structural_rc = run_structural_check(paths)
+    if args.check and changed > 0:
+        return 1
+    return structural_rc
 
 if __name__ == "__main__":
     sys.exit(main())

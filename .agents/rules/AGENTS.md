@@ -28,6 +28,8 @@ After building or editing any HTML page:
   `python3 scripts/build_pages.py --format --all`
 - Build pages (automatically formats and strips empty lines):
   `python3 scripts/build_pages.py`
+- Structural check (valid tags, tag matching, referenced files, CSS):
+  `python3 scripts/build_pages.py --check-structure`
 - Copy quality and spell checker (via `spell-check` skill):
   `python3 .agents/skills/spell-check/scripts/audit.py`
 - Locale sync checker (via `locale-sync` skill):
