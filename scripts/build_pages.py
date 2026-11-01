@@ -63,7 +63,7 @@ GROUPS = [
         ("space-research", {"en": "Space Research", "hu": "Űrkutatás"}, "economy"),
     ]),
     ("royal", {"en": "Royal Family", "hu": "Királyi Család"}, [
-        ("dynasty", {"en": "The Dynasty", "hu": "A Dinasztia"}, "dynasty"),
+        ("dynasty", {"en": "Dynasty", "hu": "Dinasztia"}, "dynasty"),
         ("family-tree", {"en": "Family Tree", "hu": "Családfa"}, "dynasty"),
         ("chease-and-jessica", {"en": "Chease and Jessica", "hu": "Chease és Jessica"}, "dynasty"),
         ("raimondo-and-selena", {"en": "Raimondo and Selena", "hu": "Raimondo és Selena"}, "dynasty"),
