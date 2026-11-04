@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 640 480">
+    <defs>
+        <style>
+            :root {
+                --ill-sky: #f6e7d3;
+                --ill-sky-2: #fbf1e4;
+                --ill-sun: #e3735a;
+                --ill-sun-2: #f5c46e;
+                --ill-sea: #1a528f;
+                --ill-sea-2: #6ba4d9;
+                --ill-sea-3: #b8d7f2;
+                --ill-sand: #e8dcb8;
+                --ill-ink: #002244;
+                --ill-ink-2: #003366;
+                --ill-ink-3: #1a4f80;
+                --ill-gold: #c29a57;
+                --ill-coral: #c95a41;
+                --ill-leaf: #4e8b5a;
+                --ill-leaf-2: #62a56f;
+                --ill-glass: #d6e6f5;
+                --ill-white: #fffdf9;
+                --ill-line: rgba(0, 34, 68, 0.18);
+            }
+            .f-sky { fill: var(--ill-sky, #f6e7d3); }
+            .f-sun { fill: var(--ill-sun, #e3735a); }
+            .f-sun2 { fill: var(--ill-sun-2, #f5c46e); }
+            .f-sea { fill: var(--ill-sea, #1a528f); }
+            .f-sea2 { fill: var(--ill-sea-2, #6ba4d9); }
+            .f-sea3 { fill: var(--ill-sea-3, #b8d7f2); }
+            .f-sand { fill: var(--ill-sand, #e8dcb8); }
+            .f-ink { fill: var(--ill-ink, #002244); }
+            .f-ink2 { fill: var(--ill-ink-2, #003366); }
+            .f-ink3 { fill: var(--ill-ink-3, #1a4f80); }
+            .f-gold { fill: var(--ill-gold, #c29a57); }
+            .f-coral { fill: var(--ill-coral, #c95a41); }
+            .f-leaf { fill: var(--ill-leaf, #4e8b5a); }
+            .f-leaf2 { fill: var(--ill-leaf-2, #62a56f); }
+            .f-glass { fill: var(--ill-glass, #d6e6f5); }
+            .f-white { fill: var(--ill-white, #fffdf9); }
+            .k-ink { fill: none; stroke: var(--ill-ink, #002244); }
+            .k-ink2 { fill: none; stroke: var(--ill-ink-2, #003366); }
+            .k-gold { fill: none; stroke: var(--ill-gold, #c29a57); }
+            .k-coral { fill: none; stroke: var(--ill-coral, #c95a41); }
+            .k-white { fill: none; stroke: var(--ill-white, #fffdf9); }
+            .k-line { fill: none; stroke: var(--ill-line, rgba(0, 34, 68, 0.18)); }
+            .bob { animation: illBob 5s ease-in-out infinite; }
+            .drift { animation: illDrift 14s ease-in-out infinite alternate; }
+            .dash { stroke-dasharray: 6 8; animation: illDash 2.4s linear infinite; }
+            .pulse { transform-box: fill-box; transform-origin: center; animation: illPulse 2.6s ease-out infinite; }
+            @keyframes illBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+            @keyframes illDrift { from { transform: translateX(-18px); } to { transform: translateX(18px); } }
+            @keyframes illDash { to { stroke-dashoffset: -28; } }
+            @keyframes illPulse { 0% { transform: scale(0.6); opacity: 0.9; } 70% { transform: scale(1.6); opacity: 0; } 100% { opacity: 0; } }
+            @media (prefers-reduced-motion: reduce) {
+                .bob, .drift, .dash, .pulse, animateMotion { animation: none !important; }
+            }
+        </style>
+        <clipPath id="tg-clip">
+                            <rect width="640" height="480" rx="40" />
+                        </clipPath>
+                        <linearGradient id="tg-sky" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#fbf1e4" style="stop-color:var(--ill-sky-2, #fbf1e4)" />
+                            <stop offset="1" stop-color="#f6e7d3" style="stop-color:var(--ill-sky, #f6e7d3)" />
+                        </linearGradient>
+                        <linearGradient id="tg-sea" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#6ba4d9" style="stop-color:var(--ill-sea-2, #6ba4d9)" />
+                            <stop offset="1" stop-color="#1a528f" style="stop-color:var(--ill-sea, #1a528f)" />
+                        </linearGradient>
+    </defs>
+    <g clip-path="url(#tg-clip)">
+                        <rect width="640" height="480" fill="url(#tg-sky)" />
+                        <circle cx="420" cy="300" r="120" class="f-sun2" opacity=".3" />
+                        <circle cx="420" cy="300" r="78" class="f-sun" />
+                        <g class="drift">
+                            <ellipse cx="120" cy="96" rx="48" ry="11" class="f-white" opacity=".85" />
+                            <ellipse cx="150" cy="86" rx="28" ry="11" class="f-white" opacity=".85" />
+                        </g>
+                        <g class="drift" style="animation-delay:-7s">
+                            <ellipse cx="520" cy="70" rx="44" ry="10" class="f-white" opacity=".75" />
+                        </g>
+                        <path d="M250 120l8 5 8-5M276 140l6 4 6-4M230 150l6 4 6-4" class="k-ink" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <polygon points="456,302 484,262 512,302" class="f-glass" />
+                        <polygon points="456,302 484,262 512,302" class="k-gold" stroke-width="1.5" />
+                        <rect x="516" y="270" width="12" height="32" class="f-ink3" />
+                        <rect x="530" y="282" width="10" height="20" class="f-ink2" />
+                        <rect x="430" y="280" width="12" height="22" class="f-ink3" />
+                        <rect x="544" y="262" width="8" height="40" class="f-ink3" />
+                        <rect y="300" width="640" height="180" fill="url(#tg-sea)" />
+                        <g class="f-sun2" opacity=".55">
+                            <rect x="370" y="316" width="100" height="4" rx="2" />
+                            <rect x="385" y="332" width="70" height="4" rx="2" />
+                            <rect x="398" y="348" width="44" height="4" rx="2" />
+                        </g>
+                        <g class="bob">
+                            <path d="M300 372h76l-11 13h-54z" class="f-white" />
+                            <path d="M338 368V300l30 66z" class="f-white" />
+                            <path d="M334 368V306l-22 60z" class="f-coral" />
+                            <path d="M338 370V296" class="k-ink" stroke-width="2" />
+                        </g>
+                        <path d="M0 404 C 170 360, 330 384, 640 452 V480 H0z" class="f-sand" />
+                        <path d="M0 420 C 170 380, 330 402, 640 466" class="k-white" stroke-width="2" opacity=".6" />
+                        <path d="M150 470 C 146 400, 162 330, 200 270" class="k-ink2" stroke-width="13" stroke-linecap="round" />
+                        <path d="M150 470 C 146 400, 162 330, 200 270" class="k-gold" stroke-width="13" stroke-dasharray="2 12" opacity=".5" />
+                        <g transform="translate(200 270)">
+                            <path d="M0 0 C 30 -30, 75 -26, 96 4 C 66 -10, 34 -10, 0 0z" class="f-leaf" transform="rotate(-170)" />
+                            <path d="M0 0 C 30 -30, 75 -26, 96 4 C 66 -10, 34 -10, 0 0z" class="f-leaf2" transform="rotate(-130)" />
+                            <path d="M0 0 C 30 -30, 75 -26, 96 4 C 66 -10, 34 -10, 0 0z" class="f-leaf" transform="rotate(-90)" />
+                            <path d="M0 0 C 30 -30, 75 -26, 96 4 C 66 -10, 34 -10, 0 0z" class="f-leaf2" transform="rotate(-50)" />
+                            <path d="M0 0 C 30 -30, 75 -26, 96 4 C 66 -10, 34 -10, 0 0z" class="f-leaf" transform="rotate(-10)" />
+                            <path d="M0 0 C 30 -30, 75 -26, 96 4 C 66 -10, 34 -10, 0 0z" class="f-leaf2" transform="rotate(25)" />
+                            <path d="M0 0 C 30 -30, 75 -26, 96 4 C 66 -10, 34 -10, 0 0z" class="f-leaf2" transform="rotate(150)" />
+                            <circle cx="-6" cy="8" r="6" class="f-gold" />
+                            <circle cx="6" cy="10" r="6" class="f-gold" />
+                        </g>
+                        <path d="M548 456V394" class="k-ink" stroke-width="3" />
+                        <path d="M500 398 Q548 344 596 398z" class="f-coral" />
+                        <path d="M532 398 Q548 350 564 398z" class="f-white" opacity=".85" />
+                        <rect x="470" y="440" width="44" height="30" rx="5" class="f-ink2" />
+                        <path d="M482 440v-7h20v7" class="k-ink" stroke-width="3" />
+                        <rect x="470" y="452" width="44" height="4" class="f-gold" />
+                        <path d="M90 214 C 210 70, 420 64, 560 176" class="k-coral dash" stroke-width="2.6" stroke-linecap="round" />
+                        <g transform="translate(90 214)">
+                            <circle r="8" class="f-coral pulse" />
+                            <circle r="6" class="f-coral" />
+                            <circle r="2.5" class="f-white" />
+                        </g>
+                        <g transform="translate(560 176)">
+                            <circle r="8" class="f-coral pulse" style="animation-delay:1.2s" />
+                            <circle r="6" class="f-coral" />
+                            <circle r="2.5" class="f-white" />
+                        </g>
+                        <g>
+                            <path d="M-16 -2.4H10l7 2.4-7 2.4H-16z M-4 -2.4-11 -14h5l9 11.6z M-4 2.4-11 14h5l9-11.6z M-16 -2.4-20 -8h3.5l5 5.6z M-16 2.4-20 8h3.5l5-5.6z" class="f-ink" />
+                            <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M90 214 C 210 70, 420 64, 560 176" />
+                        </g>
+                    </g>
+</svg>

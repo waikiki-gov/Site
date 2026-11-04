@@ -37,19 +37,15 @@
   box-shadow: var(--shadow-md);
 }
 
-.fact svg {
+.fact img {
   flex: 0 0 28px;
   width: 28px;
   height: 28px;
-  fill: none;
-  stroke: var(--accent-hover);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  object-fit: contain;
 }
 
-.body-dark .fact svg {
-  stroke: var(--accent);
+.body-dark .fact img {
+  filter: brightness(2.1) saturate(0.7);
 }
 
 .fact dt {
@@ -248,12 +244,11 @@
   flex-shrink: 0;
 }
 
-.travel-callout-icon svg {
+.travel-callout-icon img {
   width: 32px;
   height: 32px;
-  stroke: var(--neutral-50);
-  fill: none;
-  stroke-width: 1.8;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .travel-callout h3 {
@@ -360,13 +355,15 @@
   font-size: 0.82rem;
 }
 
-.hotel-loc svg {
+.hotel-loc img {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
+  object-fit: contain;
+}
+
+.body-dark .hotel-loc img {
+  filter: brightness(2.1) saturate(0.7);
 }
 
 .hotel ul.perks {

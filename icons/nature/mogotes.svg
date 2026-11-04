@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="nature-ill" viewBox="0 0 480 300" role="img" aria-label="Karst mogote towers rising over a tobacco valley with royal palms">
+<svg xmlns="http://www.w3.org/2000/svg" class="nature-ill" viewBox="0 0 480 300">
 <defs>
 <filter id="nt-mogotes-mist" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
 <filter id="nt-mogotes-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>

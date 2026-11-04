@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%" fill="none" style="color: #003366;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none" style="color: #003366;">
   <defs>
     <linearGradient id="bfrBody" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="currentColor" stop-opacity="0.12" />
@@ -53,7 +53,7 @@
     <polygon points="372,130 330,140 330,165 372,150" fill="url(#bfrWing)" stroke="currentColor" stroke-width="2" />
     <polygon points="428,130 470,140 470,165 428,150" fill="url(#bfrWing)" stroke="currentColor" stroke-width="2" />
 
-    <!-- Starship Gothic Curved Nosecone & Hull -->
+    <!-- Starship Gothic Curved Nosecone and Hull -->
     <path d="M 372 320 L 372 160 C 372 90 400 45 400 45 C 400 45 428 90 428 160 L 428 320 Z" fill="url(#bfrBody)" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" />
     <!-- Thermal Protection Tile Division Curve -->
     <path d="M 400 45 Q 418 160 418 320" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.7" />
@@ -90,7 +90,7 @@
       <line x1="372" y1="655" x2="428" y2="655" />
     </g>
 
-    <!-- 33 Raptor Engine Cluster & Skirt -->
+    <!-- 33 Raptor Engine Cluster and Skirt -->
     <polygon points="370,715 430,715 425,745 375,745" fill="currentColor" opacity="0.6" stroke="currentColor" stroke-width="2" />
     <circle cx="388" cy="740" r="5" fill="currentColor" opacity="0.8" />
     <circle cx="400" cy="740" r="5" fill="currentColor" opacity="0.8" />

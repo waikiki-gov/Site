@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="city-ill" viewBox="0 0 1100 600" role="img" aria-label="Archipelago Masterplan: Palm Island, World Isles and Chameleon Atolls">
+<svg xmlns="http://www.w3.org/2000/svg" class="city-ill" viewBox="0 0 1100 600">
 <defs>
 <linearGradient id="na-archipelago-map-ocean" x1="1" y1="0" x2="0" y2="0"><stop offset="0.0" stop-color="#051e36"/><stop offset="0.45" stop-color="#083358"/><stop offset="0.82" stop-color="#0c4f7d"/><stop offset="1.0" stop-color="#126b9c"/></linearGradient>
 <linearGradient id="na-archipelago-map-main-land" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6d8be"/><stop offset="1" stop-color="#c8b490"/></linearGradient>

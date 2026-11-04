@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 1160 520">
+    <defs>
+        <clipPath id="bk-clip1">
+            <rect width="1160" height="520" rx="20" />
+        </clipPath>
+        <linearGradient id="bk-teal" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1A528F" />
+            <stop offset="100%" stop-color="#002244" />
+        </linearGradient>
+        <linearGradient id="bk-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fcedc7" />
+            <stop offset="45%" stop-color="#dfba76" />
+            <stop offset="80%" stop-color="#c29a57" />
+            <stop offset="100%" stop-color="#80591f" />
+        </linearGradient>
+        <style>
+            @keyframes illPulse { 0% { transform: scale(0.6); opacity: 0.9; } 70% { transform: scale(1.6); opacity: 0; } 100% { opacity: 0; } }
+            @keyframes illDash { to { stroke-dashoffset: -28; } }
+            @keyframes illDashFast { to { stroke-dashoffset: -22; } }
+            @keyframes illSpin { to { transform: rotate(360deg); } }
+            .spin { transform-box: fill-box; transform-origin: center; animation: illSpin 6s linear infinite; }
+            .pulse { transform-box: fill-box; transform-origin: center; animation: illPulse 2.6s ease-out infinite; }
+            .pulse-slow { transform-box: fill-box; transform-origin: center; animation: illPulse 4s ease-out infinite; }
+            .dash { stroke-dasharray: 8 6; animation: illDash 2.4s linear infinite; }
+            .dash-fast { stroke-dasharray: 6 6; animation: illDashFast 1.4s linear infinite; }
+            text { font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+            .currency-mark { font-family: "Fraunces", Georgia, serif; }
+        </style>
+    </defs>
+    <g clip-path="url(#bk-clip1)">
+        <!-- Currency Vector Flow Paths -->
+        <!-- Central Bank to Commercial Banks Path -->
+        <path id="bk-flow-comm" d="M500 178 C 360 198, 270 228, 210 268" fill="none" stroke="#dfba76" stroke-width="2.5" stroke-dasharray="8 6" class="dash" />
+        <!-- Central Bank to Investment Funds Path -->
+        <path id="bk-flow-inv" d="M660 178 C 800 198, 890 228, 950 268" fill="none" stroke="#dfba76" stroke-width="2.5" stroke-dasharray="8 6" class="dash" />
+        <!-- Central Bank to Citizen Accounts Direct Path -->
+        <path id="bk-flow-cit" d="M580 250 L 580 388" fill="none" stroke="#6BA4D9" stroke-width="3" stroke-dasharray="6 6" class="dash-fast" />
+        <!-- Commercial Banks to Citizens Circulation -->
+        <path d="M210 404 C 280 472, 380 464, 460 432" fill="none" stroke="#1A528F" stroke-width="1.8" stroke-dasharray="5 6" opacity=".8" />
+        <!-- Investment Funds to Corporations Circulation -->
+        <path d="M950 404 C 880 472, 780 464, 700 432" fill="none" stroke="#c29a57" stroke-width="1.8" stroke-dasharray="5 6" opacity=".8" />
+        <!-- Animated Currency Dots on Paths -->
+        <circle r="4.5" fill="#f5c46e">
+            <animateMotion dur="6s" repeatCount="indefinite">
+                <mpath href="#bk-flow-comm" />
+            </animateMotion>
+        </circle>
+        <circle r="4.5" fill="#f5c46e">
+            <animateMotion dur="6s" repeatCount="indefinite">
+                <mpath href="#bk-flow-inv" />
+            </animateMotion>
+        </circle>
+        <circle r="5" fill="#6BA4D9">
+            <animateMotion dur="4s" repeatCount="indefinite">
+                <mpath href="#bk-flow-cit" />
+            </animateMotion>
+        </circle>
+        <!-- 1. APEX NODE: WAIKIKI NEMZETI BANKJA / NATIONAL BANK OF WAIKIKI -->
+        <g transform="translate(580, 138)">
+            <!-- Outer pulsing aura -->
+            <circle class="pulse-slow" cx="0" cy="0" r="85" fill="none" stroke="rgba(223, 186, 118, 0.3)" stroke-width="1.5" />
+            <circle cx="0" cy="0" r="72" fill="url(#bk-teal)" stroke="#dfba76" stroke-width="2.5" />
+            <!-- Rotating Vault Gear Teeth -->
+            <g class="spin">
+                <circle cx="0" cy="0" r="55" fill="none" stroke="#dfba76" stroke-width="6" stroke-dasharray="14 12" />
+            </g>
+            <!-- Bank Vault Core -->
+            <circle cx="0" cy="0" r="44" fill="#001830" stroke="#fcedc7" stroke-width="1.5" />
+            <!-- National Gold Insignia -->
+            <circle cx="0" cy="0" r="28" fill="url(#bk-gold)" />
+            <!-- WUD Currency Emblem -->
+            <text x="0" y="10" fill="#001830" class="currency-mark" font-size="28" font-weight="800" text-anchor="middle">₩</text>
+            <!-- Badges -->
+            <rect x="-165" y="-96" width="330" height="32" rx="16" fill="#061f1d" stroke="#dfba76" stroke-width="1.4" />
+            <text x="0" y="-75" fill="#fcedc7" font-size="13.5" font-weight="800" text-anchor="middle" letter-spacing="1.2">NATIONAL BANK OF WAIKIKI</text>
+            <rect x="-135" y="80" width="270" height="30" rx="15" fill="#061e1c" stroke="#6BA4D9" stroke-width="1.4" />
+            <text x="0" y="100" fill="#6BA4D9" font-size="12.5" font-weight="800" text-anchor="middle" letter-spacing="1">EXCLUSIVE ISSUER</text>
+        </g>
+        <!-- 2. PILLAR II: KERESKEDELMI BANKOK / COMMERCIAL BANKS (LEFT) -->
+        <g transform="translate(210, 336)">
+            <rect x="-150" y="-68" width="300" height="136" rx="16" fill="#082220" stroke="#1A528F" stroke-width="2" />
+            <!-- Shield and lock graphics -->
+            <circle cx="-95" cy="-15" r="28" fill="#003366" stroke="#6BA4D9" stroke-width="1.5" />
+            <path d="M-95 -32 L-83 -28 L-83 -15 C-83 -5 -95 2 -95 2 C-95 2 -107 -5 -107 -15 L-107 -28 Z" fill="#dfba76" />
+            <text x="-50" y="-23" fill="#fbf7f0" font-size="16" font-weight="800">COMMERCIAL</text>
+            <text x="-50" y="0" fill="#fbf7f0" font-size="16" font-weight="800">BANKS</text>
+            <line x1="-130" y1="18" x2="130" y2="18" stroke="rgba(107, 164, 217, 0.25)" stroke-width="1" />
+            <text x="0" y="44" fill="#d5ede9" font-size="13" font-weight="600" text-anchor="middle">ICB · Bank of Waikiki · NACB</text>
+        </g>
+        <!-- 3. PILLAR III: BEFEKTETÉSI ALAPOK / INVESTMENT FUNDS (RIGHT) -->
+        <g transform="translate(950, 336)">
+            <rect x="-150" y="-68" width="300" height="136" rx="16" fill="#082220" stroke="#c29a57" stroke-width="2" />
+            <!-- Growth Chart Icon -->
+            <circle cx="-95" cy="-15" r="28" fill="#3d2a0d" stroke="#dfba76" stroke-width="1.5" />
+            <path d="M-107 -7 L-100 -14 L-93 -9 L-83 -23" fill="none" stroke="#dfba76" stroke-width="2.5" stroke-linecap="round" />
+            <polyline points="-88,-23 -83,-23 -83,-18" fill="none" stroke="#dfba76" stroke-width="2.5" />
+            <text x="-50" y="-23" fill="#fbf7f0" font-size="16" font-weight="800">INVESTMENT</text>
+            <text x="-50" y="0" fill="#fbf7f0" font-size="16" font-weight="800">FUNDS</text>
+            <line x1="-130" y1="18" x2="130" y2="18" stroke="rgba(223, 186, 118, 0.25)" stroke-width="1" />
+            <text x="0" y="44" fill="#d5ede9" font-size="12.5" font-weight="600" text-anchor="middle">Chease Investment Group · Walker Finance</text>
+        </g>
+        <!-- 4. BOTTOM BASE: CITIZEN AND ENTERPRISE DIRECT ACCOUNTS -->
+        <g transform="translate(580, 430)">
+            <rect x="-205" y="-42" width="410" height="84" rx="18" fill="#061e1c" stroke="#6BA4D9" stroke-width="2" />
+            <circle cx="-155" cy="0" r="24" fill="#003366" stroke="#6BA4D9" stroke-width="1.5" />
+            <!-- User profile silhouette -->
+            <circle cx="-155" cy="-6" r="8" fill="#fbf7f0" />
+            <path d="M-168 12 C-168 3 -142 3 -142 12" fill="#fbf7f0" />
+            <text x="-115" y="-5" fill="#fbf7f0" font-size="16.5" font-weight="800">UNIVERSAL CBDC ACCOUNTS</text>
+            <text x="-115" y="19" fill="#6BA4D9" font-size="13.5" font-weight="700" letter-spacing="0.8">DAILY COMPOUNDED INTEREST</text>
+        </g>
+        <!-- Top HUD Policy Badges -->
+        <g>
+            <rect x="40" y="22" width="280" height="38" rx="19" fill="#061c1b" stroke="#1A528F" stroke-width="1.4" />
+            <circle cx="64" cy="41" r="6" fill="#2ecc71" class="pulse" />
+            <text x="82" y="46" fill="#fbf7f0" font-size="13.5" font-weight="800" letter-spacing="1">0% INFLATION MANDATE</text>
+            <rect x="840" y="22" width="280" height="38" rx="19" fill="#061c1b" stroke="#c29a57" stroke-width="1.4" />
+            <circle cx="864" cy="41" r="6" fill="#f5c46e" class="pulse" />
+            <text x="882" y="46" fill="#fbf7f0" font-size="13.5" font-weight="800" letter-spacing="0.6">100% DEPOSIT GUARANTEE</text>
+        </g>
+    </g>
+</svg>

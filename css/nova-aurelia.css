@@ -21,6 +21,10 @@
 }
 
 /* Metric Stats Row */
+.hero--art .hero-content > .city-stats-row {
+    max-width: 100%;
+}
+
 .city-stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -409,14 +413,14 @@
     color: var(--tertiary-light);
 }
 
-.city-pillar-badge svg {
+.city-pillar-badge img {
     width: 24px;
     height: 24px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    object-fit: contain;
+}
+
+.body-dark .city-pillar-badge img {
+    filter: brightness(2.1) saturate(0.7);
 }
 
 .city-pillar-card h3 {

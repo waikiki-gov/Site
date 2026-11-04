@@ -55,10 +55,16 @@
     color: var(--accent);
 }
 
-.view-btn svg {
+.view-btn img {
     width: 18px;
     height: 18px;
-    fill: currentColor;
+    object-fit: contain;
+    filter: brightness(0) invert(1) opacity(0.6);
+}
+
+.view-btn:hover img,
+.view-btn.active img {
+    filter: brightness(0) invert(1) opacity(1);
 }
 
 /* Gallery Container */
@@ -407,7 +413,7 @@
         gap: 4px;
     }
 
-    .view-btn svg {
+    .view-btn img {
         width: 15px;
         height: 15px;
     }

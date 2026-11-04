@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="nature-ill" viewBox="0 0 1200 720" role="img" aria-label="Amazonian river scene with layered canopy, emergent kapok trees, giant water lilies, pink river dolphin, macaws and a toucan">
+<svg xmlns="http://www.w3.org/2000/svg" class="nature-ill" viewBox="0 0 1200 720">
 <defs>
 <filter id="nt-rainforest-mist" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
 <filter id="nt-rainforest-haze" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>

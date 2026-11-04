@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 640 480">
+    <defs>
+        <style>
+            :root {
+                --ill-sky: #f6e7d3;
+                --ill-sky-2: #fbf1e4;
+                --ill-sun: #e3735a;
+                --ill-sun-2: #f5c46e;
+                --ill-sea: #1a528f;
+                --ill-sea-2: #6ba4d9;
+                --ill-sea-3: #b8d7f2;
+                --ill-sand: #e8dcb8;
+                --ill-ink: #002244;
+                --ill-ink-2: #003366;
+                --ill-ink-3: #1a4f80;
+                --ill-gold: #c29a57;
+                --ill-coral: #c95a41;
+                --ill-glass: #d6e6f5;
+                --ill-white: #fffdf9;
+                --ill-line: rgba(0, 34, 68, 0.18);
+            }
+            .f-sky { fill: var(--ill-sky, #f6e7d3); }
+            .f-sun { fill: var(--ill-sun, #e3735a); }
+            .f-sun2 { fill: var(--ill-sun-2, #f5c46e); }
+            .f-sea { fill: var(--ill-sea, #1a528f); }
+            .f-sea2 { fill: var(--ill-sea-2, #6ba4d9); }
+            .f-sea3 { fill: var(--ill-sea-3, #b8d7f2); }
+            .f-sand { fill: var(--ill-sand, #e8dcb8); }
+            .f-ink { fill: var(--ill-ink, #002244); }
+            .f-ink2 { fill: var(--ill-ink-2, #003366); }
+            .f-ink3 { fill: var(--ill-ink-3, #1a4f80); }
+            .f-gold { fill: var(--ill-gold, #c29a57); }
+            .f-coral { fill: var(--ill-coral, #c95a41); }
+            .f-glass { fill: var(--ill-glass, #d6e6f5); }
+            .f-white { fill: var(--ill-white, #fffdf9); }
+            .k-ink { fill: none; stroke: var(--ill-ink, #002244); }
+            .k-ink2 { fill: none; stroke: var(--ill-ink-2, #003366); }
+            .k-gold { fill: none; stroke: var(--ill-gold, #c29a57); }
+            .k-coral { fill: none; stroke: var(--ill-coral, #c95a41); }
+            .k-white { fill: none; stroke: var(--ill-white, #fffdf9); }
+            .k-line { fill: none; stroke: var(--ill-line, rgba(0, 34, 68, 0.18)); }
+            .spin { transform-box: fill-box; transform-origin: center; animation: illSpin 6s linear infinite; }
+            .spin.slow { animation-duration: 12s; }
+            .bob { animation: illBob 5s ease-in-out infinite; }
+            .drift { animation: illDrift 14s ease-in-out infinite alternate; }
+            .twinkle { animation: illTwinkle 3.2s ease-in-out infinite; }
+            .twinkle:nth-of-type(2n) { animation-delay: 1.1s; }
+            .twinkle:nth-of-type(3n) { animation-delay: 2s; }
+            @keyframes illSpin { to { transform: rotate(360deg); } }
+            @keyframes illBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+            @keyframes illDrift { from { transform: translateX(-18px); } to { transform: translateX(18px); } }
+            @keyframes illTwinkle { 0%, 100% { opacity: 0.95; } 50% { opacity: 0.25; } }
+            @media (prefers-reduced-motion: reduce) {
+                .spin, .bob, .drift, .twinkle, animateMotion { animation: none !important; }
+            }
+        </style>
+        <clipPath id="ih-clip">
+                            <rect width="640" height="480" rx="40" />
+                        </clipPath>
+                        <linearGradient id="ih-sky" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#fbf1e4" style="stop-color:var(--ill-sky-2, #fbf1e4)" />
+                            <stop offset="1" stop-color="#f6e7d3" style="stop-color:var(--ill-sky, #f6e7d3)" />
+                        </linearGradient>
+                        <linearGradient id="ih-sea" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#6ba4d9" style="stop-color:var(--ill-sea-2, #6ba4d9)" />
+                            <stop offset="1" stop-color="#1a528f" style="stop-color:var(--ill-sea, #1a528f)" />
+                        </linearGradient>
+    </defs>
+    <g clip-path="url(#ih-clip)">
+                        <rect width="640" height="480" fill="url(#ih-sky)" />
+                        <circle cx="500" cy="118" r="78" class="f-sun2" opacity=".35" />
+                        <circle cx="500" cy="118" r="50" class="f-sun" />
+                        <g class="drift">
+                            <ellipse cx="150" cy="96" rx="54" ry="12" class="f-white" opacity=".85" />
+                            <ellipse cx="182" cy="84" rx="32" ry="13" class="f-white" opacity=".85" />
+                        </g>
+                        <g class="drift" style="animation-delay:-6s">
+                            <ellipse cx="350" cy="60" rx="40" ry="9" class="f-white" opacity=".7" />
+                        </g>
+                        <path d="M40 300V236" class="k-ink2" stroke-width="2.4" />
+                        <g transform="translate(40 236)">
+                            <g class="spin">
+                                <circle r="28" fill="none" />
+                                <path d="M0 0V-28M0 0L24.2 14.0M0 0L-24.2 14.0" class="k-ink2" stroke-width="3.0" stroke-linecap="round" />
+                                <circle r="3.0" class="f-ink2" />
+                            </g>
+                        </g>
+                        <path d="M86 300V246" class="k-ink2" stroke-width="2.0" />
+                        <g transform="translate(86 246)">
+                            <g class="spin">
+                                <circle r="24" fill="none" />
+                                <path d="M0 0V-24M0 0L20.6 11.9M0 0L-20.6 11.9" class="k-ink2" stroke-width="2.5" stroke-linecap="round" />
+                                <circle r="2.5" class="f-ink2" />
+                            </g>
+                        </g>
+                        <path d="M128 300V254" class="k-ink2" stroke-width="1.7" />
+                        <g transform="translate(128 254)">
+                            <g class="spin slow">
+                                <circle r="20" fill="none" />
+                                <path d="M0 0V-20M0 0L17.0 9.8M0 0L-17.0 9.8" class="k-ink2" stroke-width="2.1" stroke-linecap="round" />
+                                <circle r="2.1" class="f-ink2" />
+                            </g>
+                        </g>
+                        <rect x="150" y="296" width="380" height="8" class="f-sand" />
+                        <rect x="166" y="214" width="26" height="86" class="f-ink3" />
+                        <rect x="196" y="178" width="22" height="122" class="f-ink2" />
+                        <rect x="222" y="232" width="30" height="68" class="f-ink3" />
+                        <polygon points="248,300 330,172 412,300" class="f-glass" />
+                        <polygon points="248,300 330,172 412,300" class="k-gold" stroke-width="2.2" stroke-linejoin="round" />
+                        <path d="M330 172 L312 300M330 172 L352 300M298 222H362M282 248H378M266 274H394" class="k-gold" stroke-width="1" opacity=".75" />
+                        <polygon points="321,186 330,172 339,186" class="f-gold" />
+                        <circle cx="330" cy="160" r="3" class="f-gold twinkle" />
+                        <rect x="420" y="160" width="20" height="140" class="f-ink2" />
+                        <polygon points="416,160 430,124 444,160" class="f-ink" />
+                        <circle cx="430" cy="180" r="8" class="f-gold" />
+                        <path d="M430 180v-5M430 180h4" class="k-ink" stroke-width="1.4" stroke-linecap="round" />
+                        <rect x="446" y="202" width="24" height="98" class="f-ink3" />
+                        <rect x="474" y="228" width="20" height="72" class="f-ink2" />
+                        <rect x="498" y="190" width="18" height="110" class="f-ink3" />
+                        <g class="f-sun2">
+                            <rect class="twinkle" x="172" y="226" width="4" height="4" />
+                            <rect class="twinkle" x="202" y="196" width="4" height="4" />
+                            <rect class="twinkle" x="208" y="236" width="4" height="4" />
+                            <rect class="twinkle" x="452" y="216" width="4" height="4" />
+                            <rect class="twinkle" x="504" y="206" width="4" height="4" />
+                            <rect class="twinkle" x="480" y="244" width="4" height="4" />
+                        </g>
+                        <rect y="300" width="640" height="180" fill="url(#ih-sea)" />
+                        <rect y="300" width="640" height="6" class="f-sea3" opacity=".7" />
+                        <rect x="526" y="296" width="114" height="12" class="f-sand" />
+                        <path d="M566 296V236h44M566 248l26-12M604 236v18" class="k-ink" stroke-width="3" stroke-linecap="round" />
+                        <path d="M614 296V244h30M614 254l20-10" class="k-ink" stroke-width="3" stroke-linecap="round" />
+                        <rect x="536" y="284" width="18" height="12" class="f-coral" />
+                        <rect x="580" y="286" width="18" height="10" class="f-gold" />
+                        <rect x="580" y="276" width="18" height="10" class="f-sea2" />
+                        <g class="bob">
+                            <path d="M540 330h86l-10 14h-68z" class="f-ink" />
+                            <rect x="552" y="320" width="14" height="10" class="f-coral" />
+                            <rect x="568" y="320" width="14" height="10" class="f-gold" />
+                            <rect x="584" y="320" width="14" height="10" class="f-sea3" />
+                            <rect x="568" y="310" width="14" height="10" class="f-coral" />
+                        </g>
+                        <g stroke-width="2" stroke-linecap="round" opacity=".8">
+                            <path d="M40 340h30M120 360h24M250 330h28M420 396h30M300 440h40M90 450h30" class="k-white" />
+                        </g>
+                        <g class="k-ink2" stroke-width="5">
+                            <path d="M90 401V480M210 380V480M330 366V480M450 358V480M570 353V480" />
+                        </g>
+                        <path d="M-20 436 C 150 386, 300 362, 660 350" class="k-ink2" stroke-width="9" stroke-linecap="round" />
+                        <path d="M-20 436 C 150 386, 300 362, 660 350" class="k-gold" stroke-width="1.5" opacity=".9" />
+                        <g>
+                            <rect x="-40" y="-8" width="80" height="13" rx="6.5" class="f-coral" />
+                            <rect x="-30" y="-5" width="56" height="4" rx="2" class="f-white" opacity=".9" />
+                            <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M-60 432 C 150 378, 300 354, 700 342" />
+                        </g>
+                    </g>
+</svg>

@@ -1537,16 +1537,6 @@ html.menu-open .menu-aside {
   object-fit: contain;
 }
 
-.card-icon svg {
-  width: 30px;
-  height: 30px;
-  fill: none;
-  stroke: var(--primary);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .card:hover .card-icon {
   transform: rotate(-8deg) scale(1.08);
   border-radius: var(--radius);
@@ -2711,10 +2701,6 @@ html.header-hidden .subnav {
 .body-dark .card-icon img,
 .body-dark .faq-icon img {
   filter: brightness(2.1) saturate(0.7);
-}
-
-.body-dark .card-icon svg {
-  stroke: var(--tertiary);
 }
 
 .body-dark .tag {

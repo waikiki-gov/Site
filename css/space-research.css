@@ -43,6 +43,7 @@
 .spec-list li strong {
     color: var(--heading);
     font-weight: 600;
+    text-align: end;
 }
 
 /* Space Research SVG animations */

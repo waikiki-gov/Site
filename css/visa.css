@@ -548,9 +548,19 @@
     margin-bottom: 0.5rem;
 }
 
+.customs-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
 .body-dark .customs-icon {
     background: var(--tertiary-subtle);
     color: var(--tertiary-light);
+}
+
+.body-dark .customs-icon img {
+    filter: brightness(2.1) saturate(0.7);
 }
 
 .customs-card h3 {

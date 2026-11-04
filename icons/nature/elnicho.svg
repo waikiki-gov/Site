@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="nature-ill" viewBox="0 0 480 300" role="img" aria-label="Stepped turquoise travertine waterfall pools in the Escambray cloud forest of Cuba with royal palms, giant tree ferns and a perched Cuban trogon">
+<svg xmlns="http://www.w3.org/2000/svg" class="nature-ill" viewBox="0 0 480 300">
 <defs>
 <filter id="nt-elnicho-mist" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
 <filter id="nt-elnicho-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
